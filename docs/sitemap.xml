@@ -9,7 +9,22 @@
   </url>
   
   <url>
+    <loc>https://xiaonilee.github.io/post/tissgdb/</loc>
+    <lastmod>2020-09-11T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaonilee.github.io/about/</loc>
+    <lastmod>2020-09-11T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/tags/bioinformatics/</loc>
+    <lastmod>2020-09-11T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -43,6 +58,13 @@
   </url>
   
   <url>
+    <loc>https://xiaonilee.github.io/tags/database/</loc>
+    <lastmod>2020-09-11T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaonilee.github.io/categories/database/</loc>
     <lastmod>2020-09-11T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -65,6 +87,13 @@
   
   <url>
     <loc>https://xiaonilee.github.io/tags/</loc>
+    <lastmod>2020-09-11T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/tags/tissgdb/</loc>
     <lastmod>2020-09-11T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
