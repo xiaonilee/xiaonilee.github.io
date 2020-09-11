@@ -29,25 +29,28 @@ defaultContentLanguage = "en"           # Default language to use
   filename = "sitemap.xml"
 
 [[menu.main]]             # config your menu              # 配置目录
-  name = "This is Home"
+  name = "Home"
   weight = 10
   identifier = "home"
   url = "/"
 [[menu.main]]
-  name = "Archives"
+  name = "Categories"
   weight = 20
-  identifier = "archives"
-  url = "/post/"
+  identifier = "categories"
+  url = "/categories/"
+
 [[menu.main]]
   name = "Tags"
   weight = 30
   identifier = "tags"
   url = "/tags/"
+
 [[menu.main]]
-  name = "Categories"
+  name = "Archives"
   weight = 40
-  identifier = "categories"
-  url = "/categories/"
+  identifier = "archives"
+  url = "/post/"
+
 
 
 [params]
@@ -56,7 +59,7 @@ defaultContentLanguage = "en"           # Default language to use
   rssFullContent = false     # if false, Rss feed instead of the summary
 
   # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
-  logoTitle = "hello world"        # default: the title value    # 默认值: 上面设置的title值
+  logoTitle = "Xiaoni's blog"        # default: the title value    # 默认值: 上面设置的title值
   keywords = ["xiaonili", "xiaonilee","xiaoni"]
   description = "xiaoni's blog"
 
