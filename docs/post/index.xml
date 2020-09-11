@@ -17,8 +17,7 @@
       <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
       
       <guid>https://xiaonilee.github.io/post/example7/</guid>
-      <description>Metastatic breast cancer and sepsis: monocytes OUTLINE Analysis of the total population of monocytes from patients with metastatic breast cancer (MBC), sepsis, or tuberculosis.
- click on &amp;lsquo;VIEW MY DATA&amp;rsquo; and upload data: &amp;lsquo;genomicGDS5819_gene-level.</description>
+      <description>Metastatic breast cancer and sepsis: monocytes OUTLINE Analysis of the total population of monocytes from patients with metastatic breast cancer (MBC), sepsis, or tuberculosis.</description>
     </item>
     
     <item>
@@ -27,9 +26,7 @@
       <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
       
       <guid>https://xiaonilee.github.io/post/tissgdb/</guid>
-      <description>TissGDB: tissue-specific gene database in cancer   The TissGDB Website is here.
-  Publication Link Nucleic Acids Res. 2018 Jan 4;46(D1):D1031-D1038. doi: 10.1093/nar/gkx850
-  Representative Tissue-Specific Gene Expression Resources  The Human Protein Atlas (HPA) Tissue-specific Gene Expression and Regulation (TiGER) Genotype-Tissue Expression (GTEx)  Feature  2461 Tissue Specific Genes (TissGenes) Across 22 Tissue Types Match the 28 Cancer types of The Cancer Genome Atlas (TCGA)  Analyses  Identified hundreds of TissGenes universally kept or lost tissue-specific gene expression cancer type-specific isoform expression fusion with oncogenes or tumor suppressor genes markers for protective or risk prognosis  Seven Categories of Annotations  TissGeneSummary TissGeneExp TissGene-miRNA TissGeneMut  TissGeneSNV TissGeneCNV TissGeneFusions   TissGeneNet  CePIN  Cytoscape R     TissGeneProg  overall survival, OS relapse free survival, RFS   TissGeneClin  TissGeneDrug TissGeneDisease</description>
+      <description>TissGDB: tissue-specific gene database in cancer   The TissGDB Website is here.</description>
     </item>
     
   </channel>
