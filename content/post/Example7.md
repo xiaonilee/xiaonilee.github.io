@@ -25,7 +25,7 @@ menu:
     weight: 1
 ---
 
-# Metastatic breast cancer and sepsis: monocytes
+## Metastatic breast cancer and sepsis: monocytes
 
 **OUTLINE**
 Analysis of the total population of monocytes from patients with metastatic breast cancer (MBC), sepsis, or tuberculosis.

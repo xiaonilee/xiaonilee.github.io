@@ -7,7 +7,7 @@ title = "xiaoni's blog"
 enableRobotsTXT = true
 enableEmoji = true
 theme = "jane"
-
+summaryLength = 30
 hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
 paginate = 3              # Number of articles displayed on the homepage  # 首页每页显示的文章数
 rssLimit = 20             # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
@@ -57,14 +57,14 @@ defaultContentLanguage = "en"           # Default language to use
   since = "2020"            # Site creation time          # 站点建立时间
   homeFullContent = false   # if false, show post summaries on home page. Otherwise show full content.
   rssFullContent = false     # if false, Rss feed instead of the summary
-
+  
   # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
   logoTitle = "Xiaoni's blog"        # default: the title value    # 默认值: 上面设置的title值
   keywords = ["xiaonili", "xiaonilee","xiaoni"]
   description = "xiaoni's blog"
 
   # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
-  dateFormatToUse = "2020-09-11"
+  dateFormatToUse = "2006-01-02"
 
   # 一些全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能，在 archetypes/default.md 查看更多信息。
   # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
