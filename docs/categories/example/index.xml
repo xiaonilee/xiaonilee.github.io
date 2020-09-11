@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>xiaoni&#39;s blog</title>
-    <link>https://xiaonilee.github.io/</link>
-    <description>Recent content on xiaoni&#39;s blog</description>
+    <title>Example on xiaoni&#39;s blog</title>
+    <link>https://xiaonilee.github.io/categories/example/</link>
+    <description>Recent content in Example on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 10 Sep 2020 16:01:23 +0800</lastBuildDate>
     
-        <atom:link href="https://xiaonilee.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xiaonilee.github.io/categories/example/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,21 +17,8 @@
       <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
       
       <guid>https://xiaonilee.github.io/post/example7/</guid>
-      
-        <description>Metastatic breast cancer and sepsis: monocytes OUTLINE Analysis of the total population of monocytes from patients with metastatic breast cancer (MBC), sepsis, or tuberculosis.
+      <description>Metastatic breast cancer and sepsis: monocytes OUTLINE Analysis of the total population of monocytes from patients with metastatic breast cancer (MBC), sepsis, or tuberculosis.
  click on &amp;lsquo;VIEW MY DATA&amp;rsquo; and upload data: &amp;lsquo;genomicGDS5819_gene-level.tsv&amp;rsquo; and &amp;lsquo;phenotypeGDS5819.tsv&amp;rsquo;  Back to &amp;lsquo;VISUALIZATION&amp;rsquo; Search for a study, choose &amp;lsquo;Metastatic Breast Cancer and Sepsis&amp;rsquo; Add phenotype, choose &amp;lsquo;Disease&amp;rsquo; Add genes: HLA-DRB6 HLA-DRB4 CD86 IL1B CD83 TNF Dataset: My Computer Hub choose &amp;lsquo;genomicGDS5819_gene-level.tsv&amp;rsquo; Add column, Add genes: RNASE3 NKG7 OLFM4, CHI3L1, CAMP, LOC653600 PGLYRP1 CTSG, DEFA4, MPO, CEACAM6, BPI, AZU1 CYP4F3, ANXA3, MS4A3, COL17A1, MMP9, ARG1, S100P IL18RAP, CA4, Rgr, TNFAIP6  for column C and column D, to click on &amp;lsquo;Display&amp;rsquo;, Adjust Display Settings, color transformation is be replaced with &amp;lsquo;center by column mean: x - column average&amp;rsquo;  figure for the relationship between Disease and column C Genes  figure for the relationship between Disease and column D Genes  Analysis figure for the relationship between Disease and column C Genes, by removing parameter of tuberculosis  Analysis figure for the relationship between Disease and column D Genes, by removing parameter of tuberculosis   IN SUMMARY, results provide insight into molecular similarities between monocytes from MBC patients and reprogrammed immunosuppressive monocytes from sepsis patients.</description>
-      
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://xiaonilee.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/about/</guid>
-      
-        <description></description>
-      
     </item>
     
   </channel>
