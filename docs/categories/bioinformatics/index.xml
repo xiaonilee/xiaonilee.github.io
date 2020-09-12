@@ -12,21 +12,21 @@
     
     
     <item>
-      <title>Example7</title>
-      <link>https://xiaonilee.github.io/post/example7/</link>
-      <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
-      
-      <guid>https://xiaonilee.github.io/post/example7/</guid>
-      <description>Metastatic breast cancer and sepsis: monocytes OUTLINE Analysis of the total population of monocytes from patients with metastatic breast cancer (MBC), sepsis, or tuberculosis.</description>
-    </item>
-    
-    <item>
-      <title>TissGDB</title>
+      <title>TissGDB: tissue-specific gene database in cancer</title>
       <link>https://xiaonilee.github.io/post/tissgdb/</link>
       <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
       
       <guid>https://xiaonilee.github.io/post/tissgdb/</guid>
       <description>TissGDB: tissue-specific gene database in cancer   The TissGDB Website is here.</description>
+    </item>
+    
+    <item>
+      <title>UCSC Xena_Local Xena Data Hub</title>
+      <link>https://xiaonilee.github.io/post/localxenadatahub/</link>
+      <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/localxenadatahub/</guid>
+      <description>Metastatic breast cancer and sepsis: monocytes OUTLINE Analysis of the total population of monocytes from patients with metastatic breast cancer (MBC), sepsis, or tuberculosis.</description>
     </item>
     
   </channel>
