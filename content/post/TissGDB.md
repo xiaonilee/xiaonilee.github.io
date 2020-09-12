@@ -1,5 +1,5 @@
 ---
-title: "TissGDB"
+title: "TissGDB: tissue-specific gene database in cancer"
 date: 2020-09-10T16:01:23+08:00
 lastmod: 2020-09-11T16:01:23+08:00
 draft: false
