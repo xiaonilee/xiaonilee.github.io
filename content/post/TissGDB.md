@@ -1,7 +1,7 @@
 ---
 title: "TissGDB: tissue-specific gene database in cancer"
-date: 2020-09-10T16:01:23+08:00
-lastmod: 2020-09-11T16:01:23+08:00
+date: 2020-09-10
+lastmod: 2020-09-11
 draft: false
 tags: ["TissGDB", "Bioinformatics", "Database"]
 categories: ["Bioinformatics", "Database"]
@@ -25,7 +25,11 @@ menu:
     weight: 1
 ---
 
-## TissGDB: tissue-specific gene database in cancer
+TissGDB is the tissue-specific gene annotation database in cancer, aiming to provide a resource or reference for cancer and the related disease studies in the context of tissue specificity.
+
+<!--more-->
+
+## About
 
 - The **TissGDB Website** is [here](https://bioinfo.uth.edu/TissGDB/).
 

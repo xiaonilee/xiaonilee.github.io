@@ -6,7 +6,7 @@
     <description>Recent content in Categories on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 10 Sep 2020 16:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xiaonilee.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Bioinformatics</title>
       <link>https://xiaonilee.github.io/categories/bioinformatics/</link>
-      <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
+      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/categories/bioinformatics/</guid>
       <description></description>
@@ -23,18 +23,9 @@
     <item>
       <title>Database</title>
       <link>https://xiaonilee.github.io/categories/database/</link>
-      <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
+      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/categories/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Example</title>
-      <link>https://xiaonilee.github.io/categories/example/</link>
-      <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
-      
-      <guid>https://xiaonilee.github.io/categories/example/</guid>
       <description></description>
     </item>
     

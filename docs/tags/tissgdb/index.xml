@@ -6,7 +6,7 @@
     <description>Recent content in TissGDB on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 10 Sep 2020 16:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xiaonilee.github.io/tags/tissgdb/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,10 @@
     <item>
       <title>TissGDB: tissue-specific gene database in cancer</title>
       <link>https://xiaonilee.github.io/post/tissgdb/</link>
-      <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/post/tissgdb/</guid>
-      <description>TissGDB: tissue-specific gene database in cancer   The TissGDB Website is here.</description>
+      <description>&lt;p&gt;TissGDB is the tissue-specific gene annotation database in cancer, aiming to provide a resource or reference for cancer and the related disease studies in the context of tissue specificity.&lt;/p&gt;</description>
     </item>
     
   </channel>

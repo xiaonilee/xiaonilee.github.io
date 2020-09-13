@@ -6,24 +6,15 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 10 Sep 2020 16:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xiaonilee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Bioinformatics</title>
-      <link>https://xiaonilee.github.io/tags/bioinformatics/</link>
-      <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/bioinformatics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Breast</title>
       <link>https://xiaonilee.github.io/tags/breast/</link>
-      <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
+      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/breast/</guid>
       <description></description>
@@ -32,34 +23,16 @@
     <item>
       <title>Cancer</title>
       <link>https://xiaonilee.github.io/tags/cancer/</link>
-      <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
+      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/cancer/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Database</title>
-      <link>https://xiaonilee.github.io/tags/database/</link>
-      <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TissGDB</title>
-      <link>https://xiaonilee.github.io/tags/tissgdb/</link>
-      <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/tissgdb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>UCSC</title>
       <link>https://xiaonilee.github.io/tags/ucsc/</link>
-      <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
+      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/ucsc/</guid>
       <description></description>
@@ -68,9 +41,36 @@
     <item>
       <title>Xena</title>
       <link>https://xiaonilee.github.io/tags/xena/</link>
-      <pubDate>Thu, 10 Sep 2020 16:01:23 +0800</pubDate>
+      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/xena/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bioinformatics</title>
+      <link>https://xiaonilee.github.io/tags/bioinformatics/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>https://xiaonilee.github.io/tags/database/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TissGDB</title>
+      <link>https://xiaonilee.github.io/tags/tissgdb/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/tissgdb/</guid>
       <description></description>
     </item>
     
