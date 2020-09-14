@@ -1,7 +1,7 @@
 ---
 title: "TissGDB: tissue-specific gene database in cancer"
 date: 2020-09-10
-lastmod: 2020-09-11
+lastmod: 2020-09-14
 draft: false
 tags: ["TissGDB", "Cancer", "Database"]
 categories: ["Cancer Research", "Database"]
