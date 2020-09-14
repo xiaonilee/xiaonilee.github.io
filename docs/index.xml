@@ -31,7 +31,9 @@
       
       <guid>https://xiaonilee.github.io/post/localxenadatahub/</guid>
       
-        <description>&lt;p&gt;Application example: Analysis of the total population of monocytes from patients with metastatic breast cancer (MBC), sepsis, or tuberculosis.&lt;/p&gt;</description>
+        <description>&lt;p&gt;Load the private data to Local Xena Data Hub.&lt;/p&gt;
+&lt;p&gt;The Local Xena Browser is the same as the public browser, which shows same &lt;strong&gt;VISUALIZATION&lt;/strong&gt; and &lt;strong&gt;TOOLS&lt;/strong&gt; no matter where the data is located.&lt;/p&gt;
+&lt;p&gt;An Application example: Analysis of the total population of monocytes from patients with metastatic breast cancer (MBC), sepsis, or tuberculosis.&lt;/p&gt;</description>
       
     </item>
     
