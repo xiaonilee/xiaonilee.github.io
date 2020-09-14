@@ -29,23 +29,23 @@ TissGDB is the tissue-specific gene annotation database in cancer, aiming to pro
 
 <!--more-->
 
-## About
+## Brief Information
 
-- The **TissGDB Website** is [here](https://bioinfo.uth.edu/TissGDB/).
+- The TissGDB `WEBSITE` is [here](https://bioinfo.uth.edu/TissGDB/).
 
 - **Publication Link** [*Nucleic Acids Res.  2018 Jan 4;46(D1):D1031-D1038. doi: 10.1093/nar/gkx850*](https://pubmed.ncbi.nlm.nih.gov/29036590/)
 
 ## Representative Tissue-Specific Gene Expression Resources
 
-- The Human Protein Atlas (**HPA**)
-- Tissue-specific Gene Expression and Regulation (**TiGER**)
-- Genotype-Tissue Expression (**GTEx**)
+- The Human Protein Atlas (`HPA`)
+- Tissue-specific Gene Expression and Regulation (`TiGER`)
+- Genotype-Tissue Expression (`GTEx`)
 
-## Feature
+## Develop Feature
 
-- **2461** Tissue Specific Genes (TissGenes)
-- Across **22** Tissue Types
-- Match the **28** Cancer types of The Cancer Genome Atlas (TCGA)
+- `2461` Tissue Specific Genes (TissGenes)
+- Across `22` Tissue Types
+- Match the `28` Cancer types of The Cancer Genome Atlas (TCGA)
 
 ## Analyses
 
@@ -75,4 +75,4 @@ TissGDB is the tissue-specific gene annotation database in cancer, aiming to pro
      - TissGeneDrug
      - TissGeneDisease
 
-[![TissGDB logo](./TissGDB.png)](https://bioinfo.uth.edu/TissGDB/)
+[![TissGDB logo](../tissgdb/TissGDB.png)](https://bioinfo.uth.edu/TissGDB/)
