@@ -12,15 +12,15 @@
     
     
     <item>
-      <title>Loading new data on samples we already have in Xena</title>
+      <title>Private and Public Data Put Together</title>
       <link>https://xiaonilee.github.io/post/localaddtotcga/</link>
       <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/post/localaddtotcga/</guid>
       
-        <description>&lt;p&gt;Loading new data on samples we already have in Xena.&lt;/p&gt;
-&lt;p&gt;TCGA database is TCGA Prostate Cancer (PRAD);&lt;/p&gt;
-&lt;p&gt;Local data is from &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S2211124718303954&#34;&gt;&lt;em&gt;&lt;strong&gt;Cell Rep. PMID# 29617662&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;</description>
+        <description>&lt;p&gt;Put private data and public Xena Data together via UCSC Xena Hub .&lt;/p&gt;
+&lt;p&gt;Local data is from publication &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S2211124718303954&#34;&gt;&lt;em&gt;Cell Rep. PMID# 29617662&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;TCGA database is &lt;code&gt;TCGA Prostate Cancer (PRAD)&lt;/code&gt;;&lt;/p&gt;</description>
       
     </item>
     
