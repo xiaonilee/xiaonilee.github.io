@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prostate on xiaoni&#39;s blog</title>
+    <link>https://xiaonilee.github.io/tags/prostate/</link>
+    <description>Recent content in Prostate on xiaoni&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://xiaonilee.github.io/tags/prostate/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Loading new data on samples we already have in Xena</title>
+      <link>https://xiaonilee.github.io/post/localaddtotcga/</link>
+      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/localaddtotcga/</guid>
+      <description>&lt;p&gt;Loading new data on samples we already have in Xena.&lt;/p&gt;
+&lt;p&gt;TCGA database is TCGA Prostate Cancer (PRAD);&lt;/p&gt;
+&lt;p&gt;Local data is from &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S2211124718303954&#34;&gt;&lt;em&gt;&lt;strong&gt;Cell Rep. PMID# 29617662&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
