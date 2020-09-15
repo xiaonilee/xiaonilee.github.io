@@ -6,10 +6,55 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 11 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xiaonilee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Database</title>
+      <link>https://xiaonilee.github.io/tags/database/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Features</title>
+      <link>https://xiaonilee.github.io/tags/features/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/features/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>signatures</title>
+      <link>https://xiaonilee.github.io/tags/signatures/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/signatures/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UCSC</title>
+      <link>https://xiaonilee.github.io/tags/ucsc/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/ucsc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xena</title>
+      <link>https://xiaonilee.github.io/tags/xena/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/xena/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Cancer</title>
@@ -21,38 +66,11 @@
     </item>
     
     <item>
-      <title>Database</title>
-      <link>https://xiaonilee.github.io/tags/database/</link>
-      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Prostate</title>
       <link>https://xiaonilee.github.io/tags/prostate/</link>
       <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/prostate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UCSC</title>
-      <link>https://xiaonilee.github.io/tags/ucsc/</link>
-      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/ucsc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Xena</title>
-      <link>https://xiaonilee.github.io/tags/xena/</link>
-      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/xena/</guid>
       <description></description>
     </item>
     
