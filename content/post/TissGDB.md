@@ -29,7 +29,7 @@ TissGDB is the tissue-specific gene annotation database in cancer, aiming to pro
 
 <!--more-->
 
-## Brief Information
+## In Brief
 
 - The TissGDB `WEBSITE` is [here](https://bioinfo.uth.edu/TissGDB/).
 
