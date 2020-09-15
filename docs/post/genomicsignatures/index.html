@@ -23,12 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Xiaoni" />
-  <meta name="description" content="Genomic Signatures_Consensus Subtypes   click on &amp;lsquo;VIEW MY DATA&amp;rsquo; and &amp;lsquo;Select Data File&amp;rsquo;.
-  choose &amp;lsquo;CMS_subtypes.txt&amp;rsquo;.
-  choose &amp;lsquo;Phenotypic data: categories or non-genomic in a rectangle (e.g. age, mutation status: &amp;lsquo;wt&amp;rsquo; or &amp;lsquo;mutant&amp;rsquo;)&amp;rsquo;.
-  choose &amp;lsquo;The first column is sample IDs&amp;rsquo;.
-  choose &amp;lsquo;There is other public data in Xena on these samples (e.g. TCGA) and want to connect to it.&amp;rsquo;
-  choose Search for study &amp;lsquo;TCGA Colon and Rectal Cancer (COADREAD)&amp;rsquo;" />
+  <meta name="description" content="Genomic signatures, sometimes expressed as a weighted sum of genes, are an algebra over genes.
+" />
 
   <meta name="keywords" content="xiaonili, xiaonilee, xiaoni" />
 
@@ -65,38 +61,23 @@
 
 
 <meta property="og:title" content="UCSC Xena Features_Genomic Signatures" />
-<meta property="og:description" content="Genomic Signatures_Consensus Subtypes   click on &lsquo;VIEW MY DATA&rsquo; and &lsquo;Select Data File&rsquo;.
-  choose &lsquo;CMS_subtypes.txt&rsquo;.
-  choose &lsquo;Phenotypic data: categories or non-genomic in a rectangle (e.g. age, mutation status: &lsquo;wt&rsquo; or &lsquo;mutant&rsquo;)&rsquo;.
-  choose &lsquo;The first column is sample IDs&rsquo;.
-  choose &lsquo;There is other public data in Xena on these samples (e.g. TCGA) and want to connect to it.&rsquo;
-  choose Search for study &lsquo;TCGA Colon and Rectal Cancer (COADREAD)&rsquo;" />
+<meta property="og:description" content="Genomic signatures, sometimes expressed as a weighted sum of genes, are an algebra over genes." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xiaonilee.github.io/post/genomicsignatures/" />
 <meta property="article:published_time" content="2020-09-14T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-09-15T00:00:00+00:00" />
 <meta itemprop="name" content="UCSC Xena Features_Genomic Signatures">
-<meta itemprop="description" content="Genomic Signatures_Consensus Subtypes   click on &lsquo;VIEW MY DATA&rsquo; and &lsquo;Select Data File&rsquo;.
-  choose &lsquo;CMS_subtypes.txt&rsquo;.
-  choose &lsquo;Phenotypic data: categories or non-genomic in a rectangle (e.g. age, mutation status: &lsquo;wt&rsquo; or &lsquo;mutant&rsquo;)&rsquo;.
-  choose &lsquo;The first column is sample IDs&rsquo;.
-  choose &lsquo;There is other public data in Xena on these samples (e.g. TCGA) and want to connect to it.&rsquo;
-  choose Search for study &lsquo;TCGA Colon and Rectal Cancer (COADREAD)&rsquo;">
+<meta itemprop="description" content="Genomic signatures, sometimes expressed as a weighted sum of genes, are an algebra over genes.">
 <meta itemprop="datePublished" content="2020-09-14T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-09-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="119">
+<meta itemprop="wordCount" content="137">
 
 
 
 <meta itemprop="keywords" content="UCSC,Xena,Features,signatures,Database," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="UCSC Xena Features_Genomic Signatures"/>
-<meta name="twitter:description" content="Genomic Signatures_Consensus Subtypes   click on &lsquo;VIEW MY DATA&rsquo; and &lsquo;Select Data File&rsquo;.
-  choose &lsquo;CMS_subtypes.txt&rsquo;.
-  choose &lsquo;Phenotypic data: categories or non-genomic in a rectangle (e.g. age, mutation status: &lsquo;wt&rsquo; or &lsquo;mutant&rsquo;)&rsquo;.
-  choose &lsquo;The first column is sample IDs&rsquo;.
-  choose &lsquo;There is other public data in Xena on these samples (e.g. TCGA) and want to connect to it.&rsquo;
-  choose Search for study &lsquo;TCGA Colon and Rectal Cancer (COADREAD)&rsquo;"/>
+<meta name="twitter:description" content="Genomic signatures, sometimes expressed as a weighted sum of genes, are an algebra over genes."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -412,7 +393,7 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#genomic-signatures_consensus-subtypes">Genomic Signatures_Consensus Subtypes</a></li>
+    <li><a href="#example-of-a-genomic-signature_consensus-subtypes">Example of a Genomic Signature_Consensus Subtypes</a></li>
   </ul>
 </nav>
   </div>
@@ -420,29 +401,30 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <h2 id="genomic-signatures_consensus-subtypes">Genomic Signatures_Consensus Subtypes</h2>
+      <p>Genomic signatures, sometimes expressed as a weighted sum of genes, are an algebra over genes.</p>
+<h2 id="example-of-a-genomic-signature_consensus-subtypes">Example of a Genomic Signature_Consensus Subtypes</h2>
 <ul>
 <li>
-<p>click on &lsquo;VIEW MY DATA&rsquo; and &lsquo;Select Data File&rsquo;.</p>
+<p>click on <code>VIEW MY DATA</code> and <code>Select Data File</code>.</p>
 </li>
 <li>
-<p>choose &lsquo;CMS_subtypes.txt&rsquo;.</p>
+<p>choose <code>CMS_subtypes.txt</code>.</p>
 </li>
 <li>
-<p>choose &lsquo;Phenotypic data: categories or non-genomic in a rectangle (e.g. age, mutation status: &lsquo;wt&rsquo; or &lsquo;mutant&rsquo;)&rsquo;.</p>
+<p>choose <code>Phenotypic data: categories or non-genomic in a rectangle (e.g. age, mutation status: 'wt' or 'mutant')</code>.</p>
 </li>
 <li>
-<p>choose &lsquo;The first column is sample IDs&rsquo;.</p>
+<p>choose <code>The first column is sample IDs</code>.</p>
 </li>
 <li>
-<p>choose &lsquo;There is other public data in Xena on these samples (e.g. TCGA) and want to connect to it.&rsquo;</p>
+<p>choose <code>There is other public data in Xena on these samples (e.g. TCGA) and want to connect to it.</code></p>
 </li>
 <li>
 <p>choose Search for study &lsquo;TCGA Colon and Rectal Cancer (COADREAD)&rsquo;</p>
 </li>
 <li>
 <p>click on <code>IMPORT</code> and <code>FINISH</code></p>
-<p><img src="./step1.png" alt="step 1"></p>
+<p><img src="step1.png" alt="step 1"></p>
 </li>
 <li>
 <p>back to <code>VISUALIZATION</code></p>
@@ -455,14 +437,13 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>Final setting</p>
-<p><img src="./step2.png" alt="step2"></p>
+<p><img src="step2.png" alt="step2"></p>
 </li>
 <li>
 <p>Figure from <code>Go to chart</code></p>
-<p><img src="./figure.png" alt="figure"></p>
+<p><img src="figure.png" alt="figure"></p>
 </li>
 </ul>
-
     </div>
 
     

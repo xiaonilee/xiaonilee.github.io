@@ -17,12 +17,7 @@
       <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/post/genomicsignatures/</guid>
-      <description>Genomic Signatures_Consensus Subtypes   click on &amp;lsquo;VIEW MY DATA&amp;rsquo; and &amp;lsquo;Select Data File&amp;rsquo;.
-  choose &amp;lsquo;CMS_subtypes.txt&amp;rsquo;.
-  choose &amp;lsquo;Phenotypic data: categories or non-genomic in a rectangle (e.g. age, mutation status: &amp;lsquo;wt&amp;rsquo; or &amp;lsquo;mutant&amp;rsquo;)&amp;rsquo;.
-  choose &amp;lsquo;The first column is sample IDs&amp;rsquo;.
-  choose &amp;lsquo;There is other public data in Xena on these samples (e.g. TCGA) and want to connect to it.&amp;rsquo;
-  choose Search for study &amp;lsquo;TCGA Colon and Rectal Cancer (COADREAD)&amp;rsquo;</description>
+      <description>&lt;p&gt;Genomic signatures, sometimes expressed as a weighted sum of genes, are an algebra over genes.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -42,9 +37,7 @@
       <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/post/localxenadatahub/</guid>
-      <description>&lt;p&gt;Load the private data to Local Xena Data Hub.&lt;/p&gt;
-&lt;p&gt;The Local Xena Browser is the same as the public browser, which shows same &lt;code&gt;VISUALIZATION&lt;/code&gt; and &lt;code&gt;TOOLS&lt;/code&gt; no matter where the data is located.&lt;/p&gt;
-&lt;p&gt;An Application example: Analysis of the total population of monocytes from patients with metastatic breast cancer (MBC), sepsis, or tuberculosis.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Load the private data to Local Xena Data Hub.&lt;/p&gt;</description>
     </item>
     
   </channel>

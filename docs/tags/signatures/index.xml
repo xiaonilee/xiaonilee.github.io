@@ -17,12 +17,7 @@
       <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/post/genomicsignatures/</guid>
-      <description>Genomic Signatures_Consensus Subtypes   click on &amp;lsquo;VIEW MY DATA&amp;rsquo; and &amp;lsquo;Select Data File&amp;rsquo;.
-  choose &amp;lsquo;CMS_subtypes.txt&amp;rsquo;.
-  choose &amp;lsquo;Phenotypic data: categories or non-genomic in a rectangle (e.g. age, mutation status: &amp;lsquo;wt&amp;rsquo; or &amp;lsquo;mutant&amp;rsquo;)&amp;rsquo;.
-  choose &amp;lsquo;The first column is sample IDs&amp;rsquo;.
-  choose &amp;lsquo;There is other public data in Xena on these samples (e.g. TCGA) and want to connect to it.&amp;rsquo;
-  choose Search for study &amp;lsquo;TCGA Colon and Rectal Cancer (COADREAD)&amp;rsquo;</description>
+      <description>&lt;p&gt;Genomic signatures, sometimes expressed as a weighted sum of genes, are an algebra over genes.&lt;/p&gt;</description>
     </item>
     
   </channel>
