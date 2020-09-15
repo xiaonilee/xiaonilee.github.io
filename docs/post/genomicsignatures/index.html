@@ -70,7 +70,7 @@
 <meta itemprop="description" content="Genomic signatures, sometimes expressed as a weighted sum of genes, are an algebra over genes.">
 <meta itemprop="datePublished" content="2020-09-14T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-09-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="137">
+<meta itemprop="wordCount" content="230">
 
 
 
@@ -393,7 +393,8 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#example-of-a-genomic-signature_consensus-subtypes">Example of a Genomic Signature_Consensus Subtypes</a></li>
+    <li><a href="#in-brief">In Brief</a></li>
+    <li><a href="#protocol">Protocol</a></li>
   </ul>
 </nav>
   </div>
@@ -402,48 +403,88 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>Genomic signatures, sometimes expressed as a weighted sum of genes, are an algebra over genes.</p>
-<h2 id="example-of-a-genomic-signature_consensus-subtypes">Example of a Genomic Signature_Consensus Subtypes</h2>
+<h2 id="in-brief">In Brief</h2>
 <ul>
 <li>
-<p>click on <code>VIEW MY DATA</code> and <code>Select Data File</code>.</p>
+<p>Genomic signatures:</p>
+<ul>
+<li>
+<p>a <strong>list</strong> of genes</p>
 </li>
 <li>
-<p>choose <code>CMS_subtypes.txt</code>.</p>
+<p><strong>weighted</strong> gene(s)</p>
 </li>
 <li>
-<p>choose <code>Phenotypic data: categories or non-genomic in a rectangle (e.g. age, mutation status: 'wt' or 'mutant')</code>.</p>
+<p>an <strong>algebra</strong> over genes</p>
+</li>
+</ul>
 </li>
 <li>
-<p>choose <code>The first column is sample IDs</code>.</p>
+<p>Example of interpretation</p>
+<ul>
+<li>
+<p>data from a <strong>publication</strong><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
 </li>
 <li>
-<p>choose <code>There is other public data in Xena on these samples (e.g. TCGA) and want to connect to it.</code></p>
+<p><strong>gene signature</strong></p>
+<ul>
+<li>=FN1 + VIM + ZEB1 + ZEB2 + TWIST1 + TWIST2 + SNAI1 + SNAI2 + CDH2 - CLDN4 - CLDN7 - TJP3 - MUC1 - CDH1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="protocol">Protocol</h2>
+<ul>
+<li>
+<p>Click on <code>VIEW MY DATA</code> and <code>Select Data File</code>.</p>
 </li>
 <li>
-<p>choose Search for study &lsquo;TCGA Colon and Rectal Cancer (COADREAD)&rsquo;</p>
+<p>Choose local file <code>CMS_subtypes.txt</code>.</p>
 </li>
 <li>
-<p>click on <code>IMPORT</code> and <code>FINISH</code></p>
+<p>Choose <code>Phenotypic data: categories or non-genomic in a rectangle (e.g. age, mutation status: 'wt' or 'mutant')</code>.</p>
+</li>
+<li>
+<p>Choose <code>The first column is sample IDs</code>.</p>
+</li>
+<li>
+<p>Choose <code>There is other public data in Xena on these samples (e.g. TCGA) and want to connect to it.</code>.</p>
+</li>
+<li>
+<p>Choose Search for study <code>TCGA Colon and Rectal Cancer (COADREAD)</code>.</p>
+</li>
+<li>
+<p>Click on <code>IMPORT</code> and <code>FINISH</code>.</p>
 <p><img src="step1.png" alt="step 1"></p>
 </li>
 <li>
-<p>back to <code>VISUALIZATION</code></p>
+<p>Back to <code>VISUALIZATION</code>.</p>
 </li>
 <li>
-<p>Add Phenotype <code>CMS_subtype</code></p>
+<p>Click <code>Search Phenotype</code> to add Phenotype <code>CMS_subtype</code>.</p>
 </li>
 <li>
-<p>Add a new column and choose &lsquo;gene expression&rsquo;: <code>=FN1 + VIM + ZEB1 + ZEB2 + TWIST1 + TWIST2 + SNAI1 + SNAI2 + CDH2 - CLDN4 - CLDN7 - TJP3 - MUC1 - CDH1</code></p>
+<p><strong>Add a new column</strong> and choose <code>gene expression</code>: <code>=FN1 + VIM + ZEB1 + ZEB2 + TWIST1 + TWIST2 + SNAI1 + SNAI2 + CDH2 - CLDN4 - CLDN7 - TJP3 - MUC1 - CDH1</code>.</p>
 </li>
 <li>
-<p>Final setting</p>
+<p>Final input.</p>
 <p><img src="step2.png" alt="step2"></p>
 </li>
 <li>
-<p>Figure from <code>Go to chart</code></p>
+<p>Choose <code>Chart &amp; Statistics</code> of Column C <code>or</code> Column D to generate figures.</p>
 <p><img src="figure.png" alt="figure"></p>
 </li>
 </ul>
+<p><strong>In summary</strong>, the present study proposed that taxonomy of four consensus molecular subtypes (CMS) of colorectal cancer(CRC) reflects significant biological differences in the gene expression-based molecular subtypes.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4636487/">Nat Med. 2015 Nov;21(11):1350-6. doi: 10.1038/nm.3967.</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
     </div>
 
     
