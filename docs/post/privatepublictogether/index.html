@@ -70,7 +70,7 @@
 <meta itemprop="description" content="Put private data and public Xena Data together via UCSC Xena Hub .">
 <meta itemprop="datePublished" content="2020-09-11T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-09-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="120">
+<meta itemprop="wordCount" content="190">
 
 
 
@@ -436,10 +436,10 @@ if (!doNotTrack) {
 <p>Add 3 columns for <code>ERG</code>: <code>Gene expression</code>, <code>Copy number</code>, <code>Exon expression</code>.</p>
 </li>
 <li>
-<p>Add <code>TMPRSS2</code> <code>Copy number</code>.</p>
+<p>Add column for <code>TMPRSS2</code>, <code>Copy number</code>.</p>
 </li>
 <li>
-<p>Add <code>chr21</code> <code>Copy number</code>.</p>
+<p>Add column for <code>chr21</code>, <code>Copy number</code>.</p>
 <p><img src="step0.png" alt="step 0"></p>
 </li>
 </ul>
@@ -472,6 +472,21 @@ if (!doNotTrack) {
 <li>
 <p>Add <strong>Phenotype</strong> <code>ERG-TMPRSS2 fusion</code> and generate the final input.</p>
 <p><img src="step7.png" alt="step 7"></p>
+</li>
+</ul>
+<p><strong>In summary</strong>, as shown in the last image:</p>
+<ul>
+<li>
+<p>About half of the samples have high expression of ERG ( Column <code>B</code>).</p>
+</li>
+<li>
+<p>The high expression of ERG is specifically located in the exons from 3&rsquo; end of genes ( Column <code>C</code>).</p>
+</li>
+<li>
+<p>Samples with over-expression of ERG shows a deletion in chromosome 21 ( Column <code>D</code>).</p>
+</li>
+<li>
+<p>Fusion calls agree with expression and Copy number data ( Column <code>EFG</code>).</p>
 </li>
 </ul>
     </div>
