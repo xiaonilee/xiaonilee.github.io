@@ -38,5 +38,14 @@
       <description>&lt;p&gt;Load the private data to Local Xena Data Hub.&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Load Data From Public Database</title>
+      <link>https://xiaonilee.github.io/post/loaddata/</link>
+      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/loaddata/</guid>
+      <description>&lt;p&gt;Load and analysis data from publication resources, such as &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/geo/&#34;&gt;GEO&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

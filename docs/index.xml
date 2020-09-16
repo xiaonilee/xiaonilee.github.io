@@ -45,9 +45,20 @@
     </item>
     
     <item>
+      <title>Load Data From Public Database</title>
+      <link>https://xiaonilee.github.io/post/loaddata/</link>
+      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/loaddata/</guid>
+      
+        <description>&lt;p&gt;Load and analysis data from publication resources, such as &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/geo/&#34;&gt;GEO&lt;/a&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>TissGDB: tissue-specific gene database in cancer</title>
       <link>https://xiaonilee.github.io/post/tissgdb/</link>
-      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/post/tissgdb/</guid>
       
