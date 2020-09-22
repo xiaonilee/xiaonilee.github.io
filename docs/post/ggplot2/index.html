@@ -67,13 +67,13 @@ Data from Hadle Wickham &lsquo;ggplot2 Elegant Graphics for Data Analysis&rsquo;
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xiaonilee.github.io/post/ggplot2/" />
 <meta property="article:published_time" content="2020-09-19T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-09-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-22T00:00:00+00:00" />
 <meta itemprop="name" content="R package_ggplot2">
 <meta itemprop="description" content="R package: ggplot2.
 Data from Hadle Wickham &lsquo;ggplot2 Elegant Graphics for Data Analysis&rsquo;.">
 <meta itemprop="datePublished" content="2020-09-19T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2020-09-21T00:00:00+00:00" />
-<meta itemprop="wordCount" content="487">
+<meta itemprop="dateModified" content="2020-09-22T00:00:00+00:00" />
+<meta itemprop="wordCount" content="513">
 
 
 
@@ -419,8 +419,8 @@ if (!doNotTrack) {
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#dataset">Dataset</a></li>
         <li><a href="#basic-plot">Basic Plot</a></li>
-        <li><a href="#fix">Fix</a></li>
-        <li><a href="#setting-theme">setting theme</a></li>
+        <li><a href="#fix-with-alpha">Fix with alpha</a></li>
+        <li><a href="#setting-theme">Setting theme</a></li>
         <li><a href="#ggplot2-extensions">ggplot2 extensions</a></li>
       </ul>
     </li>
@@ -459,7 +459,7 @@ if (!doNotTrack) {
 </div>
 </div><p><img src="dataset.png" alt="dataset"></p>
 <h3 id="basic-plot">Basic Plot</h3>
-<p>1.scatter</p>
+<h4 id="1-scatter">1. scatter</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -471,7 +471,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="scatter.png" alt="scatter"></p>
-<p>2.scatter add line</p>
+<h4 id="2-scatter-add-line">2. scatter add line</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -485,7 +485,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="scatter2.png" alt="scatter2"></p>
-<p>3.scatter add color</p>
+<h4 id="3-scatter-add-color">3. scatter add color</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -497,7 +497,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="scatter3.png" alt="scatter3"></p>
-<p>4.scatter and wrap</p>
+<h4 id="4-scatter-and-wrap">4. scatter and wrap</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -511,7 +511,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="scatter4.png" alt="scatter4"></p>
-<p>5.boxplot</p>
+<h4 id="5-boxplot">5. boxplot</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -523,7 +523,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="boxplot.png" alt="boxplot"></p>
-<p>6.violin plot</p>
+<h4 id="6-violin-plot">6. violin plot</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -535,7 +535,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="violin.png" alt="violin"></p>
-<p>7.overlap</p>
+<h4 id="7-overlap">7. overlap</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -549,7 +549,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="overlap.png" alt="overlap"></p>
-<p>8.histogram</p>
+<h4 id="8-histogram">8. histogram</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -561,7 +561,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="histogram.png" alt="histogram"></p>
-<p>9.freqpoly</p>
+<h4 id="9-freqpoly">9. freqpoly</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -573,7 +573,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="freqpoly.png" alt="freqpoly"></p>
-<p>10.bar</p>
+<h4 id="10-bar">10. bar</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -585,7 +585,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="barplot.png" alt="barplot"></p>
-<p>11.timeplot</p>
+<h4 id="11-timeplot">11. timeplot</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -608,7 +608,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="timeplot2.png" alt="timeplot2"></p>
-<p>12.path</p>
+<h4 id="12-path">12. path</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -622,7 +622,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="path.png" alt="path"></p>
-<p>13.contour</p>
+<h4 id="13-contour">13. contour</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -634,7 +634,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="contour.png" alt="contour"></p>
-<p>14.raster</p>
+<h4 id="14-raster">14. raster</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -646,7 +646,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="raster.png" alt="raster"></p>
-<h3 id="fix">Fix</h3>
+<h3 id="fix-with-alpha">Fix with alpha</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -661,7 +661,7 @@ if (!doNotTrack) {
 <span class="n">norm</span> <span class="o">+</span> <span class="nf">geom_point </span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="m">1</span> <span class="o">/</span> <span class="m">10</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="setting-theme">setting theme</h3>
+</div><h3 id="setting-theme">Setting theme</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -703,6 +703,7 @@ if (!doNotTrack) {
 <li>ggseas 季节调整工具</li>
 <li>ggenealogy 浏览和展示系谱学数据</li>
 </ul>
+<p><strong>In summary</strong>, more knowledge by systematically learning <a href="https://github.com/xiaonilee/Data_Analysis_with_R_byFacebook_ud651">R related course</a>.</p>
     </div>
 
     
