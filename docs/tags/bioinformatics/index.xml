@@ -6,18 +6,19 @@
     <description>Recent content in Bioinformatics on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xiaonilee.github.io/tags/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>TissGDB: tissue-specific gene database in cancer</title>
-      <link>https://xiaonilee.github.io/post/tissgdb/</link>
-      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      <title>R package_ggplot2</title>
+      <link>https://xiaonilee.github.io/post/ggplot2/</link>
+      <pubDate>Sat, 19 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/tissgdb/</guid>
-      <description>&lt;p&gt;TissGDB is the tissue-specific gene annotation database in cancer, aiming to provide a resource or reference for cancer and the related disease studies in the context of tissue specificity.&lt;/p&gt;</description>
+      <guid>https://xiaonilee.github.io/post/ggplot2/</guid>
+      <description>&lt;p&gt;R package: ggplot2.&lt;/p&gt;
+&lt;p&gt;Data from Hadle Wickham &amp;lsquo;ggplot2 Elegant Graphics for Data Analysis&amp;rsquo;.&lt;/p&gt;</description>
     </item>
     
   </channel>
