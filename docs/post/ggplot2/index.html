@@ -73,7 +73,7 @@ Data from Hadle Wickham &lsquo;ggplot2 Elegant Graphics for Data Analysis&rsquo;
 Data from Hadle Wickham &lsquo;ggplot2 Elegant Graphics for Data Analysis&rsquo;.">
 <meta itemprop="datePublished" content="2020-09-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-09-21T00:00:00+00:00" />
-<meta itemprop="wordCount" content="482">
+<meta itemprop="wordCount" content="487">
 
 
 
@@ -392,9 +392,9 @@ if (!doNotTrack) {
           2020-09-19
         </time>
         <div class="post-category">
+            <a href="https://xiaonilee.github.io/categories/r/"> R </a>
             <a href="https://xiaonilee.github.io/categories/cancer-research/"> Cancer Research </a>
-            <a href="https://xiaonilee.github.io/categories/big-data/"> Big Data </a>
-            <a href="https://xiaonilee.github.io/categories/database/"> Database </a>
+            <a href="https://xiaonilee.github.io/categories/bioinformatics/"> Bioinformatics </a>
             
           </div>
         
@@ -434,24 +434,30 @@ if (!doNotTrack) {
       <p>R package: ggplot2.</p>
 <p>Data from Hadle Wickham &lsquo;ggplot2 Elegant Graphics for Data Analysis&rsquo;.</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<ul>
-<li>
-<p>install.packages(&ldquo;ggplot2&rdquo;)</p>
-</li>
-<li>
-<p>library(ggplot2)</p>
-</li>
-</ul>
-<h3 id="dataset">Dataset</h3>
-<ul>
-<li>
-<p>data(mpg)</p>
-</li>
-<li>
-<p>data(economics)</p>
-<p><img src="dataset.png" alt="dataset"></p>
-</li>
-</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#34;ggplot2&#34;</span><span class="p">)</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="dataset">Dataset</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">data</span><span class="p">(</span><span class="n">mpg</span><span class="p">)</span>
+<span class="nf">data</span><span class="p">(</span><span class="n">economics</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="dataset.png" alt="dataset"></p>
 <h3 id="basic-plot">Basic Plot</h3>
 <p>1.scatter</p>
 <div class="highlight"><div class="chroma">

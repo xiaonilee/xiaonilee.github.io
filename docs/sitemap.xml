@@ -51,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/categories/big-data/</loc>
+    <loc>https://xiaonilee.github.io/tags/bioinformatics/</loc>
     <lastmod>2020-09-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/bioinformatics/</loc>
+    <loc>https://xiaonilee.github.io/categories/bioinformatics/</loc>
     <lastmod>2020-09-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -79,13 +79,6 @@
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/categories/database/</loc>
-    <lastmod>2020-09-21T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://xiaonilee.github.io/post/</loc>
     <lastmod>2020-09-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -94,6 +87,13 @@
   
   <url>
     <loc>https://xiaonilee.github.io/tags/r/</loc>
+    <lastmod>2020-09-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/categories/r/</loc>
     <lastmod>2020-09-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -115,6 +115,13 @@
   
   <url>
     <loc>https://xiaonilee.github.io/tags/database/</loc>
+    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/categories/database/</loc>
     <lastmod>2020-09-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

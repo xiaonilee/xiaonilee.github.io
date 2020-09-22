@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Big Data</title>
-      <link>https://xiaonilee.github.io/categories/big-data/</link>
+      <title>Bioinformatics</title>
+      <link>https://xiaonilee.github.io/categories/bioinformatics/</link>
       <pubDate>Sat, 19 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/categories/big-data/</guid>
+      <guid>https://xiaonilee.github.io/categories/bioinformatics/</guid>
       <description></description>
     </item>
     
@@ -30,9 +30,18 @@
     </item>
     
     <item>
+      <title>R</title>
+      <link>https://xiaonilee.github.io/categories/r/</link>
+      <pubDate>Sat, 19 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/categories/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Database</title>
       <link>https://xiaonilee.github.io/categories/database/</link>
-      <pubDate>Sat, 19 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/categories/database/</guid>
       <description></description>
