@@ -73,7 +73,7 @@ Data from Hadle Wickham &lsquo;ggplot2 Elegant Graphics for Data Analysis&rsquo;
 Data from Hadle Wickham &lsquo;ggplot2 Elegant Graphics for Data Analysis&rsquo;.">
 <meta itemprop="datePublished" content="2020-09-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-09-22T00:00:00+00:00" />
-<meta itemprop="wordCount" content="513">
+<meta itemprop="wordCount" content="555">
 
 
 
@@ -415,6 +415,7 @@ if (!doNotTrack) {
   <ul>
     <li>
       <ul>
+        <li><a href="#related-concept">Related Concept</a></li>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#dataset">Dataset</a></li>
         <li><a href="#basic-plot">Basic Plot</a></li>
@@ -432,7 +433,28 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>R package: ggplot2.</p>
 <p>Data from Hadle Wickham &lsquo;ggplot2 Elegant Graphics for Data Analysis&rsquo;.</p>
-<h3 id="prerequisites">Prerequisites</h3>
+<h3 id="related-concept">Related Concept</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">Data</span>
+<span class="n">Aesthetics</span> <span class="c1">#映射</span>
+<span class="n">Geometries</span> <span class="c1">#几何对象</span>
+<span class="n">Facets</span> <span class="c1">#分面</span>
+<span class="n">Statistics</span>
+<span class="n">Coordinates</span> <span class="c1">#坐标系</span>
+<span class="n">Themes</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="prerequisites">Prerequisites</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -450,9 +472,11 @@ if (!doNotTrack) {
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">data</span><span class="p">(</span><span class="n">mpg</span><span class="p">)</span>
+<span class="c1"># if data is from outside: data &lt;- read.table(file, header=T, row.names=NULL, sep=&#34;,)</span>
 <span class="nf">data</span><span class="p">(</span><span class="n">economics</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
@@ -677,25 +701,29 @@ if (!doNotTrack) {
 </div>
 </div><h3 id="ggplot2-extensions">ggplot2 extensions</h3>
 <ul>
-<li>animlnt 制作交互图形，增加询问，筛选链接等</li>
-<li>ggthemes 提供扩展的图形风格主题</li>
-<li>ggmap 提供在线地图服务模块</li>
-<li>ggiraph 绘制交互式的ggplot图形</li>
+<li><a href="https://www.rdocumentation.org/packages/ggthemes">ggthemes</a>, Extra Themes, Scales and Geoms for &lsquo;ggplot2&rsquo;.</li>
+<li><a href="https://www.rdocumentation.org/packages/ggpubr">ggpubr</a>, &lsquo;ggplot2&rsquo; Based Publication Ready Plots.</li>
+<li><a href="https://www.rdocumentation.org/packages/patchwork">patchwork</a>, expands the API, provide mathematical operators for combining multiple plots.</li>
+<li><a href="https://www.rdocumentation.org/packages/ggridges">ggridges</a>,provide a convenient way of visualizing changes in distributions over time or space.</li>
+<li><a href="https://www.rdocumentation.org/packages/ggdendro">ggdendro</a>,Create Dendrograms and Tree Diagrams Using &lsquo;ggplot2&rsquo;.</li>
+<li><a href="https://www.rdocumentation.org/packages/ggmap">ggmap</a>,Spatial Visualization with ggplot2.</li>
+<li><a href="https://www.rdocumentation.org/packages/ggcorrplot">ggcorrplot</a>,visualize easily a correlation matrix using &lsquo;ggplot2&rsquo;.</li>
+<li><a href="https://www.rdocumentation.org/packages/ggiraph">ggiraph</a>, Create interactive &lsquo;ggplot2&rsquo; graphics using &lsquo;htmlwidgets&rsquo;.</li>
 <li>ggstance 实现常见图形的横向版本</li>
-<li>GGally 绘制散点图矩阵</li>
-<li>ggalt 添加额外的坐标轴、geoms等</li>
-<li>ggforce 添加额外geoms等</li>
-<li>ggrepel 避免图形标签重叠</li>
+<li><a href="https://www.rdocumentation.org/packages/GGaly">GGally</a>, Extension to &lsquo;ggplot2&rsquo;,by adding several functions to reduce the complexity of combining geometric objects with transformed data.</li>
+<li><a href="https://www.rdocumentation.org/packages/ggalt">ggalt</a>, Extra Coordinate Systems, Geoms and Statistical Transformations for &lsquo;ggplot2&rsquo;.</li>
+<li><a href="https://www.rdocumentation.org/packages/ggforce">ggforce</a>,Accelerating &lsquo;ggplot2&rsquo;.</li>
+<li><a href="https://www.rdocumentation.org/packages/ggrepel">ggrepel</a>, Automatically Position Non-Overlapping Text Labels with &lsquo;ggplot2&rsquo;.</li>
+<li><a href="https://www.rdocumentation.org/packages/gganimate">gganimate</a>, A Grammar of Animated Graphics.</li>
+<li><a href="https://www.rdocumentation.org/packages/ggradar">ggradar</a>,create radar charts.</li>
 <li>ggraph 绘制网络状、树状等特定形状的图形</li>
 <li>ggpmisc 光生物学相关扩展</li>
 <li>ggbio 提供基因组学数据图形</li>
 <li>geomnet 绘制网络状图形</li>
 <li>ggExtra 绘制图形的边界直方图</li>
-<li>gganimate 绘制动画图</li>
 <li>plotROC 绘制交互式ROC曲线图</li>
 <li>ggspectra 绘制光谱图</li>
 <li>ggnetwork 网络状图形的geoms</li>
-<li>ggradar 绘制雷达图</li>
 <li>ggTimeSeries 时间序列数据可视化</li>
 <li>ggtree 树图可视化</li>
 <li>ggtern 绘制三元图</li>
