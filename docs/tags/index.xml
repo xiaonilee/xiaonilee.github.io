@@ -6,10 +6,37 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xiaonilee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bioinformatics</title>
+      <link>https://xiaonilee.github.io/tags/bioinformatics/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GDC</title>
+      <link>https://xiaonilee.github.io/tags/gdc/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/gdc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TCGA</title>
+      <link>https://xiaonilee.github.io/tags/tcga/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/tcga/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>firehose</title>
@@ -17,24 +44,6 @@
       <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/firehose/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TCGA</title>
-      <link>https://xiaonilee.github.io/tags/tcga/</link>
-      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/tcga/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bioinformatics</title>
-      <link>https://xiaonilee.github.io/tags/bioinformatics/</link>
-      <pubDate>Sat, 19 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/bioinformatics/</guid>
       <description></description>
     </item>
     
