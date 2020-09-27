@@ -288,6 +288,8 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
     write.table(t(xmldataframe),'tmp')
     ```
 
-### Data of all files
+### Run R Scripts
 
-- Complete scripts according to that of single sample
+- Complete scripts according to that of single sample.
+
+- Run [Scripts](gdc.Rmd)
