@@ -73,7 +73,7 @@ The mission of the GDC is to provide the cancer research community with a unifie
 The mission of the GDC is to provide the cancer research community with a unified data repository that enables data sharing across cancer genomic studies in support of precision medicine.">
 <meta itemprop="datePublished" content="2020-09-25T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-09-27T00:00:00+00:00" />
-<meta itemprop="wordCount" content="685">
+<meta itemprop="wordCount" content="960">
 
 
 
@@ -430,7 +430,13 @@ if (!doNotTrack) {
     <nav id="TableOfContents">
   <ul>
     <li><a href="#in-brief">In Brief</a></li>
-    <li><a href="#instruction">Instruction</a></li>
+    <li><a href="#instruction-of-download">Instruction of Download</a></li>
+    <li><a href="#data-wrangling">Data Wrangling</a>
+      <ul>
+        <li><a href="#data-of-overall-information">Data of overall Information</a></li>
+        <li><a href="#data-of-all-files">Data of all files</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -449,7 +455,7 @@ if (!doNotTrack) {
 <p>Data Wrangling</p>
 </li>
 </ul>
-<h2 id="instruction">Instruction</h2>
+<h2 id="instruction-of-download">Instruction of Download</h2>
 <ul>
 <li>
 <p>Click on <code>Repository</code> and choose <code>Cases</code> to setup interested data: TCGA-LUNG.</p>
@@ -717,36 +723,27 @@ optional arguments:
 </span><span class="lnt">32
 </span><span class="lnt">33
 </span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-markdown" data-lang="markdown">$ cd clinical
 
 <span class="gh"># count total number of files downloaded
 </span><span class="gh"></span>$ ls|wc
-
 output
     522     522   19314
 
 <span class="gh"># count alive number of clinical information
 </span><span class="gh"></span>$ grep -i vital_status */*xml|grep Alive|wc
-
 output
     840     840   10920
 
 <span class="gh"># count dead number of clinical information
 </span><span class="gh"></span>$ grep -i vital_status */*xml|grep -v Alive|wc
-
 output
      298    3580  104444
 
 <span class="gh"># get sampes name/id:
 </span><span class="gh"></span>$ grep -i vital_status */*xml|grep Alive |cut -d&#34;.&#34; -f 3
-
 output
 TCGA-J2-8192
 TCGA-J2-8192
@@ -760,12 +757,177 @@ TCGA-NJ-A4YG
 
 <span class="gh"># count total number of alive samples
 </span><span class="gh"></span>$ grep -i vital_status */*xml|grep Alive |cut -d&#34;.&#34; -f 3|sort -u|wc
-
 output
     395     395    5135
 </code></pre></td></tr></table>
 </div>
+</div><h2 id="data-wrangling">Data Wrangling</h2>
+<h3 id="data-of-overall-information">Data of overall Information</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown"><span class="gh"># count files number for clinical, isoform and miRNAseq
+</span><span class="gh"></span>$ ls clinical|wc
+output
+     522     522   19314
+
+$ ls isoform|wc
+output
+     567     567   20979
+
+$ ls miRNAseq|wc
+output
+     567     567   20979
+
+<span class="gu">### Single sample
+</span><span class="gu"></span>
+<span class="k">-</span> Choose one file of clinical randomly to get the format of sample.
+
+```markdown
+$ ls clinical/57d733f6-2f8e-4f0c-b391-48d3cf7c1f87
+output
+nationwidechildrens.org_clinical.TCGA-75-7030.xml
+</code></pre></td></tr></table>
 </div>
+</div><ul>
+<li>
+<p>Follow the usage of <a href="https://www.tutorialspoint.com/r/r_xml_files.htm">R - XML Files</a>.</p>
+<ul>
+<li>
+<p>Open R</p>
+<p>The xml file is read by R using the function xmlParse(). It is stored as a list in R.</p>
+</li>
+<li>
+<p>Reading XML File</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Load the package required to read XML files.</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&#34;XML&#34;</span><span class="p">)</span>
+
+<span class="c1"># Also load the other required package.</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&#34;methods&#34;</span><span class="p">)</span>
+
+<span class="c1"># Give the input file name to the function.</span>
+<span class="n">result</span> <span class="o">&lt;-</span> <span class="nf">xmlParse</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#34;nationwidechildrens.org_clinical.TCGA-75-7030.xml&#34;</span><span class="p">)</span>
+
+<span class="c1"># Print the result.</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Get Number of Nodes Present in XML File</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Exract the root node form the xml file.</span>
+<span class="n">rootnode</span> <span class="o">&lt;-</span> <span class="nf">xmlRoot</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="c1"># Find number of nodes in the root.</span>
+<span class="n">rootsize</span> <span class="o">&lt;-</span> <span class="nf">xmlSize</span><span class="p">(</span><span class="n">rootnode</span><span class="p">)</span>
+
+<span class="c1"># Print the result.</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">rootsize</span><span class="p">)</span>
+
+<span class="n">output</span>
+<span class="n">[1]</span> <span class="m">2</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Details of the First Node and second Node</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Exract the root node form the xml file.</span>
+<span class="n">rootnode</span> <span class="o">&lt;-</span> <span class="nf">xmlRoot</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="c1"># Print the result.</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">rootnode[1]</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">rootnode[2]</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>XML to Data Frame</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Convert the input xml file to a data frame.</span>
+<span class="n">xmldataframe</span> <span class="o">&lt;-</span> <span class="nf">xmlToDataFrame</span><span class="p">(</span><span class="n">rootnode[2]</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">xmldataframe</span><span class="p">)</span>
+<span class="nf">t</span><span class="p">(</span><span class="n">xmldataframe</span><span class="p">)</span>
+<span class="nf">write.table</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">xmldataframe</span><span class="p">),</span><span class="s">&#39;tmp&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+</ul>
+<h3 id="data-of-all-files">Data of all files</h3>
+<ul>
+<li>Complete scripts according to that of single sample</li>
+</ul>
     </div>
 
     

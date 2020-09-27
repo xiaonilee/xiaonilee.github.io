@@ -1,0 +1,85 @@
+---
+title: "ggplot2"
+author: "Xiaoni"
+date: "9/21/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(ggplot2)
+data(mpg)
+data(economics)
+```
+
+```{r point}
+ggplot (mpg, aes (x = displ, y = hwy)) +
+geom_point()
+```
+
+```{r}
+ggplot(mpg, aes(displ, hwy)) +
+geom_point() +
+geom_smooth(method= "lm")
+```
+
+```{r}
+ggplot(mpg, aes (displ, hwy, colour=class)) +
+geom_point()
+```
+
+```{r}
+ggplot(mpg, aes(displ, hwy)) +
+geom_point() +
+facet_wrap(~class)
+```
+```{r}
+ggplot(mpg, aes(drv, hwy))+ geom_boxplot()
+```
+
+```{r}
+ggplot(mpg, aes(drv, hwy)) + geom_violin()
+```
+
+```{r}
+ggplot(mpg, aes(drv, hwy)) + 
+  geom_violin(trim=FALSE, fill='orange', color='red') +
+  geom_boxplot(width=0.1) + theme_minimal()
+```
+
+```{r}
+ggplot(mpg, aes(hwy)) + geom_histogram()
+```
+```{r}
+ggplot(mpg, aes(hwy)) + geom_freqpoly()
+```
+
+```{r}
+ggplot(mpg, aes(manufacturer)) +
+geom_bar()
+```
+```{r}
+ggplot(economics, aes(date, unemploy / pop)) +geom_line()
+```
+
+```{r}
+ggplot(economics, aes(date, uempmed)) +geom_line()
+```
+```{r}
+ggplot(economics, aes(unemploy / pop, uempmed)) +
+geom_path() +
+geom_point()
+```
+```{r}
+ggplot(faithfuld, aes(eruptions, waiting)) +
+geom_contour(aes(z = density, colour = ..level..))
+```
+```{r}
+ggplot(faithfuld, aes(eruptions, waiting)) +
+geom_raster(aes(fill = density))
+```
+
