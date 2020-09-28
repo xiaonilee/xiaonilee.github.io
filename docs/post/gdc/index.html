@@ -73,7 +73,7 @@ The mission of the GDC is to provide the cancer research community with a unifie
 The mission of the GDC is to provide the cancer research community with a unified data repository that enables data sharing across cancer genomic studies in support of precision medicine.">
 <meta itemprop="datePublished" content="2020-09-25T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-09-27T00:00:00+00:00" />
-<meta itemprop="wordCount" content="961">
+<meta itemprop="wordCount" content="952">
 
 
 
@@ -434,6 +434,7 @@ if (!doNotTrack) {
     <li><a href="#data-wrangling">Data Wrangling</a>
       <ul>
         <li><a href="#data-of-overall-information">Data of overall Information</a></li>
+        <li><a href="#single-sample">Single sample</a></li>
         <li><a href="#run-r-scripts">Run R Scripts</a></li>
       </ul>
     </li>
@@ -777,15 +778,6 @@ output
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-markdown" data-lang="markdown"><span class="gh"># count files number for clinical, isoform and miRNAseq
@@ -800,13 +792,20 @@ output
 $ ls miRNAseq|wc
 output
      567     567   20979
-
-<span class="gu">### Single sample
-</span><span class="gu"></span>
-<span class="k">-</span> Choose one file of clinical randomly to get the format of sample.
-
-```markdown
-$ ls clinical/57d733f6-2f8e-4f0c-b391-48d3cf7c1f87
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="single-sample">Single sample</h3>
+<ul>
+<li>Choose one file of clinical randomly to get the format of sample.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">$ ls clinical/57d733f6-2f8e-4f0c-b391-48d3cf7c1f87
 output
 nationwidechildrens.org_clinical.TCGA-75-7030.xml
 </code></pre></td></tr></table>

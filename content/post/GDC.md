@@ -218,6 +218,7 @@ output
 $ ls miRNAseq|wc
 output
      567     567   20979
+```
 
 ### Single sample
 
