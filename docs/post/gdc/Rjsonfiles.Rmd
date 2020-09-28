@@ -1,0 +1,15 @@
+---
+title: "RjsonFiles"
+author: "Xiaoni"
+date: "9/28/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+install.packages("rjson")
+library(rjson)
+
+result <- fromJSON(file = "input.json")

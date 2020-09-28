@@ -1,7 +1,7 @@
 ---
 title: "GDC Notebook"
 date: 2020-09-25
-lastmod: 2020-09-27
+lastmod: 2020-09-28
 draft: false
 tags: ["TCGA", "Bioinformatics", "GDC"]
 categories: ["Cancer Research", "Database"]
@@ -32,11 +32,13 @@ The **mission** of the GDC is to provide the cancer research community with a **
 
 ## In Brief
 
-- Download Data via GDC
+- Download Data with different methods
   
 - Data Wrangling
   
-## Instruction of Download
+## Example 1
+
+## Standarized Download
 
 - Click on `Repository` and choose `Cases` to setup interested data: TCGA-LUNG.
   
@@ -56,7 +58,7 @@ The **mission** of the GDC is to provide the cancer research community with a **
   
   ![filesset3](filesset3.png)
 
-- Count lines in downloaded data.
+- Count number of lines in all downloaded data.
 
 ```markdown
 
@@ -78,7 +80,7 @@ wget https://gdc.cancer.gov/files/public/file/gdc-client_v1.6.0_OSX_x64_1.zip
 unzip gdc-client_v1.6.0_OSX_x64_1.zip
 ```
 
-- Common Usage of gdc-client
+- Check the usage of gdc-client
 
 ```markdown
 
@@ -93,7 +95,7 @@ commands:
     upload              upload data to the GDC
 ```
 
-- Usage of gdc-client download.
+- Check usage of gdc-client download.
 
 ```markdown
 $ ./gdc-client download --help
@@ -162,7 +164,7 @@ optional arguments:
 ./gdc-client download -m gdc_manifest.2020-09-27-LUNG-miRNA-seq.txt -d miRNAseq/
 ```
 
-- Check the files downloaded.
+- Check the information of files downloaded.
 
 ```markdown
 $ cd clinical
@@ -220,7 +222,7 @@ output
      567     567   20979
 ```
 
-### Single sample
+### R Scripts For Single Sample
 
 - Choose one file of clinical randomly to get the format of sample.
 
@@ -289,8 +291,30 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
     write.table(t(xmldataframe),'tmp')
     ```
 
-### Run R Scripts
+### Run R Scripts For All files
 
 - Complete scripts according to that of single sample.
 
 - Run [Scripts](gdc.Rmd)
+
+## Example 2
+
+## Fast Download
+
+- Enter Key words in Google and search: `tcga gdc lusc`.
+
+  ![google](google.png)
+
+- Click on [site 1](https://portal.gdc.cancer.gov/projects/TCGA-LUSC), and download data of files.
+  
+  ![downloadfile](downloadfile.png)
+
+- Choose and download interested clinical data.
+
+  ![set2](set2.png)
+
+- Choose and download interested Transcript data.
+  
+  ![transcript1](transcript1.png)
+  ***
+  ![transcript2](transcript2.png)

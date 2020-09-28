@@ -21,6 +21,8 @@ library("methods")
 
 dir='/Users/xiaonili/Downloads/gdc/clinical/'
 
+# list.files() find all files
+
 cl = lapply(list.files(path = dir,pattern = '*.xml$',recursive = T)
             , function(x){
   
@@ -47,9 +49,8 @@ dir='/Users/xiaonili/Downloads/gdc/miRNAseq/'
 
 mi = lapply(list.files(path = dir,pattern = '*.mirnas.quantification.txt$',recursive = T)
             , function(x){
-              # Give the input file name to the function.
+            
               result <- read.table(file = file.path(dir,x), sep = '\t', header = T)[,1:2]
-              
               return(result)
               })
 
@@ -63,4 +64,5 @@ colnames(mi_df)=mi_df[1,]
 mi_df=mi_df[seq(2,nrow(mi_df),by=2),]
 mi_df[1:4,1:4]
 ```
+
 

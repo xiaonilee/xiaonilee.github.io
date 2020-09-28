@@ -67,13 +67,13 @@ The mission of the GDC is to provide the cancer research community with a unifie
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xiaonilee.github.io/post/gdc/" />
 <meta property="article:published_time" content="2020-09-25T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-09-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-28T00:00:00+00:00" />
 <meta itemprop="name" content="GDC Notebook">
 <meta itemprop="description" content="The Genomic Data Commons (GDC), is a research program of the National Cancer Institute (NCI).
 The mission of the GDC is to provide the cancer research community with a unified data repository that enables data sharing across cancer genomic studies in support of precision medicine.">
 <meta itemprop="datePublished" content="2020-09-25T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2020-09-27T00:00:00+00:00" />
-<meta itemprop="wordCount" content="952">
+<meta itemprop="dateModified" content="2020-09-28T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1002">
 
 
 
@@ -430,14 +430,17 @@ if (!doNotTrack) {
     <nav id="TableOfContents">
   <ul>
     <li><a href="#in-brief">In Brief</a></li>
-    <li><a href="#instruction-of-download">Instruction of Download</a></li>
+    <li><a href="#example-1">Example 1</a></li>
+    <li><a href="#standarized-download">Standarized Download</a></li>
     <li><a href="#data-wrangling">Data Wrangling</a>
       <ul>
         <li><a href="#data-of-overall-information">Data of overall Information</a></li>
-        <li><a href="#single-sample">Single sample</a></li>
-        <li><a href="#run-r-scripts">Run R Scripts</a></li>
+        <li><a href="#r-scripts-for-single-sample">R Scripts For Single Sample</a></li>
+        <li><a href="#run-r-scripts-for-all-files">Run R Scripts For All files</a></li>
       </ul>
     </li>
+    <li><a href="#example-2">Example 2</a></li>
+    <li><a href="#fast-download">Fast Download</a></li>
   </ul>
 </nav>
   </div>
@@ -450,13 +453,14 @@ if (!doNotTrack) {
 <h2 id="in-brief">In Brief</h2>
 <ul>
 <li>
-<p>Download Data via GDC</p>
+<p>Download Data with different methods</p>
 </li>
 <li>
 <p>Data Wrangling</p>
 </li>
 </ul>
-<h2 id="instruction-of-download">Instruction of Download</h2>
+<h2 id="example-1">Example 1</h2>
+<h2 id="standarized-download">Standarized Download</h2>
 <ul>
 <li>
 <p>Click on <code>Repository</code> and choose <code>Cases</code> to setup interested data: TCGA-LUNG.</p>
@@ -478,7 +482,7 @@ if (!doNotTrack) {
 <p><img src="filesset3.png" alt="filesset3"></p>
 </li>
 <li>
-<p>Count lines in downloaded data.</p>
+<p>Count number of lines in all downloaded data.</p>
 </li>
 </ul>
 <div class="highlight"><div class="chroma">
@@ -521,7 +525,7 @@ unzip gdc-client_v1.6.0_OSX_x64_1.zip
 </code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>Common Usage of gdc-client</li>
+<li>Check the usage of gdc-client</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -550,7 +554,7 @@ commands:
 </code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>Usage of gdc-client download.</li>
+<li>Check usage of gdc-client download.</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -686,7 +690,7 @@ optional arguments:
 </code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>Check the files downloaded.</li>
+<li>Check the information of files downloaded.</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -794,7 +798,7 @@ output
      567     567   20979
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="single-sample">Single sample</h3>
+</div><h3 id="r-scripts-for-single-sample">R Scripts For Single Sample</h3>
 <ul>
 <li>Choose one file of clinical randomly to get the format of sample.</li>
 </ul>
@@ -923,13 +927,35 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 </ul>
 </li>
 </ul>
-<h3 id="run-r-scripts">Run R Scripts</h3>
+<h3 id="run-r-scripts-for-all-files">Run R Scripts For All files</h3>
 <ul>
 <li>
 <p>Complete scripts according to that of single sample.</p>
 </li>
 <li>
 <p>Run <a href="gdc.Rmd">Scripts</a></p>
+</li>
+</ul>
+<h2 id="example-2">Example 2</h2>
+<h2 id="fast-download">Fast Download</h2>
+<ul>
+<li>
+<p>Enter Key words in Google and search: <code>tcga gdc lusc</code>.</p>
+<p><img src="google.png" alt="google"></p>
+</li>
+<li>
+<p>Click on <a href="https://portal.gdc.cancer.gov/projects/TCGA-LUSC">site 1</a>, and download data of files.</p>
+<p><img src="downloadfile.png" alt="downloadfile"></p>
+</li>
+<li>
+<p>Choose and download interested clinical data.</p>
+<p><img src="set2.png" alt="set2"></p>
+</li>
+<li>
+<p>Choose and download interested Transcript data.</p>
+<p><img src="transcript1.png" alt="transcript1"></p>
+<hr>
+<p><img src="transcript2.png" alt="transcript2"></p>
 </li>
 </ul>
     </div>
