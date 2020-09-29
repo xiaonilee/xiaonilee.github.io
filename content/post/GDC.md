@@ -323,9 +323,8 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 
 ### Run R.Scripts
 
-- Follow the usage of [R-JSON Files](https://www.tutorialspoint.com/r/r_json_files.htm).
+- Follow the usage of [R-JSON Files](https://www.tutorialspoint.com/r/r_json_files.htm) and [R - XML Files](https://www.tutorialspoint.com/r/r_xml_files.htm).
 
 - Run [Rjson Script](Rjsonfiles.Rmd) and get matched case id with file names.
 
   ![RJson](RJson.png)
-  

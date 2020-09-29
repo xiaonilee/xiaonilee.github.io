@@ -19,6 +19,8 @@ result <- fromJSON(file = "/Users/xiaonili/Downloads/tcga-lusc-miRNA.json")
 
 #get file names
 filenames=unlist(lapply(result,function(x){x[[4]]}))
+# alternative code
+#filenames=unlist(lapply(result,function(x){x$file_name}))
 
 #get case id number
 caseid=unlist(lapply(result,function(x){x[[2]][[1]][[1]]}))
