@@ -9,7 +9,22 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-install.packages("rjson")
+```{r}
+#install.packages("rjson")
 library(rjson)
 
-result <- fromJSON(file = "input.json")
+result <- fromJSON(file = "/Users/xiaonili/Downloads/tcga-lusc-miRNA.json")
+
+#print(result)
+
+#get file names
+filenames=unlist(lapply(result,function(x){x[[4]]}))
+
+#get case id number
+caseid=unlist(lapply(result,function(x){x[[2]][[1]][[1]]}))
+
+#match case id with file names
+caseid2filename=data.frame(uuid=caseid,filename=filenames)
+```
+
+

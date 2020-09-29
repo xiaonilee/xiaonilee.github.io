@@ -71,7 +71,7 @@ Output
     1659 total
 ```
 
-- Download the [GDC Data Transfer Tool Client](https://gdc.cancer.gov/files/public/file/gdc-client_v1.6.0_OSX_x64_1.zip)
+- Download the [GDC Data Transfer Tool Client](https://gdc.cancer.gov/files/public/file/gdc-client_v1.6.0_OSX_x64_1.zip).
 
 ```markdown
 
@@ -80,7 +80,7 @@ wget https://gdc.cancer.gov/files/public/file/gdc-client_v1.6.0_OSX_x64_1.zip
 unzip gdc-client_v1.6.0_OSX_x64_1.zip
 ```
 
-- Check the usage of gdc-client
+- Check the usage of gdc-client.
 
 ```markdown
 
@@ -234,11 +234,11 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 
 - Follow the usage of [R - XML Files](https://www.tutorialspoint.com/r/r_xml_files.htm).
 
-  - Open R
+  - Open R.
 
     The xml file is read by R using the function xmlParse(). It is stored as a list in R.
 
-  - Reading XML File
+  - Reading XML File.
 
     ```r
     # Load the package required to read XML files.
@@ -254,7 +254,7 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
     print(result)
     ```
 
-  - Get Number of Nodes Present in XML File
+  - Get Number of Nodes Present in XML File.
 
     ```r
     # Exract the root node form the xml file.
@@ -270,7 +270,7 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
     [1] 2
     ```
 
-  - Details of the First Node and second Node
+  - Details of the First Node and second Node.
   
     ```r
     # Exract the root node form the xml file.
@@ -281,7 +281,7 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
     print(rootnode[2])
     ```
 
-  - XML to Data Frame
+  - XML to Data Frame.
   
     ```r
     # Convert the input xml file to a data frame.
@@ -295,13 +295,15 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 
 - Complete scripts according to that of single sample.
 
-- Run [Scripts](gdc.Rmd)
+- Run [Scripts](gdc.Rmd).
+
+  ![RScript1](RScript1.png)
 
 ## Example 2
 
 ## Fast Download
 
-- Enter Key words in Google and search: `tcga gdc lusc`.
+- Enter Key words in Google and search: ***tcga gdc lusc***.
 
   ![google](google.png)
 
@@ -318,3 +320,11 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
   ![transcript1](transcript1.png)
   ***
   ![transcript2](transcript2.png)
+
+### Run R.Scripts
+
+- Follow the usage of [R-JSON Files](https://www.tutorialspoint.com/r/r_json_files.htm).
+
+- Run [Rjson Script](Rjsonfiles.Rmd) and get matched case id with file names.
+
+  ![RJson](RJson.png)

@@ -73,7 +73,7 @@ The mission of the GDC is to provide the cancer research community with a unifie
 The mission of the GDC is to provide the cancer research community with a unified data repository that enables data sharing across cancer genomic studies in support of precision medicine.">
 <meta itemprop="datePublished" content="2020-09-25T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-09-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1002">
+<meta itemprop="wordCount" content="1021">
 
 
 
@@ -440,7 +440,11 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#example-2">Example 2</a></li>
-    <li><a href="#fast-download">Fast Download</a></li>
+    <li><a href="#fast-download">Fast Download</a>
+      <ul>
+        <li><a href="#run-rscripts">Run R.Scripts</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -508,7 +512,7 @@ Output
 </code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>Download the <a href="https://gdc.cancer.gov/files/public/file/gdc-client_v1.6.0_OSX_x64_1.zip">GDC Data Transfer Tool Client</a></li>
+<li>Download the <a href="https://gdc.cancer.gov/files/public/file/gdc-client_v1.6.0_OSX_x64_1.zip">GDC Data Transfer Tool Client</a>.</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -525,7 +529,7 @@ unzip gdc-client_v1.6.0_OSX_x64_1.zip
 </code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>Check the usage of gdc-client</li>
+<li>Check the usage of gdc-client.</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -819,11 +823,11 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 <p>Follow the usage of <a href="https://www.tutorialspoint.com/r/r_xml_files.htm">R - XML Files</a>.</p>
 <ul>
 <li>
-<p>Open R</p>
+<p>Open R.</p>
 <p>The xml file is read by R using the function xmlParse(). It is stored as a list in R.</p>
 </li>
 <li>
-<p>Reading XML File</p>
+<p>Reading XML File.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -854,7 +858,7 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 </div>
 </div></li>
 <li>
-<p>Get Number of Nodes Present in XML File</p>
+<p>Get Number of Nodes Present in XML File.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -885,7 +889,7 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 </div>
 </div></li>
 <li>
-<p>Details of the First Node and second Node</p>
+<p>Details of the First Node and second Node.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -906,7 +910,7 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 </div>
 </div></li>
 <li>
-<p>XML to Data Frame</p>
+<p>XML to Data Frame.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -933,14 +937,15 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 <p>Complete scripts according to that of single sample.</p>
 </li>
 <li>
-<p>Run <a href="gdc.Rmd">Scripts</a></p>
+<p>Run <a href="gdc.Rmd">Scripts</a>.</p>
+<p><img src="RScript1.png" alt="RScript1"></p>
 </li>
 </ul>
 <h2 id="example-2">Example 2</h2>
 <h2 id="fast-download">Fast Download</h2>
 <ul>
 <li>
-<p>Enter Key words in Google and search: <code>tcga gdc lusc</code>.</p>
+<p>Enter Key words in Google and search: <em><strong>tcga gdc lusc</strong></em>.</p>
 <p><img src="google.png" alt="google"></p>
 </li>
 <li>
@@ -956,6 +961,16 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 <p><img src="transcript1.png" alt="transcript1"></p>
 <hr>
 <p><img src="transcript2.png" alt="transcript2"></p>
+</li>
+</ul>
+<h3 id="run-rscripts">Run R.Scripts</h3>
+<ul>
+<li>
+<p>Follow the usage of <a href="https://www.tutorialspoint.com/r/r_json_files.htm">R-JSON Files</a>.</p>
+</li>
+<li>
+<p>Run <a href="Rjsonfiles.Rmd">Rjson Script</a> and get matched case id with file names.</p>
+<p><img src="RJson.png" alt="RJson"></p>
 </li>
 </ul>
     </div>
