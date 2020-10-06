@@ -27,7 +27,7 @@ Data from Hadle Wickham 'ggplot2 Elegant Graphics for Data Analysis'.
 
 ```r
 Data
-Aesthetics #映射
+Aesthetics
 Geometries #几何对象
 Facets
 Statistics
