@@ -29,7 +29,7 @@ Data from Hadle Wickham 'ggplot2 Elegant Graphics for Data Analysis'.
 Data
 Aesthetics #映射
 Geometries #几何对象
-Facets #分面
+Facets
 Statistics
 Coordinates #坐标系
 Themes
