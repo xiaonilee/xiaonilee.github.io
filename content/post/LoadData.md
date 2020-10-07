@@ -1,7 +1,7 @@
 ---
-title: "Load Data From Public Database"
+title: "UCSC Xena Hub: Load Data From Public Database"
 date: 2020-09-08
-lastmod: 2020-09-16
+lastmod: 2020-10-07
 draft: false
 tags: ["UCSC", "Xena", "GEO", "Database"]
 categories: ["Cancer Research", "Database"]
