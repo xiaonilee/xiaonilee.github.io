@@ -1,7 +1,7 @@
 ---
-title: "Private and Public Data Put Together"
+title: "UCSC Xena: Private and Public Data Put Together"
 date: 2020-09-11
-lastmod: 2020-09-15
+lastmod: 2020-10-07
 draft: false
 tags: ["UCSC", "Xena", "Prostate", "Cancer", "Database"]
 categories: ["Cancer Research", "Database"]
