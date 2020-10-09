@@ -1,0 +1,27 @@
+---
+title: "OncoLnc test"
+author: "Xiaoni"
+date: "10/9/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+rm(list = ls())
+options(stringsAsFactors = F)
+```
+
+```{r}
+a=read.table('KIRC_DONSON.csv', 
+             header = T, sep = ',', fill = T)
+
+colnames(a)
+```
+
+```{r}
+library(ggstatsplot)
+```
+

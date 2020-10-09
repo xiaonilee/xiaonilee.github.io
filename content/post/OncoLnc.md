@@ -43,6 +43,6 @@ OncoLnc Web Tool: Interactively exploring survival correlations, and for downloa
   
 ![plot](plot.png)
 
-- Click on [Click Here](KIRC_29980_25_25.csv), to get the excel file of this data.
+- Click on [Click Here](KIRC_DONSON.csv), to get the excel file of this data.
 
 ### Re-analysis with R
