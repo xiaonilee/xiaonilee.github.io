@@ -70,7 +70,7 @@
 <meta itemprop="description" content="OncoLnc Web Tool: Interactively exploring survival correlations, and for downloading clinical data coupled to expression data for mRNAs, miRNAs, or lncRNAs from TCGA.">
 <meta itemprop="datePublished" content="2020-10-09T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-10-09T00:00:00+00:00" />
-<meta itemprop="wordCount" content="101">
+<meta itemprop="wordCount" content="250">
 
 
 
@@ -446,7 +446,7 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p>OncoLnc Web Tool: Interactively exploring survival correlations, and for downloading clinical data coupled to expression data for mRNAs, miRNAs, or lncRNAs from TCGA.</p>
+      <p><strong>OncoLnc Web Tool</strong>: Interactively exploring survival correlations, and for downloading clinical data coupled to expression data for mRNAs, miRNAs, or lncRNAs from <em><strong>TCGA</strong></em>.</p>
 <h2 id="in-brief">In Brief</h2>
 <ul>
 <li>
@@ -478,6 +478,109 @@ if (!doNotTrack) {
 <li>Click on <a href="KIRC_DONSON.csv">Click Here</a>, to get the excel file of this data.</li>
 </ul>
 <h3 id="re-analysis-with-r">Re-analysis with R</h3>
+<ul>
+<li>Reading Data and Check Basic Information</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">a</span><span class="o">=</span><span class="nf">read.table</span><span class="p">(</span><span class="s">&#39;KIRC_DONSON.csv&#39;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&#39;,&#39;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+
+<span class="nf">colnames</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">output</span>
+<span class="n">[1]</span> <span class="s">&#34;Patient&#34;</span>    <span class="s">&#34;Days&#34;</span>       <span class="s">&#34;Status&#34;</span>     <span class="s">&#34;Expression&#34;</span> <span class="s">&#34;Group&#34;</span>  
+
+<span class="nf">table</span><span class="p">(</span><span class="n">a</span><span class="o">$</span><span class="n">Status</span><span class="p">)</span>
+<span class="n">output</span>
+<span class="n">Alive</span>  <span class="n">Dead</span>
+  <span class="m">151</span>   <span class="m">109</span>
+
+<span class="nf">fivenum</span><span class="p">(</span><span class="n">a</span><span class="o">$</span><span class="n">Expression</span><span class="p">)</span>
+<span class="n">output</span>
+<span class="n">[1]</span>  <span class="m">15.780</span>  <span class="m">81.605</span> <span class="m">155.420</span> <span class="m">266.310</span> <span class="m">905.630</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Load packages/library and Make Plot</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">ggstatsplot</span><span class="p">)</span>
+<span class="c1"># plot Expression ~ Group</span>
+<span class="nf">ggbetweenstats</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">Group</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Expression</span><span class="p">)</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#39;ExpressionGroup.png&#39;</span><span class="p">)</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">survival</span><span class="p">)</span>
+<span class="c1">#install.packages(&#39;survminer&#39;)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">survminer</span><span class="p">)</span>
+
+<span class="n">fit</span> <span class="o">=</span> <span class="nf">survfit</span><span class="p">(</span><span class="nf">Surv</span><span class="p">(</span><span class="n">Days</span><span class="p">,</span><span class="n">Status</span><span class="p">)</span><span class="o">~</span><span class="n">Group</span><span class="p">,</span><span class="n">data</span> <span class="o">=</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">fit</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+
+<span class="c1"># &#39;Dead&#39;:1; &#39;Alive&#39;:0</span>
+<span class="n">a</span><span class="o">$</span><span class="n">Status</span><span class="o">=</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">a</span><span class="o">$</span><span class="n">Status</span><span class="o">==</span><span class="s">&#39;Dead&#39;</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">)</span>
+
+<span class="c1"># plot basic survival curve</span>
+<span class="nf">ggsurvplot</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span><span class="n">conf.int</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">pval</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#39;survival_R.png&#39;</span><span class="p">)</span>
+
+<span class="c1">#  Better Display</span>
+<span class="nf">ggsurvplot</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span><span class="n">palette</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;#E7B800&#34;</span><span class="p">,</span><span class="s">&#34;#2E9FDF&#34;</span><span class="p">),</span><span class="n">risk.table</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span><span class="n">pval</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
+<span class="n">conf.int</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span><span class="n">xlab</span><span class="o">=</span><span class="s">&#34;Time in months&#34;</span><span class="p">,</span>
+<span class="n">ggtheme</span> <span class="o">=</span> <span class="nf">theme_light</span><span class="p">(),</span>
+<span class="n">ncensor.plot</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#39;survival_R1.png&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Herein, <a href="OncoLnc.Rmd">R.script</a> is reused to make survival curves.</li>
+</ul>
     </div>
 
     
