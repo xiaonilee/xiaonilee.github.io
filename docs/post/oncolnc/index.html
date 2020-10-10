@@ -70,7 +70,7 @@
 <meta itemprop="description" content="OncoLnc Web Tool: Interactively exploring survival correlations, and for downloading clinical data coupled to expression data for mRNAs, miRNAs, or lncRNAs from TCGA.">
 <meta itemprop="datePublished" content="2020-10-09T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-10-09T00:00:00+00:00" />
-<meta itemprop="wordCount" content="250">
+<meta itemprop="wordCount" content="330">
 
 
 
@@ -437,6 +437,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#oncolnc-usage">OncoLnc Usage</a></li>
         <li><a href="#re-analysis-with-r">Re-analysis with R</a></li>
+        <li><a href="#summary">Summary</a></li>
       </ul>
     </li>
   </ul>
@@ -454,6 +455,9 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>Data Wrangling and Re-analysis with R Package.</p>
+</li>
+<li>
+<p>Summary</p>
 </li>
 </ul>
 <h3 id="oncolnc-usage">OncoLnc Usage</h3>
@@ -478,9 +482,7 @@ if (!doNotTrack) {
 <li>Click on <a href="KIRC_DONSON.csv">Click Here</a>, to get the excel file of this data.</li>
 </ul>
 <h3 id="re-analysis-with-r">Re-analysis with R</h3>
-<ul>
-<li>Reading Data and Check Basic Information</li>
-</ul>
+<h4 id="reading-data-and-check-basic-information">Reading Data and Check Basic Information</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -515,62 +517,73 @@ if (!doNotTrack) {
 <span class="n">[1]</span>  <span class="m">15.780</span>  <span class="m">81.605</span> <span class="m">155.420</span> <span class="m">266.310</span> <span class="m">905.630</span>
 </code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>Load packages/library and Make Plot</li>
-</ul>
+</div><h4 id="load-packageslibrary-and-make-basic-plot">Load Packages/Library and Make Basic Plot</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">ggstatsplot</span><span class="p">)</span>
-<span class="c1"># plot Expression ~ Group</span>
-<span class="nf">ggbetweenstats</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">Group</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Expression</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#39;ExpressionGroup.png&#39;</span><span class="p">)</span>
-
 <span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">survival</span><span class="p">)</span>
 <span class="c1">#install.packages(&#39;survminer&#39;)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">survminer</span><span class="p">)</span>
 
-<span class="n">fit</span> <span class="o">=</span> <span class="nf">survfit</span><span class="p">(</span><span class="nf">Surv</span><span class="p">(</span><span class="n">Days</span><span class="p">,</span><span class="n">Status</span><span class="p">)</span><span class="o">~</span><span class="n">Group</span><span class="p">,</span><span class="n">data</span> <span class="o">=</span> <span class="n">a</span><span class="p">)</span>
+<span class="c1"># &#39;Dead&#39;:1; &#39;Alive&#39;:0</span>
+<span class="n">a</span><span class="o">$</span><span class="n">Status</span><span class="o">=</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">a</span><span class="o">$</span><span class="n">Status</span><span class="o">==</span><span class="s">&#39;Dead&#39;</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="expression-vs-group">Expression vs Group</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggbetweenstats</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">Group</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Expression</span><span class="p">)</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#39;ExpressionGroup.png&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="plot1.png" alt="plot1"></p>
+<h4 id="basic-survival-curve">Basic Survival Curve</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">fit</span> <span class="o">=</span> <span class="nf">survfit</span><span class="p">(</span><span class="nf">Surv</span><span class="p">(</span><span class="n">Days</span><span class="p">,</span><span class="n">Status</span><span class="p">)</span><span class="o">~</span><span class="n">Group</span><span class="p">,</span><span class="n">data</span> <span class="o">=</span> <span class="n">a</span><span class="p">)</span>
 <span class="n">fit</span>
 <span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
 
-<span class="c1"># &#39;Dead&#39;:1; &#39;Alive&#39;:0</span>
-<span class="n">a</span><span class="o">$</span><span class="n">Status</span><span class="o">=</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">a</span><span class="o">$</span><span class="n">Status</span><span class="o">==</span><span class="s">&#39;Dead&#39;</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">)</span>
-
-<span class="c1"># plot basic survival curve</span>
 <span class="nf">ggsurvplot</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span><span class="n">conf.int</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">pval</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 <span class="nf">ggsave</span><span class="p">(</span><span class="s">&#39;survival_R.png&#39;</span><span class="p">)</span>
-
-<span class="c1">#  Better Display</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="survival_R.png" alt="survival_R"></p>
+<h4 id="survival-curve-with-more-information-in-figure">Survival Curve With More Information In Figure</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1">#  Better Display</span>
 <span class="nf">ggsurvplot</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span><span class="n">palette</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;#E7B800&#34;</span><span class="p">,</span><span class="s">&#34;#2E9FDF&#34;</span><span class="p">),</span><span class="n">risk.table</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span><span class="n">pval</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
 <span class="n">conf.int</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span><span class="n">xlab</span><span class="o">=</span><span class="s">&#34;Time in months&#34;</span><span class="p">,</span>
 <span class="n">ggtheme</span> <span class="o">=</span> <span class="nf">theme_light</span><span class="p">(),</span>
@@ -578,8 +591,32 @@ if (!doNotTrack) {
 <span class="nf">ggsave</span><span class="p">(</span><span class="s">&#39;survival_R1.png&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>Herein, <a href="OncoLnc.Rmd">R.script</a> is reused to make survival curves.</li>
+</div><p><img src="survival_R1.png" alt="survival_R1"></p>
+<p>Herein, <a href="OncoLnc.Rmd">R.script</a> is reused to make survival curves.</p>
+<h3 id="summary">Summary</h3>
+<h4 id="overall">Overall</h4>
+<ul>
+<li>
+<p>The code was run with Python 2.7.5, NumPy 1.7.1, and rpy2 2.5.6.</p>
+</li>
+<li>
+<p>It can require upwards of 6GB of RAM.</p>
+</li>
+<li>
+<p>OncoLnc runs on Django 1.8.2, Python 2.7, matplotlib 1.2.1, NumPy 1.7.1, rpy2 2.5.6, uses the SQLite3 database engine, and utilizes Bootstrap CSS and JavaScript, and Font Awesome icons.</p>
+</li>
+</ul>
+<h4 id="reproduce-informationhttpsgithubcomomnesresonco_lnc"><a href="https://github.com/OmnesRes/onco_lnc">Reproduce information</a></h4>
+<ul>
+<li>
+<p>Put the expression files to the correct locations.</p>
+</li>
+<li>
+<p>Run the desired Cox regressions.</p>
+</li>
+<li>
+<p>Go to the cancer of interest and run the cox_regression.py file from the command line.</p>
+</li>
 </ul>
     </div>
 

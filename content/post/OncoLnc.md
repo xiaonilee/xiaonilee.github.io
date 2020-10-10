@@ -27,6 +27,8 @@ menu:
   
 - Data Wrangling and Re-analysis with R Package.
 
+- Summary
+
 ### OncoLnc Usage
 
 - Enter Interested Gene, **DONSON**, and click on `Submit`.
@@ -47,7 +49,7 @@ menu:
 
 ### Re-analysis with R
 
-- Reading Data and Check Basic Information
+#### Reading Data and Check Basic Information
 
 ```r
 a=read.table('KIRC_DONSON.csv', header = T, sep = ',', fill = T)
@@ -66,30 +68,44 @@ output
 [1]  15.780  81.605 155.420 266.310 905.630
 ```
 
-- Load packages/library and Make Plot
+#### Load Packages/Library and Make Basic Plot
 
 ```r
 library(ggstatsplot)
-# plot Expression ~ Group
-ggbetweenstats(data=a, x=Group, y=Expression)
-ggsave('ExpressionGroup.png')
-
 library(ggplot2)
 library(survival)
 #install.packages('survminer')
 library(survminer)
 
+# 'Dead':1; 'Alive':0
+a$Status=ifelse(a$Status=='Dead',1,0)
+```
+
+#### Expression vs Group
+
+```r
+ggbetweenstats(data=a, x=Group, y=Expression)
+ggsave('ExpressionGroup.png')
+```
+
+![plot1](plot1.png)
+
+#### Basic Survival Curve
+
+```r
 fit = survfit(Surv(Days,Status)~Group,data = a)
 fit
 summary(fit)
 
-# 'Dead':1; 'Alive':0
-a$Status=ifelse(a$Status=='Dead',1,0)
-
-# plot basic survival curve
 ggsurvplot(fit,conf.int = F, pval = TRUE)
 ggsave('survival_R.png')
+```
 
+![survival_R](survival_R.png)
+
+#### Survival Curve With More Information In Figure
+
+```r
 #  Better Display
 ggsurvplot(fit,palette = c("#E7B800","#2E9FDF"),risk.table = TRUE,pval = TRUE,
 conf.int = TRUE,xlab="Time in months",
@@ -98,4 +114,24 @@ ncensor.plot=TRUE)
 ggsave('survival_R1.png')
 ```
 
-- Herein, [R.script](OncoLnc.Rmd) is reused to make survival curves.
+![survival_R1](survival_R1.png)
+
+Herein, [R.script](OncoLnc.Rmd) is reused to make survival curves.
+
+### Summary
+
+#### Overall
+
+- The code was run with Python 2.7.5, NumPy 1.7.1, and rpy2 2.5.6.
+
+- It can require upwards of 6GB of RAM.
+
+- OncoLnc runs on Django 1.8.2, Python 2.7, matplotlib 1.2.1, NumPy 1.7.1, rpy2 2.5.6, uses the SQLite3 database engine, and utilizes Bootstrap CSS and JavaScript, and Font Awesome icons.
+
+#### [Reproduce information](https://github.com/OmnesRes/onco_lnc)
+
+- Put the expression files to the correct locations.
+
+- Run the desired Cox regressions.
+
+- Go to the cancer of interest and run the cox_regression.py file from the command line.
