@@ -6,7 +6,7 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xiaonilee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,27 @@
     <item>
       <title>Bioinformatics</title>
       <link>https://xiaonilee.github.io/tags/bioinformatics/</link>
-      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://xiaonilee.github.io/tags/r/</link>
+      <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TCGA</title>
+      <link>https://xiaonilee.github.io/tags/tcga/</link>
+      <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/tcga/</guid>
       <description></description>
     </item>
     
@@ -26,24 +44,6 @@
       <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/oncolnc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>https://xiaonilee.github.io/tags/r/</link>
-      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TCGA</title>
-      <link>https://xiaonilee.github.io/tags/tcga/</link>
-      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/tcga/</guid>
       <description></description>
     </item>
     

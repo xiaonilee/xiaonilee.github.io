@@ -1,0 +1,520 @@
+Sample Id	PAM50 subtype	FSCN1: mRNA Expression z-Scores relative to diploid samples (microarray)	Mutations	Copy Number Alterations
+TCGA-A1-A0SK-01	Basal-like	0.9763	-	FSCN1: Diploid
+TCGA-A1-A0SO-01	Basal-like	-0.4326	-	FSCN1: Shallow Deletion
+TCGA-A2-A04P-01	Basal-like	1.7943	-	FSCN1: Diploid
+TCGA-A2-A04Q-01	Basal-like	1.7911	-	FSCN1: Diploid
+TCGA-A2-A04T-01	Basal-like	0.648	Not Profiled	FSCN1: Shallow Deletion
+TCGA-A2-A04U-01	Basal-like	1.8779	-	FSCN1: Gain
+TCGA-A2-A0CM-01	Basal-like	1.3966	-	FSCN1: Diploid
+TCGA-A2-A0D0-01	Basal-like	3.6669	-	FSCN1: Gain
+TCGA-A2-A0D2-01	Basal-like	0.7228	-	FSCN1: Diploid
+TCGA-A2-A0ST-01	Basal-like	1.2695	-	FSCN1: Diploid
+TCGA-A2-A0SX-01	Basal-like	1.3391	-	FSCN1: Shallow Deletion
+TCGA-A2-A0T0-01	Basal-like	2.1007	-	FSCN1: Diploid
+TCGA-A2-A0T2-01	Basal-like	2.4707	-	FSCN1: Gain
+TCGA-A2-A0YE-01	Basal-like	3.0464	Not Profiled	FSCN1: Amplification
+TCGA-A2-A0YJ-01	Basal-like	3.1085	-	FSCN1: Gain
+TCGA-A2-A0YM-01	Basal-like	1.4684	-	FSCN1: Diploid
+TCGA-A7-A0CE-01	Basal-like	1.1177	-	FSCN1: Gain
+TCGA-A7-A0DA-01	Basal-like	2.2718	-	FSCN1: Diploid
+TCGA-A7-A13D-01	Basal-like	2.1196	-	FSCN1: Gain
+TCGA-A7-A13E-01	Basal-like	3.8299	Not Profiled	FSCN1: Gain
+TCGA-A8-A07C-01	Basal-like	1.3123	-	Not Profiled
+TCGA-A8-A07O-01	Basal-like	1.1226	-	FSCN1: Diploid
+TCGA-A8-A07R-01	Basal-like	0.8678	-	FSCN1: Diploid
+TCGA-A8-A07U-01	Basal-like	0.4208	-	FSCN1: Diploid
+TCGA-A8-A08H-01	Basal-like	-0.5534	-	FSCN1: Diploid
+TCGA-A8-A08R-01	Basal-like	1.2996	-	FSCN1: Diploid
+TCGA-AN-A04D-01	Basal-like	2.6029	-	FSCN1: Diploid
+TCGA-AN-A0AL-01	Basal-like	1.0706	-	FSCN1: Gain
+TCGA-AN-A0AR-01	Basal-like	2.0007	-	FSCN1: Diploid
+TCGA-AN-A0AT-01	Basal-like	0.8143	-	FSCN1: Diploid
+TCGA-AN-A0FJ-01	Basal-like	4.1911	-	FSCN1: Amplification
+TCGA-AN-A0FL-01	Basal-like	0.5955	-	FSCN1: Gain
+TCGA-AN-A0FX-01	Basal-like	1.438	-	FSCN1: Diploid
+TCGA-AN-A0G0-01	Basal-like	2.6193	-	Not Profiled
+TCGA-AN-A0XU-01	Basal-like	1.1203	-	FSCN1: Diploid
+TCGA-AO-A0J4-01	Basal-like	1.8022	-	FSCN1: Shallow Deletion
+TCGA-AO-A0J6-01	Basal-like	1.1833	-	FSCN1: Amplification
+TCGA-AO-A0JL-01	Basal-like	1.4299	-	FSCN1: Diploid
+TCGA-AO-A124-01	Basal-like	2.9563	-	FSCN1: Gain
+TCGA-AO-A128-01	Basal-like	2.5579	Not Profiled	FSCN1: Gain
+TCGA-AO-A129-01	Basal-like	1.4707	-	FSCN1: Diploid
+TCGA-AO-A12F-01	Basal-like	1.8492	-	FSCN1: Diploid
+TCGA-AQ-A04J-01	Basal-like	1.5523	-	FSCN1: Diploid
+TCGA-AR-A0TP-01	Basal-like	2.2352	-	FSCN1: Diploid
+TCGA-AR-A0TS-01	Basal-like	1.5621	-	FSCN1: Diploid
+TCGA-AR-A0TU-01	Basal-like	1.7666	-	Not Profiled
+TCGA-AR-A0U0-01	Basal-like	0.6725	-	FSCN1: Diploid
+TCGA-AR-A0U1-01	Basal-like	1.1706	-	FSCN1: Diploid
+TCGA-AR-A0U4-01	Basal-like	1.6572	-	FSCN1: Diploid
+TCGA-AR-A1AH-01	Basal-like	1.539	-	FSCN1: Diploid
+TCGA-AR-A1AI-01	Basal-like	1.7764	-	FSCN1: Diploid
+TCGA-AR-A1AJ-01	Basal-like	1.7483	-	FSCN1: Diploid
+TCGA-AR-A1AQ-01	Basal-like	1.9671	-	FSCN1: Shallow Deletion
+TCGA-AR-A1AR-01	Basal-like	0.2157	-	FSCN1: Gain
+TCGA-AR-A1AY-01	Basal-like	3.7701	-	FSCN1: Diploid
+TCGA-B6-A0I2-01	Basal-like	-0.2246	-	FSCN1: Gain
+TCGA-B6-A0I6-01	Basal-like	0.1144	-	Not Profiled
+TCGA-B6-A0IJ-01	Basal-like	0.5742	-	FSCN1: Diploid
+TCGA-B6-A0IQ-01	Basal-like	0.9606	-	FSCN1: Shallow Deletion
+TCGA-B6-A0RE-01	Basal-like	3.405	-	FSCN1: Gain
+TCGA-B6-A0RT-01	Basal-like	0.2255	-	FSCN1: Diploid
+TCGA-B6-A0RU-01	Basal-like	0.8819	-	FSCN1: Diploid
+TCGA-B6-A0WX-01	Basal-like	1.0272	-	FSCN1: Diploid
+TCGA-B6-A0X1-01	Basal-like	-0.1426	-	FSCN1: Gain
+TCGA-BH-A0AV-01	Basal-like	3.0631	-	FSCN1: Diploid
+TCGA-BH-A0B3-01	Basal-like	0.9018	-	FSCN1: Diploid
+TCGA-BH-A0B9-01	Basal-like	2.1317	-	FSCN1: Diploid
+TCGA-BH-A0BG-01	Basal-like	2.1999	-	FSCN1: Shallow Deletion
+TCGA-BH-A0BL-01	Basal-like	0.4851	-	FSCN1: Diploid
+TCGA-BH-A0BW-01	Basal-like	0.3453	-	FSCN1: Shallow Deletion
+TCGA-BH-A0DL-01	Basal-like	3.2541	-	FSCN1: Diploid
+TCGA-BH-A0E0-01	Basal-like	-0.1798	-	FSCN1: Gain
+TCGA-BH-A0E6-01	Basal-like	0.781	-	FSCN1: Diploid
+TCGA-BH-A0HL-01	Basal-like	3.4755	-	Not Profiled
+TCGA-BH-A0HN-01	Basal-like	1.8325	-	Not Profiled
+TCGA-BH-A0RX-01	Basal-like	2.3035	-	FSCN1: Diploid
+TCGA-BH-A0WA-01	Basal-like	3.1571	-	FSCN1: Diploid
+TCGA-BH-A18G-01	Basal-like	2.2649	Not Profiled	FSCN1: Diploid
+TCGA-BH-A18K-01	Basal-like	4.5866	-	FSCN1: Diploid
+TCGA-BH-A18Q-01	Basal-like	0.9818	-	FSCN1: Shallow Deletion
+TCGA-BH-A18V-01	Basal-like	1.2382	-	FSCN1: Shallow Deletion
+TCGA-BH-A1F0-01	Basal-like	1.5879	-	FSCN1: Diploid
+TCGA-C8-A12K-01	Basal-like	0.9687	-	FSCN1: Diploid
+TCGA-C8-A12V-01	Basal-like	0.9064	-	FSCN1: Diploid
+TCGA-C8-A131-01	Basal-like	0.6781	-	FSCN1: Gain
+TCGA-C8-A134-01	Basal-like	-0.2108	-	FSCN1: Diploid
+TCGA-D8-A142-01	Basal-like	-0.0322	-	FSCN1: Gain
+TCGA-D8-A143-01	Basal-like	-0.108	-	FSCN1: Diploid
+TCGA-D8-A147-01	Basal-like	0.2666	-	FSCN1: Diploid
+TCGA-E2-A14N-01	Basal-like	1.9958	-	FSCN1: Diploid
+TCGA-E2-A14R-01	Basal-like	1.6379	-	FSCN1: Diploid
+TCGA-E2-A14X-01	Basal-like	1.3988	-	FSCN1: Diploid
+TCGA-E2-A14Y-01	Basal-like	2.7871	-	FSCN1: Diploid
+TCGA-E2-A150-01	Basal-like	0.5044	-	FSCN1: Diploid
+TCGA-E2-A158-01	Basal-like	0.5204	-	FSCN1: Shallow Deletion
+TCGA-E2-A159-01	Basal-like	1.4469	-	FSCN1: Gain
+TCGA-E2-A1AZ-01	Basal-like	1.6755	-	FSCN1: Diploid
+TCGA-E2-A1B5-01	Basal-like	1.9455	-	FSCN1: Diploid
+TCGA-A2-A04W-01	HER2-enriched	-0.4453	-	FSCN1: Diploid
+TCGA-A2-A04X-01	HER2-enriched	-0.4561	-	FSCN1: Diploid
+TCGA-A2-A0CL-01	HER2-enriched	0.7124	-	FSCN1: Diploid
+TCGA-A2-A0CX-01	HER2-enriched	-0.4489	-	FSCN1: Diploid
+TCGA-A2-A0CY-01	HER2-enriched	-0.0861	Not Profiled	Not Profiled
+TCGA-A2-A0D1-01	HER2-enriched	-0.5162	-	FSCN1: Shallow Deletion
+TCGA-A2-A0EQ-01	HER2-enriched	0.0997	-	FSCN1: Diploid
+TCGA-A2-A0T1-01	HER2-enriched	-0.0672	-	FSCN1: Diploid
+TCGA-A8-A075-01	HER2-enriched	-0.3291	-	FSCN1: Diploid
+TCGA-A8-A076-01	HER2-enriched	0.1125	-	FSCN1: Gain
+TCGA-A8-A07B-01	HER2-enriched	-0.576	-	FSCN1: Shallow Deletion
+TCGA-A8-A07I-01	HER2-enriched	0.264	-	FSCN1: Diploid
+TCGA-A8-A081-01	HER2-enriched	-1.0074	-	FSCN1: Diploid
+TCGA-A8-A08B-01	HER2-enriched	-0.5642	-	FSCN1: Diploid
+TCGA-A8-A08J-01	HER2-enriched	-0.075	-	FSCN1: Diploid
+TCGA-A8-A08L-01	HER2-enriched	0.6706	-	FSCN1: Shallow Deletion
+TCGA-A8-A08X-01	HER2-enriched	0.1608	-	FSCN1: Diploid
+TCGA-A8-A092-01	HER2-enriched	-0.9038	-	FSCN1: Diploid
+TCGA-A8-A094-01	HER2-enriched	0.0083	-	FSCN1: Diploid
+TCGA-A8-A09G-01	HER2-enriched	-0.4489	-	FSCN1: Diploid
+TCGA-A8-A09X-01	HER2-enriched	0.0462	-	FSCN1: Diploid
+TCGA-A8-A0A7-01	HER2-enriched	-0.2847	-	FSCN1: Diploid
+TCGA-AN-A04C-01	HER2-enriched	-0.1903	-	FSCN1: Diploid
+TCGA-AN-A0FV-01	HER2-enriched	0.681	-	FSCN1: Diploid
+TCGA-AO-A03L-01	HER2-enriched	-0.2108	-	FSCN1: Diploid
+TCGA-AO-A03N-01	HER2-enriched	0.8087	-	FSCN1: Gain
+TCGA-AO-A0J2-01	HER2-enriched	-0.91	-	FSCN1: Diploid
+TCGA-AO-A0JE-01	HER2-enriched	0.3136	-	FSCN1: Diploid
+TCGA-AO-A12D-01	HER2-enriched	-0.7396	-	FSCN1: Diploid
+TCGA-AR-A0TX-01	HER2-enriched	0.3776	-	FSCN1: Diploid
+TCGA-AR-A1AT-01	HER2-enriched	1.0079	-	Not Profiled
+TCGA-B6-A0I9-01	HER2-enriched	-1.878	-	FSCN1: Gain
+TCGA-B6-A0IK-01	HER2-enriched	0.0625	-	FSCN1: Diploid
+TCGA-B6-A0RH-01	HER2-enriched	0.9518	-	FSCN1: Diploid
+TCGA-B6-A0RS-01	HER2-enriched	0.1317	-	FSCN1: Diploid
+TCGA-BH-A0AW-01	HER2-enriched	0.2157	-	FSCN1: Gain
+TCGA-BH-A0B7-01	HER2-enriched	0.4933	-	FSCN1: Diploid
+TCGA-BH-A0DZ-01	HER2-enriched	0.733	-	FSCN1: Diploid
+TCGA-BH-A0EE-01	HER2-enriched	-1.8111	-	FSCN1: Diploid
+TCGA-BH-A0HY-01	HER2-enriched	0.0958	-	Not Profiled
+TCGA-BH-A18P-01	HER2-enriched	-0.2873	-	FSCN1: Diploid
+TCGA-BH-A18R-01	HER2-enriched	-0.8163	-	FSCN1: Diploid
+TCGA-BH-A1EV-01	HER2-enriched	0.4038	-	FSCN1: Gain
+TCGA-C8-A12L-01	HER2-enriched	-1.5142	-	FSCN1: Gain
+TCGA-C8-A12P-01	HER2-enriched	-0.298	-	FSCN1: Gain
+TCGA-C8-A12Q-01	HER2-enriched	0.2483	-	FSCN1: Gain
+TCGA-C8-A12T-01	HER2-enriched	0.5886	-	FSCN1: Diploid
+TCGA-C8-A12Z-01	HER2-enriched	-0.3862	-	FSCN1: Diploid
+TCGA-C8-A130-01	HER2-enriched	0.3626	-	FSCN1: Diploid
+TCGA-C8-A135-01	HER2-enriched	-0.0975	-	FSCN1: Diploid
+TCGA-C8-A137-01	HER2-enriched	0.2761	-	FSCN1: Amplification
+TCGA-C8-A138-01	HER2-enriched	0.9952	-	FSCN1: Diploid
+TCGA-C8-A1HF-01	HER2-enriched	-0.1834	-	FSCN1: Diploid
+TCGA-D8-A13Z-01	HER2-enriched	0.183	-	FSCN1: Diploid
+TCGA-E2-A14P-01	HER2-enriched	1.7385	-	FSCN1: Gain
+TCGA-E2-A14V-01	HER2-enriched	-0.5854	-	FSCN1: Gain
+TCGA-E2-A152-01	HER2-enriched	0.859	-	FSCN1: Diploid
+TCGA-E2-A1B0-01	HER2-enriched	-0.5391	-	FSCN1: Diploid
+TCGA-A1-A0SD-01	Luminal A	-0.9287	-	FSCN1: Diploid
+TCGA-A1-A0SE-01	Luminal A	-0.1018	-	FSCN1: Diploid
+TCGA-A1-A0SH-01	Luminal A	1.087	-	FSCN1: Diploid
+TCGA-A1-A0SJ-01	Luminal A	-1.1253	-	FSCN1: Gain
+TCGA-A2-A04N-01	Luminal A	-1.3108	-	FSCN1: Diploid
+TCGA-A2-A04V-01	Luminal A	-0.0182	-	FSCN1: Diploid
+TCGA-A2-A04Y-01	Luminal A	-0.6338	-	FSCN1: Diploid
+TCGA-A2-A0CP-01	Luminal A	-1.3117	-	FSCN1: Diploid
+TCGA-A2-A0CQ-01	Luminal A	-0.4401	-	FSCN1: Diploid
+TCGA-A2-A0CS-01	Luminal A	-0.6488	-	FSCN1: Diploid
+TCGA-A2-A0CU-01	Luminal A	-0.946	-	FSCN1: Diploid
+TCGA-A2-A0CV-01	Luminal A	-0.2504	-	FSCN1: Gain
+TCGA-A2-A0CZ-01	Luminal A	0.2976	-	Not Profiled
+TCGA-A2-A0D3-01	Luminal A	-0.703	-	FSCN1: Diploid
+TCGA-A2-A0EM-01	Luminal A	-0.9584	-	FSCN1: Diploid
+TCGA-A2-A0EN-01	Luminal A	0.3032	-	FSCN1: Diploid
+TCGA-A2-A0EO-01	Luminal A	-0.3611	-	FSCN1: Diploid
+TCGA-A2-A0ES-01	Luminal A	-0.9822	-	FSCN1: Diploid
+TCGA-A2-A0ET-01	Luminal A	-1.4404	-	FSCN1: Diploid
+TCGA-A2-A0EU-01	Luminal A	-0.6543	-	FSCN1: Diploid
+TCGA-A2-A0EV-01	Luminal A	-1.364	-	FSCN1: Diploid
+TCGA-A2-A0EW-01	Luminal A	0.2016	-	FSCN1: Diploid
+TCGA-A2-A0EX-01	Luminal A	-0.6328	-	FSCN1: Diploid
+TCGA-A2-A0SU-01	Luminal A	0.1001	-	FSCN1: Diploid
+TCGA-A2-A0SY-01	Luminal A	-0.6599	-	FSCN1: Diploid
+TCGA-A2-A0T5-01	Luminal A	0.071	Not Profiled	FSCN1: Diploid
+TCGA-A2-A0T6-01	Luminal A	-0.315	-	FSCN1: Diploid
+TCGA-A2-A0T7-01	Luminal A	0.0798	-	FSCN1: Diploid
+TCGA-A2-A0YC-01	Luminal A	-0.3144	-	FSCN1: Diploid
+TCGA-A2-A0YD-01	Luminal A	0.2029	-	FSCN1: Diploid
+TCGA-A2-A0YF-01	Luminal A	-0.9045	-	FSCN1: Diploid
+TCGA-A2-A0YI-01	Luminal A	0.1863	-	FSCN1: Diploid
+TCGA-A2-A0YL-01	Luminal A	-0.2651	-	FSCN1: Diploid
+TCGA-A7-A0CD-01	Luminal A	-0.3905	-	FSCN1: Shallow Deletion
+TCGA-A7-A0CG-01	Luminal A	-1.0466	-	FSCN1: Diploid
+TCGA-A7-A0CH-01	Luminal A	-0.25	-	FSCN1: Diploid
+TCGA-A7-A0D9-01	Luminal A	-0.9319	-	FSCN1: Gain
+TCGA-A7-A0DB-01	Luminal A	-0.1779	-	FSCN1: Gain
+TCGA-A8-A06P-01	Luminal A	-0.6765	-	FSCN1: Diploid
+TCGA-A8-A06T-01	Luminal A	-0.7089	-	FSCN1: Diploid
+TCGA-A8-A06U-01	Luminal A	-0.5903	-	FSCN1: Diploid
+TCGA-A8-A06Y-01	Luminal A	-2.6625	-	FSCN1: Diploid
+TCGA-A8-A07E-01	Luminal A	1.0883	-	FSCN1: Diploid
+TCGA-A8-A07F-01	Luminal A	-0.3369	-	FSCN1: Gain
+TCGA-A8-A07G-01	Luminal A	-0.0316	-	FSCN1: Diploid
+TCGA-A8-A07J-01	Luminal A	1.438	-	FSCN1: Diploid
+TCGA-A8-A07P-01	Luminal A	-0.0721	-	FSCN1: Diploid
+TCGA-A8-A083-01	Luminal A	-1.5495	-	FSCN1: Diploid
+TCGA-A8-A086-01	Luminal A	-0.3496	-	FSCN1: Diploid
+TCGA-A8-A08A-01	Luminal A	-0.0374	-	FSCN1: Diploid
+TCGA-A8-A08C-01	Luminal A	-0.5322	-	FSCN1: Gain
+TCGA-A8-A08O-01	Luminal A	-0.1736	-	FSCN1: Diploid
+TCGA-A8-A08T-01	Luminal A	-0.8454	-	FSCN1: Diploid
+TCGA-A8-A08Z-01	Luminal A	0.117	-	FSCN1: Diploid
+TCGA-A8-A090-01	Luminal A	-0.9979	-	FSCN1: Diploid
+TCGA-A8-A091-01	Luminal A	-0.6762	-	FSCN1: Shallow Deletion
+TCGA-A8-A093-01	Luminal A	-0.5188	-	FSCN1: Gain
+TCGA-A8-A099-01	Luminal A	0.1582	-	FSCN1: Diploid
+TCGA-A8-A09A-01	Luminal A	-0.2432	-	FSCN1: Diploid
+TCGA-A8-A09B-01	Luminal A	-0.6739	-	FSCN1: Diploid
+TCGA-A8-A09T-01	Luminal A	-0.1178	-	FSCN1: Diploid
+TCGA-A8-A09V-01	Luminal A	-0.8042	-	FSCN1: Diploid
+TCGA-A8-A0A1-01	Luminal A	-0.7396	-	FSCN1: Diploid
+TCGA-A8-A0A2-01	Luminal A	-0.4999	-	FSCN1: Gain
+TCGA-A8-A0A4-01	Luminal A	-1.3757	-	FSCN1: Diploid
+TCGA-A8-A0A6-01	Luminal A	-0.0146	Not Profiled	FSCN1: Diploid
+TCGA-A8-A0AD-01	Luminal A	0.8927	-	FSCN1: Diploid
+TCGA-AN-A03X-01	Luminal A	0.1043	-	FSCN1: Diploid
+TCGA-AN-A046-01	Luminal A	0.3205	Not Profiled	FSCN1: Diploid
+TCGA-AN-A04A-01	Luminal A	0.7705	-	FSCN1: Diploid
+TCGA-AN-A0FD-01	Luminal A	-0.5077	-	FSCN1: Diploid
+TCGA-AN-A0FN-01	Luminal A	0.3532	-	FSCN1: Diploid
+TCGA-AN-A0FS-01	Luminal A	-0.8604	-	FSCN1: Diploid
+TCGA-AN-A0FT-01	Luminal A	0.379	-	FSCN1: Gain
+TCGA-AN-A0FW-01	Luminal A	-0.6994	-	FSCN1: Diploid
+TCGA-AN-A0FZ-01	Luminal A	-0.7046	-	FSCN1: Diploid
+TCGA-AN-A0XL-01	Luminal A	-0.5234	-	FSCN1: Gain
+TCGA-AN-A0XN-01	Luminal A	1.0102	-	FSCN1: Diploid
+TCGA-AN-A0XO-01	Luminal A	-0.6762	-	FSCN1: Diploid
+TCGA-AN-A0XP-01	Luminal A	-0.1808	-	Not Profiled
+TCGA-AN-A0XS-01	Luminal A	-0.5456	-	FSCN1: Diploid
+TCGA-AN-A0XT-01	Luminal A	-1.0355	-	FSCN1: Shallow Deletion
+TCGA-AN-A0XV-01	Luminal A	-0.185	-	FSCN1: Diploid
+TCGA-AO-A03M-01	Luminal A	-0.298	Not Profiled	FSCN1: Diploid
+TCGA-AO-A03V-01	Luminal A	0.9815	-	FSCN1: Diploid
+TCGA-AO-A0J8-01	Luminal A	-0.3921	-	FSCN1: Diploid
+TCGA-AO-A0J9-01	Luminal A	0.2996	-	FSCN1: Diploid
+TCGA-AO-A0JA-01	Luminal A	0.1585	-	FSCN1: Diploid
+TCGA-AO-A0JF-01	Luminal A	0.6294	-	FSCN1: Diploid
+TCGA-AO-A0JG-01	Luminal A	-0.7719	-	FSCN1: Diploid
+TCGA-AO-A0JJ-01	Luminal A	-0.0378	-	FSCN1: Diploid
+TCGA-AO-A125-01	Luminal A	-1.1217	-	FSCN1: Gain
+TCGA-AO-A126-01	Luminal A	0.3613	-	FSCN1: Diploid
+TCGA-AO-A12A-01	Luminal A	-0.1815	-	FSCN1: Diploid
+TCGA-AO-A12C-01	Luminal A	0.3881	Not Profiled	Not Profiled
+TCGA-AO-A12E-01	Luminal A	-1.0123	-	FSCN1: Gain
+TCGA-AO-A12G-01	Luminal A	-0.2037	-	FSCN1: Shallow Deletion
+TCGA-AO-A12H-01	Luminal A	-0.5583	-	FSCN1: Diploid
+TCGA-AQ-A04L-01	Luminal A	-0.056	-	FSCN1: Shallow Deletion
+TCGA-AR-A0TR-01	Luminal A	-1.8734	-	FSCN1: Gain
+TCGA-AR-A0TW-01	Luminal A	-1.188	-	FSCN1: Shallow Deletion
+TCGA-AR-A1AK-01	Luminal A	-0.5913	-	FSCN1: Diploid
+TCGA-AR-A1AL-01	Luminal A	0.8329	-	FSCN1: Diploid
+TCGA-AR-A1AN-01	Luminal A	0.4714	-	FSCN1: Diploid
+TCGA-AR-A1AP-01	Luminal A	-0.5309	-	FSCN1: Diploid
+TCGA-AR-A1AS-01	Luminal A	1.149	-	FSCN1: Diploid
+TCGA-AR-A1AU-01	Luminal A	-1.3401	-	FSCN1: Diploid
+TCGA-AR-A1AW-01	Luminal A	0.6118	-	FSCN1: Diploid
+TCGA-AR-A1AX-01	Luminal A	0.1311	-	FSCN1: Diploid
+TCGA-B6-A0I5-01	Luminal A	-1.0067	-	FSCN1: Gain
+TCGA-B6-A0I8-01	Luminal A	-0.9603	-	Not Profiled
+TCGA-B6-A0IA-01	Luminal A	-0.9404	-	FSCN1: Diploid
+TCGA-B6-A0IG-01	Luminal A	-0.2226	-	Not Profiled
+TCGA-B6-A0IH-01	Luminal A	-0.3797	-	FSCN1: Diploid
+TCGA-B6-A0IN-01	Luminal A	-0.0064	-	FSCN1: Gain
+TCGA-B6-A0IO-01	Luminal A	-1.2216	-	FSCN1: Diploid
+TCGA-B6-A0IP-01	Luminal A	-0.8744	-	FSCN1: Diploid
+TCGA-B6-A0RG-01	Luminal A	-0.2638	-	FSCN1: Shallow Deletion
+TCGA-B6-A0RI-01	Luminal A	0.4041	-	FSCN1: Diploid
+TCGA-B6-A0RM-01	Luminal A	-1.494	-	FSCN1: Diploid
+TCGA-B6-A0RN-01	Luminal A	0.3923	-	FSCN1: Diploid
+TCGA-B6-A0RO-01	Luminal A	-0.9483	-	FSCN1: Diploid
+TCGA-B6-A0RP-01	Luminal A	0.023	-	FSCN1: Diploid
+TCGA-B6-A0RQ-01	Luminal A	-1.8476	-	FSCN1: Diploid
+TCGA-B6-A0RV-01	Luminal A	-1.0495	-	FSCN1: Amplification
+TCGA-B6-A0WS-01	Luminal A	0.7369	-	FSCN1: Diploid
+TCGA-B6-A0WT-01	Luminal A	0.0256	-	FSCN1: Diploid
+TCGA-B6-A0WY-01	Luminal A	-0.3451	-	FSCN1: Diploid
+TCGA-B6-A0WZ-01	Luminal A	-0.4701	-	FSCN1: Gain
+TCGA-B6-A0X0-01	Luminal A	-0.1282	-	FSCN1: Diploid
+TCGA-B6-A0X4-01	Luminal A	-1.1213	-	FSCN1: Diploid
+TCGA-B6-A0X7-01	Luminal A	-0.2997	-	FSCN1: Diploid
+TCGA-BH-A0AZ-01	Luminal A	1.8002	-	FSCN1: Gain
+TCGA-BH-A0B0-01	Luminal A	1.3045	-	FSCN1: Diploid
+TCGA-BH-A0B1-01	Luminal A	-0.0231	-	Not Profiled
+TCGA-BH-A0B4-01	Luminal A	0.1944	-	FSCN1: Gain
+TCGA-BH-A0B8-01	Luminal A	-0.7778	-	Not Profiled
+TCGA-BH-A0BA-01	Luminal A	-0.2017	-	FSCN1: Amplification
+TCGA-BH-A0BC-01	Luminal A	0.1833	-	FSCN1: Diploid
+TCGA-BH-A0BJ-01	Luminal A	0.2346	-	FSCN1: Diploid
+TCGA-BH-A0BM-01	Luminal A	-0.2781	-	FSCN1: Diploid
+TCGA-BH-A0BO-01	Luminal A	-0.944	-	FSCN1: Diploid
+TCGA-BH-A0BP-01	Luminal A	-0.4332	-	FSCN1: Gain
+TCGA-BH-A0BQ-01	Luminal A	0.3398	-	FSCN1: Diploid
+TCGA-BH-A0BR-01	Luminal A	0.4851	-	FSCN1: Diploid
+TCGA-BH-A0BS-01	Luminal A	-0.5861	-	FSCN1: Diploid
+TCGA-BH-A0BT-01	Luminal A	-0.7347	-	FSCN1: Diploid
+TCGA-BH-A0BV-01	Luminal A	0.1693	-	FSCN1: Diploid
+TCGA-BH-A0C1-01	Luminal A	0.3741	-	FSCN1: Diploid
+TCGA-BH-A0DE-01	Luminal A	0.4309	-	FSCN1: Diploid
+TCGA-BH-A0DG-01	Luminal A	-0.0926	-	FSCN1: Diploid
+TCGA-BH-A0DH-01	Luminal A	-0.6249	-	FSCN1: Diploid
+TCGA-BH-A0DI-01	Luminal A	0.6347	-	FSCN1: Diploid
+TCGA-BH-A0DK-01	Luminal A	0.5191	-	FSCN1: Diploid
+TCGA-BH-A0DO-01	Luminal A	-0.6347	-	FSCN1: Gain
+TCGA-BH-A0DP-01	Luminal A	-0.04	-	FSCN1: Gain
+TCGA-BH-A0DQ-01	Luminal A	0.5328	-	FSCN1: Diploid
+TCGA-BH-A0DS-01	Luminal A	-0.6298	-	FSCN1: Gain
+TCGA-BH-A0DT-01	Luminal A	-1.0724	-	FSCN1: Gain
+TCGA-BH-A0DX-01	Luminal A	0.2872	-	FSCN1: Diploid
+TCGA-BH-A0E1-01	Luminal A	0.2349	-	FSCN1: Diploid
+TCGA-BH-A0E2-01	Luminal A	-0.3758	-	FSCN1: Diploid
+TCGA-BH-A0E7-01	Luminal A	-0.9473	-	FSCN1: Diploid
+TCGA-BH-A0E9-01	Luminal A	-0.348	-	FSCN1: Diploid
+TCGA-BH-A0EA-01	Luminal A	0.1474	-	FSCN1: Diploid
+TCGA-BH-A0EB-01	Luminal A	0.0145	-	FSCN1: Gain
+TCGA-BH-A0EI-01	Luminal A	0.8878	-	FSCN1: Diploid
+TCGA-BH-A0GY-01	Luminal A	-0.5002	-	FSCN1: Gain
+TCGA-BH-A0GZ-01	Luminal A	-0.0201	-	FSCN1: Diploid
+TCGA-BH-A0H3-01	Luminal A	0.9727	-	FSCN1: Diploid
+TCGA-BH-A0H5-01	Luminal A	-0.608	-	FSCN1: Diploid
+TCGA-BH-A0H6-01	Luminal A	0.1314	-	FSCN1: Diploid
+TCGA-BH-A0H7-01	Luminal A	0.9658	-	FSCN1: Gain
+TCGA-BH-A0H9-01	Luminal A	-0.7657	-	FSCN1: Diploid
+TCGA-BH-A0HA-01	Luminal A	0.7441	-	FSCN1: Diploid
+TCGA-BH-A0HB-01	Luminal A	-1.0129	-	FSCN1: Diploid
+TCGA-BH-A0HF-01	Luminal A	0.0504	Not Profiled	Not Profiled
+TCGA-BH-A0HI-01	Luminal A	0.0674	-	FSCN1: Diploid
+TCGA-BH-A0HK-01	Luminal A	-0.3474	-	FSCN1: Diploid
+TCGA-BH-A0HO-01	Luminal A	-0.1632	-	FSCN1: Diploid
+TCGA-BH-A0HP-01	Luminal A	-0.6354	-	FSCN1: Gain
+TCGA-BH-A0HQ-01	Luminal A	-1.3878	-	Not Profiled
+TCGA-BH-A0HX-01	Luminal A	-0.3451	-	FSCN1: Diploid
+TCGA-BH-A0W4-01	Luminal A	-0.9114	-	FSCN1: Diploid
+TCGA-BH-A0W5-01	Luminal A	-0.4408	-	FSCN1: Diploid
+TCGA-BH-A0W7-01	Luminal A	-0.7546	-	FSCN1: Gain
+TCGA-BH-A18H-01	Luminal A	0.1141	-	FSCN1: Diploid
+TCGA-BH-A18I-01	Luminal A	0.3809	-	FSCN1: Diploid
+TCGA-BH-A18M-01	Luminal A	-1.1132	-	FSCN1: Diploid
+TCGA-BH-A18N-01	Luminal A	-0.4646	-	FSCN1: Diploid
+TCGA-BH-A18S-01	Luminal A	-0.9852	-	FSCN1: Diploid
+TCGA-BH-A18T-01	Luminal A	-0.5792	-	FSCN1: Gain
+TCGA-BH-A1EO-01	Luminal A	-0.3634	-	FSCN1: Gain
+TCGA-BH-A1ES-01	Luminal A	-0.4862	-	FSCN1: Diploid
+TCGA-BH-A1ET-01	Luminal A	-0.1913	-	FSCN1: Diploid
+TCGA-BH-A1EU-01	Luminal A	-0.3591	-	FSCN1: Diploid
+TCGA-C8-A12N-01	Luminal A	1.2627	-	FSCN1: Diploid
+TCGA-C8-A12O-01	Luminal A	0.7153	-	Not Profiled
+TCGA-C8-A12Y-01	Luminal A	-1.5149	-	FSCN1: Diploid
+TCGA-C8-A132-01	Luminal A	0.3182	-	FSCN1: Diploid
+TCGA-C8-A133-01	Luminal A	-0.5975	-	FSCN1: Diploid
+TCGA-C8-A1HI-01	Luminal A	-1.1174	-	FSCN1: Diploid
+TCGA-D8-A141-01	Luminal A	0.7646	-	FSCN1: Diploid
+TCGA-D8-A145-01	Luminal A	0.5488	-	FSCN1: Diploid
+TCGA-E2-A105-01	Luminal A	-1.6328	-	FSCN1: Shallow Deletion
+TCGA-E2-A106-01	Luminal A	-1.0815	Not Profiled	Not Profiled
+TCGA-E2-A10B-01	Luminal A	-0.1984	-	FSCN1: Diploid
+TCGA-E2-A10E-01	Luminal A	-0.4662	-	FSCN1: Diploid
+TCGA-E2-A10F-01	Luminal A	-0.1677	-	FSCN1: Diploid
+TCGA-E2-A14Q-01	Luminal A	-0.7807	-	FSCN1: Diploid
+TCGA-E2-A14T-01	Luminal A	-0.7549	-	Not Profiled
+TCGA-E2-A14Z-01	Luminal A	-0.8189	-	FSCN1: Gain
+TCGA-E2-A153-01	Luminal A	1.391	-	FSCN1: Diploid
+TCGA-E2-A154-01	Luminal A	-0.1968	-	FSCN1: Gain
+TCGA-E2-A156-01	Luminal A	-1.0942	-	FSCN1: Shallow Deletion
+TCGA-E2-A15C-01	Luminal A	-1.2791	-	FSCN1: Diploid
+TCGA-E2-A15D-01	Luminal A	0.1814	-	Not Profiled
+TCGA-E2-A15F-01	Luminal A	-1.8855	-	Not Profiled
+TCGA-E2-A15G-01	Luminal A	-0.6119	-	FSCN1: Diploid
+TCGA-E2-A15H-01	Luminal A	0.5246	-	FSCN1: Diploid
+TCGA-E2-A15I-01	Luminal A	-1.122	-	FSCN1: Gain
+TCGA-E2-A15J-01	Luminal A	-0.1896	-	FSCN1: Diploid
+TCGA-E2-A15O-01	Luminal A	-0.1106	-	FSCN1: Diploid
+TCGA-E2-A15P-01	Luminal A	-0.7461	-	FSCN1: Diploid
+TCGA-E2-A15R-01	Luminal A	-0.7559	-	FSCN1: Diploid
+TCGA-E2-A1B1-01	Luminal A	1.4096	-	FSCN1: Diploid
+TCGA-E2-A1B4-01	Luminal A	-1.5684	-	FSCN1: Diploid
+TCGA-E2-A1B6-01	Luminal A	-0.0979	-	FSCN1: Diploid
+TCGA-E2-A1BC-01	Luminal A	0.8832	-	FSCN1: Diploid
+TCGA-E2-A1BD-01	Luminal A	0.0331	-	FSCN1: Gain
+TCGA-A1-A0SM-01	Luminal B	0.8365	-	FSCN1: Diploid
+TCGA-A2-A04R-01	Luminal B	-0.5903	-	FSCN1: Diploid
+TCGA-A2-A0CT-01	Luminal B	-1.0505	-	FSCN1: Diploid
+TCGA-A2-A0CW-01	Luminal B	-1.1638	-	FSCN1: Shallow Deletion
+TCGA-A2-A0D4-01	Luminal B	-0.5671	-	FSCN1: Shallow Deletion
+TCGA-A2-A0ER-01	Luminal B	-1.4917	-	FSCN1: Diploid
+TCGA-A2-A0EY-01	Luminal B	-1.4166	-	FSCN1: Gain
+TCGA-A2-A0SV-01	Luminal B	0.0262	-	FSCN1: Diploid
+TCGA-A2-A0SW-01	Luminal B	-0.3696	-	FSCN1: Gain
+TCGA-A2-A0T3-01	Luminal B	-1.0472	-	FSCN1: Shallow Deletion
+TCGA-A2-A0T4-01	Luminal B	-0.2837	-	FSCN1: Diploid
+TCGA-A2-A0YG-01	Luminal B	-0.7549	-	FSCN1: Gain
+TCGA-A2-A0YH-01	Luminal B	-0.395	-	FSCN1: Diploid
+TCGA-A7-A0CJ-01	Luminal B	-0.863	-	FSCN1: Shallow Deletion
+TCGA-A7-A13F-01	Luminal B	1.9916	-	FSCN1: Gain
+TCGA-A8-A06N-01	Luminal B	-1.6935	-	FSCN1: Gain
+TCGA-A8-A06O-01	Luminal B	-0.9502	-	FSCN1: Diploid
+TCGA-A8-A06Q-01	Luminal B	-1.039	-	FSCN1: Shallow Deletion
+TCGA-A8-A06R-01	Luminal B	0.6	-	FSCN1: Diploid
+TCGA-A8-A06X-01	Luminal B	-0.6279	-	FSCN1: Gain
+TCGA-A8-A06Z-01	Luminal B	-0.9176	-	FSCN1: Gain
+TCGA-A8-A079-01	Luminal B	-1.6762	-	FSCN1: Diploid
+TCGA-A8-A07L-01	Luminal B	-0.8052	-	FSCN1: Diploid
+TCGA-A8-A07S-01	Luminal B	-0.5413	Not Profiled	FSCN1: Diploid
+TCGA-A8-A07W-01	Luminal B	-0.8222	-	FSCN1: Diploid
+TCGA-A8-A07Z-01	Luminal B	-0.1442	-	FSCN1: Diploid
+TCGA-A8-A082-01	Luminal B	-0.3898	-	FSCN1: Diploid
+TCGA-A8-A084-01	Luminal B	-0.573	-	FSCN1: Diploid
+TCGA-A8-A085-01	Luminal B	-0.1325	-	FSCN1: Diploid
+TCGA-A8-A08F-01	Luminal B	-0.221	-	FSCN1: Shallow Deletion
+TCGA-A8-A08G-01	Luminal B	-0.0668	-	FSCN1: Gain
+TCGA-A8-A08I-01	Luminal B	-1.0511	-	FSCN1: Shallow Deletion
+TCGA-A8-A08P-01	Luminal B	-0.1018	-	FSCN1: Gain
+TCGA-A8-A095-01	Luminal B	-0.719	-	FSCN1: Gain
+TCGA-A8-A096-01	Luminal B	-0.0191	-	FSCN1: Diploid
+TCGA-A8-A097-01	Luminal B	-0.0335	-	FSCN1: Gain
+TCGA-A8-A09C-01	Luminal B	-0.9424	-	FSCN1: Diploid
+TCGA-A8-A09D-01	Luminal B	-0.4071	-	FSCN1: Diploid
+TCGA-A8-A09I-01	Luminal B	-0.443	-	FSCN1: Diploid
+TCGA-A8-A09M-01	Luminal B	-1.9989	-	FSCN1: Diploid
+TCGA-A8-A09N-01	Luminal B	-0.7657	-	FSCN1: Diploid
+TCGA-A8-A09Q-01	Luminal B	-0.4058	-	FSCN1: Gain
+TCGA-A8-A09R-01	Luminal B	-0.1112	-	FSCN1: Diploid
+TCGA-A8-A09W-01	Luminal B	-0.0087	-	FSCN1: Diploid
+TCGA-A8-A09Z-01	Luminal B	-0.7846	Not Profiled	FSCN1: Diploid
+TCGA-A8-A0A9-01	Luminal B	-1.2366	-	FSCN1: Gain
+TCGA-A8-A0AB-01	Luminal B	-1.2157	-	FSCN1: Diploid
+TCGA-AN-A03Y-01	Luminal B	-0.8545	-	FSCN1: Diploid
+TCGA-AN-A041-01	Luminal B	0.746	-	FSCN1: Diploid
+TCGA-AN-A049-01	Luminal B	-0.3438	-	FSCN1: Gain
+TCGA-AN-A0AJ-01	Luminal B	0.0919	-	FSCN1: Gain
+TCGA-AN-A0AK-01	Luminal B	-0.5035	Not Profiled	FSCN1: Diploid
+TCGA-AN-A0AM-01	Luminal B	-0.4568	-	FSCN1: Diploid
+TCGA-AN-A0AS-01	Luminal B	0.6004	-	FSCN1: Gain
+TCGA-AN-A0FF-01	Luminal B	-0.8124	-	FSCN1: Diploid
+TCGA-AN-A0FK-01	Luminal B	-0.8565	-	FSCN1: Diploid
+TCGA-AN-A0FY-01	Luminal B	-0.4744	-	FSCN1: Diploid
+TCGA-AN-A0XR-01	Luminal B	-0.7056	-	FSCN1: Diploid
+TCGA-AN-A0XW-01	Luminal B	0.2016	-	FSCN1: Diploid
+TCGA-AO-A03O-01	Luminal B	-0.7072	-	FSCN1: Diploid
+TCGA-AO-A03P-01	Luminal B	-0.0789	-	FSCN1: Diploid
+TCGA-AO-A0J3-01	Luminal B	-1.5678	-	FSCN1: Gain
+TCGA-AO-A0J7-01	Luminal B	-1.2432	-	FSCN1: Shallow Deletion
+TCGA-AO-A0JC-01	Luminal B	0.5435	-	FSCN1: Diploid
+TCGA-AO-A0JD-01	Luminal B	-0.7484	-	FSCN1: Diploid
+TCGA-AO-A0JI-01	Luminal B	-1.5341	-	FSCN1: Diploid
+TCGA-AO-A0JM-01	Luminal B	0.556	-	FSCN1: Diploid
+TCGA-AO-A12B-01	Luminal B	-1.2908	-	FSCN1: Gain
+TCGA-AQ-A04H-01	Luminal B	-0.2726	-	FSCN1: Diploid
+TCGA-AR-A0TQ-01	Luminal B	-0.5642	-	FSCN1: Diploid
+TCGA-AR-A0TT-01	Luminal B	0.2163	-	FSCN1: Gain
+TCGA-AR-A0TV-01	Luminal B	-0.5309	-	FSCN1: Shallow Deletion
+TCGA-AR-A0TY-01	Luminal B	-0.1808	-	FSCN1: Diploid
+TCGA-AR-A0TZ-01	Luminal B	-0.5972	-	FSCN1: Diploid
+TCGA-AR-A0U2-01	Luminal B	-0.7974	-	FSCN1: Gain
+TCGA-AR-A0U3-01	Luminal B	-1.0841	-	FSCN1: Gain
+TCGA-AR-A1AV-01	Luminal B	-0.2376	-	FSCN1: Gain
+TCGA-B6-A0IB-01	Luminal B	-1.5658	-	FSCN1: Gain
+TCGA-B6-A0IC-01	Luminal B	-1.4757	-	FSCN1: Gain
+TCGA-B6-A0IM-01	Luminal B	-0.234	-	FSCN1: Diploid
+TCGA-B6-A0RL-01	Luminal B	-2.2928	-	FSCN1: Diploid
+TCGA-B6-A0WV-01	Luminal B	-1.7618	-	FSCN1: Diploid
+TCGA-B6-A0WW-01	Luminal B	-0.6602	-	FSCN1: Diploid
+TCGA-B6-A0X5-01	Luminal B	0.2336	-	FSCN1: Diploid
+TCGA-BH-A0AU-01	Luminal B	-1.1197	-	FSCN1: Diploid
+TCGA-BH-A0AY-01	Luminal B	-0.0476	-	FSCN1: Gain
+TCGA-BH-A0B5-01	Luminal B	-0.7497	-	FSCN1: Diploid
+TCGA-BH-A0BD-01	Luminal B	-0.427	-	FSCN1: Diploid
+TCGA-BH-A0BF-01	Luminal B	1.1676	-	FSCN1: Diploid
+TCGA-BH-A0BZ-01	Luminal B	1.2757	-	FSCN1: Diploid
+TCGA-BH-A0C0-01	Luminal B	-0.0685	-	FSCN1: Diploid
+TCGA-BH-A0C3-01	Luminal B	0.684	-	FSCN1: Diploid
+TCGA-BH-A0C7-01	Luminal B	-0.1135	-	FSCN1: Diploid
+TCGA-BH-A0DD-01	Luminal B	-2.7052	-	FSCN1: Gain
+TCGA-BH-A0H0-01	Luminal B	-0.9326	-	FSCN1: Diploid
+TCGA-BH-A0HU-01	Luminal B	-1.2474	-	FSCN1: Diploid
+TCGA-BH-A0HW-01	Luminal B	-1.6524	-	FSCN1: Diploid
+TCGA-BH-A0W3-01	Luminal B	-0.9917	-	FSCN1: Diploid
+TCGA-BH-A18F-01	Luminal B	-0.6423	-	FSCN1: Diploid
+TCGA-BH-A18J-01	Luminal B	0.0354	-	FSCN1: Diploid
+TCGA-BH-A18L-01	Luminal B	-0.7523	-	FSCN1: Gain
+TCGA-BH-A18U-01	Luminal B	-0.7967	-	FSCN1: Diploid
+TCGA-BH-A1EW-01	Luminal B	-0.6449	-	FSCN1: Diploid
+TCGA-C8-A12M-01	Luminal B	0.0968	-	FSCN1: Diploid
+TCGA-C8-A12U-01	Luminal B	-0.9094	-	FSCN1: Diploid
+TCGA-C8-A12W-01	Luminal B	0.1017	-	FSCN1: Diploid
+TCGA-C8-A12X-01	Luminal B	0.36	-	FSCN1: Diploid
+TCGA-C8-A1HG-01	Luminal B	-1.0756	-	FSCN1: Diploid
+TCGA-C8-A1HL-01	Luminal B	0.6219	-	FSCN1: Gain
+TCGA-C8-A1HM-01	Luminal B	-1.2755	-	FSCN1: Diploid
+TCGA-C8-A1HN-01	Luminal B	-0.4499	-	FSCN1: Diploid
+TCGA-D8-A13Y-01	Luminal B	-1.0642	-	FSCN1: Diploid
+TCGA-D8-A140-01	Luminal B	-0.1831	-	Not Profiled
+TCGA-E2-A107-01	Luminal B	-0.9633	-	FSCN1: Diploid
+TCGA-E2-A109-01	Luminal B	-0.3637	-	FSCN1: Diploid
+TCGA-E2-A10A-01	Luminal B	-0.5044	-	FSCN1: Diploid
+TCGA-E2-A10C-01	Luminal B	-0.591	-	FSCN1: Gain
+TCGA-E2-A14O-01	Luminal B	-0.8349	-	FSCN1: Diploid
+TCGA-E2-A14S-01	Luminal B	-0.7552	-	FSCN1: Diploid
+TCGA-E2-A14W-01	Luminal B	-1.2454	-	FSCN1: Gain
+TCGA-E2-A155-01	Luminal B	-1.7827	-	FSCN1: Diploid
+TCGA-E2-A15L-01	Luminal B	-0.0848	-	FSCN1: Diploid
+TCGA-E2-A15M-01	Luminal B	0.217	-	FSCN1: Diploid
+TCGA-E2-A15S-01	Luminal B	-1.2262	-	Not Profiled
+TCGA-E2-A15T-01	Luminal B	-0.2376	-	Not Profiled
+TCGA-A2-A0YK-01	Normal-like	0.0073	-	FSCN1: Diploid
+TCGA-AO-A03R-01	Normal-like	0.4661	-	FSCN1: Diploid
+TCGA-AO-A03T-01	Normal-like	-0.3389	-	FSCN1: Gain
+TCGA-AO-A03U-01	Normal-like	1.0484	-	FSCN1: Diploid
+TCGA-AO-A0JB-01	Normal-like	0.5449	-	FSCN1: Gain
+TCGA-AR-A1AO-01	Normal-like	-0.3611	-	FSCN1: Diploid
+TCGA-B6-A0IE-01	Normal-like	-1.3223	-	FSCN1: Diploid
+TCGA-E2-A108-01	Normal-like	-0.7069	-	FSCN1: Diploid
