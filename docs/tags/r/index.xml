@@ -21,6 +21,16 @@
     </item>
     
     <item>
+      <title>GDC Notebook</title>
+      <link>https://xiaonilee.github.io/post/gdc/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/gdc/</guid>
+      <description>&lt;p&gt;The Genomic Data Commons (&lt;a href=&#34;https://portal.gdc.cancer.gov/&#34;&gt;GDC&lt;/a&gt;), is a research program of the National Cancer Institute (NCI).&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;mission&lt;/strong&gt; of the GDC is to provide the cancer research community with a &lt;strong&gt;unified&lt;/strong&gt; data repository that enables data sharing across cancer genomic studies in support of &lt;strong&gt;precision medicine&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>R Notebook : ggplot2</title>
       <link>https://xiaonilee.github.io/post/ggplot2/</link>
       <pubDate>Sat, 19 Sep 2020 00:00:00 +0000</pubDate>

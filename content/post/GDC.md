@@ -3,7 +3,7 @@ title: "GDC Notebook"
 date: 2020-09-25
 lastmod: 2020-09-28
 draft: false
-tags: ["TCGA", "Bioinformatics", "GDC"]
+tags: ["TCGA", "Bioinformatics", "GDC", "R"]
 categories: ["Cancer Research", "Database"]
 author: "Xiaoni"
 
