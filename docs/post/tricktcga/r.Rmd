@@ -3,6 +3,8 @@ title: "r trick"
 author: "Xiaoni"
 date: "10/12/2020"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -16,12 +18,19 @@ colnames(a) = c('id', 'subtype', 'expression', 'mutations', 'CNA')
 
 dat = a 
 library(ggstatsplot)
+library(ggplot2)
 ggbetweenstats(dat, x = subtype, y = expression)
 ggsave('subtypeExp.png')
 
-library(ggplot2)
+
 ggplot(dat, aes(x=subtype, y=expression)) +
-  geom_violin()
+  geom_boxplot()
+ggsave('boxplot.png')
+
+ggplot(dat, aes(x=subtype, y=expression)) +
+  geom_violin(trim=FALSE, fill='orange', color='brown') +
+geom_boxplot(width=0.1) + theme_minimal()
+ggsave('violinplot.png')
 
 # variance
 aov(expression ~ subtype, data=dat)

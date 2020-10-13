@@ -1,7 +1,7 @@
 ---
 title: "R re-analysis in TCGA"
 date: 2020-10-12
-lastmod: 2020-10-12
+lastmod: 2020-10-13
 draft: false
 tags: ["R", "Bioinformatics", "TCGA"]
 categories: ["Cancer Research", "Database"]
@@ -47,31 +47,52 @@ Re-analysis by R.
   
 ### Re-analysis by [R](r.Rmd)
 
-- Read data
+#### Read data
 
 ```r
 a= read.table('plot.txt',sep = '\t', header = T)
 colnames(a) = c('id', 'subtype', 'expression', 'mutations', 'CNA')
 ```
 
-- Plot by R
-  
+#### Plot with R
+
+- statsplot
+
 ```r
 dat = a
 library(ggstatsplot)
+library(ggplot2)
 ggbetweenstats(dat, x = subtype, y = expression)
 ggsave('subtypeExp.png')
 ```
 
 ![subtypeExp.png](subtypeExp.png)
 
-- Try other analysis
+- boxplot
   
 ```r
 library(ggplot2)
 ggplot(dat, aes(x=subtype, y=expression)) +
-  geom_violin()
+  geom_boxplot()
+ggsave('boxplot.png')
+```
 
+![boxplot](boxplot.png)
+
+- violinplot
+  
+```r
+ggplot(dat, aes(x=subtype, y=expression)) +
+  geom_violin(trim=FALSE, fill='brown', color='red') +
+geom_boxplot(width=0.1) + theme_minimal()
+ggsave('violinplot.png')
+```
+
+![violinplot](violinplot.png)
+
+#### Statics Analysis
+
+```r
 # variance
 aov(expression ~ subtype, data=dat)
 
@@ -104,3 +125,7 @@ TukeyHSD(aov(expression ~ subtype, data=dat))
 # Normal-like-Luminal A      0.21252359 -0.5667149  0.99176206 0.9453257
 # Normal-like-Luminal B      0.48123310 -0.3089298  1.27139601 0.4552733
 ```
+
+#### In Summary
+
+There are a lot of different choices to setup and download interested data via TCGA Hub. Keep trying!
