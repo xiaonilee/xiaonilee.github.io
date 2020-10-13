@@ -92,6 +92,8 @@ ggsave('violinplot.png')
 
 #### Statics Analysis
 
+##### See the chapter 9 of Book: R in Action
+
 ```r
 # variance
 aov(expression ~ subtype, data=dat)
