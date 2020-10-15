@@ -205,3 +205,168 @@ ggsave('tp53_Subtype_Survival.png')
 ![tp53_Subtype_Survival](tp53_Subtype_Survival.png)
 
 ### Exercise6. Download GSE17215 and plot heatmap
+
+```r
+# download GEO dataset
+# BiocManager::install('GEOquery')
+library(GEOquery)
+gse17215 = getGEO('GSE17215', destdir = '.', AnnotGPL = F, getGPL = F)
+class(gse17215)
+length(gse17215)
+
+a=gse17215[[1]]
+dat=exprs(a)
+
+dim(dat)
+colnames(dat)
+rownames(dat)
+
+library(hgu133a.db)
+library()
+id2s=toTable(hgu133aSYMBOL)
+
+dat = dat[id2s$probe_id,]
+id2s$median=apply(dat,1,median)
+id2s=id2s[order(id2s$symbol,id2s$median,decreasing = T),]
+id2s=id2s[!duplicated(id2s$symbol),]
+dat=dat[id2s$probe_id,]
+rownames(dat)=id2s$symbol
+
+# gene list
+gl='ACTR3B ANLN BAG1 BCL2 BIRC5 BLVRA CCNB1 CCNE1 CDC20 CDC6 CDCA1 CDH3 CENPF CEP55 CXXC5 EGFR ERBB2 ESR1 EXO1 FGFR4 FOXA1 FOXC1 GPR160 GRB7 KIF2C KNTC2 KRT14 KRT17 KRT5 MAPT MDM2 MELK MIA MKI67 MLPH MMP11 MYBL2 MYC NAT1 ORC6L PGR PHGDH PTTG1 RRM2 SFRP1 SLC39A6 TMEM45B TYMS UBE2C UBE2T'
+
+gl = strsplit(gl, ' ')[[1]]
+
+table(gl %in% rownames(dat))
+
+gl=gl[gl %in% rownames(dat)]
+dat = dat[gl,]
+dat = log2(dat)
+
+pheatmap::pheatmap(dat, scale = 'row')
+ggsave('pheatmap_row.png')
+```
+
+![pheatmap_row](pheatmap_row.png)
+
+### Exercise7. Download GSE24673 to do correlation and plot heatmap
+
+```r
+library(GEOquery)
+gse24673=getGEO('GSE24673', destdir = '.', AnnotGPL = F, getGPL = F)
+
+class(gse24673)
+length(gse24673)
+
+a = gse24673[[1]]
+dat=exprs(a)
+dim(dat)
+colnames(dat)
+
+pd=pData(a)
+
+# create group_list, according to pd 'source name'.
+group_list=c('rbc','rbc','rbc',
+             'rbn','rbn','rbn',
+             'rbc','rbc','rbc',
+             'normal','normal')
+
+
+M=cor(dat)
+colnames(M)
+pheatmap::pheatmap(M)
+ggsave('pheatmap2.png')
+
+tmp=data.frame(group=group_list)
+rownames(tmp)=colnames(M)
+pheatmap::pheatmap(M, annotation_col = tmp)
+ggsave('pheatmap3.png')
+```
+
+![pheatmap3](pheatmap3.png)
+
+### Exercise8. Annotation package install
+
+```r
+# ref:https://gist.github.com/xiaonilee/f582c75173122d3625afc34f638b7b30
+BiocManager::install('hugene10sttranscriptcluster.db')
+```
+
+### Exercise9. Download GSE42872 to compute ave/sd/mad of probes/genes
+
+```r
+library(GEOquery)
+gse42872 = getGEO('GSE42872', destdir = '.', AnnotGPL = F, getGPL = F)
+a = gse42872[[1]]
+dat=exprs(a)
+pd=pData(a)
+colnames(dat)
+rownames(dat)
+
+sort(apply(dat, 1, mean), decreasing = T)[1]
+# output
+# 7978905
+# 14.53288
+
+sort(apply(dat,1,sd), decreasing = T)[1]
+# output
+# 8133876
+# 3.166429
+
+sort(apply(dat, 1, mad), decreasing = T)[1]
+# output
+# 8133876
+# 4.268561
+
+
+# check annotation package https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE42872
+library(hugene10sttranscriptcluster.db)
+ls('package:hugene10sttranscriptcluster.db')
+id2s=toTable(hugene10sttranscriptclusterSYMBOL)
+
+
+max_mean = id2s[id2s$probe_id %in% 7978905,]
+table(id2s$probe_id %in% 7978905)
+
+max_sd = id2s[id2s$probe_id %in% 8133876,]
+max_mad = id2s[id2s$probe_id %in% 8133876,]
+```
+
+### Exercise10. Download GSE42872 to do DEG
+
+```r
+library(GEOquery)
+gse42872 = getGEO('GSE42872', destdir = '.', AnnotGPL = F, getGPL = F)
+a = gse42872[[1]]
+dat=exprs(a)
+dim(a)
+pd=pData(a)
+colnames(dat)
+
+colnames(pd)
+# strsplit(pd$title,' ')
+# str_split(pd$title,' ')
+# strsplit(pd$title,' ')[[1]]
+# strsplit(pd$title,' ')[[1]][4]
+
+group_list=unlist(lapply(pd$title, function(x){
+  str_split(x, ' ')[[1]][4]
+}))
+group_list
+
+# design matrix
+library(limma) # Linear Models for Microarray Data
+design = model.matrix(~0+factor(group_list))
+colnames(design)=levels(factor(group_list))
+rownames(design)=colnames(dat)
+
+contrast.matric = makeContrasts(paste0(unique(group_list), collapse = '-'), levels = design)
+
+fit = lmFit(dat,design) # Linear Model for Series of Arrays
+fit = contrasts.fit(fit,contrast.matric)
+fit = eBayes(fit)
+
+tempOutput = topTable(fit,coef = 1, n=Inf)
+nrDEG = na.omit(tempOutput)
+head(nrDEG)
+```

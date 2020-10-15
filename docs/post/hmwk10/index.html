@@ -70,7 +70,7 @@
 <meta itemprop="description" content="Bioinformatics Exercises of Application with R">
 <meta itemprop="datePublished" content="2020-10-15T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-10-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="343">
+<meta itemprop="wordCount" content="838">
 
 
 
@@ -457,6 +457,10 @@ if (!doNotTrack) {
         <li><a href="#exercise4-get-data-via-tcga-and-r-analysis">Exercise4. get data via TCGA and r analysis</a></li>
         <li><a href="#exercise5-gene-in-clinical-survival">Exercise5. gene in clinical survival</a></li>
         <li><a href="#exercise6-download-gse17215-and-plot-heatmap">Exercise6. Download GSE17215 and plot heatmap</a></li>
+        <li><a href="#exercise7-download-gse24673-to-do-correlation-and-plot-heatmap">Exercise7. Download GSE24673 to do correlation and plot heatmap</a></li>
+        <li><a href="#exercise8-annotation-package-install">Exercise8. Annotation package install</a></li>
+        <li><a href="#exercise9-download-gse42872-to-compute-avesdmad-of-probesgenes">Exercise9. Download GSE42872 to compute ave/sd/mad of probes/genes</a></li>
+        <li><a href="#exercise10-download-gse42872-to-do-deg">Exercise10. Download GSE42872 to do DEG</a></li>
       </ul>
     </li>
   </ul>
@@ -730,6 +734,319 @@ if (!doNotTrack) {
 </div>
 </div><p><img src="tp53_Subtype_Survival.png" alt="tp53_Subtype_Survival"></p>
 <h3 id="exercise6-download-gse17215-and-plot-heatmap">Exercise6. Download GSE17215 and plot heatmap</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># download GEO dataset</span>
+<span class="c1"># BiocManager::install(&#39;GEOquery&#39;)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">GEOquery</span><span class="p">)</span>
+<span class="n">gse17215</span> <span class="o">=</span> <span class="nf">getGEO</span><span class="p">(</span><span class="s">&#39;GSE17215&#39;</span><span class="p">,</span> <span class="n">destdir</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span><span class="p">,</span> <span class="n">AnnotGPL</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">getGPL</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+<span class="nf">class</span><span class="p">(</span><span class="n">gse17215</span><span class="p">)</span>
+<span class="nf">length</span><span class="p">(</span><span class="n">gse17215</span><span class="p">)</span>
+
+<span class="n">a</span><span class="o">=</span><span class="n">gse17215[[1]]</span>
+<span class="n">dat</span><span class="o">=</span><span class="nf">exprs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="nf">dim</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+<span class="nf">rownames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">hgu133a.db</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">()</span>
+<span class="n">id2s</span><span class="o">=</span><span class="nf">toTable</span><span class="p">(</span><span class="n">hgu133aSYMBOL</span><span class="p">)</span>
+
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat[id2s</span><span class="o">$</span><span class="n">probe_id</span><span class="p">,</span><span class="n">]</span>
+<span class="n">id2s</span><span class="o">$</span><span class="n">median</span><span class="o">=</span><span class="nf">apply</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="n">median</span><span class="p">)</span>
+<span class="n">id2s</span><span class="o">=</span><span class="n">id2s</span><span class="nf">[order</span><span class="p">(</span><span class="n">id2s</span><span class="o">$</span><span class="n">symbol</span><span class="p">,</span><span class="n">id2s</span><span class="o">$</span><span class="n">median</span><span class="p">,</span><span class="n">decreasing</span> <span class="o">=</span> <span class="bp">T</span><span class="p">),</span><span class="n">]</span>
+<span class="n">id2s</span><span class="o">=</span><span class="n">id2s[</span><span class="o">!</span><span class="nf">duplicated</span><span class="p">(</span><span class="n">id2s</span><span class="o">$</span><span class="n">symbol</span><span class="p">),</span><span class="n">]</span>
+<span class="n">dat</span><span class="o">=</span><span class="n">dat[id2s</span><span class="o">$</span><span class="n">probe_id</span><span class="p">,</span><span class="n">]</span>
+<span class="nf">rownames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="o">=</span><span class="n">id2s</span><span class="o">$</span><span class="n">symbol</span>
+
+<span class="c1"># gene list</span>
+<span class="n">gl</span><span class="o">=</span><span class="s">&#39;ACTR3B ANLN BAG1 BCL2 BIRC5 BLVRA CCNB1 CCNE1 CDC20 CDC6 CDCA1 CDH3 CENPF CEP55 CXXC5 EGFR ERBB2 ESR1 EXO1 FGFR4 FOXA1 FOXC1 GPR160 GRB7 KIF2C KNTC2 KRT14 KRT17 KRT5 MAPT MDM2 MELK MIA MKI67 MLPH MMP11 MYBL2 MYC NAT1 ORC6L PGR PHGDH PTTG1 RRM2 SFRP1 SLC39A6 TMEM45B TYMS UBE2C UBE2T&#39;</span>
+
+<span class="n">gl</span> <span class="o">=</span> <span class="nf">strsplit</span><span class="p">(</span><span class="n">gl</span><span class="p">,</span> <span class="s">&#39; &#39;</span><span class="p">)</span><span class="n">[[1]]</span>
+
+<span class="nf">table</span><span class="p">(</span><span class="n">gl</span> <span class="o">%in%</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">dat</span><span class="p">))</span>
+
+<span class="n">gl</span><span class="o">=</span><span class="n">gl[gl</span> <span class="o">%in%</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="n">]</span>
+<span class="n">dat</span> <span class="o">=</span> <span class="n">dat[gl</span><span class="p">,</span><span class="n">]</span>
+<span class="n">dat</span> <span class="o">=</span> <span class="nf">log2</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+
+<span class="n">pheatmap</span><span class="o">::</span><span class="nf">pheatmap</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="s">&#39;row&#39;</span><span class="p">)</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#39;pheatmap_row.png&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="pheatmap_row.png" alt="pheatmap_row"></p>
+<h3 id="exercise7-download-gse24673-to-do-correlation-and-plot-heatmap">Exercise7. Download GSE24673 to do correlation and plot heatmap</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">GEOquery</span><span class="p">)</span>
+<span class="n">gse24673</span><span class="o">=</span><span class="nf">getGEO</span><span class="p">(</span><span class="s">&#39;GSE24673&#39;</span><span class="p">,</span> <span class="n">destdir</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span><span class="p">,</span> <span class="n">AnnotGPL</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">getGPL</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+
+<span class="nf">class</span><span class="p">(</span><span class="n">gse24673</span><span class="p">)</span>
+<span class="nf">length</span><span class="p">(</span><span class="n">gse24673</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">gse24673[[1]]</span>
+<span class="n">dat</span><span class="o">=</span><span class="nf">exprs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nf">dim</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+
+<span class="n">pd</span><span class="o">=</span><span class="nf">pData</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="c1"># create group_list, according to pd &#39;source name&#39;.</span>
+<span class="n">group_list</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;rbc&#39;</span><span class="p">,</span><span class="s">&#39;rbc&#39;</span><span class="p">,</span><span class="s">&#39;rbc&#39;</span><span class="p">,</span>
+             <span class="s">&#39;rbn&#39;</span><span class="p">,</span><span class="s">&#39;rbn&#39;</span><span class="p">,</span><span class="s">&#39;rbn&#39;</span><span class="p">,</span>
+             <span class="s">&#39;rbc&#39;</span><span class="p">,</span><span class="s">&#39;rbc&#39;</span><span class="p">,</span><span class="s">&#39;rbc&#39;</span><span class="p">,</span>
+             <span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">)</span>
+
+
+<span class="n">M</span><span class="o">=</span><span class="nf">cor</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="n">pheatmap</span><span class="o">::</span><span class="nf">pheatmap</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#39;pheatmap2.png&#39;</span><span class="p">)</span>
+
+<span class="n">tmp</span><span class="o">=</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="n">group_list</span><span class="p">)</span>
+<span class="nf">rownames</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="o">=</span><span class="nf">colnames</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="n">pheatmap</span><span class="o">::</span><span class="nf">pheatmap</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">annotation_col</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">)</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#39;pheatmap3.png&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="pheatmap3.png" alt="pheatmap3"></p>
+<h3 id="exercise8-annotation-package-install">Exercise8. Annotation package install</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># ref:https://gist.github.com/xiaonilee/f582c75173122d3625afc34f638b7b30</span>
+<span class="n">BiocManager</span><span class="o">::</span><span class="nf">install</span><span class="p">(</span><span class="s">&#39;hugene10sttranscriptcluster.db&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="exercise9-download-gse42872-to-compute-avesdmad-of-probesgenes">Exercise9. Download GSE42872 to compute ave/sd/mad of probes/genes</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">GEOquery</span><span class="p">)</span>
+<span class="n">gse42872</span> <span class="o">=</span> <span class="nf">getGEO</span><span class="p">(</span><span class="s">&#39;GSE42872&#39;</span><span class="p">,</span> <span class="n">destdir</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span><span class="p">,</span> <span class="n">AnnotGPL</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">getGPL</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">gse42872[[1]]</span>
+<span class="n">dat</span><span class="o">=</span><span class="nf">exprs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">=</span><span class="nf">pData</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+<span class="nf">rownames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+
+<span class="nf">sort</span><span class="p">(</span><span class="nf">apply</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">mean</span><span class="p">),</span> <span class="n">decreasing</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span><span class="n">[1]</span>
+<span class="c1"># output</span>
+<span class="c1"># 7978905</span>
+<span class="c1"># 14.53288</span>
+
+<span class="nf">sort</span><span class="p">(</span><span class="nf">apply</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="n">sd</span><span class="p">),</span> <span class="n">decreasing</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span><span class="n">[1]</span>
+<span class="c1"># output</span>
+<span class="c1"># 8133876</span>
+<span class="c1"># 3.166429</span>
+
+<span class="nf">sort</span><span class="p">(</span><span class="nf">apply</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">mad</span><span class="p">),</span> <span class="n">decreasing</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span><span class="n">[1]</span>
+<span class="c1"># output</span>
+<span class="c1"># 8133876</span>
+<span class="c1"># 4.268561</span>
+
+
+<span class="c1"># check annotation package https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE42872</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">hugene10sttranscriptcluster.db</span><span class="p">)</span>
+<span class="nf">ls</span><span class="p">(</span><span class="s">&#39;package:hugene10sttranscriptcluster.db&#39;</span><span class="p">)</span>
+<span class="n">id2s</span><span class="o">=</span><span class="nf">toTable</span><span class="p">(</span><span class="n">hugene10sttranscriptclusterSYMBOL</span><span class="p">)</span>
+
+
+<span class="n">max_mean</span> <span class="o">=</span> <span class="n">id2s[id2s</span><span class="o">$</span><span class="n">probe_id</span> <span class="o">%in%</span> <span class="m">7978905</span><span class="p">,</span><span class="n">]</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">id2s</span><span class="o">$</span><span class="n">probe_id</span> <span class="o">%in%</span> <span class="m">7978905</span><span class="p">)</span>
+
+<span class="n">max_sd</span> <span class="o">=</span> <span class="n">id2s[id2s</span><span class="o">$</span><span class="n">probe_id</span> <span class="o">%in%</span> <span class="m">8133876</span><span class="p">,</span><span class="n">]</span>
+<span class="n">max_mad</span> <span class="o">=</span> <span class="n">id2s[id2s</span><span class="o">$</span><span class="n">probe_id</span> <span class="o">%in%</span> <span class="m">8133876</span><span class="p">,</span><span class="n">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="exercise10-download-gse42872-to-do-deg">Exercise10. Download GSE42872 to do DEG</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">GEOquery</span><span class="p">)</span>
+<span class="n">gse42872</span> <span class="o">=</span> <span class="nf">getGEO</span><span class="p">(</span><span class="s">&#39;GSE42872&#39;</span><span class="p">,</span> <span class="n">destdir</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span><span class="p">,</span> <span class="n">AnnotGPL</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">getGPL</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">gse42872[[1]]</span>
+<span class="n">dat</span><span class="o">=</span><span class="nf">exprs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nf">dim</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">=</span><span class="nf">pData</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+
+<span class="nf">colnames</span><span class="p">(</span><span class="n">pd</span><span class="p">)</span>
+<span class="c1"># strsplit(pd$title,&#39; &#39;)</span>
+<span class="c1"># str_split(pd$title,&#39; &#39;)</span>
+<span class="c1"># strsplit(pd$title,&#39; &#39;)[[1]]</span>
+<span class="c1"># strsplit(pd$title,&#39; &#39;)[[1]][4]</span>
+
+<span class="n">group_list</span><span class="o">=</span><span class="nf">unlist</span><span class="p">(</span><span class="nf">lapply</span><span class="p">(</span><span class="n">pd</span><span class="o">$</span><span class="n">title</span><span class="p">,</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+  <span class="nf">str_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s">&#39; &#39;</span><span class="p">)</span><span class="n">[[1]][4]</span>
+<span class="p">}))</span>
+<span class="n">group_list</span>
+
+<span class="c1"># design matrix</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">limma</span><span class="p">)</span> <span class="c1"># Linear Models for Microarray Data</span>
+<span class="n">design</span> <span class="o">=</span> <span class="nf">model.matrix</span><span class="p">(</span><span class="o">~</span><span class="m">0</span><span class="o">+</span><span class="nf">factor</span><span class="p">(</span><span class="n">group_list</span><span class="p">))</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">design</span><span class="p">)</span><span class="o">=</span><span class="nf">levels</span><span class="p">(</span><span class="nf">factor</span><span class="p">(</span><span class="n">group_list</span><span class="p">))</span>
+<span class="nf">rownames</span><span class="p">(</span><span class="n">design</span><span class="p">)</span><span class="o">=</span><span class="nf">colnames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+
+<span class="n">contrast.matric</span> <span class="o">=</span> <span class="nf">makeContrasts</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="nf">unique</span><span class="p">(</span><span class="n">group_list</span><span class="p">),</span> <span class="n">collapse</span> <span class="o">=</span> <span class="s">&#39;-&#39;</span><span class="p">),</span> <span class="n">levels</span> <span class="o">=</span> <span class="n">design</span><span class="p">)</span>
+
+<span class="n">fit</span> <span class="o">=</span> <span class="nf">lmFit</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="n">design</span><span class="p">)</span> <span class="c1"># Linear Model for Series of Arrays</span>
+<span class="n">fit</span> <span class="o">=</span> <span class="nf">contrasts.fit</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span><span class="n">contrast.matric</span><span class="p">)</span>
+<span class="n">fit</span> <span class="o">=</span> <span class="nf">eBayes</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+
+<span class="n">tempOutput</span> <span class="o">=</span> <span class="nf">topTable</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span><span class="n">coef</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="kc">Inf</span><span class="p">)</span>
+<span class="n">nrDEG</span> <span class="o">=</span> <span class="nf">na.omit</span><span class="p">(</span><span class="n">tempOutput</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">nrDEG</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
