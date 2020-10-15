@@ -1,0 +1,432 @@
+---
+title: "homework10"
+author: "Xiaoni"
+date: "10/13/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+getwd()
+rm(list = ls())
+options(stringsAsFactors = F)
+```
+
+## In summary
+1.strsplit
+2.lapply row 1, column 2
+3.library(stringr) split character
+4.merge
+5.match
+6.library(dplyr) delete column
+7.library(org.Hs.eg.db) id2symbol
+8.library(hgu133a.db)
+9.?pData group info
+10.library(ggstatsplot)
+11.?survfit
+12.library(survival)
+13.library(survminer)
+14.?survfit
+15.?ggsurvplot
+16.GEOquery download dataset
+17.pheatmap::pheatmap
+18.?cor
+19. %in% 
+20.library(limma) DEG
+
+
+## 1.ensembl_id2symbol reverse by org.Hs.eg.db
+```{r}
+
+rm(list = ls())
+options(stringsAsFactors = F)
+
+
+# read data
+a=read.table('ensembl_id2symbol.txt')
+
+# Try split manually
+# lapply(a$V1,function(x){strsplit(x,'[.]')})
+# lapply(a$V1,function(x){strsplit(x,'[.]')})[[1]][1]
+
+# load annotation package/library
+library(org.Hs.eg.db)
+
+# get df with toTable() 
+g2s=toTable(org.Hs.egSYMBOL)
+g2e=toTable(org.Hs.egENSEMBL)
+
+# split col with package 'stringr'
+library(stringr)
+a$ensembl_id=str_split(a$V1,'[.]',simplify=T)[,1]
+
+# merge() data.frame
+b=merge(a,g2e,by='ensembl_id',all.x=T)
+d=merge(b,g2s,by='gene_id',all.x=T)
+
+# # remove duplicated col
+# d = d[!duplicated(d$V1),]
+
+# match with raw order of a$V1
+d=d[match(a$V1,d$V1),]
+
+
+# delete v1 columns
+library(dplyr)
+res=select(d,-V1)
+```
+
+
+## 2.probe_id2symbol reverse by hgu133a.db
+```{r}
+
+rm(list = ls())
+options(stringsAsFactors = F)
+
+
+a2=read.table('probe_id2symbol.txt')
+
+# BiocManager::install("hgu133a.db")
+library(hgu133a.db)
+ls("package:hgu133a.db")
+
+id2s=toTable(hgu133aSYMBOL)
+# view colnames of id2s 
+colnames(id2s)
+
+# add same colname for a2
+colnames(a2)='probe_id'
+
+# merge
+b2=merge(a2,id2s,by='probe_id')
+res2=b2
+```
+
+
+## 3.get gene expression by CLL and do boxplot
+```{r}
+
+rm(list = ls())
+options(stringsAsFactors = F)
+
+getwd()
+
+library(CLL)
+data("sCLLex")
+exprSet=exprs(sCLLex)
+dim(exprSet)
+exprSet[1:6,1:6]
+colnames(exprSet)
+rownames(exprSet)
+
+
+# get group info.
+?pData
+pd=pData(sCLLex)
+colnames(pd)
+table(pd$Disease)
+
+
+# get probe_id2symbol of FSCN1
+library(hgu95av2.db)
+ls('package:hgu95av2.db')
+id2s=toTable(hgu95av2SYMBOL)
+filter(id2s,symbol=='FSCN1')
+
+# boxplot of FSCN1
+
+exprSet['39070_at',]
+
+pd[pd$Disease=='progres.',]
+
+library(ggplot2)
+
+# boxplot(exprSet['39070_at',])
+
+boxplot(exprSet['39070_at',] ~ pd$Disease,col='brown',
+        main='fscn1 in CLL',
+        xlab='Disease', ylab='expression of fscn1')
+ggsave('fscn1boxplot.png')
+```
+
+
+## 4.get data via TCGA and r analysis
+```{r}
+rm(list = ls())
+options(stringsAsFactors = F)
+
+# setup dataset from TCGA and download
+# Breast--> TCGA PanCancer Atlas-->FSCN1-->Plots
+
+# read data in R
+a=read.table('fscn1.txt',sep = '\t', header = T)
+colnames(a)
+colnames(a)=c('id','subtype','expression','mut','CNA')
+
+# re-plot with R
+library(ggstatsplot)
+ggbetweenstats(data=a, x = subtype, y = expression)
+ggsave('fscn1plot.png')
+```
+
+
+## 5.gene in clinical survival
+```{r}
+
+rm(list = ls())
+options(stringsAsFactors = F)
+
+# get data from oncoLnc.org
+# oncoLnc-->TP53-->BRCA-->LOWER/UPPER Percentile of 50-->Submit
+
+# read data in R
+a=read.table('BRCA_7157_50_50.csv',sep = ',', header = T)
+head(a)
+colnames(a)
+table(a$Status)
+
+# plot
+library(ggplot2)
+library(survival)
+library(survminer)
+
+a$Status=ifelse(a$Status=='Dead',1,0)
+fit=survfit(Surv(Days,Status) ~ Group, data = a)
+str(fit)
+summary(fit)
+
+ggsurvplot(fit, conf.int = F, pval = TRUE, 
+           linetype = 5,
+           ggtheme = theme_survminer())
+ggsave('tp53_expression_Survival.png')
+
+b=read.table('fscn1.txt',sep = '\t', header = T)
+colnames(b)=c('id','subtype','expression','mut','CNA')
+colnames(a)
+
+head(a)
+head(b)
+
+
+library(stringr)
+b$Patient =str_split(b$id,'-01',simplify = T)[,1] 
+# altinative split
+# b$Patient=substring(b$id,1,12)
+
+d=merge(a, b, by='Patient', all.x=T)
+fit2=survfit(Surv(Days,Status) ~ subtype, data = d)
+str(fit2)
+summary(fit2)
+
+ggsurvplot(fit2, conf.int = F, pval = TRUE, 
+           linetype = 5,
+           ggtheme = theme_survminer())
+ggsave('tp53_Subtype_Survival.png')
+```
+
+
+## 6. Download GSE17215 and plot heatmap
+```{r}
+rm(list = ls())
+options(stringsAsFactors = F)
+
+# download GEO dataset
+# BiocManager::install('GEOquery')
+library(GEOquery)
+gse17215 = getGEO('GSE17215', destdir = '.', AnnotGPL = F, getGPL = F)
+class(gse17215)
+length(gse17215)
+
+# transform to matrix
+a=gse17215[[1]]
+dat=exprs(a)
+
+# matrix info
+dim(dat)
+colnames(dat)
+rownames(dat)
+
+# get annotation info
+library(hgu133a.db)
+library()
+id2s=toTable(hgu133aSYMBOL)
+
+# id 2 symbol reverse
+dat = dat[id2s$probe_id,]
+id2s$median=apply(dat,1,median)
+id2s=id2s[order(id2s$symbol,id2s$median,decreasing = T),]
+id2s=id2s[!duplicated(id2s$symbol),]
+dat=dat[id2s$probe_id,]
+rownames(dat)=id2s$symbol
+
+# gene list
+gl='ACTR3B ANLN BAG1 BCL2 BIRC5 BLVRA CCNB1 CCNE1 CDC20 CDC6 CDCA1 CDH3 CENPF CEP55 CXXC5 EGFR ERBB2 ESR1 EXO1 FGFR4 FOXA1 FOXC1 GPR160 GRB7 KIF2C KNTC2 KRT14 KRT17 KRT5 MAPT MDM2 MELK MIA MKI67 MLPH MMP11 MYBL2 MYC NAT1 ORC6L PGR PHGDH PTTG1 RRM2 SFRP1 SLC39A6 TMEM45B TYMS UBE2C UBE2T'
+
+# strsplit(gl, ' ')
+gl = strsplit(gl, ' ')[[1]]
+
+# check genelist in or not in dat()
+table(gl %in% rownames(dat))
+
+gl=gl[gl %in% rownames(dat)]
+dat = dat[gl,]
+dat = log2(dat)
+
+pheatmap::pheatmap(dat, scale = 'row')
+ggsave('pheatmap_row.png')
+
+#a = read.table('GSE17215_series_matrix.txt.gz', sep = ',', header = T)
+```
+
+
+## 7.Download GSE24673 to do correlation and plot heatmap
+```{r}
+rm(list = ls())
+options(stringsAsFactors = F)
+
+# download GSE24673
+library(GEOquery)
+gse24673=getGEO('GSE24673', destdir = '.', AnnotGPL = F, getGPL = F)
+
+class(gse24673)
+length(gse24673)
+
+# transform gse24673 to get dat
+a = gse24673[[1]]
+dat=exprs(a)
+dim(dat)
+colnames(dat)
+
+# check group information
+pd=pData(a)
+
+# create group_list, according to pd 'source name' 
+group_list=c('rbc','rbc','rbc',
+             'rbn','rbn','rbn',
+             'rbc','rbc','rbc',
+             'normal','normal')
+
+# compute matrix: 
+# cor(x, y = NULL, use = "everything",
+#    method = c("pearson", "kendall", "spearman"))
+# If x and y are matrices then the correlations between the columns of x and the columns of y are computed.
+M=cor(dat)
+colnames(M)
+pheatmap::pheatmap(M)
+ggsave('pheatmap2.png')
+
+# add group info
+tmp=data.frame(group=group_list)
+rownames(tmp)=colnames(M)
+pheatmap::pheatmap(M, annotation_col = tmp)
+ggsave('pheatmap3.png')
+```
+
+
+## 8. package install
+```{r}
+# package_name.db
+BiocManager::install('hugene10sttranscriptcluster.db')
+```
+
+
+## 9.Download GSE42872 to compute ave/sd/mad of probes/genes
+```{r}
+rm(list = ls())
+options(stringsAsFactors = F)
+
+# Download data from GEO
+library(GEOquery)
+gse42872 = getGEO('GSE42872', destdir = '.', AnnotGPL = F, getGPL = F)
+a = gse42872[[1]]
+dat=exprs(a)
+pd=pData(a)
+colnames(dat)
+rownames(dat)
+
+sort(apply(dat, 1, mean), decreasing = T)[1]
+# output 
+# 7978905 
+# 14.53288 
+
+sort(apply(dat,1,sd), decreasing = T)[1]
+# output
+# 8133876 
+# 3.166429 
+
+sort(apply(dat, 1, mad), decreasing = T)[1]
+# output
+# 8133876 
+# 4.268561 
+
+
+# check annotation package https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE42872
+# load library
+library(hugene10sttranscriptcluster.db)
+ls('package:hugene10sttranscriptcluster.db')
+id2s=toTable(hugene10sttranscriptclusterSYMBOL)
+
+
+# in or not in
+max_mean = id2s[id2s$probe_id %in% 7978905,]
+table(id2s$probe_id %in% 7978905)
+
+max_sd = id2s[id2s$probe_id %in% 8133876,]
+max_mad = id2s[id2s$probe_id %in% 8133876,]
+```
+
+
+## 10.Download GSE42872 to do DEG
+```{r}
+rm(list = ls())
+options(stringsAsFactors = F)
+
+# Download data from GEO
+library(GEOquery)
+gse42872 = getGEO('GSE42872', destdir = '.', AnnotGPL = F, getGPL = F)
+a = gse42872[[1]]
+dat=exprs(a)
+dim(a)
+pd=pData(a)
+colnames(dat)
+
+
+# defination function to get group_list info according pd$title
+
+colnames(pd)
+# strsplit(pd$title,' ')
+# str_split(pd$title,' ')
+# strsplit(pd$title,' ')[[1]]
+# strsplit(pd$title,' ')[[1]][4]
+
+group_list=unlist(lapply(pd$title, function(x){
+  str_split(x, ' ')[[1]][4]
+}))
+group_list
+
+# design matrix
+library(limma) # Linear Models for Microarray Data
+design = model.matrix(~0+factor(group_list))
+colnames(design)=levels(factor(group_list))
+rownames(design)=colnames(dat)
+
+contrast.matric = makeContrasts(paste0(unique(group_list), collapse = '-'), levels = design)
+
+fit = lmFit(dat,design) # Linear Model for Series of Arrays
+fit = contrasts.fit(fit,contrast.matric)
+fit = eBayes(fit)
+
+tempOutput = topTable(fit,coef = 1, n=Inf)
+nrDEG = na.omit(tempOutput)
+head(nrDEG)
+
+```
+
+
+

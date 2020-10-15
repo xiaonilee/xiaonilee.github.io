@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>R Notebook : Application 10 - xiaoni&#39;s blog</title>
+  <title>R Notebook : Application Exercises - xiaoni&#39;s blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Xiaoni" />
-  <meta name="description" content="" />
+  <meta name="description" content="Bioinformatics Exercises of Application with R
+" />
 
   <meta name="keywords" content="xiaonili, xiaonilee, xiaoni" />
 
@@ -59,24 +60,24 @@
 
 
 
-<meta property="og:title" content="R Notebook : Application 10" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="R Notebook : Application Exercises" />
+<meta property="og:description" content="Bioinformatics Exercises of Application with R" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xiaonilee.github.io/post/hmwk10/" />
 <meta property="article:published_time" content="2020-10-15T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-10-15T00:00:00+00:00" />
-<meta itemprop="name" content="R Notebook : Application 10">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="R Notebook : Application Exercises">
+<meta itemprop="description" content="Bioinformatics Exercises of Application with R">
 <meta itemprop="datePublished" content="2020-10-15T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-10-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="343">
 
 
 
 <meta itemprop="keywords" content="R,Bioinformatics,Plots," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="R Notebook : Application 10"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="R Notebook : Application Exercises"/>
+<meta name="twitter:description" content="Bioinformatics Exercises of Application with R"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -178,7 +179,7 @@ if (!doNotTrack) {
               </li>
             
               <li>
-                <a href="https://xiaonilee.github.io/post/hmwk10/">R Notebook : Application 10</a>
+                <a href="https://xiaonilee.github.io/post/hmwk10/">R Notebook : Application Exercises</a>
               </li>
             
               <li>
@@ -370,7 +371,7 @@ if (!doNotTrack) {
               </li>
             
               <li>
-                <a href="https://xiaonilee.github.io/post/hmwk10/">R Notebook : Application 10</a>
+                <a href="https://xiaonilee.github.io/post/hmwk10/">R Notebook : Application Exercises</a>
               </li>
             
               <li>
@@ -420,7 +421,7 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">R Notebook : Application 10</h1>
+      <h1 class="post-title">R Notebook : Application Exercises</h1>
       
       <div class="post-meta">
         <time datetime="2020-10-15" class="post-time">
@@ -446,13 +447,289 @@ if (!doNotTrack) {
 <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Table of Contents</h2>
   <div class="post-toc-content">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#in-summary">In summary</a>
+      <ul>
+        <li><a href="#exercise1-id-reverse-by-orghsegdb">Exercise1. id reverse by org.Hs.eg.db</a></li>
+        <li><a href="#exercise2-id-reverse-by-hgu133adb">Exercise2. id reverse by hgu133a.db</a></li>
+        <li><a href="#exercise3-get-gene-expression-by-cll-and-do-boxplot">Exercise3. get gene expression by CLL and do boxplot</a></li>
+        <li><a href="#exercise4-get-data-via-tcga-and-r-analysis">Exercise4. get data via TCGA and r analysis</a></li>
+        <li><a href="#exercise5-gene-in-clinical-survival">Exercise5. gene in clinical survival</a></li>
+        <li><a href="#exercise6-download-gse17215-and-plot-heatmap">Exercise6. Download GSE17215 and plot heatmap</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
+      <p>Bioinformatics Exercises of Application with R</p>
+<h2 id="in-summary">In summary</h2>
+<p>1.strsplit()</p>
+<p>2.lapply() row 1, column 2</p>
+<p>3.library(stringr) split character</p>
+<p>4.merge()</p>
+<p>5.match()</p>
+<p>6.library(dplyr) delete column</p>
+<p>7.library(org.Hs.eg.db) annotation id reverse</p>
+<p>8.library(hgu133a.db) annotation id reverse</p>
+<p>9.?pData group info</p>
+<p>10.library(ggstatsplot)</p>
+<p>11.?survfit</p>
+<p>12.library(survival)</p>
+<p>13.library(survminer)</p>
+<p>14.?survfit</p>
+<p>15.?ggsurvplot</p>
+<p>16.GEOquery download dataset</p>
+<p>17.pheatmap::pheatmap</p>
+<p>18.?cor</p>
+<p>19.'%in%&rsquo;</p>
+<p>20.library(limma) DEG</p>
+<p>21.exprs()</p>
+<h3 id="exercise1-id-reverse-by-orghsegdb">Exercise1. id reverse by org.Hs.eg.db</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">a</span><span class="o">=</span><span class="nf">read.table</span><span class="p">(</span><span class="s">&#39;ensembl_id2symbol.txt&#39;</span><span class="p">)</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">org.Hs.eg.db</span><span class="p">)</span>
+<span class="n">g2s</span><span class="o">=</span><span class="nf">toTable</span><span class="p">(</span><span class="n">org.Hs.egSYMBOL</span><span class="p">)</span>
+<span class="n">g2e</span><span class="o">=</span><span class="nf">toTable</span><span class="p">(</span><span class="n">org.Hs.egENSEMBL</span><span class="p">)</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">stringr</span><span class="p">)</span>
+<span class="n">a</span><span class="o">$</span><span class="n">ensembl_id</span><span class="o">=</span><span class="nf">str_split</span><span class="p">(</span><span class="n">a</span><span class="o">$</span><span class="n">V1</span><span class="p">,</span><span class="s">&#39;[.]&#39;</span><span class="p">,</span><span class="n">simplify</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span><span class="n">[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span>
+
+<span class="n">b</span><span class="o">=</span><span class="nf">merge</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">g2e</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="s">&#39;ensembl_id&#39;</span><span class="p">,</span><span class="n">all.x</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span>
+<span class="n">d</span><span class="o">=</span><span class="nf">merge</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">g2s</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="s">&#39;gene_id&#39;</span><span class="p">,</span><span class="n">all.x</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span>
+
+<span class="n">d</span><span class="o">=</span><span class="n">d</span><span class="nf">[match</span><span class="p">(</span><span class="n">a</span><span class="o">$</span><span class="n">V1</span><span class="p">,</span><span class="n">d</span><span class="o">$</span><span class="n">V1</span><span class="p">),</span><span class="n">]</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">res</span><span class="o">=</span><span class="nf">select</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">V1</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="exercise2-id-reverse-by-hgu133adb">Exercise2. id reverse by hgu133a.db</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">a2</span><span class="o">=</span><span class="nf">read.table</span><span class="p">(</span><span class="s">&#39;probe_id2symbol.txt&#39;</span><span class="p">)</span>
+
+<span class="c1"># BiocManager::install(&#34;hgu133a.db&#34;)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">hgu133a.db</span><span class="p">)</span>
+<span class="nf">ls</span><span class="p">(</span><span class="s">&#34;package:hgu133a.db&#34;</span><span class="p">)</span>
+
+<span class="n">id2s</span><span class="o">=</span><span class="nf">toTable</span><span class="p">(</span><span class="n">hgu133aSYMBOL</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">id2s</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">=</span><span class="s">&#39;probe_id&#39;</span>
+
+<span class="n">b2</span><span class="o">=</span><span class="nf">merge</span><span class="p">(</span><span class="n">a2</span><span class="p">,</span><span class="n">id2s</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="s">&#39;probe_id&#39;</span><span class="p">)</span>
+<span class="n">res2</span><span class="o">=</span><span class="n">b2</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="exercise3-get-gene-expression-by-cll-and-do-boxplot">Exercise3. get gene expression by CLL and do boxplot</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">CLL</span><span class="p">)</span>
+<span class="nf">data</span><span class="p">(</span><span class="s">&#34;sCLLex&#34;</span><span class="p">)</span>
+<span class="n">exprSet</span><span class="o">=</span><span class="nf">exprs</span><span class="p">(</span><span class="n">sCLLex</span><span class="p">)</span>
+<span class="nf">dim</span><span class="p">(</span><span class="n">exprSet</span><span class="p">)</span>
+<span class="n">exprSet[1</span><span class="o">:</span><span class="m">6</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="n">]</span>
+
+<span class="n">pd</span><span class="o">=</span><span class="nf">pData</span><span class="p">(</span><span class="n">sCLLex</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">pd</span><span class="p">)</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">pd</span><span class="o">$</span><span class="n">Disease</span><span class="p">)</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">hgu95av2.db</span><span class="p">)</span>
+<span class="nf">ls</span><span class="p">(</span><span class="s">&#39;package:hgu95av2.db&#39;</span><span class="p">)</span>
+<span class="n">id2s</span><span class="o">=</span><span class="nf">toTable</span><span class="p">(</span><span class="n">hgu95av2SYMBOL</span><span class="p">)</span>
+<span class="nf">filter</span><span class="p">(</span><span class="n">id2s</span><span class="p">,</span><span class="n">symbol</span><span class="o">==</span><span class="s">&#39;FSCN1&#39;</span><span class="p">)</span>
+
+<span class="n">exprSet[</span><span class="s">&#39;39070_at&#39;</span><span class="p">,</span><span class="n">]</span>
+
+<span class="n">pd[pd</span><span class="o">$</span><span class="n">Disease</span><span class="o">==</span><span class="s">&#39;progres.&#39;</span><span class="p">,</span><span class="n">]</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">boxplot</span><span class="p">(</span><span class="n">exprSet[</span><span class="s">&#39;39070_at&#39;</span><span class="p">,</span><span class="n">]</span> <span class="o">~</span> <span class="n">pd</span><span class="o">$</span><span class="n">Disease</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&#39;brown&#39;</span><span class="p">,</span>
+        <span class="n">main</span><span class="o">=</span><span class="s">&#39;fscn1 in CLL&#39;</span><span class="p">,</span>
+        <span class="n">xlab</span><span class="o">=</span><span class="s">&#39;Disease&#39;</span><span class="p">,</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&#39;expression of fscn1&#39;</span><span class="p">)</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#39;fscn1boxplot.png&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="fscn1boxplot.png" alt="fscn1boxplot"></p>
+<h3 id="exercise4-get-data-via-tcga-and-r-analysis">Exercise4. get data via TCGA and r analysis</h3>
+<h4 id="setup-dataset-from-tcga-and-download">setup dataset from TCGA and download</h4>
+<p>Breast&ndash;&gt; TCGA PanCancer Atlas&ndash;&gt;FSCN1&ndash;&gt;Plots</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">a</span><span class="o">=</span><span class="nf">read.table</span><span class="p">(</span><span class="s">&#39;fscn1.txt&#39;</span><span class="p">,</span><span class="n">sep</span> <span class="o">=</span> <span class="s">&#39;\t&#39;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;id&#39;</span><span class="p">,</span><span class="s">&#39;subtype&#39;</span><span class="p">,</span><span class="s">&#39;expression&#39;</span><span class="p">,</span><span class="s">&#39;mut&#39;</span><span class="p">,</span><span class="s">&#39;CNA&#39;</span><span class="p">)</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">ggstatsplot</span><span class="p">)</span>
+<span class="nf">ggbetweenstats</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">subtype</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">expression</span><span class="p">)</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#39;fscn1plot.png&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="fscn1plot.png" alt="fscn1plot"></p>
+<h3 id="exercise5-gene-in-clinical-survival">Exercise5. gene in clinical survival</h3>
+<h4 id="get-data-from-oncolncorg">get data from oncoLnc.org</h4>
+<ul>
+<li>oncoLnc&ndash;&gt;TP53&ndash;&gt;BRCA&ndash;&gt;LOWER/UPPER Percentile of 50&ndash;&gt;Submit</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">a</span><span class="o">=</span><span class="nf">read.table</span><span class="p">(</span><span class="s">&#39;BRCA_7157_50_50.csv&#39;</span><span class="p">,</span><span class="n">sep</span> <span class="o">=</span> <span class="s">&#39;,&#39;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">a</span><span class="o">$</span><span class="n">Status</span><span class="p">)</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">survival</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">survminer</span><span class="p">)</span>
+
+<span class="n">a</span><span class="o">$</span><span class="n">Status</span><span class="o">=</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">a</span><span class="o">$</span><span class="n">Status</span><span class="o">==</span><span class="s">&#39;Dead&#39;</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">)</span>
+<span class="n">fit</span><span class="o">=</span><span class="nf">survfit</span><span class="p">(</span><span class="nf">Surv</span><span class="p">(</span><span class="n">Days</span><span class="p">,</span><span class="n">Status</span><span class="p">)</span> <span class="o">~</span> <span class="n">Group</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">a</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+
+<span class="nf">ggsurvplot</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">conf.int</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">pval</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
+           <span class="n">linetype</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span>
+           <span class="n">ggtheme</span> <span class="o">=</span> <span class="nf">theme_survminer</span><span class="p">())</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#39;tp53_expression_Survival.png&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="tp53_expression_Survival.png" alt="tp53_expression_Survival"></p>
+<ul>
+<li>considering the poor R value, re-analysis with subtype</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">b</span><span class="o">=</span><span class="nf">read.table</span><span class="p">(</span><span class="s">&#39;fscn1.txt&#39;</span><span class="p">,</span><span class="n">sep</span> <span class="o">=</span> <span class="s">&#39;\t&#39;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;id&#39;</span><span class="p">,</span><span class="s">&#39;subtype&#39;</span><span class="p">,</span><span class="s">&#39;expression&#39;</span><span class="p">,</span><span class="s">&#39;mut&#39;</span><span class="p">,</span><span class="s">&#39;CNA&#39;</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">stringr</span><span class="p">)</span>
+<span class="n">b</span><span class="o">$</span><span class="n">Patient</span> <span class="o">=</span><span class="nf">str_split</span><span class="p">(</span><span class="n">b</span><span class="o">$</span><span class="n">id</span><span class="p">,</span><span class="s">&#39;-01&#39;</span><span class="p">,</span><span class="n">simplify</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span><span class="n">[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span>
+
+<span class="n">d</span><span class="o">=</span><span class="nf">merge</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s">&#39;Patient&#39;</span><span class="p">,</span> <span class="n">all.x</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span>
+<span class="n">fit2</span><span class="o">=</span><span class="nf">survfit</span><span class="p">(</span><span class="nf">Surv</span><span class="p">(</span><span class="n">Days</span><span class="p">,</span><span class="n">Status</span><span class="p">)</span> <span class="o">~</span> <span class="n">subtype</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">d</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">fit2</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">fit2</span><span class="p">)</span>
+
+<span class="nf">ggsurvplot</span><span class="p">(</span><span class="n">fit2</span><span class="p">,</span> <span class="n">conf.int</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">pval</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
+           <span class="n">linetype</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span>
+           <span class="n">ggtheme</span> <span class="o">=</span> <span class="nf">theme_survminer</span><span class="p">())</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#39;tp53_Subtype_Survival.png&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="tp53_Subtype_Survival.png" alt="tp53_Subtype_Survival"></p>
+<h3 id="exercise6-download-gse17215-and-plot-heatmap">Exercise6. Download GSE17215 and plot heatmap</h3>
     </div>
 
     
