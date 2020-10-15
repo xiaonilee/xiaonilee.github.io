@@ -6,7 +6,7 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 12 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xiaonilee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,16 +14,25 @@
     <item>
       <title>Bioinformatics</title>
       <link>https://xiaonilee.github.io/tags/bioinformatics/</link>
-      <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/bioinformatics/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Plots</title>
+      <link>https://xiaonilee.github.io/tags/plots/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/plots/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R</title>
       <link>https://xiaonilee.github.io/tags/r/</link>
-      <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/r/</guid>
       <description></description>
