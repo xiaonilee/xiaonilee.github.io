@@ -17,7 +17,7 @@ menu:
     weight: 1
 ---
 
-Bioinformatics Exercises of Application with R
+Bioinformatics Exercises of Application with [R](hmwk10.Rmd)
 
 <!--more-->
 
