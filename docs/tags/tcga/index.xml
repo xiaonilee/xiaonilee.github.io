@@ -6,10 +6,19 @@
     <description>Recent content in TCGA on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 12 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xiaonilee.github.io/tags/tcga/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>R Notebook : Application Exercises</title>
+      <link>https://xiaonilee.github.io/post/hmwk10/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/hmwk10/</guid>
+      <description>&lt;p&gt;Bioinformatics Exercises of Application with &lt;a href=&#34;hmwk10.Rmd&#34;&gt;R&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>R re-analysis in TCGA</title>
