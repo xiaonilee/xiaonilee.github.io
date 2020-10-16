@@ -21,7 +21,7 @@ Bioinformatics Exercises of Application with [R](hmwk10.Rmd)
 
 <!--more-->
 
-## In summary
+### In summary
 
 1.strsplit()
 
