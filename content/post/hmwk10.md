@@ -1,9 +1,9 @@
 ---
 title: "R Notebook : Application Exercises"
 date: 2020-10-15
-lastmod: 2020-10-15
+lastmod: 2020-10-16
 draft: false
-tags: ["R", "Bioinformatics", Plots]
+tags: ["R", "Bioinformatics", "Plots", "TCGA", "OncoLnc"]
 categories: ["R", "Bioinformatics"]
 author: "Xiaoni"
 
@@ -25,9 +25,9 @@ Bioinformatics Exercises of Application with [R](hmwk10.Rmd)
 
 1.strsplit()
 
-2.lapply() row 1, column 2
+2.`lapply()` row 1, column 2
 
-3.library(stringr) split character
+3.`library(stringr)` split character
 
 4.merge()
 
@@ -35,17 +35,17 @@ Bioinformatics Exercises of Application with [R](hmwk10.Rmd)
 
 6.library(dplyr) delete column
 
-7.library(org.Hs.eg.db) annotation id reverse
+7.library(org.Hs.eg.db) annotation `id reverse`
 
 8.library(hgu133a.db) annotation id reverse
 
-9.?pData group info
+9.?pData `group info`
 
-10.library(ggstatsplot)
+10.`library(ggstatsplot)`
 
 11.?survfit
 
-12.library(survival)
+12.`library(survival)`
 
 13.library(survminer)
 
@@ -53,15 +53,15 @@ Bioinformatics Exercises of Application with [R](hmwk10.Rmd)
 
 15.?ggsurvplot
 
-16.GEOquery download dataset
+16.`GEOquery` download dataset
 
-17.pheatmap::pheatmap
+17.`pheatmap::pheatmap`
 
-18.?cor
+18.`?cor`
 
-19.'%in%'
+19.`'%in%'`
 
-20.library(limma) DEG
+20.library(limma) `DEG`
 
 21.exprs()
 

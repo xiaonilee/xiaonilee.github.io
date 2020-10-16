@@ -1,9 +1,9 @@
 ---
 title: "OncoLnc: A straightforward Tool"
 date: 2020-10-09
-lastmod: 2020-10-09
+lastmod: 2020-10-16
 draft: false
-tags: ["R", "Bioinformatics", "TCGA", "OncoLnc"]
+tags: ["R", "Bioinformatics", "TCGA", "OncoLnc", "Plots"]
 categories: ["Cancer Research", "Web Tool"]
 author: "Xiaoni"
 

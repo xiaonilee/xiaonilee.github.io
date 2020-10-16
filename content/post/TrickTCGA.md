@@ -3,7 +3,7 @@ title: "R re-analysis in TCGA"
 date: 2020-10-12
 lastmod: 2020-10-13
 draft: false
-tags: ["R", "Bioinformatics", "TCGA"]
+tags: ["R", "Bioinformatics", "TCGA", "Plots"]
 categories: ["Cancer Research", "Database"]
 author: "Xiaoni"
 
