@@ -88,3 +88,17 @@ Attach is the [Script](chapter2.R) of chapter2.
   
 Attach is the [Script](chapter3.R) of chapter3.
 
+## Chapter4. Basic Data Management
+
+- This chapter covers
+  
+  - Manipulating dates and missing values
+  
+  - Understanding data type conversions
+  
+  - Creating and recoding variables
+  
+  - Sorting, merging, and subsetting datasets
+  
+  - Selecting and dropping variables
+
