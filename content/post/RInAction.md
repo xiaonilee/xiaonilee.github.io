@@ -31,7 +31,7 @@ Notebook of Reading Books: R in Action.
   
   - Running programs
 
-- In the present chapter, a tremendously `versatile` and `impressive` code need to be marked, to remove most objects from the working environment.
+- In the present chapter, a tremendously `versatile` and `impressive` code need to be marked, which is used to remove most objects from the working environment.
 
 ```r
 rm(list = ls())
@@ -40,16 +40,36 @@ options(stringsAsFactors = F)
 
 - To summary, R can
   
-  - Access data from a wide range of sources
+  - Access data from a wide range of sources;
   
-  - Merge the pieces of data together
+  - Merge the pieces of data together;
   
-  - Clean and annotate them
+  - Clean and annotate them;
   
-  - Analyze them with the latest methods
+  - Analyze them with the latest methods;
   
-  - Present the findings in meaningful and graphically appealing ways
+  - Present the findings in meaningful and graphically appealing ways;
   
   - Incorporate the results into attractive reports that can be distributed to stakeholders and the public.
 
 Attach is the [Script](chapter1.R) of chapter1.
+
+## Chapter2. Creating Dataset
+
+- This chapter covers
+  
+  - Exploring R data structures
+  
+  - Using data entry
+  
+  - Importing data
+  
+  - Annotating datasets
+
+- In summary, this chapter describes
+  
+  - The various structures that R provides for holding data;
+  
+  - The many methods available for importing data from both keyboard and external sources.
+
+Attach is the [Script](chapter2.R) of chapter2.
