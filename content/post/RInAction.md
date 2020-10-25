@@ -73,3 +73,18 @@ Attach is the [Script](chapter1.R) of chapter1.
   - The many methods available for importing data from both keyboard and external sources.
 
 Attach is the [Script](chapter2.R) of chapter2.
+
+## Chapter3. Getting Started with Graphs
+
+- This chapter covers
+  
+  - Creating and saving graphs
+  
+  - Customizing symbols, lines, colors, and axes
+  
+  - Annotating with text and titles#   Controlling a graph’s dimensions
+  
+  - Combining multiple graphs into one
+  
+Attach is the [Script](chapter3.R) of chapter3.
+
