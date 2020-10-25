@@ -102,3 +102,20 @@ Attach is the [Script](chapter3.R) of chapter3.
   
   - Selecting and dropping variables
 
+Attach is the [Script](chapter4.R) of chapter4.
+
+## Chapter5. Advanced data management
+
+- This chapter covers
+  
+  - Mathematical and statistical functions
+  
+  - Character functions
+  
+  - Looping and conditional execution
+  
+  - User-written functions
+  
+  - Ways to aggregate and reshape data
+
+Attach is the [Script](chapter5.R) of chapter5.
