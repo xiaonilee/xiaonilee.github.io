@@ -23,13 +23,13 @@ Notebook of Reading Books: R in Action.
 
 ## Chapter1. Introduction To R
 
-- This chapter covers
+### Chapter 1 covers
   
-  - Installing R
+- Installing R
   
-  - Understanding the R language
+- Understanding the R language
   
-  - Running programs
+- Running programs
 
 - In the present chapter, a tremendously `versatile` and `impressive` code need to be marked, which is used to remove most objects from the working environment.
 
@@ -38,33 +38,33 @@ rm(list = ls())
 options(stringsAsFactors = F)
 ```
 
-- To summary, R can
+### To summary, R can
   
-  - Access data from a wide range of sources;
+- Access data from a wide range of sources;
   
-  - Merge the pieces of data together;
+- Merge the pieces of data together;
   
-  - Clean and annotate them;
+- Clean and annotate them;
   
-  - Analyze them with the latest methods;
+- Analyze them with the latest methods;
   
-  - Present the findings in meaningful and graphically appealing ways;
+- Present the findings in meaningful and graphically appealing ways;
   
-  - Incorporate the results into attractive reports that can be distributed to stakeholders and the public.
+- Incorporate the results into attractive reports that can be distributed to stakeholders and the public.
 
 Attach is the [Script](chapter1.R) of chapter1.
 
 ## Chapter2. Creating Dataset
 
-- This chapter covers
+### Chapter 2 covers
   
-  - Exploring R data structures
+- Exploring R data structures
   
-  - Using data entry
+- Using data entry
   
-  - Importing data
+- Importing data
   
-  - Annotating datasets
+- Annotating datasets
 
 - In summary, this chapter describes
   
@@ -76,46 +76,76 @@ Attach is the [Script](chapter2.R) of chapter2.
 
 ## Chapter3. Getting Started with Graphs
 
-- This chapter covers
+### Chapter 3 covers
   
-  - Creating and saving graphs
+- Creating and saving graphs
   
-  - Customizing symbols, lines, colors, and axes
+- Customizing symbols, lines, colors, and axes
   
-  - Annotating with text and titles#   Controlling a graph’s dimensions
+- Annotating with text and titles#   Controlling a graph’s dimensions
   
-  - Combining multiple graphs into one
+- Combining multiple graphs into one
+
+#### A note about Annotated legend
+
+![chapter3_3_3](chapter3_3_3.png)
   
 Attach is the [Script](chapter3.R) of chapter3.
 
 ## Chapter4. Basic Data Management
 
-- This chapter covers
+### Chapter 4 covers
   
-  - Manipulating dates and missing values
+- Manipulating dates and missing values
   
-  - Understanding data type conversions
+- Understanding data type conversions
   
-  - Creating and recoding variables
+- Creating and recoding variables
   
-  - Sorting, merging, and subsetting datasets
+- Sorting, merging, and subsetting datasets
   
-  - Selecting and dropping variables
+- Selecting and dropping variables
 
 Attach is the [Script](chapter4.R) of chapter4.
 
 ## Chapter5. Advanced data management
 
-- This chapter covers
+### Chapter 5 covers
   
-  - Mathematical and statistical functions
+- Mathematical and statistical functions
   
-  - Character functions
+- Character functions
   
-  - Looping and conditional execution
+- Looping and conditional execution
   
-  - User-written functions
+- User-written functions
   
-  - Ways to aggregate and reshape data
+- Ways to aggregate and reshape data
 
 Attach is the [Script](chapter5.R) of chapter5.
+
+## Chapter6. Basic graphs
+
+### Chapter 6 covers
+  
+- Bar, box, and dot plots
+  
+- Pie and fan charts
+  
+- Histograms and kernel density plots
+
+#### A note about Pie charts
+
+![piecharts](piecharts.png)
+
+#### A note about histogram charts
+
+- The surrounding box is produced by the `box()` function.
+
+![hist6.6](hist6.6.png)
+
+#### A note about density plots
+
+- The `locator(1)` option indicates that you’ll place the legend interactively by clicking on the graph where you want the legend to appear.
+
+![density](densityplot.png)

@@ -1,5 +1,5 @@
 
-# chapter6. Basic graphs
+# Chapter6. Basic graphs
 
 
 # This chapter covers
@@ -86,6 +86,119 @@ spine(counts, main="Spinogram Example")
 detach(Arthritis)
 
 # 6.2. Pie charts
+
+pie(x,labels)  # pie charts
+fan.plot()     # fan plot, a variation of the pie chart
+
+# code Listing 6.5. Pie charts
+par(mfrow=c(2,2))
+slices <- c(10, 12, 4, 16, 8)
+lbls <- c("US", "UK", "Australia", "Germany", "France")
+
+pie(slices, labels = lbls,
+    main = "Simple Pie Chart")
+
+pct <- round(slices/sum(slices)*100)
+lbls2 <- paste(lbls, " ", pct, "%", sep = "")
+pie(slices, labels = lbls2, col = rainbow(length(lbls2)),
+    main = "Pie Chart with Percentages")
+
+library(plotrix)
+pie3D(slices, labels=lbls, explode=0.1,
+      main="3D Pie Chart")
+
+mytable <- table(state.region)
+lbls3 <- paste(names(mytable), "\n", mytable, sep = "")
+pie(mytable, labels = lbls3,
+    main = "Pie Chart from a Table\n (with sample sizes)")
+
+
+# 6.3. Histograms
+
+# code listing 6.6. Histograms
+
+par(mfrow=c(2,2))
+
+hist(mtcars$mpg)
+
+hist(mtcars$mpg,
+     breaks = 12,
+     col = "red",
+     xlab = "Miles Per Gallon",
+     main = "Colored histogram with 12 bins")
+
+hist(mtcars$mpg,
+     freq = F,
+     breaks = 12,
+     col = "red",
+     xlab = "Miles Per Gallon",
+     main = "Histogram, rug plot, density curve")
+# rug plot
+rug(jitter(mtcars$mpg)) # a one-dimensional representation of the actual data values
+
+lines(density(mtcars$mpg), col="blue", lwd=2)
+
+x <- mtcars$mpg
+h <- hist(x,
+          breaks = 12,
+          col = "red",
+          xlab = "Miles Per Gallon",
+          main = "Histogram with normal curve and box")
+xfit <- seq(min(x), max(x), length=40)
+yfit <- dnorm(xfit, mean = mean(x), sd=sd(x))
+yfit <- yfit*diff(h$mids[1:2])*length(x)
+lines(xfit, yfit, col="blue", lwd=2)
+box() # produce surrounding box
+
+# 6.4. Kernel density plots
+
+plot(density(x))
+
+# if overlap  with an existing graph
+lines()
+
+# code listing 6.7. Kernel density plots
+par(mfrow=c(2, 2))
+d <- density(mtcars$mpg)
+plot(d)
+
+d <- density(mtcars$mpg)
+plot(d, main = "Kernel Density of Miles Per Gallon")
+polygon(d, col = "red", border = "blue")
+rug(mtcars$mpg, col = "brown")
+
+# code listing 6.8. Comparative kernel density plots
+par(lwd=2)
+library(sm)
+attach(mtcars)
+
+cyl.f <- factor(cyl, levels = c(4, 6, 8),
+                labels = c("4 cylinder", "6 cylinder",
+                           "8 cylinder"))
+
+sm.density.compare(mpg, cyl, xlab="Miles Per Gallon")
+title(main = "MPG Distribution by Car Cylinders")
+
+colfill <- c(2:(1+length(levels(cyl.f))))
+
+# locator(1), indicates that you’ll place the legend interactively 
+# by clicking on the graph where you want the legend to appear. 
+legend(locator(1), levels(cyl.f), fill = colfill)
+
+detach(mtcars)
+
+# 6.5. Box plots
+
+
+
+
+
+
+
+
+
+
+
 
 
 
