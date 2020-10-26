@@ -153,3 +153,15 @@ Attach is the [Script](chapter5.R) of chapter5.
 **Figure for box plots with code listing 6.9.**
 
 ![boxplot](boxplot1.png)
+
+**Figure for violin plots with code listing 6.10.**
+
+- A `violin plot` is a **combination** of a ***box plot*** and a ***kernel density plot***.
+
+![violinplot](violinplot.png)
+
+**Figure for dot charts with code listing 6.11.**
+
+- Dot plot of mpg for car models **grouped**, **sorted**, and **colored**.
+
+![dotchart](dotchart.png)

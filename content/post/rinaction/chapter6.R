@@ -230,7 +230,22 @@ vioplot(x1, x2, x3,
         col="gold")
 title("Violin Plots of Miles Per Gallon")
 
-
+# 6.6. Dot plots
+# code listing 6.11.Dot plot grouped, sorted, and colored
+x <- mtcars[order(mtcars$mpg),]
+x$cyl <- factor(x$cyl)
+x$color[x$cyl==4] <- "red"
+x$color[x$cyl==6] <- "blue"
+x$color[x$cyl==8] <- "darkgreen"
+dotchart(x$mpg,
+         labels = row.names(x),
+         cex=.7,
+         groups = x$cyl,
+         gcolor = "black",
+         color = x$color,
+         pch=19,
+         main = "Gas Mileage for Car Models\ngrouped by cylinder",
+         xlab = "Miles Per Gallon")
 
 
 
