@@ -86,7 +86,7 @@ Attach is the [Script](chapter2.R) of chapter2.
   
 - Combining multiple graphs into one
 
-#### A note about Annotated legend
+**Figure for Comparing Drug A and Drug B response by dose with code Listing 3.3.**
 
 ![chapter3_3_3](chapter3_3_3.png)
   
@@ -134,18 +134,22 @@ Attach is the [Script](chapter5.R) of chapter5.
   
 - Histograms and kernel density plots
 
-#### A note about Pie charts
+**Figure for Pie charts with code Listing 6.5.**
 
 ![piecharts](piecharts.png)
 
-#### A note about histogram charts
+**Figure for histogram charts with code Listing 6.6.**
 
 - The surrounding box is produced by the `box()` function.
 
 ![hist6.6](hist6.6.png)
 
-#### A note about density plots
+**Figure for density plots with code Listing 6.7 and 6.8.**
 
 - The `locator(1)` option indicates that you’ll place the legend interactively by clicking on the graph where you want the legend to appear.
 
 ![density](densityplot.png)
+
+**Figure for box plots with code listing 6.9.**
+
+![boxplot](boxplot1.png)

@@ -189,6 +189,54 @@ detach(mtcars)
 
 # 6.5. Box plots
 
+boxplot.stats(mtcars$mpg)
+
+## 6.5.1. Using parallel box plots to compare groups
+table(mtcars$cyl)
+table(mtcars$mpg)
+summary(mtcars$mpg)
+table(mtcars$mpg,  mtcars$cyl)
+table(mtcars$mpg, mtcars$cyl)
+
+# code listing 6.9. Box plots for two crossed factors
+
+mtcars$cyl.f <- factor(mtcars$cyl,
+                       levels = c(4, 6, 8),
+                       labels = c("4", "6", "8"))
+
+mtcars$am.f <- factor(mtcars$am,
+                      levels = c(0, 1),
+                      labels = c("auto", "standard"))
+
+boxplot(mpg ~ am.f * cyl.f,
+        data = mtcars,
+        varwidth=T,
+        col=c("gold", "darkgreen"),
+        main="MPG Distribution by Auto Type",
+        xlab = "Auto Type")
+
+# 6.5.2. Violin plots
+
+# A violin plot is a combination of a box plot and a kernel density plot. 
+vioplot(x1, x2, ..., names=, col=)
+
+# code listing 6.10. Violin plots
+library(vioplot)
+x1 <- mtcars$mpg[mtcars$cyl == 4]
+x2 <- mtcars$mpg[mtcars$cyl == 6]
+x3 <- mtcars$mpg[mtcars$cyl == 8]
+vioplot(x1, x2, x3,
+        names=c("4 cyl", "6 cyl", "8 cyl"),
+        col="gold")
+title("Violin Plots of Miles Per Gallon")
+
+
+
+
+
+
+
+
 
 
 
