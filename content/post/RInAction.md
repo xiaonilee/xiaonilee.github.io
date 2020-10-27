@@ -1,7 +1,7 @@
 ---
 title: "Reading Books : R in Action"
 date: 2020-10-19
-lastmod: 2020-10-25
+lastmod: 2020-10-27
 draft: false
 tags: ["R", "Bioinformatics", "Book"]
 categories: ["R", "Bioinformatics"]
@@ -165,3 +165,19 @@ Attach is the [Script](chapter5.R) of chapter5.
 - Dot plot of mpg for car models **grouped**, **sorted**, and **colored**.
 
 ![dotchart](dotchart.png)
+
+## Chapter7. Basic statistics
+
+### Chapter 7 covers
+
+- Descriptive statistics
+  
+- Frequency and contingency tables
+  
+- Correlations and covariances
+  
+- t-tests
+  
+- Nonparametric statistics
+  
+Attach is the [Script](chapter7.R) of chapter7.
