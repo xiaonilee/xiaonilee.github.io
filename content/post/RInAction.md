@@ -122,6 +122,72 @@ Attach is the [Script](chapter4.R) of chapter4.
   
 - Ways to aggregate and reshape data
 
+### Notes about some useful functions
+
+- 5.2.2. Statistical functions
+
+  - scale()
+
+  - tansform()
+
+- 5.2.3. Probability functions
+
+  - runif()
+
+  - set.sead()
+
+  - mvrnorm()
+
+- 5.2.4. Character functions
+
+  - nchar()
+
+  - substr()
+
+  - grep()
+
+  - sub()
+
+  - strsplit()
+
+  - paste()
+
+  - toupper() and tolower()
+
+  - seq(from, to, by)
+
+  - rep()
+
+  - cut()
+
+  - pretty()
+
+  - cat()
+
+- 5.2.6. Applying functions to matrices and data frames
+
+  - apply(x, margin, FUN, ...)
+  
+- 5.4. Control flow
+
+  - for (var in seq) statement
+
+  - if (cond) statement [else statement2]
+
+  - ifelse(cond, statement1, statement2)
+
+  - switch(expr, ...)
+
+- 5.6.2. Aggregating data
+
+  - aggregate(x, by, FUN)
+
+- 5.6.3. The reshape package, versatility
+
+  - melt()
+
+  - cast() and dcast()
+
 Attach is the [Script](chapter5.R) of chapter5.
 
 ## Chapter6. Basic graphs
@@ -134,37 +200,51 @@ Attach is the [Script](chapter5.R) of chapter5.
   
 - Histograms and kernel density plots
 
-**Figure for Pie charts with code Listing 6.5.**
+### Note about pie charts
+
+- **Figure for Pie charts with code Listing 6.5.**
 
 ![piecharts](piecharts.png)
 
-**Figure for histogram charts with code Listing 6.6.**
+### Note about histogram charts
 
-- The surrounding box is produced by the `box()` function.
+- **Figure for histogram charts with code Listing 6.6.**
+
+- The surrounding box is produced by the ***box()*** function.
 
 ![hist6.6](hist6.6.png)
 
-**Figure for density plots with code Listing 6.7 and 6.8.**
+### Note about density plots
 
-- The `locator(1)` option indicates that you’ll place the legend interactively by clicking on the graph where you want the legend to appear.
+- **Figure for density plots with code Listing 6.7 and 6.8.**
+
+- The ***locator(1)*** option indicates that you’ll place the legend interactively by clicking on the graph where you want the legend to appear.
 
 ![density](densityplot.png)
 
-**Figure for box plots with code listing 6.9.**
+### Note about box plots
+
+- **Figure for box plots with code listing 6.9.**
 
 ![boxplot](boxplot1.png)
 
-**Figure for violin plots with code listing 6.10.**
+### Note about violin plots
+
+- **Figure for violin plots with code listing 6.10.**
 
 - A `violin plot` is a **combination** of a ***box plot*** and a ***kernel density plot***.
 
 ![violinplot](violinplot.png)
 
-**Figure for dot charts with code listing 6.11.**
+### Note about dot charts
+
+- **Figure for dot charts with code listing 6.11.**
 
 - Dot plot of mpg for car models **grouped**, **sorted**, and **colored**.
 
 ![dotchart](dotchart.png)
+
+Attach is the [Script](chapter6.R) of chapter6.
 
 ## Chapter7. Basic statistics
 
@@ -179,5 +259,75 @@ Attach is the [Script](chapter5.R) of chapter5.
 - t-tests
   
 - Nonparametric statistics
+
+#### In summary
+
+- 7.1.1 Descriptive statistics
+
+  - summary()
+
+  - sapply()
+
+  - describe() in the Hmisc package()
+
+  - stat.desc() in the pastecs package
+
+  - describe() in the psych package
+  
+- 7.1.2 Descriptive statistics by group
+  
+  - aggregate()
+  
+  - by()
+  
+  - summaryBy() in the doBy package
+
+  - describe.by() in the psych package
+
+- 7.2.1 Generating frequency tables
+
+  - table()
+
+  - prop.table()
+
+  - xtabs()
+
+  - CrossTable()
+
+  - ftable()
+
+- 7.2.2 Tests of independence
+  
+  - chisq.test()
+
+  - fisher.test()
+
+  - mantelhaen.test()
+
+- 7.2.3 Measures of association
+
+  - assocstats()
+
+- 7.3 Correlations
+
+  - cov()
+
+  - cor()
+
+  - pcor() in the ggm package
+
+  - cor.test()
+
+  - corr.test in the psych package
+
+- 7.4 t-tests
+
+  - t.test()
+
+- 7.5 Nonparametric tests of group differences
+
+  - wilcox.test()
+
+  - kruskal.test()
   
 Attach is the [Script](chapter7.R) of chapter7.

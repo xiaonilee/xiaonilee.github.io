@@ -15,7 +15,7 @@ rm(list = ls())
 options(stringsAsFactors = F)
 
 
-# 7.1. Descriptive statisticss
+# 7.1. Descriptive statistics
 
 vars <- c("mpg", "hp", "wt")
 head(mtcars[vars])

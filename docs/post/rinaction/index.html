@@ -70,7 +70,7 @@
 <meta itemprop="description" content="Notebook of Reading Books: R in Action.">
 <meta itemprop="datePublished" content="2020-10-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-10-27T00:00:00+00:00" />
-<meta itemprop="wordCount" content="433">
+<meta itemprop="wordCount" content="629">
 
 
 
@@ -481,11 +481,18 @@ if (!doNotTrack) {
     <li><a href="#chapter5-advanced-data-management">Chapter5. Advanced data management</a>
       <ul>
         <li><a href="#chapter-5-covers">Chapter 5 covers</a></li>
+        <li><a href="#notes-about-some-useful-functions">Notes about some useful functions</a></li>
       </ul>
     </li>
     <li><a href="#chapter6-basic-graphs">Chapter6. Basic graphs</a>
       <ul>
         <li><a href="#chapter-6-covers">Chapter 6 covers</a></li>
+        <li><a href="#note-about-pie-charts">Note about pie charts</a></li>
+        <li><a href="#note-about-histogram-charts">Note about histogram charts</a></li>
+        <li><a href="#note-about-density-plots">Note about density plots</a></li>
+        <li><a href="#note-about-box-plots">Note about box plots</a></li>
+        <li><a href="#note-about-violin-plots">Note about violin plots</a></li>
+        <li><a href="#note-about-dot-charts">Note about dot charts</a></li>
       </ul>
     </li>
     <li><a href="#chapter7-basic-statistics">Chapter7. Basic statistics</a>
@@ -635,6 +642,115 @@ if (!doNotTrack) {
 <p>Ways to aggregate and reshape data</p>
 </li>
 </ul>
+<h3 id="notes-about-some-useful-functions">Notes about some useful functions</h3>
+<ul>
+<li>
+<p>5.2.2. Statistical functions</p>
+<ul>
+<li>
+<p>scale()</p>
+</li>
+<li>
+<p>tansform()</p>
+</li>
+</ul>
+</li>
+<li>
+<p>5.2.3. Probability functions</p>
+<ul>
+<li>
+<p>runif()</p>
+</li>
+<li>
+<p>set.sead()</p>
+</li>
+<li>
+<p>mvrnorm()</p>
+</li>
+</ul>
+</li>
+<li>
+<p>5.2.4. Character functions</p>
+<ul>
+<li>
+<p>nchar()</p>
+</li>
+<li>
+<p>substr()</p>
+</li>
+<li>
+<p>grep()</p>
+</li>
+<li>
+<p>sub()</p>
+</li>
+<li>
+<p>strsplit()</p>
+</li>
+<li>
+<p>paste()</p>
+</li>
+<li>
+<p>toupper() and tolower()</p>
+</li>
+<li>
+<p>seq(from, to, by)</p>
+</li>
+<li>
+<p>rep()</p>
+</li>
+<li>
+<p>cut()</p>
+</li>
+<li>
+<p>pretty()</p>
+</li>
+<li>
+<p>cat()</p>
+</li>
+</ul>
+</li>
+<li>
+<p>5.2.6. Applying functions to matrices and data frames</p>
+<ul>
+<li>apply(x, margin, FUN, &hellip;)</li>
+</ul>
+</li>
+<li>
+<p>5.4. Control flow</p>
+<ul>
+<li>
+<p>for (var in seq) statement</p>
+</li>
+<li>
+<p>if (cond) statement [else statement2]</p>
+</li>
+<li>
+<p>ifelse(cond, statement1, statement2)</p>
+</li>
+<li>
+<p>switch(expr, &hellip;)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>5.6.2. Aggregating data</p>
+<ul>
+<li>aggregate(x, by, FUN)</li>
+</ul>
+</li>
+<li>
+<p>5.6.3. The reshape package, versatility</p>
+<ul>
+<li>
+<p>melt()</p>
+</li>
+<li>
+<p>cast() and dcast()</p>
+</li>
+</ul>
+</li>
+</ul>
 <p>Attach is the <a href="chapter5.R">Script</a> of chapter5.</p>
 <h2 id="chapter6-basic-graphs">Chapter6. Basic graphs</h2>
 <h3 id="chapter-6-covers">Chapter 6 covers</h3>
@@ -649,30 +765,57 @@ if (!doNotTrack) {
 <p>Histograms and kernel density plots</p>
 </li>
 </ul>
-<p><strong>Figure for Pie charts with code Listing 6.5.</strong></p>
-<p><img src="piecharts.png" alt="piecharts"></p>
-<p><strong>Figure for histogram charts with code Listing 6.6.</strong></p>
+<h3 id="note-about-pie-charts">Note about pie charts</h3>
 <ul>
-<li>The surrounding box is produced by the <code>box()</code> function.</li>
+<li><strong>Figure for Pie charts with code Listing 6.5.</strong></li>
+</ul>
+<p><img src="piecharts.png" alt="piecharts"></p>
+<h3 id="note-about-histogram-charts">Note about histogram charts</h3>
+<ul>
+<li>
+<p><strong>Figure for histogram charts with code Listing 6.6.</strong></p>
+</li>
+<li>
+<p>The surrounding box is produced by the <em><strong>box()</strong></em> function.</p>
+</li>
 </ul>
 <p><img src="hist6.6.png" alt="hist6.6"></p>
-<p><strong>Figure for density plots with code Listing 6.7 and 6.8.</strong></p>
+<h3 id="note-about-density-plots">Note about density plots</h3>
 <ul>
-<li>The <code>locator(1)</code> option indicates that you’ll place the legend interactively by clicking on the graph where you want the legend to appear.</li>
+<li>
+<p><strong>Figure for density plots with code Listing 6.7 and 6.8.</strong></p>
+</li>
+<li>
+<p>The <em><strong>locator(1)</strong></em> option indicates that you’ll place the legend interactively by clicking on the graph where you want the legend to appear.</p>
+</li>
 </ul>
 <p><img src="densityplot.png" alt="density"></p>
-<p><strong>Figure for box plots with code listing 6.9.</strong></p>
-<p><img src="boxplot1.png" alt="boxplot"></p>
-<p><strong>Figure for violin plots with code listing 6.10.</strong></p>
+<h3 id="note-about-box-plots">Note about box plots</h3>
 <ul>
-<li>A <code>violin plot</code> is a <strong>combination</strong> of a <em><strong>box plot</strong></em> and a <em><strong>kernel density plot</strong></em>.</li>
+<li><strong>Figure for box plots with code listing 6.9.</strong></li>
+</ul>
+<p><img src="boxplot1.png" alt="boxplot"></p>
+<h3 id="note-about-violin-plots">Note about violin plots</h3>
+<ul>
+<li>
+<p><strong>Figure for violin plots with code listing 6.10.</strong></p>
+</li>
+<li>
+<p>A <code>violin plot</code> is a <strong>combination</strong> of a <em><strong>box plot</strong></em> and a <em><strong>kernel density plot</strong></em>.</p>
+</li>
 </ul>
 <p><img src="violinplot.png" alt="violinplot"></p>
-<p><strong>Figure for dot charts with code listing 6.11.</strong></p>
+<h3 id="note-about-dot-charts">Note about dot charts</h3>
 <ul>
-<li>Dot plot of mpg for car models <strong>grouped</strong>, <strong>sorted</strong>, and <strong>colored</strong>.</li>
+<li>
+<p><strong>Figure for dot charts with code listing 6.11.</strong></p>
+</li>
+<li>
+<p>Dot plot of mpg for car models <strong>grouped</strong>, <strong>sorted</strong>, and <strong>colored</strong>.</p>
+</li>
 </ul>
 <p><img src="dotchart.png" alt="dotchart"></p>
+<p>Attach is the <a href="chapter6.R">Script</a> of chapter6.</p>
 <h2 id="chapter7-basic-statistics">Chapter7. Basic statistics</h2>
 <h3 id="chapter-7-covers">Chapter 7 covers</h3>
 <ul>
@@ -690,6 +833,123 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>Nonparametric statistics</p>
+</li>
+</ul>
+<h4 id="in-summary">In summary</h4>
+<ul>
+<li>
+<p>7.1.1 Descriptive statistics</p>
+<ul>
+<li>
+<p>summary()</p>
+</li>
+<li>
+<p>sapply()</p>
+</li>
+<li>
+<p>describe() in the Hmisc package()</p>
+</li>
+<li>
+<p>stat.desc() in the pastecs package</p>
+</li>
+<li>
+<p>describe() in the psych package</p>
+</li>
+</ul>
+</li>
+<li>
+<p>7.1.2 Descriptive statistics by group</p>
+<ul>
+<li>
+<p>aggregate()</p>
+</li>
+<li>
+<p>by()</p>
+</li>
+<li>
+<p>summaryBy() in the doBy package</p>
+</li>
+<li>
+<p>describe.by() in the psych package</p>
+</li>
+</ul>
+</li>
+<li>
+<p>7.2.1 Generating frequency tables</p>
+<ul>
+<li>
+<p>table()</p>
+</li>
+<li>
+<p>prop.table()</p>
+</li>
+<li>
+<p>xtabs()</p>
+</li>
+<li>
+<p>CrossTable()</p>
+</li>
+<li>
+<p>ftable()</p>
+</li>
+</ul>
+</li>
+<li>
+<p>7.2.2 Tests of independence</p>
+<ul>
+<li>
+<p>chisq.test()</p>
+</li>
+<li>
+<p>fisher.test()</p>
+</li>
+<li>
+<p>mantelhaen.test()</p>
+</li>
+</ul>
+</li>
+<li>
+<p>7.2.3 Measures of association</p>
+<ul>
+<li>assocstats()</li>
+</ul>
+</li>
+<li>
+<p>7.3 Correlations</p>
+<ul>
+<li>
+<p>cov()</p>
+</li>
+<li>
+<p>cor()</p>
+</li>
+<li>
+<p>pcor() in the ggm package</p>
+</li>
+<li>
+<p>cor.test()</p>
+</li>
+<li>
+<p>corr.test in the psych package</p>
+</li>
+</ul>
+</li>
+<li>
+<p>7.4 t-tests</p>
+<ul>
+<li>t.test()</li>
+</ul>
+</li>
+<li>
+<p>7.5 Nonparametric tests of group differences</p>
+<ul>
+<li>
+<p>wilcox.test()</p>
+</li>
+<li>
+<p>kruskal.test()</p>
+</li>
+</ul>
 </li>
 </ul>
 <p>Attach is the <a href="chapter7.R">Script</a> of chapter7.</p>
