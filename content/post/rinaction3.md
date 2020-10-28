@@ -1,22 +1,64 @@
+---
+title: "Chapter 3. Getting started with graphs"
+date: 2020-10-21
+lastmod: 2020-10-28
+draft: false
+tags: ["R", "R in Action", "Bioinformatics", "Book"]
+categories: ["R", "Bioinformatics"]
+author: "Xiaoni"
 
-# Chapter3. Getting Started with Graphs
+weight: 1
 
+mathjax: true
 
-# This chapter covers
-#   Creating and saving graphs
-#   Customizing symbols, lines, colors, and axes
-#   Annotating with text and titles
-#   Controlling a graph’s dimensions
-#   Combining multiple graphs into one
+menu:
+  main:
+    parent: "docs"
+    weight: 1
+---
 
+Notebook of Reading Books: R in Action_Chapter 3.
+
+<!--more-->
+
+### This chapter covers
+
+- Creating and saving graphs
+  
+- Customizing symbols, lines, colors, and axes
+  
+- Annotating with text and titles
+  
+  - `text()` and `mtext()`
+
+- Controlling a graph’s dimensions
+
+  - `par()`
+  
+- Combining multiple graphs into one
+
+  - `help("layout")`
+
+### A Example about Graphical Parameters
+
+- **Figure for Comparing Drug A and Drug B response by dose with code Listing 3.3.**
+
+- ***par()***
+
+![chapter3_3_3](chapter3_3_3.png)
+  
+Attach is the [Script](chapter3.R) of chapter3.
+
+Show me the code <i class="far fa-hand-pointer"></i>
+
+```r
 # Remove most objects from the working environment
-rm(list = ls()) 
+rm(list = ls())
 options(stringsAsFactors = F)
 
 
-
 # Section 3.3 Graphical Parameters
-?par 
+?par
 # equal
 help("par")
 
@@ -69,12 +111,12 @@ opar
 
 par(lwd=2, cex=1.5, font.lab=2)
 
-plot(dose, drugA, type = "b", 
+plot(dose, drugA, type = "b",
      pch=15, lty=1, col="red",ylim = c(0,60),
      main = "Drug A vs. Drug B",
      xlab = "Drug Dosage", ylab = "Drug Response")
 
-lines(dose, drugB, type = "b", 
+lines(dose, drugB, type = "b",
       pch=17, lty=2, col="blue")
 # Add Reference lines
 abline(h=c(30), lwd=1.5, lty=2, col="gray")
@@ -114,3 +156,4 @@ boxplot(mtcars$mpg, axes=F)
 
 mtext("Enhanced Scatterplot", side = 3, outer = T, line = -3)
 par(opar)
+```
