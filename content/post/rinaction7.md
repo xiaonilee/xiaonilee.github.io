@@ -1,15 +1,113 @@
+---
+title: "Chapter 7. Basic statistics"
+date: 2020-10-25
+lastmod: 2020-10-28
+draft: false
+tags: ["R", "R in Action", "Bioinformatics", "Book"]
+categories: ["R", "Bioinformatics"]
+author: "Xiaoni"
 
-# Chapter7. Basic statistics
+weight: 1
 
+mathjax: true
 
-# This chapter covers
-#   Descriptive statistics
-#   Frequency and contingency tables
-#   Correlations and covariances
-#   t-tests
-#   Nonparametric statistics
+menu:
+  main:
+    parent: "docs"
+    weight: 1
+---
 
+Notebook of Reading Books: R in Action_Chapter 7.
 
+<!--more-->
+
+### This chapter covers
+
+- Descriptive statistics
+  
+- Frequency and contingency tables
+  
+- Correlations and covariances
+  
+- t-tests
+  
+- Nonparametric statistics
+
+#### In summary
+
+- 7.1.1 Descriptive statistics
+
+  - summary()
+
+  - sapply()
+
+  - describe() in the Hmisc package()
+
+  - stat.desc() in the pastecs package
+
+  - describe() in the psych package
+  
+- 7.1.2 Descriptive statistics by group
+  
+  - aggregate()
+  
+  - by()
+  
+  - summaryBy() in the doBy package
+
+  - describe.by() in the psych package
+
+- 7.2.1 Generating frequency tables
+
+  - table()
+
+  - prop.table()
+
+  - xtabs()
+
+  - CrossTable()
+
+  - ftable()
+
+- 7.2.2 Tests of independence
+  
+  - chisq.test()
+
+  - fisher.test()
+
+  - mantelhaen.test()
+
+- 7.2.3 Measures of association
+
+  - assocstats()
+
+- 7.3 Correlations
+
+  - cov()
+
+  - cor()
+
+  - pcor() in the ggm package
+
+  - cor.test()
+
+  - corr.test in the psych package
+
+- 7.4 t-tests
+
+  - t.test()
+
+- 7.5 Nonparametric tests of group differences
+
+  - wilcox.test()
+
+  - kruskal.test()
+  
+Attach is the [Script](chapter7.R) of chapter7.
+
+Show me the code <i class="far fa-hand-pointer"></i>
+
+```r
 # Remove most objects from the working environment
 rm(list = ls())
 options(stringsAsFactors = F)
@@ -131,8 +229,8 @@ ftable(addmargins(prop.table(mytable, c(1, 2)), 3))
 
 
 # 7.2.2. Tests of independence
-# The significance tests in the section evaluated 
-#       whether or not sufficient evidence existed 
+# The significance tests in the section evaluated
+#       whether or not sufficient evidence existed
 #       to reject a null hypothesis of independence between variables
 
 # Chi-Square Test of Independence
@@ -260,7 +358,7 @@ median(UScrime$U2)
 with(UScrime, wilcox.test(U1, U2, paired=TRUE))
 
 # 7.5.2. Comparing more than two groups
-# When there are more than two groups to be compared, 
+# When there are more than two groups to be compared,
 # you must turn to other methods
 
 #=======dataset,dataset=====useful method=======cbind()======#
@@ -271,53 +369,4 @@ kruskal.test(Illiteracy ~ state.region, data=states)
 # 7.6. Visualizing group differences
 
 # 7.7. Summary
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
