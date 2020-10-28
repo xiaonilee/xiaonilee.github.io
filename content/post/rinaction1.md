@@ -43,7 +43,7 @@ Notebook of Reading Books: R in Action_Chapter 1.
   
 - Incorporate the results into attractive reports that can be distributed to stakeholders and the public.
 
-Attach is the [Script](chapter1.R) of chapter1.
+Attach is the [Script](chapter1.R) [of](script1.R) [chapter](script2.R)[1](script3.R).
 
 Show me the code <i class="far fa-hand-pointer"></i>
 
