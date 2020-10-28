@@ -104,7 +104,7 @@ source("script3.R")
   
   - The various structures that R provides for holding data;
 
-  ![datastructures](datastructures.png)
+  ![datastructures](datstr.png)
   
   - The many methods available for importing data from both keyboard and external sources.
 
