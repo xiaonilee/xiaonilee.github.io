@@ -9,7 +9,7 @@
 
 
 # Remove most objects from the working environment
-rm(list = ls()) 
+rm(list = ls())
 options(stringsAsFactors = F)
 
 
