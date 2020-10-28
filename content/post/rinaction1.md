@@ -1,5 +1,5 @@
 ---
-title: "Chapter1. Introduction To R"
+title: "Chapter 1. Introduction To R"
 date: 2020-10-19
 lastmod: 2020-10-28
 draft: false
