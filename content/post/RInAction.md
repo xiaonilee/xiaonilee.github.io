@@ -54,7 +54,7 @@ options(stringsAsFactors = F)
 
 Attach is the [Script](chapter1.R) of chapter1.
 
-Show me the code
+Show me the code <i class="far fa-hand-pointer"></i>
 
 ```r
 # Section 1.3.2 Getting help

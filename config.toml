@@ -85,3 +85,7 @@ defaultContentLanguage = "en"           # Default language to use
   [params.social]                                         # 社交链接
     a-email = "mailto:xiaoni0601@gmail.com"
     g-github = "https://github.com/xiaonilee"
+
+
+[markup.goldmark.renderer]
+unsafe= true

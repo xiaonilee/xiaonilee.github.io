@@ -78,6 +78,10 @@
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen" crossorigin="anonymous">
 <!-- End -->
 
+<!-- font awesome css -->
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css" rel="stylesheet">
+<script src="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/js/all.js"></script>
+
 <!-- custom css -->
 {{ range .Site.Params.customCSS }}
 <link rel="stylesheet" href="{{ "/css/" | relURL }}{{ . }}">
