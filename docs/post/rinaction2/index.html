@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>UCSC Xena: Load Data From Public Database - xiaoni&#39;s blog</title>
+  <title>Chapter 2. Creating a dataset - xiaoni&#39;s blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Xiaoni" />
-  <meta name="description" content="Load and analysis data from publication resources, such as GEO.
+  <meta name="description" content="Notebook of Reading Books: R in Action_Chapter 2.
 " />
 
   <meta name="keywords" content="xiaonili, xiaonilee, xiaoni" />
@@ -36,7 +36,7 @@
 <meta name="generator" content="Hugo 0.74.3" />
 
 
-<link rel="canonical" href="https://xiaonilee.github.io/post/loaddata/" />
+<link rel="canonical" href="https://xiaonilee.github.io/post/rinaction2/" />
 
 
 
@@ -64,24 +64,24 @@
 
 
 
-<meta property="og:title" content="UCSC Xena: Load Data From Public Database" />
-<meta property="og:description" content="Load and analysis data from publication resources, such as GEO." />
+<meta property="og:title" content="Chapter 2. Creating a dataset" />
+<meta property="og:description" content="Notebook of Reading Books: R in Action_Chapter 2." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xiaonilee.github.io/post/loaddata/" />
-<meta property="article:published_time" content="2020-09-08T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-10-07T00:00:00+00:00" />
-<meta itemprop="name" content="UCSC Xena: Load Data From Public Database">
-<meta itemprop="description" content="Load and analysis data from publication resources, such as GEO.">
-<meta itemprop="datePublished" content="2020-09-08T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2020-10-07T00:00:00+00:00" />
-<meta itemprop="wordCount" content="183">
+<meta property="og:url" content="https://xiaonilee.github.io/post/rinaction2/" />
+<meta property="article:published_time" content="2020-10-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-10-28T00:00:00+00:00" />
+<meta itemprop="name" content="Chapter 2. Creating a dataset">
+<meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 2.">
+<meta itemprop="datePublished" content="2020-10-20T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-10-28T00:00:00+00:00" />
+<meta itemprop="wordCount" content="415">
 
 
 
-<meta itemprop="keywords" content="UCSC,Xena,GEO,Database," />
+<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="UCSC Xena: Load Data From Public Database"/>
-<meta name="twitter:description" content="Load and analysis data from publication resources, such as GEO."/>
+<meta name="twitter:title" content="Chapter 2. Creating a dataset"/>
+<meta name="twitter:description" content="Notebook of Reading Books: R in Action_Chapter 2."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -449,15 +449,15 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">UCSC Xena: Load Data From Public Database</h1>
+      <h1 class="post-title">Chapter 2. Creating a dataset</h1>
       
       <div class="post-meta">
-        <time datetime="2020-09-08" class="post-time">
-          2020-09-08
+        <time datetime="2020-10-20" class="post-time">
+          2020-10-20
         </time>
         <div class="post-category">
-            <a href="https://xiaonilee.github.io/categories/cancer-research/"> Cancer Research </a>
-            <a href="https://xiaonilee.github.io/categories/database/"> Database </a>
+            <a href="https://xiaonilee.github.io/categories/r/"> R </a>
+            <a href="https://xiaonilee.github.io/categories/bioinformatics/"> Bioinformatics </a>
             
           </div>
         
@@ -477,12 +477,9 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#in-brief">In Brief</a></li>
-    <li><a href="#protocol">Protocol</a>
+    <li>
       <ul>
-        <li><a href="#download-data">Download Data</a></li>
-        <li><a href="#load-data">Load data</a></li>
-        <li><a href="#output">Output</a></li>
+        <li><a href="#this-chapter-covers">This chapter covers</a></li>
       </ul>
     </li>
   </ul>
@@ -492,117 +489,221 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p>Load and analysis data from publication resources, such as <a href="https://www.ncbi.nlm.nih.gov/geo/">GEO</a>.</p>
-<h2 id="in-brief">In Brief</h2>
+      <p>Notebook of Reading Books: R in Action_Chapter 2.</p>
+<h3 id="this-chapter-covers">This chapter covers</h3>
 <ul>
 <li>
-<p>Download data of GEO.</p>
+<p>Exploring R data structures</p>
 </li>
 <li>
-<p>Load data step by step.</p>
+<p>Using data entry</p>
 </li>
-</ul>
-<h2 id="protocol">Protocol</h2>
-<h3 id="download-data">Download Data</h3>
+<li>
+<p>Importing data</p>
+</li>
+<li>
+<p>Annotating datasets</p>
+</li>
+<li>
+<p>In summary, this chapter describes</p>
 <ul>
-<li>
-<p>Enter and search GEO accession: <code>GSE121720</code>.</p>
-<p><img src="searchGSE121720.png" alt="searchgse"></p>
-</li>
-<li>
-<p>Download and save related data for GSE121720.</p>
-<p><img src="GSE121720.png" alt="GSE121720"></p>
-</li>
+<li>The various structures that R provides for holding data;</li>
 </ul>
-<h3 id="load-data">Load data</h3>
+<p><img src="datstr.png" alt="datastructures"></p>
 <ul>
-<li>
-<p>Click on <code>VIEW MY DATA</code>.</p>
-</li>
-<li>
-<p>Click on <code>LOAD DATA</code> on the right of <strong>My computer hub</strong>.</p>
-<p><img src="step1.png" alt="step1"></p>
-</li>
-<li>
-<p>Click on <code>Select Data File</code>.</p>
-</li>
-<li>
-<p>Choose <code>GSE121720_phenotype.txt</code>.</p>
-</li>
-<li>
-<p>Click on &lsquo;NEXT&rsquo;</p>
-</li>
-<li>
-<p>Choose <code>Phenotypic data: categories or non-genomic in a rectangle (e.g. age, mutation status: 'wt' or 'mutant')</code>.</p>
-<p><img src="step2.png" alt="step2"></p>
-</li>
-<li>
-<p>Click on &lsquo;Next&rsquo;</p>
-</li>
-<li>
-<p>Choose <code>The first row is sample IDs</code></p>
-<p><img src="step3.png" alt="step3"></p>
-</li>
-<li>
-<p>Click on &lsquo;Next&rsquo;</p>
-</li>
-<li>
-<p>Choose <code>These are the first data on these samples</code>.</p>
-</li>
-<li>
-<p>Click on <code>IMPORT</code></p>
-<p><img src="step4.png" alt="step4"></p>
-</li>
-<li>
-<p>Choose <code>LOAD MORE DATA</code>.</p>
-<p><img src="step5.png" alt="step5"></p>
-</li>
-<li>
-<p>Click on <code>Select Data File</code>.</p>
-</li>
-<li>
-<p>Choose <code>GSE121720_RNAseq_expression_matrix_TPM.txt</code>.</p>
-</li>
-<li>
-<p>Click on &lsquo;Next&rsquo;</p>
-</li>
-<li>
-<p>Choose <code>Genomic data: numbers in a rectangle (e.g. expression)</code>.</p>
-<p><img src="step6.png" alt="step6"></p>
-</li>
-<li>
-<p>Click on &lsquo;Next&rsquo;</p>
-</li>
-<li>
-<p>Choose <code>The first row is sample IDs</code>.</p>
-</li>
-<li>
-<p>Click on &lsquo;Next&rsquo;</p>
-</li>
-<li>
-<p>Choose <code>I have loaded other data on these samples and want to connect to it</code>.</p>
-</li>
-<li>
-<p>Select a study and choose <code>My Study</code>.</p>
-</li>
-<li>
-<p>Click on <code>ADVANCED</code></p>
-<p><img src="step7.png" alt="step7"></p>
-</li>
-<li>
-<p>Click on <code>IMPORT</code></p>
-<p><img src="step8.png" alt="step8"></p>
-</li>
-<li>
-<p>Click on <code>FINISH</code></p>
-<p><img src="step_over.png" alt="step9"></p>
-</li>
-<li>
-<p>Click on <code>VISUALIZE</code> to continue to do interested analysis.</p>
+<li>The many methods available for importing data from both keyboard and external sources.</li>
+</ul>
 </li>
 </ul>
-<h3 id="output">Output</h3>
-<p><img src="IDH1Mutation_Expression.png" alt="figure"></p>
+<p>Attach is the <a href="chapter2.R">Script</a> of chapter2.</p>
+<p>Show me the code <i class="far fa-hand-pointer"></i></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Remove most objects from the working environment</span>
+<span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+
+<span class="nf">help.start</span><span class="p">()</span>
+
+<span class="c1"># Section 2.2 Data structures</span>
+<span class="nf">attach</span><span class="p">();</span> <span class="nf">detach</span><span class="p">();</span> <span class="nf">with</span><span class="p">()</span>
+<span class="c1"># example</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">mpg</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">mpg</span><span class="p">,</span> <span class="n">mtcars</span><span class="o">$</span><span class="n">disp</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">mpg</span><span class="p">,</span> <span class="n">mtcars</span><span class="o">$</span><span class="n">wt</span><span class="p">)</span>
+
+<span class="c1"># equal:</span>
+<span class="nf">attach</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">mpg</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">disp</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">wt</span><span class="p">)</span>
+<span class="nf">detach</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+
+<span class="c1"># equal:</span>
+<span class="nf">with</span><span class="p">(</span><span class="n">mtcars</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nf">summary</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">disp</span><span class="p">,</span> <span class="n">wt</span><span class="p">)</span>
+  <span class="nf">plot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">disp</span><span class="p">)</span>
+  <span class="nf">plot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">wt</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1">## Section 2.2.6 Lists</span>
+<span class="c1"># code listing 2.7 Creating a list</span>
+<span class="n">g</span> <span class="o">&lt;-</span> <span class="s">&#34;My First List&#34;</span>
+<span class="n">h</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">26</span><span class="p">,</span> <span class="m">18</span><span class="p">,</span> <span class="m">39</span><span class="p">)</span>
+<span class="n">j</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
+<span class="n">k</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;one&#34;</span><span class="p">,</span> <span class="s">&#34;two&#34;</span><span class="p">,</span> <span class="s">&#34;three&#34;</span><span class="p">)</span>
+<span class="n">mylist</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">ages</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="n">mylist</span>
+
+<span class="nf">str</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="n">mylist[[2]]</span>
+<span class="n">mylist[[1]]</span>
+
+<span class="c1"># column</span>
+<span class="n">mylist[[3]][</span><span class="p">,</span><span class="m">2</span><span class="n">]</span>
+
+<span class="c1"># row</span>
+<span class="n">mylist[[3]][2</span><span class="p">,</span><span class="n">]</span>
+<span class="n">mylist[[4]][1]</span>
+
+<span class="c1"># A Note about &#39;block comments&#39;</span>
+<span class="nf">if</span><span class="p">(</span><span class="kc">FALSE</span><span class="p">)</span> <span class="p">{</span><span class="kc">...</span><span class="p">}</span>
+
+
+<span class="c1">## Section 2.3.1 Data Input</span>
+
+<span class="c1">## Section 2.3.1 Entering Data from keyboard</span>
+<span class="n">mydatatxt</span> <span class="o">&lt;-</span> <span class="s">&#34;
+</span><span class="s">age gender weight
+</span><span class="s">25 m 166
+</span><span class="s">30 f 115
+</span><span class="s">18 f 120
+</span><span class="s">&#34;</span>
+<span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">read.table</span><span class="p">(</span><span class="n">header</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="n">mydatatxt</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
+<span class="nf">class</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
+
+<span class="nf">write.table</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span><span class="s">&#34;mydata.csv&#34;</span><span class="p">,</span> <span class="n">col.names</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
+            <span class="n">row.names</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">append</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+
+<span class="nf">ls</span><span class="p">()</span> <span class="c1"># display current objects</span>
+
+<span class="c1"># method 2</span>
+<span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="nf">numeric</span><span class="p">(</span><span class="m">0</span><span class="p">),</span>
+                     <span class="n">gender</span><span class="o">=</span><span class="nf">character</span><span class="p">(</span><span class="m">0</span><span class="p">),</span> <span class="n">weight</span><span class="o">=</span><span class="nf">numeric</span><span class="p">(</span><span class="m">0</span><span class="p">))</span>
+<span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">edit</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
+
+
+<span class="c1"># 2.5. Useful functions for working with data objects</span>
+
+<span class="nf">dim</span><span class="p">(</span><span class="n">object</span><span class="p">)</span> <span class="c1"># Dimensions of an object.</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">object</span><span class="p">)</span> <span class="c1"># Structure of an object.</span>
+<span class="nf">class</span><span class="p">(</span><span class="n">object</span><span class="p">)</span> <span class="c1"># Class or type of an object.</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">object</span><span class="p">)</span> <span class="c1"># Lists the first part of the object.</span>
+<span class="nf">tail</span><span class="p">(</span><span class="n">object</span><span class="p">)</span> <span class="c1"># Lists the last part of the object.</span>
+<span class="nf">c</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">object</span><span class="p">,</span><span class="kc">...</span><span class="p">)</span> <span class="c1"># Combines objects into a vector.</span>
+<span class="nf">cbind</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">object</span><span class="p">,</span> <span class="kc">...</span><span class="p">)</span> <span class="c1"># Combines objects as columns.</span>
+<span class="nf">rbind</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">object</span><span class="p">,</span> <span class="kc">...</span><span class="p">)</span> <span class="c1"># Combines objects as rows.</span>
+
+<span class="nf">rm</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">object</span><span class="p">,</span> <span class="kc">...</span><span class="p">)</span> <span class="c1"># Deletes one or more objects.</span>
+<span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">Is</span><span class="p">())</span> <span class="c1"># remove most objects from the working environment.</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -614,32 +715,19 @@ if (!doNotTrack) {
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="https://xiaonilee.github.io/tags/ucsc/">UCSC</a>
-          <a href="https://xiaonilee.github.io/tags/xena/">Xena</a>
-          <a href="https://xiaonilee.github.io/tags/geo/">GEO</a>
-          <a href="https://xiaonilee.github.io/tags/database/">Database</a>
+          <a href="https://xiaonilee.github.io/tags/r/">R</a>
+          <a href="https://xiaonilee.github.io/tags/r-in-action/">R in Action</a>
+          <a href="https://xiaonilee.github.io/tags/bioinformatics/">Bioinformatics</a>
+          <a href="https://xiaonilee.github.io/tags/book/">Book</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/localxenadatahub/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">Local UCSC Xena Data Hub</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
         
-          <a class="next" href="/post/tissgdb/">
-            <span class="next-text nav-default">TissGDB: tissue-specific gene database in cancer</span>
+          <a class="next" href="/post/rinaction1/">
+            <span class="next-text nav-default">Chapter1. Introduction To R</span>
             <span class="prev-text nav-mobile">Next</span>
             
             <i class="iconfont">
