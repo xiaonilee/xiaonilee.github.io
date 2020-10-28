@@ -3,7 +3,7 @@ title: "Reading Books : R in Action"
 date: 2020-10-19
 lastmod: 2020-10-27
 draft: false
-tags: ["R", "Bioinformatics", "Book"]
+tags: ["R", "R in Action", "Bioinformatics", "Book"]
 categories: ["R", "Bioinformatics"]
 author: "Xiaoni"
 
@@ -31,7 +31,7 @@ Notebook of Reading Books: R in Action.
   
 - Running programs
 
-- In the present chapter, a tremendously `versatile` and `impressive` code need to be marked, which is used to remove most objects from the working environment.
+- In the present chapter, a tremendously **versatile** and **impressive** code need to be marked, which is used to remove most objects from the working environment.
 
 ```r
 rm(list = ls())
@@ -40,19 +40,53 @@ options(stringsAsFactors = F)
 
 ### To summary, R can
   
-- Access data from a wide range of sources;
+- **Access** data from a wide range of sources;
   
-- Merge the pieces of data together;
+- **Merge** the pieces of data together;
   
-- Clean and annotate them;
+- **Clean** and **annotate** data;
   
-- Analyze them with the latest methods;
+- **Analyze** cleaned data with the latest methods;
   
-- Present the findings in meaningful and graphically appealing ways;
+- Present the findings in **meaningful** and **graphically appealing** ways;
   
 - Incorporate the results into attractive reports that can be distributed to stakeholders and the public.
 
 Attach is the [Script](chapter1.R) of chapter1.
+
+Show me the code
+
+```r
+# Section 1.3.2 Getting help
+help.start()
+
+## Section 1.3.3 Functions for managing the R workspace
+getwd()
+setwd("mydirectory")
+ls()            # List the objects in the current workspace.
+rm(objectlist)  # Remove (delete) one or more objects.
+options()       # View or set current options.
+history()       # Display your last # commands (default = 25).
+save()
+load()
+q()
+
+## Section 1.3.4 Input and Output
+
+# Input
+source("filename")
+
+source("script1.R") # Working through an example.
+
+# Output
+sink("myoutput", append=TRUE, split=TRUE)
+pdf("mygraphs.pdf")
+source("script2.R")
+
+sink()
+dev.off()
+source("script3.R")
+```
 
 ## Chapter2. Creating Dataset
 
@@ -69,6 +103,8 @@ Attach is the [Script](chapter1.R) of chapter1.
 - In summary, this chapter describes
   
   - The various structures that R provides for holding data;
+
+  ![datastructures](datastructures.png)
   
   - The many methods available for importing data from both keyboard and external sources.
 
@@ -82,11 +118,23 @@ Attach is the [Script](chapter2.R) of chapter2.
   
 - Customizing symbols, lines, colors, and axes
   
-- Annotating with text and titles#   Controlling a graph’s dimensions
+- Annotating with text and titles
+  
+  - `text()` and `mtext()`
+
+- Controlling a graph’s dimensions
+
+  - `par()`
   
 - Combining multiple graphs into one
 
-**Figure for Comparing Drug A and Drug B response by dose with code Listing 3.3.**
+  - `help("layout")`
+
+### A Example about Graphical Parameters
+
+- **Figure for Comparing Drug A and Drug B response by dose with code Listing 3.3.**
+
+- ***par()***
 
 ![chapter3_3_3](chapter3_3_3.png)
   

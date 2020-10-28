@@ -70,11 +70,11 @@
 <meta itemprop="description" content="Notebook of Reading Books: R in Action.">
 <meta itemprop="datePublished" content="2020-10-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-10-27T00:00:00+00:00" />
-<meta itemprop="wordCount" content="629">
+<meta itemprop="wordCount" content="753">
 
 
 
-<meta itemprop="keywords" content="R,Bioinformatics,Book," />
+<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reading Books : R in Action"/>
 <meta name="twitter:description" content="Notebook of Reading Books: R in Action."/>
@@ -471,6 +471,7 @@ if (!doNotTrack) {
     <li><a href="#chapter3-getting-started-with-graphs">Chapter3. Getting Started with Graphs</a>
       <ul>
         <li><a href="#chapter-3-covers">Chapter 3 covers</a></li>
+        <li><a href="#a-example-about-graphical-parameters">A Example about Graphical Parameters</a></li>
       </ul>
     </li>
     <li><a href="#chapter4-basic-data-management">Chapter4. Basic Data Management</a>
@@ -521,7 +522,7 @@ if (!doNotTrack) {
 <p>Running programs</p>
 </li>
 <li>
-<p>In the present chapter, a tremendously <code>versatile</code> and <code>impressive</code> code need to be marked, which is used to remove most objects from the working environment.</p>
+<p>In the present chapter, a tremendously <strong>versatile</strong> and <strong>impressive</strong> code need to be marked, which is used to remove most objects from the working environment.</p>
 </li>
 </ul>
 <div class="highlight"><div class="chroma">
@@ -537,26 +538,91 @@ if (!doNotTrack) {
 </div><h3 id="to-summary-r-can">To summary, R can</h3>
 <ul>
 <li>
-<p>Access data from a wide range of sources;</p>
+<p><strong>Access</strong> data from a wide range of sources;</p>
 </li>
 <li>
-<p>Merge the pieces of data together;</p>
+<p><strong>Merge</strong> the pieces of data together;</p>
 </li>
 <li>
-<p>Clean and annotate them;</p>
+<p><strong>Clean</strong> and <strong>annotate</strong> data;</p>
 </li>
 <li>
-<p>Analyze them with the latest methods;</p>
+<p><strong>Analyze</strong> cleaned data with the latest methods;</p>
 </li>
 <li>
-<p>Present the findings in meaningful and graphically appealing ways;</p>
+<p>Present the findings in <strong>meaningful</strong> and <strong>graphically appealing</strong> ways;</p>
 </li>
 <li>
 <p>Incorporate the results into attractive reports that can be distributed to stakeholders and the public.</p>
 </li>
 </ul>
 <p>Attach is the <a href="chapter1.R">Script</a> of chapter1.</p>
-<h2 id="chapter2-creating-dataset">Chapter2. Creating Dataset</h2>
+<p>Show me the code</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Section 1.3.2 Getting help</span>
+<span class="nf">help.start</span><span class="p">()</span>
+
+<span class="c1">## Section 1.3.3 Functions for managing the R workspace</span>
+<span class="nf">getwd</span><span class="p">()</span>
+<span class="nf">setwd</span><span class="p">(</span><span class="s">&#34;mydirectory&#34;</span><span class="p">)</span>
+<span class="nf">ls</span><span class="p">()</span>            <span class="c1"># List the objects in the current workspace.</span>
+<span class="nf">rm</span><span class="p">(</span><span class="n">objectlist</span><span class="p">)</span>  <span class="c1"># Remove (delete) one or more objects.</span>
+<span class="nf">options</span><span class="p">()</span>       <span class="c1"># View or set current options.</span>
+<span class="nf">history</span><span class="p">()</span>       <span class="c1"># Display your last # commands (default = 25).</span>
+<span class="nf">save</span><span class="p">()</span>
+<span class="nf">load</span><span class="p">()</span>
+<span class="nf">q</span><span class="p">()</span>
+
+<span class="c1">## Section 1.3.4 Input and Output</span>
+
+<span class="c1"># Input</span>
+<span class="nf">source</span><span class="p">(</span><span class="s">&#34;filename&#34;</span><span class="p">)</span>
+
+<span class="nf">source</span><span class="p">(</span><span class="s">&#34;script1.R&#34;</span><span class="p">)</span> <span class="c1"># Working through an example.</span>
+
+<span class="c1"># Output</span>
+<span class="nf">sink</span><span class="p">(</span><span class="s">&#34;myoutput&#34;</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">pdf</span><span class="p">(</span><span class="s">&#34;mygraphs.pdf&#34;</span><span class="p">)</span>
+<span class="nf">source</span><span class="p">(</span><span class="s">&#34;script2.R&#34;</span><span class="p">)</span>
+
+<span class="nf">sink</span><span class="p">()</span>
+<span class="nf">dev.off</span><span class="p">()</span>
+<span class="nf">source</span><span class="p">(</span><span class="s">&#34;script3.R&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="chapter2-creating-dataset">Chapter2. Creating Dataset</h2>
 <h3 id="chapter-2-covers">Chapter 2 covers</h3>
 <ul>
 <li>
@@ -574,12 +640,11 @@ if (!doNotTrack) {
 <li>
 <p>In summary, this chapter describes</p>
 <ul>
-<li>
-<p>The various structures that R provides for holding data;</p>
-</li>
-<li>
-<p>The many methods available for importing data from both keyboard and external sources.</p>
-</li>
+<li>The various structures that R provides for holding data;</li>
+</ul>
+<p><img src="datastructures.png" alt="datastructures"></p>
+<ul>
+<li>The many methods available for importing data from both keyboard and external sources.</li>
 </ul>
 </li>
 </ul>
@@ -594,13 +659,33 @@ if (!doNotTrack) {
 <p>Customizing symbols, lines, colors, and axes</p>
 </li>
 <li>
-<p>Annotating with text and titles#   Controlling a graph’s dimensions</p>
+<p>Annotating with text and titles</p>
+<ul>
+<li><code>text()</code> and <code>mtext()</code></li>
+</ul>
+</li>
+<li>
+<p>Controlling a graph’s dimensions</p>
+<ul>
+<li><code>par()</code></li>
+</ul>
 </li>
 <li>
 <p>Combining multiple graphs into one</p>
+<ul>
+<li><code>help(&quot;layout&quot;)</code></li>
+</ul>
 </li>
 </ul>
+<h3 id="a-example-about-graphical-parameters">A Example about Graphical Parameters</h3>
+<ul>
+<li>
 <p><strong>Figure for Comparing Drug A and Drug B response by dose with code Listing 3.3.</strong></p>
+</li>
+<li>
+<p><em><strong>par()</strong></em></p>
+</li>
+</ul>
 <p><img src="chapter3_3_3.png" alt="chapter3_3_3"></p>
 <p>Attach is the <a href="chapter3.R">Script</a> of chapter3.</p>
 <h2 id="chapter4-basic-data-management">Chapter4. Basic Data Management</h2>
@@ -965,6 +1050,7 @@ if (!doNotTrack) {
     <footer class="post-footer">
       <div class="post-tags">
           <a href="https://xiaonilee.github.io/tags/r/">R</a>
+          <a href="https://xiaonilee.github.io/tags/r-in-action/">R in Action</a>
           <a href="https://xiaonilee.github.io/tags/bioinformatics/">Bioinformatics</a>
           <a href="https://xiaonilee.github.io/tags/book/">Book</a>
           
