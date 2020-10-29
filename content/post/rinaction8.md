@@ -21,7 +21,7 @@ Notebook of Reading Books: R in Action_Chapter 8.
 
 <!--more-->
 
-### This chapter covers
+## This chapter covers
 
 - Fitting and interpreting linear models
 
@@ -29,19 +29,19 @@ Notebook of Reading Books: R in Action_Chapter 8.
 
 - Selecting among competing models
   
-#### 8.1. The many faces of regression
+### 8.1. The many faces of regression
 
-#### 8.2. OLS regression
+### 8.2. OLS regression
 
 In OLS regression, a quantitative dependent variable is predicted from a weighted sum of predictor variables, where the weights are parameters estimated from the data.
 
 $$ \hat Y_{i} = \hat \beta_{0} + \hat \beta_{1} X_{1i}+ ... + \hat \beta_{k}X_{ki}\ \ \ \ \ \ i = 1...n $$
 
-##### 8.2.1. Fitting regression models with lm()
+#### 8.2.1. Fitting regression models with lm()
 
 ![tabfun](tabfun.png)
 
-##### 8.2.2. Simple linear regression
+#### 8.2.2. Simple linear regression
 
 - Figure 8.1. Scatter plot with regression line for weight predicted from height
 
@@ -49,7 +49,7 @@ $$ \hat Y_{i} = \hat \beta_{0} + \hat \beta_{1} X_{1i}+ ... + \hat \beta_{k}X_{k
   
   ![listing1](listing1.png)
 
-##### 8.2.3. Polynomial regression
+#### 8.2.3. Polynomial regression
 
 - Figure 8.2. Quadratic regression for weight predicted by height
   
@@ -61,21 +61,21 @@ $$ \hat Y_{i} = \hat \beta_{0} + \hat \beta_{1} X_{1i}+ ... + \hat \beta_{k}X_{k
 
   ![listingn](listingn.png)
 
-##### 8.2.4. Multiple linear regression
+#### 8.2.4. Multiple linear regression
 
 - Figure 8.4. Scatter plot matrix of dependent and independent variables for the states data, including linear and smoothed fits, and marginal distributions (kernel density plots and rug plots)
   
   ![listing3](listing3.png)
 
-##### 8.2.5. Multiple linear regression with interactions
+#### 8.2.5. Multiple linear regression with interactions
 
 - Figure 8.5. Interaction plot for hp*wt. This plot displays the relationship between mpg and hp at 3 values of wt.
 
   ![effplot](effplot.png)
 
-#### 8.3. Regression diagnostics
+### 8.3. Regression diagnostics
 
-##### 8.3.1. A typical approach
+#### 8.3.1. A typical approach
 
 - Figure 8.6. Diagnostic plots for the regression of weight on height
 
@@ -89,7 +89,7 @@ $$ \hat Y_{i} = \hat \beta_{0} + \hat \beta_{1} X_{1i}+ ... + \hat \beta_{k}X_{k
 
   ![typ8312](typ8312.png)
 
-##### 8.3.2. An enhanced approach
+#### 8.3.2. An enhanced approach
 
 - library(car)
   
@@ -123,27 +123,27 @@ $$ \hat Y_{i} = \hat \beta_{0} + \hat \beta_{1} X_{1i}+ ... + \hat \beta_{k}X_{k
 
   ![fig812](fig812.png)
 
-##### 8.3.3. Global validation of linear model assumption
+#### 8.3.3. Global validation of linear model assumption
 
 - gvlma() in the gvlma package.
   
-##### 8.3.4. Multicollinearity
+#### 8.3.4. Multicollinearity
 
 - vif()
 
-#### 8.4. Unusual observations
+### 8.4. Unusual observations
 
-##### 8.4.1. Outliers
+#### 8.4.1. Outliers
 
 - outlierTest()
   
-##### 8.4.2. High leverage points
+#### 8.4.2. High leverage points
 
 - Figure 8.13. Index plot of hat values for assessing observations with high leverage
 
   ![fig813](fig813.png)
 
-##### 8.4.3. Influential observations
+#### 8.4.3. Influential observations
 
 - Figure 8.14. Cook’s D plot for identifying influential observations
 
@@ -163,29 +163,29 @@ $$ \hat Y_{i} = \hat \beta_{0} + \hat \beta_{1} X_{1i}+ ... + \hat \beta_{k}X_{k
 
   ![fig816](fig816.png)
 
-#### 8.5. Corrective measures
+### 8.5. Corrective measures
 
-##### 8.5.1. Deleting observations
+#### 8.5.1. Deleting observations
 
-##### 8.5.2. Transforming variables
+#### 8.5.2. Transforming variables
 
 - with powerTransform() and boxTidwell()
 
-##### 8.5.3. Adding or deleting variables
+#### 8.5.3. Adding or deleting variables
 
 - sqrt(vif) > 2
 
-##### 8.5.4. Trying a different approach
+#### 8.5.4. Trying a different approach
 
-#### 8.6. Selecting the “best” regression model
+### 8.6. Selecting the “best” regression model
 
 - The selection of a final regression model always involves a compromise between predictive accuracy (a model that fits the data as well as possible) and parsimony (a simple and replicable model).
 
-##### 8.6.1. Comparing models
+#### 8.6.1. Comparing models
 
 - with anova() and AIC()
 
-##### 8.6.2. Variable selection
+#### 8.6.2. Variable selection
 
 - selecting a final set of predictor variables from a larger pool of candidate variables
 
@@ -200,13 +200,13 @@ $$ \hat Y_{i} = \hat \beta_{0} + \hat \beta_{1} X_{1i}+ ... + \hat \beta_{k}X_{k
     - Figure 8.18. Best four models for each subset size based on the Mallows Cp statistic
     ![fig818](fig818.png)
 
-#### 8.7. Taking the analysis further
+### 8.7. Taking the analysis further
 
-##### 8.7.1. Cross-validation
+#### 8.7.1. Cross-validation
 
 - crossval() in the bootstrap package
 
-##### 8.7.2. Relative importance
+#### 8.7.2. Relative importance
 
 - Figure 8.19. Bar plot of relative weights for the states multiple regression problem
   

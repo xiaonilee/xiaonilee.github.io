@@ -517,9 +517,15 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#this-chapter-covers">This chapter covers</a>
       <ul>
-        <li><a href="#this-chapter-covers">This chapter covers</a></li>
+        <li><a href="#81-the-many-faces-of-regression">8.1. The many faces of regression</a></li>
+        <li><a href="#82-ols-regression">8.2. OLS regression</a></li>
+        <li><a href="#83-regression-diagnostics">8.3. Regression diagnostics</a></li>
+        <li><a href="#84-unusual-observations">8.4. Unusual observations</a></li>
+        <li><a href="#85-corrective-measures">8.5. Corrective measures</a></li>
+        <li><a href="#86-selecting-the-best-regression-model">8.6. Selecting the “best” regression model</a></li>
+        <li><a href="#87-taking-the-analysis-further">8.7. Taking the analysis further</a></li>
       </ul>
     </li>
   </ul>
@@ -530,7 +536,7 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>Notebook of Reading Books: R in Action_Chapter 8.</p>
-<h3 id="this-chapter-covers">This chapter covers</h3>
+<h2 id="this-chapter-covers">This chapter covers</h2>
 <ul>
 <li>
 <p>Fitting and interpreting linear models</p>
@@ -542,13 +548,13 @@ if (!doNotTrack) {
 <p>Selecting among competing models</p>
 </li>
 </ul>
-<h4 id="81-the-many-faces-of-regression">8.1. The many faces of regression</h4>
-<h4 id="82-ols-regression">8.2. OLS regression</h4>
+<h3 id="81-the-many-faces-of-regression">8.1. The many faces of regression</h3>
+<h3 id="82-ols-regression">8.2. OLS regression</h3>
 <p>In OLS regression, a quantitative dependent variable is predicted from a weighted sum of predictor variables, where the weights are parameters estimated from the data.</p>
 <p>$$ \hat Y_{i} = \hat \beta_{0} + \hat \beta_{1} X_{1i}+ &hellip; + \hat \beta_{k}X_{ki}\ \ \ \ \ \ i = 1&hellip;n $$</p>
-<h5 id="821-fitting-regression-models-with-lm">8.2.1. Fitting regression models with lm()</h5>
+<h4 id="821-fitting-regression-models-with-lm">8.2.1. Fitting regression models with lm()</h4>
 <p><img src="tabfun.png" alt="tabfun"></p>
-<h5 id="822-simple-linear-regression">8.2.2. Simple linear regression</h5>
+<h4 id="822-simple-linear-regression">8.2.2. Simple linear regression</h4>
 <ul>
 <li>
 <p>Figure 8.1. Scatter plot with regression line for weight predicted from height</p>
@@ -558,7 +564,7 @@ if (!doNotTrack) {
 <p><img src="listing1.png" alt="listing1"></p>
 </li>
 </ul>
-<h5 id="823-polynomial-regression">8.2.3. Polynomial regression</h5>
+<h4 id="823-polynomial-regression">8.2.3. Polynomial regression</h4>
 <ul>
 <li>
 <p>Figure 8.2. Quadratic regression for weight predicted by height</p>
@@ -572,22 +578,22 @@ if (!doNotTrack) {
 <p><img src="listingn.png" alt="listingn"></p>
 </li>
 </ul>
-<h5 id="824-multiple-linear-regression">8.2.4. Multiple linear regression</h5>
+<h4 id="824-multiple-linear-regression">8.2.4. Multiple linear regression</h4>
 <ul>
 <li>
 <p>Figure 8.4. Scatter plot matrix of dependent and independent variables for the states data, including linear and smoothed fits, and marginal distributions (kernel density plots and rug plots)</p>
 <p><img src="listing3.png" alt="listing3"></p>
 </li>
 </ul>
-<h5 id="825-multiple-linear-regression-with-interactions">8.2.5. Multiple linear regression with interactions</h5>
+<h4 id="825-multiple-linear-regression-with-interactions">8.2.5. Multiple linear regression with interactions</h4>
 <ul>
 <li>
 <p>Figure 8.5. Interaction plot for hp*wt. This plot displays the relationship between mpg and hp at 3 values of wt.</p>
 <p><img src="effplot.png" alt="effplot"></p>
 </li>
 </ul>
-<h4 id="83-regression-diagnostics">8.3. Regression diagnostics</h4>
-<h5 id="831-a-typical-approach">8.3.1. A typical approach</h5>
+<h3 id="83-regression-diagnostics">8.3. Regression diagnostics</h3>
+<h4 id="831-a-typical-approach">8.3.1. A typical approach</h4>
 <ul>
 <li>
 <p>Figure 8.6. Diagnostic plots for the regression of weight on height</p>
@@ -602,7 +608,7 @@ if (!doNotTrack) {
 <p><img src="typ8312.png" alt="typ8312"></p>
 </li>
 </ul>
-<h5 id="832-an-enhanced-approach">8.3.2. An enhanced approach</h5>
+<h4 id="832-an-enhanced-approach">8.3.2. An enhanced approach</h4>
 <ul>
 <li>
 <p>library(car)</p>
@@ -645,27 +651,27 @@ if (!doNotTrack) {
 <p><img src="fig812.png" alt="fig812"></p>
 </li>
 </ul>
-<h5 id="833-global-validation-of-linear-model-assumption">8.3.3. Global validation of linear model assumption</h5>
+<h4 id="833-global-validation-of-linear-model-assumption">8.3.3. Global validation of linear model assumption</h4>
 <ul>
 <li>gvlma() in the gvlma package.</li>
 </ul>
-<h5 id="834-multicollinearity">8.3.4. Multicollinearity</h5>
+<h4 id="834-multicollinearity">8.3.4. Multicollinearity</h4>
 <ul>
 <li>vif()</li>
 </ul>
-<h4 id="84-unusual-observations">8.4. Unusual observations</h4>
-<h5 id="841-outliers">8.4.1. Outliers</h5>
+<h3 id="84-unusual-observations">8.4. Unusual observations</h3>
+<h4 id="841-outliers">8.4.1. Outliers</h4>
 <ul>
 <li>outlierTest()</li>
 </ul>
-<h5 id="842-high-leverage-points">8.4.2. High leverage points</h5>
+<h4 id="842-high-leverage-points">8.4.2. High leverage points</h4>
 <ul>
 <li>
 <p>Figure 8.13. Index plot of hat values for assessing observations with high leverage</p>
 <p><img src="fig813.png" alt="fig813"></p>
 </li>
 </ul>
-<h5 id="843-influential-observations">8.4.3. Influential observations</h5>
+<h4 id="843-influential-observations">8.4.3. Influential observations</h4>
 <ul>
 <li>
 <p>Figure 8.14. Cook’s D plot for identifying influential observations</p>
@@ -691,26 +697,26 @@ if (!doNotTrack) {
 <p><img src="fig816.png" alt="fig816"></p>
 </li>
 </ul>
-<h4 id="85-corrective-measures">8.5. Corrective measures</h4>
-<h5 id="851-deleting-observations">8.5.1. Deleting observations</h5>
-<h5 id="852-transforming-variables">8.5.2. Transforming variables</h5>
+<h3 id="85-corrective-measures">8.5. Corrective measures</h3>
+<h4 id="851-deleting-observations">8.5.1. Deleting observations</h4>
+<h4 id="852-transforming-variables">8.5.2. Transforming variables</h4>
 <ul>
 <li>with powerTransform() and boxTidwell()</li>
 </ul>
-<h5 id="853-adding-or-deleting-variables">8.5.3. Adding or deleting variables</h5>
+<h4 id="853-adding-or-deleting-variables">8.5.3. Adding or deleting variables</h4>
 <ul>
 <li>sqrt(vif) &gt; 2</li>
 </ul>
-<h5 id="854-trying-a-different-approach">8.5.4. Trying a different approach</h5>
-<h4 id="86-selecting-the-best-regression-model">8.6. Selecting the “best” regression model</h4>
+<h4 id="854-trying-a-different-approach">8.5.4. Trying a different approach</h4>
+<h3 id="86-selecting-the-best-regression-model">8.6. Selecting the “best” regression model</h3>
 <ul>
 <li>The selection of a final regression model always involves a compromise between predictive accuracy (a model that fits the data as well as possible) and parsimony (a simple and replicable model).</li>
 </ul>
-<h5 id="861-comparing-models">8.6.1. Comparing models</h5>
+<h4 id="861-comparing-models">8.6.1. Comparing models</h4>
 <ul>
 <li>with anova() and AIC()</li>
 </ul>
-<h5 id="862-variable-selection">8.6.2. Variable selection</h5>
+<h4 id="862-variable-selection">8.6.2. Variable selection</h4>
 <ul>
 <li>
 <p>selecting a final set of predictor variables from a larger pool of candidate variables</p>
@@ -740,12 +746,12 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<h4 id="87-taking-the-analysis-further">8.7. Taking the analysis further</h4>
-<h5 id="871-cross-validation">8.7.1. Cross-validation</h5>
+<h3 id="87-taking-the-analysis-further">8.7. Taking the analysis further</h3>
+<h4 id="871-cross-validation">8.7.1. Cross-validation</h4>
 <ul>
 <li>crossval() in the bootstrap package</li>
 </ul>
-<h5 id="872-relative-importance">8.7.2. Relative importance</h5>
+<h4 id="872-relative-importance">8.7.2. Relative importance</h4>
 <ul>
 <li>
 <p>Figure 8.19. Bar plot of relative weights for the states multiple regression problem</p>
