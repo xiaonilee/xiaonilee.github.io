@@ -21,7 +21,7 @@ Notebook of Reading Books: R in Action_Chapter 7.
 
 <!--more-->
 
-### This chapter covers
+## This chapter covers
 
 - Descriptive statistics
   
@@ -33,75 +33,75 @@ Notebook of Reading Books: R in Action_Chapter 7.
   
 - Nonparametric statistics
 
-#### In summary
+## In summary
 
-- 7.1.1 Descriptive statistics
+### 7.1.1 Descriptive statistics
 
-  - summary()
+- summary()
 
-  - sapply()
+- sapply()
 
-  - describe() in the Hmisc package()
+- describe() in the Hmisc package()
 
-  - stat.desc() in the pastecs package
+- stat.desc() in the pastecs package
 
-  - describe() in the psych package
+- describe() in the psych package
   
-- 7.1.2 Descriptive statistics by group
+### 7.1.2 Descriptive statistics by group
   
-  - aggregate()
+- aggregate()
   
-  - by()
+- by()
   
-  - summaryBy() in the doBy package
+- summaryBy() in the doBy package
 
-  - describe.by() in the psych package
+- describe.by() in the psych package
 
-- 7.2.1 Generating frequency tables
+### 7.2.1 Generating frequency tables
 
-  - table()
+- table()
 
-  - prop.table()
+- prop.table()
 
-  - xtabs()
+- xtabs()
 
-  - CrossTable()
+- CrossTable()
 
-  - ftable()
+- ftable()
 
-- 7.2.2 Tests of independence
+### 7.2.2 Tests of independence
   
-  - chisq.test()
+- chisq.test()
 
-  - fisher.test()
+- fisher.test()
 
-  - mantelhaen.test()
+- mantelhaen.test()
 
-- 7.2.3 Measures of association
+### 7.2.3 Measures of association
 
-  - assocstats()
+- assocstats()
 
-- 7.3 Correlations
+### 7.3 Correlations
 
-  - cov()
+- cov()
 
-  - cor()
+- cor()
 
-  - pcor() in the ggm package
+- pcor() in the ggm package
 
-  - cor.test()
+- cor.test()
 
-  - corr.test in the psych package
+- corr.test in the psych package
 
-- 7.4 t-tests
+### 7.4 t-tests
 
-  - t.test()
+- t.test()
 
-- 7.5 Nonparametric tests of group differences
+### 7.5 Nonparametric tests of group differences
 
-  - wilcox.test()
+- wilcox.test()
 
-  - kruskal.test()
+- kruskal.test()
   
 Attach is the [Script](chapter7.R) of chapter7.
 
