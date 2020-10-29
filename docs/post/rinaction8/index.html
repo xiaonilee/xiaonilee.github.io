@@ -74,7 +74,7 @@
 <meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 8.">
 <meta itemprop="datePublished" content="2020-10-29T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-10-29T00:00:00+00:00" />
-<meta itemprop="wordCount" content="130">
+<meta itemprop="wordCount" content="569">
 
 
 
@@ -548,31 +548,210 @@ if (!doNotTrack) {
 <p>$$ \begin{aligned} \hat{Y}_i &amp; = \beta_0 + \beta_1 X_1i\ + &hellip; + \beta_kX_ki\ &amp; i = 1&hellip;n \end{aligned} $$</p>
 <h5 id="821-fitting-regression-models-with-lm">8.2.1. Fitting regression models with lm()</h5>
 <p><img src="tabfun.png" alt="tabfun"></p>
-<h4 id="822-simple-linear-regression">8.2.2. Simple linear regression</h4>
+<h5 id="822-simple-linear-regression">8.2.2. Simple linear regression</h5>
 <ul>
+<li>
+<p>Figure 8.1. Scatter plot with regression line for weight predicted from height</p>
+</li>
 <li>
 <p>with <code>lm()</code> and <code>abline()</code></p>
 <p><img src="listing1.png" alt="listing1"></p>
 </li>
 </ul>
-<h4 id="823-polynomial-regression">8.2.3. Polynomial regression</h4>
-<p><img src="listing2.png" alt="listing2"></p>
+<h5 id="823-polynomial-regression">8.2.3. Polynomial regression</h5>
 <ul>
+<li>
+<p>Figure 8.2. Quadratic regression for weight predicted by height</p>
+<p><img src="listing2.png" alt="listing2"></p>
+</li>
+<li>
+<p>Figure 8.3. Scatter plot of height by weight, with linear and smoothed fits, and marginal box plots</p>
+</li>
 <li>
 <p>with <strong>scatterplot()</strong> in the &ldquo;car&rdquo; package</p>
 <p><img src="listingn.png" alt="listingn"></p>
 </li>
 </ul>
-<h4 id="824-multiple-linear-regression">8.2.4. Multiple linear regression</h4>
-<p><img src="listing3.png" alt="listing3"></p>
-<h4 id="825-multiple-linear-regression-with-interactions">8.2.5. Multiple linear regression with interactions</h4>
+<h5 id="824-multiple-linear-regression">8.2.4. Multiple linear regression</h5>
 <ul>
 <li>
-<p>Interaction plot for hp*wt. This plot displays the relationship between mpg and hp at 3 values of wt.</p>
+<p>Figure 8.4. Scatter plot matrix of dependent and independent variables for the states data, including linear and smoothed fits, and marginal distributions (kernel density plots and rug plots)</p>
+<p><img src="listing3.png" alt="listing3"></p>
+</li>
+</ul>
+<h5 id="825-multiple-linear-regression-with-interactions">8.2.5. Multiple linear regression with interactions</h5>
+<ul>
+<li>
+<p>Figure 8.5. Interaction plot for hp*wt. This plot displays the relationship between mpg and hp at 3 values of wt.</p>
 <p><img src="effplot.png" alt="effplot"></p>
 </li>
 </ul>
 <h4 id="83-regression-diagnostics">8.3. Regression diagnostics</h4>
+<h5 id="831-a-typical-approach">8.3.1. A typical approach</h5>
+<ul>
+<li>
+<p>Figure 8.6. Diagnostic plots for the regression of weight on height</p>
+<p><img src="typ821.png" alt="typapp"></p>
+</li>
+<li>
+<p>Figure 8.7. Diagnostic plots for the regression of weight on height and height-squared</p>
+<p><img src="typ8311.png" alt="typ8311"></p>
+</li>
+<li>
+<p>Figure 8.8. Diagnostic plots for the regression of murder rate on state characteristics</p>
+<p><img src="typ8312.png" alt="typ8312"></p>
+</li>
+</ul>
+<h5 id="832-an-enhanced-approach">8.3.2. An enhanced approach</h5>
+<ul>
+<li>
+<p>library(car)</p>
+<p><img src="tabenc.png" alt="tabenc"></p>
+</li>
+<li>
+<p>Normality</p>
+<ul>
+<li>Figure 8.9. Q-Q plot for studentized residuals</li>
+</ul>
+<p><img src="fig89.png" alt="fig89"></p>
+<ul>
+<li>
+<p>Figure 8.10. Distribution of studentized residuals using the residplot() function</p>
+</li>
+<li>
+<p>with residplot()</p>
+</li>
+</ul>
+<p><img src="fig810.png" alt="fig810"></p>
+</li>
+<li>
+<p>Independence of Errors</p>
+<ul>
+<li>with durbinWatsonTest()</li>
+</ul>
+</li>
+<li>
+<p>Linearity</p>
+<ul>
+<li>Figure 8.11. Component plus residual plots for the regression of murder rate on state characteristics</li>
+</ul>
+<p><img src="fig811.png" alt="fig811"></p>
+</li>
+<li>
+<p>Homoscedasticity</p>
+<ul>
+<li>Figure 8.12. Spread-level plot for assessing constant error variance</li>
+</ul>
+<p><img src="fig812.png" alt="fig812"></p>
+</li>
+</ul>
+<h5 id="833-global-validation-of-linear-model-assumption">8.3.3. Global validation of linear model assumption</h5>
+<ul>
+<li>gvlma() in the gvlma package.</li>
+</ul>
+<h5 id="834-multicollinearity">8.3.4. Multicollinearity</h5>
+<ul>
+<li>vif()</li>
+</ul>
+<h4 id="84-unusual-observations">8.4. Unusual observations</h4>
+<h5 id="841-outliers">8.4.1. Outliers</h5>
+<ul>
+<li>outlierTest()</li>
+</ul>
+<h5 id="842-high-leverage-points">8.4.2. High leverage points</h5>
+<ul>
+<li>
+<p>Figure 8.13. Index plot of hat values for assessing observations with high leverage</p>
+<p><img src="fig813.png" alt="fig813"></p>
+</li>
+</ul>
+<h5 id="843-influential-observations">8.4.3. Influential observations</h5>
+<ul>
+<li>
+<p>Figure 8.14. Cook’s D plot for identifying influential observations</p>
+<p><img src="fig814.png" alt="fig814"></p>
+</li>
+<li>
+<p>Figure 8.15. Added-variable plots for assessing the impact of influential observations</p>
+<p><img src="fig815.png" alt="fig815"></p>
+</li>
+<li>
+<p>Figure 8.16. Influence plot.</p>
+<ul>
+<li>
+<p>States above <code>+2</code> or below <code>–2</code> on the vertical axis are considered <strong>outliers</strong>.</p>
+</li>
+<li>
+<p>States above <code>0.2</code> or <code>0.3</code> on the horizontal axis <strong>have high leverage</strong> (unusual combinations of predictor values).</p>
+</li>
+<li>
+<p><strong>Circle size</strong> is proportional to influence. Observations depicted by large circles may have disproportionate influence on the parameters estimates of the model.</p>
+</li>
+</ul>
+<p><img src="fig816.png" alt="fig816"></p>
+</li>
+</ul>
+<h4 id="85-corrective-measures">8.5. Corrective measures</h4>
+<h5 id="851-deleting-observations">8.5.1. Deleting observations</h5>
+<h5 id="852-transforming-variables">8.5.2. Transforming variables</h5>
+<ul>
+<li>with powerTransform() and boxTidwell()</li>
+</ul>
+<h5 id="853-adding-or-deleting-variables">8.5.3. Adding or deleting variables</h5>
+<ul>
+<li>sqrt(vif) &gt; 2</li>
+</ul>
+<h5 id="854-trying-a-different-approach">8.5.4. Trying a different approach</h5>
+<h4 id="86-selecting-the-best-regression-model">8.6. Selecting the “best” regression model</h4>
+<ul>
+<li>The selection of a final regression model always involves a compromise between predictive accuracy (a model that fits the data as well as possible) and parsimony (a simple and replicable model).</li>
+</ul>
+<h5 id="861-comparing-models">8.6.1. Comparing models</h5>
+<ul>
+<li>with anova() and AIC()</li>
+</ul>
+<h5 id="862-variable-selection">8.6.2. Variable selection</h5>
+<ul>
+<li>
+<p>selecting a final set of predictor variables from a larger pool of candidate variables</p>
+<ul>
+<li>
+<p>Stepwise Regression</p>
+<ul>
+<li>stepAIC() in the MASS package</li>
+</ul>
+</li>
+<li>
+<p>all-subsets regression</p>
+<ul>
+<li>
+<p>regsubsets() in the leaps package</p>
+</li>
+<li>
+<p>Figure 8.17. Best four models for each subset size based on Adjusted R-square
+<img src="fig817.png" alt="fig817"></p>
+</li>
+<li>
+<p>Figure 8.18. Best four models for each subset size based on the Mallows Cp statistic
+<img src="fig818.png" alt="fig818"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="87-taking-the-analysis-further">8.7. Taking the analysis further</h4>
+<h5 id="871-cross-validation">8.7.1. Cross-validation</h5>
+<ul>
+<li>crossval() in the bootstrap package</li>
+</ul>
+<h5 id="872-relative-importance">8.7.2. Relative importance</h5>
+<ul>
+<li>
+<p>Figure 8.19. Bar plot of relative weights for the states multiple regression problem</p>
+<p><img src="fig819.png" alt="fig819"></p>
+</li>
+</ul>
     </div>
 
     
