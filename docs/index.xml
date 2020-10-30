@@ -6,10 +6,21 @@
     <description>Recent content on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 29 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://xiaonilee.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Chapter 9. Analysis of variance</title>
+      <link>https://xiaonilee.github.io/post/rinaction9/</link>
+      <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/rinaction9/</guid>
+      
+        <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 9.&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>Chapter 8. Regression</title>
@@ -221,17 +232,6 @@
       <guid>https://xiaonilee.github.io/post/tissgdb/</guid>
       
         <description>&lt;p&gt;TissGDB is the tissue-specific gene annotation database in cancer, aiming to provide a resource or reference for cancer and the related disease studies in the context of tissue specificity.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>https://xiaonilee.github.io/about/</link>
-      <pubDate>Thu, 03 Sep 2020 16:01:23 +0800</pubDate>
-      
-      <guid>https://xiaonilee.github.io/about/</guid>
-      
-        <description></description>
       
     </item>
     

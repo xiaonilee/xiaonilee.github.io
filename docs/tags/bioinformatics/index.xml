@@ -6,10 +6,19 @@
     <description>Recent content in Bioinformatics on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 29 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xiaonilee.github.io/tags/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Chapter 9. Analysis of variance</title>
+      <link>https://xiaonilee.github.io/post/rinaction9/</link>
+      <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/rinaction9/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 9.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Chapter 8. Regression</title>
