@@ -74,7 +74,7 @@
 <meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 10.">
 <meta itemprop="datePublished" content="2020-11-02T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-11-02T00:00:00+00:00" />
-<meta itemprop="wordCount" content="31">
+<meta itemprop="wordCount" content="1021">
 
 
 
@@ -533,7 +533,14 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#this-chapter-covers">This chapter covers</a></li>
+    <li><a href="#this-chapter-covers">This chapter covers</a>
+      <ul>
+        <li><a href="#101-a-quick-review-of-hypothesis-testing">10.1. A quick review of hypothesis testing</a></li>
+        <li><a href="#102-implementing-power-analysis-with-the-pwr-package">10.2. Implementing power analysis with the pwr package</a></li>
+        <li><a href="#103-creating-power-analysis-plots">10.3. Creating power analysis plots</a></li>
+        <li><a href="#104-other-packages">10.4. Other packages</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -554,8 +561,433 @@ if (!doNotTrack) {
 <p>Assessing statistical power</p>
 </li>
 </ul>
+<h3 id="101-a-quick-review-of-hypothesis-testing">10.1. A quick review of hypothesis testing</h3>
+<p>$$ H_{0} : u_{1} - u_{2} = 0 $$
+$$ H_{1} : u_{1} - u_{2} ≠ 0 $$</p>
+<ul>
+<li>
+<p>Based on the sample data, you can calculate the statistic.</p>
+<p><img src="tab1.png" alt="tab1"></p>
+</li>
+<li>
+<p>Figure 10.1. Four primary quantities considered in a study design power analysis.</p>
+</li>
+<li>
+<p>Given any three, you can calculate the fourth.</p>
+<p><img src="fig101.png" alt="fig101"></p>
+</li>
+</ul>
+<h3 id="102-implementing-power-analysis-with-the-pwr-package">10.2. Implementing power analysis with the pwr package</h3>
+<p><img src="tab101.png" alt="tab101"></p>
+<h4 id="1021-t-tests">10.2.1. t-tests</h4>
+<ul>
+<li>
+<p>equal n : pwr.t.test(n=, d=, sig.level=, power=, alternative=)</p>
+</li>
+<li>
+<p>unequal n : pwr.t2n.test(n1=, n2=, d=, sig.level=, power=, alternative=)</p>
+</li>
+</ul>
+<h4 id="1022-anova">10.2.2. ANOVA</h4>
+<ul>
+<li>pwr.anova.test(k=, n=, f=, sig.level=, power=)</li>
+</ul>
+<h4 id="1023-correlations">10.2.3. Correlations</h4>
+<ul>
+<li>pwr.r.test(n=, r=, sig.level=, power=, alternative=)</li>
+</ul>
+<h4 id="1024-linear-models">10.2.4. Linear models</h4>
+<ul>
+<li>pwr.f2.test(u=, v=, f2=, sig.level=, power=)</li>
+</ul>
+<h4 id="1025-tests-of-proportions">10.2.5. Tests of proportions</h4>
+<ul>
+<li>
+<p>equal n: pwr.2p.test(h=, n=, sig.level=, power=)</p>
+</li>
+<li>
+<p>unequal n: pwr.2p2n.test(h =, n1 =, n2 =, sig.level=, power=)</p>
+</li>
+</ul>
+<h4 id="1026-chi-square-tests">10.2.6. Chi-square tests</h4>
+<ul>
+<li>pwr.chisq.test(w =, N = , df = , sig.level =, power =)</li>
+</ul>
+<h4 id="1027-choosing-an-appropriate-effect-size-in-novel-situations">10.2.7. Choosing an appropriate effect size in novel situations</h4>
+<ul>
+<li>
+<p>Without experiences for the reference</p>
+<p><img src="tab103.png" alt="tab103"></p>
+</li>
+<li>
+<p>Figure 10.2. Sample size needed to detect various effect sizes in a one-way ANOVA with five groups (assuming a power of 0.90 and significance level of 0.05).</p>
+<p><img src="fig102.png" alt="fig102"></p>
+</li>
+</ul>
+<h3 id="103-creating-power-analysis-plots">10.3. Creating power analysis plots</h3>
+<ul>
+<li>
+<p>Figure 10.3. Sample size curves for detecting a significant correlation at various power levels.</p>
+<p><img src="fig103.png" alt="fig103"></p>
+</li>
+</ul>
+<h3 id="104-other-packages">10.4. Other packages</h3>
+<ul>
+<li>
+<p>The last five are particularly focused on power analysis in <strong>genetic studies</strong>.</p>
+</li>
+<li>
+<p>Genome-wide association studies (<code>GWAS</code>) are studies used to identify genetic associations with observable traits.</p>
+<p><img src="tab104.png" alt="tab104"></p>
+</li>
+</ul>
 <p>Attach is the <a href="chapter10.R">Script</a> of chapter10.</p>
 <p>Show me the code <i class="far fa-hand-pointer"></i></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Remove most objects from the working environment</span>
+<span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+
+<span class="c1"># 10.2.1. t-tests</span>
+<span class="c1"># Question 1</span>
+<span class="c1"># install.packages(&#34;pwr&#34;)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">pwr</span><span class="p">)</span>
+<span class="nf">pwr.t.test</span><span class="p">(</span><span class="n">d</span><span class="o">=</span><span class="m">0.8</span><span class="p">,</span> <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="m">0.9</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;two.sample&#34;</span><span class="p">,</span>
+           <span class="n">alternative</span> <span class="o">=</span> <span class="s">&#34;two.sided&#34;</span><span class="p">)</span>
+<span class="c1">#     Two-sample t test power calculation </span>
+<span class="c1"># </span>
+<span class="c1">#              n = 33.82555</span>
+<span class="c1">#              d = 0.8</span>
+<span class="c1">#       sig.level = 0.05</span>
+<span class="c1">#           power = 0.9</span>
+<span class="c1">#     alternative = two.sided</span>
+<span class="c1"># </span>
+<span class="c1"># NOTE: n is number in *each* group</span>
+
+
+<span class="c1">#===================================================================</span>
+<span class="c1"># question 2</span>
+<span class="nf">pwr.t.test</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">20</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span> <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;two.sample&#34;</span><span class="p">,</span>
+           <span class="n">alternative</span> <span class="o">=</span> <span class="s">&#34;two.sided&#34;</span><span class="p">)</span>
+<span class="c1">#     Two-sample t test power calculation </span>
+<span class="c1"># </span>
+<span class="c1">#              n = 20</span>
+<span class="c1">#              d = 0.5</span>
+<span class="c1">#      sig.level = 0.01</span>
+<span class="c1">#          power = 0.1439551</span>
+<span class="c1">#    alternative = two.sided</span>
+<span class="c1"># </span>
+<span class="c1"># NOTE: n is number in *each* group</span>
+
+<span class="c1">#===================================================================</span>
+<span class="c1"># 10.2.2. ANOVA</span>
+<span class="nf">pwr.anova.test</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="m">0.25</span><span class="p">,</span><span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">)</span>
+
+<span class="c1">#     Balanced one-way analysis of variance power calculation </span>
+<span class="c1"># </span>
+<span class="c1">#              k = 5</span>
+<span class="c1">#              n = 39.1534</span>
+<span class="c1">#              f = 0.25</span>
+<span class="c1">#      sig.level = 0.05</span>
+<span class="c1">#          power = 0.8</span>
+<span class="c1"># </span>
+<span class="c1"># NOTE: n is number in each group</span>
+
+<span class="c1">#===================================================================</span>
+<span class="c1"># 10.2.3. Correlations</span>
+
+<span class="c1"># question 3</span>
+<span class="nf">pwr.r.test</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="m">0.25</span><span class="p">,</span> <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="m">0.90</span><span class="p">,</span> <span class="n">alternative</span> <span class="o">=</span> <span class="s">&#34;greater&#34;</span><span class="p">)</span>
+<span class="c1">#     approximate correlation power calculation (arctangh transformation) </span>
+<span class="c1"># </span>
+<span class="c1">#              n = 133.2803</span>
+<span class="c1">#              r = 0.25</span>
+<span class="c1">#      sig.level = 0.05</span>
+<span class="c1">#          power = 0.9</span>
+<span class="c1"># alternative = greater</span>
+
+<span class="c1">#===================================================================</span>
+<span class="c1"># 10.2.4. Linear models</span>
+<span class="nf">pwr.f2.test</span><span class="p">(</span><span class="n">u</span><span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="n">f2</span><span class="o">=</span><span class="m">0.0769</span><span class="p">,</span> <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="m">0.90</span><span class="p">)</span>
+
+<span class="c1">#       Multiple regression power calculation </span>
+<span class="c1"># </span>
+<span class="c1">#                u = 3</span>
+<span class="c1">#                v = 184.2426</span>
+<span class="c1">#                f2 = 0.00769</span>
+<span class="c1">#         sig.level = 0.05</span>
+<span class="c1">#             power = 0.9</span>
+
+<span class="c1">#       v=N-K-1--&gt;N=v+K+1=185+7+1=193</span>
+
+<span class="c1">#===================================================================</span>
+<span class="c1"># 10.2.5. Tests of proportions</span>
+<span class="c1"># question 4</span>
+
+<span class="nf">pwr.2p.test</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="nf">ES.h</span><span class="p">(</span><span class="m">0.65</span><span class="p">,</span> <span class="m">0.6</span><span class="p">),</span> <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="m">0.9</span><span class="p">,</span>
+            <span class="n">alternative</span> <span class="o">=</span> <span class="s">&#34;greater&#34;</span><span class="p">)</span>
+<span class="c1">#   Difference of proportion power calculation for binomial </span>
+<span class="c1">#   distribution (arcsine transformation) </span>
+<span class="c1"># </span>
+<span class="c1">#            h = 0.1033347</span>
+<span class="c1">#            n = 1604.007</span>
+<span class="c1">#    sig.level = 0.05</span>
+<span class="c1">#        power = 0.9</span>
+<span class="c1">#  alternative = greater</span>
+<span class="c1"># </span>
+<span class="c1"># NOTE: same sample sizes</span>
+
+<span class="c1">#===================================================================</span>
+<span class="c1"># 10.2.6. Chi-square tests</span>
+
+<span class="n">prob</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">.42</span><span class="p">,</span> <span class="m">.28</span><span class="p">,</span> <span class="m">.03</span><span class="p">,</span> <span class="m">.07</span><span class="p">,</span> <span class="m">.10</span><span class="p">,</span> <span class="m">.10</span><span class="p">),</span> <span class="n">byrow</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">nrow</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
+<span class="nf">ES.w2</span><span class="p">(</span><span class="n">prob</span><span class="p">)</span>
+<span class="c1"># [1] 0.1853198</span>
+<span class="nf">pwr.chisq.test</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="m">0.1853</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="m">0.90</span><span class="p">)</span>
+<span class="c1">#   Chi squared power calculation </span>
+<span class="c1"># </span>
+<span class="c1">#             w = 0.1853</span>
+<span class="c1">#             N = 368.5317</span>
+<span class="c1">#            df = 2</span>
+<span class="c1">#     sig.level = 0.05</span>
+<span class="c1">#         power = 0.9</span>
+<span class="c1"># </span>
+<span class="c1"># NOTE: N is the number of observations</span>
+
+<span class="c1">#===================================================================</span>
+<span class="c1"># 10.2.7. Choosing an appropriate effect size in novel situations</span>
+<span class="c1"># code listing 10.1. Sample sizes for detecting significant effects in a one-way ANOVA</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">pwr</span><span class="p">)</span>
+<span class="n">es</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="m">0.01</span><span class="p">)</span>
+<span class="n">nes</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">es</span><span class="p">)</span>
+
+<span class="n">samsize</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">nes</span><span class="p">){</span>
+  <span class="n">result</span> <span class="o">&lt;-</span> <span class="nf">pwr.anova.test</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="n">es[i]</span><span class="p">,</span> <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="m">0.9</span><span class="p">)</span>
+  <span class="n">samsize[i]</span> <span class="o">&lt;-</span> <span class="nf">ceiling</span><span class="p">(</span><span class="n">result</span><span class="o">$</span><span class="n">n</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="n">samsize</span><span class="p">,</span> <span class="n">es</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;l&#34;</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">,</span>
+     <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Effect Size&#34;</span><span class="p">,</span>
+     <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Sample Size (per cell)&#34;</span><span class="p">,</span>
+     <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;One Way ANOVA with Power=0.90, and Alpha=0.05&#34;</span><span class="p">)</span>
+
+
+
+<span class="c1"># 10.3. Creating power analysis plots</span>
+<span class="c1"># code listing Sample size curves for detecting correlations of various sizes</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">pwr</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="m">0.01</span><span class="p">)</span>
+<span class="n">nr</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="n">nr</span>
+
+<span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0.4</span><span class="p">,</span> <span class="m">0.9</span><span class="p">,</span> <span class="m">0.1</span><span class="p">)</span>
+<span class="n">np</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="n">np</span>
+
+<span class="n">samsize</span> <span class="o">&lt;-</span> <span class="nf">array</span><span class="p">(</span><span class="nf">numeric</span><span class="p">(</span><span class="n">nr</span><span class="o">*</span><span class="n">np</span><span class="p">),</span> <span class="n">dim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="n">nr</span><span class="p">,</span> <span class="n">np</span><span class="p">))</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">np</span><span class="p">){</span>
+  <span class="nf">for </span><span class="p">(</span><span class="n">j</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">nr</span><span class="p">){</span>
+    <span class="n">result</span> <span class="o">&lt;-</span> <span class="nf">pwr.r.test</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span><span class="kc">NULL</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">r[j]</span><span class="p">,</span>
+    <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="n">p[i]</span><span class="p">,</span>
+    <span class="n">alternative</span> <span class="o">=</span> <span class="s">&#34;two.sided&#34;</span><span class="p">)</span>
+    <span class="n">samsize[j</span><span class="p">,</span> <span class="n">i]</span> <span class="o">&lt;-</span> <span class="nf">ceiling</span><span class="p">(</span><span class="n">result</span><span class="o">$</span><span class="n">n</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">xrange</span> <span class="o">&lt;-</span> <span class="nf">range</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="n">yrange</span> <span class="o">&lt;-</span> <span class="nf">round</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="n">samsize</span><span class="p">))</span>
+<span class="n">colors</span> <span class="o">&lt;-</span> <span class="nf">rainbow</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">xrange</span><span class="p">,</span> <span class="n">yrange</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;n&#34;</span><span class="p">,</span>
+     <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Correlation Coefficient (r)&#34;</span><span class="p">,</span>
+     <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Sample Size(n&#34;</span><span class="p">)</span>
+
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">np</span><span class="p">){</span>
+  <span class="nf">lines</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">samsize[</span><span class="p">,</span><span class="n">i]</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;l&#34;</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="n">colors[i]</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="m">0</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">yrange[2]</span><span class="p">,</span><span class="m">50</span><span class="p">),</span> <span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;grey89&#34;</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="m">0</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="nf">seq</span><span class="p">(</span><span class="n">xrange[2]</span><span class="p">,</span> <span class="m">0.02</span><span class="p">),</span> <span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;grey89&#34;</span><span class="p">)</span>
+<span class="nf">title</span><span class="p">(</span><span class="s">&#34;Sample Size Estimation for Correlation Studies\n
+</span><span class="s">      Sig = 0.05 (Two-tailed)&#34;</span><span class="p">)</span>
+<span class="nf">legend</span><span class="p">(</span><span class="s">&#34;topright&#34;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&#34;Power&#34;</span><span class="p">,</span> <span class="nf">as.character</span><span class="p">(</span><span class="n">p</span><span class="p">),</span>
+       <span class="n">fill</span> <span class="o">=</span> <span class="n">colors</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
