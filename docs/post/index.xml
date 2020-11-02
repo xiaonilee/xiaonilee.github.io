@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Chapter 11. Intermediate graphs</title>
+      <link>https://xiaonilee.github.io/post/rinaction11/</link>
+      <pubDate>Mon, 02 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/rinaction11/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 11.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Chapter 9. Analysis of variance</title>
       <link>https://xiaonilee.github.io/post/rinaction9/</link>
       <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
@@ -184,15 +193,6 @@
       
       <guid>https://xiaonilee.github.io/post/localxenadatahub/</guid>
       <description>&lt;p&gt;Load the private data to Local Xena Data Hub.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>UCSC Xena: Load Data From Public Database</title>
-      <link>https://xiaonilee.github.io/post/loaddata/</link>
-      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/post/loaddata/</guid>
-      <description>&lt;p&gt;Load and analysis data from publication resources, such as &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/geo/&#34;&gt;GEO&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>
