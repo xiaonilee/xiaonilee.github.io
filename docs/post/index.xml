@@ -6,10 +6,19 @@
     <description>Recent content in Posts on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xiaonilee.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Chapter 11. Intermediate graphs</title>
+      <link>https://xiaonilee.github.io/post/rinaction11/</link>
+      <pubDate>Tue, 03 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/rinaction11/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 11.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Chapter 10. Power analysis</title>
@@ -18,15 +27,6 @@
       
       <guid>https://xiaonilee.github.io/post/rinaction10/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 10.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 11. Intermediate graphs</title>
-      <link>https://xiaonilee.github.io/post/rinaction11/</link>
-      <pubDate>Mon, 02 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/post/rinaction11/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 11.&lt;/p&gt;</description>
     </item>
     
     <item>

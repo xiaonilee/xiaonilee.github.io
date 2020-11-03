@@ -1,7 +1,7 @@
 ---
 title: "Chapter 11. Intermediate graphs"
-date: 2020-11-02
-lastmod: 2020-11-02
+date: 2020-11-03
+lastmod: 2020-11-03
 draft: false
 tags: ["R", "R in Action", "Bioinformatics", "Book"]
 categories: ["R", "Bioinformatics"]
@@ -171,7 +171,7 @@ Notebook of Reading Books: R in Action_Chapter 11.
 
 ### 11.4. Mosaic plots
 
-- Figure 11.21. Mosaic plot describing Titanic survivors by class, sex, and age.
+- Figure 11.21. `Mosaic` plot describing Titanic survivors by class, sex, and age.
 
   ![fig1121](fig1121.png)
 
