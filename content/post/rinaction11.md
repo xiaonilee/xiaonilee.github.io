@@ -371,62 +371,19 @@ par(opar)
 opar <- par(no.readonly = T)
 par(mfrow=c(2,4))
 
+linetpye <- c("p", "l", "o", "b", "c", "s", "S", "h")
+
 t1 <- subset(Orange, Tree==1)
-plot(t1$age, t1$circumference,
-     xlab = "Age (days)",
-     ylab = "Circumference (mm)",
-     type = "n",
-     main='type="p"')
-lines(t1$age, t1$circumference, type = "p")
 
-plot(t1$age, t1$circumference,
-     xlab = "Age (days)",
-     ylab = "Circumference (mm)",
-     type = "n",
-     main='type="l"')
-lines(t1$age, t1$circumference, type = "l")
-
-plot(t1$age, t1$circumference,
-     xlab = "Age (days)",
-     ylab = "Circumference (mm)",
-     type = "n",
-     main='type="o"')
-lines(t1$age, t1$circumference, type = "o")
-
-plot(t1$age, t1$circumference,
-     xlab = "Age (days)",
-     ylab = "Circumference (mm)",
-     type = "n",
-     main='type="b"')
-lines(t1$age, t1$circumference, type = "b")
-
-plot(t1$age, t1$circumference,
-     xlab = "Age (days)",
-     ylab = "Circumference (mm)",
-     type = "n",
-     main='type="c"')
-lines(t1$age, t1$circumference, type = "c")
-
-plot(t1$age, t1$circumference,
-     xlab = "Age (days)",
-     ylab = "Circumference (mm)",
-     type = "n",
-     main='type="s"')
-lines(t1$age, t1$circumference, type = "s")
-
-plot(t1$age, t1$circumference,
-     xlab = "Age (days)",
-     ylab = "Circumference (mm)",
-     type = "n",
-     main='type="S"')
-lines(t1$age, t1$circumference, type = "S")
-
-plot(t1$age, t1$circumference,
-     xlab = "Age (days)",
-     ylab = "Circumference (mm)",
-     type = "n",
-     main='type="h"')
-lines(t1$age, t1$circumference, type = "h")
+for (i in linetpye){
+  mainstr <- paste("type =", i)
+  plot(t1$age, t1$circumference,
+       xlab = "Age (days)",
+       ylab = "Circumference (mm)",
+       type = "n",
+       main = mainstr)
+  lines(t1$age, t1$circumference, type = i)
+}
 
 par(opar)
 
