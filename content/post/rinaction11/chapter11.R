@@ -205,7 +205,7 @@ linetpye <- c("p", "l", "o", "b", "c", "s", "S", "h")
 t1 <- subset(Orange, Tree==1)
 
 for (i in linetpye){
-  mainstr <- paste("type =", i)
+  mainstr <- paste("type=", '"', i, '"')
   plot(t1$age, t1$circumference,
        xlab = "Age (days)",
        ylab = "Circumference (mm)",

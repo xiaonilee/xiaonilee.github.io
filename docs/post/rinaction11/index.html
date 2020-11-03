@@ -74,7 +74,7 @@
 <meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 11.">
 <meta itemprop="datePublished" content="2020-11-03T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-11-03T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1950">
+<meta itemprop="wordCount" content="1953">
 
 
 
@@ -1276,7 +1276,7 @@ if (!doNotTrack) {
 <span class="n">t1</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">Orange</span><span class="p">,</span> <span class="n">Tree</span><span class="o">==</span><span class="m">1</span><span class="p">)</span>
 
 <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="n">linetpye</span><span class="p">){</span>
-  <span class="n">mainstr</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="s">&#34;type =&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+  <span class="n">mainstr</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="s">&#34;type = &#34;</span><span class="p">,</span> <span class="s">&#39;&#34;&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s">&#39;&#34;&#39;</span><span class="p">)</span>
   <span class="nf">plot</span><span class="p">(</span><span class="n">t1</span><span class="o">$</span><span class="n">age</span><span class="p">,</span> <span class="n">t1</span><span class="o">$</span><span class="n">circumference</span><span class="p">,</span>
        <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Age (days)&#34;</span><span class="p">,</span>
        <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Circumference (mm)&#34;</span><span class="p">,</span>
