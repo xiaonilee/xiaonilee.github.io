@@ -1,5 +1,5 @@
 ---
-title: "Chapter 12.  Resampling statistics and bootstrapping"
+title: "Chapter 12. Resampling statistics and bootstrapping"
 date: 2020-11-05
 lastmod: 2020-11-05
 draft: false
