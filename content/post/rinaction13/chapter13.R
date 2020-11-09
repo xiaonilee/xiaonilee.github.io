@@ -308,11 +308,3 @@ summary(fit.od)
 # AIC: NA
 # 
 # Number of Fisher Scoring iterations: 5
-
-
-
-
-
-
-
-

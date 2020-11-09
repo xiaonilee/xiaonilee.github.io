@@ -23,6 +23,17 @@
     </item>
     
     <item>
+      <title>Chapter 14. Principal components and factor analysis</title>
+      <link>https://xiaonilee.github.io/post/rinaction14/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/rinaction14/</guid>
+      
+        <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 14.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>Chapter 12. Resampling statistics and bootstrapping</title>
       <link>https://xiaonilee.github.io/post/rinaction12/</link>
       <pubDate>Thu, 05 Nov 2020 00:00:00 +0000</pubDate>
@@ -221,17 +232,6 @@
       
         <description>&lt;p&gt;R package: ggplot2.&lt;/p&gt;
 &lt;p&gt;Data from Hadle Wickham &amp;lsquo;ggplot2 Elegant Graphics for Data Analysis&amp;rsquo;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>UCSC Xena Features: Genomic Signatures</title>
-      <link>https://xiaonilee.github.io/post/genomicsignatures/</link>
-      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/post/genomicsignatures/</guid>
-      
-        <description>&lt;p&gt;Genomic signatures, sometimes expressed as a weighted sum of genes, are an algebra over genes.&lt;/p&gt;</description>
       
     </item>
     
