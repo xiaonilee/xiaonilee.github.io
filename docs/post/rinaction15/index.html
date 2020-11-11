@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 15. Advanced methods for missing data - xiaoni&#39;s blog</title>
+  <title>Chapter 15. Time series - xiaoni&#39;s blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -64,23 +64,23 @@
 
 
 
-<meta property="og:title" content="Chapter 15. Advanced methods for missing data" />
+<meta property="og:title" content="Chapter 15. Time series" />
 <meta property="og:description" content="Notebook of Reading Books: R in Action_Chapter 15." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xiaonilee.github.io/post/rinaction15/" />
 <meta property="article:published_time" content="2020-11-11T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-11-11T00:00:00+00:00" />
-<meta itemprop="name" content="Chapter 15. Advanced methods for missing data">
+<meta itemprop="name" content="Chapter 15. Time series">
 <meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 15.">
 <meta itemprop="datePublished" content="2020-11-11T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-11-11T00:00:00+00:00" />
-<meta itemprop="wordCount" content="38">
+<meta itemprop="wordCount" content="2159">
 
 
 
 <meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Chapter 15. Advanced methods for missing data"/>
+<meta name="twitter:title" content="Chapter 15. Time series"/>
 <meta name="twitter:description" content="Notebook of Reading Books: R in Action_Chapter 15."/>
 
 <!--[if lte IE 9]>
@@ -191,7 +191,7 @@ if (!doNotTrack) {
               </li>
             
               <li>
-                <a href="https://xiaonilee.github.io/post/rinaction15/">Chapter 15. Advanced methods for missing data</a>
+                <a href="https://xiaonilee.github.io/post/rinaction15/">Chapter 15. Time series</a>
               </li>
             
               <li>
@@ -443,7 +443,7 @@ if (!doNotTrack) {
               </li>
             
               <li>
-                <a href="https://xiaonilee.github.io/post/rinaction15/">Chapter 15. Advanced methods for missing data</a>
+                <a href="https://xiaonilee.github.io/post/rinaction15/">Chapter 15. Time series</a>
               </li>
             
               <li>
@@ -545,7 +545,7 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">Chapter 15. Advanced methods for missing data</h1>
+      <h1 class="post-title">Chapter 15. Time series</h1>
       
       <div class="post-meta">
         <time datetime="2020-11-11" class="post-time">
@@ -573,7 +573,14 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#this-chapter-covers">This chapter covers</a></li>
+    <li><a href="#this-chapter-covers">This chapter covers</a>
+      <ul>
+        <li><a href="#151-creating-a-time-series-object-in-r">15.1. Creating a time-series object in R</a></li>
+        <li><a href="#152-smoothing-and-seasonal-decomposition">15.2. Smoothing and seasonal decomposition</a></li>
+        <li><a href="#153-exponential-forecasting-models">15.3. Exponential forecasting models</a></li>
+        <li><a href="#154-arima-forecasting-models">15.4. ARIMA forecasting models</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -585,26 +592,837 @@ if (!doNotTrack) {
 <h2 id="this-chapter-covers">This chapter covers</h2>
 <ul>
 <li>
-<p>Identification of missing data</p>
+<p>Creating a time series</p>
 </li>
 <li>
-<p>Visualization of missing data patterns</p>
+<p>Decomposing a time series into components</p>
 </li>
 <li>
-<p>Complete-case analysis</p>
+<p>Developing predictive models</p>
 </li>
 <li>
-<p>Multiple imputation of missing data</p>
+<p>Forecasting future values</p>
 </li>
+<li>
+<p>tabel 15.1. Functions for time-series analysis.</p>
+<p><img src="tab151.png" alt="tab151"></p>
+</li>
+</ul>
+<h3 id="151-creating-a-time-series-object-in-r">15.1. Creating a time-series object in R</h3>
+<ul>
+<li>
+<p>Figure 15.2. Time-series plot for the sales data in code listing 15.1.</p>
+<ul>
+<li>The decimal notation on the time dimension is used to represent the portion of a year.</li>
+</ul>
+<p><img src="fig152.png" alt="fig152"></p>
+</li>
+<li>
+<p>Figure 15.2-1. Time-series plot modifed with more techniques.</p>
+<p><img src="fig152-1.png" alt="fig152-1"></p>
+</li>
+</ul>
+<h3 id="152-smoothing-and-seasonal-decomposition">15.2. Smoothing and seasonal decomposition</h3>
+<h4 id="1521-smoothing-with-simple-moving-averages">15.2.1. Smoothing with simple moving averages</h4>
+<ul>
+<li>
+<p>Figure 15.3. The Nile time series measuring annual river flow at Ashwan from 1871–1970 (upper left).</p>
+<ul>
+<li>The other plots are smoothed versions using simple moving averages at three smoothing levels (k=<strong>3</strong>, <strong>7</strong>, and <strong>15</strong>).</li>
+</ul>
+<p><img src="fig153.png" alt="fig153"></p>
+</li>
+</ul>
+<h4 id="1522-seasonal-decomposition">15.2.2. Seasonal decomposition</h4>
+<ul>
+<li>
+<p>Figure 15.5. Plot of the AirPassengers time series (<em><strong>top</strong></em>) and the logtransformed time series (<em><strong>bottom</strong></em>).</p>
+<ul>
+<li>The time series contains the monthly totals (in thousands) of international airline passengers between 1949 and 1960.</li>
+<li>The logtransformed time series stabilizes the variance and fits an additive seasonal decomposition model better.</li>
+</ul>
+<p><img src="fig155.png" alt="fig155"></p>
+</li>
+<li>
+<p>Figure 15.6. A seasonal decomposition of the <strong>logged</strong> AirPassengers time series using the <code>stl()</code> function.</p>
+<ul>
+<li>The time series (data) is decomposed into seasonal, trend, and irregular components.</li>
+</ul>
+<p><img src="fig156.png" alt="fig156"></p>
+</li>
+<li>
+<p>Figure 15.7. A month plot (<em><strong>top</strong></em>) and season plot (<em><strong>bottom</strong></em>) for the AirPassengers time series.</p>
+<ul>
+<li>Each shows an increasing trend and similar seasonal pattern year to year.</li>
+</ul>
+<p><img src="fig157.png" alt="fig157"></p>
+</li>
+</ul>
+<h3 id="153-exponential-forecasting-models">15.3. Exponential forecasting models</h3>
+<h4 id="1531-simple-exponential-smoothing">15.3.1. Simple exponential smoothing</h4>
+<ul>
+<li>
+<p>Figure 15.8. Average yearly temperatures in New Haven, Connecticut; and a 1-step ahead prediction from a simple exponential forecast using the <code>ets()</code> function.</p>
+<p><img src="fig158.png" alt="fig158"></p>
+</li>
+<li>
+<p>table 15.4 Predictive accuracy measures</p>
+<p><img src="tab154.png" alt="tab154"></p>
+</li>
+</ul>
+<h4 id="1532-holt-and-holt-winters-exponential-smoothing">15.3.2. Holt and Holt-Winters exponential smoothing</h4>
+<ul>
+<li>
+<p>Figure 15.9. Five-year forecast of log(number of international airline passengers in thousands) based on a <strong>Holt-Winters exponential smoothing model</strong>.</p>
+<ul>
+<li>Data are from the <em><strong>AirPassengers time series</strong></em>.</li>
+</ul>
+<p><img src="fig159.png" alt="fig159"></p>
+</li>
+</ul>
+<h4 id="1533-the-ets-function-and-automated-forecasting">15.3.3. The ets() function and automated forecasting</h4>
+<ul>
+<li>
+<p>Figure 15.10. Multiplicative exponential smoothing forecast with trend and seasonal components.</p>
+<ul>
+<li>The forecasts are a dashed line,</li>
+<li>and the 80% and 95% confidence intervals are provided in light and dark gray, respectively.</li>
+</ul>
+<p><img src="fig1510.png" alt="fig1510"></p>
+</li>
+</ul>
+<h3 id="154-arima-forecasting-models">15.4. ARIMA forecasting models</h3>
+<h4 id="1541-prerequisite-concepts">15.4.1. Prerequisite concepts</h4>
+<ul>
+<li>
+<p><code>Autocorrelation</code>  plot</p>
+</li>
+<li>
+<p><code>partial autocorrelation</code> plot</p>
+</li>
+</ul>
+<h4 id="1542-arma-and-arima-models">15.4.2. ARMA and ARIMA models</h4>
+<ul>
+<li>
+<p>Ensuring that the time series is stationary:</p>
+<ul>
+<li>Figure 15.11. Time series displaying the annual flow of the river Nile at Ashwan from 1871 to 1970 (<em><strong>top</strong></em>) along with the times series differenced once (<em><strong>bottom</strong></em>).</li>
+<li>The differencing removes the decreasing trend evident in the original plot.</li>
+</ul>
+<p><img src="fig1511.png" alt="fig1511"></p>
+</li>
+<li>
+<p>Identifying one or more reasonable models</p>
+<ul>
+<li>Figure 15.12. <strong>Autocorrelation</strong> and <strong>partial autocorrelation</strong> plots for the differenced Nile time series.</li>
+</ul>
+<p><img src="fig1512.png" alt="fig1512"></p>
+</li>
+<li>
+<p>Fitting the model(s)</p>
+<ul>
+<li><code>arima()</code></li>
+</ul>
+</li>
+<li>
+<p>Evaluating model fit</p>
+<ul>
+<li>Figure 15.13. Normal Q-Q plot for determining the normality of the time-series residuals</li>
+</ul>
+<p><img src="fig1513.png" alt="fig1513"></p>
+</li>
+<li>
+<p>Making forecasts</p>
+<ul>
+<li>Figure 15.14. Three-year forecast for the Nile time series from a fitted ARIMA(0,1,1) model.
+<ul>
+<li>Blue dots represent point estimates, and the light and dark gray bands represent the 80% and 95% confidence bands limits, respectively.</li>
+</ul>
+</li>
+</ul>
+<p><img src="fig1514.png" alt="fig1514"></p>
+</li>
+</ul>
+<h4 id="1543-automated-arima-forecasting">15.4.3. Automated ARIMA forecasting</h4>
+<ul>
+<li><code>auto.arima()</code></li>
 </ul>
 <p>Attach is the <a href="chapter15.R">Script</a> of chapter15.</p>
 <p>Show me the code <i class="far fa-hand-pointer"></i></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span><span class="lnt">266
+</span><span class="lnt">267
+</span><span class="lnt">268
+</span><span class="lnt">269
+</span><span class="lnt">270
+</span><span class="lnt">271
+</span><span class="lnt">272
+</span><span class="lnt">273
+</span><span class="lnt">274
+</span><span class="lnt">275
+</span><span class="lnt">276
+</span><span class="lnt">277
+</span><span class="lnt">278
+</span><span class="lnt">279
+</span><span class="lnt">280
+</span><span class="lnt">281
+</span><span class="lnt">282
+</span><span class="lnt">283
+</span><span class="lnt">284
+</span><span class="lnt">285
+</span><span class="lnt">286
+</span><span class="lnt">287
+</span><span class="lnt">288
+</span><span class="lnt">289
+</span><span class="lnt">290
+</span><span class="lnt">291
+</span><span class="lnt">292
+</span><span class="lnt">293
+</span><span class="lnt">294
+</span><span class="lnt">295
+</span><span class="lnt">296
+</span><span class="lnt">297
+</span><span class="lnt">298
+</span><span class="lnt">299
+</span><span class="lnt">300
+</span><span class="lnt">301
+</span><span class="lnt">302
+</span><span class="lnt">303
+</span><span class="lnt">304
+</span><span class="lnt">305
+</span><span class="lnt">306
+</span><span class="lnt">307
+</span><span class="lnt">308
+</span><span class="lnt">309
+</span><span class="lnt">310
+</span><span class="lnt">311
+</span><span class="lnt">312
+</span><span class="lnt">313
+</span><span class="lnt">314
+</span><span class="lnt">315
+</span><span class="lnt">316
+</span><span class="lnt">317
+</span><span class="lnt">318
+</span><span class="lnt">319
+</span><span class="lnt">320
+</span><span class="lnt">321
+</span><span class="lnt">322
+</span><span class="lnt">323
+</span><span class="lnt">324
+</span><span class="lnt">325
+</span><span class="lnt">326
+</span><span class="lnt">327
+</span><span class="lnt">328
+</span><span class="lnt">329
+</span><span class="lnt">330
+</span><span class="lnt">331
+</span><span class="lnt">332
+</span><span class="lnt">333
+</span><span class="lnt">334
+</span><span class="lnt">335
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Remove most objects from the working environment</span>
+<span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+
+<span class="c1"># 15.1. Creating a time-series object in R</span>
+<span class="c1"># code listing 15.1. Creating a time-series object</span>
+<span class="n">sales</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">18</span><span class="p">,</span> <span class="m">33</span><span class="p">,</span> <span class="m">41</span><span class="p">,</span>  <span class="m">7</span><span class="p">,</span> <span class="m">34</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="m">24</span><span class="p">,</span> <span class="m">25</span><span class="p">,</span> <span class="m">24</span><span class="p">,</span> <span class="m">21</span><span class="p">,</span> <span class="m">25</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span>
+           <span class="m">22</span><span class="p">,</span> <span class="m">31</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="m">29</span><span class="p">,</span> <span class="m">25</span><span class="p">,</span> <span class="m">21</span><span class="p">,</span> <span class="m">22</span><span class="p">,</span> <span class="m">54</span><span class="p">,</span> <span class="m">31</span><span class="p">,</span> <span class="m">25</span><span class="p">,</span> <span class="m">26</span><span class="p">,</span> <span class="m">35</span><span class="p">)</span>
+
+<span class="n">tsales</span> <span class="o">&lt;-</span> <span class="nf">ts</span><span class="p">(</span><span class="n">sales</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2003</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">frequency</span> <span class="o">=</span> <span class="m">12</span><span class="p">)</span>
+<span class="n">tsales</span>
+<span class="c1">#      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</span>
+<span class="c1"># 2003  18  33  41   7  34  35  24  25  24  21  25  20</span>
+<span class="c1"># 2004  22  31  40  29  25  21  22  54  31  25  26  35</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="n">tsales</span><span class="p">)</span>  <span class="c1"># figure 15.2</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">tsales</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&#34;o&#34;</span><span class="p">,</span> <span class="n">pch</span><span class="o">=</span><span class="m">17</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;blue&#34;</span><span class="p">)</span>  <span class="c1"># figure 15.2-1</span>
+<span class="nf">start</span><span class="p">(</span><span class="n">tsales</span><span class="p">)</span>
+<span class="c1"># [1] 2003    1</span>
+
+<span class="nf">end</span><span class="p">(</span><span class="n">tsales</span><span class="p">)</span>
+<span class="c1"># [1] 2004   12</span>
+
+<span class="nf">frequency</span><span class="p">(</span><span class="n">tsales</span><span class="p">)</span>
+<span class="c1"># [1] 12</span>
+
+<span class="n">tsales.subset</span> <span class="o">&lt;-</span> <span class="nf">window</span><span class="p">(</span><span class="n">tsales</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2003</span><span class="p">,</span> <span class="m">5</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2004</span><span class="p">,</span> <span class="m">6</span><span class="p">))</span>
+<span class="n">tsales.subset</span>
+<span class="c1">#      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</span>
+<span class="c1"># 2003                  34  35  24  25  24  21  25  20</span>
+<span class="c1"># 2004  22  31  40  29  25  21</span>
+
+
+<span class="c1">#===============================================================</span>
+<span class="c1"># 15.2.1. Smoothing with simple moving averages</span>
+<span class="c1"># code listing 15.2 Simple moving averages</span>
+<span class="c1"># install.packages(&#34;forecast&#34;)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">forecast</span><span class="p">)</span>
+<span class="n">opar</span> <span class="o">&lt;-</span> <span class="nf">par</span><span class="p">(</span><span class="n">no.readonly</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+<span class="n">ylim</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="nf">min</span><span class="p">(</span><span class="n">Nile</span><span class="p">),</span> <span class="nf">max</span><span class="p">(</span><span class="n">Nile</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">Nile</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&#34;Raw time series&#34;</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="nf">ma</span><span class="p">(</span><span class="n">Nile</span><span class="p">,</span> <span class="m">3</span><span class="p">),</span> <span class="n">main</span><span class="o">=</span><span class="s">&#34;Simple Moving Averages (k=3)&#34;</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="nf">ma</span><span class="p">(</span><span class="n">Nile</span><span class="p">,</span> <span class="m">3</span><span class="p">),</span> <span class="n">main</span><span class="o">=</span><span class="s">&#34;Simple Moving Averages (k=7)&#34;</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="nf">ma</span><span class="p">(</span><span class="n">Nile</span><span class="p">,</span> <span class="m">7</span><span class="p">),</span> <span class="n">main</span><span class="o">=</span><span class="s">&#34;Simple Moving Averages (k=15)&#34;</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">)</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">opar</span><span class="p">)</span>
+
+
+<span class="c1"># 15.2.2. Seasonal decomposition</span>
+<span class="c1"># code listing 15.3. Seasonal decomposition using stl()</span>
+<span class="n">opar</span> <span class="o">&lt;-</span> <span class="nf">par</span><span class="p">(</span><span class="n">no.readonly</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">AirPassengers</span><span class="p">)</span>
+<span class="n">lAirPassengers</span> <span class="o">&lt;-</span> <span class="nf">log</span><span class="p">(</span><span class="n">AirPassengers</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">lAirPassengers</span><span class="p">,</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&#34;log(AirPassengers)&#34;</span><span class="p">)</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">opar</span><span class="p">)</span>
+
+<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">stl</span><span class="p">(</span><span class="n">lAirPassengers</span><span class="p">,</span> <span class="n">s.window</span> <span class="o">=</span> <span class="s">&#34;period&#34;</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+
+
+<span class="nf">head</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">time.series</span><span class="p">)</span>
+<span class="c1">#          seasonal trend remainder</span>
+<span class="c1"># Jan 1949   -0.092   4.8    -0.019</span>
+<span class="c1"># Feb 1949   -0.114   4.8     0.054</span>
+<span class="c1"># Mar 1949    0.016   4.8     0.036</span>
+<span class="c1"># Apr 1949   -0.014   4.8     0.040</span>
+<span class="c1"># May 1949   -0.015   4.8    -0.025</span>
+<span class="c1"># Jun 1949    0.110   4.8    -0.043</span>
+
+
+<span class="nf">head</span><span class="p">(</span><span class="nf">exp</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">time.series</span><span class="p">))</span>
+<span class="c1">#          seasonal trend remainder</span>
+<span class="c1"># Jan 1949     0.91   125      0.98</span>
+<span class="c1"># Feb 1949     0.89   125      1.06</span>
+<span class="c1"># Mar 1949     1.02   125      1.04</span>
+<span class="c1"># Apr 1949     0.99   126      1.04</span>
+<span class="c1"># May 1949     0.99   126      0.98</span>
+<span class="c1"># Jun 1949     1.12   126      0.96</span>
+
+<span class="c1"># figure 15.7</span>
+<span class="n">opar</span> <span class="o">&lt;-</span> <span class="nf">par</span><span class="p">(</span><span class="n">no.readonly</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">))</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">forecast</span><span class="p">)</span>
+<span class="nf">monthplot</span><span class="p">(</span><span class="n">AirPassengers</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
+<span class="nf">seasonplot</span><span class="p">(</span><span class="n">AirPassengers</span><span class="p">,</span> <span class="n">year.labels</span> <span class="o">=</span> <span class="s">&#34;T&#34;</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">opar</span><span class="p">)</span>
+
+<span class="c1"># 15.3.1. Simple exponential smoothing</span>
+<span class="c1"># code listing 15.4. Simple exponential smoothing</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">forecast</span><span class="p">)</span>
+<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">ets</span><span class="p">(</span><span class="n">nhtemp</span><span class="p">,</span> <span class="n">model</span> <span class="o">=</span> <span class="s">&#34;ANN&#34;</span><span class="p">)</span>
+<span class="n">fit</span>
+<span class="c1"># ETS(A,N,N) </span>
+<span class="c1"># </span>
+<span class="c1"># Call:</span>
+<span class="c1">#   ets(y = nhtemp, model = &#34;ANN&#34;) </span>
+<span class="c1"># </span>
+<span class="c1">#    Smoothing parameters:</span>
+<span class="c1">#      alpha = 0.1819 </span>
+<span class="c1"># </span>
+<span class="c1">#    Initial states:</span>
+<span class="c1">#      l = 50.2762 </span>
+<span class="c1"># </span>
+<span class="c1">#    sigma:  1.1</span>
+<span class="c1"># </span>
+<span class="c1"># AIC AICc  BIC </span>
+<span class="c1"># 266  266  272 </span>
+<span class="n">nhtemp</span>
+<span class="c1"># Time Series:</span>
+<span class="c1">#   Start = 1912 </span>
+<span class="c1"># End = 1971 </span>
+<span class="c1"># Frequency = 1 </span>
+<span class="c1"># [1] 50 52 49 51 49 48 50 51 49 52 51 50 49 51 48 51 51 51 52 53 52 51 50 50 50 52 52 51 49</span>
+<span class="c1"># [30] 52 51 51 52 52 52 51 51 54 51 53 53 55 52 52 51 53 50 53 52 52 50 51 52 51 52 51 52 52</span>
+<span class="c1"># [59] 52 53</span>
+
+<span class="nf">forecast</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+<span class="c1">#      Point Forecast Lo 80 Hi 80 Lo 95 Hi 95</span>
+<span class="c1"># 1972             52    50    53    50    54</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="nf">forecast</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Year&#34;</span><span class="p">,</span>
+     <span class="n">ylab</span> <span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&#34;Temperature (&#34;</span><span class="p">,</span> <span class="n">degree</span><span class="o">*</span><span class="bp">F</span><span class="p">,</span><span class="s">&#34;)&#34;</span><span class="p">,)),</span>
+     <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;New Haven Annual Mean Temperature&#34;</span><span class="p">)</span>  <span class="c1"># figure 15.8</span>
+
+<span class="nf">accuracy</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+<span class="c1">#                ME RMSE MAE  MPE MAPE MASE    ACF1</span>
+<span class="c1"># Training set 0.15  1.1 0.9 0.24  1.7 0.75 -0.0064</span>
+
+
+<span class="c1">#=================================================================</span>
+<span class="c1"># 15.3.2. Holt and Holt-Winters exponential smoothing</span>
+<span class="c1"># code listing 15.5. Exponential smoothing with level, slope, and seasonal components</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">forecast</span><span class="p">)</span>
+<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">ets</span><span class="p">(</span><span class="nf">log</span><span class="p">(</span><span class="n">AirPassengers</span><span class="p">),</span> <span class="n">model</span> <span class="o">=</span> <span class="s">&#34;AAA&#34;</span><span class="p">)</span>
+<span class="n">fit</span>
+<span class="c1"># ETS(A,A,A) </span>
+<span class="c1"># </span>
+<span class="c1"># Call:</span>
+<span class="c1">#   ets(y = log(AirPassengers), model = &#34;AAA&#34;) </span>
+<span class="c1"># </span>
+<span class="c1">#    Smoothing parameters:</span>
+<span class="c1">#      alpha = 0.6975 </span>
+<span class="c1">#       beta  = 0.0031 </span>
+<span class="c1">#      gamma = 1e-04 </span>
+<span class="c1"># </span>
+<span class="c1">#    Initial states:</span>
+<span class="c1">#      l = 4.7925 </span>
+<span class="c1">#      b = 0.0111 </span>
+<span class="c1">#      s = -0.1 -0.22 -0.079 0.056 0.2 0.21</span>
+<span class="c1">#           0.11 -0.0081 -0.0059 0.022 -0.11 -0.084</span>
+<span class="c1"># </span>
+<span class="c1">#    sigma:  0.038</span>
+<span class="c1"># </span>
+<span class="c1"># AIC AICc  BIC </span>
+<span class="c1"># -207 -202 -157</span>
+
+<span class="nf">accuracy</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+<span class="c1">#                   ME  RMSE   MAE    MPE MAPE MASE  ACF1</span>
+<span class="c1"># Training set -0.0018 0.036 0.028 -0.034 0.51 0.23 0.056</span>
+
+<span class="n">pred</span> <span class="o">&lt;-</span> <span class="nf">forecast</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
+<span class="n">pred</span>
+<span class="c1">#          Point Forecast Lo 80 Hi 80 Lo 95 Hi 95</span>
+<span class="c1"># Jan 1961            6.1   6.1   6.2   6.0   6.2</span>
+<span class="c1"># Feb 1961            6.1   6.0   6.2   6.0   6.2</span>
+<span class="c1"># Mar 1961            6.2   6.2   6.3   6.1   6.3</span>
+<span class="c1"># Apr 1961            6.2   6.1   6.3   6.1   6.3</span>
+<span class="c1"># May 1961            6.2   6.1   6.3   6.1   6.4</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Forecast for Air Travel&#34;</span><span class="p">,</span>
+     <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Log(Airpassengers)&#34;</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Time&#34;</span><span class="p">)</span>  <span class="c1"># figure 15.9</span>
+
+<span class="n">pred</span><span class="o">$</span><span class="n">mean</span> <span class="o">&lt;-</span> <span class="nf">exp</span><span class="p">(</span><span class="n">pred</span><span class="o">$</span><span class="n">mean</span><span class="p">)</span>
+<span class="n">pred</span><span class="o">$</span><span class="n">lower</span> <span class="o">&lt;-</span> <span class="nf">exp</span><span class="p">(</span><span class="n">pred</span><span class="o">$</span><span class="n">lower</span><span class="p">)</span>
+<span class="n">pred</span><span class="o">$</span><span class="n">upper</span> <span class="o">&lt;-</span> <span class="nf">exp</span><span class="p">(</span><span class="n">pred</span><span class="o">$</span><span class="n">upper</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">pred</span><span class="o">$</span><span class="n">mean</span><span class="p">,</span> <span class="n">pred</span><span class="o">$</span><span class="n">lower</span><span class="p">,</span> <span class="n">pred</span><span class="o">$</span><span class="n">upper</span><span class="p">)</span>
+<span class="nf">dimnames</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="n">[[2]]</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;mean&#34;</span><span class="p">,</span> <span class="s">&#34;Lo 80&#34;</span><span class="p">,</span> <span class="s">&#34;Lo 95&#34;</span><span class="p">,</span> <span class="s">&#34;Hi 80&#34;</span><span class="p">,</span> <span class="s">&#34;Hi 95&#34;</span><span class="p">)</span>
+<span class="n">p</span>
+<span class="c1">#          mean Lo 80 Lo 95 Hi 80 Hi 95</span>
+<span class="c1"># Jan 1961  450   429   418   473   485</span>
+<span class="c1"># Feb 1961  443   417   404   470   485</span>
+<span class="c1"># Mar 1961  511   477   460   548   568</span>
+<span class="c1"># Apr 1961  502   465   446   542   565</span>
+<span class="c1"># May 1961  506   465   445   551   576</span>
+
+<span class="c1">#===============================================================</span>
+<span class="c1"># 15.3.3. The ets() function and automated forecasting</span>
+<span class="c1"># code lisitng Automatic exponential forecasting with ets()</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">forecast</span><span class="p">)</span>
+<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">ets</span><span class="p">(</span><span class="n">JohnsonJohnson</span><span class="p">)</span>
+<span class="n">fit</span>
+<span class="c1"># ETS(M,A,A) </span>
+<span class="c1"># </span>
+<span class="c1"># Call:</span>
+<span class="c1">#   ets(y = JohnsonJohnson) </span>
+<span class="c1"># </span>
+<span class="c1">#    Smoothing parameters:</span>
+<span class="c1">#      alpha = 0.2776 </span>
+<span class="c1">#       beta  = 0.0636 </span>
+<span class="c1">#      gamma = 0.5867 </span>
+<span class="c1"># </span>
+<span class="c1">#    Initial states:</span>
+<span class="c1">#      l = 0.6276 </span>
+<span class="c1">#      b = 0.0165 </span>
+<span class="c1">#      s = -0.23 0.19 -0.0074 0.045</span>
+<span class="c1"># </span>
+<span class="c1">#    sigma:  0.092</span>
+<span class="c1"># </span>
+<span class="c1"># AIC AICc  BIC </span>
+<span class="c1"># 164  166  186 </span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="nf">forecast</span><span class="p">(</span><span class="n">fit</span><span class="p">),</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Johnson &amp; Johnson Forecasts&#34;</span><span class="p">,</span>
+     <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Quarterly Earnings (Dollars)&#34;</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Time&#34;</span><span class="p">,</span> <span class="n">flty</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>  <span class="c1"># figure 15.10</span>
+
+
+<span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">ets</span><span class="p">(</span><span class="n">JohnsonJohnson</span><span class="p">,</span> <span class="n">model</span> <span class="o">=</span> <span class="s">&#34;MMM&#34;</span><span class="p">)</span>
+<span class="n">fit2</span>
+<span class="c1"># ETS(M,M,M) </span>
+<span class="c1"># </span>
+<span class="c1"># Call:</span>
+<span class="c1">#   ets(y = JohnsonJohnson, model = &#34;MMM&#34;) </span>
+<span class="c1"># </span>
+<span class="c1">#    Smoothing parameters:</span>
+<span class="c1">#      alpha = 0.2195 </span>
+<span class="c1">#       beta  = 0.0341 </span>
+<span class="c1">#      gamma = 0.5675 </span>
+<span class="c1"># </span>
+<span class="c1">#    Initial states:</span>
+<span class="c1">#      l = 0.625 </span>
+<span class="c1">#      b = 1.0265 </span>
+<span class="c1">#      s = 0.7 1.3 0.98 1.1</span>
+<span class="c1"># </span>
+<span class="c1">#    sigma:  0.091</span>
+<span class="c1"># </span>
+<span class="c1"># AIC AICc  BIC </span>
+<span class="c1"># 164  166  186 </span>
+
+
+<span class="c1">#========================================</span>
+<span class="c1"># 15.4.2. ARMA and ARIMA models</span>
+<span class="c1"># code listing 15.7. Transforming the time series and assessing stationarity</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">forecast</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tseries</span><span class="p">)</span>
+
+<span class="c1"># figure 15.11</span>
+<span class="n">opar</span> <span class="o">&lt;-</span> <span class="nf">par</span><span class="p">(</span><span class="n">no.readonly</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">Nile</span><span class="p">)</span>
+<span class="nf">ndiffs</span><span class="p">(</span><span class="n">Nile</span><span class="p">)</span>
+<span class="c1"># [1] 1</span>
+
+<span class="n">dNile</span> <span class="o">&lt;-</span> <span class="nf">diff</span><span class="p">(</span><span class="n">Nile</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">dNile</span><span class="p">)</span>
+<span class="nf">adf.test</span><span class="p">(</span><span class="n">dNile</span><span class="p">)</span>
+<span class="c1">#         Augmented Dickey-Fuller Test</span>
+<span class="c1"># </span>
+<span class="c1"># data:  dNile</span>
+<span class="c1"># Dickey-Fuller = -7, Lag order = 4, p-value = 0.01</span>
+<span class="c1"># alternative hypothesis: stationary</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">opar</span><span class="p">)</span>
+
+<span class="c1"># figure 15.12</span>
+<span class="n">opar</span> <span class="o">&lt;-</span> <span class="nf">par</span><span class="p">(</span><span class="n">no.readonly</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">))</span>
+<span class="nf">Acf</span><span class="p">(</span><span class="n">dNile</span><span class="p">)</span>
+<span class="nf">Pacf</span><span class="p">(</span><span class="n">dNile</span><span class="p">)</span>
+
+
+<span class="c1"># code listing 15.8. Fitting an ARIMA model</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">forecast</span><span class="p">)</span>
+<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">arima</span><span class="p">(</span><span class="n">Nile</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
+<span class="n">fit</span>
+<span class="c1"># Call:</span>
+<span class="c1"># arima(x = Nile, order = c(0, 1, 1))</span>
+<span class="c1"># </span>
+<span class="c1"># Coefficients:</span>
+<span class="c1">#         ma1</span>
+<span class="c1">#       -0.73</span>
+<span class="c1"># s.e.   0.11</span>
+<span class="c1"># </span>
+<span class="c1"># sigma^2 estimated as 20600:  log likelihood = -633,  aic = 1269</span>
+
+<span class="nf">accuracy</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+<span class="c1">#               ME RMSE MAE  MPE MAPE MASE ACF1</span>
+<span class="c1"># Training set -12  143 112 -3.6   13 0.84 0.12</span>
+
+
+<span class="c1"># code listing 15.9. Evaluating the model fit</span>
+<span class="c1"># figure 15.13</span>
+<span class="nf">qqnorm</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">residuals</span><span class="p">)</span>
+<span class="nf">qqline</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">residuals</span><span class="p">)</span>
+<span class="nf">Box.test</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">residuals</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;Ljung-Box&#34;</span><span class="p">)</span>
+<span class="c1">#         Box-Ljung test</span>
+<span class="c1"># </span>
+<span class="c1"># data:  fit$residuals</span>
+<span class="c1"># X-squared = 1, df = 1, p-value = 0.2</span>
+
+
+<span class="c1"># code listing 15.10. Forecasting with an ARIMA model</span>
+<span class="nf">forecast</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<span class="c1">#      Point Forecast Lo 80 Hi 80 Lo 95 Hi 95</span>
+<span class="c1"># 1971            798   614   982   517  1080</span>
+<span class="c1"># 1972            798   608   989   507  1090</span>
+<span class="c1"># 1973            798   602   995   498  1099</span>
+
+
+<span class="nf">plot</span><span class="p">(</span><span class="nf">forecast</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="m">3</span><span class="p">),</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Year&#34;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Annual Flow&#34;</span><span class="p">)</span> <span class="c1"># figure 15.14</span>
+
+
+<span class="c1"># 15.4.3. Automated ARIMA forecasting</span>
+<span class="c1"># code listing 15.11. Automated ARIMA forecasting</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">forecast</span><span class="p">)</span>
+<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">auto.arima</span><span class="p">(</span><span class="n">sunspots</span><span class="p">)</span>
+<span class="n">fit</span>
+<span class="c1"># Series: sunspots </span>
+<span class="c1"># ARIMA(2,1,2) </span>
+<span class="c1"># </span>
+<span class="c1"># Coefficients:</span>
+<span class="c1">#        ar1     ar2    ma1    ma2</span>
+<span class="c1">#       1.35  -0.396  -1.77  0.810</span>
+<span class="c1"># s.e.  0.03   0.029   0.02  0.019</span>
+<span class="c1"># </span>
+<span class="c1"># sigma^2 estimated as 244:  log likelihood=-11746</span>
+<span class="c1"># AIC=23501   AICc=23501   BIC=23531</span>
+
+<span class="nf">forecast</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<span class="c1">#          Point Forecast Lo 80 Hi 80 Lo 95 Hi 95</span>
+<span class="c1"># Jan 1984             40    20    60   9.8    71</span>
+<span class="c1"># Feb 1984             41    18    64   6.0    77</span>
+<span class="c1"># Mar 1984             40    15    64   2.2    77</span>
+
+<span class="nf">accuracy</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+<span class="c1">#                  ME RMSE MAE MPE MAPE MASE   ACF1</span>
+<span class="c1"># Training set -0.027   16  11 NaN  Inf 0.48 -0.011</span>
 </code></pre></td></tr></table>
 </div>
 </div>
