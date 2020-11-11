@@ -99,6 +99,12 @@ Notebook of Reading Books: R in Action_Chapter 14.
 
 #### 14.3.5. Other EFA-related packages
 
+### 14.4. Other latent variable models
+
+- Methods **CFA** and **SEM** with the `sem()`, `openMx()` and `lavaan()` packages.
+
+- Method **MDS** in the vagan() package.
+ 
 ### 14.5 Summary
 
 - Figure 14.7. A principal components/exploratory factor analysis decision chart
