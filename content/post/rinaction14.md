@@ -109,7 +109,7 @@ Notebook of Reading Books: R in Action_Chapter 14.
 
 - Figure 14.7. A principal components/exploratory factor analysis decision chart
 
-  ![fig145](fig145.png)
+  ![fig147](fig147.png)
 
 Attach is the [Script](chapter14.R) of chapter14.
 
