@@ -74,7 +74,7 @@
 <meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 16.">
 <meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-11-12T00:00:00+00:00" />
-<meta itemprop="wordCount" content="43">
+<meta itemprop="wordCount" content="1463">
 
 
 
@@ -581,7 +581,15 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#this-chapter-covers">This chapter covers</a></li>
+    <li><a href="#this-chapter-covers">This chapter covers</a>
+      <ul>
+        <li><a href="#161-common-steps-in-cluster-analysis">16.1. Common steps in cluster analysis</a></li>
+        <li><a href="#162-calculating-distances">16.2. Calculating distances</a></li>
+        <li><a href="#163-hierarchical-cluster-analysis">16.3 Hierarchical cluster analysis</a></li>
+        <li><a href="#164-partitioning-cluster-analysis">16.4. Partitioning cluster analysis</a></li>
+        <li><a href="#165-avoiding-nonexistent-clusters">16.5. Avoiding nonexistent clusters</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -605,14 +613,558 @@ if (!doNotTrack) {
 <p>Obtaining discrete clusters</p>
 </li>
 </ul>
+<h3 id="161-common-steps-in-cluster-analysis">16.1. Common steps in cluster analysis</h3>
+<ul>
+<li>
+<ol>
+<li>Choose appropriate attributes(the most important one).</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Scale the data.</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Screen for outliers.</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Calculate distance.</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>Select a clustering algorithm.</li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>Obtain one or more cluster solutions.</li>
+</ol>
+</li>
+<li>7.Determine the number of clusters present.</li>
+<li>
+<ol start="8">
+<li>Obtain a final clustering solution.</li>
+</ol>
+</li>
+<li>
+<ol start="9">
+<li>Visualize the results.</li>
+</ol>
+</li>
+<li>
+<ol start="10">
+<li>Interpret the clusters.</li>
+</ol>
+</li>
+<li>Validate the results.</li>
+</ul>
+<h3 id="162-calculating-distances">16.2. Calculating distances</h3>
+<ul>
+<li><code>dist()</code></li>
+</ul>
+<h3 id="163-hierarchical-cluster-analysis">16.3 Hierarchical cluster analysis</h3>
+<ul>
+<li>
+<p>Figure 16.2. Recommended number of clusters using 26 criteria provided by the <code>NbClust</code> package.</p>
+<p><img src="fig162.png" alt="fig162"></p>
+</li>
+<li>
+<p>Figure 16.3. Averagelinkage clustering (<em><strong>up</strong></em>) of the nutrient data with a fivecluster solution (<em><strong>bottom</strong></em>).</p>
+<p><img src="fig163-1.png" alt="fig163-1">
+<img src="fig163-2.png" alt="fig163-2"></p>
+</li>
+</ul>
+<h3 id="164-partitioning-cluster-analysis">16.4. Partitioning cluster analysis</h3>
+<h4 id="1641-k-means-clustering">16.4.1 K-means clustering</h4>
+<ul>
+<li>kmeans()</li>
+</ul>
+<h4 id="1642-partitioning-around-medoids">16.4.2. Partitioning around medoids</h4>
+<ul>
+<li>pam()</li>
+</ul>
+<h3 id="165-avoiding-nonexistent-clusters">16.5. Avoiding nonexistent clusters</h3>
+<ul>
+<li>
+<p>Figure 16.7. Bivariate normal data (n = 1000).</p>
+<ul>
+<li>There are no clusters in this data.</li>
+</ul>
+<p><img src="fig167.png" alt="fig167"></p>
+</li>
+<li>
+<p>Figure 16.8. Plot of within-groups sums of squares vs. number of k-means clusters for bivariate normal data.</p>
+<p><img src="fig168.png" alt="fig168"></p>
+</li>
+<li>
+<p>Figure 16.9. Number of clusters recommended for bivariate normal data by criteria in the NbClust package.</p>
+<ul>
+<li>Two or three clusters are suggested.</li>
+</ul>
+<p><img src="fig169.png" alt="fig169"></p>
+</li>
+<li>
+<p>Figure 16.10. PAM cluster analysis of bivariate normal data, extracting two clusters.</p>
+<ul>
+<li>Note that the clusters are an arbitrary division of the data.</li>
+</ul>
+<p><img src="fig1610.png" alt="fig1610"></p>
+</li>
+<li>
+<p>Figure 16.11. CCC plot for bivariate normal data.</p>
+<ul>
+<li>It correctly suggests that no clusters are present.</li>
+</ul>
+<p><img src="fig1611.png" alt="fig1611"></p>
+</li>
+</ul>
 <p>Attach is the <a href="chapter16.R">Script</a> of chapter16.</p>
 <p>Show me the code <i class="far fa-hand-pointer"></i></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Remove most objects from the working environment</span>
+<span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+
+<span class="c1"># 16.2. Calculating distances</span>
+<span class="c1"># install.packages(&#34;flexclust&#34;)</span>
+<span class="nf">data</span><span class="p">(</span><span class="n">nutrient</span><span class="p">,</span> <span class="n">package</span> <span class="o">=</span> <span class="s">&#34;flexclust&#34;</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">nutrient</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+<span class="c1">#              energy protein fat calcium iron</span>
+<span class="c1"># BEEF BRAISED    340      20  28       9  2.6</span>
+<span class="c1"># HAMBURGER       245      21  17       9  2.7</span>
+<span class="c1"># BEEF ROAST      420      15  39       7  2.0</span>
+<span class="c1"># BEEF STEAK      375      19  32       9  2.6</span>
+
+<span class="c1"># options(digits = 4)</span>
+<span class="n">d</span> <span class="o">&lt;-</span> <span class="nf">dist</span><span class="p">(</span><span class="n">nutrient</span><span class="p">)</span>
+<span class="nf">as.matrix</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="n">[1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span> <span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="n">]</span>
+<span class="c1">#              BEEF BRAISED HAMBURGER BEEF ROAST BEEF STEAK</span>
+<span class="c1"># BEEF BRAISED         0.00     95.64      80.93      35.24</span>
+<span class="c1"># HAMBURGER           95.64      0.00     176.49     130.88</span>
+<span class="c1"># BEEF ROAST          80.93    176.49       0.00      45.76</span>
+<span class="c1"># BEEF STEAK          35.24    130.88      45.76       0.00</span>
+
+
+<span class="c1"># 16.3 Hierarchical cluster analysis</span>
+<span class="c1"># code listing 16.1. Average-linkage clustering of the nutrient data</span>
+<span class="nf">data</span><span class="p">(</span><span class="n">nutrient</span><span class="p">,</span> <span class="n">package</span> <span class="o">=</span> <span class="s">&#34;flexclust&#34;</span><span class="p">)</span>
+<span class="nf">row.names</span><span class="p">(</span><span class="n">nutrient</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">tolower</span><span class="p">(</span><span class="nf">row.names</span><span class="p">(</span><span class="n">nutrient</span><span class="p">))</span>
+<span class="n">nutrient.scaled</span> <span class="o">&lt;-</span> <span class="nf">scale</span><span class="p">(</span><span class="n">nutrient</span><span class="p">)</span>
+
+<span class="n">d</span> <span class="o">&lt;-</span> <span class="nf">dist</span><span class="p">(</span><span class="n">nutrient.scaled</span><span class="p">)</span>
+<span class="n">fit.average</span> <span class="o">&lt;-</span> <span class="nf">hclust</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#34;average&#34;</span><span class="p">)</span>
+<span class="c1"># figure 16.1</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">fit.average</span><span class="p">,</span> <span class="n">hang</span> <span class="o">=</span> <span class="m">-1</span><span class="p">,</span> <span class="n">cex</span><span class="o">=</span><span class="m">0.8</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Average Linkage Clustering&#34;</span><span class="p">)</span>  
+
+
+<span class="c1">#=================================================================================</span>
+<span class="c1"># code listing 16.2. Selecting the number of clusters</span>
+<span class="c1"># install.packages(&#34;NbClust&#34;)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">NbClust</span><span class="p">)</span>
+<span class="nf">devAskNewPage</span><span class="p">(</span><span class="n">ask</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+<span class="n">nc</span> <span class="o">&lt;-</span> <span class="nf">NbClust</span><span class="p">(</span><span class="n">nutrient.scaled</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="s">&#34;euclidean&#34;</span><span class="p">,</span>
+              <span class="n">min.nc</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">max.nc</span> <span class="o">=</span> <span class="m">15</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#34;average&#34;</span><span class="p">)</span>
+
+<span class="nf">table</span><span class="p">(</span><span class="n">nc</span><span class="o">$</span><span class="n">Best.nc[1</span><span class="p">,</span><span class="n">]</span><span class="p">)</span>
+<span class="c1"># 0  1  2  3  4  5  9 10 13 14 15 </span>
+<span class="c1"># 2  1  4  4  2  4  1  1  2  1  4</span>
+
+<span class="nf">barplot</span><span class="p">(</span><span class="nf">table</span><span class="p">(</span><span class="n">nc</span><span class="o">$</span><span class="n">Best.nc[1</span><span class="p">,</span><span class="n">]</span><span class="p">),</span>
+        <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Number of Cluster&#34;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Number of Criteria&#34;</span><span class="p">,</span>
+        <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Number of Cluster Chosen by 26 Criteria&#34;</span><span class="p">)</span> <span class="c1"># figure 16.2</span>
+
+<span class="c1">#=================================================================================</span>
+<span class="c1"># code listing 16.3. Obtaining the final cluster solution</span>
+<span class="n">clusters</span> <span class="o">&lt;-</span> <span class="nf">cutree</span><span class="p">(</span><span class="n">fit.average</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">clusters</span><span class="p">)</span>
+<span class="c1"># clusters</span>
+<span class="c1"># 1  2  3  4  5 </span>
+<span class="c1"># 7 16  1  2  1</span>
+
+<span class="nf">aggregate</span><span class="p">(</span><span class="n">nutrient</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">cluster</span><span class="o">=</span><span class="n">clusters</span><span class="p">),</span> <span class="n">median</span><span class="p">)</span>
+<span class="c1">#   cluster energy protein fat calcium iron</span>
+<span class="c1"># 1       1  340.0      19  29       9 2.50</span>
+<span class="c1"># 2       2  170.0      20   8      13 1.45</span>
+<span class="c1"># 3       3  160.0      26   5      14 5.90</span>
+<span class="c1"># 4       4   57.5       9   1      78 5.70</span>
+<span class="c1"># 5       5  180.0      22   9     367 2.50</span>
+
+<span class="nf">aggregate</span><span class="p">(</span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">nutrient.scaled</span><span class="p">),</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">cluster</span><span class="o">=</span><span class="n">clusters</span><span class="p">),</span> <span class="n">median</span><span class="p">)</span>
+<span class="c1">#   cluster  energy protein     fat calcium    iron</span>
+<span class="c1"># 1       1  1.3101  0.0000  1.3786 -0.4480  0.0811</span>
+<span class="c1"># 2       2 -0.3696  0.2352 -0.4869 -0.3968 -0.6374</span>
+<span class="c1"># 3       3 -0.4684  1.6464 -0.7534 -0.3840  2.4078</span>
+<span class="c1"># 4       4 -1.4812 -2.3520 -1.1088  0.4362  2.2709</span>
+<span class="c1"># 5       5 -0.2708  0.7056 -0.3981  4.1397  0.0811</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="n">fit.average</span><span class="p">,</span> <span class="n">hang</span> <span class="o">=</span> <span class="m">-1</span><span class="p">,</span> <span class="n">cex</span><span class="o">=</span><span class="m">0.8</span><span class="p">,</span>
+     <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Average Linkage Clustering\n5 Cluster Solution&#34;</span><span class="p">)</span> <span class="c1"># figure 16.3-1</span>
+
+<span class="nf">rect.hclust</span><span class="p">(</span><span class="n">fit.average</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="m">5</span><span class="p">)</span> <span class="c1"># figure 16.3-2</span>
+
+<span class="c1"># 16.4.1 K-means clustering</span>
+<span class="n">wssplot</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">nc</span><span class="o">=</span><span class="m">15</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="m">1234</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">wss</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="m">-1</span><span class="p">)</span><span class="o">*</span><span class="nf">sum</span><span class="p">(</span><span class="nf">apply</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="n">var</span><span class="p">))</span>
+  <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">2</span><span class="o">:</span><span class="n">nc</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">set.seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">wss[i]</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="nf">kmeans</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="n">i</span><span class="p">)</span><span class="o">$</span><span class="n">withinss</span><span class="p">)</span> <span class="p">}</span>
+  <span class="nf">plot</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">nc</span><span class="p">,</span> <span class="n">wss</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&#34;b&#34;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&#34;Number of Clusters&#34;</span><span class="p">,</span>
+       <span class="n">ylab</span><span class="o">=</span><span class="s">&#34;Within groups sum of squares&#34;</span><span class="p">)</span> 
+  <span class="p">}</span>
+
+<span class="c1"># code listing 16.4. K-means clustering of wine data</span>
+<span class="c1"># install.packages(&#34;rattle&#34;)</span>
+<span class="nf">data</span><span class="p">(</span><span class="n">wine</span><span class="p">,</span> <span class="n">package</span> <span class="o">=</span> <span class="s">&#34;rattle&#34;</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">wine</span><span class="p">)</span>
+
+<span class="c1">#   Type Alcohol Malic  Ash Alcalinity Magnesium Phenols Flavanoids Nonflavanoids</span>
+<span class="c1"># 1    1   14.23  1.71 2.43       15.6       127    2.80       3.06          0.28</span>
+<span class="c1"># 2    1   13.20  1.78 2.14       11.2       100    2.65       2.76          0.26</span>
+<span class="c1"># 3    1   13.16  2.36 2.67       18.6       101    2.80       3.24          0.30</span>
+<span class="c1"># 4    1   14.37  1.95 2.50       16.8       113    3.85       3.49          0.24</span>
+<span class="c1"># 5    1   13.24  2.59 2.87       21.0       118    2.80       2.69          0.39</span>
+<span class="c1"># 6    1   14.20  1.76 2.45       15.2       112    3.27       3.39          0.34</span>
+<span class="c1">#   Proanthocyanins Color  Hue Dilution Proline</span>
+<span class="c1"># 1            2.29  5.64 1.04     3.92    1065</span>
+<span class="c1"># 2            1.28  4.38 1.05     3.40    1050</span>
+<span class="c1"># 3            2.81  5.68 1.03     3.17    1185</span>
+<span class="c1"># 4            2.18  7.80 0.86     3.45    1480</span>
+<span class="c1"># 5            1.82  4.32 1.04     2.93     735</span>
+<span class="c1"># 6            1.97  6.75 1.05     2.85    1450</span>
+
+<span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">scale</span><span class="p">(</span><span class="n">wine[</span><span class="m">-1</span><span class="n">]</span><span class="p">)</span>
+<span class="nf">wssplot</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">NbClust</span><span class="p">)</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+<span class="nf">devAskNewPage</span><span class="p">(</span><span class="n">ask</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+<span class="n">nc</span> <span class="o">&lt;-</span> <span class="nf">NbClust</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">min.nc</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">max.nc</span> <span class="o">=</span> <span class="m">15</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#34;kmeans&#34;</span><span class="p">)</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">nc</span><span class="o">$</span><span class="n">Best.nc[1</span><span class="p">,</span><span class="n">]</span><span class="p">)</span>
+
+<span class="nf">barplot</span><span class="p">(</span><span class="nf">table</span><span class="p">(</span><span class="n">nc</span><span class="o">$</span><span class="n">Best.nc[1</span><span class="p">,</span><span class="n">]</span><span class="p">),</span>
+        <span class="n">xlab</span><span class="o">=</span><span class="s">&#34;Number of Clusters&#34;</span><span class="p">,</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&#34;Number of Criteria&#34;</span><span class="p">,</span>
+        <span class="n">main</span><span class="o">=</span><span class="s">&#34;Number of Clusters Chosen by 26 Criteria&#34;</span><span class="p">)</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+<span class="n">fit.km</span> <span class="o">&lt;-</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="n">nstart</span> <span class="o">=</span> <span class="m">25</span><span class="p">)</span>
+<span class="n">fit.km</span><span class="o">$</span><span class="n">size</span>
+<span class="c1"># [1] 62 65 51</span>
+
+<span class="n">fit.km</span><span class="o">$</span><span class="n">centers</span>
+<span class="c1">#      Alcohol      Malic        Ash Alcalinity   Magnesium     Phenols  Flavanoids</span>
+<span class="c1"># 1  0.8328826 -0.3029551  0.3636801 -0.6084749  0.57596208  0.88274724  0.97506900</span>
+<span class="c1"># 2 -0.9234669 -0.3929331 -0.4931257  0.1701220 -0.49032869 -0.07576891  0.02075402</span>
+<span class="c1"># 3  0.1644436  0.8690954  0.1863726  0.5228924 -0.07526047 -0.97657548 -1.21182921</span>
+<span class="c1">#   Nonflavanoids Proanthocyanins      Color        Hue   Dilution    Proline</span>
+<span class="c1"># 1   -0.56050853      0.57865427  0.1705823  0.4726504  0.7770551  1.1220202</span>
+<span class="c1"># 2   -0.03343924      0.05810161 -0.8993770  0.4605046  0.2700025 -0.7517257</span>
+<span class="c1"># 3    0.72402116     -0.77751312  0.9388902 -1.1615122 -1.2887761 -0.4059428</span>
+
+<span class="nf">aggregate</span><span class="p">(</span><span class="n">wine[</span><span class="m">-1</span><span class="n">]</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">cluster</span><span class="o">=</span><span class="n">fit.km</span><span class="o">$</span><span class="n">cluster</span><span class="p">),</span> <span class="n">mean</span><span class="p">)</span>
+<span class="c1">#   cluster  Alcohol    Malic      Ash Alcalinity Magnesium  Phenols Flavanoids Nonflavanoids</span>
+<span class="c1"># 1       1 13.67677 1.997903 2.466290   17.46290 107.96774 2.847581  3.0032258     0.2920968</span>
+<span class="c1"># 2       2 12.25092 1.897385 2.231231   20.06308  92.73846 2.247692  2.0500000     0.3576923</span>
+<span class="c1"># 3       3 13.13412 3.307255 2.417647   21.24118  98.66667 1.683922  0.8188235     0.4519608</span>
+<span class="c1">#   Proanthocyanins    Color       Hue Dilution   Proline</span>
+<span class="c1"># 1        1.922097 5.453548 1.0654839 3.163387 1100.2258</span>
+<span class="c1"># 2        1.624154 2.973077 1.0627077 2.803385  510.1692</span>
+<span class="c1"># 3        1.145882 7.234706 0.6919608 1.696667  619.0588</span>
+
+<span class="n">ct.km</span> <span class="o">&lt;-</span> <span class="nf">table</span><span class="p">(</span><span class="n">wine</span><span class="o">$</span><span class="n">Type</span><span class="p">,</span> <span class="n">fit.km</span><span class="o">$</span><span class="n">cluster</span><span class="p">)</span>
+<span class="n">ct.km</span>
+<span class="c1">#    1  2  3</span>
+<span class="c1"># 1 59  0  0</span>
+<span class="c1"># 2  3 65  3</span>
+<span class="c1"># 3  0  0 48</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">flexclust</span><span class="p">)</span>
+<span class="nf">randIndex</span><span class="p">(</span><span class="n">ct.km</span><span class="p">)</span>
+<span class="c1">#      ARI </span>
+<span class="c1"># 0.897495 </span>
+
+<span class="c1"># 16.4.2. Partitioning around medoids</span>
+<span class="c1"># code listing 16.5. Partitioning around medoids for the wine data</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+<span class="n">fit.pam</span> <span class="o">&lt;-</span> <span class="nf">pam</span><span class="p">(</span><span class="n">wine[</span><span class="m">-1</span><span class="n">]</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="n">stand</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">fit.pam</span><span class="o">$</span><span class="n">medoids</span>
+<span class="c1">#      Alcohol Malic  Ash Alcalinity Magnesium Phenols Flavanoids Nonflavanoids</span>
+<span class="c1"># [1,]   13.48  1.81 2.41       20.5       100    2.70       2.98          0.26</span>
+<span class="c1"># [2,]   12.25  1.73 2.12       19.0        80    1.65       2.03          0.37</span>
+<span class="c1"># [3,]   13.40  3.91 2.48       23.0       102    1.80       0.75          0.43</span>
+<span class="c1">#      Proanthocyanins Color  Hue Dilution Proline</span>
+<span class="c1"># [1,]            1.86   5.1 1.04     3.47     920</span>
+<span class="c1"># [2,]            1.63   3.4 1.00     3.17     510</span>
+<span class="c1"># [3,]            1.41   7.3 0.70     1.56     750</span>
+
+<span class="nf">clusplot</span><span class="p">(</span><span class="n">fit.pam</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Bivariate Cluster Plot&#34;</span><span class="p">)</span>  <span class="c1"># figure 16.6</span>
+
+<span class="n">ct.pam</span> <span class="o">&lt;-</span> <span class="nf">table</span><span class="p">(</span><span class="n">wine</span><span class="o">$</span><span class="n">Type</span><span class="p">,</span> <span class="n">fit.pam</span><span class="o">$</span><span class="n">clustering</span><span class="p">)</span>
+<span class="n">ct.pam</span>
+<span class="c1">#    1  2  3</span>
+<span class="c1"># 1 59  0  0</span>
+<span class="c1"># 2 16 53  2</span>
+<span class="c1"># 3  0  1 47</span>
+<span class="nf">randIndex</span><span class="p">(</span><span class="n">ct.pam</span><span class="p">)</span>
+<span class="c1">#       ARI </span>
+<span class="c1"># 0.6994957</span>
+
+<span class="c1"># 16.5. Avoiding nonexistent clusters</span>
+<span class="c1"># figure 16.7</span>
+<span class="c1"># install.packages(&#34;fMultivar&#34;)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">fMultivar</span><span class="p">)</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">rnorm2d</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="n">rho</span> <span class="o">=</span> <span class="m">.5</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Bivariate Normal Distribution with rho=0.5&#34;</span><span class="p">)</span>
+
+<span class="c1"># figure 16.8</span>
+<span class="nf">wssplot</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">NbClust</span><span class="p">)</span>
+<span class="n">nc</span> <span class="o">&lt;-</span> <span class="nf">NbClust</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">min.nc</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">max.nc</span> <span class="o">=</span> <span class="m">15</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#34;kmeans&#34;</span><span class="p">)</span>
+<span class="nf">dev.new</span><span class="p">()</span>
+
+<span class="c1"># figure 16.9</span>
+<span class="nf">barplot</span><span class="p">(</span><span class="nf">table</span><span class="p">(</span><span class="n">nc</span><span class="o">$</span><span class="n">Best.nc[1</span><span class="p">,</span><span class="n">]</span><span class="p">),</span>
+        <span class="n">xlab</span><span class="o">=</span><span class="s">&#34;Number of Clusters&#34;</span><span class="p">,</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&#34;Number of Criteria&#34;</span><span class="p">,</span>
+        <span class="n">main</span><span class="o">=</span><span class="s">&#34;Number of Clusters Chosen by 26 Criteria&#34;</span><span class="p">)</span>
+
+
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
+<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">pam</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<span class="n">df</span><span class="o">$</span><span class="n">clustering</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">clustering</span><span class="p">)</span>
+<span class="c1"># figure 16.10</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">V1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">V2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">clustering</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="n">clustering</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span> <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&#34;Clustering of Bivariate Normal Data&#34;</span><span class="p">)</span>
+
+<span class="c1"># figure 16.11</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">nc</span><span class="o">$</span><span class="n">All.index[</span><span class="p">,</span><span class="m">4</span><span class="n">]</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&#34;o&#34;</span><span class="p">,</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&#34;CCC&#34;</span><span class="p">,</span>
+     <span class="n">xlab</span><span class="o">=</span><span class="s">&#34;Number of clusters&#34;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;blue&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div>
