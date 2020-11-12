@@ -39,11 +39,11 @@ Notebook of Reading Books: R in Action_Chapter 16.
 - 4. Calculate distance.
 - 5. Select a clustering algorithm.
 - 6. Obtain one or more cluster solutions.
-- 7.Determine the number of clusters present.
+- 7. Determine the number of clusters present.
 - 8. Obtain a final clustering solution.
 - 9. Visualize the results.
 - 10. Interpret the clusters.
-- Validate the results.
+- 11. Validate the results.
 
 ### 16.2. Calculating distances
 
@@ -73,7 +73,7 @@ Notebook of Reading Books: R in Action_Chapter 16.
 ### 16.5. Avoiding nonexistent clusters
 
 - Figure 16.7. Bivariate normal data (n = 1000). 
-  - There are no clusters in this data.
+  - There are **no** clusters in this data.
   
   ![fig167](fig167.png)
 
@@ -81,7 +81,7 @@ Notebook of Reading Books: R in Action_Chapter 16.
 
   ![fig168](fig168.png)
 
-- Figure 16.9. Number of clusters recommended for bivariate normal data by criteria in the NbClust package. 
+- Figure 16.9. Number of clusters recommended for bivariate normal data by criteria in the `NbClust` package. 
   - Two or three clusters are suggested.
 
   ![fig169](fig169.png)
