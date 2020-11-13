@@ -76,7 +76,9 @@ Notebook of Reading Books: R in Action_Chapter 17.
 
 ### 17.7 Using the rattle package for data mining
 
-- rattle()
+- Installing rattle on MacOS 10.11 (or above) with [R Script](install_rattle.R).
+
+  ![rattleUI](rattleUI.png)
 
 Attach is the [Script](chapter17.R) of chapter17.
 
