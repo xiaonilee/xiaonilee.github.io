@@ -124,6 +124,11 @@ logit.perf
 #   benign       129         6
 #   malignant      1        69
 
+summary(logit.perf)
+# Number of cases in table: 205 
+# Number of factors: 2 
+# Test for independence of all factors:
+#   Chisq = 176.04, df = 1, p-value = 3.55e-40
 (129+69)/(129+6+1+69)*100
 # [1] 96.58537
 
@@ -200,6 +205,21 @@ set.seed(1234)
 dtree <- rpart(class ~ ., data = df.train, method = "class",
                parms = list(split="information"))
 print(dtree)
+# n= 489 
+# 
+# node), split, n, loss, yval, (yprob)
+# * denotes terminal node
+# 
+# 1) root 489 170 benign (0.65235174 0.34764826)  
+# 2) sizeUniformity< 2.5 304   8 benign (0.97368421 0.02631579)  
+# 4) clumpThickness< 6.5 297   3 benign (0.98989899 0.01010101) *
+#   5) clumpThickness>=6.5 7   2 malignant (0.28571429 0.71428571) *
+#   3) sizeUniformity>=2.5 185  23 malignant (0.12432432 0.87567568)  
+# 6) bareNuclei< 2.5 28  13 benign (0.53571429 0.46428571)  
+# 12) sizeUniformity< 3.5 16   1 benign (0.93750000 0.06250000) *
+#   13) sizeUniformity>=3.5 12   0 malignant (0.00000000 1.00000000) *
+#   7) bareNuclei>=2.5 157   8 malignant (0.05095541 0.94904459) *
+
 
 dtree$cptable
 #           CP nsplit  rel error    xerror       xstd
@@ -225,6 +245,12 @@ dtree.perf
 # benign        129        10
 # malignant       4        67
 
+summary(dtree.perf)
+# Number of cases in table: 210 
+# Number of factors: 2 
+# Test for independence of all factors:
+#   Chisq = 153.78, df = 1, p-value = 2.585e-35
+
 (129+67)/(129+10+4+67)*100
 # [1] 93.33333
 
@@ -242,6 +268,12 @@ ctree.perf
 # Actual      benign malignant
 # benign         131         8
 # malignant        4        67
+
+summary(ctree.perf)
+# Number of cases in table: 210 
+# Number of factors: 2 
+# Test for independence of all factors:
+#   Chisq = 160.72, df = 1, p-value = 7.875e-37
 
 (131+67)/(131+4+67+8)*100
 # [1] 94.28571
@@ -287,6 +319,12 @@ forest.perf
 # Actual      benign malignant
 #   benign      128         7
 #   malignant     2        68
+
+summary(forest.perf)
+# Number of cases in table: 205 
+# Number of factors: 2 
+# Test for independence of all factors:
+#   Chisq = 168.02, df = 1, p-value = 2.004e-38
 
 (128+68)/(128+7+2+68)*100
 # [1] 95.60976
@@ -345,6 +383,12 @@ svm.perf
 # Actual      benign malignant
 #   benign       128         7
 #   malignant      0        70
+
+summary(svm.perf)
+# Number of cases in table: 205 
+# Number of factors: 2 
+# Test for independence of all factors:
+#   Chisq = 176.7, df = 1, p-value = 2.546e-40
 
 (128+70)/(128+7+70)*100
 # [1] 96.58537
@@ -411,33 +455,47 @@ performance(svm.perf)
 
 #==============================================================
 # 17.7 Using the rattle package for data mining
-# install.packages("rattle")
-# install.packages("RGtk2")
+# install.packages("rattle"), detail in the "install_rattle.R"
+
+
+# The Pima Indians Diabetes dataset is no longer available due to permission restrictions
+# loc <- "http://archive.ics.uci.edu/ml/machine-learning-databases/"
+# ds <- "pima-indians-diabetes/pima-indians-diabetes.data"
+
+# url <- paste(loc, ds, sep="")
+# 
+# diabetes <- read.table(url, sep=",", header=FALSE)
+# names(diabetes) <- c("npregant", "plasma", "bp", "triceps",
+#                      "insulin", "bmi", "pedigree", "age", "class")
+# diabetes$class <- factor(diabetes$class, levels=c(0,1),
+#                          labels=c("normal", "diabetic"))
+
 
 library(rattle)
-# library(RGtk2)
+# Loading required package: tibble
+# Loading required package: bitops
+# Rattle: A free graphical interface for data science with R.
+# Version 5.4.0 Copyright (c) 2006-2020 Togaware Pty Ltd.
+# Type 'rattle()' to shake, rattle, and roll your data.
+# 
+# Attaching package: ‘rattle’
+# 
+# The following object is masked from ‘package:randomForest’:
+#   
+#   importance
+
+
 rattle()
+# Loading required package: RGtk2
+# 2020-11-14 11:03:35.908 rsession[43141:820420] *** WARNING: Method userSpaceScaleFactor 
+# in class NSView is deprecated on 10.7 and later. It should not be used in new 
+# applications. Use convertRectToBacking: instead.
+#
+# Attaching package: ‘zoo’
 
-loc <- "http://archive.ics.uci.edu/ml/machine-learning-databases/"
-ds <- "pima-indians-diabetes/pima-indians-diabetes.data"
-url <- paste(loc, ds, sep="")
+# The following objects are masked from ‘package:base’:
+  
+#   as.Date, as.Date.numeric
 
-diabetes <- read.table(url, sep=",", header=FALSE)
-names(diabetes) <- c("npregant", "plasma", "bp", "triceps",
-                     "insulin", "bmi", "pedigree", "age", "class")
-diabetes$class <- factor(diabetes$class, levels=c(0,1),
-                         labels=c("normal", "diabetic"))
-library(rattle)
-rattle()
-
-
-
-
-
-
-
-
-
-
-
-
+# export a Decision Tree model with pmml package.
+install.packages('pmml')
