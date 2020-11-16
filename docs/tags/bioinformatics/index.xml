@@ -6,10 +6,19 @@
     <description>Recent content in Bioinformatics on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xiaonilee.github.io/tags/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Chapter 18. Advanced methods for missing data</title>
+      <link>https://xiaonilee.github.io/post/rinaction18/</link>
+      <pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/rinaction18/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 18.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Chapter 17. Classification</title>
@@ -181,15 +190,6 @@
       <guid>https://xiaonilee.github.io/post/tricktcga/</guid>
       <description>&lt;p&gt;Data setup via TCGA.&lt;/p&gt;
 &lt;p&gt;Re-analysis by R.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>OncoLnc: A straightforward Tool</title>
-      <link>https://xiaonilee.github.io/post/oncolnc/</link>
-      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/post/oncolnc/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;OncoLnc Web Tool&lt;/strong&gt;: Interactively exploring survival correlations, and for downloading clinical data coupled to expression data for mRNAs, miRNAs, or lncRNAs from &lt;em&gt;&lt;strong&gt;TCGA&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>
