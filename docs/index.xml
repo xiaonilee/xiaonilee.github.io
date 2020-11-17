@@ -6,10 +6,21 @@
     <description>Recent content on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://xiaonilee.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Chapter 19. Advanced graphics with ggplot2</title>
+      <link>https://xiaonilee.github.io/post/rinaction19/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/rinaction19/</guid>
+      
+        <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 19.&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>Chapter 18. Advanced methods for missing data</title>
@@ -217,18 +228,6 @@
       <guid>https://xiaonilee.github.io/post/hmwk10/</guid>
       
         <description>&lt;p&gt;Bioinformatics Exercises of Application with &lt;a href=&#34;hmwk10.Rmd&#34;&gt;R&lt;/a&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>R re-analysis in TCGA</title>
-      <link>https://xiaonilee.github.io/post/tricktcga/</link>
-      <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/post/tricktcga/</guid>
-      
-        <description>&lt;p&gt;Data setup via TCGA.&lt;/p&gt;
-&lt;p&gt;Re-analysis by R.&lt;/p&gt;</description>
       
     </item>
     

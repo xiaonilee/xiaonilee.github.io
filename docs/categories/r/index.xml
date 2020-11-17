@@ -6,10 +6,19 @@
     <description>Recent content in R on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xiaonilee.github.io/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Chapter 19. Advanced graphics with ggplot2</title>
+      <link>https://xiaonilee.github.io/post/rinaction19/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/rinaction19/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 19.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Chapter 18. Advanced methods for missing data</title>
@@ -180,16 +189,6 @@
       
       <guid>https://xiaonilee.github.io/post/hmwk10/</guid>
       <description>&lt;p&gt;Bioinformatics Exercises of Application with &lt;a href=&#34;hmwk10.Rmd&#34;&gt;R&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>R Notebook : ggplot2</title>
-      <link>https://xiaonilee.github.io/post/ggplot2/</link>
-      <pubDate>Sat, 19 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/post/ggplot2/</guid>
-      <description>&lt;p&gt;R package: ggplot2.&lt;/p&gt;
-&lt;p&gt;Data from Hadle Wickham &amp;lsquo;ggplot2 Elegant Graphics for Data Analysis&amp;rsquo;.&lt;/p&gt;</description>
     </item>
     
   </channel>
