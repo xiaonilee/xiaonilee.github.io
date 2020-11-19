@@ -80,6 +80,20 @@ Notebook of Reading Books: R in Action_Chapter 20.
 - options(error=traceback)
 - options(error=recover)
 
+### 20.6. Going further
+
+There are a number of excellent sources of information on advanced programming in R.
+
+- "**The R Language Definition**" (<http://mng.bz/U4Cm>) is a good place to ***start***. 
+
+- “**Frames, Environments, and Scope in R and S-PLUS**” by John Fox (<http://mng.bz/Kkbi>) is a great article for gaining a better understanding of ***scope***. 
+
+- “**How R Searches and Finds Stuff**” by Suraj Gupta (<http://mng.bz/2o5B>), is a blog article that can help you understand just what the title implies(`Going further`). 
+
+- To learn more about ***efficient coding***, see “**FasteR! HigheR! StrongeR!—A Guide to Speeding Up R Code for Busy People**” by Noam Ross (<http://mng.bz/Iq3i>). 
+
+- Finally, **R Programming for Bioinformatics** (<http://cran.r-project.org/web/views/ExperimentalDesign.html.>) by Robert Gentleman is a comprehensive yet highly accessible text for programmers that want to look under the hood. 
+
 Attach is the [Script](chapter20.R) of chapter20.
 
 Show me the code <i class="far fa-hand-pointer"></i>
