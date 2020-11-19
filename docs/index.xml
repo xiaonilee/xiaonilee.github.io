@@ -23,6 +23,17 @@
     </item>
     
     <item>
+      <title>Chapter 21. Creating a package</title>
+      <link>https://xiaonilee.github.io/post/rinaction21/</link>
+      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/rinaction21/</guid>
+      
+        <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 21.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>Chapter 19. Advanced graphics with ggplot2</title>
       <link>https://xiaonilee.github.io/post/rinaction19/</link>
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
@@ -217,17 +228,6 @@
       <guid>https://xiaonilee.github.io/post/rinaction2/</guid>
       
         <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 2.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Chapter 1. Introduction To R</title>
-      <link>https://xiaonilee.github.io/post/rinaction1/</link>
-      <pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/post/rinaction1/</guid>
-      
-        <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 1.&lt;/p&gt;</description>
       
     </item>
     
