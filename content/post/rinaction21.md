@@ -81,7 +81,11 @@ Notebook of Reading Books: R in Action_Chapter 21.
   ![dat](dat.png)
 
 - 3. Generate the documentation.
+
+- Be careful with the ***formal*** of DESCRIPTION file.
   
+  ![DEP](DEP.png)
+
   ![genrt](genrt.png)
 
   ![tree1](tree1.png)
