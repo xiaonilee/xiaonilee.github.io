@@ -73,7 +73,7 @@ Notebook of Reading Books: R in Action_Chapter 21.
 
 - 1. Install the necessary tools.
 
-- 2.Set up the directories.
+- 2. Set up the directories.
   - [oneway.R](oneway.R), [print.R](print.R), [summary.R](summary.R), [plot.R](plot.R), [npar.R](npar.R), and [life.R](life.R) are in the R file.
   ![rfile](rfil.png)
   
