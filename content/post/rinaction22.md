@@ -46,7 +46,8 @@ Notebook of Reading Books: R in Action_Chapter 22.
   - install.packages("xtable"), which can attractively formats data frames and matrices for inclusion in reports. 
   - install MacTeX software to generate PDF documentation
 
-- Generate file [women.html](women.html) for the women.Rmd template
+- Generate file [women.html](women.html) for the women.Rmd template.
+- Generate file [women.pdf](womenPDF.pdf) for the women.Rmd template.
 
 Attach is the [Script](chapter22.R) of chapter22.
 
