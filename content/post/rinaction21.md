@@ -63,7 +63,7 @@ Notebook of Reading Books: R in Action_Chapter 21.
 
 #### 21.2.5. Adding sample data to the package
 
-#### 21.3. Creating the package documentation
+### 21.3. Creating the package documentation
 
 - Table 21.2. Tags for use with Roxygen2
 
