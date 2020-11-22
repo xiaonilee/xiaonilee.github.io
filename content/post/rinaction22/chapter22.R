@@ -16,16 +16,19 @@ options(stringsAsFactors = F)
 # 22.2. Creating dynamic reports with R and Markdown
 # code listing 22.1. women.Rmd: a Markdown template with embedded R code
 
+# render the file
 library(rmarkdown)
-render("/Users/xiaonili/Workspace/xiaonilee.github.io/content/post/rinaction22/women.Rmd", "html_document")
+render("women.Rmd", "html_document")
 
-
+# render the file
 library(rmarkdown)
 # A new version of TeX Live has been released, so
 # tinytex::reinstall_tinytex()
-render("/Users/xiaonili/Workspace/xiaonilee.github.io/content/post/rinaction22/womenPDF.Rmd", "pdf_document")
+render("womenPDF.Rmd", "pdf_document")
 
-
+# render the file
+library(rmarkdown)
+render("womenWord.Rmd", "word_document")
 
 
 
