@@ -46,9 +46,11 @@ Notebook of Reading Books: R in Action_Chapter 22.
   - install.packages("xtable"), which can attractively formats data frames and matrices for inclusion in reports. 
   - install MacTeX software to generate PDF documentation
 
-- To generate a [html](women.html) document for the women.Rmd template.
-- To generate a nicely formatted [PDF](womenPDF.pdf) document for the women.Rmd template.
-- To generate an attractive [word](womenWord.docx) document for the women.Rmd template.
+- To generate a [html](women.html) document for the [women.Rmd](women.Rmd) template.
+- To generate a nicely formatted [PDF](womenPDF.pdf) document for the [womenPDF.Rmd](womenPDF.Rmd) template.
+- To generate an attractive [word](womenWord.docx) document for the [womenWord.Rmd](womenWord.Rmd) template.
+
+### 22.3. Creating dynamic reports with R and LaTeX
 
 Attach is the [Script](chapter22.R) of chapter22.
 
