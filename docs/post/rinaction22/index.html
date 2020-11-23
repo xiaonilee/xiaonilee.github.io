@@ -69,12 +69,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xiaonilee.github.io/post/rinaction22/" />
 <meta property="article:published_time" content="2020-11-22T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-11-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-11-23T00:00:00+00:00" />
 <meta itemprop="name" content="Chapter 22. Creating dynamic reports">
 <meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 22.">
 <meta itemprop="datePublished" content="2020-11-22T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2020-11-22T00:00:00+00:00" />
-<meta itemprop="wordCount" content="146">
+<meta itemprop="dateModified" content="2020-11-23T00:00:00+00:00" />
+<meta itemprop="wordCount" content="365">
 
 
 
@@ -634,6 +634,8 @@ if (!doNotTrack) {
         <li><a href="#221-a-template-approach-to-reports">22.1. A template approach to reports</a></li>
         <li><a href="#222-creating-dynamic-reports-with-r-and-markdown">22.2. Creating dynamic reports with R and Markdown</a></li>
         <li><a href="#223-creating-dynamic-reports-with-r-and-latex">22.3. Creating dynamic reports with R and LaTeX</a></li>
+        <li><a href="#224-creating-dynamic-reports-with-r-and-open-document">22.4. Creating dynamic reports with R and Open Document</a></li>
+        <li><a href="#225-creating-dynamic-reports-with-r-and-microsoft-word">22.5. Creating dynamic reports with R and Microsoft Word</a></li>
       </ul>
     </li>
   </ul>
@@ -691,14 +693,105 @@ if (!doNotTrack) {
 </li>
 </ul>
 <h3 id="223-creating-dynamic-reports-with-r-and-latex">22.3. Creating dynamic reports with R and LaTeX</h3>
+<ul>
+<li>
+<p>LaTeX is powerful, But it requires significant study to use effectively and creates documents in formats (PDF, DVI, PS) that can’t be edited.</p>
+</li>
+<li>
+<p>With the text file <a href="drugs.Rnw"><strong>drugs.Rnw</strong></a>:</p>
+<ul>
+<li>Processed through the <code>knit()</code> function.
+<ul>
+<li>Resulting in the output file: <a href="drugs.tex">drugs.tex</a> and <a href="figure/unnamed-chunk-4-1.pdf">figure</a>.</li>
+</ul>
+</li>
+<li>Processed through the <code>knit2pdf()</code> function.
+<ul>
+<li>Resulting in a typeset PDF document (<a href="drugs.pdf">drugs.pdf</a>).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="224-creating-dynamic-reports-with-r-and-open-document">22.4. Creating dynamic reports with R and Open Document</h3>
+<ul>
+<li>In the <code>odfWeave()</code> package.</li>
+</ul>
+<h3 id="225-creating-dynamic-reports-with-r-and-microsoft-word">22.5. Creating dynamic reports with R and Microsoft Word</h3>
+<ul>
+<li>It&rsquo;s only work on Windows platforms.</li>
+<li>In the <code>R2wd()</code> package.</li>
+</ul>
 <p>Attach is the <a href="chapter22.R">Script</a> of chapter22.</p>
 <p>Show me the code <i class="far fa-hand-pointer"></i></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Remove most objects from the working environment</span>
+<span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+
+
+<span class="c1"># 22.2. Creating dynamic reports with R and Markdown</span>
+<span class="c1"># code listing 22.1. The document of women.Rmd: a Markdown template with embedded R code</span>
+
+<span class="c1"># render the file</span>
+<span class="c1"># setwd() to current path</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">rmarkdown</span><span class="p">)</span>
+<span class="nf">render</span><span class="p">(</span><span class="s">&#34;women.Rmd&#34;</span><span class="p">,</span> <span class="s">&#34;html_document&#34;</span><span class="p">)</span>
+
+<span class="c1"># render the file</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">rmarkdown</span><span class="p">)</span>
+<span class="c1"># A new version of TeX Live has been released, so</span>
+<span class="c1"># tinytex::reinstall_tinytex()</span>
+<span class="nf">render</span><span class="p">(</span><span class="s">&#34;womenPDF.Rmd&#34;</span><span class="p">,</span> <span class="s">&#34;pdf_document&#34;</span><span class="p">)</span>
+
+<span class="c1"># render the file</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">rmarkdown</span><span class="p">)</span>
+<span class="nf">render</span><span class="p">(</span><span class="s">&#34;womenWord.Rmd&#34;</span><span class="p">,</span> <span class="s">&#34;word_document&#34;</span><span class="p">)</span>
+
+
+<span class="c1"># 22.3. Creating dynamic reports with R and LaTeX</span>
+<span class="c1"># code listing 22.2. drugs.Rnw: a sample LaTeX template with embedded R code</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">knitr</span><span class="p">)</span>
+<span class="nf">knit</span><span class="p">(</span><span class="s">&#34;drugs.Rnw&#34;</span><span class="p">)</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">knitr</span><span class="p">)</span>
+<span class="nf">knit2pdf</span><span class="p">(</span><span class="s">&#34;drugs.Rnw&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div>
