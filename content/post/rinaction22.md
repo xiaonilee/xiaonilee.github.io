@@ -47,8 +47,16 @@ Notebook of Reading Books: R in Action_Chapter 22.
   - install MacTeX software to generate PDF documentation
 
 - To generate a [html](women.html) document for the [women.Rmd](women.Rmd) template.
+
+  ![womenhtml](womenhtml.png)
+
 - To generate a nicely formatted [PDF](womenPDF.pdf) document for the [womenPDF.Rmd](womenPDF.Rmd) template.
+
+  ![womenpdf.pdf](womenpdf.png)
+
 - To generate an attractive [word](womenWord.docx) document for the [womenWord.Rmd](womenWord.Rmd) template.
+
+  ![womenword](womenword.png)
 
 ### 22.3. Creating dynamic reports with R and LaTeX
 
@@ -57,8 +65,13 @@ Notebook of Reading Books: R in Action_Chapter 22.
 - With the text file [**drugs.Rnw**](drugs.Rnw):
   - Processed through the `knit()` function.
     - Resulting in the output file: [drugs.tex](drugs.tex) and [figure](figure/unnamed-chunk-4-1.pdf).
+
+      ![fig](fig.png)
+
   - Processed through the `knit2pdf()` function.
     - Resulting in a typeset PDF document ([drugs.pdf](drugs.pdf)).
+
+      ![drugpdf](drugpdf.png)
 
 ### 22.4. Creating dynamic reports with R and Open Document
 

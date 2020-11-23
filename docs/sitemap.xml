@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xiaonilee.github.io/post/rinaction23/</loc>
+    <lastmod>2020-11-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaonilee.github.io/post/rinaction22/</loc>
     <lastmod>2020-11-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
