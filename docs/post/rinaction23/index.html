@@ -74,7 +74,7 @@
 <meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 23.">
 <meta itemprop="datePublished" content="2020-11-23T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-11-23T00:00:00+00:00" />
-<meta itemprop="wordCount" content="22">
+<meta itemprop="wordCount" content="184">
 
 
 
@@ -637,7 +637,14 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#this-chapter-covers">This chapter covers</a></li>
+    <li><a href="#this-chapter-covers">This chapter covers</a>
+      <ul>
+        <li><a href="#231-the-lattice-package">23.1. The lattice package</a></li>
+        <li><a href="#232-conditioning-variables">23.2. Conditioning variables</a></li>
+        <li><a href="#233-panel-functions">23.3. Panel functions</a></li>
+        <li><a href="#234-grouping-variables">23.4. Grouping variables</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -647,6 +654,83 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>Notebook of Reading Books: R in Action_Chapter 23.</p>
 <h2 id="this-chapter-covers">This chapter covers</h2>
+<ul>
+<li>
+<p>An introduction to the lattice package</p>
+</li>
+<li>
+<p>Grouping and conditioning</p>
+</li>
+<li>
+<p>Adding information with panel functions</p>
+</li>
+<li>
+<p>Customizing a lattice graph’s appearance</p>
+</li>
+</ul>
+<h3 id="231-the-lattice-package">23.1. The lattice package</h3>
+<ul>
+<li>
+<p>Figure 23.1. Trellis graph of singer heights by voice part.</p>
+<p><img src="fig231.png" alt="fig231"></p>
+</li>
+<li>
+<p>Table 23.1. Graph types and corresponding functions in the <em><strong>lattice</strong></em> package.</p>
+<p><img src="tab231.png" alt="tab231"></p>
+</li>
+</ul>
+<h3 id="232-conditioning-variables">23.2. Conditioning variables</h3>
+<ul>
+<li>
+<p>Typically, conditioning variables are factors.</p>
+</li>
+<li>
+<p>If It&rsquo;s a continuous variable:</p>
+<ul>
+<li><code>cut()</code></li>
+<li><strong>myshingle</strong></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">myshingle</span> <span class="o">&lt;-</span> <span class="nf">equal.count</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="n">proportion</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>Figure 23.2. Trellis plot of miles per gallon vs. car weight conditioned on engine displacement.</p>
+<ul>
+<li>engine displacement is a continuous variable
+<ul>
+<li>it has been converted to three non-overlapping shingles with equal numbers of observations.</li>
+</ul>
+</li>
+</ul>
+<p><img src="fig232.png" alt="fig232"></p>
+</li>
+</ul>
+<h3 id="233-panel-functions">23.3. Panel functions</h3>
+<ul>
+<li>
+<p>Figure 23.3. Trellis plot of miles per gallon vs. car weight conditioned on engine displacement.</p>
+<ul>
+<li>A custom panel function has been used to add regression lines, rug plots, and grid lines.</li>
+</ul>
+<p><img src="fig233.png" alt="fig233"></p>
+</li>
+<li>
+<p>Figure 23.4. Trellis graph of miles per gallon vs. engine displacement conditioned on transmission type.</p>
+<ul>
+<li>Smoothed lines (loess), grids, and group mean levels have been added.</li>
+</ul>
+<p><img src="fig234.png" alt="fig234"></p>
+</li>
+</ul>
+<h3 id="234-grouping-variables">23.4. Grouping variables</h3>
 <p>Attach is the <a href="chapter23.R">Script</a> of chapter23.</p>
 <p>Show me the code <i class="far fa-hand-pointer"></i></p>
 <div class="highlight"><div class="chroma">
