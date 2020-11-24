@@ -74,7 +74,7 @@
 <meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 23.">
 <meta itemprop="datePublished" content="2020-11-23T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-11-23T00:00:00+00:00" />
-<meta itemprop="wordCount" content="184">
+<meta itemprop="wordCount" content="1535">
 
 
 
@@ -643,6 +643,9 @@ if (!doNotTrack) {
         <li><a href="#232-conditioning-variables">23.2. Conditioning variables</a></li>
         <li><a href="#233-panel-functions">23.3. Panel functions</a></li>
         <li><a href="#234-grouping-variables">23.4. Grouping variables</a></li>
+        <li><a href="#235-graphic-parameters">23.5. Graphic parameters</a></li>
+        <li><a href="#236-customizing-plot-strips">23.6. Customizing plot strips</a></li>
+        <li><a href="#237-page-arrangement">23.7. Page arrangement</a></li>
       </ul>
     </li>
   </ul>
@@ -731,14 +734,571 @@ if (!doNotTrack) {
 </li>
 </ul>
 <h3 id="234-grouping-variables">23.4. Grouping variables</h3>
+<ul>
+<li>
+<p>Figure 23.5. Kernel-density plots for miles per gallon grouped by transmission type.</p>
+<ul>
+<li>Jittered points are provided on the horizontal axis.</li>
+</ul>
+<p><img src="fig235.png" alt="fig235"></p>
+</li>
+<li>
+<p>Figure 23.6. Kernel-density plots for miles per gallon grouped by transmission type.</p>
+<ul>
+<li>Graphical parameters have been modified, and a customized legend has been added.</li>
+<li>The custom legend specifies color, shape, line type, character size, and title.</li>
+</ul>
+<p><img src="fig236.png" alt="fig236"></p>
+</li>
+<li>
+<p>Figure 23.7. xyplot showing the impact of ambient carbon dioxide concentrations on carbon dioxide uptake for 12 plants in two treatment conditions and two types.</p>
+<ul>
+<li>Plant is the group variable, and Treatment and Type are the conditioning variables.</li>
+</ul>
+<p><img src="fig237.png" alt="fig237"></p>
+</li>
+</ul>
+<h3 id="235-graphic-parameters">23.5. Graphic parameters</h3>
+<ul>
+<li>
+<p>The default of <code>show.settings()</code></p>
+<p><img src="fig23.0.png" alt="fig23.0"></p>
+</li>
+<li>
+<p>The changes of <code>show.settings()</code></p>
+<p><img src="fig23.0-1.png" alt="fig23.0-1"></p>
+</li>
+</ul>
+<h3 id="236-customizing-plot-strips">23.6. Customizing plot strips</h3>
+<ul>
+<li>
+<p>Figure 23.8. A trellis graph with a customized strip (light grey background, with a smaller, italicized font).</p>
+<p><img src="fig238.png" alt="fig238"></p>
+</li>
+</ul>
+<h3 id="237-page-arrangement">23.7. Page arrangement</h3>
+<ul>
+<li>
+<p>Figure 23.9. Using the <code>split</code> option to combine graphs.</p>
+<p><img src="fig239.png" alt="fig239"></p>
+</li>
+<li>
+<p>Figure 23.10. Using the <code>position</code> option to combine graphs with greater precision.</p>
+<p><img src="fig2310.png" alt="fig2310"></p>
+</li>
+</ul>
 <p>Attach is the <a href="chapter23.R">Script</a> of chapter23.</p>
 <p>Show me the code <i class="far fa-hand-pointer"></i></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Remove most objects from the working environment</span>
+<span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+
+<span class="c1"># 23.1. The lattice package</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lattice</span><span class="p">)</span>
+<span class="nf">histogram</span><span class="p">(</span><span class="o">~</span><span class="n">height</span> <span class="o">|</span> <span class="n">voice.part</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">singer</span><span class="p">,</span>
+          <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Distribution of Heights by Voice Pitch&#34;</span><span class="p">,</span>
+          <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Height (inches)&#34;</span><span class="p">)</span>
+
+<span class="c1"># code listing 23.1. Lattice plot examples</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lattice</span><span class="p">)</span>
+<span class="nf">attach</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+
+<span class="n">gear</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">gear</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">),</span>
+               <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;3 gears&#34;</span><span class="p">,</span> <span class="s">&#34;4 gears&#34;</span><span class="p">,</span> <span class="s">&#34;5 gears&#34;</span><span class="p">))</span>
+
+<span class="n">cyl</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">cyl</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">8</span><span class="p">),</span>
+              <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;4 cylinders&#34;</span><span class="p">,</span> <span class="s">&#34;6 cylinders&#34;</span><span class="p">,</span> <span class="s">&#34;8 cylinders&#34;</span><span class="p">))</span>
+
+<span class="nf">densityplot</span><span class="p">(</span><span class="o">~</span><span class="n">mpg</span><span class="p">,</span>
+            <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Density Plot&#34;</span><span class="p">,</span>
+            <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Miles per Gallon&#34;</span><span class="p">)</span>
+
+<span class="nf">densityplot</span><span class="p">(</span><span class="o">~</span><span class="n">mpg</span> <span class="o">|</span> <span class="n">cyl</span><span class="p">,</span>
+            <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Density Plot by Number of Cylinders&#34;</span><span class="p">,</span>
+            <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Miles per Gallon&#34;</span><span class="p">)</span>
+
+<span class="nf">bwplot</span><span class="p">(</span><span class="n">cyl</span> <span class="o">~</span> <span class="n">mpg</span> <span class="o">|</span> <span class="n">gear</span><span class="p">,</span>
+       <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Box Plots by Cylinders and Gears&#34;</span><span class="p">,</span>
+       <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Miles per Gallon&#34;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Cylinders&#34;</span><span class="p">)</span>
+
+<span class="nf">xyplot</span><span class="p">(</span><span class="n">mpg</span> <span class="o">~</span> <span class="n">wt</span> <span class="o">|</span> <span class="n">cyl</span> <span class="o">*</span> <span class="n">gear</span><span class="p">,</span>
+       <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Scatter Plots by Cylinders and Gears&#34;</span><span class="p">,</span>
+       <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Car Weight&#34;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Miles per Gallon&#34;</span><span class="p">)</span>
+
+<span class="nf">cloud</span><span class="p">(</span><span class="n">mpg</span> <span class="o">~</span> <span class="n">wt</span> <span class="o">*</span> <span class="n">qsec</span> <span class="o">|</span> <span class="n">cyl</span><span class="p">,</span>
+      <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;3D Scatter Plots by Cylinders&#34;</span><span class="p">)</span>
+
+<span class="nf">dotplot</span><span class="p">(</span><span class="n">cyl</span> <span class="o">~</span> <span class="n">mpg</span> <span class="o">|</span> <span class="n">gear</span><span class="p">,</span>
+        <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Dot Plots by Number of Gears and Cylinders&#34;</span><span class="p">,</span>
+        <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Miles per Gallon&#34;</span><span class="p">)</span>
+
+<span class="nf">splom</span><span class="p">(</span><span class="n">mtcars</span><span class="nf">[c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">)</span><span class="n">]</span><span class="p">,</span>
+      <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Scatter Plot Matrix for mtcars Data&#34;</span><span class="p">)</span>
+
+<span class="nf">detach</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+
+<span class="c1"># 23.2. Conditioning variables</span>
+
+<span class="c1"># figure 23-2</span>
+<span class="n">displacement</span> <span class="o">&lt;-</span> <span class="nf">equal.count</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">disp</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="m">0</span><span class="p">)</span>
+<span class="nf">xyplot</span><span class="p">(</span><span class="n">mpg</span><span class="o">~</span><span class="n">wt</span><span class="o">|</span><span class="n">displacement</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mtcars</span><span class="p">,</span>
+       <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Miles per Gallon vs. Weight by Engine Displacement&#34;</span><span class="p">,</span>
+       <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Weight&#34;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Miles per Gallon&#34;</span><span class="p">,</span>
+       <span class="n">layout</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">aspect</span><span class="o">=</span><span class="m">1.5</span><span class="p">)</span>
+
+
+<span class="c1"># 23.3. Panel functions</span>
+<span class="c1"># code listing 23.2. xyplot with custom panel function</span>
+<span class="c1"># figure 23.3</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lattice</span><span class="p">)</span>
+<span class="n">displacement</span> <span class="o">&lt;-</span> <span class="nf">equal.count</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">disp</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="m">0</span><span class="p">)</span>
+
+<span class="n">mypanel</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">panel.xyplot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">pch</span> <span class="o">=</span> <span class="m">19</span><span class="p">)</span>
+  <span class="nf">panel.rug</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+  <span class="nf">panel.grid</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="m">-1</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="m">-1</span><span class="p">)</span>
+  <span class="nf">panel.lmline</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">xyplot</span><span class="p">(</span><span class="n">mpg</span><span class="o">~</span><span class="n">wt</span> <span class="o">|</span> <span class="n">displacement</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mtcars</span><span class="p">,</span>
+       <span class="n">layout</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span>
+       <span class="n">aspect</span> <span class="o">=</span> <span class="m">1.5</span><span class="p">,</span>
+       <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Miles per Gallon vs. Weight by Engine Displacement&#34;</span><span class="p">,</span>
+       <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Weight&#34;</span><span class="p">,</span>
+       <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Miles per Gallon&#34;</span><span class="p">,</span>
+       <span class="n">panel</span> <span class="o">=</span> <span class="n">mypanel</span><span class="p">)</span>
+
+
+<span class="c1"># code listing 23.3. xyplot with a custom panel function and additional options</span>
+<span class="c1"># figure 23.4</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lattice</span><span class="p">)</span>
+<span class="n">mtcars</span><span class="o">$</span><span class="n">transmission</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">am</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span>
+                              <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Automatic&#34;</span><span class="p">,</span> <span class="s">&#34;Manual&#34;</span><span class="p">))</span>
+
+<span class="n">panel.smoother</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">panel.grid</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="m">-1</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="m">-1</span><span class="p">)</span>
+  <span class="nf">panel.xyplot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+  <span class="nf">panel.loess</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+  <span class="nf">panel.abline</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&#34;darkgreen&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">xyplot</span><span class="p">(</span><span class="n">mpg</span><span class="o">~</span><span class="n">disp</span> <span class="o">|</span> <span class="n">transmission</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mtcars</span><span class="p">,</span>
+       <span class="n">scales</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">cex</span><span class="o">=</span><span class="m">.8</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">),</span>
+       <span class="n">panel</span> <span class="o">=</span> <span class="n">panel.smoother</span><span class="p">,</span>
+       <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Displacement&#34;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Miles per Gallon&#34;</span><span class="p">,</span>
+       <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;MPG vs Displacement by Transmission Type&#34;</span><span class="p">,</span>
+       <span class="n">sub</span> <span class="o">=</span> <span class="s">&#34;Dotted lines are Group Means&#34;</span><span class="p">,</span> <span class="n">aspect</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+
+<span class="c1">#-----------------------------------------------------------</span>
+<span class="c1"># Subsetting Data                                          ｜</span>
+<span class="c1">## Selection using the Subset Function                     ｜ </span>
+<span class="n">sub</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">mtcars</span><span class="p">,</span> <span class="n">transmission</span> <span class="o">==</span> <span class="s">&#34;Manual&#34;</span><span class="p">)</span>           <span class="c1">#｜</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">sub</span><span class="o">$</span><span class="n">mpg</span><span class="p">)</span>                                             <span class="c1">#｜</span>
+<span class="c1">#                                                          ｜</span>
+<span class="c1"># Selecting Observations                                   ｜</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">mtcars</span><span class="nf">[which</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">transmission</span><span class="o">==</span><span class="s">&#39;Manual&#39;</span><span class="p">),</span><span class="n">]</span><span class="o">$</span><span class="n">mpg</span><span class="p">)</span>   <span class="c1">#｜</span>
+<span class="c1"># [1] 24.39231                                            #｜</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">mtcars</span><span class="nf">[which</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">transmission</span><span class="o">==</span><span class="s">&#39;Automatic&#39;</span><span class="p">),</span><span class="n">]</span><span class="o">$</span><span class="n">mpg</span><span class="p">)</span><span class="c1">#｜</span>
+<span class="c1"># [1] 17.14737                                             ｜</span>
+<span class="c1">#----------------------------------------------------------｜</span>
+
+<span class="c1"># 23.4. Grouping variables</span>
+<span class="c1"># figure 23.5</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lattice</span><span class="p">)</span>
+<span class="n">mtcars</span><span class="o">$</span><span class="n">transmission</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">am</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span>
+                              <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Automatic&#34;</span><span class="p">,</span> <span class="s">&#34;Manual&#34;</span><span class="p">))</span>
+
+<span class="nf">densityplot</span><span class="p">(</span><span class="o">~</span><span class="n">mpg</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mtcars</span><span class="p">,</span>
+            <span class="n">group</span> <span class="o">=</span> <span class="n">transmission</span><span class="p">,</span>
+            <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;MPG Distribution by Transmission Type&#34;</span><span class="p">,</span>
+            <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Miles per Gallon&#34;</span><span class="p">,</span>
+            <span class="n">auto.key</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1"># code listing 23.4. Kernel-density plot with a group variable and customized legend</span>
+<span class="c1"># figure 23.6</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lattice</span><span class="p">)</span>
+<span class="n">mtcars</span><span class="o">$</span><span class="n">transmission</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">am</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span>
+                              <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Automatic&#34;</span><span class="p">,</span> <span class="s">&#34;Manual&#34;</span><span class="p">))</span>
+
+<span class="c1"># Color, line and point specifications</span>
+<span class="n">colors</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;red&#34;</span><span class="p">,</span> <span class="s">&#34;blue&#34;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
+<span class="n">points</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">16</span><span class="p">,</span> <span class="m">17</span><span class="p">)</span>
+
+<span class="c1"># Legend customization</span>
+<span class="n">key.trans</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">&#34;Transmission&#34;</span><span class="p">,</span>
+                  <span class="n">space</span><span class="o">=</span><span class="s">&#34;bottom&#34;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="m">2</span><span class="p">,</span>
+                  <span class="n">text</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="nf">levels</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">transmission</span><span class="p">)),</span>
+                  <span class="n">points</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">pch</span><span class="o">=</span><span class="n">points</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="n">colors</span><span class="p">),</span>
+                  <span class="n">lines</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="n">lines</span><span class="p">),</span>
+                  <span class="n">cex.title</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">cex</span><span class="o">=</span><span class="m">.9</span><span class="p">)</span>
+<span class="c1"># Density plot</span>
+<span class="nf">densityplot</span><span class="p">(</span><span class="o">~</span><span class="n">mpg</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mtcars</span><span class="p">,</span>
+            <span class="n">group</span> <span class="o">=</span> <span class="n">transmission</span><span class="p">,</span>
+            <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;MPG Distribution by Transmission Type&#34;</span><span class="p">,</span>
+            <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Miles per Gallon&#34;</span><span class="p">,</span>
+            <span class="n">pch</span><span class="o">=</span><span class="n">points</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="n">lines</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span>
+            <span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">jitter</span><span class="o">=</span><span class="m">.005</span><span class="p">,</span>
+            <span class="n">key</span><span class="o">=</span><span class="n">key.trans</span><span class="p">)</span>
+
+<span class="c1"># code listing 23.5. xyplot with group and conditioning variables and customized legend</span>
+<span class="c1"># figure 23.7</span>
+
+<span class="nf">head</span><span class="p">(</span><span class="n">CO2</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lattice</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">&lt;-</span> <span class="s">&#34;darkgreen&#34;</span>
+<span class="n">symbols</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">12</span><span class="p">)</span>
+<span class="n">linetype</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span>
+
+<span class="n">key.species</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">&#34;Plant&#34;</span><span class="p">,</span>
+                    <span class="n">space</span><span class="o">=</span><span class="s">&#34;right&#34;</span><span class="p">,</span>
+                    <span class="n">text</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="nf">levels</span><span class="p">(</span><span class="n">CO2</span><span class="o">$</span><span class="n">Plant</span><span class="p">)),</span>
+                    <span class="n">points</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">pch</span><span class="o">=</span><span class="n">symbols</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="n">colors</span><span class="p">))</span>
+
+<span class="nf">xyplot</span><span class="p">(</span><span class="n">uptake</span> <span class="o">~</span> <span class="n">conc</span> <span class="o">|</span> <span class="n">Type</span><span class="o">*</span><span class="n">Treatment</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">CO2</span><span class="p">,</span>
+       <span class="n">group</span> <span class="o">=</span> <span class="n">Plant</span><span class="p">,</span>
+       <span class="n">type</span><span class="o">=</span><span class="s">&#34;o&#34;</span><span class="p">,</span>
+       <span class="n">pch</span><span class="o">=</span><span class="n">symbols</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="n">linetype</span><span class="p">,</span>
+       <span class="n">main</span><span class="o">=</span><span class="s">&#34;Carbon Dioxide Uptake\nin Grass Plants&#34;</span><span class="p">,</span>
+       <span class="n">ylab</span> <span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&#34;Uptake &#34;</span><span class="p">,</span>
+                               <span class="nf">bgroup</span><span class="p">(</span><span class="s">&#34;(&#34;</span><span class="p">,</span> <span class="nf">italic</span><span class="p">(</span><span class="nf">frac</span><span class="p">(</span><span class="s">&#34;umol&#34;</span><span class="p">,</span> <span class="s">&#34;m&#34;</span><span class="n">^2</span><span class="p">)),</span> <span class="s">&#34;)&#34;</span><span class="p">))),</span>
+       <span class="n">xlab</span> <span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&#34;Concentration &#34;</span><span class="p">,</span>
+                               <span class="nf">bgroup</span><span class="p">(</span><span class="s">&#34;(&#34;</span><span class="p">,</span> <span class="nf">italic</span><span class="p">(</span><span class="nf">frac</span><span class="p">(</span><span class="n">mL</span><span class="p">,</span> <span class="n">L</span><span class="p">)),</span> <span class="s">&#34;)&#34;</span><span class="p">))),</span>
+       <span class="n">sub</span> <span class="o">=</span> <span class="s">&#34;Grass Species: Eninochloa crus-galli&#34;</span><span class="p">,</span>
+       <span class="n">key</span><span class="o">=</span><span class="n">key.species</span><span class="p">)</span>
+
+<span class="c1"># 23.5. Graphic parameters</span>
+
+<span class="nf">show.settings</span><span class="p">()</span> <span class="c1"># view the current defaults</span>
+
+<span class="n">mysettings</span> <span class="o">&lt;-</span> <span class="nf">trellis.par.get</span><span class="p">()</span> <span class="c1"># save them into a list called mysettings</span>
+<span class="nf">names</span><span class="p">(</span><span class="n">mysettings</span><span class="p">)</span>
+<span class="c1"># [1] &#34;grid.pars&#34;         &#34;fontsize&#34;          &#34;background&#34;        &#34;panel.background&#34; </span>
+<span class="c1"># [5] &#34;clip&#34;              &#34;add.line&#34;          &#34;add.text&#34;          &#34;plot.polygon&#34;     </span>
+<span class="c1"># [9] &#34;box.dot&#34;           &#34;box.rectangle&#34;     &#34;box.umbrella&#34;      &#34;dot.line&#34;         </span>
+<span class="c1"># [13] &#34;dot.symbol&#34;        &#34;plot.line&#34;         &#34;plot.symbol&#34;       &#34;reference.line&#34;   </span>
+<span class="c1"># [17] &#34;strip.background&#34;  &#34;strip.shingle&#34;     &#34;strip.border&#34;      &#34;superpose.line&#34;   </span>
+<span class="c1"># [21] &#34;superpose.symbol&#34;  &#34;superpose.polygon&#34; &#34;regions&#34;           &#34;shade.colors&#34;     </span>
+<span class="c1"># [25] &#34;axis.line&#34;         &#34;axis.text&#34;         &#34;axis.components&#34;   &#34;layout.heights&#34;   </span>
+<span class="c1"># [29] &#34;layout.widths&#34;     &#34;box.3d&#34;            &#34;par.xlab.text&#34;     &#34;par.ylab.text&#34;    </span>
+<span class="c1"># [33] &#34;par.zlab.text&#34;     &#34;par.main.text&#34;     &#34;par.sub.text&#34;</span>
+
+<span class="n">mysettings</span><span class="o">$</span><span class="n">superpose.symbol</span>
+<span class="c1"># $alpha</span>
+<span class="c1"># [1] 1 1 1 1 1 1 1</span>
+<span class="c1"># </span>
+<span class="c1"># $cex</span>
+<span class="c1"># [1] 0.8 0.8 0.8 0.8 0.8 0.8 0.8</span>
+<span class="c1"># </span>
+<span class="c1"># $col</span>
+<span class="c1"># [1] &#34;#0080ff&#34;   &#34;#ff00ff&#34;   &#34;darkgreen&#34; &#34;#ff0000&#34;   &#34;orange&#34;    &#34;#00ff00&#34;   &#34;brown&#34;    </span>
+<span class="c1"># </span>
+<span class="c1"># $fill</span>
+<span class="c1"># [1] &#34;#CCFFFF&#34; &#34;#FFCCFF&#34; &#34;#CCFFCC&#34; &#34;#FFE5CC&#34; &#34;#CCE6FF&#34; &#34;#FFFFCC&#34; &#34;#FFCCCC&#34;</span>
+<span class="c1"># </span>
+<span class="c1"># $font</span>
+<span class="c1"># [1] 1 1 1 1 1 1 1</span>
+<span class="c1"># </span>
+<span class="c1"># $pch</span>
+<span class="c1"># [1] 1 1 1 1 1 1 1</span>
+
+<span class="c1"># To change the default:</span>
+<span class="n">mysettings</span><span class="o">$</span><span class="n">superpose.symbol</span><span class="o">$</span><span class="n">pch</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
+<span class="nf">trellis.par.set</span><span class="p">(</span><span class="n">mysettings</span><span class="p">)</span>
+
+<span class="nf">show.settings</span><span class="p">()</span>
+
+
+<span class="c1"># 23.6. Customizing plot strips</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lattice</span><span class="p">)</span>
+<span class="nf">histogram</span><span class="p">(</span><span class="o">~</span><span class="n">height</span> <span class="o">|</span> <span class="n">voice.part</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">singer</span><span class="p">,</span>
+          <span class="n">strip</span> <span class="o">=</span> <span class="nf">strip.custom</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="s">&#34;lightgrey&#34;</span><span class="p">,</span>
+                               <span class="n">par.strip.text</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s">&#34;black&#34;</span><span class="p">,</span> <span class="n">cex</span><span class="o">=</span><span class="m">.8</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="m">3</span><span class="p">)),</span>
+          <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Distribution of Heights by Voice Pitch&#34;</span><span class="p">,</span>
+          <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Height (inches)&#34;</span><span class="p">)</span>
+
+<span class="c1"># 23.7. Page arrangement</span>
+<span class="c1"># figure 23.9</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lattice</span><span class="p">)</span>
+<span class="n">graph1</span> <span class="o">&lt;-</span> <span class="nf">histogram</span><span class="p">(</span><span class="o">~</span><span class="n">height</span> <span class="o">|</span> <span class="n">voice.part</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">singer</span><span class="p">,</span>
+                    <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Heights of Choral Singers by Voice Part&#34;</span><span class="p">)</span>
+<span class="n">graph2</span> <span class="o">&lt;-</span> <span class="nf">bwplot</span><span class="p">(</span><span class="n">height</span> <span class="o">~</span> <span class="n">voice.part</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">singer</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">graph1</span><span class="p">,</span> <span class="n">split</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">graph2</span><span class="p">,</span> <span class="n">split</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="n">newpage</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+
+
+<span class="c1"># figure 23.10</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lattice</span><span class="p">)</span>
+<span class="n">graph1</span> <span class="o">&lt;-</span> <span class="nf">histogram</span><span class="p">(</span><span class="o">~</span><span class="n">height</span> <span class="o">|</span> <span class="n">voice.part</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">singer</span><span class="p">,</span>
+                    <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Heights of Choral Singers by Voice Part&#34;</span><span class="p">)</span>
+<span class="n">graph2</span> <span class="o">&lt;-</span> <span class="nf">bwplot</span><span class="p">(</span><span class="n">height</span> <span class="o">~</span> <span class="n">voice.part</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">singer</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">graph1</span><span class="p">,</span> <span class="n">position</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">.33</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">graph2</span><span class="p">,</span> <span class="n">position</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">.4</span><span class="p">),</span> <span class="n">newpage</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+
+
+<span class="nf">levels</span><span class="p">(</span><span class="n">singer</span><span class="o">$</span><span class="n">voice.part</span><span class="p">)</span>
+<span class="c1"># [1] &#34;Bass 2&#34;    &#34;Bass 1&#34;    &#34;Tenor 2&#34;   &#34;Tenor 1&#34;   &#34;Alto 2&#34;    &#34;Alto 1&#34;    &#34;Soprano 2&#34;</span>
+<span class="c1"># [8] &#34;Soprano 1&#34;</span>
+
+<span class="nf">histogram</span><span class="p">(</span><span class="o">~</span><span class="n">height</span> <span class="o">|</span> <span class="n">voice.part</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">singer</span><span class="p">,</span>
+          <span class="n">index.cond</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">7</span><span class="p">)))</span>
 </code></pre></td></tr></table>
 </div>
 </div>
