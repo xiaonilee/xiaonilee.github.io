@@ -16,7 +16,7 @@
         {{ if .HasChildren }}
           <!-- drop down navigation MENU -->
           <a class="menu-item-link menu-parent" href="{{ .URL | absLangURL | safeURL }}">{{ .Name }}</a>
-          <ul class="submenu">
+          <ul class="submenu" >
             {{ range .Children }}
               <li>
                 <a href="{{ .URL | absLangURL | safeURL }}">{{ .Name }}</a>

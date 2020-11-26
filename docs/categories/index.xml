@@ -6,7 +6,7 @@
     <description>Recent content in Categories on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xiaonilee.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,25 +14,16 @@
     <item>
       <title>Bioinformatics</title>
       <link>https://xiaonilee.github.io/categories/bioinformatics/</link>
-      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/categories/bioinformatics/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R</title>
-      <link>https://xiaonilee.github.io/categories/r/</link>
-      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/categories/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Cancer Research</title>
       <link>https://xiaonilee.github.io/categories/cancer-research/</link>
-      <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/categories/cancer-research/</guid>
       <description></description>
@@ -41,9 +32,18 @@
     <item>
       <title>Database</title>
       <link>https://xiaonilee.github.io/categories/database/</link>
-      <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/categories/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://xiaonilee.github.io/categories/r/</link>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/categories/r/</guid>
       <description></description>
     </item>
     

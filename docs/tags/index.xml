@@ -6,7 +6,7 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xiaonilee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,45 @@
     <item>
       <title>Bioinformatics</title>
       <link>https://xiaonilee.github.io/tags/bioinformatics/</link>
-      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cancer genomics big data</title>
+      <link>https://xiaonilee.github.io/tags/cancer-genomics-big-data/</link>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/cancer-genomics-big-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GSCA</title>
+      <link>https://xiaonilee.github.io/tags/gsca/</link>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/gsca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://xiaonilee.github.io/tags/r/</link>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TCGA</title>
+      <link>https://xiaonilee.github.io/tags/tcga/</link>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/tcga/</guid>
       <description></description>
     </item>
     
@@ -26,15 +62,6 @@
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/book/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>https://xiaonilee.github.io/tags/r/</link>
-      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/r/</guid>
       <description></description>
     </item>
     
@@ -62,15 +89,6 @@
       <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/plots/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TCGA</title>
-      <link>https://xiaonilee.github.io/tags/tcga/</link>
-      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/tcga/</guid>
       <description></description>
     </item>
     
@@ -170,15 +188,6 @@
       <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/geo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TissGDB</title>
-      <link>https://xiaonilee.github.io/tags/tissgdb/</link>
-      <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/tissgdb/</guid>
       <description></description>
     </item>
     
