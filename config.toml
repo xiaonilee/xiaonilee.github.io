@@ -42,7 +42,7 @@ defaultContentLanguage = "en"           # Default language to use
   url = "/"
 [[menu.main]]
   name = "Categories"
-  weight = 20
+  weight = 40
   identifier = "categories"
   url = "/categories/"
 [[menu.main]]
@@ -52,7 +52,7 @@ defaultContentLanguage = "en"           # Default language to use
   url = "/tags/"
 [[menu.main]]
   name = "Archives"
-  weight = 40
+  weight = 20
   identifier = "archives"
   url = "/post/"
 
