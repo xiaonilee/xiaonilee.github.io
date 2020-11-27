@@ -9,6 +9,20 @@
   </url>
   
   <url>
+    <loc>https://xiaonilee.github.io/post/shiny01/</loc>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/post/rinactionmap/</loc>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaonilee.github.io/post/gscalite/</loc>
     <lastmod>2020-11-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -338,6 +352,13 @@
   </url>
   
   <url>
+    <loc>https://xiaonilee.github.io/tags/book/</loc>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaonilee.github.io/tags/cancer-genomics-big-data/</loc>
     <lastmod>2020-11-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -366,22 +387,15 @@
   </url>
   
   <url>
+    <loc>https://xiaonilee.github.io/tags/r-in-action/</loc>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaonilee.github.io/tags/tcga/</loc>
     <lastmod>2020-11-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaonilee.github.io/tags/book/</loc>
-    <lastmod>2020-11-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaonilee.github.io/tags/r-in-action/</loc>
-    <lastmod>2020-11-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

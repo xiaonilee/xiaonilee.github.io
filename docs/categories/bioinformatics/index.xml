@@ -17,7 +17,25 @@
       <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/post/shiny/</guid>
-      <description>&lt;p&gt;GSCALite: a web-based platform for Gene Set Cancer Analysis.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://shiny.rstudio.com/&#34;&gt;Shiny&lt;/a&gt; is an R package that makes it easy to build interactive web apps straight from R.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Learn Shiny</title>
+      <link>https://xiaonilee.github.io/post/shiny01/</link>
+      <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/shiny01/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://shiny.rstudio.com/&#34;&gt;Shiny&lt;/a&gt; is an R package that makes it easy to build interactive web apps straight from R.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Book: R in Action</title>
+      <link>https://xiaonilee.github.io/post/rinactionmap/</link>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/rinactionmap/</guid>
+      <description>&lt;p&gt;Roadmap for the book: &lt;em&gt;&lt;strong&gt;R in Action, Second Edition&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -171,24 +189,6 @@
       
       <guid>https://xiaonilee.github.io/post/rinaction8/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 8.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 7. Basic statistics</title>
-      <link>https://xiaonilee.github.io/post/rinaction7/</link>
-      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/post/rinaction7/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 7.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 6. Basic graphs</title>
-      <link>https://xiaonilee.github.io/post/rinaction6/</link>
-      <pubDate>Sat, 24 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/post/rinaction6/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 6.&lt;/p&gt;</description>
     </item>
     
   </channel>
