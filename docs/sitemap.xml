@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xiaonilee.github.io/post/shiny/</loc>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaonilee.github.io/post/gscalite/</loc>
     <lastmod>2020-11-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -255,14 +262,77 @@
   
   <url>
     <loc>https://xiaonilee.github.io/tags/bioinformatics/</loc>
-    <lastmod>2020-11-25T00:00:00+00:00</lastmod>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xiaonilee.github.io/categories/bioinformatics/</loc>
-    <lastmod>2020-11-25T00:00:00+00:00</lastmod>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/categories/</loc>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/post/</loc>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/tags/r/</loc>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/categories/r/</loc>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/tags/r-package/</loc>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/categories/r-package/</loc>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/tags/shiny/</loc>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/tags/</loc>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/</loc>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -276,13 +346,6 @@
   
   <url>
     <loc>https://xiaonilee.github.io/categories/cancer-research/</loc>
-    <lastmod>2020-11-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaonilee.github.io/categories/</loc>
     <lastmod>2020-11-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -303,42 +366,7 @@
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/</loc>
-    <lastmod>2020-11-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaonilee.github.io/tags/r/</loc>
-    <lastmod>2020-11-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaonilee.github.io/categories/r/</loc>
-    <lastmod>2020-11-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaonilee.github.io/tags/</loc>
-    <lastmod>2020-11-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://xiaonilee.github.io/tags/tcga/</loc>
-    <lastmod>2020-11-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaonilee.github.io/</loc>
     <lastmod>2020-11-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -3,8 +3,8 @@ title: "R Notebook : ggplot2"
 date: 2020-09-19
 lastmod: 2020-09-24
 draft: false
-tags: ["R", "Bioinformatics", "Plots"]
-categories: ["R", "Bioinformatics"]
+tags: ["R", "Bioinformatics", "Plots", "R Package"]
+categories: ["R", "Bioinformatics", "R Package"]
 author: "Xiaoni"
 
 weight: 1
