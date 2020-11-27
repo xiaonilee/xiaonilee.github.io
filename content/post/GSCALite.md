@@ -23,6 +23,8 @@ GSCALite: a web-based platform for Gene Set Cancer Analysis.
 
 ## In summary
 
-- GUI and back-end: Shiny.
-- Database: TCGA, GDSC, CTRP and GTEx.
-- R scripts and packages: ggplot2, visNetwork, survival and maftools.
+- GUI and back-end: `Shiny`.
+
+- Database: **TCGA**, **GDSC**, **CTRP** and **GTEx**.
+
+- R scripts and packages: **ggplot2**, **visNetwork**, **survival** and **maftools**.
