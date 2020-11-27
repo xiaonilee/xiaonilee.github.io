@@ -22,3 +22,11 @@ GSCALite: a web-based platform for Gene Set Cancer Analysis.
 <!--more-->
 
 ## In summary
+
+- [Shiny](https://shiny.rstudio.com/) is an **R** package.
+
+- Interact. Analyze. Communicate.
+
+- It combines the **computational power** of ***R*** with the interactivity of the modern web.
+
+  ![fig](shiny.png)
