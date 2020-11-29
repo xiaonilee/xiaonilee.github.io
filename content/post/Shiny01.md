@@ -1,5 +1,5 @@
 ---
-title: "Learn Shiny: Building Shiny apps"
+title: "Learn Shiny: Building a Shiny app"
 date: 2020-11-27
 lastmod: 2020-11-27
 draft: false
@@ -17,13 +17,13 @@ mathjax: true
 #     weight: 1
 ---
  
-Building an Shiny app - an interactive tutorial.
+Building a Shiny app - an interactive tutorial.
 
 <!--more-->
 
 ## In summary
 
-Learn to build an Shiny app step by step.
+Learn to build a Shiny app step by step.
 
 ### 1. Prerequisites
 
