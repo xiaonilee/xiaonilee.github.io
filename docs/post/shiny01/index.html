@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Learn Shiny - xiaoni&#39;s blog</title>
+  <title>Learn Shiny: Building Shiny apps - xiaoni&#39;s blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Xiaoni" />
-  <meta name="description" content="Shiny is an R package that makes it easy to build interactive web apps straight from R.
+  <meta name="description" content="Radiant - A shiny app for statistics and machine learning.
 " />
 
   <meta name="keywords" content="xiaonili, xiaonilee, xiaoni" />
@@ -64,24 +64,24 @@
 
 
 
-<meta property="og:title" content="Learn Shiny" />
-<meta property="og:description" content="Shiny is an R package that makes it easy to build interactive web apps straight from R." />
+<meta property="og:title" content="Learn Shiny: Building Shiny apps" />
+<meta property="og:description" content="Radiant - A shiny app for statistics and machine learning." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xiaonilee.github.io/post/shiny01/" />
 <meta property="article:published_time" content="2020-11-27T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-11-27T00:00:00+00:00" />
-<meta itemprop="name" content="Learn Shiny">
-<meta itemprop="description" content="Shiny is an R package that makes it easy to build interactive web apps straight from R.">
+<meta itemprop="name" content="Learn Shiny: Building Shiny apps">
+<meta itemprop="description" content="Radiant - A shiny app for statistics and machine learning.">
 <meta itemprop="datePublished" content="2020-11-27T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-11-27T00:00:00+00:00" />
-<meta itemprop="wordCount" content="19">
+<meta itemprop="wordCount" content="1020">
 
 
 
 <meta itemprop="keywords" content="R,Bioinformatics,Shiny,R Package," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Learn Shiny"/>
-<meta name="twitter:description" content="Shiny is an R package that makes it easy to build interactive web apps straight from R."/>
+<meta name="twitter:title" content="Learn Shiny: Building Shiny apps"/>
+<meta name="twitter:description" content="Radiant - A shiny app for statistics and machine learning."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -449,7 +449,7 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">Learn Shiny</h1>
+      <h1 class="post-title">Learn Shiny: Building Shiny apps</h1>
       
       <div class="post-meta">
         <time datetime="2020-11-27" class="post-time">
@@ -478,7 +478,21 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#in-summary">In summary</a></li>
+    <li><a href="#in-summary">In summary</a>
+      <ul>
+        <li><a href="#1-prerequisites">1. Prerequisites</a></li>
+        <li><a href="#2-shiny-app-basics">2. Shiny app basics</a></li>
+        <li><a href="#3-create-an-empty-shiny-app">3. Create an empty Shiny app</a></li>
+        <li><a href="#4-load-the-dataset">4. Load the dataset</a></li>
+        <li><a href="#5-bulid-the-basic-ui">5. Bulid the basic UI</a></li>
+        <li><a href="#6-add-inputs-to-the-ui">6. Add inputs to the UI</a></li>
+        <li><a href="#7-add-placeholders-for-outputs">7. Add placeholders for outputs</a></li>
+        <li><a href="#8-checkpoint-what-our-app-looks-like-after-implementing-the-ui">8. Checkpoint: what our app looks like after implementing the UI</a></li>
+        <li><a href="#9-implement-server-logic-to-create-outputs">9. Implement server logic to create outputs</a></li>
+        <li><a href="#10-reactivity-101">10. Reactivity 101</a></li>
+        <li><a href="#11-using-uioutput-to-create-ui-elements-dynamically">11. Using uiOutput() to create UI elements dynamically</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -486,8 +500,444 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p><a href="https://shiny.rstudio.com/">Shiny</a> is an R package that makes it easy to build interactive web apps straight from R.</p>
+      <p>Radiant - A shiny app for statistics and machine learning.</p>
 <h2 id="in-summary">In summary</h2>
+<h3 id="1-prerequisites">1. Prerequisites</h3>
+<ul>
+<li>Install <code>shiny</code> package:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">Install.packages</span><span class="p">(</span><span class="s">&#34;shiny&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>To ensure successfully installed Shiny:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
+<span class="nf">runExample</span><span class="p">(</span><span class="m">01</span><span class="n">_hello</span><span class="s">&#34;</span><span class="err">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="hello.png" alt="hello"></p>
+<h3 id="2-shiny-app-basics">2. Shiny app basics</h3>
+<ul>
+<li>
+<p><em><strong>UI</strong></em>: a web page, showing the app to the user.</p>
+<ul>
+<li>creating the layout of the app and telling Shiny exactly where things go.</li>
+</ul>
+</li>
+<li>
+<p><em><strong>server</strong></em>: a computer, powering the app.</p>
+<ul>
+<li>local laptop.</li>
+<li>server somewhere else.</li>
+<li>for the logic of the app.</li>
+<li>telling the web page what to show when the user interacts with the page.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-create-an-empty-shiny-app">3. Create an empty Shiny app</h3>
+<ul>
+<li>All Shiny apps follow the same template:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
+<span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">()</span>
+<span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="p">{}</span>
+<span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="alternate-way-to-create-a-shiny-app">Alternate way to create a Shiny app</h4>
+<ul>
+<li>separate UI file, ui.R.</li>
+<li>server file, server.R.</li>
+<li>Do not need to include the shinyApp(ui = ui, server = server) line.</li>
+<li>Put ui.R and server.R in the same folder.</li>
+</ul>
+<h4 id="let-rstudio-fill-out-a-shiny-app-template-for-you">Let RStudio fill out a Shiny app template for you</h4>
+<ul>
+<li>RStudio’s menu -&gt; selecting File -&gt; New File -&gt; Shiny Web App</li>
+</ul>
+<h3 id="4-load-the-dataset">4. Load the dataset</h3>
+<ul>
+<li>
+<p>Dataset from <a href="bcl-data.csv">BC Liquor Store</a>, which has been cleaned up and simplified.</p>
+</li>
+<li>
+<p>Load and verify the dataset.</p>
+<ul>
+<li>Place this line as the second line, just after <code>library(shiny)</code>.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">bcl</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#34;bcl-data.csv&#34;</span><span class="p">,</span> <span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">str</span><span class="p">(</span><span class="n">bcl</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="5-bulid-the-basic-ui">5. Bulid the basic UI</h3>
+<ul>
+<li>Add elements to the UI</li>
+</ul>
+<h4 id="51-add-plain-text-to-the-ui">5.1 Add plain text to the UI</h4>
+<ul>
+<li>render the text</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">fluidPage</span><span class="p">(</span><span class="s">&#34;BC Liquor Store&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="err">prices)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="52-add-formatted-text-and-other-html-elements">5.2 Add formatted text and other HTML elements</h4>
+<ul>
+<li>Try the <code>fluidPage()</code> function.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
+  <span class="nf">h1</span><span class="p">(</span><span class="s">&#34;BC Liquor Store&#34;</span><span class="p">),</span> 
+  <span class="s">&#34;BC&#34;</span><span class="p">,</span>
+  <span class="s">&#34;Liqqq&#34;</span><span class="p">,</span>
+  <span class="nf">br</span><span class="p">(),</span>
+  <span class="s">&#34;ssdse&#34;</span><span class="p">,</span>
+  <span class="nf">strong</span><span class="p">(</span><span class="s">&#34;prices&#34;</span><span class="p">),</span> 
+  <span class="nf">div</span><span class="p">(</span><span class="s">&#34;this is blue&#34;</span><span class="p">,</span> <span class="n">style</span> <span class="o">=</span> <span class="s">&#34;color:blue;&#34;</span><span class="p">),</span>
+  <span class="s">&#34;Why it is boring&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="fig1.png" alt="fig"></p>
+<h4 id="53-add-a-title">5.3 Add a title</h4>
+<ul>
+<li>Use <code>titlePanel()</code> function to set the &ldquo;official&rdquo; title of the web page.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">fluidPage</span><span class="p">(</span>
+  <span class="nf">titlePanel</span><span class="p">(</span><span class="s">&#34;BC Liquor Store prices&#34;</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="54-add-a-layout">5.4 Add a layout</h4>
+<ul>
+<li>
+<p>Use <code>sidebarLayout()</code> to add a simple structure.</p>
+<ul>
+<li>a smaller sidebar and a larger main panel.</li>
+</ul>
+</li>
+<li>
+<p>Add the following code after the <code>titlePanel()</code></p>
+<ul>
+<li>Remember that all the arguments inside <code>fluidPage()</code> need to be separated by commas.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">sidebarLayout</span><span class="p">(</span>
+  <span class="nf">sidebarPanel</span><span class="p">(</span><span class="s">&#34;our inputs will go here&#34;</span><span class="p">),</span>
+  <span class="nf">mainPanel</span><span class="p">(</span><span class="s">&#34;the results will go here&#34;</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="55-all-ui-functions-are-simply-html-wrappers">5.5 All UI functions are simply HTML wrappers</h4>
+<ul>
+<li>Look at the output when printing the contents of the ui variable.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">print</span><span class="p">(</span><span class="n">ui</span><span class="p">)</span>
+<span class="c1"># output</span>
+<span class="c1"># &lt;div class=&#34;container-fluid&#34;&gt;</span>
+<span class="c1">#   &lt;h2&gt;BC Liquor Store prices&lt;/h2&gt;</span>
+<span class="c1">#   &lt;div class=&#34;row&#34;&gt;</span>
+<span class="c1">#     &lt;div class=&#34;col-sm-4&#34;&gt;</span>
+<span class="c1">#       &lt;form class=&#34;well&#34;&gt;our inputs will go here&lt;/form&gt;</span>
+<span class="c1">#     &lt;/div&gt;</span>
+<span class="c1">#     &lt;div class=&#34;col-sm-8&#34;&gt;the results will go here&lt;/div&gt;</span>
+<span class="c1">#   &lt;/div&gt;</span>
+<span class="c1"># &lt;/div&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="6-add-inputs-to-the-ui">6. Add inputs to the UI</h3>
+<ul>
+<li>
+<p>Every input must have a unique inputId.</p>
+<ul>
+<li><code>textInput()</code> is used to let the user enter text,</li>
+<li><code>numericInput()</code> lets the user select a number,</li>
+<li><code>dateInput()</code> is for selecting a date,</li>
+<li><code>selectInput()</code> is for creating a select box (aka a dropdown menu).</li>
+</ul>
+</li>
+<li>
+<p>The only way to find out what arguments you can use with a specific input function is to look at its help file.</p>
+</li>
+</ul>
+<h4 id="61-input-for-price">6.1 Input for price</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">sliderInput</span><span class="p">(</span><span class="s">&#34;priceInput&#34;</span><span class="p">,</span> <span class="s">&#34;Price&#34;</span><span class="p">,</span> <span class="n">min</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="m">100</span><span class="p">,</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">40</span><span class="p">),</span> <span class="n">pre</span> <span class="o">=</span> <span class="s">&#34;$&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Place the code of <code>sliderInput()</code> inside <code>sidebarPanel()</code>, replace the text wrote earlier with this input(&ldquo;our inputs will go here&rdquo;).</li>
+</ul>
+<h4 id="62-input-for-product-type">6.2 Input for product type</h4>
+<ul>
+<li>Use radio buttons</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">radioButtons</span><span class="p">(</span><span class="s">&#34;typeInput&#34;</span><span class="p">,</span> <span class="s">&#34;Product type&#34;</span><span class="p">,</span>
+            <span class="n">choices</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;BEER&#34;</span><span class="p">,</span> <span class="s">&#34;REFRESHMENT&#34;</span><span class="p">,</span> <span class="s">&#34;SPIRITS&#34;</span><span class="p">,</span> <span class="s">&#34;WINE&#34;</span><span class="p">),</span>
+            <span class="n">selected</span> <span class="o">=</span> <span class="s">&#34;WINE&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Add this input code inside sidebarPanel(), after the previous input (separate them with a comma).</li>
+</ul>
+<h4 id="63-input-for-country">6.3 Input for country</h4>
+<ul>
+<li>Use select box.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">selectInput</span><span class="p">(</span><span class="s">&#34;countryInput&#34;</span><span class="p">,</span> <span class="s">&#34;Country&#34;</span><span class="p">,</span>
+            <span class="n">choices</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;CANADA&#34;</span><span class="p">,</span> <span class="s">&#34;FRANCE&#34;</span><span class="p">,</span> <span class="s">&#34;ITALY&#34;</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Continue to add this input code inside sidebarPanel(), after the previous input (separate them with a comma).</li>
+</ul>
+<h3 id="7-add-placeholders-for-outputs">7. Add placeholders for outputs</h3>
+<h4 id="71-output-for-a-plot-of-the-results">7.1 Output for a plot of the results</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">plotOutput</span><span class="p">(</span><span class="s">&#34;coolplot&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="72-output-for-a-table-summary-of-the-results">7.2 Output for a table summary of the results</h4>
+<ul>
+<li>Create a UI element that will hold a table output:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">tableOutput</span><span class="p">(</span><span class="s">&#34;result&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="8-checkpoint-what-our-app-looks-like-after-implementing-the-ui">8. Checkpoint: what our app looks like after implementing the UI</h3>
+<p><img src="fig2.png" alt="fig2"></p>
+<h3 id="9-implement-server-logic-to-create-outputs">9. Implement server logic to create outputs</h3>
+<ul>
+<li>
+<p>For listening to changes to the inputs and creating outputs to show in the app.</p>
+</li>
+<li>
+<p><code>input()</code></p>
+<ul>
+<li>a list you will read values <em><strong>from</strong></em>.</li>
+<li>contain the values of all the different inputs at any given time</li>
+</ul>
+</li>
+<li>
+<p><code>output()</code></p>
+<ul>
+<li>a list you will write values <em><strong>to</strong></em>.</li>
+<li>where you will save output objects (such as tables and plots) to display in your app.</li>
+</ul>
+</li>
+</ul>
+<h4 id="91-building-an-output">9.1 Building an output</h4>
+<ul>
+<li>
+<p>Three rules:</p>
+<ul>
+<li>Save the output object into the output list (remember the app template - every server function has an output argument)</li>
+<li>Build the object with a <code>render*</code> function, where <code>*</code> is the type of output</li>
+<li>Access input values using the input list (every server function has an input argument)</li>
+</ul>
+</li>
+<li>
+<p>Create a plot and send it to the coolplot output.</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">output</span><span class="o">$</span><span class="n">coolplot</span> <span class="o">&lt;-</span> <span class="nf">renderPlot</span><span class="p">({</span>
+    <span class="nf">plot</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">))</span>
+  <span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>Reload App and get output.</p>
+<p><img src="fig3.png" alt="fig3"></p>
+</li>
+</ul>
+<h4 id="92-making-an-output-react-to-an-input">9.2 Making an output react to an input</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">output</span><span class="o">$</span><span class="n">coolplot</span> <span class="o">&lt;-</span> <span class="nf">renderPlot</span><span class="p">({</span>
+    <span class="nf">plot</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">priceInput[1]</span><span class="p">))</span>
+  <span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>Reload App and get update.</p>
+<p><img src="fig4.png" alt="fig4"></p>
+</li>
+</ul>
+<h4 id="93-building-the-plot-output">9.3 Building the plot output</h4>
+<ul>
+<li>
+<p>first, a histogram of the whole data, unfiltered.
+<img src="fig5.png" alt="fig5"></p>
+</li>
+<li>
+<p>Use <code>dplyr()</code> function to filter the data and do histogram.
+<img src="fig6.png" alt="fig6">
+<img src="fig7.png" alt="fig7">
+<img src="fig8.png" alt="fig8"></p>
+</li>
+<li>
+<p>At this point, get the code
+<img src="fig9.png" alt="fig9"></p>
+</li>
+</ul>
+<h4 id="94-building-the-table-output">9.4 Building the table output</h4>
+<ul>
+<li>Use <code>renderTable()</code></li>
+</ul>
+<h3 id="10-reactivity-101">10. Reactivity 101</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">output</span><span class="o">$</span><span class="n">someoutput</span> <span class="o">&lt;-</span> <span class="nf">renderPlot</span><span class="p">({</span>
+  <span class="n">col</span> <span class="o">&lt;-</span> <span class="n">input</span><span class="o">$</span><span class="n">mycolour</span>
+  <span class="n">num</span> <span class="o">&lt;-</span> <span class="n">input</span><span class="o">$</span><span class="n">mynumber</span>
+  <span class="nf">plot</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="n">num</span><span class="p">),</span> <span class="n">col</span> <span class="o">=</span> <span class="n">col</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The above render function accesses two different inputs: <code>input$mycolour</code> and <code>input$mynumber</code>. This means that this code block depends on both of these variables, so whenever either one of the two inputs is updated, the code gets re-executed with the new input values and <code>output$someoutput</code> is updated.</p>
+<h4 id="101-creating-and-accessing-reactive-variables">10.1 Creating and accessing reactive variables</h4>
+<ul>
+<li><code>observe({})</code> and <code>reactive({})</code> functions in this section were just for learning purposes</li>
+</ul>
+<h4 id="102-using-reactive-variables-to-reduce-code-duplication">10.2 Using reactive variables to reduce code duplication</h4>
+<ul>
+<li>As a reminder, Shiny creates <em><strong>a dependency tree</strong></em> with all the <strong>reactive expressions</strong> to know what value depends on what other value.</li>
+</ul>
+<h3 id="11-using-uioutput-to-create-ui-elements-dynamically">11. Using uiOutput() to create UI elements dynamically</h3>
+<ul>
+<li>
+<p>Any input that you normally create in the UI is created when the app starts, and it cannot be changed.</p>
+</li>
+<li>
+<p>In the server, use <code>uiOutput()</code> to be able to create an input dynamically.</p>
+</li>
+</ul>
+<h4 id="111-basic-example-of-uioutput">11.1 Basic example of uiOutput()</h4>
     </div>
 
     
