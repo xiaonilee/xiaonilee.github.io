@@ -17,11 +17,13 @@ mathjax: true
 #     weight: 1
 ---
  
-Radiant - A shiny app for statistics and machine learning.
+Building an Shiny app - an interactive tutorial.
 
 <!--more-->
 
 ## In summary
+
+Learn to build an Shiny app step by step.
 
 ### 1. Prerequisites
 
