@@ -308,3 +308,179 @@ The above render function accesses two different inputs: `input$mycolour` and `i
 - In the server, use `uiOutput()` to be able to create an input dynamically.
 
 #### 11.1 Basic example of uiOutput()
+
+```r
+library(shiny)
+ui <- fluidPage(
+  numericInput("num", "Maximum slider value", 5),
+  uiOutput("slider")
+)
+
+server <- function(input, output) {
+  output$slider <- renderUI({
+    sliderInput("slider", "Slider", min = 0,
+                max = input$num, value = 2.5)
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+  ![fig10](fig10.png)
+
+#### 11.2 Use `uiOutput()` to populate the countries
+
+  ![fig11](fig11.png)
+
+#### 11.3 Errors showing up and quickly disappearing
+
+when the app initializes, filtered is trying to access the country input, but the country input hasn’t been created yet. After Shiny finishes loading fully and the country input is generated, filtered tries accessing it again, this time it’s successful, and the error goes away.
+
+#### 11.4 Use `uiOutput()` to add **subtypes**
+
+- In the ui, add code:
+
+```r
+uiOutput("subtypeOutput"),
+```
+
+- In the server, modify `reactive({})` by adding code:
+
+```r
+Subtype == input$subtypeInput,
+```
+
+  ![fig12](fig12.png)
+
+### 12. Final Shiny app code
+
+- see [code](app.R).
+
+### 13. Share apps with the world
+
+#### 13.1 Host on shinyapps.io
+
+- [shinyapps.io](https://xiaonilee.shinyapps.io/shiny01/)
+
+#### 13.2 Host on a Shiny Server
+
+- private Shiny serverc: DigitalOcean[(DO)](https://www.digitalocean.com/)
+
+- DO droplet. droplet = your machine in the cloud
+
+### 14. More Shiny features to check out
+
+#### 14.1 Shiny in Rmarkdown
+
+```r
+---
+output: html_document
+runtime: shiny
+---
+
+```{r echo=FALSE}
+sliderInput("num", "Choose a number",
+            0, 100, 20)
+
+renderPlot({
+    plot(seq(input$num))
+})
+```
+
+- Click `Knit` button
+
+  ![figrmd](figrmd.png)
+
+#### 14.2 Use `conditionalPanel()` to conditionally show UI elements
+
+```r
+library(shiny)
+ui <- fluidPage(
+  numericInput("num", "Number", 5, 1, 10),
+  conditionalPanel(
+    "input.num >=5",
+    "Hello!"
+  )
+)
+server <- function(input, output) {}
+shinyApp(ui = ui, server = server)
+```
+
+  ![fig13](fig13.png)
+
+#### 14.3 Use `navbarPage()` or `tabsetPanel()` to have multiple tabs in the UI
+
+```r
+library(shiny)
+ui <- fluidPage(
+  tabsetPanel(
+    tabPanel("Tab 1", "Hello"),
+    tabPanel("Tab 2", "there!")
+  )
+)
+server <- function(input, output) {}
+shinyApp(ui = ui, server = server)
+```
+
+  ![fig15](fig15.png)
+
+#### 14.4 Use DT for beautiful, interactive tables
+
+- In the DT package.
+- Use `DT::dataTableOutput()` + `DT::renderDataTable()` to replace `tableOutput()` + `renderTable()`
+
+#### 14.5 Use `isolate()` function to remove a dependency on a reactive variable
+
+- To suppress some of reactive variables
+- Cause a reactive variable to not be a dependency.
+- With `isolate()` to wrap the code
+
+#### 14.6 Use `update*Input()` functions to update input values programmatically
+
+```r
+library(shiny)
+ui <- fluidPage(
+  sliderInput("slider", "Move me", value = 5, 1, 10),
+  numericInput("num", "Number", value = 5, 1, 10)
+)
+server <- function(input, output, session) {
+  observe({
+    updateNumericInput(session, "num", value = 5*(input$slider))
+  })
+}
+shinyApp(ui = ui, server = server)
+```
+
+  ![fig16](fig16.png)
+
+#### 14.7 Scoping rules in Shiny apps
+
+#### 14.8 Use global.R to define objects available to both ui.R and server.R
+
+#### 14.9 Add images
+
+- Place an image under the "www/" folder
+- Use the UI function `img(src = "image.png")`
+
+#### 14.10 Add JavaScript/CSS
+
+```r
+library(shiny)
+ui <- fluidPage(
+  tags$head(tags$script("alert('Hello!');")),
+  tags$head(tags$style("body{ color: blue; }")),
+  "Hello"
+)
+server <- function(input, output) {
+  
+}
+shinyApp(ui = ui, server = server)
+```
+
+### 15. Awesome add-on packages to Shiny
+
+- shinyjs: Easily improve the user interaction and user experience in the Shiny apps in seconds.
+- shinythemes: Easily alter app appearance.
+- leaflet: Add interactive maps to apps.
+- ggvis: Similar to ggplot2, but the plots are focused on being web-based and are more interactive.
+- shinydashboard: Giving tools to create visual “dashboards”.

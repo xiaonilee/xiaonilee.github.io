@@ -74,7 +74,7 @@
 <meta itemprop="description" content="Radiant - A shiny app for statistics and machine learning.">
 <meta itemprop="datePublished" content="2020-11-27T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-11-27T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1020">
+<meta itemprop="wordCount" content="1565">
 
 
 
@@ -491,6 +491,10 @@ if (!doNotTrack) {
         <li><a href="#9-implement-server-logic-to-create-outputs">9. Implement server logic to create outputs</a></li>
         <li><a href="#10-reactivity-101">10. Reactivity 101</a></li>
         <li><a href="#11-using-uioutput-to-create-ui-elements-dynamically">11. Using uiOutput() to create UI elements dynamically</a></li>
+        <li><a href="#12-final-shiny-app-code">12. Final Shiny app code</a></li>
+        <li><a href="#13-share-apps-with-the-world">13. Share apps with the world</a></li>
+        <li><a href="#14-more-shiny-features-to-check-out">14. More Shiny features to check out</a></li>
+        <li><a href="#15-awesome-add-on-packages-to-shiny">15. Awesome add-on packages to Shiny</a></li>
       </ul>
     </li>
   </ul>
@@ -938,6 +942,262 @@ if (!doNotTrack) {
 </li>
 </ul>
 <h4 id="111-basic-example-of-uioutput">11.1 Basic example of uiOutput()</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
+<span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
+  <span class="nf">numericInput</span><span class="p">(</span><span class="s">&#34;num&#34;</span><span class="p">,</span> <span class="s">&#34;Maximum slider value&#34;</span><span class="p">,</span> <span class="m">5</span><span class="p">),</span>
+  <span class="nf">uiOutput</span><span class="p">(</span><span class="s">&#34;slider&#34;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">output</span><span class="o">$</span><span class="n">slider</span> <span class="o">&lt;-</span> <span class="nf">renderUI</span><span class="p">({</span>
+    <span class="nf">sliderInput</span><span class="p">(</span><span class="s">&#34;slider&#34;</span><span class="p">,</span> <span class="s">&#34;Slider&#34;</span><span class="p">,</span> <span class="n">min</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span>
+                <span class="n">max</span> <span class="o">=</span> <span class="n">input</span><span class="o">$</span><span class="n">num</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="m">2.5</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="fig10.png" alt="fig10"></p>
+<h4 id="112-use-uioutput-to-populate-the-countries">11.2 Use <code>uiOutput()</code> to populate the countries</h4>
+<p><img src="fig11.png" alt="fig11"></p>
+<h4 id="113-errors-showing-up-and-quickly-disappearing">11.3 Errors showing up and quickly disappearing</h4>
+<p>when the app initializes, filtered is trying to access the country input, but the country input hasn’t been created yet. After Shiny finishes loading fully and the country input is generated, filtered tries accessing it again, this time it’s successful, and the error goes away.</p>
+<h4 id="114-use-uioutput-to-add-subtypes">11.4 Use <code>uiOutput()</code> to add <strong>subtypes</strong></h4>
+<ul>
+<li>In the ui, add code:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">uiOutput</span><span class="p">(</span><span class="s">&#34;subtypeOutput&#34;</span><span class="p">),</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>In the server, modify <code>reactive({})</code> by adding code:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">Subtype</span> <span class="o">==</span> <span class="n">input</span><span class="o">$</span><span class="n">subtypeInput</span><span class="p">,</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="fig12.png" alt="fig12"></p>
+<h3 id="12-final-shiny-app-code">12. Final Shiny app code</h3>
+<ul>
+<li>see <a href="app.R">code</a>.</li>
+</ul>
+<h3 id="13-share-apps-with-the-world">13. Share apps with the world</h3>
+<h4 id="131-host-on-shinyappsio">13.1 Host on shinyapps.io</h4>
+<ul>
+<li><a href="https://xiaonilee.shinyapps.io/shiny01/">shinyapps.io</a></li>
+</ul>
+<h4 id="132-host-on-a-shiny-server">13.2 Host on a Shiny Server</h4>
+<ul>
+<li>
+<p>private Shiny serverc: DigitalOcean<a href="https://www.digitalocean.com/">(DO)</a></p>
+</li>
+<li>
+<p>DO droplet. droplet = your machine in the cloud</p>
+</li>
+</ul>
+<h3 id="14-more-shiny-features-to-check-out">14. More Shiny features to check out</h3>
+<h4 id="141-shiny-in-rmarkdown">14.1 Shiny in Rmarkdown</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="o">---</span>
+<span class="n">output</span><span class="o">:</span> <span class="n">html_document</span>
+<span class="n">runtime</span><span class="o">:</span> <span class="n">shiny</span>
+<span class="o">---</span>
+
+<span class="n">```</span><span class="p">{</span><span class="n">r</span> <span class="n">echo</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">}</span>
+<span class="nf">sliderInput</span><span class="p">(</span><span class="s">&#34;num&#34;</span><span class="p">,</span> <span class="s">&#34;Choose a number&#34;</span><span class="p">,</span>
+            <span class="m">0</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">20</span><span class="p">)</span>
+
+<span class="nf">renderPlot</span><span class="p">({</span>
+    <span class="nf">plot</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">num</span><span class="p">))</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>Click <code>Knit</code> button</p>
+<p><img src="figrmd.png" alt="figrmd"></p>
+</li>
+</ul>
+<h4 id="142-use-conditionalpanel-to-conditionally-show-ui-elements">14.2 Use <code>conditionalPanel()</code> to conditionally show UI elements</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
+<span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
+  <span class="nf">numericInput</span><span class="p">(</span><span class="s">&#34;num&#34;</span><span class="p">,</span> <span class="s">&#34;Number&#34;</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span>
+  <span class="nf">conditionalPanel</span><span class="p">(</span>
+    <span class="s">&#34;input.num &gt;=5&#34;</span><span class="p">,</span>
+    <span class="s">&#34;Hello!&#34;</span>
+  <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="p">{}</span>
+<span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="fig13.png" alt="fig13"></p>
+<h4 id="143-use-navbarpage-or-tabsetpanel-to-have-multiple-tabs-in-the-ui">14.3 Use <code>navbarPage()</code> or <code>tabsetPanel()</code> to have multiple tabs in the UI</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
+<span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
+  <span class="nf">tabsetPanel</span><span class="p">(</span>
+    <span class="nf">tabPanel</span><span class="p">(</span><span class="s">&#34;Tab 1&#34;</span><span class="p">,</span> <span class="s">&#34;Hello&#34;</span><span class="p">),</span>
+    <span class="nf">tabPanel</span><span class="p">(</span><span class="s">&#34;Tab 2&#34;</span><span class="p">,</span> <span class="s">&#34;there!&#34;</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="p">{}</span>
+<span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="fig15.png" alt="fig15"></p>
+<h4 id="144-use-dt-for-beautiful-interactive-tables">14.4 Use DT for beautiful, interactive tables</h4>
+<ul>
+<li>In the DT package.</li>
+<li>Use <code>DT::dataTableOutput()</code> + <code>DT::renderDataTable()</code> to replace <code>tableOutput()</code> + <code>renderTable()</code></li>
+</ul>
+<h4 id="145-use-isolate-function-to-remove-a-dependency-on-a-reactive-variable">14.5 Use <code>isolate()</code> function to remove a dependency on a reactive variable</h4>
+<ul>
+<li>To suppress some of reactive variables</li>
+<li>Cause a reactive variable to not be a dependency.</li>
+<li>With <code>isolate()</code> to wrap the code</li>
+</ul>
+<h4 id="146-use-updateinput-functions-to-update-input-values-programmatically">14.6 Use <code>update*Input()</code> functions to update input values programmatically</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
+<span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
+  <span class="nf">sliderInput</span><span class="p">(</span><span class="s">&#34;slider&#34;</span><span class="p">,</span> <span class="s">&#34;Move me&#34;</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span>
+  <span class="nf">numericInput</span><span class="p">(</span><span class="s">&#34;num&#34;</span><span class="p">,</span> <span class="s">&#34;Number&#34;</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">session</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">observe</span><span class="p">({</span>
+    <span class="nf">updateNumericInput</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="s">&#34;num&#34;</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="m">5</span><span class="o">*</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">slider</span><span class="p">))</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+<span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="fig16.png" alt="fig16"></p>
+<h4 id="147-scoping-rules-in-shiny-apps">14.7 Scoping rules in Shiny apps</h4>
+<h4 id="148-use-globalr-to-define-objects-available-to-both-uir-and-serverr">14.8 Use global.R to define objects available to both ui.R and server.R</h4>
+<h4 id="149-add-images">14.9 Add images</h4>
+<ul>
+<li>Place an image under the &ldquo;www/&rdquo; folder</li>
+<li>Use the UI function <code>img(src = &quot;image.png&quot;)</code></li>
+</ul>
+<h4 id="1410-add-javascriptcss">14.10 Add JavaScript/CSS</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
+<span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
+  <span class="n">tags</span><span class="o">$</span><span class="nf">head</span><span class="p">(</span><span class="n">tags</span><span class="o">$</span><span class="nf">script</span><span class="p">(</span><span class="s">&#34;alert(&#39;Hello!&#39;);&#34;</span><span class="p">)),</span>
+  <span class="n">tags</span><span class="o">$</span><span class="nf">head</span><span class="p">(</span><span class="n">tags</span><span class="o">$</span><span class="nf">style</span><span class="p">(</span><span class="s">&#34;body{ color: blue; }&#34;</span><span class="p">)),</span>
+  <span class="s">&#34;Hello&#34;</span>
+<span class="p">)</span>
+<span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="p">{</span>
+  
+<span class="p">}</span>
+<span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="15-awesome-add-on-packages-to-shiny">15. Awesome add-on packages to Shiny</h3>
+<ul>
+<li>shinyjs: Easily improve the user interaction and user experience in the Shiny apps in seconds.</li>
+<li>shinythemes: Easily alter app appearance.</li>
+<li>leaflet: Add interactive maps to apps.</li>
+<li>ggvis: Similar to ggplot2, but the plots are focused on being web-based and are more interactive.</li>
+<li>shinydashboard: Giving tools to create visual “dashboards”.</li>
+</ul>
     </div>
 
     

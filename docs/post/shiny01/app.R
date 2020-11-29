@@ -12,8 +12,10 @@ ui <- fluidPage(
       radioButtons("typeInput", "Product type",
                    choices = c("BEER", "REFRESHMENT", "SPIRITS", "WINE"),
                    selected = "WINE"),
-      selectInput("countryInput", "Country",
-                  choices = c("CANADA", "FRANCE", "ITALY")),
+      # selectInput("countryInput", "Country",
+      #             choices = c("CANADA", "FRANCE", "ITALY")),
+      uiOutput("subtypeOutput"),
+      uiOutput("countryOutput")
       # textInput("txt", "num of results found:",
       #           value = 100)
     ),
@@ -35,14 +37,24 @@ server <- function(input, output) {
   #   geom_histogram()
   # })
   filtered <- reactive({
+    if (is.null(input$countryInput)) {
+      return(NULL)
+    }
+    
     bcl %>%
       filter(Price >= input$priceInput[1],
              Price <= input$priceInput[2],
              Type == input$typeInput,
+             Subtype == input$subtypeInput,
              Country == input$countryInput
       )
   })
+  
   output$coolplot <- renderPlot({
+    if (is.null(filtered())) {
+      return()
+    }
+    
     ggplot(filtered(), aes(Alcohol_Content)) +
       geom_histogram()
   })
@@ -57,23 +69,18 @@ server <- function(input, output) {
 #     diff(input$priceInput)
 #   })
 #   observe({ print(priceDiff()) }) #use priceDiff() rather than priceDiff
+  output$subtypeOutput <- renderUI({
+    selectInput("subtypeInput", "Subtype",
+                sort(unique(bcl$Subtype)),
+                selected = "ICE WINE WHITE")
+  })
+  
+  output$countryOutput <- renderUI({
+    selectInput("countryInput", "Country",
+                sort(unique(bcl$Country)),
+                selected = "CANADA")
+  })
+  
+  
 }
 shinyApp(ui = ui, server = server)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
