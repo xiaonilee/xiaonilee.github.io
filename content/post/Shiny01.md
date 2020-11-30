@@ -64,14 +64,14 @@ server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 ```
 
-#### Alternate way to create a Shiny app
+#### 3.1 Alternate way to create a Shiny app
 
 - separate UI file, ui.R.
 - server file, server.R.
 - Do not need to include the shinyApp(ui = ui, server = server) line.
 - Put ui.R and server.R in the same folder.
 
-#### Let RStudio fill out a Shiny app template for you
+#### 3.2 Fill out a Shiny app template using RStudio
 
 - RStudio’s menu -> selecting File -> New File -> Shiny Web App
   
@@ -303,13 +303,13 @@ The above render function accesses two different inputs: `input$mycolour` and `i
 
 - As a reminder, Shiny creates ***a dependency tree*** with all the **reactive expressions** to know what value depends on what other value.
 
-### 11. Using uiOutput() to create UI elements dynamically
+### 11. Using `uiOutput()` to create UI elements dynamically
 
 - Any input that you normally create in the UI is created when the app starts, and it cannot be changed.
 
 - In the server, use `uiOutput()` to be able to create an input dynamically.
 
-#### 11.1 Basic example of uiOutput()
+#### 11.1 Basic example of `uiOutput()`
 
 ```r
 library(shiny)
@@ -360,11 +360,11 @@ Subtype == input$subtypeInput,
 
 ### 13. Share apps with the world
 
-#### 13.1 Host on shinyapps.io
+#### 13.1 Host on ***shinyapps.io***
 
 - [shinyapps.io](https://xiaonilee.shinyapps.io/shiny01/)
 
-#### 13.2 Host on a Shiny Server
+#### 13.2 Host on a ***Shiny Server***
 
 - private Shiny serverc: DigitalOcean[(DO)](https://www.digitalocean.com/)
 
@@ -426,9 +426,9 @@ shinyApp(ui = ui, server = server)
 
   ![fig15](fig15.png)
 
-#### 14.4 Use DT for beautiful, interactive tables
+#### 14.4 Use `DT` for beautiful, interactive tables
 
-- In the DT package.
+- In the `DT` package.
 - Use `DT::dataTableOutput()` + `DT::renderDataTable()` to replace `tableOutput()` + `renderTable()`
 
 #### 14.5 Use `isolate()` function to remove a dependency on a reactive variable
@@ -461,10 +461,10 @@ shinyApp(ui = ui, server = server)
 
 #### 14.9 Add images
 
-- Place an image under the "www/" folder
+- Place an image under the "**www/**" folder
 - Use the UI function `img(src = "image.png")`
 
-#### 14.10 Add JavaScript/CSS
+#### 14.10 Add `JavaScript`/`CSS`
 
 ```r
 library(shiny)
