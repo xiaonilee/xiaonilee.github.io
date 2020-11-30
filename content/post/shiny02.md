@@ -1,5 +1,5 @@
 ---
-title: "a Shiny app: kmeans clustering"
+title: "a Shiny Demo: kmeans clustering"
 date: 2020-11-30
 lastmod: 2020-11-30
 draft: false
@@ -17,7 +17,7 @@ mathjax: true
 #     weight: 1
 ---
  
-Recover a Shiny app - kmeans clustering.
+Recover a Shiny app demo - kmeans clustering.
 
 <!--more-->
 
