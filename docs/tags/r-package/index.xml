@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>Learn Shiny</title>
-      <link>https://xiaonilee.github.io/post/shiny/</link>
-      <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/post/shiny/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://shiny.rstudio.com/&#34;&gt;Shiny&lt;/a&gt; is an R package that makes it easy to build interactive web apps straight from R.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Learn Shiny: Building a Shiny app</title>
       <link>https://xiaonilee.github.io/post/shiny01/</link>
       <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>

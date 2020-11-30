@@ -2,7 +2,7 @@
 title: "Learn Shiny"
 date: 2020-11-27
 lastmod: 2020-11-27
-draft: false
+draft: true
 tags: ["R", "Bioinformatics", "Shiny", "R Package"]
 categories: ["R", "Bioinformatics", "R Package"]
 author: "Xiaoni"
