@@ -6,11 +6,7 @@
     <description>Recent content in R in Action on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Nov 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://xiaonilee.github.io/tags/r-in-action/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 25 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/r-in-action/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Book: R in Action</title>
       <link>https://xiaonilee.github.io/post/rinactionmap/</link>

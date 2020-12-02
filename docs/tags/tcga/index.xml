@@ -6,11 +6,7 @@
     <description>Recent content in TCGA on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Nov 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://xiaonilee.github.io/tags/tcga/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 25 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/tcga/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GSCALite: Gene Set Cancer Analysis</title>
       <link>https://xiaonilee.github.io/post/gscalite/</link>
