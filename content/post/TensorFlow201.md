@@ -26,4 +26,9 @@ TensorFlow2 notebook: Class1 神经网络计算.
 - 神经网络实现Iris分类
 - `TensorFlow2` + `Python3.7`
 
+  [![fig1](fig1.png)](https://gist.github.com/xiaonilee/21ae6f7458dea138862c01373ee7aeb0)
+
 {{< gist 21ae6f7458dea138862c01373ee7aeb0 >}}
+
+  
+  
