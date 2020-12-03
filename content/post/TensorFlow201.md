@@ -1,5 +1,5 @@
 ---
-title: "TensorFlow2: Iris"
+title: "TensorFlow2 class1: Iris"
 date: 2020-12-02
 lastmod: 2020-12-02
 draft: false
@@ -28,7 +28,7 @@ TensorFlow2 notebook: Class1 神经网络计算.
 
   [![fig1](fig1.png)](https://gist.github.com/xiaonilee/21ae6f7458dea138862c01373ee7aeb0)
 
-{{< gist 21ae6f7458dea138862c01373ee7aeb0 >}}
+{{< gist a3453dcb8502f776931f21120c8d8b70 >}}
 
   
   
