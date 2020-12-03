@@ -6,7 +6,16 @@
     <description>Recent content in TensorFlow2 on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/tensorflow2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/tensorflow2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TensorFlow2 class2: 数据网络优化</title>
+      <link>https://xiaonilee.github.io/post/tensorflow202/</link>
+      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/tensorflow202/</guid>
+      <description>&lt;p&gt;TensorFlow2 notebook: Class2 神经网络优化.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>TensorFlow2 class1: Iris</title>
       <link>https://xiaonilee.github.io/post/tensorflow201/</link>
