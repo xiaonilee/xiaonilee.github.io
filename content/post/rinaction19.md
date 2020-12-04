@@ -48,7 +48,7 @@ Notebook of Reading Books: R in Action_Chapter 19.
 - Figure 19.3. A scatterplot showing the relationship between horsepower and gas mileage separately for transmission and engine type. 
   - The number of cylinders in each automobile engine is represented by both shape and color.
 
-  ![fig193](fig193.png)
+  ![fig193](xxfig193.png)
 
 ### 19.3. Specifying the plot type with geoms
 
@@ -87,7 +87,7 @@ Notebook of Reading Books: R in Action_Chapter 19.
   - Academic rank is represented by color, 
   - and sex is represented by shape.
 
-  ![fig199](fig199.png)
+  ![fig199](fig199.png)hugo 
 
 - Figure 19.10. Three versions of a grouped bar chart. 
   - Each displays the number of professors by academic rank and sex.
