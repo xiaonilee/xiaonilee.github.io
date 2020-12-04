@@ -27,8 +27,9 @@ TensorFlow2 notebook: Class1 神经网络计算.
 - `TensorFlow2` + `Python3.7`
 
   [![fig1](fig1.png)](https://gist.github.com/xiaonilee/a3453dcb8502f776931f21120c8d8b70)
+  ![fig2](fig2.png)
 
 {{< gist a3453dcb8502f776931f21120c8d8b70 >}}
 
-  
+
   
