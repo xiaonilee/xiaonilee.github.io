@@ -81,7 +81,7 @@ Notebook of Reading Books: R in Action_Chapter 19.
 
 - Figure 19.8. Density plots of university salaries, grouped by academic rank.
   
-  ![fig198](fig198.png)
+  ![fig198](sfxig198.png)
 
 - Figure 19.9. Scatterplot of years since graduation and salary. 
   - Academic rank is represented by color, 
