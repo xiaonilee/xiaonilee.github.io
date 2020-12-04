@@ -26,3 +26,5 @@ Recover a Shiny app demo - kmeans clustering.
 - Go through the kmeans example from shiny.rstudio.
 
 - Recover with the [code](app.R) and publish it on [shinyapps.io](https://xiaonilee.shinyapps.io/shiny02/).
+
+  ![fig1](fig1.png)
