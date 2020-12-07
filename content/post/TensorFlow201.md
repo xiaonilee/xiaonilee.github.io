@@ -1,7 +1,7 @@
 ---
 title: "TensorFlow2 class1: Iris"
 date: 2020-12-02
-lastmod: 2020-12-02
+lastmod: 2020-12-07
 draft: false
 tags: ["TensorFlow2", "ML"]
 categories: ["TensorFlow2", "ML", "big data"]
@@ -24,7 +24,7 @@ TensorFlow2 notebook: Class1 神经网络计算.
 ## In summary
 
 - 神经网络实现Iris分类
-- `TensorFlow2` + `Python3.7`
+- `TensorFlow2.3.0` + `Python3.6.9`
 
   [![fig1](fig1.png)](https://gist.github.com/xiaonilee/92768a4f7c91fc7553e58f1b2a7e02d5)
   [![fig2](fig2.png)](https://gist.github.com/xiaonilee/92768a4f7c91fc7553e58f1b2a7e02d5)

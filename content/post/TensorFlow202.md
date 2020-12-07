@@ -1,7 +1,7 @@
 ---
 title: "TensorFlow2 class2: 数据网络优化"
 date: 2020-12-03
-lastmod: 2020-12-03
+lastmod: 2020-12-07
 draft: false
 tags: ["TensorFlow2", "ML"]
 categories: ["TensorFlow2", "ML", "big data"]
