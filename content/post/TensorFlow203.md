@@ -1,7 +1,7 @@
 ---
 title: "TensorFlow2 class3: 神经网络八股"
 date: 2020-12-07
-lastmod: 2020-12-07
+lastmod: 2020-12-08
 draft: false
 tags: ["TensorFlow2", "ML"]
 categories: ["TensorFlow2", "ML", "big data"]
@@ -28,6 +28,8 @@ TensorFlow2 notebook: Class3 神经网络八股.
 - MNIST数据集
 - FASHION数据集
 
-[![fig1](fig1.png)](https://gist.github.com/xiaonilee/d2854ec53cfb4c8797006393af95c1f8)
+[![fig4](fig4.png)](https://gist.github.com/xiaonilee/2c2cc1f3da7560dd605184f24ea5c3bb)
 
-{{< gist gist-dash >}}
+[![fig5](fig5.png)](https://gist.github.com/xiaonilee/2c2cc1f3da7560dd605184f24ea5c3bb)
+
+{{< gist 2c2cc1f3da7560dd605184f24ea5c3bb >}}
