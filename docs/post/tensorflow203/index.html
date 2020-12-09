@@ -74,7 +74,7 @@
 <meta itemprop="description" content="TensorFlow2 notebook: Class3 神经网络八股.">
 <meta itemprop="datePublished" content="2020-12-07T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-12-08T00:00:00+00:00" />
-<meta itemprop="wordCount" content="61">
+<meta itemprop="wordCount" content="743">
 
 
 
@@ -513,10 +513,136 @@ if (!doNotTrack) {
       <p>TensorFlow2 notebook: Class3 神经网络八股.</p>
 <h2 id="in-summary">In summary</h2>
 <ul>
-<li>搭建神经网络八股sequential</li>
-<li>搭建神经网络八股class</li>
-<li>MNIST数据集</li>
-<li>FASHION数据集</li>
+<li>
+<p>搭建神经网络八股sequential</p>
+<ul>
+<li><strong>6步法</strong>搭建神经网络(也是提纲):
+<ul>
+<li>3.1.1 用TensorFlow API: tf.keras搭建网络八股
+<ul>
+<li>import
+<ul>
+<li>所需模块</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3.1.2 指定train和test的特征以及标签(也可以将test数据集在第5步fit中指定)</li>
+<li>3.1.3 model = tf.keras.models.Sequential
+<ul>
+<li>Sequential([<strong>一个封装从输入层到输出层网络结构的容器</strong>])中执行</li>
+<li>搭建网络结构, 逐层网络进行描述，equal前向传播</li>
+</ul>
+</li>
+<li>3.1.4 model.compile，配置神经网络的训练方法
+<ul>
+<li>compile()中执行</li>
+<li>所选optimizer优化器</li>
+<li>所选loss函数</li>
+<li>所选metrics评测指标, acc</li>
+</ul>
+</li>
+<li>3.1.5 model.fit()
+<ul>
+<li>fit()中执行</li>
+<li>train, test的输入特征和标签</li>
+<li>选定每次喂入神经网络的batch_size数目</li>
+<li>选定epochs数目</li>
+<li>validation_split</li>
+<li>validation_freq: 多少次epoch测试集验证一次准确率</li>
+</ul>
+</li>
+<li>3.1.6 model.summary
+<ul>
+<li>summary()中执行</li>
+<li>打印网络结构和参数统计</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>搭建神经网络八股class</p>
+<ul>
+<li>带有跳连的非顺序网络结构
+<ul>
+<li><code>class MyModel(Model) model=MyModel</code> 进行封装</li>
+<li><code>class MyModel(Model)</code>
+<ul>
+<li>括号中的Model继承了TensorFlow中的Model类</li>
+<li><code>def init(self)</code>: super(MyModel, self).init(),定义网络结构块</li>
+<li><code>def call(self,x)</code>: 调用网络结构块，实现前向传播 return y</li>
+</ul>
+</li>
+<li><code>model = MyModel()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>MNIST数据集</p>
+<ul>
+<li>像素点灰度值数据</li>
+<li>由7万张(28x28) 像素点的0~9手写数字图片和标签构成, 其中
+<ul>
+<li>6万张作为训练集</li>
+<li>1万张作为测试集</li>
+</ul>
+</li>
+<li>导入数据集</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">mnist</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">mnist</span>
+<span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span> <span class="p">,</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>将数据拉伸为一维数组(共计<strong>28x28=784</strong>个数值), 作为输入特征，输入神经网络</li>
+</ul>
+</li>
+<li>
+<p>FASHION数据集</p>
+<ul>
+<li>像素点灰度值数据</li>
+<li>由7万张(28x28) 像素点的衣裤图片和标签构成, 其中
+<ul>
+<li>6万张作为训练集</li>
+<li>1万张作为测试集</li>
+</ul>
+</li>
+<li>标签Label, 有10类:
+0 T-shirt/top
+1 Trouser
+2 Pullover
+3 Dress
+4 Coat
+5 Sandal
+6 Shirt
+7 Sneaker
+8 Bag
+9 Ankle boot</li>
+<li>导入数据集</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">fashion</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">fashion_mnist</span>
+<span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span> <span class="p">,</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">fashion</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>将数据拉伸为一维数组(共计28x28=784个数值), 作为输入特征，输入神经网络</li>
+</ul>
+</li>
 </ul>
 <p><a href="https://gist.github.com/xiaonilee/2c2cc1f3da7560dd605184f24ea5c3bb"><img src="fig4.png" alt="fig4"></a></p>
 <p><a href="https://gist.github.com/xiaonilee/2c2cc1f3da7560dd605184f24ea5c3bb"><img src="fig5.png" alt="fig5"></a></p>

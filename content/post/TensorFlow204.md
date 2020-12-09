@@ -1,7 +1,7 @@
 ---
 title: "TensorFlow2 class4: 网络八股扩展"
 date: 2020-12-08
-lastmod: 2020-12-08
+lastmod: 2020-12-09
 draft: false
 tags: ["TensorFlow2", "ML"]
 categories: ["TensorFlow2", "ML", "big data"]
