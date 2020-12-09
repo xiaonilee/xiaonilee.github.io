@@ -96,6 +96,10 @@ TensorFlow2 notebook: Class3 神经网络八股.
 
   - 将数据拉伸为一维数组(共计28x28=784个数值), 作为输入特征，输入神经网络
 
+Attach is the file of [TensorFlow2class3.ipynb](TensorFlow2class3.ipynb).
+
+Show me the code <i class="far fa-hand-point-down"></i>
+
 [![fig4](fig4.png)](https://gist.github.com/xiaonilee/2c2cc1f3da7560dd605184f24ea5c3bb)
 
 [![fig5](fig5.png)](https://gist.github.com/xiaonilee/2c2cc1f3da7560dd605184f24ea5c3bb)

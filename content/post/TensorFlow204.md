@@ -117,6 +117,10 @@ tf.keras.preprocessing.image.ImageDataGenerator()
   result = model.predict(x_predict)
   ```
 
+Attach is the file of [TensorFlow2class4.ipynb](TensorFlow2class4.ipynb).
+
+Show me the code <i class="far fa-hand-point-down"></i>
+
 [![fig](fig1.png)](https://gist.github.com/xiaonilee/65f56d831a260679125da6e54872af00)
 
 {{< gist 65f56d831a260679125da6e54872af00 >}}

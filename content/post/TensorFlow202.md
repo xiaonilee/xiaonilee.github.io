@@ -105,6 +105,10 @@ TensorFlow2 notebook: Class2 神经网络优化.
     - RMSProp，SGD基础上增加二阶动量
     - Adam, 同时结合SGDM一阶动量和RMSProp二阶动量
 
+Attach is the file of [TensorFlow2class2.ipynb](TensorFlow2class2.ipynb).
+
+Show me the code <i class="far fa-hand-point-down"></i>
+
 [![fig1](fig1.png)](https://gist.github.com/xiaonilee/d2854ec53cfb4c8797006393af95c1f8)
 
 {{< gist d2854ec53cfb4c8797006393af95c1f8 >}}

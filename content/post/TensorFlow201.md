@@ -1,7 +1,7 @@
 ---
 title: "TensorFlow2 class1: Iris"
 date: 2020-12-02
-lastmod: 2020-12-07
+lastmod: 2020-12-09
 draft: false
 tags: ["TensorFlow2", "ML"]
 categories: ["TensorFlow2", "ML", "big data"]
@@ -23,8 +23,43 @@ TensorFlow2 notebook: Class1 神经网络计算.
 
 ## In summary
 
-- 神经网络实现Iris分类
 - `TensorFlow2.3.0` + `Python3.6.9`
+- 人工智能三学派
+  - 行为主义
+  - 符号主义
+  - 连接主义
+    - 神经网络
+    - 计算机仿真神经网络连接关系
+      - 准备数据:'特征-标签'数据
+      - 搭建网络:神经网络结构
+      - 优化参数:训练网络获取最佳参数
+      - 应用网络:输出分类，或输出预测结果
+
+- 神经网络设计过程
+  - 分类目标:
+    - 0狗尾草Iris
+    - 1杂色Iris: 花萼长>花萼宽 and 花瓣长/花瓣宽>2
+    - 2弗吉尼亚Iris
+  - 采集大量数据对作为数据集: 输入特征(花萼长，花萼宽，花瓣长，花瓣宽), 人工标定的标签(对应的类别)
+  - 将已有数据集喂入搭建好的神经网络结构
+  - 随机初始化所有参数, 然后反向传播进行网络优化参数,得到模型
+    - 损失函数输出最小(预测值与标准答案之间的差距)，得到所有的最优参数
+      - 梯度下降法
+        - 设置合适的学习率(超参数): 不可以过大或者过小
+  - 读入新输入特征(待测)
+  - 输出识别结果: 所属分类
+
+- 张量生成
+
+- 常用函数
+
+- Iris 数据集读入
+
+- 神经网络实现iris分类
+
+Attach is the file of [TensorFlow2class1.ipynb](TensorFlow2class1.ipynb).
+
+Show me the code <i class="far fa-hand-point-down"></i>
 
   [![fig1](fig1.png)](https://gist.github.com/xiaonilee/92768a4f7c91fc7553e58f1b2a7e02d5)
   [![fig2](fig2.png)](https://gist.github.com/xiaonilee/92768a4f7c91fc7553e58f1b2a7e02d5)
