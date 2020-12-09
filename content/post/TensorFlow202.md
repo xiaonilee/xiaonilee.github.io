@@ -100,7 +100,7 @@ TensorFlow2 notebook: Class2 神经网络优化.
     - 二阶动量:与梯度平方相关的函数
   - 优化器
     - SGD(无momentum), 常用的梯度下降法
-    - SGDM(含momentum的SGD), 在SGD基础上增加一阶动量·
+    - SGDM(含momentum的SGD), 在SGD基础上增加一阶动量
     - Adagrad，在SGD基础上增加二阶动量
     - RMSProp，SGD基础上增加二阶动量
     - Adam, 同时结合SGDM一阶动量和RMSProp二阶动量
