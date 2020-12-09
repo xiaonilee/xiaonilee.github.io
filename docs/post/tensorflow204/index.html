@@ -74,7 +74,7 @@
 <meta itemprop="description" content="TensorFlow2 notebook: Class4: 网络八股扩展.">
 <meta itemprop="datePublished" content="2020-12-08T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-12-08T00:00:00+00:00" />
-<meta itemprop="wordCount" content="56">
+<meta itemprop="wordCount" content="718">
 
 
 
@@ -513,17 +513,204 @@ if (!doNotTrack) {
       <p>TensorFlow2 notebook: Class4: 网络八股扩展.</p>
 <h2 id="in-summary">In summary</h2>
 <ul>
-<li>搭建网络八股纵览</li>
-<li>自制数据集</li>
-<li>数据增强</li>
-<li>断点续训</li>
-<li>参数提取</li>
-<li>acc&amp;loss可视化</li>
-<li>给图识物</li>
+<li>
+<p>搭建网络八股总览</p>
+<ul>
+<li>自制数据集，解决本领域应用
+<ul>
+<li>将自己本领域的数据和标签赋值给<code>x_train</code>, <code>y_train</code>, <code>x_test</code>, <code>y_test</code></li>
 </ul>
-<p><a href="https://gist.github.com/xiaonilee/2c2cc1f3da7560dd605184f24ea5c3bb"><img src="fig4.png" alt="fig"></a></p>
-<p><a href="https://gist.github.com/xiaonilee/2c2cc1f3da7560dd605184f24ea5c3bb"><img src="fig5.png" alt="fig"></a></p>
-<script type="text/javascript" src="http://gist.github.com/2c2cc1f3da7560dd605184f24ea5c3bb.js"></script>
+</li>
+<li>数据增强，扩充数据集
+<ul>
+<li>数据增强的代码: 数据量过少</li>
+</ul>
+</li>
+<li>断点续训，存取模型
+<ul>
+<li>断点续训的代码, 实时保存最优模型, 从而无需总是从零开始训练模型</li>
+</ul>
+</li>
+<li>参数提取的代码, 将参数存入文本</li>
+<li>acc/loss曲线绘制的代码, 可视化训练效果</li>
+<li>应用程序, 给图识物</li>
+</ul>
+</li>
+<li>
+<p>自制数据集</p>
+<ul>
+<li>替代<strong>TensorFlow</strong>中自带函数<code>.load_data()</code></li>
+</ul>
+</li>
+<li>
+<p>数据增强</p>
+<ul>
+<li>TensorFlow中的数据增强函数</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">ImageDataGenerator</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>调整函数中的参数</p>
+<ul>
+<li><code>rescale=</code> 所有数据将乘以该数值</li>
+<li><code>rotation_range=</code>  随机旋转角度数范围</li>
+<li><code>width_shift_range=</code> 随机宽度偏移量</li>
+<li><code>height_shift_range=</code> 随机高度偏移量</li>
+<li><code>horizontal_flip=</code> 是否随机水平翻转</li>
+<li><code>zoom_range=</code> 随机缩放的范围[1-n，1+n]</li>
+</ul>
+</li>
+<li>
+<p>断点续训</p>
+<ul>
+<li>
+<p>读取模型</p>
+<ul>
+<li>TensorFlow中函数<code>model.load_weights(路径文件名)</code>,读取已有模型参数</li>
+</ul>
+</li>
+<li>
+<p>保存模型</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">cp_callback</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">callbacks</span><span class="o">.</span><span class="n">ModelCheckpoint</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>结果保存在checkpoint文件夹中
+<ul>
+<li><a href="checkpoint">checkpoint</a></li>
+<li><a href="mnist.ckpt.data-00000-of-00001">mnist.ckpt.data-00000-of-00001</a></li>
+<li><a href="mnist.ckpt.index">mnist.ckpt.index</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>继续从上次模型训练结果进行</p>
+</li>
+<li>
+<p>生成的<code>checkpoint</code>文件夹中存放的就是模型参数</p>
+</li>
+</ul>
+</li>
+<li>
+<p>参数提取</p>
+<ul>
+<li>
+<p>提取可训练参数</p>
+<ul>
+<li>model.trainable_variables 返回模型中可训练的参数</li>
+</ul>
+</li>
+<li>
+<p>设置print输出格式</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="err">超过多少省略显示</span><span class="p">)</span>
+<span class="n">threshold</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf表示无限大</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>for loop将所有可训练的参数存入到<a href="weights.txt">weights.txt</a>文件中</p>
+</li>
+</ul>
+</li>
+<li>
+<p>acc&amp;loss可视化</p>
+<ul>
+<li>
+<p>history:</p>
+<ul>
+<li>训练集loss: loss</li>
+<li>测试集loss: val_loss</li>
+<li>训练集准确率: sparse_categorical_accuracy</li>
+<li>测试集准确率: val_sparse_categorical_accuracy</li>
+</ul>
+</li>
+<li>
+<p>history.history从model.fit中提取</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">acc</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;sparse_categorical_accuracy&#39;</span><span class="p">]</span>
+<span class="n">val_acc</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_sparse_categorical_accuracy&#39;</span><span class="p">]</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span>
+<span class="n">val_loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>给图识物</p>
+<ul>
+<li>
+<p>复现模型</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span> 
+<span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax’)])</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>加载保存在checkpoint文件中的参数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">model</span><span class="o">.</span><span class="n">load_weights</span><span class="p">(</span><span class="n">model_save_path</span><span class="p">)</span><span class="err">`</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>预测结果</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_predict</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p><a href="https://gist.github.com/xiaonilee/65f56d831a260679125da6e54872af00"><img src="fig1.png" alt="fig"></a></p>
+<script type="text/javascript" src="http://gist.github.com/65f56d831a260679125da6e54872af00.js"></script>
     </div>
 
     
