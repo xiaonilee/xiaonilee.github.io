@@ -219,6 +219,10 @@ if (!doNotTrack) {
               </li>
             
               <li>
+                <a href="https://xiaonilee.github.io/post/tensorflow205/">TensorFlow2 class5: 卷积神经网络</a>
+              </li>
+            
+              <li>
                 <a href="https://xiaonilee.github.io/post/tissgdb/">TissGDB: tissue-specific gene database in cancer</a>
               </li>
             
@@ -435,6 +439,10 @@ if (!doNotTrack) {
               </li>
             
               <li>
+                <a href="https://xiaonilee.github.io/post/tensorflow205/">TensorFlow2 class5: 卷积神经网络</a>
+              </li>
+            
+              <li>
                 <a href="https://xiaonilee.github.io/post/tissgdb/">TissGDB: tissue-specific gene database in cancer</a>
               </li>
             
@@ -502,7 +510,14 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#in-summary">In summary</a></li>
+    <li><a href="#in-summary">In summary</a>
+      <ul>
+        <li><a href="#搭建神经网络八股sequential">搭建神经网络八股sequential</a></li>
+        <li><a href="#搭建神经网络八股class">搭建神经网络八股class</a></li>
+        <li><a href="#mnist数据集">MNIST数据集</a></li>
+        <li><a href="#fashion数据集">FASHION数据集</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -512,9 +527,7 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>TensorFlow2 notebook: Class3 神经网络八股.</p>
 <h2 id="in-summary">In summary</h2>
-<ul>
-<li>
-<p>搭建神经网络八股sequential</p>
+<h3 id="搭建神经网络八股sequential">搭建神经网络八股sequential</h3>
 <ul>
 <li><strong>6步法</strong>搭建神经网络(也是提纲):
 <ul>
@@ -561,9 +574,7 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p>搭建神经网络八股class</p>
+<h3 id="搭建神经网络八股class">搭建神经网络八股class</h3>
 <ul>
 <li>带有跳连的非顺序网络结构
 <ul>
@@ -579,9 +590,7 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p>MNIST数据集</p>
+<h3 id="mnist数据集">MNIST数据集</h3>
 <ul>
 <li>像素点灰度值数据</li>
 <li>由7万张(28x28) 像素点的0~9手写数字图片和标签构成, 其中
@@ -605,9 +614,7 @@ if (!doNotTrack) {
 </div><ul>
 <li>将数据拉伸为一维数组(共计<strong>28x28=784</strong>个数值), 作为输入特征，输入神经网络</li>
 </ul>
-</li>
-<li>
-<p>FASHION数据集</p>
+<h3 id="fashion数据集">FASHION数据集</h3>
 <ul>
 <li>像素点灰度值数据</li>
 <li>由7万张(28x28) 像素点的衣裤图片和标签构成, 其中
@@ -641,8 +648,6 @@ if (!doNotTrack) {
 </div>
 </div><ul>
 <li>将数据拉伸为一维数组(共计28x28=784个数值), 作为输入特征，输入神经网络</li>
-</ul>
-</li>
 </ul>
 <p>Attach is the file of <a href="TensorFlow2class3.ipynb">TensorFlow2class3.ipynb</a>, or view it via the <a href="https://colab.research.google.com/drive/12MY9fU_I2cXfFsq9mJ0Td0RdnooKLDg2?usp=sharing">link</a>.</p>
 <p>Show me the code <i class="far fa-hand-point-down"></i></p>

@@ -219,6 +219,10 @@ if (!doNotTrack) {
               </li>
             
               <li>
+                <a href="https://xiaonilee.github.io/post/tensorflow205/">TensorFlow2 class5: 卷积神经网络</a>
+              </li>
+            
+              <li>
                 <a href="https://xiaonilee.github.io/post/tissgdb/">TissGDB: tissue-specific gene database in cancer</a>
               </li>
             
@@ -435,6 +439,10 @@ if (!doNotTrack) {
               </li>
             
               <li>
+                <a href="https://xiaonilee.github.io/post/tensorflow205/">TensorFlow2 class5: 卷积神经网络</a>
+              </li>
+            
+              <li>
                 <a href="https://xiaonilee.github.io/post/tissgdb/">TissGDB: tissue-specific gene database in cancer</a>
               </li>
             
@@ -502,7 +510,16 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#in-summary">In summary</a></li>
+    <li><a href="#in-summary">In summary</a>
+      <ul>
+        <li><a href="#预备知识">预备知识</a></li>
+        <li><a href="#神经网络复杂度">神经网络复杂度</a></li>
+        <li><a href="#激活函数">激活函数</a></li>
+        <li><a href="#缓解过拟合">缓解<strong>过拟合</strong></a></li>
+        <li><a href="#损失函数">损失函数</a></li>
+        <li><a href="#优化器更新网络参数"><strong>优化器</strong>更新网络参数</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -512,9 +529,7 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>TensorFlow2 notebook: Class2 神经网络优化.</p>
 <h2 id="in-summary">In summary</h2>
-<ul>
-<li>
-<p>预备知识</p>
+<h3 id="预备知识">预备知识</h3>
 <ul>
 <li><code>tf.where(条件语句, 真返回A, 假返回B)</code></li>
 <li><code>np.random.RandomState.rand()</code>, 返回一个[0,1)之间的随机数</li>
@@ -523,9 +538,7 @@ if (!doNotTrack) {
 <li><code>.ravel()</code>, 将x变为一维数组，把.前变量拉直</li>
 <li><code>np.c_[]</code>, 使得返回的间隔数值点配对</li>
 </ul>
-</li>
-<li>
-<p>神经网络复杂度</p>
+<h3 id="神经网络复杂度">神经网络复杂度</h3>
 <ul>
 <li>神经网络(NN)复杂度:多用NN层数和NN参数的个数表示
 <ul>
@@ -539,9 +552,7 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p>激活函数</p>
+<h3 id="激活函数">激活函数</h3>
 <ul>
 <li>
 <p>非线性函数</p>
@@ -582,9 +593,7 @@ if (!doNotTrack) {
 </div>
 </div></li>
 </ul>
-</li>
-<li>
-<p>缓解<strong>过拟合</strong></p>
+<h3 id="缓解过拟合">缓解<strong>过拟合</strong></h3>
 <ul>
 <li>欠拟合, 学习不够彻底
 <ul>
@@ -602,9 +611,7 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p>损失函数</p>
+<h3 id="损失函数">损失函数</h3>
 <ul>
 <li>
 <p>预测值(y)与已知答案(y_)的差距</p>
@@ -655,9 +662,7 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p><strong>优化器</strong>更新网络参数</p>
+<h3 id="优化器更新网络参数"><strong>优化器</strong>更新网络参数</h3>
 <ul>
 <li>待优化参数𝒘, 损失函数loss, 学习率𝒍r, 每次迭代一个batch(2^n), t表示当前batch迭代的总次数.
 <ul>
@@ -672,8 +677,6 @@ if (!doNotTrack) {
 <li>Adagrad，在SGD基础上增加二阶动量</li>
 <li>RMSProp，SGD基础上增加二阶动量</li>
 <li>Adam, 同时结合SGDM一阶动量和RMSProp二阶动量</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>

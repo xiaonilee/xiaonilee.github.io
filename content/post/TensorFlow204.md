@@ -23,22 +23,22 @@ TensorFlow2 notebook: Class4: 网络八股扩展.
 
 ## In summary
 
-- 搭建网络八股总览
-  - 自制数据集，解决本领域应用
-    - 将自己本领域的数据和标签赋值给`x_train`, `y_train`, `x_test`, `y_test`
-  - 数据增强，扩充数据集
-    - 数据增强的代码: 数据量过少
-  - 断点续训，存取模型
-    - 断点续训的代码, 实时保存最优模型, 从而无需总是从零开始训练模型
-  - 参数提取的代码, 将参数存入文本
-  - acc/loss曲线绘制的代码, 可视化训练效果
-  - 应用程序, 给图识物
+### 搭建网络八股总览
+- 自制数据集，解决本领域应用
+  - 将自己本领域的数据和标签赋值给`x_train`, `y_train`, `x_test`, `y_test`
+- 数据增强，扩充数据集
+  - 数据增强的代码: 数据量过少
+- 断点续训，存取模型
+  - 断点续训的代码, 实时保存最优模型, 从而无需总是从零开始训练模型
+- 参数提取的代码, 将参数存入文本
+- acc/loss曲线绘制的代码, 可视化训练效果
+- 应用程序, 给图识物
 
-- 自制数据集
-  - 替代**TensorFlow**中自带函数`.load_data()`
+### 自制数据集
+- 替代**TensorFlow**中自带函数`.load_data()`
 
-- 数据增强
-  - TensorFlow中的数据增强函数
+### 数据增强
+- TensorFlow中的数据增强函数
 
 ```python
 tf.keras.preprocessing.image.ImageDataGenerator()
@@ -52,41 +52,41 @@ tf.keras.preprocessing.image.ImageDataGenerator()
   - `horizontal_flip=` 是否随机水平翻转
   - `zoom_range=` 随机缩放的范围[1-n，1+n]
   
-- 断点续训
-  - 读取模型
-    - TensorFlow中函数`model.load_weights(路径文件名)`,读取已有模型参数
-  - 保存模型
+### 断点续训
+- 读取模型
+  - TensorFlow中函数`model.load_weights(路径文件名)`,读取已有模型参数
+- 保存模型
 
     ```python
     cp_callback=tf.keras.callbacks.ModelCheckpoint()
     ```
 
-    - 结果保存在checkpoint文件夹中
-      - [checkpoint](checkpoint)
-      - [mnist.ckpt.data-00000-of-00001](mnist.ckpt.data-00000-of-00001)
-      - [mnist.ckpt.index](mnist.ckpt.index)
-  - 继续从上次模型训练结果进行
-  - 生成的`checkpoint`文件夹中存放的就是模型参数
+  - 结果保存在checkpoint文件夹中
+    - [checkpoint](checkpoint)
+    - [mnist.ckpt.data-00000-of-00001](mnist.ckpt.data-00000-of-00001)
+    - [mnist.ckpt.index](mnist.ckpt.index)
+- 继续从上次模型训练结果进行
+- 生成的`checkpoint`文件夹中存放的就是模型参数
 
-- 参数提取
-  - 提取可训练参数
-    - model.trainable_variables 返回模型中可训练的参数
-  - 设置print输出格式
+### 参数提取
+- 提取可训练参数
+  - model.trainable_variables 返回模型中可训练的参数
+- 设置print输出格式
 
     ```python
     np.set_printoptions(threshold=超过多少省略显示)
     threshold=np.inf表示无限大
     ```
 
-  - for loop将所有可训练的参数存入到[weights.txt](weights.txt)文件中
+- for loop将所有可训练的参数存入到[weights.txt](weights.txt)文件中
 
-- acc&loss可视化
-  - history:
-    - 训练集loss: loss
-    - 测试集loss: val_loss
-    - 训练集准确率: sparse_categorical_accuracy
-    - 测试集准确率: val_sparse_categorical_accuracy
-  - history.history从model.fit中提取
+### acc&loss可视化
+- history:
+  - 训练集loss: loss
+  - 测试集loss: val_loss
+  - 训练集准确率: sparse_categorical_accuracy
+  - 测试集准确率: val_sparse_categorical_accuracy
+- history.history从model.fit中提取
 
     ```python
     acc = history.history['sparse_categorical_accuracy']
@@ -95,8 +95,8 @@ tf.keras.preprocessing.image.ImageDataGenerator()
     val_loss = history.history['val_loss']
     ```
 
-- 给图识物
-  - 复现模型
+### 给图识物
+- 复现模型
 
     ```python
     model = tf.keras.models.Sequential([
@@ -105,13 +105,13 @@ tf.keras.preprocessing.image.ImageDataGenerator()
     tf.keras.layers.Dense(10, activation='softmax’)])
     ```
 
-  - 加载保存在checkpoint文件中的参数
+- 加载保存在checkpoint文件中的参数
 
     ```python
     model.load_weights(model_save_path)`
     ```
 
-  - 预测结果
+- 预测结果
   
   ```python
   result = model.predict(x_predict)

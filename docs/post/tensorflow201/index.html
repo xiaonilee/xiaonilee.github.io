@@ -74,7 +74,7 @@
 <meta itemprop="description" content="TensorFlow2 notebook: Class1 神经网络计算.">
 <meta itemprop="datePublished" content="2020-12-02T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-12-10T00:00:00+00:00" />
-<meta itemprop="wordCount" content="402">
+<meta itemprop="wordCount" content="573">
 
 
 
@@ -216,6 +216,10 @@ if (!doNotTrack) {
             
               <li>
                 <a href="https://xiaonilee.github.io/post/tensorflow204/">TensorFlow2 class4: 网络八股扩展</a>
+              </li>
+            
+              <li>
+                <a href="https://xiaonilee.github.io/post/tensorflow205/">TensorFlow2 class5: 卷积神经网络</a>
               </li>
             
               <li>
@@ -435,6 +439,10 @@ if (!doNotTrack) {
               </li>
             
               <li>
+                <a href="https://xiaonilee.github.io/post/tensorflow205/">TensorFlow2 class5: 卷积神经网络</a>
+              </li>
+            
+              <li>
                 <a href="https://xiaonilee.github.io/post/tissgdb/">TissGDB: tissue-specific gene database in cancer</a>
               </li>
             
@@ -502,7 +510,17 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#in-summary">In summary</a></li>
+    <li><a href="#in-summary">In summary</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#人工智能三学派">人工智能三学派</a></li>
+        <li><a href="#神经网络设计过程">神经网络设计过程</a></li>
+        <li><a href="#张量生成">张量生成</a></li>
+        <li><a href="#常用函数">常用函数</a></li>
+        <li><a href="#iris-数据集读入">Iris 数据集读入</a></li>
+        <li><a href="#神经网络实现iris分类">神经网络实现iris分类</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -512,12 +530,11 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>TensorFlow2 notebook: Class1 神经网络计算.</p>
 <h2 id="in-summary">In summary</h2>
+<h3 id="prerequisites">Prerequisites</h3>
 <ul>
-<li>
-<p><code>TensorFlow2.3.0</code> + <code>Python3.6.9</code></p>
-</li>
-<li>
-<p>人工智能三学派</p>
+<li><code>TensorFlow2.3.0</code> + <code>Python3.6.9</code></li>
+</ul>
+<h3 id="人工智能三学派">人工智能三学派</h3>
 <ul>
 <li>行为主义</li>
 <li>符号主义</li>
@@ -535,9 +552,7 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p>神经网络设计过程</p>
+<h3 id="神经网络设计过程">神经网络设计过程</h3>
 <ul>
 <li>分类目标:
 <ul>
@@ -564,20 +579,103 @@ if (!doNotTrack) {
 <li>读入新输入特征(待测)</li>
 <li>输出识别结果: 所属分类</li>
 </ul>
-</li>
+<h3 id="张量生成">张量生成</h3>
+<h3 id="常用函数">常用函数</h3>
+<ul>
 <li>
-<p>张量生成</p>
-</li>
-<li>
-<p>常用函数</p>
-</li>
-<li>
-<p>Iris 数据集读入</p>
-</li>
-<li>
-<p>神经网络实现iris分类</p>
-</li>
+<p>reduce_mean,reduce_sum</p>
+<ul>
+<li>axis=0:纵向，经度方向</li>
+<li>axis=1:横向，维度方向</li>
 </ul>
+</li>
+<li>
+<p>维度相同的张量可以做四则运算</p>
+<ul>
+<li>add, subtract, multiply, divide.</li>
+</ul>
+</li>
+<li>
+<p>平方, 次方, 开方</p>
+<ul>
+<li>square, pow, sqrt</li>
+</ul>
+</li>
+<li>
+<p>矩阵乘</p>
+<ul>
+<li>tf.matmul</li>
+</ul>
+</li>
+<li>
+<p>将(特征, 标签)进行配对</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_tensor_slices</span><span class="p">((</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>梯度</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tf</span><span class="o">.</span><span class="n">GradientTape</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>枚举, python内置函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">enumerate</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>独热编码,作为标签</p>
+<ul>
+<li>tf.one_hot</li>
+<li>1: 表示是</li>
+<li>0: 表示非</li>
+</ul>
+</li>
+<li>
+<p>使输出符合概率分布 -tf.nn.softmax &ndash;&gt;n分类n输出调用softmax()函数</p>
+</li>
+<li>
+<p>自减</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">assign_sub</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>张量方向最大值的索引</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="iris-数据集读入">Iris 数据集读入</h3>
+<h3 id="神经网络实现iris分类">神经网络实现iris分类</h3>
 <p>Attach is the file of <a href="TensorFlow2class1.ipynb">TensorFlow2class1.ipynb</a>, or view it via the <a href="https://colab.research.google.com/drive/1IslgEamApGpdgwBK2YW0zgGBJJ9L7VPb?usp=sharing">link</a>.</p>
 <p>Show me the code <i class="far fa-hand-point-down"></i></p>
 <p><a href="https://gist.github.com/xiaonilee/92768a4f7c91fc7553e58f1b2a7e02d5"><img src="fig1.png" alt="fig1"></a>

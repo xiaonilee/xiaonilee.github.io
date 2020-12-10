@@ -6,10 +6,21 @@
     <description>Recent content on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 08 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Dec 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://xiaonilee.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TensorFlow2 class5: 卷积神经网络</title>
+      <link>https://xiaonilee.github.io/post/tensorflow205/</link>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/tensorflow205/</guid>
+      
+        <description>&lt;p&gt;TensorFlow2 notebook: Class5: 卷积神经网络.&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>TensorFlow2 class4: 网络八股扩展</title>
@@ -217,17 +228,6 @@
       <guid>https://xiaonilee.github.io/post/rinaction13/</guid>
       
         <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 13.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Chapter 12. Resampling statistics and bootstrapping</title>
-      <link>https://xiaonilee.github.io/post/rinaction12/</link>
-      <pubDate>Thu, 05 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/post/rinaction12/</guid>
-      
-        <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 12.&lt;/p&gt;</description>
       
     </item>
     

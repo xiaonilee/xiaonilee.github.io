@@ -219,6 +219,10 @@ if (!doNotTrack) {
               </li>
             
               <li>
+                <a href="https://xiaonilee.github.io/post/tensorflow205/">TensorFlow2 class5: 卷积神经网络</a>
+              </li>
+            
+              <li>
                 <a href="https://xiaonilee.github.io/post/tissgdb/">TissGDB: tissue-specific gene database in cancer</a>
               </li>
             
@@ -435,6 +439,10 @@ if (!doNotTrack) {
               </li>
             
               <li>
+                <a href="https://xiaonilee.github.io/post/tensorflow205/">TensorFlow2 class5: 卷积神经网络</a>
+              </li>
+            
+              <li>
                 <a href="https://xiaonilee.github.io/post/tissgdb/">TissGDB: tissue-specific gene database in cancer</a>
               </li>
             
@@ -502,7 +510,17 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#in-summary">In summary</a></li>
+    <li><a href="#in-summary">In summary</a>
+      <ul>
+        <li><a href="#搭建网络八股总览">搭建网络八股总览</a></li>
+        <li><a href="#自制数据集">自制数据集</a></li>
+        <li><a href="#数据增强">数据增强</a></li>
+        <li><a href="#断点续训">断点续训</a></li>
+        <li><a href="#参数提取">参数提取</a></li>
+        <li><a href="#accloss可视化">acc&amp;loss可视化</a></li>
+        <li><a href="#给图识物">给图识物</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -512,9 +530,7 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>TensorFlow2 notebook: Class4: 网络八股扩展.</p>
 <h2 id="in-summary">In summary</h2>
-<ul>
-<li>
-<p>搭建网络八股总览</p>
+<h3 id="搭建网络八股总览">搭建网络八股总览</h3>
 <ul>
 <li>自制数据集，解决本领域应用
 <ul>
@@ -535,19 +551,13 @@ if (!doNotTrack) {
 <li>acc/loss曲线绘制的代码, 可视化训练效果</li>
 <li>应用程序, 给图识物</li>
 </ul>
-</li>
-<li>
-<p>自制数据集</p>
+<h3 id="自制数据集">自制数据集</h3>
 <ul>
 <li>替代<strong>TensorFlow</strong>中自带函数<code>.load_data()</code></li>
 </ul>
-</li>
-<li>
-<p>数据增强</p>
+<h3 id="数据增强">数据增强</h3>
 <ul>
 <li>TensorFlow中的数据增强函数</li>
-</ul>
-</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -558,8 +568,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>
-<p>调整函数中的参数</p>
+<li>调整函数中的参数
 <ul>
 <li><code>rescale=</code> 所有数据将乘以该数值</li>
 <li><code>rotation_range=</code>  随机旋转角度数范围</li>
@@ -569,8 +578,8 @@ if (!doNotTrack) {
 <li><code>zoom_range=</code> 随机缩放的范围[1-n，1+n]</li>
 </ul>
 </li>
-<li>
-<p>断点续训</p>
+</ul>
+<h3 id="断点续训">断点续训</h3>
 <ul>
 <li>
 <p>读取模型</p>
@@ -605,9 +614,7 @@ if (!doNotTrack) {
 <p>生成的<code>checkpoint</code>文件夹中存放的就是模型参数</p>
 </li>
 </ul>
-</li>
-<li>
-<p>参数提取</p>
+<h3 id="参数提取">参数提取</h3>
 <ul>
 <li>
 <p>提取可训练参数</p>
@@ -632,9 +639,7 @@ if (!doNotTrack) {
 <p>for loop将所有可训练的参数存入到<a href="weights.txt">weights.txt</a>文件中</p>
 </li>
 </ul>
-</li>
-<li>
-<p>acc&amp;loss可视化</p>
+<h3 id="accloss可视化">acc&amp;loss可视化</h3>
 <ul>
 <li>
 <p>history:</p>
@@ -663,9 +668,7 @@ if (!doNotTrack) {
 </div>
 </div></li>
 </ul>
-</li>
-<li>
-<p>给图识物</p>
+<h3 id="给图识物">给图识物</h3>
 <ul>
 <li>
 <p>复现模型</p>
@@ -697,8 +700,6 @@ if (!doNotTrack) {
 </div></li>
 <li>
 <p>预测结果</p>
-</li>
-</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -732,6 +733,19 @@ if (!doNotTrack) {
       
       <nav class="post-nav">
         
+          <a class="prev" href="/post/tensorflow205/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">TensorFlow2 class5: 卷积神经网络</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         
           <a class="next" href="/post/tensorflow203/">
             <span class="next-text nav-default">TensorFlow2 class3: 神经网络八股</span>
