@@ -1,7 +1,7 @@
 ---
 title: "TensorFlow2 class2: 数据网络优化"
 date: 2020-12-03
-lastmod: 2020-12-09
+lastmod: 2020-12-10
 draft: false
 tags: ["TensorFlow2", "ML"]
 categories: ["TensorFlow2", "ML", "big data"]
@@ -105,7 +105,7 @@ TensorFlow2 notebook: Class2 神经网络优化.
     - RMSProp，SGD基础上增加二阶动量
     - Adam, 同时结合SGDM一阶动量和RMSProp二阶动量
 
-Attach is the file of [TensorFlow2class2.ipynb](TensorFlow2class2.ipynb).
+Attach is the file of [TensorFlow2class2.ipynb](TensorFlow2class2.ipynb), or view it via the [link](https://colab.research.google.com/drive/19S0UpKcWc_l6Xi-aNcu-Tr3OaNi7SyTX?usp=sharing).
 
 Show me the code <i class="far fa-hand-point-down"></i>
 

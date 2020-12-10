@@ -1,7 +1,7 @@
 ---
 title: "TensorFlow2 class4: 网络八股扩展"
 date: 2020-12-08
-lastmod: 2020-12-09
+lastmod: 2020-12-10
 draft: false
 tags: ["TensorFlow2", "ML"]
 categories: ["TensorFlow2", "ML", "big data"]
@@ -117,7 +117,8 @@ tf.keras.preprocessing.image.ImageDataGenerator()
   result = model.predict(x_predict)
   ```
 
-Attach is the file of [TensorFlow2class4.ipynb](TensorFlow2class4.ipynb).
+
+Attach is the file of [TensorFlow2class4.ipynb](TensorFlow2class4.ipynb), or view it via the [link](https://colab.research.google.com/drive/1lbZj25hoCJzQbwSJRts0X1gwdLW-Diw7?usp=sharing).
 
 Show me the code <i class="far fa-hand-point-down"></i>
 

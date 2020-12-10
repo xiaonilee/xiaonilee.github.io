@@ -1,7 +1,7 @@
 ---
 title: "TensorFlow2 class1: Iris"
 date: 2020-12-02
-lastmod: 2020-12-09
+lastmod: 2020-12-10
 draft: false
 tags: ["TensorFlow2", "ML"]
 categories: ["TensorFlow2", "ML", "big data"]
@@ -57,7 +57,7 @@ TensorFlow2 notebook: Class1 神经网络计算.
 
 - 神经网络实现iris分类
 
-Attach is the file of [TensorFlow2class1.ipynb](TensorFlow2class1.ipynb).
+Attach is the file of [TensorFlow2class1.ipynb](TensorFlow2class1.ipynb), or view it via the [link](https://colab.research.google.com/drive/1IslgEamApGpdgwBK2YW0zgGBJJ9L7VPb?usp=sharing).
 
 Show me the code <i class="far fa-hand-point-down"></i>
 

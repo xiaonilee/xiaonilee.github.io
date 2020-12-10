@@ -1,7 +1,7 @@
 ---
 title: "TensorFlow2 class3: 神经网络八股"
 date: 2020-12-07
-lastmod: 2020-12-09
+lastmod: 2020-12-10
 draft: false
 tags: ["TensorFlow2", "ML"]
 categories: ["TensorFlow2", "ML", "big data"]
@@ -96,7 +96,7 @@ TensorFlow2 notebook: Class3 神经网络八股.
 
   - 将数据拉伸为一维数组(共计28x28=784个数值), 作为输入特征，输入神经网络
 
-Attach is the file of [TensorFlow2class3.ipynb](TensorFlow2class3.ipynb).
+Attach is the file of [TensorFlow2class3.ipynb](TensorFlow2class3.ipynb), or view it via the [link](https://colab.research.google.com/drive/12MY9fU_I2cXfFsq9mJ0Td0RdnooKLDg2?usp=sharing).
 
 Show me the code <i class="far fa-hand-point-down"></i>
 
