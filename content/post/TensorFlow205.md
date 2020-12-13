@@ -209,7 +209,7 @@ Attach is the file of [TensorFlow2class5.ipynb](TensorFlow2class5.ipynb), or vie
 
 Show me the code <i class="far fa-hand-point-down"></i>
 
-[![fig2](fig2.png)](https://gist.github.com/xiaonilee/3015b29f68533a8b6b4242176ffff2e6)
-[![fig3](fig3.png)](https://gist.github.com/xiaonilee/3015b29f68533a8b6b4242176ffff2e6)
+[![fig2](fig2.png)](https://gist.github.com/xiaonilee/1d71e54127ec28a7c40bba228963aa21)
+[![fig3](fig3.png)](https://gist.github.com/xiaonilee/1d71e54127ec28a7c40bba228963aa21)
 
-{{< gist 3015b29f68533a8b6b4242176ffff2e6 >}}
+{{< gist 1d71e54127ec28a7c40bba228963aa21 >}}
