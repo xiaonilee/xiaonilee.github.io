@@ -69,12 +69,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xiaonilee.github.io/post/tensorflow205/" />
 <meta property="article:published_time" content="2020-12-10T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-12-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-12-13T00:00:00+00:00" />
 <meta itemprop="name" content="TensorFlow2 class5: 卷积神经网络">
 <meta itemprop="description" content="TensorFlow2 notebook: Class5: 卷积神经网络.">
 <meta itemprop="datePublished" content="2020-12-10T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2020-12-10T00:00:00+00:00" />
-<meta itemprop="wordCount" content="28">
+<meta itemprop="dateModified" content="2020-12-13T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2379">
 
 
 
@@ -510,7 +510,27 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#in-summary">In summary</a></li>
+    <li><a href="#in-summary">In summary</a>
+      <ul>
+        <li><a href="#50-回顾">5.0 回顾</a></li>
+        <li><a href="#51-卷积计算过程">5.1 卷积计算过程</a></li>
+        <li><a href="#52-感受野receptive-field">5.2 感受野Receptive Field</a></li>
+        <li><a href="#53-全零填充padding">5.3 全零填充padding</a></li>
+        <li><a href="#54-tf描述卷积计算层函数">5.4 TF描述卷积计算层函数</a></li>
+        <li><a href="#55-批标准化batch-normalization-bn">5.5 批标准化(Batch Normalization, BN)</a></li>
+        <li><a href="#56-池化pooling">5.6 池化Pooling</a></li>
+        <li><a href="#57-舍弃dropout">5.7 舍弃Dropout</a></li>
+        <li><a href="#58-卷积神经网络">5.8 卷积神经网络</a></li>
+        <li><a href="#59-cifar10数据集">5.9 Cifar10数据集</a></li>
+        <li><a href="#510-卷积神经网络搭建示例">5.10 卷积神经网络搭建示例</a></li>
+        <li><a href="#511-lenet">5.11 LeNet</a></li>
+        <li><a href="#512-alexnet">5.12 AlexNet</a></li>
+        <li><a href="#513-vggnet">5.13 VGGNet</a></li>
+        <li><a href="#514-inceptionnet">5.14 InceptionNet</a></li>
+        <li><a href="#515-resnet">5.15 ResNet</a></li>
+        <li><a href="#516-经典卷积网络小结">5.16 经典卷积网络小结</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -520,10 +540,315 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>TensorFlow2 notebook: Class5: 卷积神经网络.</p>
 <h2 id="in-summary">In summary</h2>
-<p>Attach is the file of <a href="TensorFlow2class5.ipynb">TensorFlow2class5.ipynb</a>, or view it via the <a href="https://colab.research.google.com/drive/1lbZj25hoCJzQbwSJRts0X1gwdLW-Diw7?usp=sharing">link</a>.</p>
+<h3 id="50-回顾">5.0 回顾</h3>
+<ul>
+<li><strong>全连接NN</strong>:
+<ul>
+<li>每个神经元与前后相邻层的每一个神经元都有连接关系, 输入是特征, 输出为预测的结果.</li>
+<li>参数个数:
+<ul>
+<li>∑各层(前层神经元 x 后层神经元 + 后层神经元)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="51-卷积计算过程">5.1 卷积计算过程</h3>
+<ul>
+<li>卷积Convolutional
+<ul>
+<li>一种有效提取图像特征的方法</li>
+<li>一个正方形的卷积核</li>
+<li>指定步长滑动</li>
+<li>每一个步长, 卷积核会与输入特征图出现重合区域, 重合区域对应元素相乘与求和,最后加上偏置项, 得到输出特征的一个像素点</li>
+<li>遍历输入特征图中的每个像素点</li>
+<li>输入特征图的深度(channel数), 决定了当前层卷积核的深度</li>
+<li>当前层卷积核的个数，决定了当前层输出特征图的深度</li>
+</ul>
+</li>
+</ul>
+<h3 id="52-感受野receptive-field">5.2 感受野Receptive Field</h3>
+<ul>
+<li>卷积神经网络各输出特征图中的每个像素点，在原始输入图片上映射区域的大小</li>
+</ul>
+<h3 id="53-全零填充padding">5.3 全零填充padding</h3>
+<ul>
+<li>TF描述全零填充
+<ul>
+<li>全零填充时, 参数为<code>padding = ‘SAME’</code>, 此时的输出特征图片边长=输入特征图片边长/步长</li>
+<li>不全零填充时, 参数设置为<code>padding = ‘VALID’</code>, 此时的输出特征图片边长=输入特征图片边长-卷积核核长+1/步长</li>
+<li>输出特征图边长向上取整</li>
+</ul>
+</li>
+</ul>
+<h3 id="54-tf描述卷积计算层函数">5.4 TF描述卷积计算层函数</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Ttf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span>
+<span class="n">filters</span> <span class="o">=</span> <span class="err">卷积核个数</span><span class="p">,</span>
+<span class="n">kernel_size</span> <span class="o">=</span> <span class="err">卷积核尺寸</span><span class="p">,</span> <span class="c1">#正方形写核长整数，或(核高h，核宽w)</span>
+<span class="n">strides</span> <span class="o">=</span> <span class="err">滑动步长</span><span class="p">,</span> <span class="c1">#横纵向相同写步长整数，或(纵向步长h，横向步长w)，默认1 </span>
+<span class="n">padding</span> <span class="o">=</span> <span class="err">“</span><span class="n">same</span><span class="err">”</span> <span class="ow">or</span> <span class="err">“</span><span class="n">valid</span><span class="err">”</span><span class="p">,</span> <span class="c1">#使用全零填充是“same”，不使用是“valid”(默认) activation = “ relu ” or “ sigmoid ” or “ tanh ” or “ softmax”等 , #如有BN此处不写 </span>
+<span class="n">input_shape</span> <span class="o">=</span> <span class="p">(</span><span class="err">高</span><span class="p">,</span> <span class="err">宽</span> <span class="p">,</span> <span class="err">通道数</span><span class="p">)</span> <span class="c1">#输入特征图维度，可省略</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="55-批标准化batch-normalization-bn">5.5 批标准化(Batch Normalization, BN)</h3>
+<ul>
+<li>标准化
+<ul>
+<li>使数据符合0均值，1为标准差的分布。</li>
+</ul>
+</li>
+<li>批标准化
+<ul>
+<li>对一小批数据(batch)，做标准化处理。</li>
+</ul>
+</li>
+<li>为每个卷积核<strong>引入可训练参数𝜸和𝜷</strong>，调整<strong>批归一化</strong>的力度。</li>
+<li>BN层位于<em><strong>卷积层之后，激活层之前</strong></em></li>
+<li>TF描述批标准化函数</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python">  <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">BatchNormalization</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="56-池化pooling">5.6 池化Pooling</h3>
+<ul>
+<li>用于减少特征数据量</li>
+<li><strong>最大值池化</strong>可提取图片纹理</li>
+<li><strong>均值池化</strong>可保留背景特征</li>
+<li>TF描述最大化池化函数</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPool2D</span><span class="p">(</span> 
+<span class="n">pool_size</span><span class="o">=</span><span class="err">池化核尺寸，</span><span class="c1">#正方形写核长整数，或(核高h，核宽w) </span>
+<span class="n">strides</span><span class="o">=</span><span class="err">池化步长，</span><span class="c1">#步长整数， 或(纵向步长h，横向步长w)，默认为pool_size </span>
+<span class="n">padding</span><span class="o">=</span><span class="err">‘</span><span class="n">valid</span><span class="err">’</span><span class="ow">or</span><span class="err">‘</span><span class="n">same</span><span class="err">’</span> <span class="c1">#使用全零填充是“same”，不使用是“valid”(默认) </span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>TF描述均值池化函数</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">AveragePooling2D</span><span class="p">(</span> 
+<span class="n">pool_size</span><span class="o">=</span><span class="err">池化核尺寸，</span><span class="c1">#正方形写核长整数，或(核高h，核宽w) </span>
+<span class="n">strides</span><span class="o">=</span><span class="err">池化步长，</span><span class="c1">#步长整数， 或(纵向步长h，横向步长w)，默认为pool_size </span>
+<span class="n">padding</span><span class="o">=</span><span class="err">‘</span><span class="n">valid</span><span class="err">’</span><span class="ow">or</span><span class="err">‘</span><span class="n">same</span><span class="err">’</span> <span class="c1">#使用全零填充是“same”，不使用是“valid”(默认) </span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="57-舍弃dropout">5.7 舍弃Dropout</h3>
+<ul>
+<li>在神经网络训练时，将一部分神经元按照<strong>一定概率</strong>从神经网络中<em><strong>暂时</strong></em>舍弃(～休眠)。神经网络使用时，被舍弃的神经元恢复链接</li>
+<li>TF描述池化函数</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="err">舍弃的概率</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="58-卷积神经网络">5.8 卷积神经网络</h3>
+<ul>
+<li>卷积核提取特征</li>
+<li>送入全连接网络</li>
+<li>卷积神经网络网络的主要模块
+<ul>
+<li><strong>C</strong>onvolutional卷积</li>
+<li><strong>B</strong>N批标准化</li>
+<li><strong>A</strong>ctivation激活</li>
+<li><strong>P</strong>ooling池化</li>
+<li><strong>D</strong>ropout舍弃</li>
+</ul>
+</li>
+<li><strong>卷积是什么?</strong>
+<ul>
+<li>卷积就是<em><strong>特征提取器</strong></em>，就是<em><strong>CBAPD</strong></em></li>
+</ul>
+</li>
+</ul>
+<h3 id="59-cifar10数据集">5.9 Cifar10数据集</h3>
+<ul>
+<li>
+<p>彩色图片</p>
+</li>
+<li>
+<p>由<strong>6万</strong>张(<strong>32x32</strong>) 像素点的彩色图片和<strong>十分类</strong>标签构成, 其中</p>
+<ul>
+<li><strong>5</strong>万张作为训练集</li>
+<li><strong>1</strong>万张作为测试集</li>
+</ul>
+</li>
+<li>
+<p>导入数据集</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">cifar10</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">cifar10</span>
+<span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">cifar10</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="510-卷积神经网络搭建示例">5.10 卷积神经网络搭建示例</h3>
+<ul>
+<li>共<strong>3</strong>层神经网络
+<ul>
+<li><strong>1层卷积</strong>
+<ul>
+<li>C(核:6<em>5</em>5，步长:1，填充:same )</li>
+<li>B(Yes)</li>
+<li>A(relu)</li>
+<li>P(max，核:2*2，步长:2，填充:same)</li>
+<li>D(0.2)</li>
+</ul>
+</li>
+<li><strong>2层全连接</strong>
+<ul>
+<li>Flatten</li>
+<li>Dense(神经元:128，激活:relu，Dropout:0.2)</li>
+<li>Dense(神经元:10，激活:softmax)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>训练结果保存在<strong>checkpoint</strong>文件夹以及<strong>weights.txt</strong>文件中
+<ul>
+<li><a href="510/Baseline.ckpt.data-00000-of-00001">Baseline.ckpt.data-00000-of-00001</a></li>
+<li><a href="510/Baseline.ckpt.index">Baseline.ckpt.index</a></li>
+<li><a href="510/checkpoint">checkpoint</a></li>
+<li><a href="510/weights.txt">weights</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="511-lenet">5.11 LeNet</h3>
+<ul>
+<li>Yann LeCun于1998年提出</li>
+<li>那年没有BN, 没有Dropout</li>
+<li>激活函数只有Sigmoid</li>
+<li>卷积网络的开篇之作</li>
+<li><strong>共享卷积核</strong>，减少了网络的参数</li>
+<li>共<strong>5</strong>层网络
+<ul>
+<li><strong>2</strong>层卷积计算层</li>
+<li><strong>3</strong>层全连接计算层</li>
+</ul>
+</li>
+<li>训练结果保存在<strong>checkpoint</strong>文件夹以及<strong>weights.txt</strong>文件中
+<ul>
+<li><a href="511/LeNet5.ckpt.data-00000-of-00001">LeNet5.ckpt.data-00000-of-00001</a></li>
+<li><a href="511/LeNet5.ckpt.index">LeNet5.ckpt.index</a></li>
+<li><a href="511/checkpoint">checkpoint</a></li>
+<li><a href="511/weights.txt">weights</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="512-alexnet">5.12 AlexNet</h3>
+<ul>
+<li>诞生于2012年，当年ImageNet竞赛的冠军，Top5错误率为16.4%</li>
+<li>用到了<strong>LRN</strong>(local response normalization局部响应标准化, 非现如今的主流BN方法)</li>
+<li>relu激活函数</li>
+<li>Dropout缓解过拟合</li>
+<li>共<strong>8</strong>层网络
+<ul>
+<li><strong>5</strong>层卷积层</li>
+<li><strong>3</strong>层全连接层</li>
+</ul>
+</li>
+</ul>
+<h3 id="513-vggnet">5.13 VGGNet</h3>
+<ul>
+<li>诞生于2014年，当年ImageNet竞赛的亚军，Top5错误率减小到7.3%</li>
+<li><strong>小尺寸</strong>卷积核</li>
+<li>网络结构规整, 适合硬件加速</li>
+<li><strong>16</strong>层网络
+<ul>
+<li><strong>13</strong>层卷积(<code>CBA</code> <code>CBAPD</code> <code>CBA</code> <code>CBAPD</code> <code>CBA</code> <code>CBA</code> <code>CBAPD</code> <code>CBA</code> <code>CBA</code> <code>CBAPD</code> <code>CBA</code> <code>CBAPD</code> <code>CBAPD</code>)</li>
+<li><strong>3</strong>层全连接</li>
+</ul>
+</li>
+</ul>
+<h3 id="514-inceptionnet">5.14 InceptionNet</h3>
+<ul>
+<li>诞生于2014年，当年ImageNet竞赛冠军，Top5错误率为6.67%</li>
+<li>Inception结构块为基本单元
+<ul>
+<li>包含4分支, 分别由
+<ul>
+<li><code>1*1</code>卷积核输出到卷积连接器;</li>
+<li><code>1*1</code>卷积核配合<code>3*3</code>卷积核输出到卷积连接器;</li>
+<li><code>1*1</code>卷积核配合<code>5*5</code>卷积核输出到卷积连接器;</li>
+<li><code>3*3</code>最大池化核配合<code>1*1</code>卷积核输出到卷积连接器;</li>
+</ul>
+</li>
+<li>卷积连接器将4分支特征数据按照深度方向拼接，作为输出</li>
+<li>在同一层网络内使用多个不同尺寸的卷积核, 提取不同尺寸的特征</li>
+<li>通过设定<code>1*1</code>卷积核的<strong>个数</strong>,减少了输出特征图的深度,达到降维作用</li>
+<li>减少参数量和计算量</li>
+</ul>
+</li>
+<li>使用BN缓解梯度消失</li>
+</ul>
+<h3 id="515-resnet">5.15 ResNet</h3>
+<ul>
+<li>诞生于2015年，当年ImageNet竞赛冠军，Top5错误率为3.57%</li>
+<li>提出了层间残差跳连, 引入了前方信息,防止前边特征丢失, 使得可以增加神经网络层数</li>
+<li>跳连线
+<ul>
+<li>将前边特征直接接到后边</li>
+<li>使得神经网络可以更深发展</li>
+<li>两路特征图对应元素值相加
+<ul>
+<li>虚线表示不同维度:<code>H(x)=F(x)+W(x)</code>, W是<code>1*1</code>卷积操作，调整x的维度</li>
+<li>实线表示相同维度:<code>H(x)=F(x)+x</code>, 做矩阵相加</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="516-经典卷积网络小结">5.16 经典卷积网络小结</h3>
+<p><img src="fig1.png" alt="fig1.png"></p>
+<p>Attach is the file of <a href="TensorFlow2class5.ipynb">TensorFlow2class5.ipynb</a>, or view it via the <a href="https://colab.research.google.com/drive/1VJRSP3UZltEarQJLlTreAe-Kjit6i29n?usp=sharing">link</a>.</p>
 <p>Show me the code <i class="far fa-hand-point-down"></i></p>
-<p><a href="https://gist.github.com/xiaonilee/65f56d831a260679125da6e54872af00"><img src="fig1.png" alt="fig"></a></p>
-<script type="text/javascript" src="http://gist.github.com/65f56d831a260679125da6e54872af00.js"></script>
+<p><a href="https://gist.github.com/xiaonilee/3015b29f68533a8b6b4242176ffff2e6"><img src="fig2.png" alt="fig2"></a>
+<a href="https://gist.github.com/xiaonilee/3015b29f68533a8b6b4242176ffff2e6"><img src="fig3.png" alt="fig3"></a></p>
+<script type="text/javascript" src="http://gist.github.com/3015b29f68533a8b6b4242176ffff2e6.js"></script>
     </div>
 
     
