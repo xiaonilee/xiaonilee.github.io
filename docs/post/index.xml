@@ -6,7 +6,16 @@
     <description>Recent content in Posts on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 10 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TensorFlow2 class6: 循环神经网络</title>
+      <link>https://xiaonilee.github.io/post/tensorflow206/</link>
+      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/tensorflow206/</guid>
+      <description>&lt;p&gt;TensorFlow2 notebook: Class6: 循环神经网络.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>TensorFlow2 class5: 卷积神经网络</title>
       <link>https://xiaonilee.github.io/post/tensorflow205/</link>
@@ -176,15 +185,6 @@
       
       <guid>https://xiaonilee.github.io/post/rinaction14/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 14.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 13. Generalized linear models</title>
-      <link>https://xiaonilee.github.io/post/rinaction13/</link>
-      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/post/rinaction13/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 13.&lt;/p&gt;</description>
     </item>
     
   </channel>
