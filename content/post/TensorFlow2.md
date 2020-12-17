@@ -21,7 +21,9 @@ TensorFlow2 notebook: Class1 - Class6.
 
 <!--more-->
 
-## The roadmap of TensorFlow2 Notebook, I learned from Jian Cao PEKING UNIVERSITY
+## The roadmap of TensorFlow2 Notebook
+
+- I learned from Jian Cao, PEKING UNIVERSITY.
 - It has 6 classes:
   - [Class1 神经网络计算](https://xiaonilee.github.io/post/tensorflow201/)
   - [Class2 神经网络优化](https://xiaonilee.github.io/post/tensorflow202/)
