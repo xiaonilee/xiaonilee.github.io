@@ -6,7 +6,43 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 17 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 31 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bioinformatics</title>
+      <link>https://xiaonilee.github.io/tags/bioinformatics/</link>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>https://xiaonilee.github.io/tags/css/</link>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTML</title>
+      <link>https://xiaonilee.github.io/tags/html/</link>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://xiaonilee.github.io/tags/javascript/</link>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>ML</title>
       <link>https://xiaonilee.github.io/tags/ml/</link>
@@ -22,15 +58,6 @@
       <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/tensorflow2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bioinformatics</title>
-      <link>https://xiaonilee.github.io/tags/bioinformatics/</link>
-      <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/bioinformatics/</guid>
       <description></description>
     </item>
     
@@ -157,33 +184,6 @@
       <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/features/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>signatures</title>
-      <link>https://xiaonilee.github.io/tags/signatures/</link>
-      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/signatures/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UCSC</title>
-      <link>https://xiaonilee.github.io/tags/ucsc/</link>
-      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/ucsc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Xena</title>
-      <link>https://xiaonilee.github.io/tags/xena/</link>
-      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/xena/</guid>
       <description></description>
     </item>
     

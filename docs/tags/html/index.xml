@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTML on xiaoni&#39;s blog</title>
+    <link>https://xiaonilee.github.io/tags/html/</link>
+    <description>Recent content in HTML on xiaoni&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 31 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>web front end</title>
+      <link>https://xiaonilee.github.io/post/webfrontend/</link>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/webfrontend/</guid>
+      <description>&lt;p&gt;Web front-end development&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
