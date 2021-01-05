@@ -6,13 +6,40 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 31 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bioinformatics</title>
       <link>https://xiaonilee.github.io/tags/bioinformatics/</link>
-      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cancer Research</title>
+      <link>https://xiaonilee.github.io/tags/cancer-research/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/cancer-research/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>https://xiaonilee.github.io/tags/database/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recover Paper</title>
+      <link>https://xiaonilee.github.io/tags/recover-paper/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/recover-paper/</guid>
       <description></description>
     </item>
     
@@ -157,33 +184,6 @@
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/gdc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>firehose</title>
-      <link>https://xiaonilee.github.io/tags/firehose/</link>
-      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/firehose/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Database</title>
-      <link>https://xiaonilee.github.io/tags/database/</link>
-      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Features</title>
-      <link>https://xiaonilee.github.io/tags/features/</link>
-      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/features/</guid>
       <description></description>
     </item>
     

@@ -6,7 +6,16 @@
     <description>Recent content in Bioinformatics on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 31 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Identification of Therapeutic Targets and Prognostic Biomarkers Among CXC Chemokines in the Renal Cell Carcinoma Microenvironment</title>
+      <link>https://xiaonilee.github.io/post/frontoncol/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/frontoncol/</guid>
+      <description>&lt;p&gt;Recover Bioinformatics paper w/o code.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>web front end</title>
       <link>https://xiaonilee.github.io/post/webfrontend/</link>
@@ -176,15 +185,6 @@
       
       <guid>https://xiaonilee.github.io/post/rinaction10/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 10.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 9. Analysis of variance</title>
-      <link>https://xiaonilee.github.io/post/rinaction9/</link>
-      <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/post/rinaction9/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 9.&lt;/p&gt;</description>
     </item>
     
   </channel>

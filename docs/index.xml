@@ -6,10 +6,21 @@
     <description>Recent content on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 31 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Jan 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://xiaonilee.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Identification of Therapeutic Targets and Prognostic Biomarkers Among CXC Chemokines in the Renal Cell Carcinoma Microenvironment</title>
+      <link>https://xiaonilee.github.io/post/frontoncol/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/frontoncol/</guid>
+      
+        <description>&lt;p&gt;Recover Bioinformatics paper w/o code.&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>web front end</title>
@@ -217,17 +228,6 @@
       <guid>https://xiaonilee.github.io/post/rinaction17/</guid>
       
         <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 17.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Chapter 16. Cluster analysis</title>
-      <link>https://xiaonilee.github.io/post/rinaction16/</link>
-      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/post/rinaction16/</guid>
-      
-        <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 16.&lt;/p&gt;</description>
       
     </item>
     
