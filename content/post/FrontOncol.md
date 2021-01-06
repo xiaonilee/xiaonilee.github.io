@@ -27,8 +27,8 @@ Recover Bioinformatics paper w/o code.
 
 - **Keywords**
   - Sixteen CXC chemokines (not including CXCL15)
-    - CXCL1 CXCL2 CXCL3 CXCL4 CXCL5 CXCL6 CXCL7 CXCL8 CXCL9 CXCL10 CXCL11 CXCL12 CXCL13 CXCL14 CXCL16 CXCL17 
-- Renal cell carcinoma(RCC), Kidney cancer
+    - CXCL1, CXCL2, CXCL3, CXCL4, CXCL5, CXCL6, CXCL7, CXCL8, CXCL9, CXCL10, CXCL11, CXCL12, CXCL13, CXCL14, CXCL16, CXCL17 
+  - Renal cell carcinoma(RCC), Kidney cancer
 
 - **Methods**
   - `ONCOMINE` 
@@ -79,17 +79,31 @@ Recover Bioinformatics paper w/o code.
 |        | Hereditary Clear Cell Renal Cell Carcinoma     | `1.921`     | `7.84E-4`| `3.447`| (29)       |
 | CXCL16 | Clear Cell Renal Cell Carcinoma                | 5.797       | 5.82E-4  | 6.812  | (27)       |
 |        | Clear Cell Renal Cell Carcinoma                | 2.212       | 7.86E-4  | 3.932  | (28)       |
-### Figure 2
+### Figure 2. The transcription of CXC chemokines in RCC (UALCAN) 
+- Open [UALCAN database](http://ualcan.path.uab.edu/http://ualcan.path.uab.edu/)
+  ![fig21](fig2/fig21.png)
 
-### Figure 3
+- Click on the button `TCGA analysis` and explore the result for CXCL1 gene.
+  ![fig22](fig2/fig22.png)
 
-### Figure 4
+- Click on the button `Expression` and generate the expression result of CXCL1 gene.
+  ![fig23](fig2/fig23.png)
+  ![fig24](fig2/fig24.png)
+  ![fig25](fig2/fig25.png)
 
-### Figure 5
+- Merge all CXC chemokines together with Google Slides
+  ![figure2](fig2/figure2.png)
+### Figure 3. The relative level of CXC chemokines in RCC
 
-### Figure 6
+### Figure 4. Correlation between different expressed CXC chemokines and the pathological stage of RCC patients (GEPIA)
 
-### Figure 7
+### Figure 5. The prognostic value of different expressed CXC chemokines in RCC patients in the disease free survival curve (GEPIA)
 
-### Figure 8
+### Figure 6. The prognostic value of CXC chemokines in RCC patients in the overall survival curve (GEPIA)
+
+### Figure 7. Genetic alteration, neighbor gene network, and interaction analyses of different expressed CXC chemokines in RCC patients
+
+### Figure 8. The enrichment analysis of different expressed CXC chemokines and 50 most frequently altered neighboring genes in RCC (David 6.8)
+
+### Figure 9. The correlation between different expressed CXC chemokines and immune cell infiltration (TIMER)
 
