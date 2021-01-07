@@ -88,12 +88,36 @@ Recover Bioinformatics paper w/o code.
 
 - Click on the button `Expression` and generate the expression result of CXCL1 gene.
   ![fig23](fig2/fig23.png)
+<hr />
+
   ![fig24](fig2/fig24.png)
+<hr />
+
   ![fig25](fig2/fig25.png)
 
 - Merge all CXC chemokines together with Google Slides
+  - The transcriptional levels of CXCL12(G) were significantly reduced. 
+  
   ![figure2](fig2/figure2.png)
 ### Figure 3. The relative level of CXC chemokines in RCC
+- Open [GEPIA](http://gepia.cancer-pku.cn/index.html)
+  ![fig31](fig3/fig31.png)
+
+- Click on the button `Multiple Gene Analysis` and `Multiple Gene Comparison`
+
+- Set up the parameters and click the button `Plot`
+  ![fig32](fig32/fig32.png)
+
+- Save and edit plot [in cloud](https://plot.ly/create/)
+  ![fig33](fig3/fig33.png)
+
+- Click on `Heatmap` to generate the final heatmap
+  ![fig34](fig3/fig34.png)
+<hr />
+
+- The relative expression of **CXCL14** was the highest.   
+  
+  ![figure3](fig3/figure3.png)
 
 ### Figure 4. Correlation between different expressed CXC chemokines and the pathological stage of RCC patients (GEPIA)
 
