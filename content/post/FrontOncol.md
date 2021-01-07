@@ -122,7 +122,7 @@ Recover Bioinformatics paper w/o code.
 ### Figure 4. Correlation between different expressed CXC chemokines and the pathological stage of RCC patients (GEPIA)
 - Open [GEPIA](http://gepia.cancer-pku.cn/index.html)
 
-- Click `Stage plot`
+- Click on `Expression DIY`, choose `Stage plot`
   ![fig41](fig4/fig41.png)
 
 - Set up the parameters for CXCL1 gene and click the button `Plot`  
@@ -133,8 +133,34 @@ Recover Bioinformatics paper w/o code.
 - Merge all results of CXC chemokines together with Google Slides.
   ![figure4](fig4/figure4.png)
 ### Figure 5. The prognostic value of different expressed CXC chemokines in RCC patients in the disease free survival curve (GEPIA)
+- Open [GEPIA](http://gepia.cancer-pku.cn/index.html)
+
+- Click `Survival` and choose `Survival Plots`
+  ![fig51](fig5/fig51.png)
+
+- Set up the parameters for CXCL1 gene and click the button `Plot`
+  ![fig52](fig5/fig52.png) 
+
+- Generate result of CXCL1 gene
+  ![fig531](fig5/fig531.png)
+
+- Merge all results of CXC chemokines together with Google Slides.
+  ![figure5](fig5/figure5.png)
 
 ### Figure 6. The prognostic value of CXC chemokines in RCC patients in the overall survival curve (GEPIA)
+- Open [GEPIA](http://gepia.cancer-pku.cn/index.html)
+
+- Click `Survival` and choose `Survival Plots`
+  ![fig61](fig6/fig61.png)
+
+- Set up the parameters for CXCL1 gene and click the button `Plot`
+  ![fig62](fig6/fig62.png) 
+
+- Generate result of CXCL1 gene
+  ![fig631](fig6/fig631.png)
+
+- Merge all results of CXC chemokines together with Google Slides.
+  ![figure6](fig6/figure6.png)
 
 ### Figure 7. Genetic alteration, neighbor gene network, and interaction analyses of different expressed CXC chemokines in RCC patients
 
