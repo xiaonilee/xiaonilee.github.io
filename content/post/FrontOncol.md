@@ -169,6 +169,30 @@ Recover Bioinformatics paper w/o code.
 - Set up the parameters and click the button `Submit Query`
   ![fig72](fig7/fig72.png)
 
+- Generate result for Figure 7A.
+  ![fig73](fig7/fig73.png)
+
+- To get the correlation heat map of different expressed CXC chemokines in RCC with [R.Script](fig7/fig7B.R).
+  ![fig7B](fig7/fig7B.png)
+
+- Opne [STRING](https://string-db.org/)
+
+- set up the parameters and click on the button `SEARCH`.
+  ![fig74](fig7/fig74.png)
+
+- Continue, click on the button `CONTINUE>>`
+  ![fig75](fig7/fig75.png)
+
+- Click on the button `Exports`
+  ![fig76](fig7/fig76.png)
+
+- Click on the button `Exports` and download the result of Fig7C.
+  ![fig7C](fig7/fig7C.png)
+
+- Open [GeneMANIA](http://genemania.org/)
+  ![fig77](fig7/fig77.png)
+
+
 ### Figure 8. The enrichment analysis of different expressed CXC chemokines and 50 most frequently altered neighboring genes in RCC (David 6.8)
 
 ### Figure 9. The correlation between different expressed CXC chemokines and immune cell infiltration (TIMER)
