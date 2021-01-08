@@ -172,6 +172,9 @@ Recover Bioinformatics paper w/o code.
 - Generate result for Figure 7A.
   ![fig73](fig7/fig73.png)
 
+- Download the **mRNA expression z-scores relative to diploid samples (RNA Seq V2 RSEM)** and [save](fig7/fig7222.txt).
+  ![fig732](fig7/fig732.png)
+
 - To get the correlation heat map of different expressed CXC chemokines in RCC with [R.Script](fig7/fig7B.R).
   ![fig7B](fig7/fig7B.png)
 
