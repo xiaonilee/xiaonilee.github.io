@@ -163,6 +163,11 @@ Recover Bioinformatics paper w/o code.
   ![figure6](fig6/figure6.png)
 
 ### Figure 7. Genetic alteration, neighbor gene network, and interaction analyses of different expressed CXC chemokines in RCC patients
+- Open [cBioportal](https://www.cbioportal.org/)
+  ![fig71](fig7/fig71.png)
+
+- Set up the parameters and click the button `Submit Query`
+  ![fig72](fig7/fig72.png)
 
 ### Figure 8. The enrichment analysis of different expressed CXC chemokines and 50 most frequently altered neighboring genes in RCC (David 6.8)
 
