@@ -199,7 +199,7 @@ Recover Bioinformatics paper w/o code.
   ![fig78](fig7/fig78.png)
 
 - Click on the style icon and then click on the save icon to get the result of Fig7D.
-  ![fig7D](fig7/fig7D.png)
+  ![fig7D](fig7/fig7D.jpg)
 
 ### Table 2. Key regulated factor of CXC chemokines in RCC (TRRUST)
 - Open [TRRUST](https://www.grnpedia.org/trrust/)
@@ -209,10 +209,10 @@ Recover Bioinformatics paper w/o code.
   ![fig2](tab2/fig2.png)
 
 - Generate the result
-  ![fig3](tab3/fig3.png)
+  ![fig3](tab2/fig3.png)
  
 - Click on the relative number to check the details
-  ![fig4](tab4/fig4.png)
+  ![fig4](tab2/fig4.png)
 
 - Edit the result and get the result of table2
   ![table2](tab2/table2.png)
