@@ -180,7 +180,7 @@ Recover Bioinformatics paper w/o code.
 
 - Opne [STRING](https://string-db.org/)
 
-- set up the parameters and click on the button `SEARCH`.
+- Set up the parameters and click on the button `SEARCH`.
   ![fig74](fig7/fig74.png)
 
 - Continue, click on the button `CONTINUE>>`
@@ -195,8 +195,46 @@ Recover Bioinformatics paper w/o code.
 - Open [GeneMANIA](http://genemania.org/)
   ![fig77](fig7/fig77.png)
 
+- Enter gene list and click search icon
+  ![fig78](fig7/fig78.png)
 
+- Click on the style icon and then click on the save icon to get the result of Fig7D.
+  ![fig7D](fig7/fig7D.png)
+
+### Table 2. Key regulated factor of CXC chemokines in RCC (TRRUST)
+- Open [TRRUST](https://www.grnpedia.org/trrust/)
+  ![fig1](tab2/fig1.png)
+
+- Entet query genes and setup parameters, and then click on the button `Submit`
+  ![fig2](tab2/fig2.png)
+
+- Generate the result
+  ![fig3](tab3/fig3.png)
+ 
+- Click on the relative number to check the details
+  ![fig4](tab4/fig4.png)
+
+- Edit the result and get the result of table2
+  ![table2](tab2/table2.png)
 ### Figure 8. The enrichment analysis of different expressed CXC chemokines and 50 most frequently altered neighboring genes in RCC (David 6.8)
 
 ### Figure 9. The correlation between different expressed CXC chemokines and immune cell infiltration (TIMER)
 
+- Open [TIMER](https://cistrome.shinyapps.io/timer/)
+  ![fig1](fig9/fig1.png)
+
+- Click on `gene`
+
+- Set up the parameters for CXCL1 gene and click the button `Submit`
+  ![fig2](fig9/fig2.png)
+
+- get the result of CXCL1 gene
+  ![fig310](fig9/fig310.png)
+<hr>
+  
+  ![fig31](fig9/fig31.jpg)
+
+- Merge all results of CXC chemokines together with Google Slides
+  
+  ![fig99](fig9/fig99.png)
+  
