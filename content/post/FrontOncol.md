@@ -241,3 +241,15 @@ Recover Bioinformatics paper w/o code.
 ### Table 4. The cox proportional hazard model of CXC chemokines and six tumor-infiltrating immune cells in RCC (TIMER)
 - Setup the cox proportional hazard of CXC chemokines
   ![fig1](tab4/fig1.png)
+
+### Supplementary Figure 1. The enrichment analysis of different expressed CXC chemokines and 50 most frequently altered neighboring genes in RCC (Metascape)
+- Open [Metascape](https://metascape.org/gp/index.html#/main/step1)
+  ![fig1](supfig1/fig1.png)
+
+- Click on the button `Express Analysis`
+
+- Click on the button `Analysis Report Page`
+  ![fig2](supfig1/fig2.png)
+
+- Generate the results of Supplementary Figure 1
+  ![supfigure1](supfig1/supfigure1.png)
