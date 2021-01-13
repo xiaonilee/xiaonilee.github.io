@@ -237,4 +237,7 @@ Recover Bioinformatics paper w/o code.
 - Merge all results of CXC chemokines together with Google Slides
   
   ![fig99](fig9/fig99.png)
-  
+
+### Table 4. The cox proportional hazard model of CXC chemokines and six tumor-infiltrating immune cells in RCC (TIMER)
+- Setup the cox proportional hazard of CXC chemokines
+  ![fig1](tab4/fig1.png)
