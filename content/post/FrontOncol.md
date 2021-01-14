@@ -217,6 +217,21 @@ Recover Bioinformatics paper w/o code.
 - Edit the result and get the result of table2
   ![table2](tab2/table2.png)
 ### Figure 8. The enrichment analysis of different expressed CXC chemokines and 50 most frequently altered neighboring genes in RCC (David 6.8)
+- Open [DAVID](https://david.ncifcrf.gov/summary.jsp)
+  ![fig1](fig8/fig1.png)
+
+- Follow the protocol step by step.
+  ![fig2](fig8/fig2.png)
+  ![fig3](fig8/fig3.png)
+  ![fig4](fig8/fig4.png)
+  ![fig5](fig8/fig5.png)
+  ![fig6](fig8/fig6.png)
+
+- Generate the result of bar plot with [R.Script](fig8/fig8.R)
+  ![figure8](fig8/figure8.png)
+
+- Alternate, generate the result of dot plot.
+  ![figure82](fig8/figure82.png)
 
 ### Figure 9. The correlation between different expressed CXC chemokines and immune cell infiltration (TIMER)
 
