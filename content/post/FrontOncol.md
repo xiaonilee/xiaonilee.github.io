@@ -216,6 +216,24 @@ Recover Bioinformatics paper w/o code.
 
 - Edit the result and get the result of table2
   ![table2](tab2/table2.png)
+
+### Table 3. The Kinase target networks of CXC chemokines in RCC (LinkedOmics)
+- Open [LinkedOmics](http://www.linkedomics.org/admin.php)
+  ![fig1](tab3/fig1.png)
+
+- Set up the parameters for CXCL1 gene.
+  ![fig2](tab3/fig2.png)
+
+- Click on the button `LinkInterpreter`
+  ![fig3](tab3/fig3.png)
+
+- Set up the parameters to query
+  ![fig4](tab3/fig4.png)
+
+- Download all results of CXCL1 gene.
+  ![fig5](tab3/fig5.png)
+
+- Similarly, get other CXC chemokines following the above steps.
 ### Figure 8. The enrichment analysis of different expressed CXC chemokines and 50 most frequently altered neighboring genes in RCC (David 6.8)
 - Open [DAVID](https://david.ncifcrf.gov/summary.jsp)
   ![fig1](fig8/fig1.png)

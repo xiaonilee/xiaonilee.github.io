@@ -2,7 +2,9 @@
 title: "Gene Set Enrichment Analysis with ClusterProfiler"
 author: "Xiaoni"
 date: "1/14/2021"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 This R Notebook describes the implementation of gene set enrichment analysis (GSEA) using the clusterProfiler package. 
 
@@ -21,8 +23,8 @@ Install and load the annotation "org.Dm.eg.db" because data is about *D melanoga
 
 ```{r, message=F, warning=F}
 # SET THE DESIRED ORGANISM HERE
-# BiocManager::install(organism, character.only = TRUE)
 organism = org.Dm.eg.db
+BiocManager::install("organism", character.only = TRUE)
 library(organism, character.only = TRUE)
 ```
 #Prepare Input
