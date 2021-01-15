@@ -245,6 +245,8 @@ Recover Bioinformatics paper w/o code.
   ![fig5](fig8/fig5.png)
   ![fig6](fig8/fig6.png)
 
+- Download data [bp.txt](fig8/bp.txt),[cc.txt](fig8/cc.txt),[mf.txt](fig8/mf.txt) and [kegg.txt](fig8/kegg.txt)
+
 - Generate the result of bar plot with [R.Script](fig8/fig8.R)
   ![figure8](fig8/figure8.png)
 
