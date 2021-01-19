@@ -1,7 +1,7 @@
 ---
 title: "Identification of Therapeutic Targets and Prognostic Biomarkers Among CXC Chemokines in the Renal Cell Carcinoma Microenvironment"
 date: 2021-01-05
-lastmod: 2021-01-14
+lastmod: 2021-01-19
 draft: false
 tags: ["Recover Paper", "Cancer Research", "Database", "Bioinformatics"]
 categories: ["Recover Paper", "Cancer Research", "Database", "Bioinformatics"]
@@ -57,6 +57,27 @@ Recover Bioinformatics paper w/o code.
   ![figure1](fig1/figure1.png)
 
 ### Table 1. The mRNA levels of CXC chemokines in different types of RCC tissues and normal renal tissues at transcriptome level (ONCOMINE)
+- Set up the parameters for CXCL3 gene.
+  ![tab3](tab1/wrong/tab3.png)
+
+- Continue, set up the parameters for all CXC chemokines.
+  ![tab6](tab1/tab6.png)
+  ![tab7](tab1/wrong/tab7.png)
+  ![tab91](tab1/tab91.png)
+  ![tab92](tab1/tab92.png)
+  ![tab93](tab1/tab93.png)
+  ![tab94](tab1/wrong/tab94.png)
+  ![tab101](tab1/tab101.png)
+  ![tab102](tab1/tab102.png)
+  ![tab103](tab1/tab103.png)
+  ![tab104](tab1/tab104.png)
+  ![tab111](tab1/tab111.png)
+  ![tab112](tab1/tab112.png)
+  ![tab113](tab1/tab113.png)
+  ![tab131](tab1/wrong/tab131.png)
+  ![tab132](tab1/wrong/tab132.png)
+  ![tab161](tab1/tab161.png)
+  ![tab162](tab1/tab162.png)
 
 
 | TLR    | Type                                           | Fold change | P-value  | t-test | References |
