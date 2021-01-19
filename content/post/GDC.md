@@ -30,15 +30,13 @@ The **mission** of the GDC is to provide the cancer research community with a **
 
 <!--more-->
 
-## In Brief
+### In Brief
 
 - Download Data with different methods
   
 - Data Wrangling
   
-## Example 1
-
-## Standarized Download
+### Example 1 Standarized Download
 
 - Click on `Repository` and choose `Cases` to setup interested data: TCGA-LUNG.
   
@@ -203,9 +201,9 @@ output
     395     395    5135
 ```
 
-## Data Wrangling
+### Data Wrangling
 
-### Data of overall Information
+#### Data of overall Information
   
 ```markdown
 # count files number for clinical, isoform and miRNAseq
@@ -299,9 +297,7 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 
   ![RScript1](RScript1.png)
 
-## Example 2
-
-## Fast Download
+### Example 2 Fast Download
 
 - Enter Key words in Google and search: ***tcga gdc lusc***.
 
@@ -328,3 +324,4 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 - Run [Rjson Script](Rjsonfiles.Rmd) and get matched case id with file names.
 
   ![RJson](RJson.png)
+
