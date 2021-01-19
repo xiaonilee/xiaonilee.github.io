@@ -325,3 +325,5 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 
   ![RJson](RJson.png)
 
+### In summary
+- Anyway, here is the official GDC Documentation [on line](https://docs.gdc.cancer.gov/).
