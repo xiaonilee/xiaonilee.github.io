@@ -6,20 +6,11 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 05 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Bioinformatics</title>
-      <link>https://xiaonilee.github.io/tags/bioinformatics/</link>
-      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/bioinformatics/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cancer Research</title>
       <link>https://xiaonilee.github.io/tags/cancer-research/</link>
-      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/cancer-research/</guid>
       <description></description>
@@ -28,9 +19,72 @@
     <item>
       <title>Database</title>
       <link>https://xiaonilee.github.io/tags/database/</link>
-      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EPIC</title>
+      <link>https://xiaonilee.github.io/tags/epic/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/epic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ImmuneCellAI</title>
+      <link>https://xiaonilee.github.io/tags/immunecellai/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/immunecellai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TCIA</title>
+      <link>https://xiaonilee.github.io/tags/tcia/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/tcia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TIMER</title>
+      <link>https://xiaonilee.github.io/tags/timer/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/timer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tumor Immune</title>
+      <link>https://xiaonilee.github.io/tags/tumor-immune/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/tumor-immune/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xCell</title>
+      <link>https://xiaonilee.github.io/tags/xcell/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/xcell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bioinformatics</title>
+      <link>https://xiaonilee.github.io/tags/bioinformatics/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/tags/bioinformatics/</guid>
       <description></description>
     </item>
     
@@ -130,60 +184,6 @@
       <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/tags/cancer-genomics-big-data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GSCA</title>
-      <link>https://xiaonilee.github.io/tags/gsca/</link>
-      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/gsca/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R in Action</title>
-      <link>https://xiaonilee.github.io/tags/r-in-action/</link>
-      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/r-in-action/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TCGA</title>
-      <link>https://xiaonilee.github.io/tags/tcga/</link>
-      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/tcga/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>OncoLnc</title>
-      <link>https://xiaonilee.github.io/tags/oncolnc/</link>
-      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/oncolnc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Plots</title>
-      <link>https://xiaonilee.github.io/tags/plots/</link>
-      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/plots/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GDC</title>
-      <link>https://xiaonilee.github.io/tags/gdc/</link>
-      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/tags/gdc/</guid>
       <description></description>
     </item>
     
