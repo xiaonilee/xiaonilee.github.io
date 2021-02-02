@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xiaonilee.github.io/post/webcrawler/</loc>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaonilee.github.io/post/tumorimmune/</loc>
     <lastmod>2021-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -345,6 +352,90 @@
   </url>
   
   <url>
+    <loc>https://xiaonilee.github.io/tags/big-data/</loc>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/categories/big-data/</loc>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/tags/bioinformatics/</loc>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/categories/bioinformatics/</loc>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/categories/</loc>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/tags/data-mining/</loc>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/categories/data-mining/</loc>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/post/</loc>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/tags/python/</loc>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/categories/python/</loc>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/tags/</loc>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xiaonilee.github.io/</loc>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xiaonilee.github.io/tags/cancer-research/</loc>
     <lastmod>2021-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -354,13 +445,6 @@
   <url>
     <loc>https://xiaonilee.github.io/categories/cancer-research/</loc>
     <lastmod>2021-02-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaonilee.github.io/categories/</loc>
-    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -394,20 +478,6 @@
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/</loc>
-    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaonilee.github.io/tags/</loc>
-    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://xiaonilee.github.io/tags/tcia/</loc>
     <lastmod>2021-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -431,27 +501,6 @@
   <url>
     <loc>https://xiaonilee.github.io/tags/xcell/</loc>
     <lastmod>2021-02-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaonilee.github.io/</loc>
-    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaonilee.github.io/tags/bioinformatics/</loc>
-    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaonilee.github.io/categories/bioinformatics/</loc>
-    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -487,13 +536,6 @@
   <url>
     <loc>https://xiaonilee.github.io/tags/javascript/</loc>
     <lastmod>2021-02-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xiaonilee.github.io/categories/big-data/</loc>
-    <lastmod>2020-12-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

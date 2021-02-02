@@ -6,7 +6,43 @@
     <description>Recent content in Categories on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>big data</title>
+      <link>https://xiaonilee.github.io/categories/big-data/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/categories/big-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bioinformatics</title>
+      <link>https://xiaonilee.github.io/categories/bioinformatics/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/categories/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data mining</title>
+      <link>https://xiaonilee.github.io/categories/data-mining/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/categories/data-mining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://xiaonilee.github.io/categories/python/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/categories/python/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Cancer Research</title>
       <link>https://xiaonilee.github.io/categories/cancer-research/</link>
@@ -26,29 +62,11 @@
     </item>
     
     <item>
-      <title>Bioinformatics</title>
-      <link>https://xiaonilee.github.io/categories/bioinformatics/</link>
-      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/categories/bioinformatics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Recover Paper</title>
       <link>https://xiaonilee.github.io/categories/recover-paper/</link>
       <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/categories/recover-paper/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>big data</title>
-      <link>https://xiaonilee.github.io/categories/big-data/</link>
-      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/categories/big-data/</guid>
       <description></description>
     </item>
     
