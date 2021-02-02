@@ -17,7 +17,7 @@ menu:
     weight: 1
 ---
 
-TensorFlow2 notebook: Class1 - Class6.
+TensorFlow2 搭建优化神经网络的八股，内容包括：深度学习、神经网络的基本概念原理和代码实现示例, Class1 - Class6.
 
 <!--more-->
 
