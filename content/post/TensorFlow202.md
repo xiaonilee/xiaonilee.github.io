@@ -17,7 +17,7 @@ mathjax: true
 #     weight: 1
 ---
 
-TensorFlow2 notebook: Class2 神经网络优化.
+TensorFlow2 notebook: Class2 神经网络的优化方法, 学习率,激活函数,损失函数和正则化的使用, 用Python语言写出5种反向传播优化器(SGD, Momentum, Adagrad, RMSProp, Adam).
 
 <!--more-->
 
