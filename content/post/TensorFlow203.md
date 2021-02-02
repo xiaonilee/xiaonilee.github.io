@@ -17,7 +17,7 @@ mathjax: true
 #     weight: 1
 ---
 
-TensorFlow2 notebook: Class3 神经网络八股.
+TensorFlow2 notebook: Class3 神经网络搭建八股,用"六步法", 不到20行代码, 写出手写数字识别训练模型.
 
 <!--more-->
 
