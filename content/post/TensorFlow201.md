@@ -17,7 +17,7 @@ mathjax: true
 #     weight: 1
 ---
 
-TensorFlow2 notebook: Class1 神经网络计算.
+TensorFlow2 notebook: Class1 讲解神经网络的计算过程，搭建出第一个神经网络模型.
 
 <!--more-->
 
