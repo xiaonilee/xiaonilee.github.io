@@ -17,7 +17,7 @@ mathjax: true
 #     weight: 1
 ---
 
-TensorFlow2 notebook: Class5: 卷积神经网络.
+TensorFlow2 notebook: Class5: 卷积神经网络, 用基础CNN, LeNet, AlexNet, VGGNet, InceptionNet和ResNet实现图像识别.
 
 <!--more-->
 
