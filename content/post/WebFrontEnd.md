@@ -1,7 +1,7 @@
 ---
 title: "web front end"
 date: 2020-12-31
-lastmod: 2021-01-04
+lastmod: 2021-02-02
 draft: false
 tags: ["HTML", "CSS", "JavaScript", "Bioinformatics"]
 categories: ["Bioinformatics"]
