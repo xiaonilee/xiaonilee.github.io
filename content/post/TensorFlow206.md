@@ -17,7 +17,7 @@ mathjax: true
 #     weight: 1
 ---
 
-TensorFlow2 notebook: Class6: 循环神经网络.
+TensorFlow2 notebook: Class6: 循环神经网络,用基础RNN,LSTM,GRU实现股票预测.
 
 <!--more-->
 

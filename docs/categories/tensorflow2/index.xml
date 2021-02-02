@@ -22,7 +22,7 @@
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/post/tensorflow206/</guid>
-      <description>&lt;p&gt;TensorFlow2 notebook: Class6: 循环神经网络.&lt;/p&gt;</description>
+      <description>&lt;p&gt;TensorFlow2 notebook: Class6: 循环神经网络,用基础RNN,LSTM,GRU实现股票预测.&lt;/p&gt;</description>
     </item>
     
     <item>
