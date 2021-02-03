@@ -6,14 +6,23 @@
     <description>Recent content in Bioinformatics on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 02 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bioinformatics analysis of prognostic value of PITX1 gene in breast cancer</title>
+      <link>https://xiaonilee.github.io/post/bioscirep/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/bioscirep/</guid>
+      <description>&lt;p&gt;Recover Bioinformatics paper w/o code.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Python Spider</title>
       <link>https://xiaonilee.github.io/post/webcrawler/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://xiaonilee.github.io/post/webcrawler/</guid>
-      <description>&lt;p&gt;Python Web crawler&lt;/p&gt;</description>
+      <description>&lt;p&gt;Python Web Crawler&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -176,15 +185,6 @@
       
       <guid>https://xiaonilee.github.io/post/rinaction12/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 12.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 11. Intermediate graphs</title>
-      <link>https://xiaonilee.github.io/post/rinaction11/</link>
-      <pubDate>Tue, 03 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiaonilee.github.io/post/rinaction11/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 11.&lt;/p&gt;</description>
     </item>
     
   </channel>

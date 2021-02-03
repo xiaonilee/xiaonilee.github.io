@@ -6,7 +6,16 @@
     <description>Recent content in Database on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 31 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bioinformatics analysis of prognostic value of PITX1 gene in breast cancer</title>
+      <link>https://xiaonilee.github.io/post/bioscirep/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiaonilee.github.io/post/bioscirep/</guid>
+      <description>&lt;p&gt;Recover Bioinformatics paper w/o code.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Comprehensive Bioinformatics Analysis of Tumor-Infiltrating Immune Cells</title>
       <link>https://xiaonilee.github.io/post/tumorimmune/</link>
