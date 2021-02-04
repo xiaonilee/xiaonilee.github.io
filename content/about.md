@@ -38,29 +38,30 @@ mathjax: false
 - Data mining
   - WEKA
 
-- [Statistics_st101](https://classroom.udacity.com/courses/st101) and [Statistics_st095](https://classroom.udacity.com/courses/st095)
+- Statistics
+  - [st101](https://classroom.udacity.com/courses/st101) 
+  - [st095](https://classroom.udacity.com/courses/st095)
 
 - Linux 
   - [Linux](https://github.com/xiaonilee/Bioinformatics_Linux)
 
-  - [Hadoop_ud617](https://github.com/xiaonilee/Intro_to_Hadoop_and_MapReduce_byCloudera_ud617)
+  - [Intro to Hadoop and MapReduce byCloudera_ud617](https://github.com/xiaonilee/Intro_to_Hadoop_and_MapReduce_byCloudera_ud617)
 
 - R
-  - [R_ud651](https://github.com/xiaonilee/Data_Analysis_with_R_byFacebook_ud651) 
+  - [Data Analysis with R byFacebook_ud651](https://github.com/xiaonilee/Data_Analysis_with_R_byFacebook_ud651) 
   - [Shiny](https://xiaonilee.github.io/post/shiny01/)
 
 - Python
 
-  - [Python_cs101](https://github.com/xiaonilee/Intro_to_Computer_Science_CS101) 
-  - [Python_ud1110](https://github.com/xiaonilee/Introduction_to_Python_Programming_ud1110) 
-  - [python_ud212](https://github.com/xiaonilee/Design_of_Computer_Programs_Programming_Principles_ud212) 
-  - [NumPy/Pandas_ud170](https://github.com/xiaonilee/Intro_To_Data_Analysis_ud170_b) 
+  - [Intro to Computer Science_cs101](https://github.com/xiaonilee/Intro_to_Computer_Science_CS101) 
+  - [Introduction to Python Programming_ud1110](https://github.com/xiaonilee/Introduction_to_Python_Programming_ud1110)  
+  - [NumPy/Pandas/Matplotlib_ud170](https://github.com/xiaonilee/Intro_To_Data_Analysis_ud170_b) 
   - [Data Structures and Algorithms in Python](https://github.com/xiaonilee/Data_Structures_and_Algorithms_in_Python) 
   - [Django](https://github.com/xiaonilee/Django-Learn)
 
 - SQL/MongoDB
-  - [SQL_ud198](https://github.com/xiaonilee/SQL_for_Data_Analysis_ud198)
-  - [MongoDB](https://github.com/xiaonilee/Data_Wrangling_with_MongoDB_byMongoDB)
+  - [SQL for Data Analysis_ud198](https://github.com/xiaonilee/SQL_for_Data_Analysis_ud198)
+  - [Data Wrangling with MongoDB_ud032](https://github.com/xiaonilee/Data_Wrangling_with_MongoDB_byMongoDB)
 
 - AI
   - [Machine Learning_ud120](https://github.com/xiaonilee/Introduction_To_Machine_Learning_ud120) 
