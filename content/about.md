@@ -24,6 +24,20 @@ mathjax: false
 - Public Databases
   - `TCGA/GDC` `GSCALite` `OncoLnc` `Oncomine` `GEPIA` `UALCAN` `LinkedOmics` `TIMER` `TRRUST` `GeneMANIA` `Metascape` `STRING`
 
+- Nucleotide
+
+- Protein
+  - UniProtKB
+  - PDB
+  - Pfam，CATH，SCOP2
+  - KEGG，OMIM
+
+- Phylogenetic tree
+  - [MEGA](https://www.megasoftware.net/)
+
+- Data mining
+  - WEKA
+
 - [Statistics_st101](https://classroom.udacity.com/courses/st101) and [Statistics_st095](https://classroom.udacity.com/courses/st095)
 
 - Linux 
@@ -51,4 +65,6 @@ mathjax: false
 - AI
   - [Machine Learning_ud120](https://github.com/xiaonilee/Introduction_To_Machine_Learning_ud120) 
   - [TensorFlow2](https://xiaonilee.github.io/post/tensorflow2/)
+
+
 
