@@ -1,7 +1,7 @@
 ---
 title: "Identification of Therapeutic Targets and Prognostic Biomarkers Among CXC Chemokines in the Renal Cell Carcinoma Microenvironment"
 date: 2021-01-05
-lastmod: 2021-01-19
+lastmod: 2021-02-06
 draft: false
 tags: ["Recover Paper", "Cancer Research", "Database", "Bioinformatics"]
 categories: ["Recover Paper", "Cancer Research", "Database", "Bioinformatics"]
@@ -17,7 +17,8 @@ menu:
     weight: 1
 ---
 
-Recover Bioinformatics paper w/o code.
+In this study, the authors conducted an in-depth and comprehensive bioinformatics analysis of the expression of CXC chemokines in RCC and evaluated their potential as therapeutic targets and prognostic biomarkers based on several large public databases.
+
 
 <!--more-->
 
