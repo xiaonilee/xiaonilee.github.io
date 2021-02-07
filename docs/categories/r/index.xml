@@ -2,188 +2,188 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on xiaoni&#39;s blog</title>
-    <link>https://xiaonilee.github.io/categories/r/</link>
+    <link>/categories/r/</link>
     <description>Recent content in R on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 30 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>a Shiny Demo: kmeans clustering</title>
-      <link>https://xiaonilee.github.io/post/shiny02/</link>
+      <link>/post/shiny02/</link>
       <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/shiny02/</guid>
+      <guid>/post/shiny02/</guid>
       <description>&lt;p&gt;Recover a Shiny app demo - kmeans clustering.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Learn Shiny: Building a Shiny app</title>
-      <link>https://xiaonilee.github.io/post/shiny01/</link>
+      <link>/post/shiny01/</link>
       <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/shiny01/</guid>
+      <guid>/post/shiny01/</guid>
       <description>&lt;p&gt;Building a Shiny app - an interactive tutorial.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Book: R in Action</title>
-      <link>https://xiaonilee.github.io/post/rinactionmap/</link>
+      <link>/post/rinactionmap/</link>
       <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinactionmap/</guid>
+      <guid>/post/rinactionmap/</guid>
       <description>&lt;p&gt;Roadmap for the book: &lt;em&gt;&lt;strong&gt;R in Action, Second Edition&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>GSCALite: Gene Set Cancer Analysis</title>
-      <link>https://xiaonilee.github.io/post/gscalite/</link>
+      <link>/post/gscalite/</link>
       <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/gscalite/</guid>
+      <guid>/post/gscalite/</guid>
       <description>&lt;p&gt;GSCALite: a web-based platform for Gene Set Cancer Analysis.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Chapter 23. Advanced graphics with the lattice package</title>
-      <link>https://xiaonilee.github.io/post/rinaction23/</link>
+      <link>/post/rinaction23/</link>
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinaction23/</guid>
+      <guid>/post/rinaction23/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 23.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Chapter 22. Creating dynamic reports</title>
-      <link>https://xiaonilee.github.io/post/rinaction22/</link>
+      <link>/post/rinaction22/</link>
       <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinaction22/</guid>
+      <guid>/post/rinaction22/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 22.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Chapter 21. Creating a package</title>
-      <link>https://xiaonilee.github.io/post/rinaction21/</link>
+      <link>/post/rinaction21/</link>
       <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinaction21/</guid>
+      <guid>/post/rinaction21/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 21.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Chapter 20. Advanced programming</title>
-      <link>https://xiaonilee.github.io/post/rinaction20/</link>
+      <link>/post/rinaction20/</link>
       <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinaction20/</guid>
+      <guid>/post/rinaction20/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 20.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Chapter 19. Advanced graphics with ggplot2</title>
-      <link>https://xiaonilee.github.io/post/rinaction19/</link>
+      <link>/post/rinaction19/</link>
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinaction19/</guid>
+      <guid>/post/rinaction19/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 19.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Chapter 18. Advanced methods for missing data</title>
-      <link>https://xiaonilee.github.io/post/rinaction18/</link>
+      <link>/post/rinaction18/</link>
       <pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinaction18/</guid>
+      <guid>/post/rinaction18/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 18.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Chapter 17. Classification</title>
-      <link>https://xiaonilee.github.io/post/rinaction17/</link>
+      <link>/post/rinaction17/</link>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinaction17/</guid>
+      <guid>/post/rinaction17/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 17.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Chapter 16. Cluster analysis</title>
-      <link>https://xiaonilee.github.io/post/rinaction16/</link>
+      <link>/post/rinaction16/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinaction16/</guid>
+      <guid>/post/rinaction16/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 16.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Chapter 15. Time series</title>
-      <link>https://xiaonilee.github.io/post/rinaction15/</link>
+      <link>/post/rinaction15/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinaction15/</guid>
+      <guid>/post/rinaction15/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 15.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Chapter 14. Principal components and factor analysis</title>
-      <link>https://xiaonilee.github.io/post/rinaction14/</link>
+      <link>/post/rinaction14/</link>
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinaction14/</guid>
+      <guid>/post/rinaction14/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 14.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Chapter 13. Generalized linear models</title>
-      <link>https://xiaonilee.github.io/post/rinaction13/</link>
+      <link>/post/rinaction13/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinaction13/</guid>
+      <guid>/post/rinaction13/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 13.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Chapter 12. Resampling statistics and bootstrapping</title>
-      <link>https://xiaonilee.github.io/post/rinaction12/</link>
+      <link>/post/rinaction12/</link>
       <pubDate>Thu, 05 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinaction12/</guid>
+      <guid>/post/rinaction12/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 12.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Chapter 11. Intermediate graphs</title>
-      <link>https://xiaonilee.github.io/post/rinaction11/</link>
+      <link>/post/rinaction11/</link>
       <pubDate>Tue, 03 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinaction11/</guid>
+      <guid>/post/rinaction11/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 11.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Chapter 10. Power analysis</title>
-      <link>https://xiaonilee.github.io/post/rinaction10/</link>
+      <link>/post/rinaction10/</link>
       <pubDate>Mon, 02 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinaction10/</guid>
+      <guid>/post/rinaction10/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 10.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Chapter 9. Analysis of variance</title>
-      <link>https://xiaonilee.github.io/post/rinaction9/</link>
+      <link>/post/rinaction9/</link>
       <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinaction9/</guid>
+      <guid>/post/rinaction9/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 9.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Chapter 8. Regression</title>
-      <link>https://xiaonilee.github.io/post/rinaction8/</link>
+      <link>/post/rinaction8/</link>
       <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/rinaction8/</guid>
+      <guid>/post/rinaction8/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 8.&lt;/p&gt;</description>
     </item>
     

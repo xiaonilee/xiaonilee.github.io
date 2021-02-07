@@ -1,743 +1,743 @@
-<?xml-stylesheet type="text/xsl" href="https://xiaonilee.github.io/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xiaonilee.github.io/post/bioscirep/</loc>
+    <loc>/post/bioscirep/</loc>
     <lastmod>2021-02-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/webcrawler/</loc>
+    <loc>/post/webcrawler/</loc>
     <lastmod>2021-02-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/tumorimmune/</loc>
+    <loc>/post/tumorimmune/</loc>
     <lastmod>2021-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/frontoncol/</loc>
+    <loc>/post/frontoncol/</loc>
     <lastmod>2021-02-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/webfrontend/</loc>
+    <loc>/post/webfrontend/</loc>
     <lastmod>2021-02-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/tensorflow2/</loc>
+    <loc>/post/tensorflow2/</loc>
     <lastmod>2020-12-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/tensorflow206/</loc>
+    <loc>/post/tensorflow206/</loc>
     <lastmod>2020-12-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/tensorflow205/</loc>
+    <loc>/post/tensorflow205/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/tensorflow204/</loc>
+    <loc>/post/tensorflow204/</loc>
     <lastmod>2020-12-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/tensorflow203/</loc>
+    <loc>/post/tensorflow203/</loc>
     <lastmod>2020-12-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/tensorflow202/</loc>
+    <loc>/post/tensorflow202/</loc>
     <lastmod>2020-12-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/tensorflow201/</loc>
+    <loc>/post/tensorflow201/</loc>
     <lastmod>2020-12-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/shiny02/</loc>
+    <loc>/post/shiny02/</loc>
     <lastmod>2020-11-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/shiny01/</loc>
+    <loc>/post/shiny01/</loc>
     <lastmod>2020-11-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinactionmap/</loc>
+    <loc>/post/rinactionmap/</loc>
     <lastmod>2020-11-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/gscalite/</loc>
+    <loc>/post/gscalite/</loc>
     <lastmod>2020-11-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction23/</loc>
+    <loc>/post/rinaction23/</loc>
     <lastmod>2020-11-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction22/</loc>
+    <loc>/post/rinaction22/</loc>
     <lastmod>2020-11-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction21/</loc>
+    <loc>/post/rinaction21/</loc>
     <lastmod>2020-11-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction20/</loc>
+    <loc>/post/rinaction20/</loc>
     <lastmod>2020-11-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction19/</loc>
+    <loc>/post/rinaction19/</loc>
     <lastmod>2020-11-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction18/</loc>
+    <loc>/post/rinaction18/</loc>
     <lastmod>2020-11-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction17/</loc>
+    <loc>/post/rinaction17/</loc>
     <lastmod>2020-11-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction16/</loc>
+    <loc>/post/rinaction16/</loc>
     <lastmod>2020-11-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction15/</loc>
+    <loc>/post/rinaction15/</loc>
     <lastmod>2020-11-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction14/</loc>
+    <loc>/post/rinaction14/</loc>
     <lastmod>2020-11-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction13/</loc>
+    <loc>/post/rinaction13/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction12/</loc>
+    <loc>/post/rinaction12/</loc>
     <lastmod>2020-11-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction11/</loc>
+    <loc>/post/rinaction11/</loc>
     <lastmod>2020-11-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction10/</loc>
+    <loc>/post/rinaction10/</loc>
     <lastmod>2020-11-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction9/</loc>
+    <loc>/post/rinaction9/</loc>
     <lastmod>2020-10-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction8/</loc>
+    <loc>/post/rinaction8/</loc>
     <lastmod>2020-10-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction7/</loc>
+    <loc>/post/rinaction7/</loc>
     <lastmod>2020-10-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction6/</loc>
+    <loc>/post/rinaction6/</loc>
     <lastmod>2020-10-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction5/</loc>
+    <loc>/post/rinaction5/</loc>
     <lastmod>2020-10-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction4/</loc>
+    <loc>/post/rinaction4/</loc>
     <lastmod>2020-10-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction3/</loc>
+    <loc>/post/rinaction3/</loc>
     <lastmod>2020-10-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction2/</loc>
+    <loc>/post/rinaction2/</loc>
     <lastmod>2020-10-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/rinaction1/</loc>
+    <loc>/post/rinaction1/</loc>
     <lastmod>2020-10-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/hmwk10/</loc>
+    <loc>/post/hmwk10/</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/tricktcga/</loc>
+    <loc>/post/tricktcga/</loc>
     <lastmod>2020-10-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/oncolnc/</loc>
+    <loc>/post/oncolnc/</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/gdc/</loc>
+    <loc>/post/gdc/</loc>
     <lastmod>2020-09-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/firebrowse/</loc>
+    <loc>/post/firebrowse/</loc>
     <lastmod>2020-09-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/ggplot2/</loc>
+    <loc>/post/ggplot2/</loc>
     <lastmod>2020-09-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/genomicsignatures/</loc>
+    <loc>/post/genomicsignatures/</loc>
     <lastmod>2020-09-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/privatepublictogether/</loc>
+    <loc>/post/privatepublictogether/</loc>
     <lastmod>2020-10-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/localxenadatahub/</loc>
+    <loc>/post/localxenadatahub/</loc>
     <lastmod>2020-09-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/loaddata/</loc>
+    <loc>/post/loaddata/</loc>
     <lastmod>2020-10-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/tissgdb/</loc>
+    <loc>/post/tissgdb/</loc>
     <lastmod>2020-09-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2021-02-04T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/bioinformatics/</loc>
+    <loc>/tags/bioinformatics/</loc>
     <lastmod>2021-02-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/categories/bioinformatics/</loc>
+    <loc>/categories/bioinformatics/</loc>
     <lastmod>2021-02-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/cancer-research/</loc>
+    <loc>/tags/cancer-research/</loc>
     <lastmod>2021-02-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/categories/cancer-research/</loc>
+    <loc>/categories/cancer-research/</loc>
     <lastmod>2021-02-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/categories/</loc>
+    <loc>/categories/</loc>
     <lastmod>2021-02-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/database/</loc>
+    <loc>/tags/database/</loc>
     <lastmod>2021-02-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/categories/database/</loc>
+    <loc>/categories/database/</loc>
     <lastmod>2021-02-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/post/</loc>
+    <loc>/post/</loc>
     <lastmod>2021-02-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/recover-paper/</loc>
+    <loc>/tags/recover-paper/</loc>
     <lastmod>2021-02-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/categories/recover-paper/</loc>
+    <loc>/categories/recover-paper/</loc>
     <lastmod>2021-02-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2021-02-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/</loc>
+    <loc>/</loc>
     <lastmod>2021-02-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/big-data/</loc>
+    <loc>/tags/big-data/</loc>
     <lastmod>2021-02-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/categories/big-data/</loc>
+    <loc>/categories/big-data/</loc>
     <lastmod>2021-02-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/data-mining/</loc>
+    <loc>/tags/data-mining/</loc>
     <lastmod>2021-02-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/categories/data-mining/</loc>
+    <loc>/categories/data-mining/</loc>
     <lastmod>2021-02-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/python/</loc>
+    <loc>/tags/python/</loc>
     <lastmod>2021-02-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/categories/python/</loc>
+    <loc>/categories/python/</loc>
     <lastmod>2021-02-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/epic/</loc>
+    <loc>/tags/epic/</loc>
     <lastmod>2021-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/immunecellai/</loc>
+    <loc>/tags/immunecellai/</loc>
     <lastmod>2021-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/tcia/</loc>
+    <loc>/tags/tcia/</loc>
     <lastmod>2021-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/timer/</loc>
+    <loc>/tags/timer/</loc>
     <lastmod>2021-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/tumor-immune/</loc>
+    <loc>/tags/tumor-immune/</loc>
     <lastmod>2021-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/xcell/</loc>
+    <loc>/tags/xcell/</loc>
     <lastmod>2021-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/css/</loc>
+    <loc>/tags/css/</loc>
     <lastmod>2021-02-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/html/</loc>
+    <loc>/tags/html/</loc>
     <lastmod>2021-02-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/javascript/</loc>
+    <loc>/tags/javascript/</loc>
     <lastmod>2021-02-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/ml/</loc>
+    <loc>/tags/ml/</loc>
     <lastmod>2020-12-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/categories/ml/</loc>
+    <loc>/categories/ml/</loc>
     <lastmod>2020-12-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/tensorflow2/</loc>
+    <loc>/tags/tensorflow2/</loc>
     <lastmod>2020-12-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/categories/tensorflow2/</loc>
+    <loc>/categories/tensorflow2/</loc>
     <lastmod>2020-12-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/r/</loc>
+    <loc>/tags/r/</loc>
     <lastmod>2020-11-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/categories/r/</loc>
+    <loc>/categories/r/</loc>
     <lastmod>2020-11-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/r-package/</loc>
+    <loc>/tags/r-package/</loc>
     <lastmod>2020-11-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/categories/r-package/</loc>
+    <loc>/categories/r-package/</loc>
     <lastmod>2020-11-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/shiny/</loc>
+    <loc>/tags/shiny/</loc>
     <lastmod>2020-11-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/book/</loc>
+    <loc>/tags/book/</loc>
     <lastmod>2020-11-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/cancer-genomics-big-data/</loc>
+    <loc>/tags/cancer-genomics-big-data/</loc>
     <lastmod>2020-11-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/gsca/</loc>
+    <loc>/tags/gsca/</loc>
     <lastmod>2020-11-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/r-in-action/</loc>
+    <loc>/tags/r-in-action/</loc>
     <lastmod>2020-11-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/tcga/</loc>
+    <loc>/tags/tcga/</loc>
     <lastmod>2020-11-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/oncolnc/</loc>
+    <loc>/tags/oncolnc/</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/plots/</loc>
+    <loc>/tags/plots/</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/categories/web-tool/</loc>
+    <loc>/categories/web-tool/</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/gdc/</loc>
+    <loc>/tags/gdc/</loc>
     <lastmod>2020-09-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/firehose/</loc>
+    <loc>/tags/firehose/</loc>
     <lastmod>2020-09-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/features/</loc>
+    <loc>/tags/features/</loc>
     <lastmod>2020-09-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/signatures/</loc>
+    <loc>/tags/signatures/</loc>
     <lastmod>2020-09-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/ucsc/</loc>
+    <loc>/tags/ucsc/</loc>
     <lastmod>2020-10-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/xena/</loc>
+    <loc>/tags/xena/</loc>
     <lastmod>2020-10-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/cancer/</loc>
+    <loc>/tags/cancer/</loc>
     <lastmod>2020-10-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/prostate/</loc>
+    <loc>/tags/prostate/</loc>
     <lastmod>2020-10-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/breast/</loc>
+    <loc>/tags/breast/</loc>
     <lastmod>2020-09-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/geo/</loc>
+    <loc>/tags/geo/</loc>
     <lastmod>2020-10-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xiaonilee.github.io/tags/tissgdb/</loc>
+    <loc>/tags/tissgdb/</loc>
     <lastmod>2020-09-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

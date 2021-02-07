@@ -2,64 +2,64 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TCGA on xiaoni&#39;s blog</title>
-    <link>https://xiaonilee.github.io/tags/tcga/</link>
+    <link>/tags/tcga/</link>
     <description>Recent content in TCGA on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/tcga/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/tcga/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GSCALite: Gene Set Cancer Analysis</title>
-      <link>https://xiaonilee.github.io/post/gscalite/</link>
+      <link>/post/gscalite/</link>
       <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/gscalite/</guid>
+      <guid>/post/gscalite/</guid>
       <description>&lt;p&gt;GSCALite: a web-based platform for Gene Set Cancer Analysis.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>R Notebook : Application Exercises</title>
-      <link>https://xiaonilee.github.io/post/hmwk10/</link>
+      <link>/post/hmwk10/</link>
       <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/hmwk10/</guid>
+      <guid>/post/hmwk10/</guid>
       <description>&lt;p&gt;Bioinformatics Exercises of Application with &lt;a href=&#34;hmwk10.Rmd&#34;&gt;R&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>R re-analysis in TCGA</title>
-      <link>https://xiaonilee.github.io/post/tricktcga/</link>
+      <link>/post/tricktcga/</link>
       <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/tricktcga/</guid>
+      <guid>/post/tricktcga/</guid>
       <description>&lt;p&gt;Data setup via TCGA.&lt;/p&gt;
 &lt;p&gt;Re-analysis by R.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>OncoLnc: A straightforward Tool</title>
-      <link>https://xiaonilee.github.io/post/oncolnc/</link>
+      <link>/post/oncolnc/</link>
       <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/oncolnc/</guid>
+      <guid>/post/oncolnc/</guid>
       <description>&lt;p&gt;&lt;strong&gt;OncoLnc Web Tool&lt;/strong&gt;: Interactively exploring survival correlations, and for downloading clinical data coupled to expression data for mRNAs, miRNAs, or lncRNAs from &lt;em&gt;&lt;strong&gt;TCGA&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>GDC Notebook</title>
-      <link>https://xiaonilee.github.io/post/gdc/</link>
+      <link>/post/gdc/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/gdc/</guid>
+      <guid>/post/gdc/</guid>
       <description>&lt;p&gt;The Genomic Data Commons (&lt;a href=&#34;https://portal.gdc.cancer.gov/&#34;&gt;GDC&lt;/a&gt;), is a research program of the National Cancer Institute (NCI).&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;mission&lt;/strong&gt; of the GDC is to provide the cancer research community with a &lt;strong&gt;unified&lt;/strong&gt; data repository that enables data sharing across cancer genomic studies in support of &lt;strong&gt;precision medicine&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>FireBrowse Notebook</title>
-      <link>https://xiaonilee.github.io/post/firebrowse/</link>
+      <link>/post/firebrowse/</link>
       <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/firebrowse/</guid>
+      <guid>/post/firebrowse/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://firebrowse.org/&#34;&gt;FireBrowse Homepage&lt;/a&gt; and &lt;a href=&#34;http://gdac.broadinstitute.org/&#34;&gt;&lt;em&gt;BROAD GDAC&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Analysis with FIREHOSE plus TCGA UCSC Xena.&lt;/p&gt;</description>
     </item>

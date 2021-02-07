@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Breast on xiaoni&#39;s blog</title>
-    <link>https://xiaonilee.github.io/tags/breast/</link>
+    <link>/tags/breast/</link>
     <description>Recent content in Breast on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/breast/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/breast/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Local UCSC Xena Data Hub</title>
-      <link>https://xiaonilee.github.io/post/localxenadatahub/</link>
+      <link>/post/localxenadatahub/</link>
       <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/localxenadatahub/</guid>
+      <guid>/post/localxenadatahub/</guid>
       <description>&lt;p&gt;Load the private data to Local Xena Data Hub.&lt;/p&gt;</description>
     </item>
     

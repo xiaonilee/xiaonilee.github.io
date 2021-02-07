@@ -2,188 +2,188 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on xiaoni&#39;s blog</title>
-    <link>https://xiaonilee.github.io/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bioinformatics</title>
-      <link>https://xiaonilee.github.io/tags/bioinformatics/</link>
+      <link>/tags/bioinformatics/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/bioinformatics/</guid>
+      <guid>/tags/bioinformatics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cancer Research</title>
-      <link>https://xiaonilee.github.io/tags/cancer-research/</link>
+      <link>/tags/cancer-research/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/cancer-research/</guid>
+      <guid>/tags/cancer-research/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Database</title>
-      <link>https://xiaonilee.github.io/tags/database/</link>
+      <link>/tags/database/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/database/</guid>
+      <guid>/tags/database/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Recover Paper</title>
-      <link>https://xiaonilee.github.io/tags/recover-paper/</link>
+      <link>/tags/recover-paper/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/recover-paper/</guid>
+      <guid>/tags/recover-paper/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Big data</title>
-      <link>https://xiaonilee.github.io/tags/big-data/</link>
+      <link>/tags/big-data/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/big-data/</guid>
+      <guid>/tags/big-data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data mining</title>
-      <link>https://xiaonilee.github.io/tags/data-mining/</link>
+      <link>/tags/data-mining/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/data-mining/</guid>
+      <guid>/tags/data-mining/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://xiaonilee.github.io/tags/python/</link>
+      <link>/tags/python/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/python/</guid>
+      <guid>/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>EPIC</title>
-      <link>https://xiaonilee.github.io/tags/epic/</link>
+      <link>/tags/epic/</link>
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/epic/</guid>
+      <guid>/tags/epic/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ImmuneCellAI</title>
-      <link>https://xiaonilee.github.io/tags/immunecellai/</link>
+      <link>/tags/immunecellai/</link>
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/immunecellai/</guid>
+      <guid>/tags/immunecellai/</guid>
       <description></description>
     </item>
     
     <item>
       <title>TCIA</title>
-      <link>https://xiaonilee.github.io/tags/tcia/</link>
+      <link>/tags/tcia/</link>
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/tcia/</guid>
+      <guid>/tags/tcia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>TIMER</title>
-      <link>https://xiaonilee.github.io/tags/timer/</link>
+      <link>/tags/timer/</link>
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/timer/</guid>
+      <guid>/tags/timer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tumor Immune</title>
-      <link>https://xiaonilee.github.io/tags/tumor-immune/</link>
+      <link>/tags/tumor-immune/</link>
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/tumor-immune/</guid>
+      <guid>/tags/tumor-immune/</guid>
       <description></description>
     </item>
     
     <item>
       <title>xCell</title>
-      <link>https://xiaonilee.github.io/tags/xcell/</link>
+      <link>/tags/xcell/</link>
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/xcell/</guid>
+      <guid>/tags/xcell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSS</title>
-      <link>https://xiaonilee.github.io/tags/css/</link>
+      <link>/tags/css/</link>
       <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/css/</guid>
+      <guid>/tags/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTML</title>
-      <link>https://xiaonilee.github.io/tags/html/</link>
+      <link>/tags/html/</link>
       <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/html/</guid>
+      <guid>/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JavaScript</title>
-      <link>https://xiaonilee.github.io/tags/javascript/</link>
+      <link>/tags/javascript/</link>
       <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/javascript/</guid>
+      <guid>/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ML</title>
-      <link>https://xiaonilee.github.io/tags/ml/</link>
+      <link>/tags/ml/</link>
       <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/ml/</guid>
+      <guid>/tags/ml/</guid>
       <description></description>
     </item>
     
     <item>
       <title>TensorFlow2</title>
-      <link>https://xiaonilee.github.io/tags/tensorflow2/</link>
+      <link>/tags/tensorflow2/</link>
       <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/tensorflow2/</guid>
+      <guid>/tags/tensorflow2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>https://xiaonilee.github.io/tags/r/</link>
+      <link>/tags/r/</link>
       <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/r/</guid>
+      <guid>/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R Package</title>
-      <link>https://xiaonilee.github.io/tags/r-package/</link>
+      <link>/tags/r-package/</link>
       <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/tags/r-package/</guid>
+      <guid>/tags/r-package/</guid>
       <description></description>
     </item>
     

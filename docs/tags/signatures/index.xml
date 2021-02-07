@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>signatures on xiaoni&#39;s blog</title>
-    <link>https://xiaonilee.github.io/tags/signatures/</link>
+    <link>/tags/signatures/</link>
     <description>Recent content in signatures on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 14 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/signatures/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/signatures/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>UCSC Xena Features: Genomic Signatures</title>
-      <link>https://xiaonilee.github.io/post/genomicsignatures/</link>
+      <link>/post/genomicsignatures/</link>
       <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/genomicsignatures/</guid>
+      <guid>/post/genomicsignatures/</guid>
       <description>&lt;p&gt;Genomic signatures, sometimes expressed as a weighted sum of genes, are an algebra over genes.&lt;/p&gt;</description>
     </item>
     

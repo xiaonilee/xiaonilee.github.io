@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cancer on xiaoni&#39;s blog</title>
-    <link>https://xiaonilee.github.io/tags/cancer/</link>
+    <link>/tags/cancer/</link>
     <description>Recent content in Cancer on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 11 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/cancer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/cancer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>UCSC Xena: Private and Public Data Put Together</title>
-      <link>https://xiaonilee.github.io/post/privatepublictogether/</link>
+      <link>/post/privatepublictogether/</link>
       <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/privatepublictogether/</guid>
+      <guid>/post/privatepublictogether/</guid>
       <description>&lt;p&gt;Put private data and public Xena Data together via UCSC Xena Hub .&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Local UCSC Xena Data Hub</title>
-      <link>https://xiaonilee.github.io/post/localxenadatahub/</link>
+      <link>/post/localxenadatahub/</link>
       <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/localxenadatahub/</guid>
+      <guid>/post/localxenadatahub/</guid>
       <description>&lt;p&gt;Load the private data to Local Xena Data Hub.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>TissGDB: tissue-specific gene database in cancer</title>
-      <link>https://xiaonilee.github.io/post/tissgdb/</link>
+      <link>/post/tissgdb/</link>
       <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/tissgdb/</guid>
+      <guid>/post/tissgdb/</guid>
       <description>&lt;p&gt;TissGDB is the tissue-specific gene annotation database in cancer, aiming to provide a resource or reference for cancer and the related disease studies in the context of tissue specificity.&lt;/p&gt;</description>
     </item>
     

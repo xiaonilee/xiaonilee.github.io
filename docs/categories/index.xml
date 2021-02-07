@@ -2,116 +2,116 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on xiaoni&#39;s blog</title>
-    <link>https://xiaonilee.github.io/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bioinformatics</title>
-      <link>https://xiaonilee.github.io/categories/bioinformatics/</link>
+      <link>/categories/bioinformatics/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/categories/bioinformatics/</guid>
+      <guid>/categories/bioinformatics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cancer Research</title>
-      <link>https://xiaonilee.github.io/categories/cancer-research/</link>
+      <link>/categories/cancer-research/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/categories/cancer-research/</guid>
+      <guid>/categories/cancer-research/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Database</title>
-      <link>https://xiaonilee.github.io/categories/database/</link>
+      <link>/categories/database/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/categories/database/</guid>
+      <guid>/categories/database/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Recover Paper</title>
-      <link>https://xiaonilee.github.io/categories/recover-paper/</link>
+      <link>/categories/recover-paper/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/categories/recover-paper/</guid>
+      <guid>/categories/recover-paper/</guid>
       <description></description>
     </item>
     
     <item>
       <title>big data</title>
-      <link>https://xiaonilee.github.io/categories/big-data/</link>
+      <link>/categories/big-data/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/categories/big-data/</guid>
+      <guid>/categories/big-data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data mining</title>
-      <link>https://xiaonilee.github.io/categories/data-mining/</link>
+      <link>/categories/data-mining/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/categories/data-mining/</guid>
+      <guid>/categories/data-mining/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://xiaonilee.github.io/categories/python/</link>
+      <link>/categories/python/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/categories/python/</guid>
+      <guid>/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ML</title>
-      <link>https://xiaonilee.github.io/categories/ml/</link>
+      <link>/categories/ml/</link>
       <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/categories/ml/</guid>
+      <guid>/categories/ml/</guid>
       <description></description>
     </item>
     
     <item>
       <title>TensorFlow2</title>
-      <link>https://xiaonilee.github.io/categories/tensorflow2/</link>
+      <link>/categories/tensorflow2/</link>
       <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/categories/tensorflow2/</guid>
+      <guid>/categories/tensorflow2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>https://xiaonilee.github.io/categories/r/</link>
+      <link>/categories/r/</link>
       <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/categories/r/</guid>
+      <guid>/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R Package</title>
-      <link>https://xiaonilee.github.io/categories/r-package/</link>
+      <link>/categories/r-package/</link>
       <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/categories/r-package/</guid>
+      <guid>/categories/r-package/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web Tool</title>
-      <link>https://xiaonilee.github.io/categories/web-tool/</link>
+      <link>/categories/web-tool/</link>
       <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/categories/web-tool/</guid>
+      <guid>/categories/web-tool/</guid>
       <description></description>
     </item>
     

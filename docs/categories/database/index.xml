@@ -2,122 +2,122 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Database on xiaoni&#39;s blog</title>
-    <link>https://xiaonilee.github.io/categories/database/</link>
+    <link>/categories/database/</link>
     <description>Recent content in Database on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/categories/database/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/database/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bioinformatics analysis of prognostic value of PITX1 gene in breast cancer</title>
-      <link>https://xiaonilee.github.io/post/bioscirep/</link>
+      <link>/post/bioscirep/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/bioscirep/</guid>
+      <guid>/post/bioscirep/</guid>
       <description>&lt;p&gt;The present study assessed the correlation between &lt;strong&gt;PITX1&lt;/strong&gt; expression and the prognostic factor of &lt;strong&gt;breast cancer&lt;/strong&gt; by using various online analysis databases to explore the prognostic significance of PITX1 gene in the treatment of breast cancer.&lt;/p&gt;
 &lt;p&gt;Herein, I will recover all figures for this paper step by step.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Comprehensive Bioinformatics Analysis of Tumor-Infiltrating Immune Cells</title>
-      <link>https://xiaonilee.github.io/post/tumorimmune/</link>
+      <link>/post/tumorimmune/</link>
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/tumorimmune/</guid>
+      <guid>/post/tumorimmune/</guid>
       <description>&lt;p&gt;Recent clinical successes of cancer immunotherapy necessitate the investigation of the interaction between malignant cells and the host immune system.&lt;/p&gt;
 &lt;p&gt;Herein, I summarized five bioinformatics tools for comprehensive analysis of tumor-infiltrating immune cells.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Identification of Therapeutic Targets and Prognostic Biomarkers Among CXC Chemokines in the Renal Cell Carcinoma Microenvironment</title>
-      <link>https://xiaonilee.github.io/post/frontoncol/</link>
+      <link>/post/frontoncol/</link>
       <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/frontoncol/</guid>
+      <guid>/post/frontoncol/</guid>
       <description>&lt;p&gt;In this study, the authors conducted an in-depth and comprehensive bioinformatics analysis of the expression of &lt;strong&gt;CXC chemokines&lt;/strong&gt; in &lt;strong&gt;Renal cell carcinoma&lt;/strong&gt;  and evaluated their potential as therapeutic targets and prognostic biomarkers based on several large public databases.&lt;/p&gt;
 &lt;p&gt;Herein, I will recover all figures for this paper step by step.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>GSCALite: Gene Set Cancer Analysis</title>
-      <link>https://xiaonilee.github.io/post/gscalite/</link>
+      <link>/post/gscalite/</link>
       <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/gscalite/</guid>
+      <guid>/post/gscalite/</guid>
       <description>&lt;p&gt;GSCALite: a web-based platform for Gene Set Cancer Analysis.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>R re-analysis in TCGA</title>
-      <link>https://xiaonilee.github.io/post/tricktcga/</link>
+      <link>/post/tricktcga/</link>
       <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/tricktcga/</guid>
+      <guid>/post/tricktcga/</guid>
       <description>&lt;p&gt;Data setup via TCGA.&lt;/p&gt;
 &lt;p&gt;Re-analysis by R.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>GDC Notebook</title>
-      <link>https://xiaonilee.github.io/post/gdc/</link>
+      <link>/post/gdc/</link>
       <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/gdc/</guid>
+      <guid>/post/gdc/</guid>
       <description>&lt;p&gt;The Genomic Data Commons (&lt;a href=&#34;https://portal.gdc.cancer.gov/&#34;&gt;GDC&lt;/a&gt;), is a research program of the National Cancer Institute (NCI).&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;mission&lt;/strong&gt; of the GDC is to provide the cancer research community with a &lt;strong&gt;unified&lt;/strong&gt; data repository that enables data sharing across cancer genomic studies in support of &lt;strong&gt;precision medicine&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>FireBrowse Notebook</title>
-      <link>https://xiaonilee.github.io/post/firebrowse/</link>
+      <link>/post/firebrowse/</link>
       <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/firebrowse/</guid>
+      <guid>/post/firebrowse/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://firebrowse.org/&#34;&gt;FireBrowse Homepage&lt;/a&gt; and &lt;a href=&#34;http://gdac.broadinstitute.org/&#34;&gt;&lt;em&gt;BROAD GDAC&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Analysis with FIREHOSE plus TCGA UCSC Xena.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>UCSC Xena Features: Genomic Signatures</title>
-      <link>https://xiaonilee.github.io/post/genomicsignatures/</link>
+      <link>/post/genomicsignatures/</link>
       <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/genomicsignatures/</guid>
+      <guid>/post/genomicsignatures/</guid>
       <description>&lt;p&gt;Genomic signatures, sometimes expressed as a weighted sum of genes, are an algebra over genes.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>UCSC Xena: Private and Public Data Put Together</title>
-      <link>https://xiaonilee.github.io/post/privatepublictogether/</link>
+      <link>/post/privatepublictogether/</link>
       <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/privatepublictogether/</guid>
+      <guid>/post/privatepublictogether/</guid>
       <description>&lt;p&gt;Put private data and public Xena Data together via UCSC Xena Hub .&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Local UCSC Xena Data Hub</title>
-      <link>https://xiaonilee.github.io/post/localxenadatahub/</link>
+      <link>/post/localxenadatahub/</link>
       <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/localxenadatahub/</guid>
+      <guid>/post/localxenadatahub/</guid>
       <description>&lt;p&gt;Load the private data to Local Xena Data Hub.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>UCSC Xena: Load Data From Public Database</title>
-      <link>https://xiaonilee.github.io/post/loaddata/</link>
+      <link>/post/loaddata/</link>
       <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/loaddata/</guid>
+      <guid>/post/loaddata/</guid>
       <description>&lt;p&gt;Load and analysis data from publication resources, such as &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/geo/&#34;&gt;GEO&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>TissGDB: tissue-specific gene database in cancer</title>
-      <link>https://xiaonilee.github.io/post/tissgdb/</link>
+      <link>/post/tissgdb/</link>
       <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/tissgdb/</guid>
+      <guid>/post/tissgdb/</guid>
       <description>&lt;p&gt;TissGDB is the tissue-specific gene annotation database in cancer, aiming to provide a resource or reference for cancer and the related disease studies in the context of tissue specificity.&lt;/p&gt;</description>
     </item>
     

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Prostate on xiaoni&#39;s blog</title>
-    <link>https://xiaonilee.github.io/tags/prostate/</link>
+    <link>/tags/prostate/</link>
     <description>Recent content in Prostate on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 11 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/prostate/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/prostate/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>UCSC Xena: Private and Public Data Put Together</title>
-      <link>https://xiaonilee.github.io/post/privatepublictogether/</link>
+      <link>/post/privatepublictogether/</link>
       <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/privatepublictogether/</guid>
+      <guid>/post/privatepublictogether/</guid>
       <description>&lt;p&gt;Put private data and public Xena Data together via UCSC Xena Hub .&lt;/p&gt;</description>
     </item>
     

@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Plots on xiaoni&#39;s blog</title>
-    <link>https://xiaonilee.github.io/tags/plots/</link>
+    <link>/tags/plots/</link>
     <description>Recent content in Plots on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xiaonilee.github.io/tags/plots/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/plots/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>R Notebook : Application Exercises</title>
-      <link>https://xiaonilee.github.io/post/hmwk10/</link>
+      <link>/post/hmwk10/</link>
       <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/hmwk10/</guid>
+      <guid>/post/hmwk10/</guid>
       <description>&lt;p&gt;Bioinformatics Exercises of Application with &lt;a href=&#34;hmwk10.Rmd&#34;&gt;R&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>R re-analysis in TCGA</title>
-      <link>https://xiaonilee.github.io/post/tricktcga/</link>
+      <link>/post/tricktcga/</link>
       <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/tricktcga/</guid>
+      <guid>/post/tricktcga/</guid>
       <description>&lt;p&gt;Data setup via TCGA.&lt;/p&gt;
 &lt;p&gt;Re-analysis by R.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>OncoLnc: A straightforward Tool</title>
-      <link>https://xiaonilee.github.io/post/oncolnc/</link>
+      <link>/post/oncolnc/</link>
       <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/oncolnc/</guid>
+      <guid>/post/oncolnc/</guid>
       <description>&lt;p&gt;&lt;strong&gt;OncoLnc Web Tool&lt;/strong&gt;: Interactively exploring survival correlations, and for downloading clinical data coupled to expression data for mRNAs, miRNAs, or lncRNAs from &lt;em&gt;&lt;strong&gt;TCGA&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>R Notebook : ggplot2</title>
-      <link>https://xiaonilee.github.io/post/ggplot2/</link>
+      <link>/post/ggplot2/</link>
       <pubDate>Sat, 19 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaonilee.github.io/post/ggplot2/</guid>
+      <guid>/post/ggplot2/</guid>
       <description>&lt;p&gt;R package: ggplot2.&lt;/p&gt;
 &lt;p&gt;Data from Hadle Wickham &amp;lsquo;ggplot2 Elegant Graphics for Data Analysis&amp;rsquo;.&lt;/p&gt;</description>
     </item>
