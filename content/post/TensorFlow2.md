@@ -25,11 +25,11 @@ TensorFlow2 搭建优化神经网络的八股，内容包括：深度学习、�
 
 - I learned from Jian Cao, PEKING UNIVERSITY.
 - It has 6 classes:
-  - [Class1 神经网络计算](https://xiaonilee.github.io/post/tensorflow201/)
-  - [Class2 神经网络优化](https://xiaonilee.github.io/post/tensorflow202/)
-  - [Class3 神经网络八股](https://xiaonilee.github.io/post/tensorflow203/)
-  - [Class4: 网络八股扩展](https://xiaonilee.github.io/post/tensorflow204/)
-  - [Class5: 卷积神经网络](https://xiaonilee.github.io/post/tensorflow205/)
-  - [Class6: 循环神经网络](https://xiaonilee.github.io/post/tensorflow206/)
+  - [Class1 神经网络计算](/post/tensorflow201/)
+  - [Class2 神经网络优化](/post/tensorflow202/)
+  - [Class3 神经网络八股](/post/tensorflow203/)
+  - [Class4: 网络八股扩展](/post/tensorflow204/)
+  - [Class5: 卷积神经网络](/post/tensorflow205/)
+  - [Class6: 循环神经网络](/post/tensorflow206/)
 
 
