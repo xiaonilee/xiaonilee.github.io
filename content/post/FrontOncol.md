@@ -137,7 +137,7 @@ I will recover all figures for this paper step by step.
 - Click on the button `Multiple Gene Analysis` and `Multiple Gene Comparison`
 
 - Set up the parameters and click the button `Plot`
-  ![fig32](fig32/fig32.png)
+  ![fig32](fig3/fig32.png)
 
 - Save and edit plot [in cloud](https://plot.ly/create/)
   ![fig33](fig3/fig33.png)
