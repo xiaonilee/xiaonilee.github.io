@@ -353,8 +353,6 @@ I will recover all figures for this paper step by step.
 
 ### In Summary
 
-Renal cell carcinoma is one of the most common malignances with an ever-increasing incidence and high mortality. 
-
-CXC chemokines in the tumor microenvironment can modulate immune cell trafficking and regulate tumor cell activities, thus exerting anti-tumor immunological effects and affecting patient outcomes.
-
 In this study, the authors conducted an in-depth and comprehensive bioinformatics analysis of the expression of CXC chemokines in Renal cell carcinoma and evaluated their potential as therapeutic targets and prognostic biomarkers based on several large public databases.
+
+The present study is a straightforward and comprehensive bioinformatics method, which could be implied to different genes and diseases.
