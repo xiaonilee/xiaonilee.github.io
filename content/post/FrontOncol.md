@@ -17,12 +17,13 @@ menu:
     weight: 1
 ---
 
-In this study, the authors conducted an in-depth and comprehensive bioinformatics analysis of the expression of CXC chemokines in RCC and evaluated their potential as therapeutic targets and prognostic biomarkers based on several large public databases.
+In this study, the authors conducted an in-depth and comprehensive bioinformatics analysis of the expression of CXC chemokines in Renal cell carcinoma  and evaluated their potential as therapeutic targets and prognostic biomarkers based on several large public databases.
 
+I will recover all figures for this paper step by step.
 
 <!--more-->
 
-## In Brief
+## In Brief for this paper
 - **Publication** 
   - [*Front Oncol.* 2020 Feb 5. doi: 10.3389/fonc.2019.01555](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7012904/)
 
@@ -45,6 +46,8 @@ In this study, the authors conducted an in-depth and comprehensive bioinformatic
 
 ### Figure 1. mRNA levels of CXC chemokines in RCC (ONCOMINE)
 
+- Methods: ONCOMINE.
+
 - Open [Oncomine database](https://www.oncomine.org/resource/main.html)
   ![fig1](fig1/fig1.png)
 
@@ -58,6 +61,9 @@ In this study, the authors conducted an in-depth and comprehensive bioinformatic
   ![figure1](fig1/figure1.png)
 
 ### Table 1. The mRNA levels of CXC chemokines in different types of RCC tissues and normal renal tissues at transcriptome level (ONCOMINE)
+
+- Methods: ONCOMINE.
+
 - Set up the parameters for CXCL3 gene.
   ![tab3](tab1/wrong/tab3.png)
 
@@ -102,6 +108,9 @@ In this study, the authors conducted an in-depth and comprehensive bioinformatic
 | CXCL16 | Clear Cell Renal Cell Carcinoma                | 5.797       | 5.82E-4  | 6.812  | (27)       |
 |        | Clear Cell Renal Cell Carcinoma                | 2.212       | 7.86E-4  | 3.932  | (28)       |
 ### Figure 2. The transcription of CXC chemokines in RCC (UALCAN) 
+
+- Methods: UALCAN.
+
 - Open [UALCAN database](http://ualcan.path.uab.edu/http://ualcan.path.uab.edu/)
   ![fig21](fig2/fig21.png)
 
@@ -142,6 +151,9 @@ In this study, the authors conducted an in-depth and comprehensive bioinformatic
   ![figure3](fig3/figure3.png)
 
 ### Figure 4. Correlation between different expressed CXC chemokines and the pathological stage of RCC patients (GEPIA)
+
+- Methods: GEPIA.
+
 - Open [GEPIA](http://gepia.cancer-pku.cn/index.html)
 
 - Click on `Expression DIY`, choose `Stage plot`
@@ -155,6 +167,9 @@ In this study, the authors conducted an in-depth and comprehensive bioinformatic
 - Merge all results of CXC chemokines together with Google Slides.
   ![figure4](fig4/figure4.png)
 ### Figure 5. The prognostic value of different expressed CXC chemokines in RCC patients in the disease free survival curve (GEPIA)
+
+- Methods: GEPIA.
+
 - Open [GEPIA](http://gepia.cancer-pku.cn/index.html)
 
 - Click `Survival` and choose `Survival Plots`
@@ -170,6 +185,9 @@ In this study, the authors conducted an in-depth and comprehensive bioinformatic
   ![figure5](fig5/figure5.png)
 
 ### Figure 6. The prognostic value of CXC chemokines in RCC patients in the overall survival curve (GEPIA)
+
+- Methods: GEPIA.
+
 - Open [GEPIA](http://gepia.cancer-pku.cn/index.html)
 
 - Click `Survival` and choose `Survival Plots`
@@ -185,6 +203,9 @@ In this study, the authors conducted an in-depth and comprehensive bioinformatic
   ![figure6](fig6/figure6.png)
 
 ### Figure 7. Genetic alteration, neighbor gene network, and interaction analyses of different expressed CXC chemokines in RCC patients
+
+- Methods: cBioportal.
+
 - Open [cBioportal](https://www.cbioportal.org/)
   ![fig71](fig7/fig71.png)
 
@@ -200,6 +221,8 @@ In this study, the authors conducted an in-depth and comprehensive bioinformatic
 - To get the correlation heat map of different expressed CXC chemokines in RCC with [R.Script](fig7/fig7B.R).
   ![fig7B](fig7/fig7B.png)
 
+- Methods: STRING.
+ 
 - Opne [STRING](https://string-db.org/)
 
 - Set up the parameters and click on the button `SEARCH`.
@@ -224,6 +247,9 @@ In this study, the authors conducted an in-depth and comprehensive bioinformatic
   ![fig7D](fig7/fig7D.jpg)
 
 ### Table 2. Key regulated factor of CXC chemokines in RCC (TRRUST)
+
+- Methods: TRRUST.
+ 
 - Open [TRRUST](https://www.grnpedia.org/trrust/)
   ![fig1](tab2/fig1.png)
 
@@ -240,6 +266,9 @@ In this study, the authors conducted an in-depth and comprehensive bioinformatic
   ![table2](tab2/table2.png)
 
 ### Table 3. The Kinase target networks of CXC chemokines in RCC (LinkedOmics)
+
+- Methods: LinkedOmics.
+
 - Open [LinkedOmics](http://www.linkedomics.org/admin.php)
   ![fig1](tab3/fig1.png)
 
@@ -257,6 +286,9 @@ In this study, the authors conducted an in-depth and comprehensive bioinformatic
 
 - Similarly, get other CXC chemokines following the above steps.
 ### Figure 8. The enrichment analysis of different expressed CXC chemokines and 50 most frequently altered neighboring genes in RCC (David 6.8)
+
+- Methods: David 6.8.
+
 - Open [DAVID](https://david.ncifcrf.gov/summary.jsp)
   ![fig1](fig8/fig1.png)
 
@@ -277,6 +309,8 @@ In this study, the authors conducted an in-depth and comprehensive bioinformatic
 
 ### Figure 9. The correlation between different expressed CXC chemokines and immune cell infiltration (TIMER)
 
+- Methods: TIMER.
+
 - Open [TIMER](https://cistrome.shinyapps.io/timer/)
   ![fig1](fig9/fig1.png)
 
@@ -296,10 +330,16 @@ In this study, the authors conducted an in-depth and comprehensive bioinformatic
   ![fig99](fig9/fig99.png)
 
 ### Table 4. The cox proportional hazard model of CXC chemokines and six tumor-infiltrating immune cells in RCC (TIMER)
+
+- Methods: TIMER.
+
 - Setup the cox proportional hazard of CXC chemokines
   ![fig1](tab4/fig1.png)
 
 ### Supplementary Figure 1. The enrichment analysis of different expressed CXC chemokines and 50 most frequently altered neighboring genes in RCC (Metascape)
+
+- Methods: Metascape.
+
 - Open [Metascape](https://metascape.org/gp/index.html#/main/step1)
   ![fig1](supfig1/fig1.png)
 
@@ -310,3 +350,11 @@ In this study, the authors conducted an in-depth and comprehensive bioinformatic
 
 - Generate the results of Supplementary Figure 1
   ![supfigure1](supfig1/supfigure1.png)
+
+### In Summary
+
+Renal cell carcinoma is one of the most common malignances with an ever-increasing incidence and high mortality. 
+
+CXC chemokines in the tumor microenvironment can modulate immune cell trafficking and regulate tumor cell activities, thus exerting anti-tumor immunological effects and affecting patient outcomes.
+
+In this study, the authors conducted an in-depth and comprehensive bioinformatics analysis of the expression of CXC chemokines in Renal cell carcinoma and evaluated their potential as therapeutic targets and prognostic biomarkers based on several large public databases.
