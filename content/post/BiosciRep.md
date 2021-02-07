@@ -17,11 +17,13 @@ menu:
     weight: 1
 ---
 
-Recover Bioinformatics paper w/o code.
+The present study assessed the correlation between **PITX1** expression and the prognostic factor of **breast cancer** by using various online analysis databases to explore the prognostic significance of PITX1 gene in the treatment of breast cancer.
+
+Herein, I will recover all figures for this paper step by step.
 
 <!--more-->
 
-## In Brief
+## In Brief for this paper
 - **Publication** 
   - [**Biosci Rep.** 2020 Sep 30; 40(9): BSR20202537](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7494990/)
 
@@ -37,7 +39,22 @@ Recover Bioinformatics paper w/o code.
 
 ### Figure 1. Expression of PITX1 gene in 20 common tumors compared with paired normal tissues
 
+- Methods: Oncomine
+
+- Open [Oncomine database](https://www.oncomine.org/resource/main.html).
+- Enter `PITX1` to search and get figure 1.
+  
+  ![fig1](fig1/fig1.png)
+  
 ### Figure 2. Box plots of normal and tumor differentially expression of PITX1 gene in different subtypes of breast cancer
+
+- Methods: Oncomine
+
+- Setup parameters and get the data for figure 2A.
+  
+  ![fig2](fig2/fig1.png)
+
+- With the same method, get the figure2.
 
 ### Table 1. Different datasets to analyze PITX1 gene expression in pathological classification of breast cancer
 

@@ -17,9 +17,9 @@ menu:
     weight: 1
 ---
 
-In this study, the authors conducted an in-depth and comprehensive bioinformatics analysis of the expression of CXC chemokines in Renal cell carcinoma  and evaluated their potential as therapeutic targets and prognostic biomarkers based on several large public databases.
+In this study, the authors conducted an in-depth and comprehensive bioinformatics analysis of the expression of **CXC chemokines** in **Renal cell carcinoma**  and evaluated their potential as therapeutic targets and prognostic biomarkers based on several large public databases.
 
-I will recover all figures for this paper step by step.
+Herein, I will recover all figures for this paper step by step.
 
 <!--more-->
 
