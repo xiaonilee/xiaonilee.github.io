@@ -6,7 +6,16 @@
     <description>Recent content in Bioinformatics on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UCSC gene browser with R package Gviz</title>
+      <link>/post/ucscgenebrowser/</link>
+      <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscgenebrowser/</guid>
+      <description>&lt;p&gt;Gviz, Visualize genomic data. Let&amp;rsquo;s dive into it.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Bioinformatics analysis of prognostic value of PITX1 gene in breast cancer</title>
       <link>/post/bioscirep/</link>
@@ -178,15 +187,6 @@
       
       <guid>/post/rinaction13/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 13.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 12. Resampling statistics and bootstrapping</title>
-      <link>/post/rinaction12/</link>
-      <pubDate>Thu, 05 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rinaction12/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 12.&lt;/p&gt;</description>
     </item>
     
   </channel>

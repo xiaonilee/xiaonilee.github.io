@@ -6,7 +6,16 @@
     <description>Recent content in R on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 30 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UCSC gene browser with R package Gviz</title>
+      <link>/post/ucscgenebrowser/</link>
+      <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscgenebrowser/</guid>
+      <description>&lt;p&gt;Gviz, Visualize genomic data. Let&amp;rsquo;s dive into it.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>a Shiny Demo: kmeans clustering</title>
       <link>/post/shiny02/</link>
@@ -176,15 +185,6 @@
       
       <guid>/post/rinaction9/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 9.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 8. Regression</title>
-      <link>/post/rinaction8/</link>
-      <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rinaction8/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 8.&lt;/p&gt;</description>
     </item>
     
   </channel>
