@@ -21,14 +21,21 @@ Continued, in this present, to draw the customized UCSC gene Track With Gviz pac
 
 <!--more-->
 
-## Setup interested genomic location
+## In summary
+**Selected Genomes**: `Mouse Assembly _July 2007(NCBI/mm9)`
+
+**Position/Search Term**: `chrX:65,921,878-65,980,988`
+
+**Reference genes**: `Ensembl`
+
+### Setup interested genomic location
 
 ```r
 from <- 65921878
 to <- 65980988
 ```
 
-## Extract known genes in this region
+### Extract known genes in this region
 
 ```r
 knownGenes <- UcscTrack(genome = "mm9", chromosome = "chrX",
@@ -40,7 +47,7 @@ knownGenes <- UcscTrack(genome = "mm9", chromosome = "chrX",
                         fill = "#8282d2", name = "UCSC Genes")
 ```
 
-## Extract reference genes from Ensemble database
+### Extract reference genes from Ensemble database
 
 ```r
 refGenes <- UcscTrack(genome = "mm9", chromosome = "chrX",
@@ -60,7 +67,7 @@ ensGenes <- UcscTrack(genome = "mm9", chromosome = "chrX",
                       fill = "#960000", name = "Ensembl Genes")
 ```
 
-## Extract location for CpGIsland and SNP
+### Extract location for CpGIsland and SNP
 
 ```r
 cpgIslands <- UcscTrack(genome = "mm9", chromosome = "chrX",
@@ -79,7 +86,7 @@ snpLocations <-  UcscTrack(genome = "mm9", chromosome = "chrX",
                            name = "SNPs")
 ```
 
-## conservation and GC content
+### conservation and GC content
 
 ```r
 conservation <- UcscTrack(genome = "mm9", chromosome = "chrX",
@@ -100,14 +107,14 @@ gcContent <- UcscTrack(genome = "mm9", chromosome = "chrX",
                        ylim = c(30, 70), name = "GC Percent")
 ```
 
-## lable information for aix and chromosome
+### lable information for aix and chromosome
 
 ```r
 axTrack <- GenomeAxisTrack()
 idxTrack <- IdeogramTrack(genome="mm9", chromosome="chrX")
 ```
 
-## Finally, put all above information together
+### Finally, put all above information together
 
 ```r
 plotTracks(list(idxTrack, axTrack, knownGenes, refGenes, ensGenes,

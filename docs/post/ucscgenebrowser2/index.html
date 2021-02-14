@@ -74,7 +74,7 @@
 <meta itemprop="description" content="Continued, in this present, to draw the customized UCSC gene Track With Gviz package.">
 <meta itemprop="datePublished" content="2021-02-14T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-14T00:00:00+00:00" />
-<meta itemprop="wordCount" content="474">
+<meta itemprop="wordCount" content="488">
 
 
 
@@ -535,13 +535,17 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#setup-interested-genomic-location">Setup interested genomic location</a></li>
-    <li><a href="#extract-known-genes-in-this-region">Extract known genes in this region</a></li>
-    <li><a href="#extract-reference-genes-from-ensemble-database">Extract reference genes from Ensemble database</a></li>
-    <li><a href="#extract-location-for-cpgisland-and-snp">Extract location for CpGIsland and SNP</a></li>
-    <li><a href="#conservation-and-gc-content">conservation and GC content</a></li>
-    <li><a href="#lable-information-for-aix-and-chromosome">lable information for aix and chromosome</a></li>
-    <li><a href="#finally-put-all-above-information-together">Finally, put all above information together</a></li>
+    <li><a href="#in-summary">In summary</a>
+      <ul>
+        <li><a href="#setup-interested-genomic-location">Setup interested genomic location</a></li>
+        <li><a href="#extract-known-genes-in-this-region">Extract known genes in this region</a></li>
+        <li><a href="#extract-reference-genes-from-ensemble-database">Extract reference genes from Ensemble database</a></li>
+        <li><a href="#extract-location-for-cpgisland-and-snp">Extract location for CpGIsland and SNP</a></li>
+        <li><a href="#conservation-and-gc-content">conservation and GC content</a></li>
+        <li><a href="#lable-information-for-aix-and-chromosome">lable information for aix and chromosome</a></li>
+        <li><a href="#finally-put-all-above-information-together">Finally, put all above information together</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -550,7 +554,11 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>Continued, in this present, to draw the customized UCSC gene Track With Gviz package.</p>
-<h2 id="setup-interested-genomic-location">Setup interested genomic location</h2>
+<h2 id="in-summary">In summary</h2>
+<p><strong>Selected Genomes</strong>: <code>Mouse Assembly _July 2007(NCBI/mm9)</code></p>
+<p><strong>Position/Search Term</strong>: <code>chrX:65,921,878-65,980,988</code></p>
+<p><strong>Reference genes</strong>: <code>Ensembl</code></p>
+<h3 id="setup-interested-genomic-location">Setup interested genomic location</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -561,7 +569,7 @@ if (!doNotTrack) {
 <span class="n">to</span> <span class="o">&lt;-</span> <span class="m">65980988</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="extract-known-genes-in-this-region">Extract known genes in this region</h2>
+</div><h3 id="extract-known-genes-in-this-region">Extract known genes in this region</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -582,7 +590,7 @@ if (!doNotTrack) {
                         <span class="n">fill</span> <span class="o">=</span> <span class="s">&#34;#8282d2&#34;</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;UCSC Genes&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="extract-reference-genes-from-ensemble-database">Extract reference genes from Ensemble database</h2>
+</div><h3 id="extract-reference-genes-from-ensemble-database">Extract reference genes from Ensemble database</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -619,7 +627,7 @@ if (!doNotTrack) {
                       <span class="n">fill</span> <span class="o">=</span> <span class="s">&#34;#960000&#34;</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Ensembl Genes&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="extract-location-for-cpgisland-and-snp">Extract location for CpGIsland and SNP</h2>
+</div><h3 id="extract-location-for-cpgisland-and-snp">Extract location for CpGIsland and SNP</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -654,7 +662,7 @@ if (!doNotTrack) {
                            <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;SNPs&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="conservation-and-gc-content">conservation and GC content</h2>
+</div><h3 id="conservation-and-gc-content">conservation and GC content</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -693,7 +701,7 @@ if (!doNotTrack) {
                        <span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">30</span><span class="p">,</span> <span class="m">70</span><span class="p">),</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;GC Percent&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="lable-information-for-aix-and-chromosome">lable information for aix and chromosome</h2>
+</div><h3 id="lable-information-for-aix-and-chromosome">lable information for aix and chromosome</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -704,7 +712,7 @@ if (!doNotTrack) {
 <span class="n">idxTrack</span> <span class="o">&lt;-</span> <span class="nf">IdeogramTrack</span><span class="p">(</span><span class="n">genome</span><span class="o">=</span><span class="s">&#34;mm9&#34;</span><span class="p">,</span> <span class="n">chromosome</span><span class="o">=</span><span class="s">&#34;chrX&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="finally-put-all-above-information-together">Finally, put all above information together</h2>
+</div><h3 id="finally-put-all-above-information-together">Finally, put all above information together</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
