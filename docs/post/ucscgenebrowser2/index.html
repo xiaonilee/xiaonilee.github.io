@@ -74,7 +74,7 @@
 <meta itemprop="description" content="Continued, in this present, to draw the customized UCSC gene Track With Gviz package.">
 <meta itemprop="datePublished" content="2021-02-14T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-14T00:00:00+00:00" />
-<meta itemprop="wordCount" content="469">
+<meta itemprop="wordCount" content="474">
 
 
 
@@ -541,7 +541,7 @@ if (!doNotTrack) {
     <li><a href="#extract-location-for-cpgisland-and-snp">Extract location for CpGIsland and SNP</a></li>
     <li><a href="#conservation-and-gc-content">conservation and GC content</a></li>
     <li><a href="#lable-information-for-aix-and-chromosome">lable information for aix and chromosome</a></li>
-    <li><a href="#finally">Finally</a></li>
+    <li><a href="#finally-put-all-above-information-together">Finally, put all above information together</a></li>
   </ul>
 </nav>
   </div>
@@ -704,7 +704,7 @@ if (!doNotTrack) {
 <span class="n">idxTrack</span> <span class="o">&lt;-</span> <span class="nf">IdeogramTrack</span><span class="p">(</span><span class="n">genome</span><span class="o">=</span><span class="s">&#34;mm9&#34;</span><span class="p">,</span> <span class="n">chromosome</span><span class="o">=</span><span class="s">&#34;chrX&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="finally">Finally</h2>
+</div><h2 id="finally-put-all-above-information-together">Finally, put all above information together</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -714,11 +714,11 @@ if (!doNotTrack) {
 <td class="lntd">
 <pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">plotTracks</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">idxTrack</span><span class="p">,</span> <span class="n">axTrack</span><span class="p">,</span> <span class="n">knownGenes</span><span class="p">,</span> <span class="n">refGenes</span><span class="p">,</span> <span class="n">ensGenes</span><span class="p">,</span>
                 <span class="n">cpgIslands</span><span class="p">,</span> <span class="n">gcContent</span><span class="p">,</span> <span class="n">conservation</span><span class="p">,</span> <span class="n">snpLocations</span><span class="p">),</span>
-           <span class="n">from</span> <span class="o">=</span> <span class="n">from</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="n">to</span><span class="p">,</span> <span class="n">showTitle</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+           <span class="n">from</span> <span class="o">=</span> <span class="n">from</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="n">to</span><span class="p">,</span> <span class="n">showTitle</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>output
-<img src="fig1.png" alt="fig1"></p>
+<img src="fig1new.png" alt="fig1"></p>
     </div>
 
     

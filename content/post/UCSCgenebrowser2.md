@@ -107,13 +107,14 @@ axTrack <- GenomeAxisTrack()
 idxTrack <- IdeogramTrack(genome="mm9", chromosome="chrX")
 ```
 
-## Finally
+## Finally, put all above information together
 
 ```r
 plotTracks(list(idxTrack, axTrack, knownGenes, refGenes, ensGenes,
                 cpgIslands, gcContent, conservation, snpLocations),
-           from = from, to = to, showTitle = FALSE)
+           from = from, to = to, showTitle = TRUE)
 ```
 
 output
-![fig1](fig1.png)
+![fig1](fig1new.png)
+
