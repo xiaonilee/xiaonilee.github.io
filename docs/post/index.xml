@@ -6,7 +6,16 @@
     <description>Recent content in Posts on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 13 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UCSC gene browser with R package Gviz - part 2</title>
+      <link>/post/ucscgenebrowser2/</link>
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscgenebrowser2/</guid>
+      <description>&lt;p&gt;Continued, in this present, to draw the customized UCSC gene Track With Gviz package.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>UCSC gene browser with R package Gviz - part 1</title>
       <link>/post/ucscgenebrowser/</link>
@@ -179,15 +188,6 @@
       
       <guid>/post/rinaction22/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 22.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 21. Creating a package</title>
-      <link>/post/rinaction21/</link>
-      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rinaction21/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 21.&lt;/p&gt;</description>
     </item>
     
   </channel>
