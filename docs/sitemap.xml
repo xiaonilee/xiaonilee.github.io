@@ -3,7 +3,7 @@
   
   <url>
     <loc>/post/ucscgenebrowser/</loc>
-    <lastmod>2021-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -367,70 +367,84 @@
   
   <url>
     <loc>/tags/bioinformatics/</loc>
-    <lastmod>2021-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/categories/bioinformatics/</loc>
-    <lastmod>2021-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2021-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2021-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/tags/r/</loc>
-    <lastmod>2021-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2021-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/r-package/</loc>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/r-package/</loc>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2021-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/tags/ucsc/</loc>
-    <lastmod>2021-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/categories/ucsc/</loc>
-    <lastmod>2021-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2021-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -606,20 +620,6 @@
   <url>
     <loc>/categories/tensorflow2/</loc>
     <lastmod>2020-12-17T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/r-package/</loc>
-    <lastmod>2020-11-30T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/r-package/</loc>
-    <lastmod>2020-11-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

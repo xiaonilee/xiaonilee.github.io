@@ -8,12 +8,12 @@
     <language>en</language>
     <lastBuildDate>Sat, 13 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>UCSC gene browser with R package Gviz</title>
+      <title>UCSC gene browser with R package Gviz - part 1</title>
       <link>/post/ucscgenebrowser/</link>
       <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/post/ucscgenebrowser/</guid>
-      <description>&lt;p&gt;Gviz, Visualize genomic data. Let&amp;rsquo;s dive into it.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Gviz, Visualize genomic data. Let&amp;rsquo;s dive into it to explore useful functions.&lt;/p&gt;</description>
     </item>
     
     <item>

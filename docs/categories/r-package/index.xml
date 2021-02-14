@@ -6,7 +6,16 @@
     <description>Recent content in R Package on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 30 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/r-package/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/r-package/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UCSC gene browser with R package Gviz - part 1</title>
+      <link>/post/ucscgenebrowser/</link>
+      <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscgenebrowser/</guid>
+      <description>&lt;p&gt;Gviz, Visualize genomic data. Let&amp;rsquo;s dive into it to explore useful functions.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>a Shiny Demo: kmeans clustering</title>
       <link>/post/shiny02/</link>

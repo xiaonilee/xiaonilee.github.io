@@ -26,6 +26,15 @@
     </item>
     
     <item>
+      <title>R Package</title>
+      <link>/tags/r-package/</link>
+      <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r-package/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>UCSC</title>
       <link>/tags/ucsc/</link>
       <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
@@ -175,15 +184,6 @@
       <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/ml/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TensorFlow2</title>
-      <link>/tags/tensorflow2/</link>
-      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/tensorflow2/</guid>
       <description></description>
     </item>
     

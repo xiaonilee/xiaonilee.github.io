@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>UCSC gene browser with R package Gviz - xiaoni&#39;s blog</title>
+  <title>UCSC gene browser with R package Gviz - part 1 - xiaoni&#39;s blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Xiaoni" />
-  <meta name="description" content="Gviz, Visualize genomic data. Let&amp;rsquo;s dive into it.
+  <meta name="description" content="Gviz, Visualize genomic data. Let&amp;rsquo;s dive into it to explore useful functions.
 " />
 
   <meta name="keywords" content="xiaonili, xiaonilee, xiaoni" />
@@ -64,24 +64,24 @@
 
 
 
-<meta property="og:title" content="UCSC gene browser with R package Gviz" />
-<meta property="og:description" content="Gviz, Visualize genomic data. Let&rsquo;s dive into it." />
+<meta property="og:title" content="UCSC gene browser with R package Gviz - part 1" />
+<meta property="og:description" content="Gviz, Visualize genomic data. Let&rsquo;s dive into it to explore useful functions." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/ucscgenebrowser/" />
 <meta property="article:published_time" content="2021-02-13T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-02-13T00:00:00+00:00" />
-<meta itemprop="name" content="UCSC gene browser with R package Gviz">
-<meta itemprop="description" content="Gviz, Visualize genomic data. Let&rsquo;s dive into it.">
+<meta property="article:modified_time" content="2021-02-14T00:00:00+00:00" />
+<meta itemprop="name" content="UCSC gene browser with R package Gviz - part 1">
+<meta itemprop="description" content="Gviz, Visualize genomic data. Let&rsquo;s dive into it to explore useful functions.">
 <meta itemprop="datePublished" content="2021-02-13T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-02-13T00:00:00+00:00" />
-<meta itemprop="wordCount" content="837">
+<meta itemprop="dateModified" content="2021-02-14T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1659">
 
 
 
-<meta itemprop="keywords" content="R,Bioinformatics,UCSC," />
+<meta itemprop="keywords" content="R,Bioinformatics,UCSC,R Package," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="UCSC gene browser with R package Gviz"/>
-<meta name="twitter:description" content="Gviz, Visualize genomic data. Let&rsquo;s dive into it."/>
+<meta name="twitter:title" content="UCSC gene browser with R package Gviz - part 1"/>
+<meta name="twitter:description" content="Gviz, Visualize genomic data. Let&rsquo;s dive into it to explore useful functions."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -227,7 +227,7 @@ if (!doNotTrack) {
               </li>
             
               <li>
-                <a href="/post/ucscgenebrowser/">UCSC gene browser with R package Gviz</a>
+                <a href="/post/ucscgenebrowser/">UCSC gene browser with R package Gviz - part 1</a>
               </li>
             
               <li>
@@ -455,7 +455,7 @@ if (!doNotTrack) {
               </li>
             
               <li>
-                <a href="/post/ucscgenebrowser/">UCSC gene browser with R package Gviz</a>
+                <a href="/post/ucscgenebrowser/">UCSC gene browser with R package Gviz - part 1</a>
               </li>
             
               <li>
@@ -497,7 +497,7 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">UCSC gene browser with R package Gviz</h1>
+      <h1 class="post-title">UCSC gene browser with R package Gviz - part 1</h1>
       
       <div class="post-meta">
         <time datetime="2021-02-13" class="post-time">
@@ -507,6 +507,7 @@ if (!doNotTrack) {
             <a href="/categories/r/"> R </a>
             <a href="/categories/bioinformatics/"> Bioinformatics </a>
             <a href="/categories/ucsc/"> UCSC </a>
+            <a href="/categories/r-package/"> R Package </a>
             
           </div>
         
@@ -535,13 +536,35 @@ if (!doNotTrack) {
         <li><a href="#zoom-the-plot">Zoom the plot</a></li>
         <li><a href="#add-sequence-track-and-zoom-to-view-sequence">Add sequence track and zoom to view sequence</a></li>
         <li><a href="#add-data-track">Add data track</a></li>
-        <li><a href="#plotting-parameters">Plotting parameters</a></li>
+      </ul>
+    </li>
+    <li><a href="#plotting-parameters">Plotting parameters</a>
+      <ul>
         <li><a href="#plotting-direction">Plotting direction</a></li>
-        <li><a href="#track-classes">Track classes</a></li>
+      </ul>
+    </li>
+    <li><a href="#track-classes">Track classes</a>
+      <ul>
         <li><a href="#ideogramtrack">IdeogramTrack</a></li>
         <li><a href="#datatrack">DataTrack</a></li>
         <li><a href="#example-of-datatrack-plots">Example of DataTrack plots</a></li>
         <li><a href="#data-grouping">Data grouping</a></li>
+        <li><a href="#building-datatrack-objects-from-files">Building DataTrack objects from files</a></li>
+        <li><a href="#annotationtrack">AnnotationTrack</a></li>
+        <li><a href="#add-id-information">Add id information</a></li>
+        <li><a href="#change-fontcolor">change fontcolor</a></li>
+        <li><a href="#generegiontrack">GeneRegionTrack</a></li>
+        <li><a href="#building-generegiontrack-objects-from-transcriptdbs">Building GeneRegionTrack objects from TranscriptDbs</a></li>
+        <li><a href="#biomartgeneregiontrack">BiomartGeneRegionTrack</a></li>
+        <li><a href="#sequence-track">Sequence Track</a></li>
+        <li><a href="#alignmentstrack">AlignmentsTrack</a></li>
+        <li><a href="#zoom-in-a-bit-further-to-check-out-the-details-of-the-pile-ups-section">Zoom in a bit further to check out the details of the pile-ups section</a></li>
+        <li><a href="#dnaseq-experiment">DNAseq experiment</a></li>
+      </ul>
+    </li>
+    <li><a href="#track-highlighting-and-overlays">Track highlighting and overlays</a>
+      <ul>
+        <li><a href="#overlays-multiple-tracks-on-the-same-area-of-the-plot">overlays multiple tracks on the same area of the plot</a></li>
       </ul>
     </li>
   </ul>
@@ -551,7 +574,7 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p>Gviz, Visualize genomic data. Let&rsquo;s dive into it.</p>
+      <p>Gviz, Visualize genomic data. Let&rsquo;s dive into it to explore useful functions.</p>
 <h2 id="introduction-to-gviz-package">Introduction to Gviz package</h2>
 <ul>
 <li>Provide a structured visualization framework to plot any type of data along genomic coordinates.</li>
@@ -574,7 +597,7 @@ if (!doNotTrack) {
 <span class="n">cpgIslands</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>output:
+</div><p>output
 <img src="p0.png" alt="p0"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -588,7 +611,7 @@ if (!doNotTrack) {
 <span class="nf">plotTracks</span><span class="p">(</span><span class="n">atrack</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>output:
+</div><p>output
 <img src="p1.png" alt="p1"></p>
 <h3 id="add-genome-axis-track">Add genome axis track</h3>
 <div class="highlight"><div class="chroma">
@@ -603,7 +626,7 @@ if (!doNotTrack) {
 <span class="nf">plotTracks</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">gtrack</span><span class="p">,</span> <span class="n">atrack</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>output:
+</div><p>output
 <img src="p2.png" alt="p2"></p>
 <h3 id="add-chromosome-ideogram">Add chromosome ideogram</h3>
 <div class="highlight"><div class="chroma">
@@ -626,7 +649,7 @@ if (!doNotTrack) {
 <span class="nf">plotTracks</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">itrack</span><span class="p">,</span> <span class="n">gtrack</span><span class="p">,</span> <span class="n">atrack</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>output:
+</div><p>output
 <img src="p3.png" alt="p3"></p>
 <h3 id="add-gene-model">Add gene model</h3>
 <div class="highlight"><div class="chroma">
@@ -649,7 +672,7 @@ if (!doNotTrack) {
 <span class="nf">plotTracks</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">itrack</span><span class="p">,</span> <span class="n">gtrack</span><span class="p">,</span> <span class="n">atrack</span><span class="p">,</span> <span class="n">grtrack</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>output:
+</div><p>output
 <img src="p4.png" alt="p4"></p>
 <h3 id="zoom-the-plot">Zoom the plot</h3>
 <div class="highlight"><div class="chroma">
@@ -664,7 +687,7 @@ if (!doNotTrack) {
            <span class="n">from</span> <span class="o">=</span> <span class="m">26700000</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">26750000</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>output:
+</div><p>output
 <img src="p5.png" alt="p5"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -682,7 +705,7 @@ if (!doNotTrack) {
            <span class="n">extend.left</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">extend.right</span> <span class="o">=</span> <span class="m">1000000</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>output:
+</div><p>output
 <img src="p6.png" alt="p6"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -698,7 +721,7 @@ if (!doNotTrack) {
            <span class="n">extend.left</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">extend.right</span> <span class="o">=</span> <span class="m">1000000</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>output:
+</div><p>output
 <img src="p7.png" alt="p7"></p>
 <h3 id="add-sequence-track-and-zoom-to-view-sequence">Add sequence track and zoom to view sequence</h3>
 <div class="highlight"><div class="chroma">
@@ -723,7 +746,7 @@ if (!doNotTrack) {
                 <span class="n">strack</span><span class="p">),</span> <span class="n">from</span> <span class="o">=</span> <span class="m">26591822</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">26591852</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>output:
+</div><p>output
 <img src="p8.png" alt="p8"></p>
 <h3 id="add-data-track">Add data track</h3>
 <div class="highlight"><div class="chroma">
@@ -764,7 +787,7 @@ if (!doNotTrack) {
                 <span class="n">dtrack</span><span class="p">),</span> <span class="n">from</span> <span class="o">=</span> <span class="n">lim[1]</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="n">lim[2]</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>output:
+</div><p>output
 <img src="p9.png" alt="p9"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -778,9 +801,9 @@ if (!doNotTrack) {
            <span class="n">from</span> <span class="o">=</span> <span class="n">lim[1]</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="n">lim[2]</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;histogram&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>output:
+</div><p>output
 <img src="p10.png" alt="p10"></p>
-<h3 id="plotting-parameters">Plotting parameters</h3>
+<h2 id="plotting-parameters">Plotting parameters</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -805,7 +828,7 @@ if (!doNotTrack) {
 <span class="nf">plotTracks</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">itrack</span><span class="p">,</span> <span class="n">gtrack</span><span class="p">,</span> <span class="n">atrack</span><span class="p">,</span> <span class="n">grtrack</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>output:
+</div><p>output
 <img src="p11.png" alt="p11"></p>
 <h3 id="plotting-direction">Plotting direction</h3>
 <div class="highlight"><div class="chroma">
@@ -821,7 +844,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="p12.png" alt="p12"></p>
-<h3 id="track-classes">Track classes</h3>
+<h2 id="track-classes">Track classes</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -846,7 +869,7 @@ if (!doNotTrack) {
            <span class="n">labelPos</span> <span class="o">=</span> <span class="s">&#34;below&#34;</span><span class="p">,</span><span class="n">showId</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>output:
+</div><p>output
 <img src="p13.png" alt="p13"></p>
 <h3 id="ideogramtrack">IdeogramTrack</h3>
 <div class="highlight"><div class="chroma">
@@ -861,7 +884,7 @@ if (!doNotTrack) {
 <span class="nf">plotTracks</span><span class="p">(</span><span class="n">ideoTrack</span><span class="p">,</span> <span class="n">from</span> <span class="o">=</span> <span class="m">85000000</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">129000000</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>output:
+</div><p>output
 <img src="p14.png" alt="p14"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -875,7 +898,7 @@ if (!doNotTrack) {
            <span class="n">showId</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">showBandId</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">cex.bands</span> <span class="o">=</span> <span class="m">0.4</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>output:
+</div><p>output
 <img src="p15.png" alt="p15"></p>
 <h3 id="datatrack">DataTrack</h3>
 <div class="highlight"><div class="chroma">
@@ -904,7 +927,7 @@ if (!doNotTrack) {
 <span class="nf">plotTracks</span><span class="p">(</span><span class="n">dTrack</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>output:
+</div><p>output
 <img src="p16.png" alt="p16"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -951,7 +974,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p>output
-<img src="p17.png" alt="p17"></p>
+<img src="p17new.png" alt="p17"></p>
 <h3 id="example-of-datatrack-plots">Example of DataTrack plots</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -970,7 +993,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p>output
-<img src="p18.png" alt="p18"></p>
+<img src="p18new.png" alt="p18"></p>
 <h3 id="data-grouping">Data grouping</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -998,7 +1021,382 @@ if (!doNotTrack) {
            <span class="n">aggregation</span> <span class="o">=</span> <span class="s">&#34;max&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
+</div><p>output
+<img src="p19.png" alt="p19"></p>
+<h3 id="building-datatrack-objects-from-files">Building DataTrack objects from files</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">bgFile</span> <span class="o">&lt;-</span> <span class="nf">system.file</span><span class="p">(</span><span class="s">&#34;extdata/test.bedGraph&#34;</span><span class="p">,</span> <span class="n">package</span> <span class="o">=</span> <span class="s">&#34;Gviz&#34;</span><span class="p">)</span>
+<span class="n">dTrack2</span> <span class="o">&lt;-</span> <span class="nf">DataTrack</span><span class="p">(</span><span class="n">range</span> <span class="o">=</span> <span class="n">bgFile</span><span class="p">,</span> <span class="n">genome</span> <span class="o">=</span> <span class="s">&#34;hg19&#34;</span><span class="p">,</span>
+                     <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;l&#34;</span><span class="p">,</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="s">&#34;chr19&#34;</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;bedGraph&#34;</span><span class="p">)</span>
+<span class="nf">plotTracks</span><span class="p">(</span><span class="n">dTrack2</span><span class="p">)</span>
+
+<span class="n">bamFile</span> <span class="o">&lt;-</span> <span class="nf">system.file</span><span class="p">(</span><span class="s">&#34;extdata/test.bam&#34;</span><span class="p">,</span> <span class="n">package</span> <span class="o">=</span> <span class="s">&#34;Gviz&#34;</span><span class="p">)</span>
+<span class="n">dTrack4</span> <span class="o">&lt;-</span> <span class="nf">DataTrack</span><span class="p">(</span><span class="n">range</span> <span class="o">=</span> <span class="n">bamFile</span><span class="p">,</span> <span class="n">genome</span> <span class="o">=</span> <span class="s">&#34;hg19&#34;</span><span class="p">,</span>
+                     <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;l&#34;</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Coverage&#34;</span><span class="p">,</span> <span class="n">window</span> <span class="o">=</span> <span class="m">-1</span><span class="p">,</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="s">&#34;chr1&#34;</span><span class="p">)</span>
+<span class="nf">plotTracks</span><span class="p">(</span><span class="n">dTrack4</span><span class="p">,</span> <span class="n">from</span> <span class="o">=</span> <span class="m">189990000</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">190000000</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
+</div><p>output
+<img src="p20new.png" alt="p20"></p>
+<h3 id="annotationtrack">AnnotationTrack</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">aTrack</span> <span class="o">&lt;-</span> <span class="nf">AnnotationTrack</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="m">120</span><span class="p">),</span>
+                          <span class="n">width</span> <span class="o">=</span> <span class="m">15</span><span class="p">,</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="s">&#34;chrX&#34;</span><span class="p">,</span> <span class="n">strand</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;+&#34;</span><span class="p">,</span><span class="s">&#34;*&#34;</span><span class="p">,</span> <span class="s">&#34;-&#34;</span><span class="p">),</span>
+                          <span class="n">id</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Huey&#34;</span><span class="p">,</span> <span class="s">&#34;Dewey&#34;</span><span class="p">,</span> <span class="s">&#34;Louie&#34;</span><span class="p">),</span>
+                          <span class="n">genome</span> <span class="o">=</span> <span class="s">&#34;hg19&#34;</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;foo&#34;</span><span class="p">)</span>
+<span class="nf">plotTracks</span><span class="p">(</span><span class="n">aTrack</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p21.png" alt="p21"></p>
+<h3 id="add-id-information">Add id information</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">plotTracks</span><span class="p">(</span><span class="n">aTrack</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="s">&#34;box&#34;</span><span class="p">,</span> <span class="n">featureAnnotation</span> <span class="o">=</span> <span class="s">&#34;id&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p210.png" alt="p210"></p>
+<h3 id="change-fontcolor">change fontcolor</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">plotTracks</span><span class="p">(</span><span class="n">aTrack</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="s">&#34;ellipse&#34;</span><span class="p">,</span> <span class="n">featureAnnotation</span> <span class="o">=</span> <span class="s">&#34;id&#34;</span><span class="p">,</span> 
+          <span class="n">fontcolor.feature</span> <span class="o">=</span> <span class="s">&#34;darkblue&#34;</span><span class="p">)</span>
+<span class="c1">### Building AnnotationTrack objects from files</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p211.png" alt="p211"></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1">#Annotation track</span>
+<span class="n">aTrack2</span> <span class="o">&lt;-</span> <span class="nf">AnnotationTrack</span><span class="p">(</span><span class="n">range</span> <span class="o">=</span> <span class="n">bamFile</span><span class="p">,</span> <span class="n">genome</span> <span class="o">=</span> <span class="s">&#34;hg19&#34;</span><span class="p">,</span>
+                           <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Reads&#34;</span><span class="p">,</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="s">&#34;chr1&#34;</span><span class="p">)</span>
+<span class="nf">plotTracks</span><span class="p">(</span><span class="n">aTrack2</span><span class="p">,</span> <span class="n">from</span> <span class="o">=</span> <span class="m">189995000</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">190000000</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p22.png" alt="p22"></p>
+<h4 id="plot-both-the-datatrack-representation-as-well-as-the-annotationtrack-representation-of-the-bam-file-together">plot both the DataTrack representation as well as the AnnotationTrack representation of the bam file together</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r">
+<span class="nf">plotTracks</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">dTrack4</span><span class="p">,</span> <span class="n">aTrack2</span><span class="p">),</span> <span class="n">from</span> <span class="o">=</span> <span class="m">189990000</span><span class="p">,</span>
+           <span class="n">to</span> <span class="o">=</span> <span class="m">190000000</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p23.png" alt="p23"></p>
+<h3 id="generegiontrack">GeneRegionTrack</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">data</span><span class="p">(</span><span class="n">geneModels</span><span class="p">)</span>
+<span class="n">grtrack</span> <span class="o">&lt;-</span> <span class="nf">GeneRegionTrack</span><span class="p">(</span><span class="n">geneModels</span><span class="p">,</span> <span class="n">genome</span> <span class="o">=</span> <span class="n">gen</span><span class="p">,</span>
+                           <span class="n">chromosome</span> <span class="o">=</span> <span class="n">chr</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;foo&#34;</span><span class="p">,</span> 
+                           <span class="n">transcriptAnnotation</span> <span class="o">=</span> <span class="s">&#34;symbol&#34;</span><span class="p">)</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="building-generegiontrack-objects-from-transcriptdbs">Building GeneRegionTrack objects from TranscriptDbs</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">GenomicFeatures</span><span class="p">)</span>
+<span class="n">samplefile</span> <span class="o">&lt;-</span> <span class="nf">system.file</span><span class="p">(</span><span class="s">&#34;extdata/&#34;</span><span class="p">,</span> <span class="s">&#34;UCSC_knownGene_sample.sqlite&#34;</span><span class="p">,</span>
+                          <span class="n">package</span> <span class="o">=</span> <span class="s">&#34;GenomicFeatures&#34;</span><span class="p">)</span>
+<span class="n">txdb</span> <span class="o">&lt;-</span> <span class="nf">loadDb</span><span class="p">(</span><span class="n">samplefile</span><span class="p">,</span><span class="n">packageName</span> <span class="o">=</span> <span class="s">&#34;GenomicFeatures&#34;</span><span class="p">)</span>
+<span class="n">txTr</span> <span class="o">&lt;-</span> <span class="nf">GeneRegionTrack</span><span class="p">(</span><span class="n">txdb</span><span class="p">,</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="s">&#34;chr6&#34;</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="m">300000</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="m">350000</span><span class="p">)</span>
+<span class="c1">#feature(txTr)</span>
+<span class="nf">plotTracks</span><span class="p">(</span><span class="n">txTr</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="biomartgeneregiontrack">BiomartGeneRegionTrack</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">biomTrack</span> <span class="o">&lt;-</span> <span class="nf">BiomartGeneRegionTrack</span><span class="p">(</span><span class="n">genome</span> <span class="o">=</span> <span class="s">&#34;hg19&#34;</span><span class="p">,</span>
+                                    <span class="n">chromosome</span> <span class="o">=</span> <span class="n">chr</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="m">20000000</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span>
+                                      <span class="m">21000000</span><span class="p">,</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;ENSEMBL&#34;</span><span class="p">)</span>
+<span class="nf">plotTracks</span><span class="p">(</span><span class="n">biomTrack</span><span class="p">,</span> <span class="n">col.line</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p24.png" alt="p24"></p>
+<h3 id="sequence-track">Sequence Track</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">BSgenome.Hsapiens.UCSC.hg19</span><span class="p">)</span>
+<span class="n">sTrack</span> <span class="o">&lt;-</span> <span class="nf">SequenceTrack</span><span class="p">(</span><span class="n">Hsapiens</span><span class="p">)</span>
+<span class="c1">#sequence track : add 5&#39;-&gt;3&#39;</span>
+<span class="nf">plotTracks</span><span class="p">(</span><span class="n">sTrack</span><span class="p">,</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">from</span> <span class="o">=</span> <span class="m">20000</span><span class="p">,</span><span class="n">to</span> <span class="o">=</span> <span class="m">20050</span><span class="p">,</span>
+           <span class="n">add53</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="c1">#The complement</span>
+<span class="nf">plotTracks</span><span class="p">(</span><span class="n">sTrack</span><span class="p">,</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">from</span> <span class="o">=</span> <span class="m">20000</span><span class="p">,</span><span class="n">to</span> <span class="o">=</span> <span class="m">20050</span><span class="p">,</span>
+           <span class="n">add53</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">complement</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p25.png" alt="p25"></p>
+<h3 id="alignmentstrack">AlignmentsTrack</h3>
+<h4 id="rnaseq-experiment">RNAseq experiment</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">afrom</span><span class="o">=</span><span class="m">2960000</span>
+<span class="n">ato</span><span class="o">=</span><span class="m">3160000</span>
+<span class="c1">#bam file</span>
+<span class="n">alTrack</span> <span class="o">&lt;-</span> <span class="nf">AlignmentsTrack</span><span class="p">(</span><span class="nf">system.file</span><span class="p">(</span><span class="n">package</span> <span class="o">=</span> <span class="s">&#34;Gviz&#34;</span><span class="p">,</span> <span class="s">&#34;extdata&#34;</span><span class="p">,</span> <span class="s">&#34;gapped.bam&#34;</span><span class="p">),</span> <span class="n">isPaired</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">bmt</span> <span class="o">&lt;-</span> <span class="nf">BiomartGeneRegionTrack</span><span class="p">(</span><span class="n">genome</span> <span class="o">=</span> <span class="s">&#34;hg19&#34;</span><span class="p">,</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="s">&#34;chr12&#34;</span><span class="p">,</span>
+                              <span class="n">start</span> <span class="o">=</span> <span class="n">afrom</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">ato</span><span class="p">,</span> <span class="n">filter</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">with_ox_refseq_mrna</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">),</span>
+                              <span class="n">stacking</span> <span class="o">=</span> <span class="s">&#34;dense&#34;</span><span class="p">)</span>
+<span class="nf">plotTracks</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">bmt</span><span class="p">,</span> <span class="n">alTrack</span><span class="p">),</span> <span class="n">from</span> <span class="o">=</span> <span class="n">afrom</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="n">ato</span><span class="p">,</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="s">&#34;chr12&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p26.png" alt="p26"></p>
+<ul>
+<li>To reduce the size of the coverage section by setting the coverageHeight or the minCoverageHeight parameters.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">plotTracks</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">bmt</span><span class="p">,</span> <span class="n">alTrack</span><span class="p">),</span> <span class="n">from</span> <span class="o">=</span> <span class="n">afrom</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="n">ato</span><span class="p">,</span>
+           <span class="n">chromosome</span> <span class="o">=</span> <span class="s">&#34;chr12&#34;</span><span class="p">,</span> <span class="n">min.height</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">coverageHeight</span> <span class="o">=</span> <span class="m">0.08</span><span class="p">,</span>
+           <span class="n">minCoverageHeight</span> <span class="o">=</span> <span class="m">0</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p27.png" alt="p27"></p>
+<ul>
+<li>Turn off the pile-up view of the individual reads by setting the type display parameter.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">plotTracks</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">alTrack</span><span class="p">,</span> <span class="n">bmt</span><span class="p">),</span> <span class="n">from</span> <span class="o">=</span> <span class="n">afrom</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="n">ato</span><span class="p">,</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="s">&#34;chr12&#34;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;coverage&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p28.png" alt="p28"></p>
+<h3 id="zoom-in-a-bit-further-to-check-out-the-details-of-the-pile-ups-section">Zoom in a bit further to check out the details of the pile-ups section</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">plotTracks</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">bmt</span><span class="p">,</span> <span class="n">alTrack</span><span class="p">),</span> <span class="n">from</span> <span class="o">=</span> <span class="n">afrom</span> <span class="o">+</span> <span class="m">12700</span><span class="p">,</span>
+           <span class="n">to</span> <span class="o">=</span> <span class="n">afrom</span> <span class="o">+</span> <span class="m">15200</span><span class="p">,</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="s">&#34;chr12&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p29.png" alt="p29"></p>
+<ul>
+<li>in single end mode by setting the isPaired argument in the constructor.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">alTrack</span> <span class="o">&lt;-</span> <span class="nf">AlignmentsTrack</span><span class="p">(</span><span class="nf">system.file</span><span class="p">(</span><span class="n">package</span> <span class="o">=</span> <span class="s">&#34;Gviz&#34;</span><span class="p">,</span>
+                                       <span class="s">&#34;extdata&#34;</span><span class="p">,</span> <span class="s">&#34;gapped.bam&#34;</span><span class="p">),</span> <span class="n">isPaired</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">plotTracks</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">bmt</span><span class="p">,</span> <span class="n">alTrack</span><span class="p">),</span> <span class="n">from</span> <span class="o">=</span> <span class="n">afrom</span> <span class="o">+</span> <span class="m">12700</span><span class="p">,</span>
+           <span class="n">to</span> <span class="o">=</span> <span class="n">afrom</span> <span class="o">+</span> <span class="m">15200</span><span class="p">,</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="s">&#34;chr12&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p30.png" alt="p30"></p>
+<h3 id="dnaseq-experiment">DNAseq experiment</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">afrom</span> <span class="o">&lt;-</span> <span class="m">44945200</span>
+<span class="n">ato</span> <span class="o">&lt;-</span> <span class="m">44947200</span>
+<span class="n">alTrack</span> <span class="o">&lt;-</span> <span class="nf">AlignmentsTrack</span><span class="p">(</span><span class="nf">system.file</span><span class="p">(</span><span class="n">package</span> <span class="o">=</span> <span class="s">&#34;Gviz&#34;</span><span class="p">,</span><span class="s">&#34;extdata&#34;</span><span class="p">,</span> <span class="s">&#34;snps.bam&#34;</span><span class="p">),</span> <span class="n">isPaired</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">plotTracks</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">alTrack</span><span class="p">,</span> <span class="n">sTrack</span><span class="p">),</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="s">&#34;chr21&#34;</span><span class="p">,</span> <span class="n">from</span> <span class="o">=</span> <span class="n">afrom</span><span class="p">,</span><span class="n">to</span> <span class="o">=</span> <span class="n">ato</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p31.png" alt="p31"></p>
+<ul>
+<li>Zoom in to one of the obvious heterozygous SNP positions</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">plotTracks</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">alTrack</span><span class="p">,</span> <span class="n">sTrack</span><span class="p">),</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="s">&#34;chr21&#34;</span><span class="p">,</span> <span class="n">from</span> <span class="o">=</span> <span class="m">44946590</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">44946660</span><span class="p">)</span>
+<span class="c1">#show individual letters</span>
+<span class="nf">plotTracks</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">alTrack</span><span class="p">,</span> <span class="n">sTrack</span><span class="p">),</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="s">&#34;chr21&#34;</span><span class="p">,</span>
+           <span class="n">from</span> <span class="o">=</span> <span class="m">44946590</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="m">44946660</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">min.height</span> <span class="o">=</span> <span class="m">8</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p32.png" alt="p32"></p>
+<h2 id="track-highlighting-and-overlays">Track highlighting and overlays</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1">#highlight</span>
+<span class="n">ht</span> <span class="o">&lt;-</span> <span class="nf">HighlightTrack</span><span class="p">(</span><span class="n">trackList</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">atrack</span><span class="p">,</span> <span class="n">grtrack</span><span class="p">,</span><span class="n">dtrack</span><span class="p">),</span>
+                     <span class="n">start</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">26705000</span><span class="p">,</span> <span class="m">26720000</span><span class="p">),</span> <span class="n">width</span> <span class="o">=</span> <span class="m">7000</span><span class="p">,</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="m">7</span><span class="p">)</span>
+<span class="nf">plotTracks</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">itrack</span><span class="p">,</span> <span class="n">gtrack</span><span class="p">,</span> <span class="n">ht</span><span class="p">),</span> <span class="n">from</span> <span class="o">=</span> <span class="n">lim[1]</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="n">lim[2]</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p33.png" alt="p33"></p>
+<h3 id="overlays-multiple-tracks-on-the-same-area-of-the-plot">overlays multiple tracks on the same area of the plot</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1">#create data</span>
+<span class="n">dat</span> <span class="o">&lt;-</span> <span class="nf">runif</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="n">min</span> <span class="o">=</span> <span class="m">-2</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="m">22</span><span class="p">)</span>
+<span class="n">dtrack2</span> <span class="o">&lt;-</span> <span class="nf">DataTrack</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">dat</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="n">coords[</span><span class="o">-</span><span class="nf">length</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span><span class="n">]</span><span class="p">,</span>
+                     <span class="n">end</span> <span class="o">=</span> <span class="n">coords[</span><span class="m">-1</span><span class="n">]</span><span class="p">,</span> <span class="n">chromosome</span> <span class="o">=</span> <span class="n">chr</span><span class="p">,</span> <span class="n">genome</span> <span class="o">=</span> <span class="n">gen</span><span class="p">,</span>
+                     <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;Uniform2&#34;</span><span class="p">,</span> <span class="n">groups</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="s">&#34;sample 2&#34;</span><span class="p">,</span><span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;sample 1&#34;</span><span class="p">,</span> <span class="s">&#34;sample 2&#34;</span><span class="p">)),</span>
+                     <span class="n">legend</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">displayPars</span><span class="p">(</span><span class="n">dtrack</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">groups</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="s">&#34;sample 1&#34;</span><span class="p">,</span><span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;sample 1&#34;</span><span class="p">,</span> <span class="s">&#34;sample 2&#34;</span><span class="p">)),</span> <span class="n">legend</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">ot</span> <span class="o">&lt;-</span> <span class="nf">OverlayTrack</span><span class="p">(</span><span class="n">trackList</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">dtrack2</span><span class="p">,</span> <span class="n">dtrack</span><span class="p">))</span>
+<span class="n">ylims</span> <span class="o">&lt;-</span> <span class="nf">extendrange</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="nf">values</span><span class="p">(</span><span class="n">dtrack</span><span class="p">),</span> <span class="nf">values</span><span class="p">(</span><span class="n">dtrack2</span><span class="p">))))</span>
+<span class="nf">plotTracks</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">itrack</span><span class="p">,</span> <span class="n">gtrack</span><span class="p">,</span> <span class="n">ot</span><span class="p">),</span> <span class="n">from</span> <span class="o">=</span> <span class="n">lim[1]</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="n">lim[2]</span><span class="p">,</span> <span class="n">ylim</span> <span class="o">=</span> <span class="n">ylims</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;smooth&#34;</span><span class="p">,</span> <span class="s">&#34;p&#34;</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p34.png" alt="p34"></p>
+<ul>
+<li>alpha blending can be a useful tool to tease out even more information out of track overlays</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">displayPars</span><span class="p">(</span><span class="n">dtrack</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">alpha.title</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">)</span>
+<span class="nf">displayPars</span><span class="p">(</span><span class="n">dtrack2</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">alpha.title</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">)</span>
+<span class="n">ot</span> <span class="o">&lt;-</span> <span class="nf">OverlayTrack</span><span class="p">(</span><span class="n">trackList</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">dtrack</span><span class="p">,</span> <span class="n">dtrack2</span><span class="p">))</span>
+<span class="nf">plotTracks</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">itrack</span><span class="p">,</span> <span class="n">gtrack</span><span class="p">,</span> <span class="n">ot</span><span class="p">),</span> <span class="n">from</span> <span class="o">=</span> <span class="n">lim[1]</span><span class="p">,</span>
+           <span class="n">to</span> <span class="o">=</span> <span class="n">lim[2]</span><span class="p">,</span> <span class="n">ylim</span> <span class="o">=</span> <span class="n">ylims</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;hist&#34;</span><span class="p">),</span> <span class="n">window</span> <span class="o">=</span> <span class="m">30</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>output
+<img src="p35.png" alt="p35"></p>
     </div>
 
     
@@ -1013,6 +1411,7 @@ if (!doNotTrack) {
           <a href="/tags/r/">R</a>
           <a href="/tags/bioinformatics/">Bioinformatics</a>
           <a href="/tags/ucsc/">UCSC</a>
+          <a href="/tags/r-package/">R Package</a>
           
         </div>
 
