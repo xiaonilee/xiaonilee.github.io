@@ -6,7 +6,16 @@
     <description>Recent content in R on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 14 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Survival Analysis with data from GSE database</title>
+      <link>/post/survival/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/survival/</guid>
+      <description>&lt;p&gt;Class topics - Survival Analysis.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>UCSC gene browser with R package Gviz - part 2</title>
       <link>/post/ucscgenebrowser2/</link>
@@ -176,15 +185,6 @@
       
       <guid>/post/rinaction11/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 11.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 10. Power analysis</title>
-      <link>/post/rinaction10/</link>
-      <pubDate>Mon, 02 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rinaction10/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 10.&lt;/p&gt;</description>
     </item>
     
   </channel>
