@@ -3,8 +3,8 @@ title: "The way to use R in Google Colab"
 date: 2021-02-16
 lastmod: 2021-02-16
 draft: false
-tags: ["R package", "Bioinformatics"]
-categories: ["R package", "Bioinformatics"]
+tags: ["R package", "Bioinformatics", "Colab"]
+categories: ["R package", "Bioinformatics", "Colab"]
 author: "Xiaoni"
 
 weight: 1

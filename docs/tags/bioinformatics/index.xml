@@ -8,6 +8,17 @@
     <language>en</language>
     <lastBuildDate>Tue, 16 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Installing Conda in Google Colab</title>
+      <link>/post/condacolab/</link>
+      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/condacolab/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Conda&lt;/strong&gt; is the environment and package management solution for a number of popular data science tools including &lt;strong&gt;Pandas&lt;/strong&gt;, &lt;strong&gt;Scikit-Learn&lt;/strong&gt;, &lt;strong&gt;PyTorch&lt;/strong&gt;, &lt;strong&gt;NVIDIA Rapids&lt;/strong&gt; and many others.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Conda&lt;/strong&gt; also dramatically simplifies the process of installing popular deep learning tools like &lt;strong&gt;TensorFlow&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Then, how to install Conda when using Google Colab?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>The way to use R in Google Colab</title>
       <link>/post/rincolab/</link>
       <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
@@ -179,15 +190,6 @@
       
       <guid>/post/rinaction17/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 17.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 16. Cluster analysis</title>
-      <link>/post/rinaction16/</link>
-      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rinaction16/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 16.&lt;/p&gt;</description>
     </item>
     
   </channel>
