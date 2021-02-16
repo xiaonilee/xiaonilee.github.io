@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Bioinformatics · xiaoni&#39;s blog</title>
+  <title>The way to use R in Google Colab - xiaoni&#39;s blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -22,8 +22,11 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="xiaonilee" />
-  <meta name="description" content="xiaoni&#39;s blog" />
+<meta name="author" content="Xiaoni" />
+  <meta name="description" content="Colab is an interactive notebook provided by Google (primarily) for writing and running Python through a browser.
+Then, how to use R in Google Colab?
+" />
+
   <meta name="keywords" content="xiaonili, xiaonilee, xiaoni" />
 
 
@@ -34,8 +37,8 @@
 <meta name="generator" content="Hugo 0.79.0" />
 
 
-<link rel="canonical" href="/tags/bioinformatics/" />
-<link href="/tags/bioinformatics/index.xml" rel="alternate" type="application/rss+xml" title="xiaoni&#39;s blog" />
+<link rel="canonical" href="/post/rincolab/" />
+
 
 
 
@@ -62,16 +65,27 @@
 
 
 
-<meta property="og:title" content="Bioinformatics" />
-<meta property="og:description" content="xiaoni&#39;s blog" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/tags/bioinformatics/" />
-<meta property="og:updated_time" content="2021-02-16T00:00:00+00:00" />
-<meta itemprop="name" content="Bioinformatics">
-<meta itemprop="description" content="xiaoni&#39;s blog">
+<meta property="og:title" content="The way to use R in Google Colab" />
+<meta property="og:description" content="Colab is an interactive notebook provided by Google (primarily) for writing and running Python through a browser.
+Then, how to use R in Google Colab?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/rincolab/" />
+<meta property="article:published_time" content="2021-02-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-16T00:00:00+00:00" />
+<meta itemprop="name" content="The way to use R in Google Colab">
+<meta itemprop="description" content="Colab is an interactive notebook provided by Google (primarily) for writing and running Python through a browser.
+Then, how to use R in Google Colab?">
+<meta itemprop="datePublished" content="2021-02-16T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-02-16T00:00:00+00:00" />
+<meta itemprop="wordCount" content="255">
+
+
+
+<meta itemprop="keywords" content="R package,Bioinformatics," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Bioinformatics"/>
-<meta name="twitter:description" content="xiaoni&#39;s blog"/>
+<meta name="twitter:title" content="The way to use R in Google Colab"/>
+<meta name="twitter:description" content="Colab is an interactive notebook provided by Google (primarily) for writing and running Python through a browser.
+Then, how to use R in Google Colab?"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -390,7 +404,7 @@ if (!doNotTrack) {
 
       </li>
     
-        <li class="menu-item">
+        <li class="menu-item active">
         
           
           <a class="menu-item-link menu-parent" href="/">docs</a>
@@ -508,172 +522,233 @@ if (!doNotTrack) {
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">The way to use R in Google Colab</h1>
+      
+      <div class="post-meta">
+        <time datetime="2021-02-16" class="post-time">
+          2021-02-16
+        </time>
+        <div class="post-category">
+            <a href="/categories/r-package/"> R package </a>
+            <a href="/categories/bioinformatics/"> Bioinformatics </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#there-are-two-ways-to-run-r-in-colab">There are two ways to run R in Colab</a></li>
+        <li><a href="#to-use-r-and-python-together-in-colab">To use R and Python together in Colab</a></li>
+        <li><a href="#start-to-use-r-in-colab">Start to use R in Colab</a></li>
+        <li><a href="#as-an-example-to-install-package-esquisse">As an example, to install <strong>Package esquisse</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p><strong>Colab</strong> is an interactive notebook provided by Google (primarily) for writing and running <code>Python</code> through a <em>browser</em>.</p>
+<p>Then, how to use R in Google Colab?</p>
+<h3 id="there-are-two-ways-to-run-r-in-colab">There are two ways to run R in Colab</h3>
+<ul>
+<li>
+<p>The first way is to use the <code>rpy2</code> package in the Python runtime. This method allows you to execute R and Python syntax together.</p>
+</li>
+<li>
+<p>The second way is to actually start the notebook in the R runtime.</p>
+</li>
+</ul>
+<h3 id="to-use-r-and-python-together-in-colab">To use R and Python together in Colab</h3>
+<ul>
+<li>
+<p>Open google browser.</p>
+</li>
+<li>
+<p>Create a new <a href="https://colab.research.google.com/#create=true">notebook</a>.</p>
+</li>
+<li>
+<p>Run rmagic by executing this command <code>%load_ext rpy2.ipython</code>.</p>
+</li>
+<li>
+<p>After that, every time you want to use R, add <code>%%R</code> in the beginning of each cell.</p>
+<ul>
+<li>Start rmagic by executing this in a cell:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">%</span><span class="n">load_ext</span> <span class="n">rpy2</span><span class="o">.</span><span class="n">ipython</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Use %%R to execute cell magic</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">%%</span><span class="n">R</span>
+<span class="n">x</span> <span class="o">&lt;-</span> <span class="n">seq</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="n">length</span><span class="o">.</span><span class="n">out</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">x</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>copy R variable to Python:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="o">%</span><span class="n">R</span> <span class="n">x</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="start-to-use-r-in-colab">Start to use R in Colab</h3>
+<ul>
+<li>
+<p>Go to this <a href="https://colab.research.google.com/#create=true&amp;language=r">URL</a>, or this short <a href="https://colab.to/r">URL</a>.</p>
+</li>
+<li>
+<p>Confirm that you are in the R runtime by going to the “<code>Runtime</code>” settings, and select “<code>Change runtime type</code>”.</p>
+</li>
+<li>
+<p>Check and print out the R version</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">R.version.string</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Check packages available</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">print</span><span class="p">(</span><span class="nf">installed.packages</span><span class="p">())</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="as-an-example-to-install-package-esquisse">As an example, to install <strong>Package esquisse</strong></h3>
+<ul>
+<li>
+<p><code>Package esquisse</code></p>
+<ul>
+<li>
+<p>Explore and Visualize Your Data Interactively with the ggplot2 package.</p>
+</li>
+<li>
+<p>A &lsquo;shiny&rsquo; gadget.</p>
+</li>
+<li>
+<p>To create &lsquo;ggplot2&rsquo; charts interactively with drag-and-drop to map your variables.</p>
+</li>
+<li>
+<p>You can quickly visualize your data accordingly to their type, export to &lsquo;PNG&rsquo; or &lsquo;PowerPoint&rsquo;, and retrieve the code to reproduce the chart.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#34;esquisse&#34;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">esquisse</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+</ul>
+    </div>
+
+    
+    
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/r-package/">R package</a>
+          <a href="/tags/bioinformatics/">Bioinformatics</a>
           
+        </div>
 
-<section id="archive" class="archive">
-  
-
-  
-    <div class="archive-post">
-      <time datetime="2020-11-11" class="archive-post-time">
-        2020-11-11
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/rinaction15/" class="archive-post-link">
-          Chapter 15. Time series
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2020-11-10" class="archive-post-time">
-        2020-11-10
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/rinaction14/" class="archive-post-link">
-          Chapter 14. Principal components and factor analysis
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2020-11-09" class="archive-post-time">
-        2020-11-09
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/rinaction13/" class="archive-post-link">
-          Chapter 13. Generalized linear models
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2020-11-05" class="archive-post-time">
-        2020-11-05
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/rinaction12/" class="archive-post-link">
-          Chapter 12. Resampling statistics and bootstrapping
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2020-11-03" class="archive-post-time">
-        2020-11-03
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/rinaction11/" class="archive-post-link">
-          Chapter 11. Intermediate graphs
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2020-11-02" class="archive-post-time">
-        2020-11-02
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/rinaction10/" class="archive-post-link">
-          Chapter 10. Power analysis
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2020-10-30" class="archive-post-time">
-        2020-10-30
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/rinaction9/" class="archive-post-link">
-          Chapter 9. Analysis of variance
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2020-10-29" class="archive-post-time">
-        2020-10-29
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/rinaction8/" class="archive-post-link">
-          Chapter 8. Regression
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2020-10-25" class="archive-post-time">
-        2020-10-25
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/rinaction7/" class="archive-post-link">
-          Chapter 7. Basic statistics
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2020-10-24" class="archive-post-time">
-        2020-10-24
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/rinaction6/" class="archive-post-link">
-          Chapter 6. Basic graphs
-        </a>
-      </span>
-    </div>
-  
-</section>
-
-
-
-
-
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  <nav class="pagination">
-    <ul>
       
-      <li >
-        <a href="/tags/bioinformatics/">1</a>
-      </li>
-      
-      <li >
-        <a href="/tags/bioinformatics/page/2/">2</a>
-      </li>
-      
-      <li  class="active" >
-        <a href="/tags/bioinformatics/page/3/">3</a>
-      </li>
-      
-      <li >
-        <a href="/tags/bioinformatics/page/4/">4</a>
-      </li>
-      
-    </ul>
-  </nav>
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/survival/">
+            <span class="next-text nav-default">Survival Analysis with data from GSE database</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
 
   
   
 
+  
+  
 
+  
 
+  
+  
 
+  
+
+  
+
+  
+
+    
+
+  
 
         </div>
       </div>
@@ -771,6 +846,13 @@ if (!doNotTrack) {
 
 
 
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 
