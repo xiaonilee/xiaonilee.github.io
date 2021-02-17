@@ -93,3 +93,10 @@ print(installed.packages())
     install.packages("esquisse")
     library(esquisse)
     ```
+
+
+Show me the code <i class="far fa-hand-point-down"></i>
+
+[![fig1](fig1.png)](https://colab.research.google.com/gist/xiaonilee/cfd263ebef98b1d60aa57e1ebc0ec29d/rincolab.ipynb)
+
+{{< gist cfd263ebef98b1d60aa57e1ebc0ec29d >}}
