@@ -6,7 +6,18 @@
     <description>Recent content in Colab on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 16 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/colab/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/colab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RNA-seq Bioinformatics - bioinformatics for RNA sequence analysis</title>
+      <link>/post/rnasequenceanalysis/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rnasequenceanalysis/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Google Colab&lt;/strong&gt; is a free service providing interactive computing resources via a user interface, runs on Google Cloud Platform (GCP), and provides free access to GPUs and TPUs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;RNA sequence&lt;/strong&gt; is a technique that can examine the quantity and sequences of RNA in a sample using next generation sequencing (NGS). It analyzes the &lt;em&gt;&lt;strong&gt;transcriptome&lt;/strong&gt;&lt;/em&gt; of gene expression patterns encoded within our RNA.&lt;/p&gt;
+&lt;p&gt;Then, how to install Conda when using Google Colab?&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Installing Conda in Google Colab</title>
       <link>/post/condacolab/</link>

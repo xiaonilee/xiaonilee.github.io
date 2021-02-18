@@ -30,11 +30,11 @@ Then, how to install Conda when using Google Colab?
 
 - To confirm which Python is being used by default in Google Colab
   
-  ```python
+    ```python
     !which python
     #Output:
     #/usr/local/bin/python
-  ```
+    ```
 
 - Check the version number of this default Python.
 

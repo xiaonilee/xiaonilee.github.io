@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RNA Sequence on xiaoni&#39;s blog</title>
+    <link>/categories/rna-sequence/</link>
+    <description>Recent content in RNA Sequence on xiaoni&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/rna-sequence/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RNA-seq Bioinformatics - bioinformatics for RNA sequence analysis</title>
+      <link>/post/rnasequenceanalysis/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rnasequenceanalysis/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Google Colab&lt;/strong&gt; is a free service providing interactive computing resources via a user interface, runs on Google Cloud Platform (GCP), and provides free access to GPUs and TPUs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;RNA sequence&lt;/strong&gt; is a technique that can examine the quantity and sequences of RNA in a sample using next generation sequencing (NGS). It analyzes the &lt;em&gt;&lt;strong&gt;transcriptome&lt;/strong&gt;&lt;/em&gt; of gene expression patterns encoded within our RNA.&lt;/p&gt;
+&lt;p&gt;Then, how to install Conda when using Google Colab?&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
