@@ -18,9 +18,9 @@
       
       <guid>/post/rnasequenceanalysis/</guid>
       
-        <description>&lt;p&gt;&lt;strong&gt;Google Colab&lt;/strong&gt; is a free service providing interactive computing resources via a user interface, runs on Google Cloud Platform (GCP), and provides free access to GPUs and TPUs.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;RNA sequence&lt;/strong&gt; is a technique that can examine the quantity and sequences of RNA in a sample using next generation sequencing (NGS). It analyzes the &lt;em&gt;&lt;strong&gt;transcriptome&lt;/strong&gt;&lt;/em&gt; of gene expression patterns encoded within our RNA.&lt;/p&gt;
-&lt;p&gt;Then, how to install Conda when using Google Colab?&lt;/p&gt;</description>
+        <description>&lt;p&gt;&lt;strong&gt;Google Colab&lt;/strong&gt; is a &lt;em&gt;&lt;strong&gt;free&lt;/strong&gt;&lt;/em&gt; service providing interactive computing resources via a user interface, runs on Google Cloud Platform (GCP), and provides free access to GPUs and TPUs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;RNA sequence&lt;/strong&gt; is a technique that can examine the quantity and sequences of RNA in a sample using next generation sequencing (NGS). It analyzes the &lt;em&gt;&lt;strong&gt;transcriptome&lt;/strong&gt;&lt;/em&gt; of gene expression patterns encoded within the RNA.&lt;/p&gt;
+&lt;p&gt;Then, how to perform &lt;em&gt;&lt;strong&gt;RNA sequence analysis&lt;/strong&gt;&lt;/em&gt; in Google Colab?&lt;/p&gt;</description>
       
     </item>
     
