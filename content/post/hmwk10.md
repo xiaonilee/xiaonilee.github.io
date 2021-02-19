@@ -11,10 +11,10 @@ weight: 1
 
 mathjax: true
 
-menu:
-  main:
-    parent: "docs"
-    weight: 1
+# menu:
+#   main:
+#     parent: "docs"
+#     weight: 1
 ---
 
 Bioinformatics Exercises of Application with [R](hmwk10.Rmd).

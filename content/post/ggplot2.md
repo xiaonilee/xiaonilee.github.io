@@ -1,7 +1,7 @@
 ---
 title: "R Notebook : ggplot2"
 date: 2020-09-19
-lastmod: 2020-09-24
+lastmod: 2021-02-19
 draft: false
 tags: ["R", "Bioinformatics", "Plots", "R Package"]
 categories: ["R", "Bioinformatics", "R Package"]
@@ -11,10 +11,10 @@ weight: 1
 
 mathjax: true
 
-menu:
-  main:
-    parent: "docs"
-    weight: 1
+# menu:
+#   main:
+#     parent: "docs"
+#     weight: 1
 ---
 
 R package: ggplot2.

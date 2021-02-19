@@ -6,7 +6,16 @@
     <description>Recent content in R Package on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 16 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/r-package/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/r-package/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UCSC Topics</title>
+      <link>/post/ucscmap/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscmap/</guid>
+      <description>&lt;p&gt;Roadmap for the &lt;code&gt;UCSC topics&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>The way to use R in Google Colab</title>
       <link>/post/rincolab/</link>

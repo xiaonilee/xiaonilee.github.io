@@ -1,7 +1,7 @@
 ---
 title: "Local UCSC Xena Data Hub"
 date: 2020-09-10
-lastmod: 2020-09-15
+lastmod: 2021-02-19
 draft: false
 tags: ["UCSC", "Xena", "Breast", "Cancer", "Database"]
 categories: ["Cancer Research", "Database"]
@@ -19,10 +19,10 @@ contentCopyright: ''
 # reward: false
 mathjax: true
 
-menu:
-  main:
-    parent: "docs"
-    weight: 1
+# menu:
+#   main:
+#     parent: "docs"
+#     weight: 1
 ---
 
 Load the private data to Local Xena Data Hub.

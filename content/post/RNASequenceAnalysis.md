@@ -1,5 +1,5 @@
 ---
-title: "RNA-seq Bioinformatics - bioinformatics for RNA sequence analysis"
+title: "RNA-seq Bioinformatics - RNA sequence analysis"
 date: 2021-02-17
 lastmod: 2021-02-18
 draft: false

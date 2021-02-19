@@ -1,7 +1,7 @@
 ---
 title: "UCSC gene browser with R package Gviz - part 2"
 date: 2021-02-14
-lastmod: 2021-02-14
+lastmod: 2021-02-19
 draft: false
 tags: ["R", "Bioinformatics", "UCSC", "R Package"]
 categories: ["R", "Bioinformatics", "UCSC", "R Package"]
@@ -11,10 +11,10 @@ weight: 1
 
 mathjax: true
 
-menu:
-  main:
-    parent: "docs"
-    weight: 1
+# menu:
+#   main:
+#     parent: "docs"
+#     weight: 1
 ---
 
 Continued, in this present, to draw the customized UCSC gene Track With Gviz package. 

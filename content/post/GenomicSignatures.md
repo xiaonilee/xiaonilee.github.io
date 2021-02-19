@@ -1,7 +1,7 @@
 ---
 title: "UCSC Xena Features: Genomic Signatures"
 date: 2020-09-14
-lastmod: 2020-09-15
+lastmod: 2021-02-19
 draft: false
 tags: ["UCSC", "Xena", "Features", "signatures", "Database"]
 categories: ["Cancer Research", "Database"]
@@ -19,10 +19,10 @@ contentCopyright: ''
 # reward: false
 mathjax: true
 
-menu:
-  main:
-    parent: "docs"
-    weight: 1
+# menu:
+#   main:
+#     parent: "docs"
+#     weight: 1
 ---
 
 Genomic signatures, sometimes expressed as a weighted sum of genes, are an algebra over genes.

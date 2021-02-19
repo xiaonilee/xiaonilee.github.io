@@ -1,7 +1,7 @@
 ---
 title: "R re-analysis in TCGA"
 date: 2020-10-12
-lastmod: 2020-10-13
+lastmod: 2021-02-19
 draft: false
 tags: ["R", "Bioinformatics", "TCGA", "Plots"]
 categories: ["Cancer Research", "Database"]
@@ -11,10 +11,10 @@ weight: 1
 
 mathjax: true
 
-menu:
-  main:
-    parent: "docs"
-    weight: 1
+# menu:
+#   main:
+#     parent: "docs"
+#     weight: 1
 ---
 
 Data setup via TCGA.

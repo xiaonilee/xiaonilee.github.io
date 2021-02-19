@@ -6,7 +6,16 @@
     <description>Recent content in R on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 15 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UCSC Topics</title>
+      <link>/post/ucscmap/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscmap/</guid>
+      <description>&lt;p&gt;Roadmap for the &lt;code&gt;UCSC topics&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Survival Analysis with data from GSE database</title>
       <link>/post/survival/</link>
@@ -176,15 +185,6 @@
       
       <guid>/post/rinaction12/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 12.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 11. Intermediate graphs</title>
-      <link>/post/rinaction11/</link>
-      <pubDate>Tue, 03 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rinaction11/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 11.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,7 +1,7 @@
 ---
 title: "UCSC Xena: Private and Public Data Put Together"
 date: 2020-09-11
-lastmod: 2020-10-07
+lastmod: 2021-02-19
 draft: false
 tags: ["UCSC", "Xena", "Prostate", "Cancer", "Database"]
 categories: ["Cancer Research", "Database"]
@@ -19,10 +19,10 @@ contentCopyright: ''
 # reward: false
 mathjax: true
 
-menu:
-  main:
-    parent: "docs"
-    weight: 1
+# menu:
+#   main:
+#     parent: "docs"
+#     weight: 1
 ---
 
 Put private data and public Xena Data together via UCSC Xena Hub .

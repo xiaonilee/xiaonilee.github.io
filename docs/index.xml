@@ -6,13 +6,24 @@
     <description>Recent content on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Feb 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>RNA-seq Bioinformatics - bioinformatics for RNA sequence analysis</title>
+      <title>UCSC Topics</title>
+      <link>/post/ucscmap/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscmap/</guid>
+      
+        <description>&lt;p&gt;Roadmap for the &lt;code&gt;UCSC topics&lt;/code&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>RNA-seq Bioinformatics - RNA sequence analysis</title>
       <link>/post/rnasequenceanalysis/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
@@ -225,17 +236,6 @@
       <guid>/post/shiny02/</guid>
       
         <description>&lt;p&gt;Recover a Shiny app demo - kmeans clustering.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Learn Shiny: Building a Shiny app</title>
-      <link>/post/shiny01/</link>
-      <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/shiny01/</guid>
-      
-        <description>&lt;p&gt;Building a Shiny app - an interactive tutorial.&lt;/p&gt;</description>
       
     </item>
     

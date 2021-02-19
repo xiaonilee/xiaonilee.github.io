@@ -6,9 +6,18 @@
     <description>Recent content in Bioinformatics on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>RNA-seq Bioinformatics - bioinformatics for RNA sequence analysis</title>
+      <title>UCSC Topics</title>
+      <link>/post/ucscmap/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscmap/</guid>
+      <description>&lt;p&gt;Roadmap for the &lt;code&gt;UCSC topics&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>RNA-seq Bioinformatics - RNA sequence analysis</title>
       <link>/post/rnasequenceanalysis/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
@@ -183,15 +192,6 @@
       
       <guid>/post/rinaction19/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 19.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 18. Advanced methods for missing data</title>
-      <link>/post/rinaction18/</link>
-      <pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rinaction18/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 18.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -6,13 +6,67 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bioinformatics</title>
       <link>/tags/bioinformatics/</link>
-      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>/tags/database/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GEO</title>
+      <link>/tags/geo/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/geo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/tags/r/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R Package</title>
+      <link>/tags/r-package/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r-package/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UCSC</title>
+      <link>/tags/ucsc/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ucsc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xena</title>
+      <link>/tags/xena/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/xena/</guid>
       <description></description>
     </item>
     
@@ -53,29 +107,11 @@
     </item>
     
     <item>
-      <title>R Package</title>
-      <link>/tags/r-package/</link>
-      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/r-package/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>GSE</title>
       <link>/tags/gse/</link>
       <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/gse/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>/tags/r/</link>
-      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/r/</guid>
       <description></description>
     </item>
     
@@ -89,29 +125,11 @@
     </item>
     
     <item>
-      <title>UCSC</title>
-      <link>/tags/ucsc/</link>
-      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/ucsc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Cancer Research</title>
       <link>/tags/cancer-research/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/cancer-research/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Database</title>
-      <link>/tags/database/</link>
-      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/database/</guid>
       <description></description>
     </item>
     
@@ -166,24 +184,6 @@
       <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/tcia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TIMER</title>
-      <link>/tags/timer/</link>
-      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/timer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tumor Immune</title>
-      <link>/tags/tumor-immune/</link>
-      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/tumor-immune/</guid>
       <description></description>
     </item>
     
