@@ -3,8 +3,8 @@ title: "TensorFlow2 class1: Iris"
 date: 2020-12-02
 lastmod: 2020-12-10
 draft: false
-tags: ["TensorFlow2", "ML"]
-categories: ["TensorFlow2", "ML", "big data"]
+tags: ["TensorFlow2", "Machine Learning"]
+categories: ["TensorFlow2", "Machine Learning", "big data"]
 author: "Xiaoni"
 
 weight: 1

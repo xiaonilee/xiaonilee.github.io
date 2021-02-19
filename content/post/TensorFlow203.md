@@ -1,10 +1,10 @@
 ---
 title: "TensorFlow2 class3: 神经网络八股"
 date: 2020-12-07
-lastmod: 2020-12-10
+lastmod: 2021-02-19
 draft: false
-tags: ["TensorFlow2", "ML"]
-categories: ["TensorFlow2", "ML", "big data"]
+tags: ["TensorFlow2", "Machine Learning"]
+categories: ["TensorFlow2", "Machine Learning", "big data"]
 author: "Xiaoni"
 
 weight: 1
