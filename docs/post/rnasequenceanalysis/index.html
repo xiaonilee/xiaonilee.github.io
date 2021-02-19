@@ -80,7 +80,7 @@ RNA sequence is a technique that can examine the quantity and sequences of RNA i
 Then, how to perform RNA sequence analysis in Google Colab?">
 <meta itemprop="datePublished" content="2021-02-17T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-18T00:00:00+00:00" />
-<meta itemprop="wordCount" content="925">
+<meta itemprop="wordCount" content="942">
 
 
 
@@ -828,7 +828,8 @@ cat <span class="nv">$file</span> <span class="p">|</span><span class="k">while<
 <span class="err">!</span><span class="n">touch</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">align</span><span class="o">/</span><span class="n">SRR_Acc_List</span><span class="o">.</span><span class="n">txt</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="build-indexes">Build Indexes</h3>
+</div><p><img src="4.png" alt="4"></p>
+<h3 id="build-indexes">Build Indexes</h3>
 <ul>
 <li>Install HISAT2 and Samtools</li>
 </ul>
@@ -869,13 +870,19 @@ cat <span class="nv">$file</span> <span class="p">|</span><span class="k">while<
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Build HFM index</span>
 <span class="c1">#!hisat2-build --help</span>
 <span class="c1">#!cat /proc/cpuinfo</span>
 <span class="c1"># Consider the systerm is limited, -p 16 is change to -p 2;</span>
-<span class="err">!</span><span class="n">hisat2</span><span class="o">-</span><span class="n">build</span> <span class="o">-</span><span class="n">p</span> <span class="mi">2</span> <span class="n">genome</span><span class="o">.</span><span class="n">fa</span> <span class="n">reference_index_hisat_hg38_genome</span>
+<span class="err">!</span><span class="n">hisat2</span><span class="o">-</span><span class="n">build</span> <span class="o">-</span><span class="n">p</span> <span class="mi">2</span> <span class="n">genome</span><span class="o">.</span><span class="n">fa</span> <span class="n">genome</span>
+
+<span class="err">!</span><span class="n">mkdir</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">genome</span>
+<span class="c1"># Move `genome.1.ht2 genome.2.ht2 genome.3.ht2 genome.4.ht2 genome.5.ht2 genome.6.ht2 genome.7.ht2 genome.8.ht2` to /content/genome</span>
 </code></pre></td></tr></table>
 </div>
 </div><ul>

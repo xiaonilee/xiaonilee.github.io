@@ -149,6 +149,8 @@ cd /content/clean/
 !touch /content/align/SRR_Acc_List.txt
 ```
 
+  ![4](4.png)
+
 ### Build Indexes
 
 - Install HISAT2 and Samtools
@@ -174,7 +176,10 @@ cd /content/clean/
 #!hisat2-build --help
 #!cat /proc/cpuinfo
 # Consider the systerm is limited, -p 16 is change to -p 2;
-!hisat2-build -p 2 genome.fa reference_index_hisat_hg38_genome
+!hisat2-build -p 2 genome.fa genome
+
+!mkdir /content/genome
+# Move `genome.1.ht2 genome.2.ht2 genome.3.ht2 genome.4.ht2 genome.5.ht2 genome.6.ht2 genome.7.ht2 genome.8.ht2` to /content/genome
 ```
 
 - Do alignment with script `sn.sh`
