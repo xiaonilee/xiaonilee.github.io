@@ -31,7 +31,7 @@ Roadmap for the `UCSC topics`.
 
 - [UCSC Xena Features: Genomic Signatures](/post/genomicsignatures/)
 
-- [R Notebook : ggplot2](/post/gplot2/)
+- [R Notebook : ggplot2](/post/ggplot2/)
 
 - [R re-analysis in TCGA](/post/tricktcga/)
 
