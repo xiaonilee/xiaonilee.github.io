@@ -39,33 +39,33 @@ mathjax: false
   - WEKA
 
 - Statistics
-  - [st101](https://classroom.udacity.com/courses/st101) 
-  - [st095](https://classroom.udacity.com/courses/st095)
+  - [st101](https://www.udacity.com/course/intro-to-statistics--st101) 
+  - [st095](https://www.udacity.com/course/statistics--st095)
 
 - Linux 
   - [Linux](https://github.com/xiaonilee/Bioinformatics_Linux)
 
-  - [Intro to Hadoop and MapReduce byCloudera_ud617](https://github.com/xiaonilee/Intro_to_Hadoop_and_MapReduce_byCloudera_ud617)
+  - [Intro to Hadoop and MapReduce byCloudera_ud617](https://www.udacity.com/course/intro-to-hadoop-and-mapreduce--ud617), and [github repository](https://github.com/xiaonilee/Intro_to_Hadoop_and_MapReduce_byCloudera_ud617)
 
 - R
-  - [Data Analysis with R byFacebook_ud651](https://github.com/xiaonilee/Data_Analysis_with_R_byFacebook_ud651) 
-  - [Shiny](https://xiaonilee.github.io/post/shiny01/)
+  - [Data Analysis with R byFacebook_ud651](https://www.udacity.com/course/data-analysis-with-r--ud651), and [github repository](https://github.com/xiaonilee/Data_Analysis_with_R_byFacebook_ud651) 
+  - [Shiny](/post/shiny01/)
 
 - Python
 
   - [Intro to Computer Science_cs101](https://github.com/xiaonilee/Intro_to_Computer_Science_CS101) 
-  - [Introduction to Python Programming_ud1110](https://github.com/xiaonilee/Introduction_to_Python_Programming_ud1110)  
-  - [NumPy/Pandas/Matplotlib_ud170](https://github.com/xiaonilee/Intro_To_Data_Analysis_ud170_b) 
-  - [Data Structures and Algorithms in Python](https://github.com/xiaonilee/Data_Structures_and_Algorithms_in_Python) 
+  - [Introduction to Python Programming_ud1110](https://www.udacity.com/course/introduction-to-python--ud1110), and [github repository](https://github.com/xiaonilee/Introduction_to_Python_Programming_ud1110)  
+  - [NumPy/Pandas/Matplotlib_ud170](https://www.udacity.com/course/intro-to-data-analysis--ud170), and [github repository](https://github.com/xiaonilee/Intro_To_Data_Analysis_ud170_b) 
+  - [Data Structures and Algorithms in Python](https://github.com/xiaonilee/Data_Structures_and_Algorithms_in_Python)
   - [Django](https://github.com/xiaonilee/Django-Learn)
 
 - SQL/MongoDB
-  - [SQL for Data Analysis_ud198](https://github.com/xiaonilee/SQL_for_Data_Analysis_ud198)
-  - [Data Wrangling with MongoDB_ud032](https://github.com/xiaonilee/Data_Wrangling_with_MongoDB_byMongoDB)
+  - [SQL for Data Analysis_ud198](https://www.udacity.com/course/sql-for-data-analysis--ud198), and [github repository](https://github.com/xiaonilee/SQL_for_Data_Analysis_ud198)
+  - [Data Wrangling with MongoDB_ud032](https://www.udacity.com/course/data-wrangling-with-mongodb--ud032), and [github repository](https://github.com/xiaonilee/Data_Wrangling_with_MongoDB_byMongoDB)
 
 - AI
-  - [Machine Learning_ud120](https://github.com/xiaonilee/Introduction_To_Machine_Learning_ud120) 
-  - [TensorFlow2](https://xiaonilee.github.io/post/tensorflow2/)
+  - [Machine Learning_ud120](https://www.udacity.com/course/intro-to-machine-learning--ud120), and [github repository](https://github.com/xiaonilee/Introduction_To_Machine_Learning_ud120) 
+  - [TensorFlow2](/post/tensorflow2/)
 
 
 
