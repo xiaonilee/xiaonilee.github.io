@@ -1,7 +1,7 @@
 ---
 title: "Survival Analysis with data from GSE database"
 date: 2021-02-15
-lastmod: 2021-02-15
+lastmod: 2021-02-22
 draft: false
 tags: ["R", "Bioinformatics", "GSE", "Survival analysis"]
 categories: ["R", "Bioinformatics", "GSE", "Survival analysis"]
@@ -17,7 +17,7 @@ menu:
     weight: 1
 ---
 
-Class topics - Survival Analysis.
+Class topics - Survival Analysis with R code.
 
 <!--more-->
 
