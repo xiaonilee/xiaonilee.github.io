@@ -203,5 +203,5 @@ for (k in ks){
 
 - PCA and KNN are common methods, herein, they are standard ways to implement.
 
-- 
+- Keep different parameters could get different results.
 
