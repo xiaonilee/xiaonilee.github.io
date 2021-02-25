@@ -6,10 +6,21 @@
     <description>Recent content on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Feb 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Seurat - Guided Clustering Tutorial</title>
+      <link>/post/seurat/</link>
+      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/seurat/</guid>
+      
+        <description>&lt;p&gt;Follow Seurat Tutorial step by step.&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>scRNA-sequencing analysis - PCA and KNN</title>
@@ -225,17 +236,6 @@
       <guid>/post/tensorflow202/</guid>
       
         <description>&lt;p&gt;TensorFlow2 notebook: Class2 神经网络的优化方法, 学习率,激活函数,损失函数和正则化的使用, 用Python语言写出5种反向传播优化器(SGD, Momentum, Adagrad, RMSProp, Adam).&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>TensorFlow2 class1: Iris</title>
-      <link>/post/tensorflow201/</link>
-      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/tensorflow201/</guid>
-      
-        <description>&lt;p&gt;TensorFlow2 notebook: Class1 神经网络的计算过程, 搭建出第一个神经网络模型.&lt;/p&gt;</description>
       
     </item>
     

@@ -6,7 +6,16 @@
     <description>Recent content in Bioinformatics on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Seurat - Guided Clustering Tutorial</title>
+      <link>/post/seurat/</link>
+      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/seurat/</guid>
+      <description>&lt;p&gt;Follow Seurat Tutorial step by step.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>scRNA-sequencing analysis - PCA and KNN</title>
       <link>/post/scrnaknn/</link>
@@ -183,15 +192,6 @@
       
       <guid>/post/rinaction21/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 21.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 20. Advanced programming</title>
-      <link>/post/rinaction20/</link>
-      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rinaction20/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 20.&lt;/p&gt;</description>
     </item>
     
   </channel>
