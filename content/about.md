@@ -1,7 +1,7 @@
 ---
 title: "About Me"
-date: 2020-09-03T16:01:23+08:00
-lastmod: 2021-02-04T16:01:23+08:00
+date: 2020-09-03 
+lastmod: 2021-02-24
 menu: "main"
 weight: 50
 
@@ -10,7 +10,9 @@ comment: false
 mathjax: false
 ---
 
-`Keep Thinking` + `Keep Learning`
+`Keep Learning`- Learn more and more advanced technologies/methods and read science papers to keep up with the cutting-edge research.
+
+`Keep Thinking`- Think how to apply advanced technologies/methods to research work.
 
 <!--more-->
 
