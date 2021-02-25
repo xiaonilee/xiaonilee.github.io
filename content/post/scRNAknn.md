@@ -1,7 +1,7 @@
 ---
 title: "scRNA-sequencing analysis - PCA and KNN"
 date: 2021-02-23
-lastmod: 2021-02-24
+lastmod: 2021-02-25
 draft: false
 tags: ["Bioinformatics", "R", "RNA Sequence", "PCA", "KNN"]
 categories: ["Bioinformatics", "R", "RNA Sequence", "PCA", "KNN"]
@@ -17,6 +17,7 @@ menu:
     weight: 1
 ---
 
+Recover one figure from public paper.
 
 
 <!--more-->
@@ -48,40 +49,40 @@ rownames(dat) <- dat[,1]
 dat <- dat[,-1]
 ```
 
-- Normalized
+- Normalizing the data
 
 ```R
-lib.size=colSums(dat)/median(colSums(dat))
-dat.new=dat
+lib.size <- colSums(dat)/median(colSums(dat))
+dat.new <- dat
 for(i in 1:length(lib.size)){
   #print(i)
   dat.new[,i]=dat[,i]/lib.size[i]
 }
-dat=as.matrix(dat.new)
+dat <- as.matrix(dat.new)
 ```
 
 - Transform with log2()
 
 ```R
-dat=log2(dat+1)
+dat <- log2(dat+1)
 dim(dat)
 ```
 
   ![fig1](fig1.png)
 
-### Step 2. Choose top5000 genes for PCA with `Seurat` package
+### Step 2. Identification of highly variable features (top5000 genes) for PCA analysis with `Seurat` package
 
-- [Seurat](https://satijalab.org/seurat/index.html)
+- [Seurat](https://satijalab.org/seurat/index.html) is a toolkit for quality control, analysis, and exploration of single cell RNA sequencing data.
   ![fig8](fig8.png)
 
-- Create Seurat
+- Setup the Seurat Object
 
 ```R
 #install.packages("Seurat")
 library(Seurat)
-scRNA = CreateSeuratObject(counts=dat)
+scRNA <- CreateSeuratObject(counts=dat)
 scRNA <- FindVariableFeatures(scRNA, selection.method = "vst", nfeatures = 5000) 
-hvg.gene=VariableFeatures(scRNA)
+hvg.gene <- VariableFeatures(scRNA)
 str(hvg.gene)
 ```
 
@@ -162,7 +163,7 @@ dev.off()
 - Define function(D,k) to enable to try different k
 
 ```R
-make.knn.graph<-function(D,k){
+make.knn.graph <- function(D,k){
   # calculate euclidean distances between cells
   dist<-as.matrix(dist(D))
   # make a list of edges to k nearest neighbors for each cell

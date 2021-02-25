@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Xiaoni" />
-  <meta name="description" content="" />
+  <meta name="description" content="Recover one figure from public paper.
+" />
 
   <meta name="keywords" content="xiaonili, xiaonilee, xiaoni" />
 
@@ -64,23 +65,23 @@
 
 
 <meta property="og:title" content="scRNA-sequencing analysis - PCA and KNN" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Recover one figure from public paper." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/scrnaknn/" />
 <meta property="article:published_time" content="2021-02-23T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-02-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-25T00:00:00+00:00" />
 <meta itemprop="name" content="scRNA-sequencing analysis - PCA and KNN">
-<meta itemprop="description" content="">
+<meta itemprop="description" content="Recover one figure from public paper.">
 <meta itemprop="datePublished" content="2021-02-23T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-02-24T00:00:00+00:00" />
-<meta itemprop="wordCount" content="423">
+<meta itemprop="dateModified" content="2021-02-25T00:00:00+00:00" />
+<meta itemprop="wordCount" content="465">
 
 
 
 <meta itemprop="keywords" content="Bioinformatics,R,RNA Sequence,PCA,KNN," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="scRNA-sequencing analysis - PCA and KNN"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="Recover one figure from public paper."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -523,7 +524,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#material-and-methods">Material and methods</a></li>
         <li><a href="#step-1-qc">Step 1. QC</a></li>
-        <li><a href="#step-2-choose-top5000-genes-for-pca-with-seurat-package">Step 2. Choose top5000 genes for PCA with <code>Seurat</code> package</a></li>
+        <li><a href="#step-2-identification-of-highly-variable-features-top5000-genes-for-pca-analysis-with-seurat-package">Step 2. Identification of highly variable features (top5000 genes) for PCA analysis with <code>Seurat</code> package</a></li>
         <li><a href="#step-3-k-means-cluster">Step 3. k-means cluster</a></li>
         <li><a href="#step-4-knn-visualized">Step 4. KNN visualized</a></li>
         <li><a href="#in-summary">In summary</a></li>
@@ -536,7 +537,8 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <h3 id="material-and-methods">Material and methods</h3>
+      <p>Recover one figure from public paper.</p>
+<h3 id="material-and-methods">Material and methods</h3>
 <ul>
 <li>
 <p><strong>Data set</strong>: <code>GSE122083</code> / <code>GSM3454528</code></p>
@@ -584,7 +586,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>Normalized</li>
+<li>Normalizing the data</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -597,13 +599,13 @@ if (!doNotTrack) {
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">lib.size</span><span class="o">=</span><span class="nf">colSums</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="o">/</span><span class="nf">median</span><span class="p">(</span><span class="nf">colSums</span><span class="p">(</span><span class="n">dat</span><span class="p">))</span>
-<span class="n">dat.new</span><span class="o">=</span><span class="n">dat</span>
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">lib.size</span> <span class="o">&lt;-</span> <span class="nf">colSums</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="o">/</span><span class="nf">median</span><span class="p">(</span><span class="nf">colSums</span><span class="p">(</span><span class="n">dat</span><span class="p">))</span>
+<span class="n">dat.new</span> <span class="o">&lt;-</span> <span class="n">dat</span>
 <span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">lib.size</span><span class="p">)){</span>
   <span class="c1">#print(i)</span>
   <span class="n">dat.new[</span><span class="p">,</span><span class="n">i]</span><span class="o">=</span><span class="n">dat[</span><span class="p">,</span><span class="n">i]</span><span class="o">/</span><span class="n">lib.size[i]</span>
 <span class="p">}</span>
-<span class="n">dat</span><span class="o">=</span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">dat.new</span><span class="p">)</span>
+<span class="n">dat</span> <span class="o">&lt;-</span> <span class="nf">as.matrix</span><span class="p">(</span><span class="n">dat.new</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -615,19 +617,19 @@ if (!doNotTrack) {
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">dat</span><span class="o">=</span><span class="nf">log2</span><span class="p">(</span><span class="n">dat</span><span class="m">+1</span><span class="p">)</span>
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">dat</span> <span class="o">&lt;-</span> <span class="nf">log2</span><span class="p">(</span><span class="n">dat</span><span class="m">+1</span><span class="p">)</span>
 <span class="nf">dim</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="fig1.png" alt="fig1"></p>
-<h3 id="step-2-choose-top5000-genes-for-pca-with-seurat-package">Step 2. Choose top5000 genes for PCA with <code>Seurat</code> package</h3>
+<h3 id="step-2-identification-of-highly-variable-features-top5000-genes-for-pca-analysis-with-seurat-package">Step 2. Identification of highly variable features (top5000 genes) for PCA analysis with <code>Seurat</code> package</h3>
 <ul>
 <li>
-<p><a href="https://satijalab.org/seurat/index.html">Seurat</a>
+<p><a href="https://satijalab.org/seurat/index.html">Seurat</a> is a toolkit for quality control, analysis, and exploration of single cell RNA sequencing data.
 <img src="fig8.png" alt="fig8"></p>
 </li>
 <li>
-<p>Create Seurat</p>
+<p>Setup the Seurat Object</p>
 </li>
 </ul>
 <div class="highlight"><div class="chroma">
@@ -642,9 +644,9 @@ if (!doNotTrack) {
 <td class="lntd">
 <pre class="chroma"><code class="language-R" data-lang="R"><span class="c1">#install.packages(&#34;Seurat&#34;)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">Seurat</span><span class="p">)</span>
-<span class="n">scRNA</span> <span class="o">=</span> <span class="nf">CreateSeuratObject</span><span class="p">(</span><span class="n">counts</span><span class="o">=</span><span class="n">dat</span><span class="p">)</span>
+<span class="n">scRNA</span> <span class="o">&lt;-</span> <span class="nf">CreateSeuratObject</span><span class="p">(</span><span class="n">counts</span><span class="o">=</span><span class="n">dat</span><span class="p">)</span>
 <span class="n">scRNA</span> <span class="o">&lt;-</span> <span class="nf">FindVariableFeatures</span><span class="p">(</span><span class="n">scRNA</span><span class="p">,</span> <span class="n">selection.method</span> <span class="o">=</span> <span class="s">&#34;vst&#34;</span><span class="p">,</span> <span class="n">nfeatures</span> <span class="o">=</span> <span class="m">5000</span><span class="p">)</span> 
-<span class="n">hvg.gene</span><span class="o">=</span><span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">scRNA</span><span class="p">)</span>
+<span class="n">hvg.gene</span> <span class="o">&lt;-</span> <span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">scRNA</span><span class="p">)</span>
 <span class="nf">str</span><span class="p">(</span><span class="n">hvg.gene</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
@@ -796,7 +798,7 @@ if (!doNotTrack) {
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">make.knn.graph</span><span class="o">&lt;-</span><span class="nf">function</span><span class="p">(</span><span class="n">D</span><span class="p">,</span><span class="n">k</span><span class="p">){</span>
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">make.knn.graph</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">D</span><span class="p">,</span><span class="n">k</span><span class="p">){</span>
   <span class="c1"># calculate euclidean distances between cells</span>
   <span class="n">dist</span><span class="o">&lt;-</span><span class="nf">as.matrix</span><span class="p">(</span><span class="nf">dist</span><span class="p">(</span><span class="n">D</span><span class="p">))</span>
   <span class="c1"># make a list of edges to k nearest neighbors for each cell</span>
