@@ -31,6 +31,8 @@ menu:
 
 - Download [data](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSM3454528&format=file&file=GSM3454528%5Fnaive%5Fcells%2Etxt%2Egz)
 
+- Load data
+
 - Remove duplicated genes and Select max expression
 
 ```R
@@ -75,8 +77,8 @@ dim(dat)
 - Create Seurat
 
 ```R
-#install.packages(Seurat)
-library("Seurat")
+#install.packages("Seurat")
+library(Seurat)
 scRNA = CreateSeuratObject(counts=dat)
 scRNA <- FindVariableFeatures(scRNA, selection.method = "vst", nfeatures = 5000) 
 hvg.gene=VariableFeatures(scRNA)
@@ -88,7 +90,7 @@ str(hvg.gene)
 - PCA with `prcomp()`
 
 ```R
-pca <-prcomp(t(dat.hvg))
+pca <- prcomp(t(dat.hvg))
 dim(pca$x)
 pca$x[1:4,1:4]
 ```
@@ -108,7 +110,7 @@ table(clust.kmeans$cluster)
 ### Step 4. KNN visualized
 
 ```R
-dist<-as.matrix(dist(pca$x[,1:20]))
+dist <- as.matrix(dist(pca$x[,1:20]))
 dist[1:3,1:3]
 
 edges <- mat.or.vec(0,2)
@@ -141,7 +143,7 @@ graph
 
 ```R
 # lable colors for cells.
-cols<-rainbow(10)
+cols <- rainbow(10)
 names(cols) <- unique(clust.kmeans$cluster)
 col.clust <- cols[clust.kmeans$cluster]
 
