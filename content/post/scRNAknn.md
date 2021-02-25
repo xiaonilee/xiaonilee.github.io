@@ -67,7 +67,7 @@ dim(dat)
 
   ![fig1](fig1.png)
 
-### Step 2. Choose top5000 genes for PCA with `Seurat` package.
+### Step 2. Choose top5000 genes for PCA with `Seurat` package
 
 - [Seurat](https://satijalab.org/seurat/index.html)
   ![fig8](fig8.png)
