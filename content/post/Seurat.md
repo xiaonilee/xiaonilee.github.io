@@ -17,7 +17,7 @@ menu:
     weight: 1
 ---
 
-Follow Seurat Tutorial step by step.
+Follow official Tutorial for clustering step by step.
 
 <!--more-->
 
