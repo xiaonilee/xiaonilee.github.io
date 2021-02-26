@@ -25,6 +25,12 @@ Follow official Tutorial for clustering step by step.
 
 ![The finnal goal is the figure](dimplot4.png)
 
+
+### Metarial and Methods
+
+- **Dataset**: a dataset of 2700 Peripheral Blood Mononuclear Cells freely available from 10X Genomics
+
+- **Flatform**: Illumina NextSeq 500
 ### Setup the Seurat Object
 
 ```r
