@@ -80,7 +80,7 @@ Seurat4 to enable for the seamless storage, analysis, and exploration of diverse
 Herein, I will follow official Tutorial for using Seurat with multimodal data step by step.">
 <meta itemprop="datePublished" content="2021-02-26T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-26T00:00:00+00:00" />
-<meta itemprop="wordCount" content="236">
+<meta itemprop="wordCount" content="250">
 
 
 
@@ -549,6 +549,14 @@ Seurat4 to enable for the seamless storage, analysis, and exploration of diverse
 <li><strong>Dataset</strong>: 8,617 cord blood mononuclear cells (CBMCs)</li>
 </ul>
 <h3 id="load-in-the-data">Load in the data</h3>
+<ul>
+<li>
+<p>Link for the <a href="https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE100866&amp;format=file&amp;file=GSE100866%5FCBMC%5F8K%5F13AB%5F10X%2DRNA%5Fumi%2Ecsv%2Egz">RNA UMI matrix</a> download.</p>
+</li>
+<li>
+<p>Link for the <a href="https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE100866&amp;format=file&amp;file=GSE100866%5FCBMC%5F8K%5F13AB%5F10X%2DADT%5Fumi%2Ecsv%2Egz">ADT UMI matrix</a> download.</p>
+</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -605,7 +613,7 @@ Seurat4 to enable for the seamless storage, analysis, and exploration of diverse
 <span class="nf">all.equal</span><span class="p">(</span><span class="nf">colnames</span><span class="p">(</span><span class="n">cbmc.rna</span><span class="p">),</span> <span class="nf">colnames</span><span class="p">(</span><span class="n">cbmc.adt</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
-</div>
+</div><p><img src="1.png" alt="fig1"></p>
     </div>
 
     

@@ -32,6 +32,10 @@ Herein, I will follow official Tutorial for using Seurat with multimodal data st
 
 ### Load in the data
 
+- Link for the [RNA UMI matrix](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE100866&format=file&file=GSE100866%5FCBMC%5F8K%5F13AB%5F10X%2DRNA%5Fumi%2Ecsv%2Egz) download.
+
+- Link for the [ADT UMI matrix](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE100866&format=file&file=GSE100866%5FCBMC%5F8K%5F13AB%5F10X%2DADT%5Fumi%2Ecsv%2Egz) download.
+
 ```r
 library(Seurat)
 library(ggplot2)
@@ -59,3 +63,5 @@ cbmc.adt <- as.sparse(read.csv(file = "./GSE100866_CBMC_8K_13AB_10X-ADT_umi.csv.
 # column names
 all.equal(colnames(cbmc.rna), colnames(cbmc.adt))
 ```
+
+![fig1](1.png)
