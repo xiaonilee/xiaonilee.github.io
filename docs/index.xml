@@ -23,6 +23,17 @@
     </item>
     
     <item>
+      <title>Using Seurat with multimodal data</title>
+      <link>/post/seurat2/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/seurat2/</guid>
+      
+        <description>&lt;p&gt;Follow official Tutorial for using Seurat with multimodal data step by step.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>Seurat - Guided Clustering Tutorial</title>
       <link>/post/seurat/</link>
       <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
@@ -225,17 +236,6 @@
       <guid>/post/tensorflow204/</guid>
       
         <description>&lt;p&gt;TensorFlow2 notebook: Class4: 网络八股进行扩展, 增加自制数据集, 数据增强, 断点续训, 参数提取和acc/loss可视化, 最后实现给图识物的应用程序.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>TensorFlow2 class3: 神经网络八股</title>
-      <link>/post/tensorflow203/</link>
-      <pubDate>Mon, 07 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/tensorflow203/</guid>
-      
-        <description>&lt;p&gt;TensorFlow2 notebook: Class3 神经网络搭建八股,用&amp;quot;六步法&amp;quot;, 不到20行代码, 写出手写数字识别训练模型.&lt;/p&gt;</description>
       
     </item>
     

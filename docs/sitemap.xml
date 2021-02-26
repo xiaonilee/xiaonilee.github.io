@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>/post/seurat2/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/seurat/</loc>
     <lastmod>2021-02-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -430,21 +437,35 @@
   
   <url>
     <loc>/tags/bioinformatics/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/categories/bioinformatics/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/knn/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/knn/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -464,8 +485,22 @@
   </url>
   
   <url>
+    <loc>/tags/pca/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/pca/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/post/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -485,8 +520,36 @@
   </url>
   
   <url>
+    <loc>/tags/r-package/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/r-package/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/rna-sequence/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/rna-sequence/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -521,35 +584,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/knn/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/knn/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/pca/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/pca/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -563,20 +598,6 @@
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/rna-sequence/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/rna-sequence/</loc>
     <lastmod>2021-02-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -605,20 +626,6 @@
   
   <url>
     <loc>/tags/geo/</loc>
-    <lastmod>2021-02-19T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/r-package/</loc>
-    <lastmod>2021-02-19T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/r-package/</loc>
     <lastmod>2021-02-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

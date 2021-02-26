@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>KNN</title>
+      <link>/categories/knn/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/knn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Machine Learning</title>
       <link>/categories/machine-learning/</link>
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
@@ -26,11 +35,38 @@
     </item>
     
     <item>
+      <title>PCA</title>
+      <link>/categories/pca/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/pca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R in Action</title>
       <link>/categories/r-in-action/</link>
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/r-in-action/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R Package</title>
+      <link>/categories/r-package/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/r-package/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RNA Sequence</title>
+      <link>/categories/rna-sequence/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/rna-sequence/</guid>
       <description></description>
     </item>
     
@@ -53,38 +89,11 @@
     </item>
     
     <item>
-      <title>KNN</title>
-      <link>/categories/knn/</link>
-      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/knn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PCA</title>
-      <link>/categories/pca/</link>
-      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/pca/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>R</title>
       <link>/categories/r/</link>
       <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>RNA Sequence</title>
-      <link>/categories/rna-sequence/</link>
-      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/rna-sequence/</guid>
       <description></description>
     </item>
     
@@ -103,15 +112,6 @@
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R Package</title>
-      <link>/categories/r-package/</link>
-      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/r-package/</guid>
       <description></description>
     </item>
     

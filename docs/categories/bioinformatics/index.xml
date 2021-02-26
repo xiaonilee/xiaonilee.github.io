@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>Using Seurat with multimodal data</title>
+      <link>/post/seurat2/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/seurat2/</guid>
+      <description>&lt;p&gt;Follow official Tutorial for using Seurat with multimodal data step by step.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Seurat - Guided Clustering Tutorial</title>
       <link>/post/seurat/</link>
       <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
@@ -183,15 +192,6 @@
       
       <guid>/post/rinaction23/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 23.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 22. Creating dynamic reports</title>
-      <link>/post/rinaction22/</link>
-      <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rinaction22/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 22.&lt;/p&gt;</description>
     </item>
     
   </channel>

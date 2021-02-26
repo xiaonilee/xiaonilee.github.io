@@ -11,15 +11,19 @@ weight: 1
 
 mathjax: true
 
-menu:
-  main:
-    parent: "docs"
-    weight: 1
+# menu:
+#   main:
+#     parent: "docs"
+#     weight: 1
 ---
 
 Follow official Tutorial for clustering step by step.
 
+
 <!--more-->
+
+
+![The finnal goal is the figure](dimplot4.png)
 
 ### Setup the Seurat Object
 
