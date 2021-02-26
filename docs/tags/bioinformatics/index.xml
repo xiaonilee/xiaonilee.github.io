@@ -6,7 +6,16 @@
     <description>Recent content in Bioinformatics on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 25 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title> Topics in my blog</title>
+      <link>/post/topics/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/topics/</guid>
+      <description>&lt;p&gt;The &lt;code&gt;topics&lt;/code&gt; in the blog are put together; I will keep adding more.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Seurat - Guided Clustering Tutorial</title>
       <link>/post/seurat/</link>
@@ -183,15 +192,6 @@
       
       <guid>/post/rinaction22/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 22.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 21. Creating a package</title>
-      <link>/post/rinaction21/</link>
-      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rinaction21/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 21.&lt;/p&gt;</description>
     </item>
     
   </channel>

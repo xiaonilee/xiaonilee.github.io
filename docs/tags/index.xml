@@ -6,13 +6,49 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 25 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bioinformatics</title>
       <link>/tags/bioinformatics/</link>
-      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>/tags/machine-learning/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R in Action</title>
+      <link>/tags/r-in-action/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r-in-action/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Topics</title>
+      <link>/tags/topics/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/topics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UCSC</title>
+      <link>/tags/ucsc/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ucsc/</guid>
       <description></description>
     </item>
     
@@ -76,15 +112,6 @@
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/r-package/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UCSC</title>
-      <link>/tags/ucsc/</link>
-      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/ucsc/</guid>
       <description></description>
     </item>
     
@@ -157,33 +184,6 @@
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/recover-paper/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Big data</title>
-      <link>/tags/big-data/</link>
-      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/big-data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data mining</title>
-      <link>/tags/data-mining/</link>
-      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/data-mining/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>EPIC</title>
-      <link>/tags/epic/</link>
-      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/epic/</guid>
       <description></description>
     </item>
     
