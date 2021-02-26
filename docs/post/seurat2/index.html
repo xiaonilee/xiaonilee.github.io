@@ -80,7 +80,7 @@ Seurat4 to enable for the seamless storage, analysis, and exploration of diverse
 Herein, I will follow official Tutorial for using Seurat with multimodal data step by step.">
 <meta itemprop="datePublished" content="2021-02-26T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-26T00:00:00+00:00" />
-<meta itemprop="wordCount" content="61">
+<meta itemprop="wordCount" content="236">
 
 
 
@@ -530,6 +530,7 @@ if (!doNotTrack) {
   <ul>
     <li>
       <ul>
+        <li><a href="#metarial-and-methods">Metarial and Methods</a></li>
         <li><a href="#load-in-the-data">Load in the data</a></li>
       </ul>
     </li>
@@ -543,7 +544,68 @@ if (!doNotTrack) {
       <p>The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for single-cell genomics.<br>
 Seurat4 to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.</p>
 <p>Herein, I will follow official Tutorial for using Seurat with multimodal data step by step.</p>
+<h3 id="metarial-and-methods">Metarial and Methods</h3>
+<ul>
+<li><strong>Dataset</strong>: 8,617 cord blood mononuclear cells (CBMCs)</li>
+</ul>
 <h3 id="load-in-the-data">Load in the data</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">Seurat</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Load in the RNA UMI matrix</span>
+
+<span class="c1"># Note that this dataset also contains ~5% of mouse cells, which we can use as negative controls</span>
+<span class="c1"># for the protein measurements. For this reason, the gene expression matrix has HUMAN_ or MOUSE_</span>
+<span class="c1"># appended to the beginning of each gene.</span>
+<span class="n">cbmc.rna</span> <span class="o">&lt;-</span> <span class="nf">as.sparse</span><span class="p">(</span><span class="nf">read.csv</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#34;./GSE100866_CBMC_8K_13AB_10X-RNA_umi.csv.gz&#34;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&#34;,&#34;</span><span class="p">,</span> 
+    <span class="n">header</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">row.names</span> <span class="o">=</span> <span class="m">1</span><span class="p">))</span>
+
+<span class="c1"># To make life a bit easier going forward, we&#39;re going to discard all but the top 100 most</span>
+<span class="c1"># highly expressed mouse genes, and remove the &#39;HUMAN_&#39; from the CITE-seq prefix</span>
+<span class="n">cbmc.rna</span> <span class="o">&lt;-</span> <span class="nf">CollapseSpeciesExpressionMatrix</span><span class="p">(</span><span class="n">cbmc.rna</span><span class="p">)</span>
+
+<span class="c1"># Load in the ADT UMI matrix</span>
+<span class="n">cbmc.adt</span> <span class="o">&lt;-</span> <span class="nf">as.sparse</span><span class="p">(</span><span class="nf">read.csv</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#34;./GSE100866_CBMC_8K_13AB_10X-ADT_umi.csv.gz&#34;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&#34;,&#34;</span><span class="p">,</span> 
+    <span class="n">header</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">row.names</span> <span class="o">=</span> <span class="m">1</span><span class="p">))</span>
+
+<span class="c1"># Note that since measurements were made in the same cells, the two matrices have identical</span>
+<span class="c1"># column names</span>
+<span class="nf">all.equal</span><span class="p">(</span><span class="nf">colnames</span><span class="p">(</span><span class="n">cbmc.rna</span><span class="p">),</span> <span class="nf">colnames</span><span class="p">(</span><span class="n">cbmc.adt</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
