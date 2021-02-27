@@ -26,29 +26,11 @@
     </item>
     
     <item>
-      <title>Machine Learning</title>
-      <link>/tags/machine-learning/</link>
-      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>PCA</title>
       <link>/tags/pca/</link>
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/pca/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R in Action</title>
-      <link>/tags/r-in-action/</link>
-      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/r-in-action/</guid>
       <description></description>
     </item>
     
@@ -67,24 +49,6 @@
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/rna-sequence/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Topics</title>
-      <link>/tags/topics/</link>
-      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/topics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UCSC</title>
-      <link>/tags/ucsc/</link>
-      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/ucsc/</guid>
       <description></description>
     </item>
     
@@ -112,6 +76,15 @@
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/geo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UCSC</title>
+      <link>/tags/ucsc/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ucsc/</guid>
       <description></description>
     </item>
     
@@ -184,6 +157,33 @@
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/recover-paper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Big data</title>
+      <link>/tags/big-data/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/big-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data mining</title>
+      <link>/tags/data-mining/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/data-mining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EPIC</title>
+      <link>/tags/epic/</link>
+      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/epic/</guid>
       <description></description>
     </item>
     

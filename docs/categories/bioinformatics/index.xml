@@ -8,15 +8,6 @@
     <language>en</language>
     <lastBuildDate>Fri, 26 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title> Topics in my blog</title>
-      <link>/post/topics/</link>
-      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/topics/</guid>
-      <description>&lt;p&gt;The &lt;code&gt;topics&lt;/code&gt; in the blog are put together; I will keep adding more.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Using Seurat with multimodal data</title>
       <link>/post/seurat2/</link>
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
@@ -193,6 +184,15 @@
       
       <guid>/post/rinaction23/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 23.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 22. Creating dynamic reports</title>
+      <link>/post/rinaction22/</link>
+      <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction22/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 22.&lt;/p&gt;</description>
     </item>
     
   </channel>

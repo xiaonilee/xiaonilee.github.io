@@ -26,29 +26,11 @@
     </item>
     
     <item>
-      <title>Machine Learning</title>
-      <link>/categories/machine-learning/</link>
-      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>PCA</title>
       <link>/categories/pca/</link>
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/pca/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R in Action</title>
-      <link>/categories/r-in-action/</link>
-      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/r-in-action/</guid>
       <description></description>
     </item>
     
@@ -67,24 +49,6 @@
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/rna-sequence/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Topics</title>
-      <link>/categories/topics/</link>
-      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/topics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UCSC</title>
-      <link>/categories/ucsc/</link>
-      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/ucsc/</guid>
       <description></description>
     </item>
     
@@ -112,6 +76,15 @@
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UCSC</title>
+      <link>/categories/ucsc/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/ucsc/</guid>
       <description></description>
     </item>
     
@@ -184,6 +157,33 @@
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/data-mining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>/categories/machine-learning/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TensorFlow2</title>
+      <link>/categories/tensorflow2/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/tensorflow2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Tool</title>
+      <link>/categories/web-tool/</link>
+      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/web-tool/</guid>
       <description></description>
     </item>
     
