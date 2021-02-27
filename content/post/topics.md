@@ -2,7 +2,7 @@
 title: " Topics in my blog"
 date: 2021-02-26
 lastmod: 2021-02-16
-draft: false
+draft: ture
 tags: ["Topics", "R in Action", "Bioinformatics","Machine Learning", "UCSC"]
 categories: ["Topics", "R in Action", "Bioinformatics","Machine Learning", "UCSC"]
 author: "Xiaoni"
