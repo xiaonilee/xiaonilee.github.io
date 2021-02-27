@@ -24,6 +24,8 @@ Herein, I will follow the official Tutorial to analyze multimodal using Seurat d
 
 <!--more-->
 
+![The finnal goal is the figure](featureplot1.png)
+
 ### Metarial and Methods
 
 - **Dataset**: 8617 cord blood mononuclear cells (CBMCs)
