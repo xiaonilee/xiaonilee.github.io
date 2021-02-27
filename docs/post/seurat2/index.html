@@ -23,9 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Xiaoni" />
-  <meta name="description" content="The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for single-cell genomics.
-Seurat4 to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.
-Herein, I will follow official Tutorial for using Seurat with multimodal data step by step.
+  <meta name="description" content="The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for single-cell genomics. Seurat4 to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.
+Herein, I will follow the official Tutorial to analyze multimodal using Seurat data step by step.
 " />
 
   <meta name="keywords" content="xiaonili, xiaonilee, xiaoni" />
@@ -67,29 +66,26 @@ Herein, I will follow official Tutorial for using Seurat with multimodal data st
 
 
 <meta property="og:title" content="Using Seurat with multimodal data" />
-<meta property="og:description" content="The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for single-cell genomics.
-Seurat4 to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.
-Herein, I will follow official Tutorial for using Seurat with multimodal data step by step." />
+<meta property="og:description" content="The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for single-cell genomics.  Seurat4 to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.
+Herein, I will follow the official Tutorial to analyze multimodal using Seurat data step by step." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/seurat2/" />
 <meta property="article:published_time" content="2021-02-26T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-02-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-27T00:00:00+00:00" />
 <meta itemprop="name" content="Using Seurat with multimodal data">
-<meta itemprop="description" content="The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for single-cell genomics.
-Seurat4 to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.
-Herein, I will follow official Tutorial for using Seurat with multimodal data step by step.">
+<meta itemprop="description" content="The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for single-cell genomics.  Seurat4 to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.
+Herein, I will follow the official Tutorial to analyze multimodal using Seurat data step by step.">
 <meta itemprop="datePublished" content="2021-02-26T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-02-26T00:00:00+00:00" />
-<meta itemprop="wordCount" content="250">
+<meta itemprop="dateModified" content="2021-02-27T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1013">
 
 
 
 <meta itemprop="keywords" content="Bioinformatics,R package,RNA Sequence,PCA,KNN," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Seurat with multimodal data"/>
-<meta name="twitter:description" content="The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for single-cell genomics.
-Seurat4 to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.
-Herein, I will follow official Tutorial for using Seurat with multimodal data step by step."/>
+<meta name="twitter:description" content="The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for single-cell genomics.  Seurat4 to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.
+Herein, I will follow the official Tutorial to analyze multimodal using Seurat data step by step."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -532,6 +528,13 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#metarial-and-methods">Metarial and Methods</a></li>
         <li><a href="#load-in-the-data">Load in the data</a></li>
+        <li><a href="#setup-a-seurat-object-add-the-rna-and-protein-data">Setup a Seurat object, add the RNA and protein data</a></li>
+        <li><a href="#cluster-cells-on-the-basis-of-their-scrna-seq-profiles">Cluster cells on the basis of their scRNA-seq profiles</a></li>
+        <li><a href="#visualize-multiple-modalities-side-by-side">Visualize multiple modalities side-by-side</a></li>
+        <li><a href="#identify-cell-surface-markers-for-scrna-seq-clusters">Identify cell surface markers for scRNA-seq clusters</a></li>
+        <li><a href="#additional-visualizations-of-multimodal-data">Additional visualizations of multimodal data</a></li>
+        <li><a href="#loading-data-from-10x-multi-modal-experiments">Loading data from 10X multi-modal experiments</a></li>
+        <li><a href="#in-summary">In summary</a></li>
       </ul>
     </li>
   </ul>
@@ -541,35 +544,20 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p>The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for single-cell genomics.<br>
-Seurat4 to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.</p>
-<p>Herein, I will follow official Tutorial for using Seurat with multimodal data step by step.</p>
+      <p>The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for <em><strong>single-cell genomics</strong></em>.  <code>Seurat4</code> to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.</p>
+<p>Herein, I will follow the official Tutorial to analyze multimodal using Seurat data step by step.</p>
 <h3 id="metarial-and-methods">Metarial and Methods</h3>
 <ul>
-<li><strong>Dataset</strong>: 8,617 cord blood mononuclear cells (CBMCs)</li>
+<li><strong>Dataset</strong>: 8617 cord blood mononuclear cells (CBMCs)</li>
 </ul>
 <h3 id="load-in-the-data">Load in the data</h3>
 <ul>
 <li>
-<p>Link for the <a href="https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE100866&amp;format=file&amp;file=GSE100866%5FCBMC%5F8K%5F13AB%5F10X%2DRNA%5Fumi%2Ecsv%2Egz">RNA UMI matrix</a> download.</p>
+<p>Valid link for the <a href="https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE100866&amp;format=file&amp;file=GSE100866%5FCBMC%5F8K%5F13AB%5F10X%2DRNA%5Fumi%2Ecsv%2Egz">RNA UMI matrix</a> download.</p>
 </li>
 <li>
-<p>Link for the <a href="https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE100866&amp;format=file&amp;file=GSE100866%5FCBMC%5F8K%5F13AB%5F10X%2DADT%5Fumi%2Ecsv%2Egz">ADT UMI matrix</a> download.</p>
-</li>
-</ul>
+<p>Valid link for the <a href="https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE100866&amp;format=file&amp;file=GSE100866%5FCBMC%5F8K%5F13AB%5F10X%2DADT%5Fumi%2Ecsv%2Egz">ADT UMI matrix</a> download.</p>
 <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">Seurat</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span>
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -590,9 +578,17 @@ Seurat4 to enable for the seamless storage, analysis, and exploration of diverse
 </span><span class="lnt">17
 </span><span class="lnt">18
 </span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Load in the RNA UMI matrix</span>
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">Seurat</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span>
+
+<span class="c1"># Load in the RNA UMI matrix</span>
 
 <span class="c1"># Note that this dataset also contains ~5% of mouse cells, which we can use as negative controls</span>
 <span class="c1"># for the protein measurements. For this reason, the gene expression matrix has HUMAN_ or MOUSE_</span>
@@ -614,6 +610,335 @@ Seurat4 to enable for the seamless storage, analysis, and exploration of diverse
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="1.png" alt="fig1"></p>
+</li>
+</ul>
+<h3 id="setup-a-seurat-object-add-the-rna-and-protein-data">Setup a Seurat object, add the RNA and protein data</h3>
+<ul>
+<li>
+<p>Create a Seurat object first, and then add the ADT data as a second assay</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># creates a Seurat object based on the scRNA-seq data</span>
+<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">CreateSeuratObject</span><span class="p">(</span><span class="n">counts</span> <span class="o">=</span> <span class="n">cbmc.rna</span><span class="p">)</span>
+
+<span class="c1"># We can see that by default, the cbmc object contains an assay storing RNA measurement</span>
+<span class="nf">Assays</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
+
+<span class="c1"># create a new assay to store ADT information</span>
+<span class="n">adt_assay</span> <span class="o">&lt;-</span> <span class="nf">CreateAssayObject</span><span class="p">(</span><span class="n">counts</span> <span class="o">=</span> <span class="n">cbmc.adt</span><span class="p">)</span>
+
+<span class="c1"># add this assay to the previously created Seurat object</span>
+<span class="n">cbmc[[</span><span class="s">&#34;ADT&#34;</span><span class="n">]]</span> <span class="o">&lt;-</span> <span class="n">adt_assay</span>
+
+<span class="c1"># Validate that the object now contains multiple assays</span>
+<span class="nf">Assays</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
+
+<span class="c1"># Extract a list of features measured in the ADT assay</span>
+<span class="nf">rownames</span><span class="p">(</span><span class="n">cbmc[[</span><span class="s">&#34;ADT&#34;</span><span class="n">]]</span><span class="p">)</span>
+
+<span class="c1"># Note that we can easily switch back and forth between the two assays to specify the default</span>
+<span class="c1"># for visualization and analysis</span>
+
+<span class="c1"># List the current default assay</span>
+<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
+
+<span class="c1"># Switch the default to ADT</span>
+<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;ADT&#34;</span>
+<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="2.png" alt="fig2"></p>
+</li>
+</ul>
+<h3 id="cluster-cells-on-the-basis-of-their-scrna-seq-profiles">Cluster cells on the basis of their scRNA-seq profiles</h3>
+<ul>
+<li>
+<p>The steps below represent a quick clustering of the PBMCs based on the scRNA-seq data.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Note that all operations below are performed on the RNA assay Set and verify that the default</span>
+<span class="c1"># assay is RNA</span>
+<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;RNA&#34;</span>
+<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
+
+<span class="c1"># perform visualization and clustering steps</span>
+<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
+<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">FindVariableFeatures</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
+<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">ScaleData</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
+<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">RunPCA</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">FindNeighbors</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
+<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">FindClusters</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">RunUMAP</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
+<span class="nf">DimPlot</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./dimplot1.png&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Output:
+<img src="fig3.png" alt="fig3"></p>
+</li>
+<li>
+<p>Dimplot result
+<img src="dimplot1.png" alt="dimplot1"></p>
+</li>
+</ul>
+<h3 id="visualize-multiple-modalities-side-by-side">Visualize multiple modalities side-by-side</h3>
+<ul>
+<li>
+<p>Visualize the expression of either protein or RNA molecules in the dataset, after obtained clusters from scRNA-seq profiles.</p>
+</li>
+<li>
+<p>For example with the B cell marker CD19 (both protein and RNA levels).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Normalize ADT data,</span>
+<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;ADT&#34;</span>
+<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">normalization.method</span> <span class="o">=</span> <span class="s">&#34;CLR&#34;</span><span class="p">,</span> <span class="n">margin</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;RNA&#34;</span>
+
+<span class="c1"># Note that the following command is an alternative but returns the same result</span>
+<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">normalization.method</span> <span class="o">=</span> <span class="s">&#34;CLR&#34;</span><span class="p">,</span> <span class="n">margin</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;ADT&#34;</span><span class="p">)</span>
+
+<span class="c1"># Now, we will visualize CD14 levels for RNA and protein By setting the default assay, we can</span>
+<span class="c1"># visualize one or the other</span>
+<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;ADT&#34;</span>
+<span class="n">p1</span> <span class="o">&lt;-</span> <span class="nf">FeaturePlot</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="s">&#34;CD19&#34;</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;lightgrey&#34;</span><span class="p">,</span> <span class="s">&#34;darkgreen&#34;</span><span class="p">))</span> <span class="o">+</span> <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&#34;CD19 protein&#34;</span><span class="p">)</span>
+<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;RNA&#34;</span>
+<span class="n">p2</span> <span class="o">&lt;-</span> <span class="nf">FeaturePlot</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="s">&#34;CD19&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&#34;CD19 RNA&#34;</span><span class="p">)</span>
+
+<span class="c1"># place plots side-by-side</span>
+<span class="n">p1</span> <span class="o">|</span> <span class="n">p2</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featureplot1.png&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="featureplot1.png" alt="featureplot1"></p>
+</li>
+<li>
+<p>Herein, the merge and arrangement of generated plot using the <code>patchwork</code> package.</p>
+</li>
+</ul>
+<h3 id="identify-cell-surface-markers-for-scrna-seq-clusters">Identify cell surface markers for scRNA-seq clusters</h3>
+<ul>
+<li>
+<p>Identify cluster 6 as expressing CD19 on the surface</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">VlnPlot</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="s">&#34;adt_CD19&#34;</span><span class="p">)</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./vlnplot1.png&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="vlnplot1.png" alt="vlnplot1"></p>
+</li>
+<li>
+<p>Also, identify alternative protein and RNA markers for this cluster through differential expression</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">adt_markers</span> <span class="o">&lt;-</span> <span class="nf">FindMarkers</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">ident.1</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;ADT&#34;</span><span class="p">)</span>
+<span class="n">rna_markers</span> <span class="o">&lt;-</span> <span class="nf">FindMarkers</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">ident.1</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;RNA&#34;</span><span class="p">)</span>
+
+<span class="nf">head</span><span class="p">(</span><span class="n">adt_markers</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">rna_markers</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="fig3.png" alt="fig3"></p>
+</li>
+</ul>
+<h3 id="additional-visualizations-of-multimodal-data">Additional visualizations of multimodal data</h3>
+<ul>
+<li>
+<p>Draw <code>ADT</code> scatter plots (like biaxial plots for FACS). Note that you can even &lsquo;gate&rsquo; cells if desired by using HoverLocator and FeatureLocator.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD19&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;adt_CD3&#34;</span><span class="p">)</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featurescatterplot.png&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="featurescatterplot.png" alt="featurescatterplot"></p>
+</li>
+<li>
+<p>View relationship between <strong>protein</strong> and <strong>RNA</strong>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD3&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;rna_CD3E&#34;</span><span class="p">)</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featurescatterplot2.png&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="featurescatterplot2.png" alt="featurescatterplot2"></p>
+</li>
+<li>
+<p>View relationship between <strong>CD4 and CD8 proteins</strong>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD4&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;adt_CD8&#34;</span><span class="p">)</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featurescatterplot3.png&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="featurescatterplot3.png" alt="featurescatterplot3"></p>
+</li>
+<li>
+<p>View the <strong>raw</strong> (non-normalized) ADT <code>counts</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD4&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;adt_CD8&#34;</span><span class="p">,</span> <span class="n">slot</span> <span class="o">=</span> <span class="s">&#34;counts&#34;</span><span class="p">)</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featurescatterplot4.png&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="featurescatterplot4.png" alt="featurescatterplot4"></p>
+</li>
+</ul>
+<h3 id="loading-data-from-10x-multi-modal-experiments">Loading data from 10X multi-modal experiments</h3>
+<ul>
+<li>
+<p><strong>Download Dataset</strong>: a dataset of 7,900 peripheral blood mononuclear cells, freely available from 10X Genomics <a href="https://cf.10xgenomics.com/samples/cell-exp/3.0.0/pbmc_10k_protein_v3/pbmc_10k_protein_v3_filtered_feature_bc_matrix.tar.gz">here</a>.</p>
+</li>
+<li>
+<p>uncompress dataset.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tar</span> <span class="n">xvzf</span> <span class="n">pbmc_10k_protein_v3_filtered_feature_bc_matrix</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Analyze data.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">pbmc10k.data</span> <span class="o">&lt;-</span> <span class="nf">Read10X</span><span class="p">(</span><span class="n">data.dir</span> <span class="o">=</span> <span class="s">&#34;./filtered_feature_bc_matrix/&#34;</span><span class="p">)</span>
+<span class="nf">rownames</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pbmc10k.data[[</span><span class="s">&#34;Antibody Capture&#34;</span><span class="n">]]</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">gsub</span><span class="p">(</span><span class="n">pattern</span> <span class="o">=</span> <span class="s">&#34;_[control_]*TotalSeqB&#34;</span><span class="p">,</span> <span class="n">replacement</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span> 
+                                                        <span class="n">x</span> <span class="o">=</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pbmc10k.data[[</span><span class="s">&#34;Antibody Capture&#34;</span><span class="n">]]</span><span class="p">))</span>
+
+<span class="n">pbmc10k</span> <span class="o">&lt;-</span> <span class="nf">CreateSeuratObject</span><span class="p">(</span><span class="n">counts</span> <span class="o">=</span> <span class="n">pbmc10k.data[[</span><span class="s">&#34;Gene Expression&#34;</span><span class="n">]]</span><span class="p">,</span> <span class="n">min.cells</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">min.features</span> <span class="o">=</span> <span class="m">200</span><span class="p">)</span>
+<span class="n">pbmc10k</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">pbmc10k</span><span class="p">)</span>
+<span class="n">pbmc10k[[</span><span class="s">&#34;ADT&#34;</span><span class="n">]]</span> <span class="o">&lt;-</span> <span class="nf">CreateAssayObject</span><span class="p">(</span><span class="n">pbmc10k.data[[</span><span class="s">&#34;Antibody Capture&#34;</span><span class="n">]][</span><span class="p">,</span> <span class="nf">colnames</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pbmc10k</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
+<span class="n">pbmc10k</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">pbmc10k</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;ADT&#34;</span><span class="p">,</span> <span class="n">normalization.method</span> <span class="o">=</span> <span class="s">&#34;CLR&#34;</span><span class="p">)</span>
+
+<span class="n">plot1</span> <span class="o">&lt;-</span> <span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">pbmc10k</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD19&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;adt_CD3&#34;</span><span class="p">,</span> <span class="n">pt.size</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+<span class="n">plot2</span> <span class="o">&lt;-</span> <span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">pbmc10k</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD4&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;adt_CD8a&#34;</span><span class="p">,</span> <span class="n">pt.size</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+<span class="n">plot3</span> <span class="o">&lt;-</span> <span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">pbmc10k</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD3&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;CD3E&#34;</span><span class="p">,</span> <span class="n">pt.size</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+<span class="p">(</span><span class="n">plot1</span> <span class="o">+</span> <span class="n">plot2</span> <span class="o">+</span> <span class="n">plot3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nf">NoLegend</span><span class="p">()</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featurescatter53.png&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="featurescatter53.png" alt="featurescatter53"></p>
+</li>
+</ul>
+<h3 id="in-summary">In summary</h3>
+<ul>
+<li>There are additional functionality for multimodal data in Seurat. Keep exploring the resources.</li>
+</ul>
     </div>
 
     

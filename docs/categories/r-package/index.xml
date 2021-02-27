@@ -13,9 +13,8 @@
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/post/seurat2/</guid>
-      <description>&lt;p&gt;The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for single-cell genomics.&lt;br&gt;
-Seurat4 to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.&lt;/p&gt;
-&lt;p&gt;Herein, I will follow official Tutorial for using Seurat with multimodal data step by step.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for &lt;em&gt;&lt;strong&gt;single-cell genomics&lt;/strong&gt;&lt;/em&gt;.  &lt;code&gt;Seurat4&lt;/code&gt; to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.&lt;/p&gt;
+&lt;p&gt;Herein, I will follow the official Tutorial to analyze multimodal using Seurat data step by step.&lt;/p&gt;</description>
     </item>
     
     <item>

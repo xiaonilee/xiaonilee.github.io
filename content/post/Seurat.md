@@ -1,7 +1,7 @@
 ---
 title: "Seurat - Guided Clustering Tutorial"
 date: 2021-02-25
-lastmod: 2021-02-25
+lastmod: 2021-02-27
 draft: false
 tags: ["Bioinformatics", "R", "RNA Sequence", "PCA", "KNN"]
 categories: ["Bioinformatics", "R", "RNA Sequence", "PCA", "KNN"]
@@ -17,7 +17,7 @@ mathjax: true
 #     weight: 1
 ---
 
-Follow official Tutorial for clustering step by step.
+In this article, I will follow the official Tutorial to do `clustering` using Seurat step by step.
 
 
 <!--more-->
