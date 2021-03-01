@@ -6,10 +6,42 @@
     <description>Recent content on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Analysis, visualization, and integration of spatial datasets with Seurat</title>
+      <link>/post/seurat3/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/seurat3/</guid>
+      
+        <description>&lt;p&gt;how to use Seurat to analyze spatially-resolved RNA-seq data?&lt;/p&gt;
+&lt;p&gt;Herein, the tutorial will cover these tasks:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Normalization&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dimensional reduction and clustering&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Detecting spatially-variable features&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Interactive visualization&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Integration with single-cell RNA-seq data&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Working with multiple slices&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
+    </item>
     
     <item>
       <title>Using Seurat with multimodal data</title>
@@ -226,17 +258,6 @@
       <guid>/post/tensorflow204/</guid>
       
         <description>&lt;p&gt;TensorFlow2 notebook: Class4: 网络八股进行扩展, 增加自制数据集, 数据增强, 断点续训, 参数提取和acc/loss可视化, 最后实现给图识物的应用程序.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>TensorFlow2 class3: 神经网络八股</title>
-      <link>/post/tensorflow203/</link>
-      <pubDate>Mon, 07 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/tensorflow203/</guid>
-      
-        <description>&lt;p&gt;TensorFlow2 notebook: Class3 神经网络搭建八股,用&amp;quot;六步法&amp;quot;, 不到20行代码, 写出手写数字识别训练模型.&lt;/p&gt;</description>
       
     </item>
     
