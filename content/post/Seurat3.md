@@ -84,7 +84,7 @@ brain <- LoadData("stxBrain", type = "anterior1")
     ggsave("./fig2.png")
     ```
 
-    ![fig2]("./fig2.png")
+    ![fig2](fig2.png)
 
 - Adjust the size of the spots (and their transparency) to improve the visualization of the histology image.
   
