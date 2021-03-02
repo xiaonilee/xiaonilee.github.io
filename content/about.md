@@ -69,5 +69,3 @@ mathjax: false
   - [Machine Learning_ud120](https://www.udacity.com/course/intro-to-machine-learning--ud120), and [my github repository](https://github.com/xiaonilee/Introduction_To_Machine_Learning_ud120) 
   - [TensorFlow2](/post/tensorflow2/)
 
-
-
