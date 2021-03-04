@@ -21,6 +21,8 @@ In this blog, I will summary the common Git Commands that I use frequently while
 
 <!--more-->
 
+![git workflow](1.png)
+
 ### Getting & Creating Projects
 
 | Command | Description |
