@@ -6,13 +6,22 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bioinformatics</title>
       <link>/tags/bioinformatics/</link>
-      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 04 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>/tags/git/</link>
+      <pubDate>Thu, 04 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/git/</guid>
       <description></description>
     </item>
     
@@ -175,15 +184,6 @@
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/data-mining/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>EPIC</title>
-      <link>/tags/epic/</link>
-      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/epic/</guid>
       <description></description>
     </item>
     
