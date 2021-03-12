@@ -6,13 +6,58 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bioinformatics</title>
       <link>/tags/bioinformatics/</link>
-      <pubDate>Thu, 04 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ensembl</title>
+      <link>/tags/ensembl/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ensembl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/tags/r/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TCGA</title>
+      <link>/tags/tcga/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tcga/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UCSC</title>
+      <link>/tags/ucsc/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ucsc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xena</title>
+      <link>/tags/xena/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/xena/</guid>
       <description></description>
     </item>
     
@@ -62,15 +107,6 @@
     </item>
     
     <item>
-      <title>R</title>
-      <link>/tags/r/</link>
-      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Database</title>
       <link>/tags/database/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
@@ -85,24 +121,6 @@
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/geo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UCSC</title>
-      <link>/tags/ucsc/</link>
-      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/ucsc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Xena</title>
-      <link>/tags/xena/</link>
-      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/xena/</guid>
       <description></description>
     </item>
     
@@ -166,24 +184,6 @@
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/recover-paper/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Big data</title>
-      <link>/tags/big-data/</link>
-      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/big-data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data mining</title>
-      <link>/tags/data-mining/</link>
-      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/data-mining/</guid>
       <description></description>
     </item>
     

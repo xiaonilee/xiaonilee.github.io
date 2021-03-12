@@ -39,4 +39,6 @@ Roadmap for the `UCSC topics`.
 
 - [UCSC gene browser with R package Gviz - part 1](/post/ucscgenebrowser/)
 
-- [UCSC gene browser with R package Gviz - part 2](/post/ucscgenebrowser2)
+- [UCSC gene browser with R package Gviz - part 2](/post/ucscgenebrowser2/)
+
+- [Download mRNA lncRNA and miRNA and match clinical information with R from UCSC Xena](/post/ucscdownload/)

@@ -6,10 +6,22 @@
     <description>Recent content on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Download mRNA lncRNA and miRNA and match clinical information with R from UCSC Xena</title>
+      <link>/post/ucscdownload/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscdownload/</guid>
+      
+        <description>&lt;p&gt;It&amp;rsquo;s very convenient to download datasets from UCSC Xena. Normally, datasets will need to be processed and transformed with R language.&lt;/p&gt;
+&lt;p&gt;Herein, I will recover the protocol of datasets processed.&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>Git - Common commands</title>
@@ -247,17 +259,6 @@
       <guid>/post/tensorflow206/</guid>
       
         <description>&lt;p&gt;TensorFlow2 notebook: Class6: 循环神经网络,用基础RNN,LSTM,GRU实现股票预测.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>TensorFlow2 class5: 卷积神经网络</title>
-      <link>/post/tensorflow205/</link>
-      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/tensorflow205/</guid>
-      
-        <description>&lt;p&gt;TensorFlow2 notebook: Class5: 卷积神经网络, 用基础CNN, LeNet, AlexNet, VGGNet, InceptionNet和ResNet实现图像识别.&lt;/p&gt;</description>
       
     </item>
     

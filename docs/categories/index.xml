@@ -6,13 +6,58 @@
     <description>Recent content in Categories on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bioinformatics</title>
       <link>/categories/bioinformatics/</link>
-      <pubDate>Thu, 04 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ensembl</title>
+      <link>/categories/ensembl/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/ensembl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/categories/r/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TCGA</title>
+      <link>/categories/tcga/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/tcga/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UCSC</title>
+      <link>/categories/ucsc/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/ucsc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xena</title>
+      <link>/categories/xena/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/xena/</guid>
       <description></description>
     </item>
     
@@ -62,15 +107,6 @@
     </item>
     
     <item>
-      <title>R</title>
-      <link>/categories/r/</link>
-      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Cancer Research</title>
       <link>/categories/cancer-research/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
@@ -85,15 +121,6 @@
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UCSC</title>
-      <link>/categories/ucsc/</link>
-      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/ucsc/</guid>
       <description></description>
     </item>
     
@@ -157,33 +184,6 @@
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/big-data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data mining</title>
-      <link>/categories/data-mining/</link>
-      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/data-mining/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
-      <link>/categories/machine-learning/</link>
-      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TensorFlow2</title>
-      <link>/categories/tensorflow2/</link>
-      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/tensorflow2/</guid>
       <description></description>
     </item>
     
