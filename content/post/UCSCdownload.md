@@ -29,7 +29,7 @@ Herein, I will recover the protocol of datasets processed.
 
 - **Object**: [gene expression RNAseq](https://gdc-hub.s3.us-east-1.amazonaws.com/latest/TCGA-HNSC.htseq_counts.tsv.gz), [phenotype](https://gdc-hub.s3.us-east-1.amazonaws.com/latest/TCGA-HNSC.GDC_phenotype.tsv.gz) and [survival data](https://gdc-hub.s3.us-east-1.amazonaws.com/latest/TCGA-HNSC.survival.tsv.gz)
 
-![fig1](fig1.png)
+  ![fig1](fig1.png)
 
 ### Prerequisites
 
@@ -53,7 +53,7 @@ probeMap <- read.table("/Users/xiaonili/Downloads/gencode.v22.annotation.gene.pr
 probeMap[1:4,1:4]
 ```
 
-![fig2](fig2.png)
+  ![fig2](fig2.png)
 
 - ID Reverse
   
@@ -65,7 +65,7 @@ TCGA_gset <- TCGA_rawdata %>%
 TCGA_gset[1:4,1:4]
 ```
 
-![fig3](fig3.png)
+  ![fig3](fig3.png)
 
 - Average replicate genes
 
@@ -76,7 +76,7 @@ write.csv(TCGA_gset,"/Users/xiaonili/Downloads/TCGA_HNSC_Countdata_log2+1.csv")
 TCGA_gset[1:4,1:4]
 ```
 
-![fig4](fig4.png)
+  ![fig4](fig4.png)
 
 - Group by patient.id
 
@@ -87,7 +87,7 @@ TCGA_group_list <- ifelse(as.numeric(substring(colnames(TCGA_gset),14,15)) < 10,
 table(TCGA_group_list)
 ```
 
-![fig5](fig5.png)
+  ![fig5](fig5.png)
 
 ### Recognize mRNA lncRNA and miRNA
 
@@ -135,7 +135,7 @@ Phenodata$submitter_id.samples <- substring(Phenodata$submitter_id.samples,1,15)
 Phenodata[1:4,1:4]
 ```
 
-![fig6](fig6.png)
+  ![fig6](fig6.png)
 
 - Load survival data
 
@@ -146,7 +146,7 @@ Sur_data$sample <- substring(Sur_data$sample,1,15) %>% gsub("-",".",.)
 Sur_data[1:4,1:4]
 ```
 
-![fig7](fig7.png)
+  ![fig7](fig7.png)
 
 - Merge data and choose interested col
 
@@ -158,7 +158,7 @@ Phen_surv <- Phenodata %>%
 head(Phen_surv)
 ```
 
-![fig8](fig8.png)
+  ![fig8](fig8.png)
 
 - match expression with phenodata and do order
 
@@ -176,6 +176,6 @@ write.csv(Phen_surv,"/Users/xiaonili/Downloads/TCGA_HNSC_phenotype.csv")
 head(Phen_surv)
 ```
 
-![fig9](fig9.png)
+  ![fig9](fig9.png)
 
 Attach is the [script](UCSCdownload.R).
