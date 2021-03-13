@@ -77,7 +77,7 @@ Herein, I will recover the protocol of datasets processed." />
 Herein, I will recover the protocol of datasets processed.">
 <meta itemprop="datePublished" content="2021-03-12T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-03-12T00:00:00+00:00" />
-<meta itemprop="wordCount" content="338">
+<meta itemprop="wordCount" content="346">
 
 
 
@@ -570,7 +570,7 @@ if (!doNotTrack) {
 </div>
 </div><h3 id="annotation-of-gene">Annotation of gene</h3>
 <ul>
-<li>Load data and annotation information</li>
+<li><strong>Load data and annotation information</strong></li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -590,9 +590,14 @@ if (!doNotTrack) {
 <span class="n">probeMap[1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="n">]</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img src="fig2.png" alt="fig2"></p>
-<ul>
-<li>ID Reverse</li>
+</div><ul>
+<li>
+<p><strong>Output</strong></p>
+<p><img src="fig2.png" alt="fig2"></p>
+</li>
+<li>
+<p><strong>ID Reverse</strong></p>
+</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -610,9 +615,14 @@ if (!doNotTrack) {
 <span class="n">TCGA_gset[1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="n">]</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img src="fig3.png" alt="fig3"></p>
-<ul>
-<li>Average replicate genes</li>
+</div><ul>
+<li>
+<p><strong>Output</strong></p>
+<p><img src="fig3.png" alt="fig3"></p>
+</li>
+<li>
+<p><strong>Average replicate genes</strong></p>
+</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -628,9 +638,14 @@ if (!doNotTrack) {
 <span class="n">TCGA_gset[1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="n">]</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img src="fig4.png" alt="fig4"></p>
-<ul>
-<li>Group by patient.id</li>
+</div><ul>
+<li>
+<p><strong>Output</strong></p>
+<p><img src="fig4.png" alt="fig4"></p>
+</li>
+<li>
+<p><strong>Group by patient.id</strong></p>
+</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -646,10 +661,15 @@ if (!doNotTrack) {
 <span class="nf">table</span><span class="p">(</span><span class="n">TCGA_group_list</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img src="fig5.png" alt="fig5"></p>
+</div><ul>
+<li>
+<p><strong>Output</strong></p>
+<p><img src="fig5.png" alt="fig5"></p>
+</li>
+</ul>
 <h3 id="recognize-mrna-lncrna-and-mirna">Recognize mRNA lncRNA and miRNA</h3>
 <ul>
-<li>Load data</li>
+<li><strong>Load data</strong></li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -664,7 +684,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>Get geneset for mRNA miRNA and lncRNA</li>
+<li><strong>Get geneset for mRNA miRNA and lncRNA</strong></li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -708,7 +728,7 @@ if (!doNotTrack) {
 </div>
 </div><h3 id="match-clinical-and-survival-information-with-expression">Match clinical and survival information with expression</h3>
 <ul>
-<li>Load clinical data</li>
+<li><strong>Load clinical data</strong></li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -730,9 +750,14 @@ if (!doNotTrack) {
 <span class="n">Phenodata[1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="n">]</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img src="fig6.png" alt="fig6"></p>
-<ul>
-<li>Load survival data</li>
+</div><ul>
+<li>
+<p><strong>Output</strong></p>
+<p><img src="fig6.png" alt="fig6"></p>
+</li>
+<li>
+<p><strong>Load survival data</strong></p>
+</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -748,9 +773,14 @@ if (!doNotTrack) {
 <span class="n">Sur_data[1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="n">]</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img src="fig7.png" alt="fig7"></p>
-<ul>
-<li>Merge data and choose interested col</li>
+</div><ul>
+<li>
+<p><strong>Output</strong></p>
+<p><img src="fig7.png" alt="fig7"></p>
+</li>
+<li>
+<p><strong>Merge data and choose interested col</strong></p>
+</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -768,9 +798,14 @@ if (!doNotTrack) {
 <span class="nf">head</span><span class="p">(</span><span class="n">Phen_surv</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img src="fig8.png" alt="fig8"></p>
-<ul>
-<li>match expression with phenodata and do order</li>
+</div><ul>
+<li>
+<p><strong>Output</strong></p>
+<p><img src="fig8.png" alt="fig8"></p>
+</li>
+<li>
+<p><strong>match expression with phenodata and do order</strong></p>
+</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -783,7 +818,7 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>group</li>
+<li><strong>group</strong></li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -799,7 +834,12 @@ if (!doNotTrack) {
 <span class="nf">head</span><span class="p">(</span><span class="n">Phen_surv</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img src="fig9.png" alt="fig9"></p>
+</div><ul>
+<li>
+<p><strong>Output</strong></p>
+<p><img src="fig9.png" alt="fig9"></p>
+</li>
+</ul>
 <p>Attach is the <a href="UCSCdownload.R">script</a>.</p>
     </div>
 

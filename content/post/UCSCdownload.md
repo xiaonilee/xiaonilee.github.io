@@ -42,7 +42,7 @@ library(readr)
 
 ### Annotation of gene
 
-- Load data and annotation information
+- **Load data and annotation information**
 
 ```r
 TCGA_rawdata <- read_tsv("/Users/xiaonili/Downloads/TCGA-HNSC.htseq_counts.tsv.gz")
@@ -53,9 +53,11 @@ probeMap <- read.table("/Users/xiaonili/Downloads/gencode.v22.annotation.gene.pr
 probeMap[1:4,1:4]
 ```
 
+- **Output**
+
   ![fig2](fig2.png)
 
-- ID Reverse
+- **ID Reverse**
   
 ```r
 TCGA_gset <- TCGA_rawdata %>%
@@ -65,9 +67,11 @@ TCGA_gset <- TCGA_rawdata %>%
 TCGA_gset[1:4,1:4]
 ```
 
+- **Output**
+  
   ![fig3](fig3.png)
 
-- Average replicate genes
+- **Average replicate genes**
 
 ```r
 TCGA_gset = as.data.frame(avereps(TCGA_gset[,-1],ID = TCGA_gset$gene))
@@ -76,9 +80,11 @@ write.csv(TCGA_gset,"/Users/xiaonili/Downloads/TCGA_HNSC_Countdata_log2+1.csv")
 TCGA_gset[1:4,1:4]
 ```
 
+- **Output**
+
   ![fig4](fig4.png)
 
-- Group by patient.id
+- **Group by patient.id**
 
 ```r
 TCGA_group_list <- ifelse(as.numeric(substring(colnames(TCGA_gset),14,15)) < 10,
@@ -87,11 +93,13 @@ TCGA_group_list <- ifelse(as.numeric(substring(colnames(TCGA_gset),14,15)) < 10,
 table(TCGA_group_list)
 ```
 
+- **Output**
+
   ![fig5](fig5.png)
 
 ### Recognize mRNA lncRNA and miRNA
 
-- Load data
+- **Load data**
 
 ```r
 mRNA_info <- read.xlsx("/Users/xiaonili/Downloads/Gene_info.xlsx",sheet = "mRNA_info")
@@ -99,7 +107,7 @@ lncRNA_info <- read.xlsx("/Users/xiaonili/Downloads/Gene_info.xlsx",sheet = "lnc
 miRNA_info <- read.xlsx("/Users/xiaonili/Downloads/Gene_info.xlsx",sheet = "miRNA_info")
 ```
 
-- Get geneset for mRNA miRNA and lncRNA 
+- **Get geneset for mRNA miRNA and lncRNA** 
 
 ```r
 ## Get data.matrix for mRNA
@@ -123,7 +131,7 @@ write.csv(miRNA_gset,"/Users/xiaonili/Downloads/TCGA_HNSC_miRNA.csv",quote = F,r
 
 ### Match clinical and survival information with expression
 
-- Load clinical data
+- **Load clinical data**
 
 ```r
 Phenodata <- read_tsv("/Users/xiaonili/Downloads/TCGA-HNSC.GDC_phenotype.tsv.gz")
@@ -135,9 +143,11 @@ Phenodata$submitter_id.samples <- substring(Phenodata$submitter_id.samples,1,15)
 Phenodata[1:4,1:4]
 ```
 
+- **Output**
+
   ![fig6](fig6.png)
 
-- Load survival data
+- **Load survival data**
 
 ```r
 Sur_data <- read_tsv("/Users/xiaonili/Downloads/TCGA-HNSC.survival.tsv.gz")
@@ -146,9 +156,11 @@ Sur_data$sample <- substring(Sur_data$sample,1,15) %>% gsub("-",".",.)
 Sur_data[1:4,1:4]
 ```
 
+- **Output**
+  
   ![fig7](fig7.png)
 
-- Merge data and choose interested col
+- **Merge data and choose interested col**
 
 ```r
 Phen_surv <- Phenodata %>%
@@ -158,16 +170,18 @@ Phen_surv <- Phenodata %>%
 head(Phen_surv)
 ```
 
+- **Output**
+
   ![fig8](fig8.png)
 
-- match expression with phenodata and do order
+- **match expression with phenodata and do order**
 
 ```r
 Phen_surv = Phen_surv[match(colnames(TCGA_gset),Phen_surv$submitter_id.samples),]
 identical(Phen_surv$submitter_id.samples,colnames(TCGA_gset))
 ```
 
-- group
+- **group**
 
 ```r
 Phen_surv$group <- TCGA_group_list
@@ -175,6 +189,8 @@ Phen_surv = dplyr::select(Phen_surv,submitter_id.samples,group,everything())
 write.csv(Phen_surv,"/Users/xiaonili/Downloads/TCGA_HNSC_phenotype.csv")
 head(Phen_surv)
 ```
+
+- **Output**
 
   ![fig9](fig9.png)
 
