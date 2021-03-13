@@ -39,7 +39,7 @@ mathjax: true
 
 ### 因为喜欢
 
-因为喜欢，无比享受的学习了20门生信与大数据课程。这其中包括**概率论与统计学**，**R**，**Python**和**Java**，**数据结构与算法**，**爬虫**，**Linux**，**Hadoop & MapReduce**，**Mysql**，**MangoDB**，**Numpy & Pandas**以及**TensorFlow框架在内的机器学习**。
+因为喜欢，无比享受的学习了20门生信与大数据课程。这其中包括**概率论与统计学**，**R**，**Python**和**Java**，**数据结构与算法**，**爬虫**，**Linux**，**Hadoop & MapReduce**，**Mysql**，**MangoDB**，**Numpy & Pandas**以及**TensorFlow框架在内的机器学习**等。
 
 ### 未来之我见
 
