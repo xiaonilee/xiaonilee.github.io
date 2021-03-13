@@ -27,7 +27,7 @@ Herein, I will recover the protocol of datasets processed.
 
 - **Dataset sources**: [GDC TCGA Head and Neck Cancer(HNSC)](https://xenabrowser.net/datapages/?cohort=GDC%20TCGA%20Head%20and%20Neck%20Cancer%20(HNSC)&removeHub=https%3A%2F%2Fxena.treehouse.gi.ucsc.edu%3A443)
 
-- **Object**: [gene expression RNAseq](https://gdc-hub.s3.us-east-1.amazonaws.com/latest/TCGA-HNSC.htseq_counts.tsv.gz), [phenotype](https://gdc-hub.s3.us-east-1.amazonaws.com/latest/TCGA-HNSC.GDC_phenotype.tsv.gz) and [survival data](https://gdc-hub.s3.us-east-1.amazonaws.com/latest/TCGA-HNSC.survival.tsv.gz)
+- **Object address**: [gene expression RNAseq](https://gdc-hub.s3.us-east-1.amazonaws.com/latest/TCGA-HNSC.htseq_counts.tsv.gz), [phenotype](https://gdc-hub.s3.us-east-1.amazonaws.com/latest/TCGA-HNSC.GDC_phenotype.tsv.gz) and [survival data](https://gdc-hub.s3.us-east-1.amazonaws.com/latest/TCGA-HNSC.survival.tsv.gz)
 
   ![fig1](fig1.png)
 
