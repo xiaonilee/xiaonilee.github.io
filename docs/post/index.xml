@@ -6,7 +6,16 @@
     <description>Recent content in Posts on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习生信与AI大数据, Why?</title>
+      <link>/post/whybioinformatics/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/whybioinformatics/</guid>
+      <description>&lt;p&gt;为什么要学习生信与AI大数据？这篇blog中，我将简要讲述我的生物，生信与AI大数据之路。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Download mRNA lncRNA and miRNA and match clinical information with R from UCSC Xena</title>
       <link>/post/ucscdownload/</link>
@@ -207,15 +216,6 @@
       
       <guid>/post/tensorflow2/</guid>
       <description>&lt;p&gt;TensorFlow2 搭建优化神经网络的八股，内容包括：深度学习、神经网络的基本概念原理和代码实现示例.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>TensorFlow2 class6: 循环神经网络</title>
-      <link>/post/tensorflow206/</link>
-      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/tensorflow206/</guid>
-      <description>&lt;p&gt;TensorFlow2 notebook: Class6: 循环神经网络,用基础RNN,LSTM,GRU实现股票预测.&lt;/p&gt;</description>
     </item>
     
   </channel>

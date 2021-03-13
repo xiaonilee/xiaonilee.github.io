@@ -6,7 +6,16 @@
     <description>Recent content in Bioinformatics on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习生信与AI大数据, Why?</title>
+      <link>/post/whybioinformatics/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/whybioinformatics/</guid>
+      <description>&lt;p&gt;为什么要学习生信与AI大数据？这篇blog中，我将简要讲述我的生物，生信与AI大数据之路。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Download mRNA lncRNA and miRNA and match clinical information with R from UCSC Xena</title>
       <link>/post/ucscdownload/</link>
@@ -206,15 +215,6 @@
       
       <guid>/post/shiny01/</guid>
       <description>&lt;p&gt;Building a Shiny app - an interactive tutorial.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Book: R in Action</title>
-      <link>/post/rinactionmap/</link>
-      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rinactionmap/</guid>
-      <description>&lt;p&gt;Roadmap for the book: &lt;em&gt;&lt;strong&gt;R in Action, Second Edition&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>

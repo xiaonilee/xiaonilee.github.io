@@ -6,7 +6,16 @@
     <description>Recent content in Machine Learning on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 17 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习生信与AI大数据, Why?</title>
+      <link>/post/whybioinformatics/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/whybioinformatics/</guid>
+      <description>&lt;p&gt;为什么要学习生信与AI大数据？这篇blog中，我将简要讲述我的生物，生信与AI大数据之路。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title> Machine Learning: TensorFlow2 Notebook</title>
       <link>/post/tensorflow2/</link>
