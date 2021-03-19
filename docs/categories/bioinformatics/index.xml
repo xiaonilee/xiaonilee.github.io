@@ -14,7 +14,7 @@
       
       <guid>/post/rstudio/</guid>
       <description>&lt;p&gt;In this blog, I will record some useful keyboard shortcuts for RStudio IDE.&lt;/p&gt;
-&lt;p&gt;Still, complete information is available directly in the RStudio IDE under the Tools menu: Tools -&amp;gt; Keyboard Shortcuts Help.&lt;/p&gt;</description>
+&lt;p&gt;Still, complete information is available directly in the RStudio IDE under the Tools menu: &lt;code&gt;Tools&lt;/code&gt; -&amp;gt; &lt;code&gt;Keyboard Shortcuts Help&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
