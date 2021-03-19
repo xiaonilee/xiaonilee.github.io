@@ -6,7 +6,17 @@
     <description>Recent content in Bioinformatics on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Keyboard Shortcuts for RStudio IDE in Mac</title>
+      <link>/post/rstudio/</link>
+      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rstudio/</guid>
+      <description>&lt;p&gt;In this blog, I will record some useful keyboard shortcuts for RStudio IDE.&lt;/p&gt;
+&lt;p&gt;Still, complete information is available directly in the RStudio IDE under the Tools menu: Tools -&amp;gt; Keyboard Shortcuts Help.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>为什么学习生信与大数据AI?</title>
       <link>/q/</link>
@@ -206,15 +216,6 @@
       
       <guid>/post/shiny02/</guid>
       <description>&lt;p&gt;Recover a Shiny app demo - kmeans clustering.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Learn Shiny: Building a Shiny app</title>
-      <link>/post/shiny01/</link>
-      <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/shiny01/</guid>
-      <description>&lt;p&gt;Building a Shiny app - an interactive tutorial.&lt;/p&gt;</description>
     </item>
     
   </channel>

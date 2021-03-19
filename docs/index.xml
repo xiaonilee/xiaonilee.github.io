@@ -6,10 +6,22 @@
     <description>Recent content on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Mar 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Keyboard Shortcuts for RStudio IDE in Mac</title>
+      <link>/post/rstudio/</link>
+      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rstudio/</guid>
+      
+        <description>&lt;p&gt;In this blog, I will record some useful keyboard shortcuts for RStudio IDE.&lt;/p&gt;
+&lt;p&gt;Still, complete information is available directly in the RStudio IDE under the Tools menu: Tools -&amp;gt; Keyboard Shortcuts Help.&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>为什么学习生信与大数据AI?</title>
@@ -248,17 +260,6 @@
       <guid>/post/webfrontend/</guid>
       
         <description>&lt;p&gt;Web front-end development&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title> Machine Learning: TensorFlow2 Notebook</title>
-      <link>/post/tensorflow2/</link>
-      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/tensorflow2/</guid>
-      
-        <description>&lt;p&gt;TensorFlow2 搭建优化神经网络的八股，内容包括：深度学习、神经网络的基本概念原理和代码实现示例.&lt;/p&gt;</description>
       
     </item>
     

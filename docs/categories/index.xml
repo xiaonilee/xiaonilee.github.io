@@ -6,22 +6,31 @@
     <description>Recent content in Categories on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bioinformatics</title>
+      <link>/categories/bioinformatics/</link>
+      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RStudio</title>
+      <link>/categories/rstudio/</link>
+      <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/rstudio/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>AI</title>
       <link>/categories/ai/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/ai/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bioinformatics</title>
-      <link>/categories/bioinformatics/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/bioinformatics/</guid>
       <description></description>
     </item>
     
@@ -175,15 +184,6 @@
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GSE</title>
-      <link>/categories/gse/</link>
-      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/gse/</guid>
       <description></description>
     </item>
     
