@@ -17,7 +17,7 @@ mathjax: true
 #     weight: 1
 ---
 
-In this blog, I will record some useful keyboard shortcuts for RStudio IDE. 
+In this blog, I will record some useful **keyboard shortcuts** for **RStudio IDE**. 
 
 Still, complete information is available directly in the RStudio IDE under the Tools menu: `Tools` -> `Keyboard Shortcuts Help`.
 
