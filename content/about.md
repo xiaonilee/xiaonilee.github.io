@@ -10,14 +10,9 @@ comment: false
 mathjax: false
 ---
 
-[为什么学习生信与大数据AI？](/post/whybioinformatics/)
-
-<hr/>
-
 `Keep Learning`- Learn more and more advanced technologies/methods and read science papers to keep up with the cutting-edge research.
 
 `Keep Thinking`- Think how to apply advanced technologies/methods to high level research work.
-
 
 
 <!--more-->
