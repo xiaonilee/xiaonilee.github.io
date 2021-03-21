@@ -6,7 +6,17 @@
     <description>Recent content in R on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Review raw data with ggpairs</title>
+      <link>/post/ggpairs/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ggpairs/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s very necessary to have a look at the data source before trying to analyze it.&lt;/p&gt;
+&lt;p&gt;In this blog, I will share a powerful function &lt;code&gt;ggpairs&lt;/code&gt; to implement the purpose.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Keyboard Shortcuts for RStudio IDE in Mac</title>
       <link>/post/rstudio/</link>
@@ -178,15 +188,6 @@
       
       <guid>/post/rinaction17/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 17.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 16. Cluster analysis</title>
-      <link>/post/rinaction16/</link>
-      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rinaction16/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 16.&lt;/p&gt;</description>
     </item>
     
   </channel>

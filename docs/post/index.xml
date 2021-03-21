@@ -6,7 +6,17 @@
     <description>Recent content in Posts on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Review raw data with ggpairs</title>
+      <link>/post/ggpairs/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ggpairs/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s very necessary to have a look at the data source before trying to analyze it.&lt;/p&gt;
+&lt;p&gt;In this blog, I will share a powerful function &lt;code&gt;ggpairs&lt;/code&gt; to implement the purpose.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Keyboard Shortcuts for RStudio IDE in Mac</title>
       <link>/post/rstudio/</link>
@@ -208,15 +218,6 @@
       
       <guid>/post/webfrontend/</guid>
       <description>&lt;p&gt;Web front-end development&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title> Machine Learning: TensorFlow2 Notebook</title>
-      <link>/post/tensorflow2/</link>
-      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/tensorflow2/</guid>
-      <description>&lt;p&gt;TensorFlow2 搭建优化神经网络的八股，内容包括：深度学习、神经网络的基本概念原理和代码实现示例.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Keyboard Shortcuts for RStudio IDE in Mac - xiaoni&#39;s blog</title>
+  <title>Review raw data with ggpairs - xiaoni&#39;s blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,8 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Xiaoni" />
-  <meta name="description" content="In this blog, I will record some useful keyboard shortcuts for RStudio IDE.
-Still, complete information is available directly in the RStudio IDE under the Tools menu: Tools -&amp;gt; Keyboard Shortcuts Help.
+  <meta name="description" content="It&amp;rsquo;s very necessary to have a look at the data source before trying to analyze it.
+In this blog, I will share a powerful function ggpairs to implement the purpose.
 " />
 
   <meta name="keywords" content="xiaonili, xiaonilee, xiaoni" />
@@ -37,7 +37,7 @@ Still, complete information is available directly in the RStudio IDE under the T
 <meta name="generator" content="Hugo 0.79.0" />
 
 
-<link rel="canonical" href="/post/rstudio/" />
+<link rel="canonical" href="/post/ggpairs/" />
 
 
 
@@ -65,27 +65,27 @@ Still, complete information is available directly in the RStudio IDE under the T
 
 
 
-<meta property="og:title" content="Keyboard Shortcuts for RStudio IDE in Mac" />
-<meta property="og:description" content="In this blog, I will record some useful keyboard shortcuts for RStudio IDE.
-Still, complete information is available directly in the RStudio IDE under the Tools menu: Tools -&gt; Keyboard Shortcuts Help." />
+<meta property="og:title" content="Review raw data with ggpairs" />
+<meta property="og:description" content="It&rsquo;s very necessary to have a look at the data source before trying to analyze it.
+In this blog, I will share a powerful function ggpairs to implement the purpose." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/rstudio/" />
-<meta property="article:published_time" content="2021-03-19T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-03-19T00:00:00+00:00" />
-<meta itemprop="name" content="Keyboard Shortcuts for RStudio IDE in Mac">
-<meta itemprop="description" content="In this blog, I will record some useful keyboard shortcuts for RStudio IDE.
-Still, complete information is available directly in the RStudio IDE under the Tools menu: Tools -&gt; Keyboard Shortcuts Help.">
-<meta itemprop="datePublished" content="2021-03-19T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-03-19T00:00:00+00:00" />
-<meta itemprop="wordCount" content="189">
+<meta property="og:url" content="/post/ggpairs/" />
+<meta property="article:published_time" content="2021-03-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-03-21T00:00:00+00:00" />
+<meta itemprop="name" content="Review raw data with ggpairs">
+<meta itemprop="description" content="It&rsquo;s very necessary to have a look at the data source before trying to analyze it.
+In this blog, I will share a powerful function ggpairs to implement the purpose.">
+<meta itemprop="datePublished" content="2021-03-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-03-21T00:00:00+00:00" />
+<meta itemprop="wordCount" content="93">
 
 
 
-<meta itemprop="keywords" content="Bioinformatics,R,RStudio," />
+<meta itemprop="keywords" content="Bioinformatics,R,R package," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Keyboard Shortcuts for RStudio IDE in Mac"/>
-<meta name="twitter:description" content="In this blog, I will record some useful keyboard shortcuts for RStudio IDE.
-Still, complete information is available directly in the RStudio IDE under the Tools menu: Tools -&gt; Keyboard Shortcuts Help."/>
+<meta name="twitter:title" content="Review raw data with ggpairs"/>
+<meta name="twitter:description" content="It&rsquo;s very necessary to have a look at the data source before trying to analyze it.
+In this blog, I will share a powerful function ggpairs to implement the purpose."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -511,15 +511,16 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">Keyboard Shortcuts for RStudio IDE in Mac</h1>
+      <h1 class="post-title">Review raw data with ggpairs</h1>
       
       <div class="post-meta">
-        <time datetime="2021-03-19" class="post-time">
-          2021-03-19
+        <time datetime="2021-03-21" class="post-time">
+          2021-03-21
         </time>
         <div class="post-category">
             <a href="/categories/bioinformatics/"> Bioinformatics </a>
-            <a href="/categories/rstudio/"> RStudio </a>
+            <a href="/categories/r/"> R </a>
+            <a href="/categories/r-package/"> R package </a>
             
           </div>
         
@@ -541,11 +542,11 @@ if (!doNotTrack) {
   <ul>
     <li>
       <ul>
-        <li><a href="#console">Console</a></li>
-        <li><a href="#source">Source</a></li>
-        <li><a href="#editing-console-and-source">Editing (Console and Source)</a></li>
-        <li><a href="#session">Session</a></li>
-        <li><a href="#help">Help</a></li>
+        <li><a href="#package">Package</a></li>
+        <li><a href="#data-source">Data Source</a></li>
+        <li><a href="#load-data">Load data</a></li>
+        <li><a href="#for-each-column">For each column</a></li>
+        <li><a href="#select-interested-columns">Select interested columns</a></li>
       </ul>
     </li>
   </ul>
@@ -555,85 +556,70 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p>In this blog, I will record some useful <strong>keyboard shortcuts</strong> for <strong>RStudio IDE</strong>.</p>
-<p>Still, complete information is available directly in the RStudio IDE under the Tools menu: <code>Tools</code> -&gt; <code>Keyboard Shortcuts Help</code>.</p>
-<h3 id="console">Console</h3>
+      <p>It&rsquo;s very necessary to have a look at the data source before trying to analyze it.</p>
+<p>In this blog, I will share a powerful function <code>ggpairs</code> to implement the purpose.</p>
+<h3 id="package">Package</h3>
 <ul>
 <li>
-<p>Change working directory: <code>Ctrl</code>+<code>Shift</code>+<code>H</code></p>
+<p><strong>GGaly</strong></p>
 </li>
 <li>
-<p>Clear console: <code>Ctrl</code> + <code>L</code></p>
+<p><strong>ggplot2</strong></p>
 </li>
 <li>
-<p>Interrupt currently executing command: <code>Esc</code></p>
-</li>
-<li>
-<p>Move cursor to end of line: <code>Cmd</code> + <code>Left</code></p>
-</li>
-<li>
-<p>Move cursor to beginning of line: <code>Cmd</code> + <code>Left</code></p>
-</li>
-<li>
-<p>Popup command history: <code>Cmd</code> + <code>Up</code></p>
-</li>
-<li>
-<p>Navigate command history:	<code>Up/Down</code></p>
-</li>
-<li>
-<p>Popup command history: <code>Cmd</code> + <code>Up</code></p>
+<p><strong>reshape</strong></p>
 </li>
 </ul>
-<h3 id="source">Source</h3>
+<h3 id="data-source">Data Source</h3>
 <ul>
-<li>
-<p>Insert code section: <code>Cmd</code> + <code>Shift</code> + <code>R</code></p>
-</li>
-<li>
-<p>Navigate forward:	<code>Cmd</code> + <code>F10</code></p>
-</li>
-<li>
-<p>Insert chunk (Sweave and Knitr): <code>Cmd</code> + <code>Option</code> + <code>I</code></p>
-</li>
-<li>
-<p>Run current line/selection: <code>Cmd</code> + <code>Return</code></p>
-</li>
-<li>
-<p>Run the current function definition: <code>Cmd</code> + <code>Option</code> + <code>F</code></p>
-</li>
-<li>
-<p>Run the current code section: <code>Cmd</code> + <code>Option</code> + <code>T</code></p>
-</li>
+<li><code>tips</code> from <code>reshape</code> package</li>
 </ul>
-<h3 id="editing-console-and-source">Editing (Console and Source)</h3>
-<ul>
-<li>
-<p>Insert assignment operator <strong>&lt;-</strong> :<code>Option</code> + <code>-</code></p>
-</li>
-<li>
-<p>Insert pipe operator:	<code>Cmd</code> + <code>Shift</code> + <code>M</code></p>
-</li>
-<li>
-<p>Undo:	<code>Cmd</code> + <code>Z</code></p>
-</li>
-<li>
-<p>Redo:	<code>Cmd</code> + <code>Shift</code> + <code>Z</code></p>
-</li>
-<li>
-<p>Select All: <code>Cmd</code> + <code>A</code></p>
-</li>
-<li>
-<p>Delete Line: <code>Cmd</code> + <code>D</code></p>
-</li>
-</ul>
-<h3 id="session">Session</h3>
-<ul>
-<li>Restart R Session: <code>Cmd</code> + <code>Shift</code> + <code>F10</code></li>
-</ul>
-<h3 id="help">Help</h3>
-<ul>
-<li>Show Keyboard Shortcut Reference:	<code>Option</code> + <code>Shift</code> + <code>K</code></li>
-</ul>
+<h3 id="load-data">Load data</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">GGally</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">data</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span> <span class="n">package</span> <span class="o">=</span> <span class="s">&#34;reshape&#34;</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">tips</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">tips</span><span class="p">)</span>
+<span class="nf">dim</span><span class="p">(</span><span class="n">tips</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="1.png" alt="1"></p>
+<h3 id="for-each-column">For each column</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggpairs</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span> <span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="n">sex</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="2.png" alt="2"></p>
+<h3 id="select-interested-columns">Select interested columns</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggpairs</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span> <span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="n">sex</span><span class="p">),</span> 
+        <span class="n">columns</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;total_bill&#34;</span><span class="p">,</span> <span class="s">&#34;time&#34;</span><span class="p">,</span> <span class="s">&#34;tip&#34;</span><span class="p">),</span> 
+        <span class="n">columnLabels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Total_Bill(Continuous_variable)&#34;</span><span class="p">,</span> <span class="s">&#34;Time(discrete_variable)&#34;</span><span class="p">,</span> <span class="s">&#34;Tip(Continuous_variable)&#34;</span><span class="p">),</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="s">&#34;Select_column&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="3.png" alt="3"></p>
     </div>
 
     
@@ -647,29 +633,16 @@ if (!doNotTrack) {
       <div class="post-tags">
           <a href="/tags/bioinformatics/">Bioinformatics</a>
           <a href="/tags/r/">R</a>
-          <a href="/tags/rstudio/">RStudio</a>
+          <a href="/tags/r-package/">R package</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/ggpairs/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">Review raw data with ggpairs</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
         
-          <a class="next" href="/post/ucscdownload/">
-            <span class="next-text nav-default">Download mRNA lncRNA and miRNA and match clinical information with R from UCSC Xena</span>
+          <a class="next" href="/post/rstudio/">
+            <span class="next-text nav-default">Keyboard Shortcuts for RStudio IDE in Mac</span>
             <span class="prev-text nav-mobile">Next</span>
             
             <i class="iconfont">
