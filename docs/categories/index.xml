@@ -53,6 +53,15 @@
     </item>
     
     <item>
+      <title>big data</title>
+      <link>/categories/big-data/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/big-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>machine learning</title>
       <link>/categories/machine-learning/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
@@ -62,11 +71,11 @@
     </item>
     
     <item>
-      <title>Why</title>
-      <link>/categories/why/</link>
+      <title>“Research”</title>
+      <link>/categories/research/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/why/</guid>
+      <guid>/categories/research/</guid>
       <description></description>
     </item>
     
@@ -175,15 +184,6 @@
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>/categories/python/</link>
-      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/python/</guid>
       <description></description>
     </item>
     
