@@ -21,6 +21,7 @@ mathjax: true
 
 <!--more-->
 
+![fig1](fig1.png)
 ## 基本结构
 ### 外层
 
