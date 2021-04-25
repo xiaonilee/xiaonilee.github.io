@@ -1,0 +1,41 @@
+---
+title: " 眼部结构：内层，中层和外层"
+date: 2021-04-24
+lastmod: 2021-04-25
+draft: false
+tags: ["eye structure"]
+categories: ["eye structure"]
+author: "Xiaoni"
+
+weight: 1
+
+mathjax: true
+
+menu:
+  main:
+    parent: "docs"
+    weight: 1
+---
+
+研究结构的基础知识的构建，开始了。
+
+<!--more-->
+
+## 基本结构
+### 外层
+
+- 巩膜 - 角膜
+
+### 中层
+
+- 脉络膜 - 睫体 - 悬韧带 - 晶体 - 虹膜
+
+### 内层
+
+- 视网膜
+
+## 光线过程
+
+角膜（圆顶形状）--> 瞳孔 --> 晶体 --> 视网膜 --> 受体(视杆细胞>视锥细胞(RGB)) --> 神经元 --> 视神经 --> 大脑神经系统
+
+    ![note](note04242021.jpeg)

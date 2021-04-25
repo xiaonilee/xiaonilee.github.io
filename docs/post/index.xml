@@ -6,7 +6,16 @@
     <description>Recent content in Posts on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title> 眼部结构：内层，中层和外层</title>
+      <link>/post/eye01/</link>
+      <pubDate>Sat, 24 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/eye01/</guid>
+      <description>&lt;p&gt;研究结构的基础知识的构建，开始了。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Review raw data with ggpairs</title>
       <link>/post/ggpairs/</link>
@@ -209,15 +218,6 @@
       <guid>/post/frontoncol/</guid>
       <description>&lt;p&gt;In this study, the authors conducted an in-depth and comprehensive bioinformatics analysis of the expression of &lt;strong&gt;CXC chemokines&lt;/strong&gt; in &lt;strong&gt;Renal cell carcinoma&lt;/strong&gt;  and evaluated their potential as therapeutic targets and prognostic biomarkers based on several large public databases.&lt;/p&gt;
 &lt;p&gt;Herein, I will recover all figures for this paper step by step.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>web front end</title>
-      <link>/post/webfrontend/</link>
-      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/webfrontend/</guid>
-      <description>&lt;p&gt;Web front-end development&lt;/p&gt;</description>
     </item>
     
   </channel>
