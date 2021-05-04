@@ -6,7 +6,34 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 24 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Antibody</title>
+      <link>/tags/antibody/</link>
+      <pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/antibody/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Antigen</title>
+      <link>/tags/antigen/</link>
+      <pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/antigen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Immune</title>
+      <link>/tags/immune/</link>
+      <pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/immune/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>eye structure</title>
       <link>/tags/eye-structure/</link>
@@ -157,33 +184,6 @@
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/rna-sequence/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Database</title>
-      <link>/tags/database/</link>
-      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GEO</title>
-      <link>/tags/geo/</link>
-      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/geo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Colab</title>
-      <link>/tags/colab/</link>
-      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/colab/</guid>
       <description></description>
     </item>
     

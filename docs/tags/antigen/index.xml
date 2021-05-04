@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Antigen on xiaoni&#39;s blog</title>
+    <link>/tags/antigen/</link>
+    <description>Recent content in Antigen on xiaoni&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 03 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/antigen/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>免疫学</title>
+      <link>/post/immune01/</link>
+      <pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/immune01/</guid>
+      <description>&lt;p&gt;13年前学的免疫学，现在基本还给老师了。要想深入的理解目前的领域，基础与原理是根本。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

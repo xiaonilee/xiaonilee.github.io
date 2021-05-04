@@ -6,7 +6,16 @@
     <description>Recent content in Posts on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 24 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>免疫学</title>
+      <link>/post/immune01/</link>
+      <pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/immune01/</guid>
+      <description>&lt;p&gt;13年前学的免疫学，现在基本还给老师了。要想深入的理解目前的领域，基础与原理是根本。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>认识眼部结构</title>
       <link>/post/eye01/</link>
@@ -208,16 +217,6 @@
       <guid>/post/tumorimmune/</guid>
       <description>&lt;p&gt;Recent clinical successes of cancer immunotherapy necessitate the investigation of the interaction between malignant cells and the host immune system.&lt;/p&gt;
 &lt;p&gt;Herein, I summarized five bioinformatics tools for comprehensive analysis of tumor-infiltrating immune cells.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Identification of Therapeutic Targets and Prognostic Biomarkers Among CXC Chemokines in the Renal Cell Carcinoma Microenvironment</title>
-      <link>/post/frontoncol/</link>
-      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/frontoncol/</guid>
-      <description>&lt;p&gt;In this study, the authors conducted an in-depth and comprehensive bioinformatics analysis of the expression of &lt;strong&gt;CXC chemokines&lt;/strong&gt; in &lt;strong&gt;Renal cell carcinoma&lt;/strong&gt;  and evaluated their potential as therapeutic targets and prognostic biomarkers based on several large public databases.&lt;/p&gt;
-&lt;p&gt;Herein, I will recover all figures for this paper step by step.&lt;/p&gt;</description>
     </item>
     
   </channel>
