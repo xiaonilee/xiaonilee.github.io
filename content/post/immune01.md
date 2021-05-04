@@ -25,3 +25,7 @@ mathjax: true
 ![fig1](fig1.jpeg)
 
 ![fig2](fig2.jpeg)
+
+## ELISA protocol summary
+
+![fig3](fig3.png)
