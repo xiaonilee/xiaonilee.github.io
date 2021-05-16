@@ -55,11 +55,7 @@ defaultContentLanguage = "en"           # Default language to use
   weight = 20
   identifier = "archives"
   url = "/post/"
-# [[menu.main]]
-#  name = "Q&A"
-#  weight = 60
-#  identifier = "Q"
-#  url = "/Q/"
+
 
 
 
