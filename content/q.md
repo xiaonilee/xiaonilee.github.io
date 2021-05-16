@@ -2,7 +2,7 @@
 title: "为什么学习生信与大数据AI?"
 date: 2021-03-13
 lastmod: 2021-03-22
-draft: false
+draft: true
 tags: ["Bioinformatics", "machine learning", "big data", "AI", “Research”]
 categories: ["Bioinformatics", "machine learning", "big data", "AI", “Research”]
 author: "Xiaoni"

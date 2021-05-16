@@ -6,25 +6,7 @@
     <description>Recent content in Categories on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 03 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Immune</title>
-      <link>/categories/immune/</link>
-      <pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/immune/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>eye structure</title>
-      <link>/categories/eye-structure/</link>
-      <pubDate>Sat, 24 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/eye-structure/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bioinformatics</title>
       <link>/categories/bioinformatics/</link>
@@ -58,42 +40,6 @@
       <pubDate>Fri, 19 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/rstudio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AI</title>
-      <link>/categories/ai/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/ai/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>big data</title>
-      <link>/categories/big-data/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/big-data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>machine learning</title>
-      <link>/categories/machine-learning/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>“Research”</title>
-      <link>/categories/research/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/research/</guid>
       <description></description>
     </item>
     
@@ -184,6 +130,60 @@
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Colab</title>
+      <link>/categories/colab/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/colab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>/categories/linux/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/categories/python/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GSE</title>
+      <link>/categories/gse/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/gse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Survival analysis</title>
+      <link>/categories/survival-analysis/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/survival-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recover Paper</title>
+      <link>/categories/recover-paper/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/recover-paper/</guid>
       <description></description>
     </item>
     

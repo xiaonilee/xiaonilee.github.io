@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>big data on xiaoni&#39;s blog</title>
+    <title>Big data on xiaoni&#39;s blog</title>
     <link>/tags/big-data/</link>
-    <description>Recent content in big data on xiaoni&#39;s blog</description>
+    <description>Recent content in Big data on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/big-data/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>为什么学习生信与大数据AI?</title>
-      <link>/q/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/q/</guid>
-      <description>&lt;p&gt;为什么要学习生信与AI大数据？这篇blog中，我将简要讲述我的生物，生信与AI大数据之路。&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Tue, 02 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/big-data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Spider</title>
       <link>/post/webcrawler/</link>

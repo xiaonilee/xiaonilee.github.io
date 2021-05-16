@@ -28,15 +28,6 @@
     </item>
     
     <item>
-      <title>为什么学习生信与大数据AI?</title>
-      <link>/q/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/q/</guid>
-      <description>&lt;p&gt;为什么要学习生信与AI大数据？这篇blog中，我将简要讲述我的生物，生信与AI大数据之路。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Download mRNA lncRNA and miRNA and match clinical information with R from UCSC Xena</title>
       <link>/post/ucscdownload/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
@@ -217,6 +208,15 @@
       
       <guid>/post/webfrontend/</guid>
       <description>&lt;p&gt;Web front-end development&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>a Shiny Demo: kmeans clustering</title>
+      <link>/post/shiny02/</link>
+      <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/shiny02/</guid>
+      <description>&lt;p&gt;Recover a Shiny app demo - kmeans clustering.&lt;/p&gt;</description>
     </item>
     
   </channel>
