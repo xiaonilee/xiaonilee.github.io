@@ -11,10 +11,10 @@ weight: 1
 
 mathjax: true
 
-# menu:
-#   main:
-#     parent: "docs"
-#     weight: 1
+menu:
+  main:
+    parent: "docs"
+    weight: 1
 ---
 
 Modern experimental technologies can assay large numbers of biological sequences, but engineered protein libraries rarely exceed the sequence diversity of natural protein families. Machine learning (ML) models trained directly on experimental data without biophysical modeling provide one route to accessing the full potential diversity of engineered proteins.
