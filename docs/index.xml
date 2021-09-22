@@ -6,10 +6,21 @@
     <description>Recent content on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Sep 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Deep diversification of an AAV capsid protein by machine learning</title>
+      <link>/post/aavcapsid/</link>
+      <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/aavcapsid/</guid>
+      
+        <description>&lt;p&gt;Modern experimental technologies can assay large numbers of biological sequences, but engineered protein libraries rarely exceed the sequence diversity of natural protein families. Machine learning (ML) models trained directly on experimental data without biophysical modeling provide one route to accessing the full potential diversity of engineered proteins.&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>Review raw data with ggpairs</title>
@@ -250,17 +261,6 @@
       
         <description>&lt;p&gt;In this study, the authors conducted an in-depth and comprehensive bioinformatics analysis of the expression of &lt;strong&gt;CXC chemokines&lt;/strong&gt; in &lt;strong&gt;Renal cell carcinoma&lt;/strong&gt;  and evaluated their potential as therapeutic targets and prognostic biomarkers based on several large public databases.&lt;/p&gt;
 &lt;p&gt;Herein, I will recover all figures for this paper step by step.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>web front end</title>
-      <link>/post/webfrontend/</link>
-      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/webfrontend/</guid>
-      
-        <description>&lt;p&gt;Web front-end development&lt;/p&gt;</description>
       
     </item>
     

@@ -6,7 +6,16 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AAV capsid protein variants</title>
+      <link>/tags/aav-capsid-protein-variants/</link>
+      <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/aav-capsid-protein-variants/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Bioinformatics</title>
       <link>/tags/bioinformatics/</link>
@@ -175,15 +184,6 @@
       <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/survival-analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cancer Research</title>
-      <link>/tags/cancer-research/</link>
-      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/cancer-research/</guid>
       <description></description>
     </item>
     
