@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>eye structure on xiaoni&#39;s blog</title>
-    <link>/categories/eye-structure/</link>
-    <description>Recent content in eye structure on xiaoni&#39;s blog</description>
+    <title>Eye Anatomy on xiaoni&#39;s blog</title>
+    <link>/tags/eye-anatomy/</link>
+    <description>Recent content in Eye Anatomy on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 24 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/eye-structure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/eye-anatomy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Eye Anatomy</title>
       <link>/post/eye01/</link>

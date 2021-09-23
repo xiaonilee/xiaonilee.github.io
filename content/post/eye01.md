@@ -1,10 +1,10 @@
 ---
-title: "认识眼部结构"
+title: "Eye Anatomy"
 date: 2021-04-24
 lastmod: 2021-04-25
 draft: false
-tags: ["eye structure"]
-categories: ["eye structure"]
+tags: ["eye structure", "Eye Anatomy"]
+categories: ["eye structure", "Eye Anatomy"]
 author: "Xiaoni"
 
 weight: 1
