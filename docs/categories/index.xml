@@ -26,6 +26,24 @@
     </item>
     
     <item>
+      <title>Immune</title>
+      <link>/categories/immune/</link>
+      <pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/immune/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>eye structure</title>
+      <link>/categories/eye-structure/</link>
+      <pubDate>Sat, 24 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/eye-structure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Bioinformatics</title>
       <link>/categories/bioinformatics/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
@@ -166,24 +184,6 @@
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>/categories/python/</link>
-      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GSE</title>
-      <link>/categories/gse/</link>
-      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/gse/</guid>
       <description></description>
     </item>
     
