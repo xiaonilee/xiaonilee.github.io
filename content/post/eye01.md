@@ -2,7 +2,7 @@
 title: "Eye Anatomy"
 date: 2021-04-24
 lastmod: 2021-04-25
-draft: false
+draft: true
 tags: ["eye structure", "Eye Anatomy"]
 categories: ["eye structure", "Eye Anatomy"]
 author: "Xiaoni"
