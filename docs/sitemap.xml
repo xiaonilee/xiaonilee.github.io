@@ -16,13 +16,6 @@
   </url>
   
   <url>
-    <loc>/post/eye01/</loc>
-    <lastmod>2021-04-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>/post/ggpairs/</loc>
     <lastmod>2021-03-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -557,34 +550,6 @@
   <url>
     <loc>/categories/immune/</loc>
     <lastmod>2021-05-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/eye-anatomy/</loc>
-    <lastmod>2021-04-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/eye-anatomy/</loc>
-    <lastmod>2021-04-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/eye-structure/</loc>
-    <lastmod>2021-04-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/eye-structure/</loc>
-    <lastmod>2021-04-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

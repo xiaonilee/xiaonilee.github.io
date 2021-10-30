@@ -44,24 +44,6 @@
     </item>
     
     <item>
-      <title>Eye Anatomy</title>
-      <link>/tags/eye-anatomy/</link>
-      <pubDate>Sat, 24 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/eye-anatomy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>eye structure</title>
-      <link>/tags/eye-structure/</link>
-      <pubDate>Sat, 24 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/eye-structure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Bioinformatics</title>
       <link>/tags/bioinformatics/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
@@ -184,6 +166,24 @@
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/geo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Colab</title>
+      <link>/tags/colab/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/colab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/linux/</guid>
       <description></description>
     </item>
     
