@@ -6,7 +6,25 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MIDD</title>
+      <link>/tags/midd/</link>
+      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/midd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pharmacometrics</title>
+      <link>/tags/pharmacometrics/</link>
+      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/pharmacometrics/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>AAV capsid protein variants</title>
       <link>/tags/aav-capsid-protein-variants/</link>
@@ -166,24 +184,6 @@
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GSE</title>
-      <link>/tags/gse/</link>
-      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/gse/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Survival analysis</title>
-      <link>/tags/survival-analysis/</link>
-      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/survival-analysis/</guid>
       <description></description>
     </item>
     

@@ -6,7 +6,16 @@
     <description>Recent content in Posts on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pharmacometrics</title>
+      <link>/post/pm/</link>
+      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/pm/</guid>
+      <description>&lt;p&gt;Hello, Pharmacometrics. I&amp;rsquo;m coming.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Deep diversification of an AAV capsid protein by machine learning</title>
       <link>/post/aavcapsid/</link>
@@ -208,16 +217,6 @@
       <guid>/post/tumorimmune/</guid>
       <description>&lt;p&gt;Recent clinical successes of cancer immunotherapy necessitate the investigation of the interaction between malignant cells and the host immune system.&lt;/p&gt;
 &lt;p&gt;Herein, I summarized five bioinformatics tools for comprehensive analysis of tumor-infiltrating immune cells.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Identification of Therapeutic Targets and Prognostic Biomarkers Among CXC Chemokines in the Renal Cell Carcinoma Microenvironment</title>
-      <link>/post/frontoncol/</link>
-      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/frontoncol/</guid>
-      <description>&lt;p&gt;In this study, the authors conducted an in-depth and comprehensive bioinformatics analysis of the expression of &lt;strong&gt;CXC chemokines&lt;/strong&gt; in &lt;strong&gt;Renal cell carcinoma&lt;/strong&gt;  and evaluated their potential as therapeutic targets and prognostic biomarkers based on several large public databases.&lt;/p&gt;
-&lt;p&gt;Herein, I will recover all figures for this paper step by step.&lt;/p&gt;</description>
     </item>
     
   </channel>
