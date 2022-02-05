@@ -1,9 +1,9 @@
 ---
 title: "Math Preview"
-author: "Murray Bourne"
+author: "Author"
 date: 2022-02-05
 lastmod: 2022-02-05
-draft: false
+draft: true
 tags: ["preview", "math", "tag-6"]
 categories: ["docs", "math", "index"]
 
