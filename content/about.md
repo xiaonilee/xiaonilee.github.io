@@ -10,9 +10,9 @@ comment: false
 mathjax: false
 ---
 
-`Keep Learning`
+`Keep Learning`- 让生命更加精彩.
 
- `Work Hard`
+`Work Hard`- 让人生更有价值.
 
 
 <!--more-->
@@ -81,3 +81,7 @@ mathjax: false
   - [Machine Learning_ud120](https://www.udacity.com/course/intro-to-machine-learning--ud120), and [my github repository](https://github.com/xiaonilee/Introduction_To_Machine_Learning_ud120) 
   - [TensorFlow2](/post/tensorflow2/)
 
+## Medical 
+
+- **Pathophysiology**
+  - HCO3^{-}
