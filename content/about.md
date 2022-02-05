@@ -25,7 +25,7 @@ markup: mmark
 ![Work time](a11.png) 
 ![Work time2](a0.png)
 
-## Bioinformatics In My Research
+## Data Science In My Research
 
 - **My project**
 
