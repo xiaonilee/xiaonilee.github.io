@@ -7,7 +7,10 @@ weight: 50
 
 # you can close something for this content if you open it in config.toml.
 comment: false
-mathjax: false
+mathjax: true
+katex: true
+markup: mmark
+
 ---
 
 `Keep Learning`- 让生命更加精彩.
@@ -84,4 +87,8 @@ mathjax: false
 ## Medical 
 
 - **Pathophysiology**
-  - \frac{HCO3}
+  
+$$
+\displaystyle \frac{(代谢因素) HCO_3^-}{(呼吸因素) H_2CO_3} = \frac{20}{1} = pH正常
+$$
+  
