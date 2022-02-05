@@ -84,4 +84,4 @@ mathjax: false
 ## Medical 
 
 - **Pathophysiology**
-  - HCO3^{-}
+  - \frac{HCO3}
