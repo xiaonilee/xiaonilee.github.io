@@ -4,7 +4,7 @@ date: 2021-03-12
 lastmod: 2021-03-12
 draft: false
 tags: ["R", "Bioinformatics", "UCSC", "Xena", "TCGA", "Ensembl"]
-categories: ["R", "Bioinformatics", "UCSC", "Xena", "TCGA", "EnsemblDataset"]
+categories: ["R", "Bioinformatics", "UCSC", "Xena", "TCGA", "Ensembl"]
 author: "Xiaoni"
 
 weight: 1
