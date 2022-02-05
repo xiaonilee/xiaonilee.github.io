@@ -10,7 +10,9 @@ comment: false
 mathjax: false
 ---
 
-`Keep Learning` & `Work Hard`.
+`Keep Learning`
+
+ `Work Hard`
 
 
 <!--more-->
