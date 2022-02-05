@@ -10,9 +10,7 @@ comment: false
 mathjax: false
 ---
 
-`Keep Learning`- Learn more and more advanced technologies/methods and read science papers to keep up with the cutting-edge research.
-
-`Keep Thinking`- Think how to apply advanced technologies/methods to high level research work.
+`Keep Learning` & `Work Hard`.
 
 
 <!--more-->
