@@ -97,6 +97,6 @@ markup: mmark
   - 呼碱
 
 $$
-\displaystyle \odot\ 神奇的比例 \odot\ \Rightarrow\ \frac{(代谢因素) HCO_3^-}{(呼吸因素) H_2CO_3} = \frac{20}{1} = PH 7.4 (正常 7.35~7.45)
+\displaystyle \odot\ 神奇的比例 \odot\ \Rightarrow\ \frac{(代谢因素) HCO_3^-}{(呼吸因素) H_2CO_3} = \frac{20}{1} = PH 7.4 (正常 7.35-7.45)
 $$
   
