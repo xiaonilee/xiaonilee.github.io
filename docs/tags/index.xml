@@ -6,7 +6,25 @@
     <description>Recent content in Tags on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 21 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>medical</title>
+      <link>/tags/medical/</link>
+      <pubDate>Sun, 06 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/medical/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pathophysiology</title>
+      <link>/tags/pathophysiology/</link>
+      <pubDate>Sun, 06 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/pathophysiology/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>MIDD</title>
       <link>/tags/midd/</link>
@@ -166,24 +184,6 @@
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/colab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>/tags/linux/</link>
-      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>/tags/python/</link>
-      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/python/</guid>
       <description></description>
     </item>
     
