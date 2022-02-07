@@ -8,12 +8,12 @@
     <language>en</language>
     <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/ensembl/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Download mRNA lncRNA and miRNA and match clinical information with R from UCSC Xena</title>
+      <title>Data from mRNA lncRNA and miRNA and match clinical information with R from UCSC Xena</title>
       <link>/post/ucscdownload/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>/post/ucscdownload/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s very convenient to download datasets from UCSC Xena. Normally, datasets will need to be processed and transformed with R language.&lt;/p&gt;
+      <description>&lt;p&gt;It&amp;rsquo;s very convenient to get datasets from UCSC Xena. Normally, datasets will need to be processed and transformed with R language.&lt;/p&gt;
 &lt;p&gt;Herein, I will recover the protocol of datasets processed.&lt;/p&gt;</description>
     </item>
     

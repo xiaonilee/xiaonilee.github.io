@@ -1,5 +1,5 @@
 ---
-title: "Download mRNA lncRNA and miRNA and match clinical information with R from UCSC Xena"
+title: "Data from mRNA lncRNA and miRNA and match clinical information with R from UCSC Xena"
 date: 2021-03-12
 lastmod: 2021-03-12
 draft: false
@@ -17,7 +17,7 @@ mathjax: true
 #     weight: 1
 ---
 
-It's very convenient to download datasets from UCSC Xena. Normally, datasets will need to be processed and transformed with R language. 
+It's very convenient to get datasets from UCSC Xena. Normally, datasets will need to be processed and transformed with R language. 
 
 Herein, I will recover the protocol of datasets processed.
 
