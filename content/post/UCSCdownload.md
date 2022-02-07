@@ -1,5 +1,5 @@
 ---
-title: "Data from mRNA lncRNA and miRNA and match clinical information with R from UCSC Xena"
+title: "Download mRNA lncRNA and miRNA and match clinical information with R from UCSC Xena"
 date: 2021-03-12
 lastmod: 2021-03-12
 draft: false
