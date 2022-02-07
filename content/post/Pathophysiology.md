@@ -1,7 +1,7 @@
 ---
 title: "Pathophysiology"
-date: 2022-02-06
-lastmod: 2022-02-06
+date: 2022-02-02
+lastmod: 2022-02-07
 draft: false
 tags: ["medical", "Pathophysiology"]
 categories: ["medical", "Pathophysiology"]
@@ -17,7 +17,7 @@ mathjax: true
 #     weight: 1
 ---
  
-`Medical` -- **Pathophysiology**
+**Pathophysiology** - 病理生理学（病生）。
 
 <!--more-->
 
