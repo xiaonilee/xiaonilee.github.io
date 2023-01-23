@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>program on xiaoni&#39;s blog</title>
+    <link>/tags/program/</link>
+    <description>Recent content in program on xiaoni&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 23 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo cmd note</title>
+      <link>/post/hugocmd/</link>
+      <pubDate>Mon, 23 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hugocmd/</guid>
+      <description>&lt;p&gt;Note about &lt;strong&gt;hugo for windows&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Step1. Download and install the &lt;code&gt;hugo&lt;/code&gt;.
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Hugo&lt;/code&gt; is available in two editions: &lt;code&gt;standard&lt;/code&gt; and &lt;code&gt;extended&lt;/code&gt;. Here, download the &lt;strong&gt;Hugo windows-extended&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Step2. Build website.
+&lt;ul&gt;
+&lt;li&gt;run &lt;code&gt;hugo server&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;run &lt;code&gt;hugo -d .\docs\&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,25 @@
     <description>Recent content in Categories on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo</title>
+      <link>/categories/hugo/</link>
+      <pubDate>Mon, 23 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>program</title>
+      <link>/categories/program/</link>
+      <pubDate>Mon, 23 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/program/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>medical</title>
       <link>/categories/medical/</link>
@@ -166,24 +184,6 @@
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/rna-sequence/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cancer Research</title>
-      <link>/categories/cancer-research/</link>
-      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/cancer-research/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Database</title>
-      <link>/categories/database/</link>
-      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/database/</guid>
       <description></description>
     </item>
     

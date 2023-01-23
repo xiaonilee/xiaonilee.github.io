@@ -6,7 +6,29 @@
     <description>Recent content in Posts on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo cmd note</title>
+      <link>/post/hugocmd/</link>
+      <pubDate>Mon, 23 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hugocmd/</guid>
+      <description>&lt;p&gt;Note about &lt;strong&gt;hugo for windows&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Step1. Download and install the &lt;code&gt;hugo&lt;/code&gt;.
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Hugo&lt;/code&gt; is available in two editions: &lt;code&gt;standard&lt;/code&gt; and &lt;code&gt;extended&lt;/code&gt;. Here, download the &lt;strong&gt;Hugo windows-extended&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Step2. Build website.
+&lt;ul&gt;
+&lt;li&gt;run &lt;code&gt;hugo server&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;run &lt;code&gt;hugo -d .\docs\&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
     <item>
       <title>Pathophysiology</title>
       <link>/post/pathophysiology/</link>
@@ -207,15 +229,6 @@
       <guid>/post/bioscirep/</guid>
       <description>&lt;p&gt;The present study assessed the correlation between &lt;strong&gt;PITX1&lt;/strong&gt; expression and the prognostic factor of &lt;strong&gt;breast cancer&lt;/strong&gt; by using various online analysis databases to explore the prognostic significance of PITX1 gene in the treatment of breast cancer.&lt;/p&gt;
 &lt;p&gt;Herein, I will recover all figures for this paper step by step.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Python Spider</title>
-      <link>/post/webcrawler/</link>
-      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/webcrawler/</guid>
-      <description>&lt;p&gt;Python Web Crawler&lt;/p&gt;</description>
     </item>
     
   </channel>
