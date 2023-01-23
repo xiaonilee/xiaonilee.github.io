@@ -26,6 +26,24 @@
     </item>
     
     <item>
+      <title>MIDD</title>
+      <link>/tags/midd/</link>
+      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/midd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pharmacometrics</title>
+      <link>/tags/pharmacometrics/</link>
+      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/pharmacometrics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>AAV capsid protein variants</title>
       <link>/tags/aav-capsid-protein-variants/</link>
       <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
@@ -166,24 +184,6 @@
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/colab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>/tags/linux/</link>
-      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>/tags/python/</link>
-      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/python/</guid>
       <description></description>
     </item>
     

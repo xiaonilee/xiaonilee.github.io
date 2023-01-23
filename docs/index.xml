@@ -23,6 +23,17 @@
     </item>
     
     <item>
+      <title>Pharmacometrics</title>
+      <link>/post/pharmacometrics/</link>
+      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/pharmacometrics/</guid>
+      
+        <description>&lt;p&gt;Hello, Pharmacometrics. I&amp;rsquo;m coming.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>Deep diversification of an AAV capsid protein by machine learning</title>
       <link>/post/aavcapsid/</link>
       <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
@@ -248,18 +259,6 @@
       <guid>/post/webcrawler/</guid>
       
         <description>&lt;p&gt;Python Web Crawler&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Comprehensive Bioinformatics Analysis of Tumor-Infiltrating Immune Cells</title>
-      <link>/post/tumorimmune/</link>
-      <pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/tumorimmune/</guid>
-      
-        <description>&lt;p&gt;Recent clinical successes of cancer immunotherapy necessitate the investigation of the interaction between malignant cells and the host immune system.&lt;/p&gt;
-&lt;p&gt;Herein, I summarized five bioinformatics tools for comprehensive analysis of tumor-infiltrating immune cells.&lt;/p&gt;</description>
       
     </item>
     
