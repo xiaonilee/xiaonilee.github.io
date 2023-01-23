@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TCGA on xiaoni&#39;s blog</title>
+    <link>/tags/tcga/</link>
+    <description>Recent content in TCGA on xiaoni&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/tcga/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Download mRNA lncRNA and miRNA and match clinical information with R from UCSC Xena</title>
+      <link>/post/ucscdownload/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscdownload/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s very convenient to get datasets from UCSC Xena. Normally, datasets will need to be processed and transformed with R language.&lt;/p&gt;
+&lt;p&gt;Herein, I will recover the protocol of datasets processed.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GSCALite: Gene Set Cancer Analysis</title>
+      <link>/post/gscalite/</link>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gscalite/</guid>
+      <description>&lt;p&gt;GSCALite: a web-based platform for Gene Set Cancer Analysis.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>R Notebook : Application Exercises</title>
+      <link>/post/hmwk10/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hmwk10/</guid>
+      <description>&lt;p&gt;Bioinformatics Exercises of Application with &lt;a href=&#34;hmwk10.Rmd&#34;&gt;R&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>R re-analysis in TCGA</title>
+      <link>/post/tricktcga/</link>
+      <pubDate>Mon, 12 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/tricktcga/</guid>
+      <description>&lt;p&gt;Data setup via TCGA.&lt;/p&gt;
+&lt;p&gt;Re-analysis by R.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OncoLnc: A straightforward Tool</title>
+      <link>/post/oncolnc/</link>
+      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/oncolnc/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;OncoLnc Web Tool&lt;/strong&gt;: Interactively exploring survival correlations, and for downloading clinical data coupled to expression data for mRNAs, miRNAs, or lncRNAs from &lt;em&gt;&lt;strong&gt;TCGA&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GDC Notebook</title>
+      <link>/post/gdc/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gdc/</guid>
+      <description>&lt;p&gt;The Genomic Data Commons (&lt;a href=&#34;https://portal.gdc.cancer.gov/&#34;&gt;GDC&lt;/a&gt;), is a research program of the National Cancer Institute (NCI).&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;mission&lt;/strong&gt; of the GDC is to provide the cancer research community with a &lt;strong&gt;unified&lt;/strong&gt; data repository that enables data sharing across cancer genomic studies in support of &lt;strong&gt;precision medicine&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FireBrowse Notebook</title>
+      <link>/post/firebrowse/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/firebrowse/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://firebrowse.org/&#34;&gt;FireBrowse Homepage&lt;/a&gt; and &lt;a href=&#34;http://gdac.broadinstitute.org/&#34;&gt;&lt;em&gt;BROAD GDAC&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Analysis with FIREHOSE plus TCGA UCSC Xena.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

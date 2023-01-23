@@ -1,0 +1,6 @@
+life                    Healthy Life Expectancy at Age 65
+npar-package            Functions for nonparametric group comparisons.
+oneway                  Nonparametric group comparisons
+plot.oneway             Plot nonparametric group comparisons
+print.oneway            Print multiple comparisons
+summary.oneway          Summarize oneway nonparametric analyses

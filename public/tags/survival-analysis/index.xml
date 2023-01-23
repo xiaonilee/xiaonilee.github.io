@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Survival analysis on xiaoni&#39;s blog</title>
+    <link>/tags/survival-analysis/</link>
+    <description>Recent content in Survival analysis on xiaoni&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 15 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/survival-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Survival Analysis with data from GSE database</title>
+      <link>/post/survival/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/survival/</guid>
+      <description>&lt;p&gt;Class topics - Survival Analysis with R code.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

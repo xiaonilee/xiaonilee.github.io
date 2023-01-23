@@ -1,0 +1,265 @@
+
+# Chapter 19. Advanced graphics with ggplot2
+
+
+# This chapter covers
+#   An introduction to the ggplot2 package
+#   Using shape, color, and size to visualize multivariate data
+#   Comparing groups with faceted graphs
+#   Customizing ggplot2 plots
+
+# Remove most objects from the working environment
+rm(list = ls())
+options(stringsAsFactors = F)
+
+
+# 19.2. An introduction to the ggplot2 package
+# figure 19.1
+library(ggplot2)
+ggplot(data = mtcars, aes(x=wt, y=mpg)) +
+  geom_point() +
+  labs(title = "Automobile Data", x="Weight", y="Miles Per Gallon")
+
+
+# figure 19.2
+library(ggplot2)
+ggplot(data=mtcars, aes(x=wt, y=mpg)) +
+  geom_point(pch=17, color="blue", size=2) +
+  geom_smooth(method="lm", color="red", linetype=2) +
+  labs(title="Automobile Data", x="Weight", y="Miles Per Gallon")
+
+mtcars$am <- factor(mtcars$am, levels=c(0,1),
+                    labels=c("Automatic", "Manual"))
+mtcars$vs <- factor(mtcars$vs, levels=c(0,1),
+                    labels=c("V-Engine", "Straight Engine"))
+mtcars$cyl <- factor(mtcars$cyl)
+
+
+# figure 19.3
+library(ggplot2)
+ggplot(data=mtcars, aes(x=hp, y=mpg,
+                        shape=cyl, color=cyl)) +
+  geom_point(size=3) +
+  facet_grid(am~vs) +
+  labs(title="Automobile Data by Engine Type",
+       x="Horsepower", y="Miles Per Gallon")
+
+
+# 19.3. Specifying the plot type with geoms
+# figure 19.4
+data(singer, package = "lattice")
+ggplot(singer, aes(x=height)) + geom_histogram()
+
+
+# figure 19.5
+ggplot(singer, aes(x=voice.part, y=height)) + geom_boxplot()
+
+
+# figure 19.6
+data(Salaries, package="carData")
+
+dim(Salaries)
+# [1] 397   6
+
+head(Salaries)
+
+#        rank discipline yrs.since.phd yrs.service  sex salary
+# 1      Prof          B            19          18 Male 139750
+# 2      Prof          B            20          16 Male 173200
+# 3  AsstProf          B             4           3 Male  79750
+# 4      Prof          B            45          39 Male 115000
+# 5      Prof          B            40          41 Male 141500
+# 6 AssocProf          B             6           6 Male  97000
+
+colnames(Salaries)
+# [1] "rank"          "discipline"    "yrs.since.phd" "yrs.service"   "sex"          
+# [6] "salary" 
+library(ggplot2)
+ggplot(Salaries, aes(x=rank, y=salary)) +
+  geom_boxplot(fill="cornflowerblue",
+               color="black", notch=TRUE) +
+  geom_point(position="jitter", color="red", alpha=.5) +
+  geom_rug(side="l", color="black")
+
+
+# figure 19.7
+library(ggplot2)
+data(singer, package="lattice")
+ggplot(singer, aes(x=voice.part, y=height)) +
+  geom_violin(fill="lightpink") +
+  geom_boxplot(fill="lightgray", width=.2)
+
+
+# 19.4. Grouping
+# figure 19.8
+data(Salaries, package="carData")
+library(ggplot2)
+ggplot(data=Salaries, aes(x=salary, fill=rank)) +
+  geom_density(alpha=.3)
+
+# figure 19.9
+ggplot(Salaries, aes(x=yrs.since.phd, y=salary, color=rank,
+                     shape=sex)) + geom_point()
+
+
+# figure 19.10
+require(gridExtra)
+plot1 <- ggplot(Salaries, aes(x=rank, fill=sex)) +
+  geom_bar(position="stack") + labs(title='position="stack"')
+
+plot2 <- ggplot(Salaries, aes(x=rank, fill=sex)) +
+  geom_bar(position="dodge") + labs(title='position="dodge"')
+
+plot3 <- ggplot(Salaries, aes(x=rank, fill=sex)) +
+  geom_bar(position="fill") + labs(title='position="fill"')
+
+grid.arrange(plot1, plot2, plot3, ncol=3)
+
+
+# 19.5. Faceting
+# figure 19.11
+data(singer, package="lattice")
+library(ggplot2)
+ggplot(data=singer, aes(x=height)) +
+  geom_histogram() +
+  facet_wrap(~voice.part, nrow=4)
+
+
+# figure 19.12
+library(ggplot2)
+ggplot(Salaries, aes(x=yrs.since.phd, y=salary, color=rank,
+                     shape=rank)) + geom_point() + facet_grid(.~sex)
+
+
+# figure 19.13
+data(singer, package="lattice")
+library(ggplot2)
+ggplot(data=singer, aes(x=height, fill=voice.part)) +
+  geom_density() +
+  facet_grid(voice.part~.)
+
+
+# 19.6. Adding smoothed lines
+# figure 19.14
+data(Salaries, package="carData")
+library(ggplot2)
+ggplot(data=Salaries, aes(x=yrs.since.phd, y=salary)) +
+  geom_smooth() +
+  geom_point()
+
+# figure 19.15
+ggplot(data=Salaries, aes(x=yrs.since.phd, y=salary,
+                          linetype=sex, shape=sex, color=sex)) +
+  geom_smooth(method=lm, formula=y~poly(x,2),
+              se=FALSE, size=1) +
+  geom_point(size=2)
+
+# 19.7.1. Axes
+# figure 19.16
+data(Salaries,package="carData")
+library(ggplot2)
+ggplot(data=Salaries, aes(x=rank, y=salary, fill=sex)) +
+  geom_boxplot() +
+  scale_x_discrete(breaks=c("AsstProf", "AssocProf", "Prof"),
+                   labels=c("Assistant\nProfessor",
+                            "Associate\nProfessor",
+                            "Full\nProfessor")) +
+  scale_y_continuous(breaks=c(50000, 100000, 150000, 200000),
+                     labels=c("$50K", "$100K", "$150K", "$200K")) +
+  labs(title="Faculty Salary by Rank and Sex", x="", y="")
+
+# 19.7.2. Legends
+# figure 19.17
+data(Salaries,package="carData")
+library(ggplot2)
+ggplot(data=Salaries, aes(x=rank, y=salary, fill=sex)) +
+  geom_boxplot() +
+  scale_x_discrete(breaks=c("AsstProf", "AssocProf", "Prof"),
+                   labels=c("Assistant\nProfessor",
+                            "Associate\nProfessor",
+                            "Full\nProfessor")) +
+  scale_y_continuous(breaks=c(50000, 100000, 150000, 200000),
+                     labels=c("$50K", "$100K", "$150K", "$200K")) +
+  labs(title="Faculty Salary by Rank and Gender",
+       x="", y="", fill="Gender") +
+  theme(legend.position=c(.1,.8))
+
+# 19.7.3 Scales
+# figure 19.18
+ggplot(mtcars, aes(x=wt, y=mpg, size=disp)) +
+  geom_point(shape=21, color="black", fill="cornsilk") +
+  labs(x="Weight", y="Miles Per Gallon",
+       title="Bubble Chart", size="Engine\nDisplacement")
+
+
+# figure 19.19
+data(Salaries, package="carData")
+ggplot(data=Salaries, aes(x=yrs.since.phd, y=salary, color=rank)) +
+  scale_color_manual(values=c("orange", "olivedrab", "navy")) +
+  geom_point(size=2)
+
+# figure 19.19-2
+ggplot(data=Salaries, aes(x=yrs.since.phd, y=salary, color=rank)) +
+  scale_color_brewer(palette="Set1") + 
+  geom_point(size=2)
+
+library(RColorBrewer)
+display.brewer.all()
+
+
+# 19.7.4. Themes
+data(Salaries, package="carData")
+library(ggplot2)
+mytheme <- theme(plot.title=element_text(face="bold.italic",
+                                         size="14", color="brown"),
+                 axis.title=element_text(face="bold.italic",
+                                         size=10, color="brown"),
+                 axis.text=element_text(face="bold", size=9,
+                                        color="darkblue"),
+                 panel.background=element_rect(fill="white",
+                                               color="darkblue"),
+                 panel.grid.major.y=element_line(color="grey",
+                                                 linetype=1),
+                 panel.grid.minor.y=element_line(color="grey",
+                                                 linetype=2),
+                 panel.grid.minor.x=element_blank(),
+                 legend.position="top")
+
+ggplot(Salaries, aes(x=rank, y=salary, fill=sex)) +
+  geom_boxplot() +
+  labs(title="Salary by Rank and Sex", x="Rank", y="Salary") +
+  mytheme
+
+# alternative no define of mytheme
+ggplot(Salaries, aes(x=rank, y=salary, fill=sex)) +
+  geom_boxplot() +
+  labs(title="Salary by Rank and Sex", x="Rank", y="Salary") +
+  theme(plot.title=element_text(face="bold.italic",
+                                size="14", color="brown"),
+        axis.title=element_text(face="bold.italic",
+                                size=10, color="brown"),
+        axis.text=element_text(face="bold", size=9,
+                               color="darkblue"),
+        panel.background=element_rect(fill="white",
+                                      color="darkblue"),
+        panel.grid.major.y=element_line(color="grey",
+                                        linetype=1),
+        panel.grid.minor.y=element_line(color="grey",
+                                        linetype=2),
+        panel.grid.minor.x=element_blank(),
+        legend.position="top")
+
+
+# 19.7.5. Multiple graphs per page
+data(Salaries, package="carData")
+library(ggplot2)
+p1 <- ggplot(data=Salaries, aes(x=rank)) + geom_bar()
+p2 <- ggplot(data=Salaries, aes(x=sex)) + geom_bar()
+p3 <- ggplot(data=Salaries, aes(x=yrs.since.phd, y=salary)) + geom_point()
+
+library(gridExtra)
+grid.arrange(p1, p2, p3, ncol=3)
+
+# Saving graphs
+myplot <- ggplot(data=mtcars, aes(x=mpg)) + geom_histogram()
+ggsave(file="mygraph.png", plot=myplot, width=5, height=4)

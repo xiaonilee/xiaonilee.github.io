@@ -2,7 +2,7 @@
 title: "Pharmacometrics"
 date: 2021-12-21
 lastmod: 2021-12-21
-draft: false
+draft: true
 tags: ["Pharmacometrics", "MIDD"]
 categories: ["Pharmacometrics", "MIDD"]
 author: "Xiaoni"

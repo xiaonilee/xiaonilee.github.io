@@ -1,0 +1,12 @@
+name: shiny02
+title: shiny02
+username:
+account: xiaonilee
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3322076
+bundleId: 3921440
+url: https://xiaonilee.shinyapps.io/shiny02/
+when: 1606713464.12742
+asMultiple: FALSE
+asStatic: FALSE

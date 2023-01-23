@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shiny on xiaoni&#39;s blog</title>
+    <link>/tags/shiny/</link>
+    <description>Recent content in Shiny on xiaoni&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 30 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/shiny/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>a Shiny Demo: kmeans clustering</title>
+      <link>/post/shiny02/</link>
+      <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/shiny02/</guid>
+      <description>&lt;p&gt;Recover a Shiny app demo - kmeans clustering.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Learn Shiny: Building a Shiny app</title>
+      <link>/post/shiny01/</link>
+      <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/shiny01/</guid>
+      <description>&lt;p&gt;Building a Shiny app - an interactive tutorial.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

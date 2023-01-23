@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine learning on xiaoni&#39;s blog</title>
+    <link>/categories/machine-learning/</link>
+    <description>Recent content in Machine learning on xiaoni&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deep diversification of an AAV capsid protein by machine learning</title>
+      <link>/post/aavcapsid/</link>
+      <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/aavcapsid/</guid>
+      <description>&lt;p&gt;Modern experimental technologies can assay large numbers of biological sequences, but engineered protein libraries rarely exceed the sequence diversity of natural protein families. Machine learning (ML) models trained directly on experimental data without biophysical modeling provide one route to accessing the full potential diversity of engineered proteins.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title> Machine Learning: TensorFlow2 Notebook</title>
+      <link>/post/tensorflow2/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/tensorflow2/</guid>
+      <description>&lt;p&gt;TensorFlow2 搭建优化神经网络的八股，内容包括：深度学习、神经网络的基本概念原理和代码实现示例.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TensorFlow2 class6: 循环神经网络</title>
+      <link>/post/tensorflow206/</link>
+      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/tensorflow206/</guid>
+      <description>&lt;p&gt;TensorFlow2 notebook: Class6: 循环神经网络,用基础RNN,LSTM,GRU实现股票预测.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TensorFlow2 class5: 卷积神经网络</title>
+      <link>/post/tensorflow205/</link>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/tensorflow205/</guid>
+      <description>&lt;p&gt;TensorFlow2 notebook: Class5: 卷积神经网络, 用基础CNN, LeNet, AlexNet, VGGNet, InceptionNet和ResNet实现图像识别.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TensorFlow2 class4: 网络八股扩展</title>
+      <link>/post/tensorflow204/</link>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/tensorflow204/</guid>
+      <description>&lt;p&gt;TensorFlow2 notebook: Class4: 网络八股进行扩展, 增加自制数据集, 数据增强, 断点续训, 参数提取和acc/loss可视化, 最后实现给图识物的应用程序.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TensorFlow2 class3: 神经网络八股</title>
+      <link>/post/tensorflow203/</link>
+      <pubDate>Mon, 07 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/tensorflow203/</guid>
+      <description>&lt;p&gt;TensorFlow2 notebook: Class3 神经网络搭建八股,用&amp;quot;六步法&amp;quot;, 不到20行代码, 写出手写数字识别训练模型.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TensorFlow2 class2: 数据网络优化</title>
+      <link>/post/tensorflow202/</link>
+      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/tensorflow202/</guid>
+      <description>&lt;p&gt;TensorFlow2 notebook: Class2 神经网络的优化方法, 学习率,激活函数,损失函数和正则化的使用, 用Python语言写出5种反向传播优化器(SGD, Momentum, Adagrad, RMSProp, Adam).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TensorFlow2 class1: Iris</title>
+      <link>/post/tensorflow201/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/tensorflow201/</guid>
+      <description>&lt;p&gt;TensorFlow2 notebook: Class1 神经网络的计算过程, 搭建出第一个神经网络模型.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

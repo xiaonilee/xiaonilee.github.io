@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R package on xiaoni&#39;s blog</title>
+    <link>/tags/r-package/</link>
+    <description>Recent content in R package on xiaoni&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/r-package/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Review raw data with ggpairs</title>
+      <link>/post/ggpairs/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ggpairs/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s very necessary to have a look at the data source before trying to analyze it.&lt;/p&gt;
+&lt;p&gt;In this blog, I will share a powerful function &lt;code&gt;ggpairs&lt;/code&gt; to implement the purpose.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Analysis, visualization, and integration of spatial datasets with Seurat</title>
+      <link>/post/seurat3/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/seurat3/</guid>
+      <description>&lt;p&gt;how to use Seurat to analyze spatially-resolved RNA-seq data?&lt;/p&gt;
+&lt;p&gt;Herein, the tutorial will cover these tasks:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Normalization&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dimensional reduction and clustering&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Detecting spatially-variable features&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Interactive visualization&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Integration with single-cell RNA-seq data&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Working with multiple slices&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Using Seurat with multimodal data</title>
+      <link>/post/seurat2/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/seurat2/</guid>
+      <description>&lt;p&gt;The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for &lt;em&gt;&lt;strong&gt;single-cell genomics&lt;/strong&gt;&lt;/em&gt;.  &lt;code&gt;Seurat4&lt;/code&gt; to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.&lt;/p&gt;
+&lt;p&gt;Herein, I will follow the official Tutorial to analyze multimodal using Seurat data step by step.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UCSC Topics</title>
+      <link>/post/ucscmap/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscmap/</guid>
+      <description>&lt;p&gt;Roadmap for the &lt;code&gt;UCSC topics&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The way to use R in Google Colab</title>
+      <link>/post/rincolab/</link>
+      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rincolab/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Colab&lt;/strong&gt; is an interactive notebook provided by Google (primarily) for writing and running &lt;code&gt;Python&lt;/code&gt; through a &lt;em&gt;browser&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Then, how to use R in Google Colab?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UCSC gene browser with R package Gviz - part 2</title>
+      <link>/post/ucscgenebrowser2/</link>
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscgenebrowser2/</guid>
+      <description>&lt;p&gt;Continued, in this present, to draw the customized UCSC gene Track With Gviz package.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UCSC gene browser with R package Gviz - part 1</title>
+      <link>/post/ucscgenebrowser/</link>
+      <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscgenebrowser/</guid>
+      <description>&lt;p&gt;Gviz, Visualize genomic data. Let&amp;rsquo;s dive into it to explore useful functions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>a Shiny Demo: kmeans clustering</title>
+      <link>/post/shiny02/</link>
+      <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/shiny02/</guid>
+      <description>&lt;p&gt;Recover a Shiny app demo - kmeans clustering.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Learn Shiny: Building a Shiny app</title>
+      <link>/post/shiny01/</link>
+      <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/shiny01/</guid>
+      <description>&lt;p&gt;Building a Shiny app - an interactive tutorial.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>R Notebook : ggplot2</title>
+      <link>/post/ggplot2/</link>
+      <pubDate>Sat, 19 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ggplot2/</guid>
+      <description>&lt;p&gt;R package: ggplot2.&lt;/p&gt;
+&lt;p&gt;Data from Hadle Wickham &amp;lsquo;ggplot2 Elegant Graphics for Data Analysis&amp;rsquo;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

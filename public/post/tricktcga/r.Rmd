@@ -1,0 +1,67 @@
+---
+title: "r trick"
+author: "Xiaoni"
+date: "10/12/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+a= read.table('plot.txt',sep = '\t', header = T)
+colnames(a) = c('id', 'subtype', 'expression', 'mutations', 'CNA')
+
+dat = a 
+library(ggstatsplot)
+library(ggplot2)
+ggbetweenstats(dat, x = subtype, y = expression)
+ggsave('subtypeExp.png')
+
+
+ggplot(dat, aes(x=subtype, y=expression)) +
+  geom_boxplot()
+ggsave('boxplot.png')
+
+ggplot(dat, aes(x=subtype, y=expression)) +
+  geom_violin(trim=FALSE, fill='orange', color='brown') +
+geom_boxplot(width=0.1) + theme_minimal()
+ggsave('violinplot.png')
+
+# variance
+aov(expression ~ subtype, data=dat)
+
+summary(aov(expression ~ subtype, data=dat))
+# output
+#              Df Sum Sq Mean Sq F value Pr(>F)    
+# subtype       4  289.5   72.38   115.5 <2e-16 ***
+# Residuals   514  322.0    0.63                   
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+TukeyHSD(aov(expression ~ subtype, data=dat))
+# output
+# Tukey multiple comparisons of means
+#     95% family-wise confidence level
+# 
+# Fit: aov(formula = expression ~ subtype, data = dat)
+# 
+# $subtype
+#                                  diff        lwr         upr     p adj
+# HER2-enriched-Basal-like  -1.58328100 -1.9422245 -1.22433751 0.0000000
+# Luminal A-Basal-like      -1.82596364 -2.0873307 -1.56459662 0.0000000
+# Luminal B-Basal-like      -2.09467315 -2.3870044 -1.80234192 0.0000000
+# Normal-like-Basal-like    -1.61344005 -2.4101234 -0.81675673 0.0000005
+# Luminal A-HER2-enriched   -0.24268264 -0.5610358  0.07567051 0.2273188
+# Luminal B-HER2-enriched   -0.51139215 -0.8556211 -0.16716323 0.0005268
+# Normal-like-HER2-enriched -0.03015905 -0.8473128  0.78699474 0.9999764
+# Luminal B-Luminal A       -0.26870951 -0.5094705 -0.02794855 0.0199389
+# Normal-like-Luminal A      0.21252359 -0.5667149  0.99176206 0.9453257
+# Normal-like-Luminal B      0.48123310 -0.3089298  1.27139601 0.4552733
+```
+

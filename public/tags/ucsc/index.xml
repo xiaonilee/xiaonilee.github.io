@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UCSC on xiaoni&#39;s blog</title>
+    <link>/tags/ucsc/</link>
+    <description>Recent content in UCSC on xiaoni&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/ucsc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Download mRNA lncRNA and miRNA and match clinical information with R from UCSC Xena</title>
+      <link>/post/ucscdownload/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscdownload/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s very convenient to get datasets from UCSC Xena. Normally, datasets will need to be processed and transformed with R language.&lt;/p&gt;
+&lt;p&gt;Herein, I will recover the protocol of datasets processed.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UCSC Topics</title>
+      <link>/post/ucscmap/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscmap/</guid>
+      <description>&lt;p&gt;Roadmap for the &lt;code&gt;UCSC topics&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UCSC gene browser with R package Gviz - part 2</title>
+      <link>/post/ucscgenebrowser2/</link>
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscgenebrowser2/</guid>
+      <description>&lt;p&gt;Continued, in this present, to draw the customized UCSC gene Track With Gviz package.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UCSC gene browser with R package Gviz - part 1</title>
+      <link>/post/ucscgenebrowser/</link>
+      <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ucscgenebrowser/</guid>
+      <description>&lt;p&gt;Gviz, Visualize genomic data. Let&amp;rsquo;s dive into it to explore useful functions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UCSC Xena Features: Genomic Signatures</title>
+      <link>/post/genomicsignatures/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/genomicsignatures/</guid>
+      <description>&lt;p&gt;Genomic signatures, sometimes expressed as a weighted sum of genes, are an algebra over genes.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UCSC Xena: Private and Public Data Put Together</title>
+      <link>/post/privatepublictogether/</link>
+      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/privatepublictogether/</guid>
+      <description>&lt;p&gt;Put private data and public Xena Data together via UCSC Xena Hub .&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Local UCSC Xena Data Hub</title>
+      <link>/post/localxenadatahub/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/localxenadatahub/</guid>
+      <description>&lt;p&gt;Load the private data to Local Xena Data Hub.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UCSC Xena: Load Data From Public Database</title>
+      <link>/post/loaddata/</link>
+      <pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/loaddata/</guid>
+      <description>&lt;p&gt;Load and analysis data from publication resources, such as &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/geo/&#34;&gt;GEO&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

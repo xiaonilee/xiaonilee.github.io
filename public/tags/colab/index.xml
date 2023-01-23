@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Colab on xiaoni&#39;s blog</title>
+    <link>/tags/colab/</link>
+    <description>Recent content in Colab on xiaoni&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/colab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RNA-seq Bioinformatics - RNA sequence analysis</title>
+      <link>/post/rnasequenceanalysis/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rnasequenceanalysis/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Google Colab&lt;/strong&gt; is a &lt;em&gt;&lt;strong&gt;free&lt;/strong&gt;&lt;/em&gt; service providing interactive computing resources via a user interface, runs on Google Cloud Platform (GCP), and provides free access to GPUs and TPUs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;RNA sequence&lt;/strong&gt; is a technique that can examine the quantity and sequences of RNA in a sample using next generation sequencing (NGS). It analyzes the &lt;em&gt;&lt;strong&gt;transcriptome&lt;/strong&gt;&lt;/em&gt; of gene expression patterns encoded within the RNA.&lt;/p&gt;
+&lt;p&gt;Then, how to perform &lt;em&gt;&lt;strong&gt;RNA sequence analysis&lt;/strong&gt;&lt;/em&gt; in Google Colab?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Installing Conda in Google Colab</title>
+      <link>/post/condacolab/</link>
+      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/condacolab/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Conda&lt;/strong&gt; is the environment and package management solution for a number of popular data science tools including &lt;strong&gt;Pandas&lt;/strong&gt;, &lt;strong&gt;Scikit-Learn&lt;/strong&gt;, &lt;strong&gt;PyTorch&lt;/strong&gt;, &lt;strong&gt;NVIDIA Rapids&lt;/strong&gt; and many others.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Conda&lt;/strong&gt; also dramatically simplifies the process of installing popular deep learning tools like &lt;strong&gt;TensorFlow&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Then, how to install Conda when using Google Colab?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The way to use R in Google Colab</title>
+      <link>/post/rincolab/</link>
+      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rincolab/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Colab&lt;/strong&gt; is an interactive notebook provided by Google (primarily) for writing and running &lt;code&gt;Python&lt;/code&gt; through a &lt;em&gt;browser&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Then, how to use R in Google Colab?&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

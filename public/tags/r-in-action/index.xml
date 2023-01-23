@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R in Action on xiaoni&#39;s blog</title>
+    <link>/tags/r-in-action/</link>
+    <description>Recent content in R in Action on xiaoni&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 25 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/r-in-action/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Book: R in Action</title>
+      <link>/post/rinactionmap/</link>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinactionmap/</guid>
+      <description>&lt;p&gt;Roadmap for the book: &lt;em&gt;&lt;strong&gt;R in Action, Second Edition&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 23. Advanced graphics with the lattice package</title>
+      <link>/post/rinaction23/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction23/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 23.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 22. Creating dynamic reports</title>
+      <link>/post/rinaction22/</link>
+      <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction22/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 22.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 21. Creating a package</title>
+      <link>/post/rinaction21/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction21/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 21.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 20. Advanced programming</title>
+      <link>/post/rinaction20/</link>
+      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction20/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 20.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 19. Advanced graphics with ggplot2</title>
+      <link>/post/rinaction19/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction19/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 19.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 18. Advanced methods for missing data</title>
+      <link>/post/rinaction18/</link>
+      <pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction18/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 18.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 17. Classification</title>
+      <link>/post/rinaction17/</link>
+      <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction17/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 17.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 16. Cluster analysis</title>
+      <link>/post/rinaction16/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction16/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 16.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 15. Time series</title>
+      <link>/post/rinaction15/</link>
+      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction15/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 15.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 14. Principal components and factor analysis</title>
+      <link>/post/rinaction14/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction14/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 14.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 13. Generalized linear models</title>
+      <link>/post/rinaction13/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction13/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 13.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 12. Resampling statistics and bootstrapping</title>
+      <link>/post/rinaction12/</link>
+      <pubDate>Thu, 05 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction12/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 12.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 11. Intermediate graphs</title>
+      <link>/post/rinaction11/</link>
+      <pubDate>Tue, 03 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction11/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 11.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 10. Power analysis</title>
+      <link>/post/rinaction10/</link>
+      <pubDate>Mon, 02 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction10/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 10.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 9. Analysis of variance</title>
+      <link>/post/rinaction9/</link>
+      <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction9/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 9.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 8. Regression</title>
+      <link>/post/rinaction8/</link>
+      <pubDate>Thu, 29 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction8/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 8.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 7. Basic statistics</title>
+      <link>/post/rinaction7/</link>
+      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction7/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 7.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 6. Basic graphs</title>
+      <link>/post/rinaction6/</link>
+      <pubDate>Sat, 24 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction6/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 6.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 5. Advanced data management</title>
+      <link>/post/rinaction5/</link>
+      <pubDate>Fri, 23 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rinaction5/</guid>
+      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 5.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

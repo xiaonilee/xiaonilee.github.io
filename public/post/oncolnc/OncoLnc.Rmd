@@ -1,0 +1,54 @@
+---
+title: "OncoLnc test"
+author: "Xiaoni"
+date: "10/9/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+rm(list = ls())
+options(stringsAsFactors = F)
+```
+
+```{r}
+a=read.table('KIRC_DONSON.csv', 
+             header = T, sep = ',', fill = T)
+
+colnames(a)
+
+table(a$Group)
+summary(a$Group)
+```
+
+```{r}
+library(ggstatsplot)
+fivenum(a$Expression)
+ggbetweenstats(data=a, x=Group, y=Expression)
+ggsave('ExpressionGroup.png')
+```
+```{r}
+library(ggplot2)
+library(survival)
+#install.packages('survminer')
+library(survminer)
+table(a$Status)
+a$Status=ifelse(a$Status=='Dead',1,0)
+fit = survfit(Surv(Days,Status)~Group,data = a)
+fit
+summary(fit)
+
+ggsurvplot(fit,conf.int = F, pval = TRUE)
+ggsave('survival_R.png')
+
+ggsurvplot(fit,palette = c("#E7B800","#2E9FDF"),
+           risk.table = TRUE,pval = TRUE,
+           conf.int = TRUE,xlab="Time in months",
+           ggtheme = theme_light(),
+           ncensor.plot=TRUE)
+ggsave('survival_R1.png')
+```
+

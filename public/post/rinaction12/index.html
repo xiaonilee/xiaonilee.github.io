@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 12. Resampling statistics and bootstrapping - xiaoni&#39;s blog</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Xiaoni" />
+  <meta name="description" content="Notebook of Reading Books: R in Action_Chapter 12.
+" />
+
+  <meta name="keywords" content="xiaonili, xiaonilee, xiaoni" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0" />
+
+
+<link rel="canonical" href="/post/rinaction12/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.scss" integrity="" media="screen" crossorigin="anonymous">
+
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css" rel="stylesheet">
+<script src="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/js/all.js"></script>
+
+
+
+
+<meta property="og:title" content="Chapter 12. Resampling statistics and bootstrapping" />
+<meta property="og:description" content="Notebook of Reading Books: R in Action_Chapter 12." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/rinaction12/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-11-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-11-05T00:00:00+00:00" />
+<meta itemprop="name" content="Chapter 12. Resampling statistics and bootstrapping">
+<meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 12."><meta itemprop="datePublished" content="2020-11-05T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-11-05T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1877">
+<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Chapter 12. Resampling statistics and bootstrapping"/>
+<meta name="twitter:description" content="Notebook of Reading Books: R in Action_Chapter 12."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-177860608-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Xiaoni's Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/">Home</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/categories/">Categories</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/about/">About Me</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="/">
+              docs
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="/post/tensorflow2/"> Machine Learning: TensorFlow2 Notebook</a>
+              </li>
+            
+              <li>
+                <a href="/post/bioscirep/">Bioinformatics analysis of prognostic value of PITX1 gene in breast cancer</a>
+              </li>
+            
+              <li>
+                <a href="/post/rinactionmap/">Book: R in Action</a>
+              </li>
+            
+              <li>
+                <a href="/post/tumorimmune/">Comprehensive Bioinformatics Analysis of Tumor-Infiltrating Immune Cells</a>
+              </li>
+            
+              <li>
+                <a href="/post/aavcapsid/">Deep diversification of an AAV capsid protein by machine learning</a>
+              </li>
+            
+              <li>
+                <a href="/post/firebrowse/">FireBrowse Notebook</a>
+              </li>
+            
+              <li>
+                <a href="/post/gdc/">GDC Notebook</a>
+              </li>
+            
+              <li>
+                <a href="/post/git/">Git - Common commands</a>
+              </li>
+            
+              <li>
+                <a href="/post/gscalite/">GSCALite: Gene Set Cancer Analysis</a>
+              </li>
+            
+              <li>
+                <a href="/post/frontoncol/">Identification of Therapeutic Targets and Prognostic Biomarkers Among CXC Chemokines in the Renal Cell Carcinoma Microenvironment</a>
+              </li>
+            
+              <li>
+                <a href="/post/condacolab/">Installing Conda in Google Colab</a>
+              </li>
+            
+              <li>
+                <a href="/post/oncolnc/">OncoLnc: A straightforward Tool</a>
+              </li>
+            
+              <li>
+                <a href="/post/webcrawler/">Python Spider</a>
+              </li>
+            
+              <li>
+                <a href="/post/rnasequenceanalysis/">RNA-seq Bioinformatics - RNA sequence analysis</a>
+              </li>
+            
+              <li>
+                <a href="/post/scrnaknn/">scRNA-sequencing analysis - PCA and KNN</a>
+              </li>
+            
+              <li>
+                <a href="/post/survival/">Survival Analysis with data from GSE database</a>
+              </li>
+            
+              <li>
+                <a href="/post/rincolab/">The way to use R in Google Colab</a>
+              </li>
+            
+              <li>
+                <a href="/post/tissgdb/">TissGDB: tissue-specific gene database in cancer</a>
+              </li>
+            
+              <li>
+                <a href="/post/ucscmap/">UCSC Topics</a>
+              </li>
+            
+              <li>
+                <a href="/post/webfrontend/">web front end</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Xiaoni's Blog
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/">Home</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/about/">About Me</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="/">docs</a>
+          <ul class="submenu" >
+            
+              <li>
+                <a href="/post/tensorflow2/"> Machine Learning: TensorFlow2 Notebook</a>
+              </li>
+            
+              <li>
+                <a href="/post/bioscirep/">Bioinformatics analysis of prognostic value of PITX1 gene in breast cancer</a>
+              </li>
+            
+              <li>
+                <a href="/post/rinactionmap/">Book: R in Action</a>
+              </li>
+            
+              <li>
+                <a href="/post/tumorimmune/">Comprehensive Bioinformatics Analysis of Tumor-Infiltrating Immune Cells</a>
+              </li>
+            
+              <li>
+                <a href="/post/aavcapsid/">Deep diversification of an AAV capsid protein by machine learning</a>
+              </li>
+            
+              <li>
+                <a href="/post/firebrowse/">FireBrowse Notebook</a>
+              </li>
+            
+              <li>
+                <a href="/post/gdc/">GDC Notebook</a>
+              </li>
+            
+              <li>
+                <a href="/post/git/">Git - Common commands</a>
+              </li>
+            
+              <li>
+                <a href="/post/gscalite/">GSCALite: Gene Set Cancer Analysis</a>
+              </li>
+            
+              <li>
+                <a href="/post/frontoncol/">Identification of Therapeutic Targets and Prognostic Biomarkers Among CXC Chemokines in the Renal Cell Carcinoma Microenvironment</a>
+              </li>
+            
+              <li>
+                <a href="/post/condacolab/">Installing Conda in Google Colab</a>
+              </li>
+            
+              <li>
+                <a href="/post/oncolnc/">OncoLnc: A straightforward Tool</a>
+              </li>
+            
+              <li>
+                <a href="/post/webcrawler/">Python Spider</a>
+              </li>
+            
+              <li>
+                <a href="/post/rnasequenceanalysis/">RNA-seq Bioinformatics - RNA sequence analysis</a>
+              </li>
+            
+              <li>
+                <a href="/post/scrnaknn/">scRNA-sequencing analysis - PCA and KNN</a>
+              </li>
+            
+              <li>
+                <a href="/post/survival/">Survival Analysis with data from GSE database</a>
+              </li>
+            
+              <li>
+                <a href="/post/rincolab/">The way to use R in Google Colab</a>
+              </li>
+            
+              <li>
+                <a href="/post/tissgdb/">TissGDB: tissue-specific gene database in cancer</a>
+              </li>
+            
+              <li>
+                <a href="/post/ucscmap/">UCSC Topics</a>
+              </li>
+            
+              <li>
+                <a href="/post/webfrontend/">web front end</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Chapter 12. Resampling statistics and bootstrapping</h1>
+      
+      <div class="post-meta">
+        <time datetime="2020-11-05" class="post-time">
+          2020-11-05
+        </time>
+        <div class="post-category">
+            <a href="/categories/r/"> R </a>
+            <a href="/categories/bioinformatics/"> Bioinformatics </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#this-chapter-covers">This chapter covers</a>
+      <ul>
+        <li><a href="#121-permutation-tests">12.1. Permutation tests</a></li>
+        <li><a href="#122-permutation-test-with-the-coin-package">12.2. Permutation test with the coin package</a></li>
+        <li><a href="#123-permutation-tests-with-the-lmperm-package">12.3. Permutation tests with the lmPerm package</a></li>
+        <li><a href="#124-additional-comments-on-permutation-tests">12.4. Additional comments on permutation tests</a></li>
+        <li><a href="#125-bootstrapping">12.5. Bootstrapping</a></li>
+        <li><a href="#126-bootstrapping-with-the-boot-package">12.6. Bootstrapping with the boot package</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>Notebook of Reading Books: R in Action_Chapter 12.</p>
+<h2 id="this-chapter-covers">This chapter covers</h2>
+<ul>
+<li>
+<p>Understanding the logic of permutation tests</p>
+</li>
+<li>
+<p>Applying permutation tests to linear models</p>
+</li>
+<li>
+<p>Using bootstrapping to obtain confidence intervals</p>
+</li>
+</ul>
+<h3 id="121-permutation-tests">12.1. Permutation tests</h3>
+<ul>
+<li>randomization or re-randomization tests</li>
+</ul>
+<h3 id="122-permutation-test-with-the-coin-package">12.2. Permutation test with the coin package</h3>
+<h4 id="1221-independent-two-sample-and-k-sample-tests">12.2.1. Independent two-sample and k-sample tests</h4>
+<ul>
+<li><code>wilcox.test()</code></li>
+<li><code>oneway_test()</code></li>
+</ul>
+<h4 id="1222-independence-in-contingency-tables">12.2.2. Independence in contingency tables</h4>
+<ul>
+<li><code>chisq_test()</code> or <code>cmh_test()</code></li>
+</ul>
+<h4 id="1223-independence-between-numeric-variables">12.2.3. Independence between numeric variables</h4>
+<ul>
+<li><code>spearman_test()</code></li>
+</ul>
+<h4 id="1224-dependent-two-sample-and-k-sample-tests">12.2.4. Dependent two-sample and k-sample tests</h4>
+<ul>
+<li><code>wilcoxsign_test()</code></li>
+</ul>
+<h3 id="123-permutation-tests-with-the-lmperm-package">12.3. Permutation tests with the lmPerm package</h3>
+<h4 id="1231-simple-and-polynomial-regression">12.3.1. Simple and polynomial regression</h4>
+<ul>
+<li>Using <code>lmp()</code> instead of <code>lm()</code></li>
+</ul>
+<h4 id="1232-multiple-regression">12.3.2. Multiple regression</h4>
+<ul>
+<li>Applying the <code>lmp()</code> function</li>
+</ul>
+<h4 id="1233-one-way-anova-and-ancova">12.3.3. One-way ANOVA and ANCOVA</h4>
+<ul>
+<li><code>aovp()</code></li>
+</ul>
+<h4 id="1234-two-way-anova">12.3.4. Two-way ANOVA</h4>
+<ul>
+<li><code>aovp()</code></li>
+</ul>
+<h3 id="124-additional-comments-on-permutation-tests">12.4. Additional comments on permutation tests</h3>
+<h3 id="125-bootstrapping">12.5. Bootstrapping</h3>
+<h3 id="126-bootstrapping-with-the-boot-package">12.6. Bootstrapping with the boot package</h3>
+<ul>
+<li><code>install.packages(&quot;boot&quot;)</code></li>
+</ul>
+<h4 id="1261-bootstrapping-a-single-statistic">12.6.1. Bootstrapping a single statistic</h4>
+<ul>
+<li>
+<p>Figure 12.1. Distribution of bootstrapped <strong>R-squared</strong> values.</p>
+<p><img src="fig121.png" alt="fig121"></p>
+</li>
+</ul>
+<h4 id="1262-bootstrapping-several-statistics">12.6.2. Bootstrapping several statistics</h4>
+<ul>
+<li>
+<p>Figure 12.2. Distribution of bootstrapping <code>regression coefficients</code> for <strong>car weight</strong>.</p>
+<p><img src="fig122.png" alt="fig122"></p>
+</li>
+<li>
+<p>Figure 12.3. Distribution of bootstrapping <code>regression coefficients</code> for <strong>engine displacement</strong>.</p>
+<p><img src="fig123.png" alt="fig123"></p>
+</li>
+</ul>
+<p>Attach is the <a href="chapter12.R">Script</a> of chapter12.</p>
+<p>Show me the code <i class="far fa-hand-pointer"></i></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span><span class="lnt">266
+</span><span class="lnt">267
+</span><span class="lnt">268
+</span><span class="lnt">269
+</span><span class="lnt">270
+</span><span class="lnt">271
+</span><span class="lnt">272
+</span><span class="lnt">273
+</span><span class="lnt">274
+</span><span class="lnt">275
+</span><span class="lnt">276
+</span><span class="lnt">277
+</span><span class="lnt">278
+</span><span class="lnt">279
+</span><span class="lnt">280
+</span><span class="lnt">281
+</span><span class="lnt">282
+</span><span class="lnt">283
+</span><span class="lnt">284
+</span><span class="lnt">285
+</span><span class="lnt">286
+</span><span class="lnt">287
+</span><span class="lnt">288
+</span><span class="lnt">289
+</span><span class="lnt">290
+</span><span class="lnt">291
+</span><span class="lnt">292
+</span><span class="lnt">293
+</span><span class="lnt">294
+</span><span class="lnt">295
+</span><span class="lnt">296
+</span><span class="lnt">297
+</span><span class="lnt">298
+</span><span class="lnt">299
+</span><span class="lnt">300
+</span><span class="lnt">301
+</span><span class="lnt">302
+</span><span class="lnt">303
+</span><span class="lnt">304
+</span><span class="lnt">305
+</span><span class="lnt">306
+</span><span class="lnt">307
+</span><span class="lnt">308
+</span><span class="lnt">309
+</span><span class="lnt">310
+</span><span class="lnt">311
+</span><span class="lnt">312
+</span><span class="lnt">313
+</span><span class="lnt">314
+</span><span class="lnt">315
+</span><span class="lnt">316
+</span><span class="lnt">317
+</span><span class="lnt">318
+</span><span class="lnt">319
+</span><span class="lnt">320
+</span><span class="lnt">321
+</span><span class="lnt">322
+</span><span class="lnt">323
+</span><span class="lnt">324
+</span><span class="lnt">325
+</span><span class="lnt">326
+</span><span class="lnt">327
+</span><span class="lnt">328
+</span><span class="lnt">329
+</span><span class="lnt">330
+</span><span class="lnt">331
+</span><span class="lnt">332
+</span><span class="lnt">333
+</span><span class="lnt">334
+</span><span class="lnt">335
+</span><span class="lnt">336
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Remove most objects from the working environment</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 12.2.1. Independent two-sample and k-sample tests</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 12.1. t-test versus one-way permutation test for the hypothetical data</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">score</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">40</span><span class="p">,</span> <span class="m">57</span><span class="p">,</span> <span class="m">45</span><span class="p">,</span> <span class="m">55</span><span class="p">,</span> <span class="m">58</span><span class="p">,</span> <span class="m">57</span><span class="p">,</span> <span class="m">64</span><span class="p">,</span> <span class="m">55</span><span class="p">,</span> <span class="m">62</span><span class="p">,</span> <span class="m">65</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">treatment</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="s">&#34;A&#34;</span><span class="p">,</span> <span class="m">5</span><span class="p">),</span> <span class="nf">rep</span><span class="p">(</span><span class="s">&#34;B&#34;</span><span class="p">,</span> <span class="m">5</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">treatment</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">t.test</span><span class="p">(</span><span class="n">score</span><span class="o">~</span><span class="n">treatment</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mydata</span><span class="p">,</span> <span class="n">var.equal</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         Two Sample t-test</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># data:  score by treatment</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># t = -2, df = 8, p-value = 0.05</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># alternative hypothesis: true difference in means is not equal to 0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 95 percent confidence interval:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   -19.04  -0.16</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># sample estimates:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># mean in group A mean in group B </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#               51              61</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">oneway_test</span><span class="p">(</span><span class="n">score</span><span class="o">~</span><span class="n">treatment</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mydata</span><span class="p">,</span> <span class="n">distribution</span><span class="o">=</span><span class="s">&#34;exact&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         Exact Two-Sample Fisher-Pitman Permutation Test</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># data:  score by treatment (A, B)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Z = -2, p-value = 0.07</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># alternative hypothesis: true mu is not equal to 0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">MASS</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">UScrime</span> <span class="o">&lt;-</span> <span class="nf">transform</span><span class="p">(</span><span class="n">UScrime</span><span class="p">,</span> <span class="n">So</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="n">So</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">wilcox_test</span><span class="p">(</span><span class="n">Prob</span> <span class="o">~</span> <span class="n">So</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">UScrime</span><span class="p">,</span> <span class="n">distribution</span><span class="o">=</span><span class="s">&#34;exact&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         Exact Wilcoxon-Mann-Whitney Test</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># data:  Prob by So (0, 1)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Z = -4, p-value = 8e-05</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># alternative hypothesis: true mu is not equal to 0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">multcomp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">oneway_test</span><span class="p">(</span><span class="n">response</span><span class="o">~</span><span class="n">trt</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">cholesterol</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">distribution</span><span class="o">=</span><span class="nf">approximate</span><span class="p">(</span><span class="n">nresample</span><span class="o">=</span><span class="m">9999</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#         Approximative K-Sample Fisher-Pitman Permutation Test</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># data:  response by trt (1time, 2times, 4times, drugD, drugE)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># chi-squared = 36, p-value &lt;1e-04</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#===============================================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 12.2.2. Independence in contingency tables</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">vcd</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Arthritis</span> <span class="o">&lt;-</span> <span class="nf">transform</span><span class="p">(</span><span class="n">Arthritis</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="n">Improved</span><span class="o">=</span><span class="nf">as.factor</span><span class="p">(</span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">Improved</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">chisq_test</span><span class="p">(</span><span class="n">Treatment</span><span class="o">~</span><span class="n">Improved</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Arthritis</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="n">distribution</span><span class="o">=</span><span class="nf">approximate</span><span class="p">(</span><span class="n">nresample</span><span class="o">=</span><span class="m">9999</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#         Approximative Pearson Chi-Squared Test</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># data:  Treatment by Improved (1, 2, 3)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># chi-squared = 13, p-value = 0.001</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Arthritis</span> <span class="o">&lt;-</span> <span class="nf">transform</span><span class="p">(</span><span class="n">Arthritis</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                       <span class="n">Improved</span><span class="o">=</span><span class="nf">as.factor</span><span class="p">(</span><span class="n">Improved</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">chisq_test</span><span class="p">(</span><span class="n">Treatment</span><span class="o">~</span><span class="n">Improved</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Arthritis</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="n">distribution</span><span class="o">=</span><span class="nf">approximate</span><span class="p">(</span><span class="n">nresample</span><span class="o">=</span><span class="m">9999</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         Approximative Pearson Chi-Squared Test</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># data:  Treatment by Improved (1, 2, 3)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># chi-squared = 13, p-value = 0.002</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#===============================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 12.2.3. Independence between numeric variables</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">states</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="n">state.x77</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">spearman_test</span><span class="p">(</span><span class="n">Illiteracy</span><span class="o">~</span><span class="n">Murder</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">               <span class="n">distribution</span><span class="o">=</span><span class="nf">approximate</span><span class="p">(</span><span class="n">nresample</span><span class="o">=</span><span class="m">9999</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         Approximative Spearman Correlation Test</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># data:  Illiteracy by Murder</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Z = 5, p-value &lt;1e-04</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># alternative hypothesis: true rho is not equal to 0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#====================================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 12.2.4. Dependent two-sample and k-sample tests</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">MASS</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">wilcoxsign_test</span><span class="p">(</span><span class="n">U1</span><span class="o">~</span><span class="n">U2</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">UScrime</span><span class="p">,</span> <span class="n">distribution</span><span class="o">=</span><span class="s">&#34;exact&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#         Exact Wilcoxon-Pratt Signed-Rank Test</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># data:  y by x (pos, neg) </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># stratified by block</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Z = 6, p-value = 1e-14</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># alternative hypothesis: true mu is not equal to 0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#====================================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 12.3.1. Simple and polynomial regression</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 12.2. Permutation tests for simple linear regression</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># install.packages(&#34;lmPerm&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">lmPerm</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lmp</span><span class="p">(</span><span class="n">weight</span><span class="o">~</span><span class="n">height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">women</span><span class="p">,</span> <span class="n">perm</span><span class="o">=</span><span class="s">&#34;Prob&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;Settings:  unique SS : numeric variables centered&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># lmp(formula = weight ~ height, data = women, perm = &#34;Prob&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#    Min     1Q Median     3Q    Max </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -1.733 -1.133 -0.383  0.742  3.117 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Coefficients:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#        Estimate Iter Pr(Prob)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># height     3.45 5000   &lt;2e-16 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residual standard error: 1.5 on 13 degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Multiple R-Squared: 0.991, Adjusted R-squared: 0.99 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># F-statistic: 1.43e+03 on 1 and 13 DF,  p-value: 1.09e-14</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#===============================================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 12.3. Permutation tests for polynomial regression</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">lmPerm</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lmp</span><span class="p">(</span><span class="n">weight</span><span class="o">~</span><span class="n">height</span> <span class="o">+</span> <span class="nf">I</span><span class="p">(</span><span class="n">height^2</span><span class="p">),</span> <span class="n">data</span><span class="o">=</span><span class="n">women</span><span class="p">,</span> <span class="n">perm</span><span class="o">=</span><span class="s">&#34;Prob&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;Settings:  unique SS : numeric variables centered&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># lmp(formula = weight ~ height + I(height^2), data = women, perm = &#34;Prob&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#      Min       1Q   Median       3Q      Max </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -0.50941 -0.29611 -0.00941  0.28615  0.59706 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Coefficients:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#             Estimate Iter Pr(Prob)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># height       -7.3483 5000   &lt;2e-16 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   I(height^2)   0.0831 5000   &lt;2e-16 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residual standard error: 0.38 on 12 degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Multiple R-Squared: 0.999, Adjusted R-squared: 0.999 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># F-statistic: 1.14e+04 on 2 and 12 DF,  p-value: &lt;2e-16</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#=======================================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 12.3.2. Multiple regression</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 12.4. Permutation tests for multiple regression</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">lmPerm</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">states</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="n">state.x77</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lmp</span><span class="p">(</span><span class="n">Murder</span><span class="o">~</span><span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span><span class="o">+</span><span class="n">Income</span><span class="o">+</span><span class="n">Frost</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">,</span> <span class="n">perm</span><span class="o">=</span><span class="s">&#34;Prob&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;Settings:  unique SS : numeric variables centered&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># lmp(formula = Murder ~ Population + Illiteracy + Income + Frost, </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#       data = states, perm = &#34;Prob&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     Min      1Q  Median      3Q     Max </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -4.7960 -1.6495 -0.0811  1.4815  7.6210 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Coefficients:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#            Estimate Iter Pr(Prob)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Population 2.24e-04   51   1.0000    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Illiteracy 4.14e+00 5000   0.0004 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Income     6.44e-05   51   1.0000    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Frost      5.81e-04   51   0.8627    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residual standard error: 2.5 on 45 degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Multiple R-Squared: 0.567, Adjusted R-squared: 0.528 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># F-statistic: 14.7 on 4 and 45 DF,  p-value: 9.13e-08</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#==============================================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 12.3.3. One-way ANOVA and ANCOVA</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 12.5. Permutation test for One-Way ANOVA</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">lmPerm</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">multcomp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">aovp</span><span class="p">(</span><span class="n">response</span><span class="o">~</span><span class="n">trt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">cholesterol</span><span class="p">,</span> <span class="n">perm</span><span class="o">=</span><span class="s">&#34;Prob&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;Settings:  unique SS &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Component 1 :</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#             Df R Sum Sq R Mean Sq Iter  Pr(Prob)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># trt          4  1351.37    337.84 5000 &lt; 2.2e-16 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals   45   468.75     10.42                   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#==============================================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 12.6. Permutation test for one-way ANCOVA</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">lmPerm</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">aovp</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">gesttime</span> <span class="o">+</span> <span class="n">dose</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">litter</span><span class="p">,</span> <span class="n">perm</span><span class="o">=</span><span class="s">&#34;Prob&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;Settings:  unique SS : numeric variables centered&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Component 1 :</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#             Df R Sum Sq R Mean Sq Iter Pr(Prob)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># gesttime     1   161.49   161.493 5000   0.0006 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># dose         3   137.12    45.708 5000   0.0392 *  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals   69  1151.27    16.685                  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#==============================================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 12.3.4. Two-way ANOVA</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 12.7. Permutation test for two-way ANOVA</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">lmPerm</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">aovp</span><span class="p">(</span><span class="n">len</span><span class="o">~</span><span class="n">supp</span><span class="o">*</span><span class="n">dose</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">ToothGrowth</span><span class="p">,</span> <span class="n">perm</span><span class="o">=</span><span class="s">&#34;Prob&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;Settings:  unique SS : numeric variables centered&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Component 1 :</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#             Df R Sum Sq R Mean Sq Iter Pr(Prob)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># supp         1   205.35    205.35 5000  &lt; 2e-16 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># dose         1  2224.30   2224.30 5000  &lt; 2e-16 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># supp:dose    1    88.92     88.92 2032  0.04724 *  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals   56   933.63     16.67                  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#==============================================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 12.6.1. Bootstrapping a single statistic</span>
+</span></span><span class="line"><span class="cl"><span class="n">rsq</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">indices</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">d</span> <span class="o">&lt;-</span> <span class="n">data[indices</span><span class="p">,</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl">  <span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">return</span><span class="p">(</span><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span><span class="o">$</span><span class="n">r.square</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">boot</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">boot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mtcars</span><span class="p">,</span> <span class="n">statistic</span><span class="o">=</span><span class="n">rsq</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">R</span><span class="o">=</span><span class="m">1000</span><span class="p">,</span> <span class="n">formula</span><span class="o">=</span><span class="n">mpg</span><span class="o">~</span><span class="n">wt</span><span class="o">+</span><span class="n">disp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ORDINARY NONPARAMETRIC BOOTSTRAP</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># boot(data = mtcars, statistic = rsq, R = 1000, formula = mpg ~ </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#          wt + disp)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Bootstrap Statistics :</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#      original     bias    std. error</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># t1* 0.7809306 0.01379126  0.05113904</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> <span class="c1"># figure 12.1</span>
+</span></span><span class="line"><span class="cl"><span class="nf">boot.ci</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;perc&#34;</span><span class="p">,</span> <span class="s">&#34;bca&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Based on 1000 bootstrap replicates</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># CALL : </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># boot.ci(boot.out = results, type = c(&#34;perc&#34;, &#34;bca&#34;))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Intervals : </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Level     Percentile            BCa          </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 95%   ( 0.6753,  0.8835 )   ( 0.6344,  0.8561 )  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Calculations and Intervals on Original Scale</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Some BCa intervals may be unstable</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#=============================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 12.6.2. Bootstrapping several statistics</span>
+</span></span><span class="line"><span class="cl"><span class="n">bs</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">indices</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">d</span> <span class="o">&lt;-</span> <span class="n">data[indices</span><span class="p">,</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl">  <span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">return</span><span class="p">(</span><span class="nf">coef</span><span class="p">(</span><span class="n">fit</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">boot</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">boot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mtcars</span><span class="p">,</span> <span class="n">statistic</span><span class="o">=</span><span class="n">bs</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">R</span><span class="o">=</span><span class="m">1000</span><span class="p">,</span> <span class="n">formula</span><span class="o">=</span><span class="n">mpg</span><span class="o">~</span><span class="n">wt</span><span class="o">+</span><span class="n">disp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ORDINARY NONPARAMETRIC BOOTSTRAP</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># boot(data = mtcars, statistic = bs, R = 1000, formula = mpg ~ </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#          wt + disp)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Bootstrap Statistics :</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#        original        bias    std. error</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># t1* 34.96055404  4.715497e-02 2.546106756</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># t2* -3.35082533 -4.908125e-02 1.154800744</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># t3* -0.01772474  6.230927e-05 0.008518022</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>  <span class="c1"># figure 12.2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">boot.ci</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;bca&#34;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="c1"># t2: car weight</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Based on 1000 bootstrap replicates</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># CALL : </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># boot.ci(boot.out = results, type = &#34;bca&#34;, index = 2)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Intervals : </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Level       BCa          </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 95%   (-5.477, -0.937 )  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Calculations and Intervals on Original Scale</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">boot.ci</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;bca&#34;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span> <span class="c1"># t3: engine displacement</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Based on 1000 bootstrap replicates</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># CALL : </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># boot.ci(boot.out = results, type = &#34;bca&#34;, index = 3)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Intervals : </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Level       BCa          </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 95%   (-0.0334, -0.0011 )  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Calculations and Intervals on Original Scale</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>  <span class="c1"># figure 12.3</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    
+    
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/r/">R</a>
+          <a href="/tags/r-in-action/">R in Action</a>
+          <a href="/tags/bioinformatics/">Bioinformatics</a>
+          <a href="/tags/book/">Book</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/rinaction13/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">Chapter 13. Generalized linear models</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/rinaction11/">
+            <span class="next-text nav-default">Chapter 11. Intermediate graphs</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:xiaoni0601@gmail.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/xiaonilee" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+
+
+<a href="/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+
+  <span class="copyright-year">
+    &copy;
+    
+      2020 -
+    2023
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        xiaonilee
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
+
+
+
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
