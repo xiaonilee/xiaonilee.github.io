@@ -13,20 +13,7 @@
       <pubDate>Mon, 23 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>/post/hugocmd/</guid>
-      <description>&lt;p&gt;Note about &lt;strong&gt;hugo for windows&lt;/strong&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Step1. Download and install the &lt;code&gt;hugo&lt;/code&gt;.
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Hugo&lt;/code&gt; is available in two editions: &lt;code&gt;standard&lt;/code&gt; and &lt;code&gt;extended&lt;/code&gt;. Here, download the &lt;strong&gt;Hugo windows-extended&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Step2. Build website.
-&lt;ul&gt;
-&lt;li&gt;run &lt;code&gt;hugo server&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;run &lt;code&gt;hugo -d .\docs\&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>&lt;p&gt;Note about &lt;strong&gt;hugo for windows&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>
