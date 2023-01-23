@@ -34,7 +34,7 @@ Herein, I will follow the official Tutorial to analyze multimodal using Seurat d
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/seurat2/" />
@@ -55,7 +55,7 @@ Herein, I will follow the official Tutorial to analyze multimodal using Seurat d
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -69,20 +69,15 @@ Herein, I will follow the official Tutorial to analyze multimodal using Seurat d
 <meta property="og:description" content="The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for single-cell genomics.  Seurat4 to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.
 Herein, I will follow the official Tutorial to analyze multimodal using Seurat data step by step." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/seurat2/" />
+<meta property="og:url" content="/post/seurat2/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-02-26T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-02-27T00:00:00+00:00" />
 <meta itemprop="name" content="Using Seurat with multimodal data">
 <meta itemprop="description" content="The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for single-cell genomics.  Seurat4 to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.
-Herein, I will follow the official Tutorial to analyze multimodal using Seurat data step by step.">
-<meta itemprop="datePublished" content="2021-02-26T00:00:00+00:00" />
+Herein, I will follow the official Tutorial to analyze multimodal using Seurat data step by step."><meta itemprop="datePublished" content="2021-02-26T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-27T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1013">
-
-
-
-<meta itemprop="keywords" content="Bioinformatics,R package,RNA Sequence,PCA,KNN," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Bioinformatics,R package,RNA Sequence,PCA,KNN," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Seurat with multimodal data"/>
 <meta name="twitter:description" content="The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for single-cell genomics.  Seurat4 to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.
 Herein, I will follow the official Tutorial to analyze multimodal using Seurat data step by step."/>
@@ -568,7 +563,7 @@ if (!doNotTrack) {
 <p>Valid link for the <a href="https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE100866&amp;format=file&amp;file=GSE100866%5FCBMC%5F8K%5F13AB%5F10X%2DADT%5Fumi%2Ecsv%2Egz">ADT UMI matrix</a> download.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -593,30 +588,30 @@ if (!doNotTrack) {
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">Seurat</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span>
-
-<span class="c1"># Load in the RNA UMI matrix</span>
-
-<span class="c1"># Note that this dataset also contains ~5% of mouse cells, which we can use as negative controls</span>
-<span class="c1"># for the protein measurements. For this reason, the gene expression matrix has HUMAN_ or MOUSE_</span>
-<span class="c1"># appended to the beginning of each gene.</span>
-<span class="n">cbmc.rna</span> <span class="o">&lt;-</span> <span class="nf">as.sparse</span><span class="p">(</span><span class="nf">read.csv</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#34;./GSE100866_CBMC_8K_13AB_10X-RNA_umi.csv.gz&#34;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&#34;,&#34;</span><span class="p">,</span> 
-    <span class="n">header</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">row.names</span> <span class="o">=</span> <span class="m">1</span><span class="p">))</span>
-
-<span class="c1"># To make life a bit easier going forward, we&#39;re going to discard all but the top 100 most</span>
-<span class="c1"># highly expressed mouse genes, and remove the &#39;HUMAN_&#39; from the CITE-seq prefix</span>
-<span class="n">cbmc.rna</span> <span class="o">&lt;-</span> <span class="nf">CollapseSpeciesExpressionMatrix</span><span class="p">(</span><span class="n">cbmc.rna</span><span class="p">)</span>
-
-<span class="c1"># Load in the ADT UMI matrix</span>
-<span class="n">cbmc.adt</span> <span class="o">&lt;-</span> <span class="nf">as.sparse</span><span class="p">(</span><span class="nf">read.csv</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#34;./GSE100866_CBMC_8K_13AB_10X-ADT_umi.csv.gz&#34;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&#34;,&#34;</span><span class="p">,</span> 
-    <span class="n">header</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">row.names</span> <span class="o">=</span> <span class="m">1</span><span class="p">))</span>
-
-<span class="c1"># Note that since measurements were made in the same cells, the two matrices have identical</span>
-<span class="c1"># column names</span>
-<span class="nf">all.equal</span><span class="p">(</span><span class="nf">colnames</span><span class="p">(</span><span class="n">cbmc.rna</span><span class="p">),</span> <span class="nf">colnames</span><span class="p">(</span><span class="n">cbmc.adt</span><span class="p">))</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">Seurat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Load in the RNA UMI matrix</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Note that this dataset also contains ~5% of mouse cells, which we can use as negative controls</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># for the protein measurements. For this reason, the gene expression matrix has HUMAN_ or MOUSE_</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># appended to the beginning of each gene.</span>
+</span></span><span class="line"><span class="cl"><span class="n">cbmc.rna</span> <span class="o">&lt;-</span> <span class="nf">as.sparse</span><span class="p">(</span><span class="nf">read.csv</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#34;./GSE100866_CBMC_8K_13AB_10X-RNA_umi.csv.gz&#34;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&#34;,&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">header</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">row.names</span> <span class="o">=</span> <span class="m">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># To make life a bit easier going forward, we&#39;re going to discard all but the top 100 most</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># highly expressed mouse genes, and remove the &#39;HUMAN_&#39; from the CITE-seq prefix</span>
+</span></span><span class="line"><span class="cl"><span class="n">cbmc.rna</span> <span class="o">&lt;-</span> <span class="nf">CollapseSpeciesExpressionMatrix</span><span class="p">(</span><span class="n">cbmc.rna</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Load in the ADT UMI matrix</span>
+</span></span><span class="line"><span class="cl"><span class="n">cbmc.adt</span> <span class="o">&lt;-</span> <span class="nf">as.sparse</span><span class="p">(</span><span class="nf">read.csv</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#34;./GSE100866_CBMC_8K_13AB_10X-ADT_umi.csv.gz&#34;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&#34;,&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">header</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">row.names</span> <span class="o">=</span> <span class="m">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Note that since measurements were made in the same cells, the two matrices have identical</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># column names</span>
+</span></span><span class="line"><span class="cl"><span class="nf">all.equal</span><span class="p">(</span><span class="nf">colnames</span><span class="p">(</span><span class="n">cbmc.rna</span><span class="p">),</span> <span class="nf">colnames</span><span class="p">(</span><span class="n">cbmc.adt</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="1.png" alt="fig1"></p>
 </li>
@@ -627,7 +622,7 @@ if (!doNotTrack) {
 <p>Create a Seurat object first, and then add the ADT data as a second assay</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -656,34 +651,34 @@ if (!doNotTrack) {
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># creates a Seurat object based on the scRNA-seq data</span>
-<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">CreateSeuratObject</span><span class="p">(</span><span class="n">counts</span> <span class="o">=</span> <span class="n">cbmc.rna</span><span class="p">)</span>
-
-<span class="c1"># We can see that by default, the cbmc object contains an assay storing RNA measurement</span>
-<span class="nf">Assays</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
-
-<span class="c1"># create a new assay to store ADT information</span>
-<span class="n">adt_assay</span> <span class="o">&lt;-</span> <span class="nf">CreateAssayObject</span><span class="p">(</span><span class="n">counts</span> <span class="o">=</span> <span class="n">cbmc.adt</span><span class="p">)</span>
-
-<span class="c1"># add this assay to the previously created Seurat object</span>
-<span class="n">cbmc[[</span><span class="s">&#34;ADT&#34;</span><span class="n">]]</span> <span class="o">&lt;-</span> <span class="n">adt_assay</span>
-
-<span class="c1"># Validate that the object now contains multiple assays</span>
-<span class="nf">Assays</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
-
-<span class="c1"># Extract a list of features measured in the ADT assay</span>
-<span class="nf">rownames</span><span class="p">(</span><span class="n">cbmc[[</span><span class="s">&#34;ADT&#34;</span><span class="n">]]</span><span class="p">)</span>
-
-<span class="c1"># Note that we can easily switch back and forth between the two assays to specify the default</span>
-<span class="c1"># for visualization and analysis</span>
-
-<span class="c1"># List the current default assay</span>
-<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
-
-<span class="c1"># Switch the default to ADT</span>
-<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;ADT&#34;</span>
-<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># creates a Seurat object based on the scRNA-seq data</span>
+</span></span><span class="line"><span class="cl"><span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">CreateSeuratObject</span><span class="p">(</span><span class="n">counts</span> <span class="o">=</span> <span class="n">cbmc.rna</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># We can see that by default, the cbmc object contains an assay storing RNA measurement</span>
+</span></span><span class="line"><span class="cl"><span class="nf">Assays</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># create a new assay to store ADT information</span>
+</span></span><span class="line"><span class="cl"><span class="n">adt_assay</span> <span class="o">&lt;-</span> <span class="nf">CreateAssayObject</span><span class="p">(</span><span class="n">counts</span> <span class="o">=</span> <span class="n">cbmc.adt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># add this assay to the previously created Seurat object</span>
+</span></span><span class="line"><span class="cl"><span class="n">cbmc[[</span><span class="s">&#34;ADT&#34;</span><span class="n">]]</span> <span class="o">&lt;-</span> <span class="n">adt_assay</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Validate that the object now contains multiple assays</span>
+</span></span><span class="line"><span class="cl"><span class="nf">Assays</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Extract a list of features measured in the ADT assay</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rownames</span><span class="p">(</span><span class="n">cbmc[[</span><span class="s">&#34;ADT&#34;</span><span class="n">]]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Note that we can easily switch back and forth between the two assays to specify the default</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># for visualization and analysis</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># List the current default assay</span>
+</span></span><span class="line"><span class="cl"><span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Switch the default to ADT</span>
+</span></span><span class="line"><span class="cl"><span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;ADT&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="2.png" alt="fig2"></p>
 </li>
@@ -694,7 +689,7 @@ if (!doNotTrack) {
 <p>The steps below represent a quick clustering of the PBMCs based on the scRNA-seq data.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -711,22 +706,22 @@ if (!doNotTrack) {
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Note that all operations below are performed on the RNA assay Set and verify that the default</span>
-<span class="c1"># assay is RNA</span>
-<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;RNA&#34;</span>
-<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
-
-<span class="c1"># perform visualization and clustering steps</span>
-<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
-<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">FindVariableFeatures</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
-<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">ScaleData</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
-<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">RunPCA</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">FindNeighbors</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
-<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">FindClusters</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">RunUMAP</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
-<span class="nf">DimPlot</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./dimplot1.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Note that all operations below are performed on the RNA assay Set and verify that the default</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># assay is RNA</span>
+</span></span><span class="line"><span class="cl"><span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;RNA&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># perform visualization and clustering steps</span>
+</span></span><span class="line"><span class="cl"><span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">FindVariableFeatures</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">ScaleData</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">RunPCA</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">FindNeighbors</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">FindClusters</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">RunUMAP</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">DimPlot</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./dimplot1.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -747,7 +742,7 @@ if (!doNotTrack) {
 <p>For example with the B cell marker CD19 (both protein and RNA levels).</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -767,25 +762,25 @@ if (!doNotTrack) {
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Normalize ADT data,</span>
-<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;ADT&#34;</span>
-<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">normalization.method</span> <span class="o">=</span> <span class="s">&#34;CLR&#34;</span><span class="p">,</span> <span class="n">margin</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
-<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;RNA&#34;</span>
-
-<span class="c1"># Note that the following command is an alternative but returns the same result</span>
-<span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">normalization.method</span> <span class="o">=</span> <span class="s">&#34;CLR&#34;</span><span class="p">,</span> <span class="n">margin</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;ADT&#34;</span><span class="p">)</span>
-
-<span class="c1"># Now, we will visualize CD14 levels for RNA and protein By setting the default assay, we can</span>
-<span class="c1"># visualize one or the other</span>
-<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;ADT&#34;</span>
-<span class="n">p1</span> <span class="o">&lt;-</span> <span class="nf">FeaturePlot</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="s">&#34;CD19&#34;</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;lightgrey&#34;</span><span class="p">,</span> <span class="s">&#34;darkgreen&#34;</span><span class="p">))</span> <span class="o">+</span> <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&#34;CD19 protein&#34;</span><span class="p">)</span>
-<span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;RNA&#34;</span>
-<span class="n">p2</span> <span class="o">&lt;-</span> <span class="nf">FeaturePlot</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="s">&#34;CD19&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&#34;CD19 RNA&#34;</span><span class="p">)</span>
-
-<span class="c1"># place plots side-by-side</span>
-<span class="n">p1</span> <span class="o">|</span> <span class="n">p2</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featureplot1.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Normalize ADT data,</span>
+</span></span><span class="line"><span class="cl"><span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;ADT&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">normalization.method</span> <span class="o">=</span> <span class="s">&#34;CLR&#34;</span><span class="p">,</span> <span class="n">margin</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;RNA&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Note that the following command is an alternative but returns the same result</span>
+</span></span><span class="line"><span class="cl"><span class="n">cbmc</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">normalization.method</span> <span class="o">=</span> <span class="s">&#34;CLR&#34;</span><span class="p">,</span> <span class="n">margin</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;ADT&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Now, we will visualize CD14 levels for RNA and protein By setting the default assay, we can</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># visualize one or the other</span>
+</span></span><span class="line"><span class="cl"><span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;ADT&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">&lt;-</span> <span class="nf">FeaturePlot</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="s">&#34;CD19&#34;</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;lightgrey&#34;</span><span class="p">,</span> <span class="s">&#34;darkgreen&#34;</span><span class="p">))</span> <span class="o">+</span> <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&#34;CD19 protein&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cbmc</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;RNA&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span> <span class="o">&lt;-</span> <span class="nf">FeaturePlot</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="s">&#34;CD19&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&#34;CD19 RNA&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># place plots side-by-side</span>
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">|</span> <span class="n">p2</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featureplot1.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="featureplot1.png" alt="featureplot1"></p>
 </li>
@@ -799,13 +794,13 @@ if (!doNotTrack) {
 <p>Identify cluster 6 as expressing CD19 on the surface</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">VlnPlot</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="s">&#34;adt_CD19&#34;</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./vlnplot1.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">VlnPlot</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="s">&#34;adt_CD19&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./vlnplot1.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="vlnplot1.png" alt="vlnplot1"></p>
 </li>
@@ -813,19 +808,19 @@ if (!doNotTrack) {
 <p>Also, identify alternative protein and RNA markers for this cluster through differential expression</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">adt_markers</span> <span class="o">&lt;-</span> <span class="nf">FindMarkers</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">ident.1</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;ADT&#34;</span><span class="p">)</span>
-<span class="n">rna_markers</span> <span class="o">&lt;-</span> <span class="nf">FindMarkers</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">ident.1</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;RNA&#34;</span><span class="p">)</span>
-
-<span class="nf">head</span><span class="p">(</span><span class="n">adt_markers</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">rna_markers</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">adt_markers</span> <span class="o">&lt;-</span> <span class="nf">FindMarkers</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">ident.1</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;ADT&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rna_markers</span> <span class="o">&lt;-</span> <span class="nf">FindMarkers</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">ident.1</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;RNA&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">adt_markers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">rna_markers</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig3.png" alt="fig3"></p>
 </li>
@@ -836,13 +831,13 @@ if (!doNotTrack) {
 <p>Draw <code>ADT</code> scatter plots (like biaxial plots for FACS). Note that you can even &lsquo;gate&rsquo; cells if desired by using HoverLocator and FeatureLocator.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD19&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;adt_CD3&#34;</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featurescatterplot.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD19&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;adt_CD3&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featurescatterplot.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="featurescatterplot.png" alt="featurescatterplot"></p>
 </li>
@@ -850,13 +845,13 @@ if (!doNotTrack) {
 <p>View relationship between <strong>protein</strong> and <strong>RNA</strong>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD3&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;rna_CD3E&#34;</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featurescatterplot2.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD3&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;rna_CD3E&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featurescatterplot2.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="featurescatterplot2.png" alt="featurescatterplot2"></p>
 </li>
@@ -864,13 +859,13 @@ if (!doNotTrack) {
 <p>View relationship between <strong>CD4 and CD8 proteins</strong>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD4&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;adt_CD8&#34;</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featurescatterplot3.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD4&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;adt_CD8&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featurescatterplot3.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="featurescatterplot3.png" alt="featurescatterplot3"></p>
 </li>
@@ -878,13 +873,13 @@ if (!doNotTrack) {
 <p>View the <strong>raw</strong> (non-normalized) ADT <code>counts</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD4&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;adt_CD8&#34;</span><span class="p">,</span> <span class="n">slot</span> <span class="o">=</span> <span class="s">&#34;counts&#34;</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featurescatterplot4.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">cbmc</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD4&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;adt_CD8&#34;</span><span class="p">,</span> <span class="n">slot</span> <span class="o">=</span> <span class="s">&#34;counts&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featurescatterplot4.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="featurescatterplot4.png" alt="featurescatterplot4"></p>
 </li>
@@ -898,18 +893,18 @@ if (!doNotTrack) {
 <p>uncompress dataset.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tar</span> <span class="n">xvzf</span> <span class="n">pbmc_10k_protein_v3_filtered_feature_bc_matrix</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">tar</span> <span class="n">xvzf</span> <span class="n">pbmc_10k_protein_v3_filtered_feature_bc_matrix</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Analyze data.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -925,21 +920,21 @@ if (!doNotTrack) {
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">pbmc10k.data</span> <span class="o">&lt;-</span> <span class="nf">Read10X</span><span class="p">(</span><span class="n">data.dir</span> <span class="o">=</span> <span class="s">&#34;./filtered_feature_bc_matrix/&#34;</span><span class="p">)</span>
-<span class="nf">rownames</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pbmc10k.data[[</span><span class="s">&#34;Antibody Capture&#34;</span><span class="n">]]</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">gsub</span><span class="p">(</span><span class="n">pattern</span> <span class="o">=</span> <span class="s">&#34;_[control_]*TotalSeqB&#34;</span><span class="p">,</span> <span class="n">replacement</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span> 
-                                                        <span class="n">x</span> <span class="o">=</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pbmc10k.data[[</span><span class="s">&#34;Antibody Capture&#34;</span><span class="n">]]</span><span class="p">))</span>
-
-<span class="n">pbmc10k</span> <span class="o">&lt;-</span> <span class="nf">CreateSeuratObject</span><span class="p">(</span><span class="n">counts</span> <span class="o">=</span> <span class="n">pbmc10k.data[[</span><span class="s">&#34;Gene Expression&#34;</span><span class="n">]]</span><span class="p">,</span> <span class="n">min.cells</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">min.features</span> <span class="o">=</span> <span class="m">200</span><span class="p">)</span>
-<span class="n">pbmc10k</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">pbmc10k</span><span class="p">)</span>
-<span class="n">pbmc10k[[</span><span class="s">&#34;ADT&#34;</span><span class="n">]]</span> <span class="o">&lt;-</span> <span class="nf">CreateAssayObject</span><span class="p">(</span><span class="n">pbmc10k.data[[</span><span class="s">&#34;Antibody Capture&#34;</span><span class="n">]][</span><span class="p">,</span> <span class="nf">colnames</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pbmc10k</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
-<span class="n">pbmc10k</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">pbmc10k</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;ADT&#34;</span><span class="p">,</span> <span class="n">normalization.method</span> <span class="o">=</span> <span class="s">&#34;CLR&#34;</span><span class="p">)</span>
-
-<span class="n">plot1</span> <span class="o">&lt;-</span> <span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">pbmc10k</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD19&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;adt_CD3&#34;</span><span class="p">,</span> <span class="n">pt.size</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
-<span class="n">plot2</span> <span class="o">&lt;-</span> <span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">pbmc10k</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD4&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;adt_CD8a&#34;</span><span class="p">,</span> <span class="n">pt.size</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
-<span class="n">plot3</span> <span class="o">&lt;-</span> <span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">pbmc10k</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD3&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;CD3E&#34;</span><span class="p">,</span> <span class="n">pt.size</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
-<span class="p">(</span><span class="n">plot1</span> <span class="o">+</span> <span class="n">plot2</span> <span class="o">+</span> <span class="n">plot3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nf">NoLegend</span><span class="p">()</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featurescatter53.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">pbmc10k.data</span> <span class="o">&lt;-</span> <span class="nf">Read10X</span><span class="p">(</span><span class="n">data.dir</span> <span class="o">=</span> <span class="s">&#34;./filtered_feature_bc_matrix/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rownames</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pbmc10k.data[[</span><span class="s">&#34;Antibody Capture&#34;</span><span class="n">]]</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">gsub</span><span class="p">(</span><span class="n">pattern</span> <span class="o">=</span> <span class="s">&#34;_[control_]*TotalSeqB&#34;</span><span class="p">,</span> <span class="n">replacement</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                                        <span class="n">x</span> <span class="o">=</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pbmc10k.data[[</span><span class="s">&#34;Antibody Capture&#34;</span><span class="n">]]</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pbmc10k</span> <span class="o">&lt;-</span> <span class="nf">CreateSeuratObject</span><span class="p">(</span><span class="n">counts</span> <span class="o">=</span> <span class="n">pbmc10k.data[[</span><span class="s">&#34;Gene Expression&#34;</span><span class="n">]]</span><span class="p">,</span> <span class="n">min.cells</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">min.features</span> <span class="o">=</span> <span class="m">200</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc10k</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">pbmc10k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc10k[[</span><span class="s">&#34;ADT&#34;</span><span class="n">]]</span> <span class="o">&lt;-</span> <span class="nf">CreateAssayObject</span><span class="p">(</span><span class="n">pbmc10k.data[[</span><span class="s">&#34;Antibody Capture&#34;</span><span class="n">]][</span><span class="p">,</span> <span class="nf">colnames</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pbmc10k</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc10k</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">pbmc10k</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;ADT&#34;</span><span class="p">,</span> <span class="n">normalization.method</span> <span class="o">=</span> <span class="s">&#34;CLR&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">plot1</span> <span class="o">&lt;-</span> <span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">pbmc10k</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD19&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;adt_CD3&#34;</span><span class="p">,</span> <span class="n">pt.size</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plot2</span> <span class="o">&lt;-</span> <span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">pbmc10k</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD4&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;adt_CD8a&#34;</span><span class="p">,</span> <span class="n">pt.size</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plot3</span> <span class="o">&lt;-</span> <span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">pbmc10k</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;adt_CD3&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;CD3E&#34;</span><span class="p">,</span> <span class="n">pt.size</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">plot1</span> <span class="o">+</span> <span class="n">plot2</span> <span class="o">+</span> <span class="n">plot3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nf">NoLegend</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featurescatter53.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="featurescatter53.png" alt="featurescatter53"></p>
 </li>
@@ -1070,7 +1065,7 @@ if (!doNotTrack) {
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1114,7 +1109,7 @@ if (!doNotTrack) {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 

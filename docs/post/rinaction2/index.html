@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/rinaction2/" />
@@ -54,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,19 +67,14 @@
 <meta property="og:title" content="Chapter 2. Creating a dataset" />
 <meta property="og:description" content="Notebook of Reading Books: R in Action_Chapter 2." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/rinaction2/" />
+<meta property="og:url" content="/post/rinaction2/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-10-20T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-10-28T00:00:00+00:00" />
 <meta itemprop="name" content="Chapter 2. Creating a dataset">
-<meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 2.">
-<meta itemprop="datePublished" content="2020-10-20T00:00:00+00:00" />
+<meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 2."><meta itemprop="datePublished" content="2020-10-20T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-10-28T00:00:00+00:00" />
 <meta itemprop="wordCount" content="415">
-
-
-
-<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Chapter 2. Creating a dataset"/>
 <meta name="twitter:description" content="Notebook of Reading Books: R in Action_Chapter 2."/>
 
@@ -567,7 +562,7 @@ if (!doNotTrack) {
 <p>Show me the code <i class="far fa-hand-pointer"></i></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -659,97 +654,97 @@ if (!doNotTrack) {
 </span><span class="lnt">90
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Remove most objects from the working environment</span>
-<span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
-
-<span class="nf">help.start</span><span class="p">()</span>
-
-<span class="c1"># Section 2.2 Data structures</span>
-<span class="nf">attach</span><span class="p">();</span> <span class="nf">detach</span><span class="p">();</span> <span class="nf">with</span><span class="p">()</span>
-<span class="c1"># example</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">mpg</span><span class="p">)</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">mpg</span><span class="p">,</span> <span class="n">mtcars</span><span class="o">$</span><span class="n">disp</span><span class="p">)</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">mpg</span><span class="p">,</span> <span class="n">mtcars</span><span class="o">$</span><span class="n">wt</span><span class="p">)</span>
-
-<span class="c1"># equal:</span>
-<span class="nf">attach</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">mpg</span><span class="p">)</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">disp</span><span class="p">)</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">wt</span><span class="p">)</span>
-<span class="nf">detach</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
-
-<span class="c1"># equal:</span>
-<span class="nf">with</span><span class="p">(</span><span class="n">mtcars</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nf">summary</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">disp</span><span class="p">,</span> <span class="n">wt</span><span class="p">)</span>
-  <span class="nf">plot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">disp</span><span class="p">)</span>
-  <span class="nf">plot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">wt</span><span class="p">)</span>
-<span class="p">})</span>
-
-<span class="c1">## Section 2.2.6 Lists</span>
-<span class="c1"># code listing 2.7 Creating a list</span>
-<span class="n">g</span> <span class="o">&lt;-</span> <span class="s">&#34;My First List&#34;</span>
-<span class="n">h</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">26</span><span class="p">,</span> <span class="m">18</span><span class="p">,</span> <span class="m">39</span><span class="p">)</span>
-<span class="n">j</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
-<span class="n">k</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;one&#34;</span><span class="p">,</span> <span class="s">&#34;two&#34;</span><span class="p">,</span> <span class="s">&#34;three&#34;</span><span class="p">)</span>
-<span class="n">mylist</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">ages</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-<span class="n">mylist</span>
-
-<span class="nf">str</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
-<span class="n">mylist[[2]]</span>
-<span class="n">mylist[[1]]</span>
-
-<span class="c1"># column</span>
-<span class="n">mylist[[3]][</span><span class="p">,</span><span class="m">2</span><span class="n">]</span>
-
-<span class="c1"># row</span>
-<span class="n">mylist[[3]][2</span><span class="p">,</span><span class="n">]</span>
-<span class="n">mylist[[4]][1]</span>
-
-<span class="c1"># A Note about &#39;block comments&#39;</span>
-<span class="nf">if</span><span class="p">(</span><span class="kc">FALSE</span><span class="p">)</span> <span class="p">{</span><span class="kc">...</span><span class="p">}</span>
-
-
-<span class="c1">## Section 2.3.1 Data Input</span>
-
-<span class="c1">## Section 2.3.1 Entering Data from keyboard</span>
-<span class="n">mydatatxt</span> <span class="o">&lt;-</span> <span class="s">&#34;
-</span><span class="s">age gender weight
-</span><span class="s">25 m 166
-</span><span class="s">30 f 115
-</span><span class="s">18 f 120
-</span><span class="s">&#34;</span>
-<span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">read.table</span><span class="p">(</span><span class="n">header</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="n">mydatatxt</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
-<span class="nf">str</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
-
-<span class="nf">write.table</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span><span class="s">&#34;mydata.csv&#34;</span><span class="p">,</span> <span class="n">col.names</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
-            <span class="n">row.names</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">append</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-
-<span class="nf">ls</span><span class="p">()</span> <span class="c1"># display current objects</span>
-
-<span class="c1"># method 2</span>
-<span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="nf">numeric</span><span class="p">(</span><span class="m">0</span><span class="p">),</span>
-                     <span class="n">gender</span><span class="o">=</span><span class="nf">character</span><span class="p">(</span><span class="m">0</span><span class="p">),</span> <span class="n">weight</span><span class="o">=</span><span class="nf">numeric</span><span class="p">(</span><span class="m">0</span><span class="p">))</span>
-<span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">edit</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
-
-
-<span class="c1"># 2.5. Useful functions for working with data objects</span>
-
-<span class="nf">dim</span><span class="p">(</span><span class="n">object</span><span class="p">)</span> <span class="c1"># Dimensions of an object.</span>
-<span class="nf">str</span><span class="p">(</span><span class="n">object</span><span class="p">)</span> <span class="c1"># Structure of an object.</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">object</span><span class="p">)</span> <span class="c1"># Class or type of an object.</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">object</span><span class="p">)</span> <span class="c1"># Lists the first part of the object.</span>
-<span class="nf">tail</span><span class="p">(</span><span class="n">object</span><span class="p">)</span> <span class="c1"># Lists the last part of the object.</span>
-<span class="nf">c</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">object</span><span class="p">,</span><span class="kc">...</span><span class="p">)</span> <span class="c1"># Combines objects into a vector.</span>
-<span class="nf">cbind</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">object</span><span class="p">,</span> <span class="kc">...</span><span class="p">)</span> <span class="c1"># Combines objects as columns.</span>
-<span class="nf">rbind</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">object</span><span class="p">,</span> <span class="kc">...</span><span class="p">)</span> <span class="c1"># Combines objects as rows.</span>
-
-<span class="nf">rm</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">object</span><span class="p">,</span> <span class="kc">...</span><span class="p">)</span> <span class="c1"># Deletes one or more objects.</span>
-<span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">Is</span><span class="p">())</span> <span class="c1"># remove most objects from the working environment.</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Remove most objects from the working environment</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">help.start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Section 2.2 Data structures</span>
+</span></span><span class="line"><span class="cl"><span class="nf">attach</span><span class="p">();</span> <span class="nf">detach</span><span class="p">();</span> <span class="nf">with</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># example</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">mpg</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">mpg</span><span class="p">,</span> <span class="n">mtcars</span><span class="o">$</span><span class="n">disp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">mpg</span><span class="p">,</span> <span class="n">mtcars</span><span class="o">$</span><span class="n">wt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># equal:</span>
+</span></span><span class="line"><span class="cl"><span class="nf">attach</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">mpg</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">disp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">wt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">detach</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># equal:</span>
+</span></span><span class="line"><span class="cl"><span class="nf">with</span><span class="p">(</span><span class="n">mtcars</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">summary</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">disp</span><span class="p">,</span> <span class="n">wt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">plot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">disp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">plot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="n">wt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## Section 2.2.6 Lists</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 2.7 Creating a list</span>
+</span></span><span class="line"><span class="cl"><span class="n">g</span> <span class="o">&lt;-</span> <span class="s">&#34;My First List&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">h</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">26</span><span class="p">,</span> <span class="m">18</span><span class="p">,</span> <span class="m">39</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">j</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">k</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;one&#34;</span><span class="p">,</span> <span class="s">&#34;two&#34;</span><span class="p">,</span> <span class="s">&#34;three&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mylist</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">ages</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mylist</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mylist[[2]]</span>
+</span></span><span class="line"><span class="cl"><span class="n">mylist[[1]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># column</span>
+</span></span><span class="line"><span class="cl"><span class="n">mylist[[3]][</span><span class="p">,</span><span class="m">2</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># row</span>
+</span></span><span class="line"><span class="cl"><span class="n">mylist[[3]][2</span><span class="p">,</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">mylist[[4]][1]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># A Note about &#39;block comments&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">if</span><span class="p">(</span><span class="kc">FALSE</span><span class="p">)</span> <span class="p">{</span><span class="kc">...</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## Section 2.3.1 Data Input</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## Section 2.3.1 Entering Data from keyboard</span>
+</span></span><span class="line"><span class="cl"><span class="n">mydatatxt</span> <span class="o">&lt;-</span> <span class="s">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">age gender weight
+</span></span></span><span class="line"><span class="cl"><span class="s">25 m 166
+</span></span></span><span class="line"><span class="cl"><span class="s">30 f 115
+</span></span></span><span class="line"><span class="cl"><span class="s">18 f 120
+</span></span></span><span class="line"><span class="cl"><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">read.table</span><span class="p">(</span><span class="n">header</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="n">mydatatxt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">class</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">write.table</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span><span class="s">&#34;mydata.csv&#34;</span><span class="p">,</span> <span class="n">col.names</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">row.names</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">append</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">ls</span><span class="p">()</span> <span class="c1"># display current objects</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># method 2</span>
+</span></span><span class="line"><span class="cl"><span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="nf">numeric</span><span class="p">(</span><span class="m">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                     <span class="n">gender</span><span class="o">=</span><span class="nf">character</span><span class="p">(</span><span class="m">0</span><span class="p">),</span> <span class="n">weight</span><span class="o">=</span><span class="nf">numeric</span><span class="p">(</span><span class="m">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">edit</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2.5. Useful functions for working with data objects</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">dim</span><span class="p">(</span><span class="n">object</span><span class="p">)</span> <span class="c1"># Dimensions of an object.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">object</span><span class="p">)</span> <span class="c1"># Structure of an object.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">class</span><span class="p">(</span><span class="n">object</span><span class="p">)</span> <span class="c1"># Class or type of an object.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">object</span><span class="p">)</span> <span class="c1"># Lists the first part of the object.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">tail</span><span class="p">(</span><span class="n">object</span><span class="p">)</span> <span class="c1"># Lists the last part of the object.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">c</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">object</span><span class="p">,</span><span class="kc">...</span><span class="p">)</span> <span class="c1"># Combines objects into a vector.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">cbind</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">object</span><span class="p">,</span> <span class="kc">...</span><span class="p">)</span> <span class="c1"># Combines objects as columns.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rbind</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">object</span><span class="p">,</span> <span class="kc">...</span><span class="p">)</span> <span class="c1"># Combines objects as rows.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">rm</span><span class="p">(</span><span class="n">object</span><span class="p">,</span> <span class="n">object</span><span class="p">,</span> <span class="kc">...</span><span class="p">)</span> <span class="c1"># Deletes one or more objects.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">Is</span><span class="p">())</span> <span class="c1"># remove most objects from the working environment.</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -873,7 +868,7 @@ if (!doNotTrack) {
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -917,7 +912,7 @@ if (!doNotTrack) {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 

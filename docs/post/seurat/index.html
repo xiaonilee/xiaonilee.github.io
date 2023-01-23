@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/seurat/" />
@@ -54,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,19 +67,14 @@
 <meta property="og:title" content="Seurat - Guided Clustering Tutorial" />
 <meta property="og:description" content="In this article, I will follow the official Tutorial to do clustering using Seurat step by step." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/seurat/" />
+<meta property="og:url" content="/post/seurat/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-02-25T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-02-27T00:00:00+00:00" />
 <meta itemprop="name" content="Seurat - Guided Clustering Tutorial">
-<meta itemprop="description" content="In this article, I will follow the official Tutorial to do clustering using Seurat step by step.">
-<meta itemprop="datePublished" content="2021-02-25T00:00:00+00:00" />
+<meta itemprop="description" content="In this article, I will follow the official Tutorial to do clustering using Seurat step by step."><meta itemprop="datePublished" content="2021-02-25T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-27T00:00:00+00:00" />
 <meta itemprop="wordCount" content="869">
-
-
-
-<meta itemprop="keywords" content="Bioinformatics,R,RNA Sequence,PCA,KNN," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Bioinformatics,R,RNA Sequence,PCA,KNN," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Seurat - Guided Clustering Tutorial"/>
 <meta name="twitter:description" content="In this article, I will follow the official Tutorial to do clustering using Seurat step by step."/>
 
@@ -565,21 +560,21 @@ if (!doNotTrack) {
 <h3 id="setup-the-seurat-object">Setup the Seurat Object</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">Seurat</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">Seurat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -596,22 +591,22 @@ if (!doNotTrack) {
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Load the PBMC dataset</span>
-<span class="n">pbmc.data</span> <span class="o">&lt;-</span> <span class="nf">Read10X</span><span class="p">(</span><span class="n">data.dir</span> <span class="o">=</span> <span class="s">&#34;./filtered_gene_bc_matrices/hg19/&#34;</span><span class="p">)</span>
-<span class="c1"># Initialize the Seurat object with the raw (non-normalized data).</span>
-<span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">CreateSeuratObject</span><span class="p">(</span><span class="n">counts</span> <span class="o">=</span> <span class="n">pbmc.data</span><span class="p">,</span> <span class="n">project</span> <span class="o">=</span> <span class="s">&#34;pbmc3k&#34;</span><span class="p">,</span> <span class="n">min.cells</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">min.features</span> <span class="o">=</span> <span class="m">200</span><span class="p">)</span>
-<span class="n">pbmc</span>
-
-<span class="c1"># Lets examine a few genes in the first thirty cells</span>
-<span class="n">pbmc.data</span><span class="nf">[c</span><span class="p">(</span><span class="s">&#34;CD3D&#34;</span><span class="p">,</span> <span class="s">&#34;TCL1A&#34;</span><span class="p">,</span> <span class="s">&#34;MS4A1&#34;</span><span class="p">),</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="n">]</span>
-<span class="n">dense.size</span> <span class="o">&lt;-</span> <span class="nf">object.size</span><span class="p">(</span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">pbmc.data</span><span class="p">))</span>
-<span class="n">dense.size</span>
-
-<span class="n">sparse.size</span> <span class="o">&lt;-</span> <span class="nf">object.size</span><span class="p">(</span><span class="n">pbmc.data</span><span class="p">)</span>
-<span class="n">sparse.size</span>
-
-<span class="n">dense.size</span><span class="o">/</span><span class="n">sparse.size</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Load the PBMC dataset</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc.data</span> <span class="o">&lt;-</span> <span class="nf">Read10X</span><span class="p">(</span><span class="n">data.dir</span> <span class="o">=</span> <span class="s">&#34;./filtered_gene_bc_matrices/hg19/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Initialize the Seurat object with the raw (non-normalized data).</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">CreateSeuratObject</span><span class="p">(</span><span class="n">counts</span> <span class="o">=</span> <span class="n">pbmc.data</span><span class="p">,</span> <span class="n">project</span> <span class="o">=</span> <span class="s">&#34;pbmc3k&#34;</span><span class="p">,</span> <span class="n">min.cells</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">min.features</span> <span class="o">=</span> <span class="m">200</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Lets examine a few genes in the first thirty cells</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc.data</span><span class="nf">[c</span><span class="p">(</span><span class="s">&#34;CD3D&#34;</span><span class="p">,</span> <span class="s">&#34;TCL1A&#34;</span><span class="p">,</span> <span class="s">&#34;MS4A1&#34;</span><span class="p">),</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">dense.size</span> <span class="o">&lt;-</span> <span class="nf">object.size</span><span class="p">(</span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">pbmc.data</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">dense.size</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sparse.size</span> <span class="o">&lt;-</span> <span class="nf">object.size</span><span class="p">(</span><span class="n">pbmc.data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">sparse.size</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dense.size</span><span class="o">/</span><span class="n">sparse.size</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="1.png" alt="fig1"></p>
 <h3 id="standard-pre-processing-workflow">Standard pre-processing workflow</h3>
@@ -620,7 +615,7 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -628,18 +623,18 @@ if (!doNotTrack) {
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># The [[ operator can add columns to object metadata. This is a great place to stash QC stats</span>
-<span class="n">pbmc[[</span><span class="s">&#34;percent.mt&#34;</span><span class="n">]]</span> <span class="o">&lt;-</span> <span class="nf">PercentageFeatureSet</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">pattern</span> <span class="o">=</span> <span class="s">&#34;^MT-&#34;</span><span class="p">)</span>
-
-<span class="c1"># Visualize QC metrics as a violin plot</span>
-<span class="nf">VlnPlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;nFeature_RNA&#34;</span><span class="p">,</span> <span class="s">&#34;nCount_RNA&#34;</span><span class="p">,</span> <span class="s">&#34;percent.mt&#34;</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./vlnplot.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># The [[ operator can add columns to object metadata. This is a great place to stash QC stats</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc[[</span><span class="s">&#34;percent.mt&#34;</span><span class="n">]]</span> <span class="o">&lt;-</span> <span class="nf">PercentageFeatureSet</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">pattern</span> <span class="o">=</span> <span class="s">&#34;^MT-&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Visualize QC metrics as a violin plot</span>
+</span></span><span class="line"><span class="cl"><span class="nf">VlnPlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;nFeature_RNA&#34;</span><span class="p">,</span> <span class="s">&#34;nCount_RNA&#34;</span><span class="p">,</span> <span class="s">&#34;percent.mt&#34;</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./vlnplot.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="vlnplot.png" alt="vlnplot"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -648,41 +643,41 @@ if (!doNotTrack) {
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># FeatureScatter is typically used to visualize feature-feature relationships, but can be used</span>
-<span class="c1"># for anything calculated by the object, i.e. columns in object metadata, PC scores etc.</span>
-
-<span class="n">plot1</span> <span class="o">&lt;-</span> <span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;nCount_RNA&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;percent.mt&#34;</span><span class="p">)</span>
-<span class="n">plot2</span> <span class="o">&lt;-</span> <span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;nCount_RNA&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;nFeature_RNA&#34;</span><span class="p">)</span>
-<span class="n">plot1</span> <span class="o">+</span> <span class="n">plot2</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./plot12.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># FeatureScatter is typically used to visualize feature-feature relationships, but can be used</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># for anything calculated by the object, i.e. columns in object metadata, PC scores etc.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">plot1</span> <span class="o">&lt;-</span> <span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;nCount_RNA&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;percent.mt&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plot2</span> <span class="o">&lt;-</span> <span class="nf">FeatureScatter</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">feature1</span> <span class="o">=</span> <span class="s">&#34;nCount_RNA&#34;</span><span class="p">,</span> <span class="n">feature2</span> <span class="o">=</span> <span class="s">&#34;nFeature_RNA&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plot1</span> <span class="o">+</span> <span class="n">plot2</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./plot12.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="plot12.png" alt="plot12"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1">#filter cells that have unique feature counts over 2,500 or less than 200 &amp; have &gt;5% mitochondrial counts</span>
-<span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">subset</span> <span class="o">=</span> <span class="n">nFeature_RNA</span> <span class="o">&gt;</span> <span class="m">200</span> <span class="o">&amp;</span> <span class="n">nFeature_RNA</span> <span class="o">&lt;</span> <span class="m">2500</span> <span class="o">&amp;</span> <span class="n">percent.mt</span> <span class="o">&lt;</span> <span class="m">5</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#filter cells that have unique feature counts over 2,500 or less than 200 &amp; have &gt;5% mitochondrial counts</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">subset</span> <span class="o">=</span> <span class="n">nFeature_RNA</span> <span class="o">&gt;</span> <span class="m">200</span> <span class="o">&amp;</span> <span class="n">nFeature_RNA</span> <span class="o">&lt;</span> <span class="m">2500</span> <span class="o">&amp;</span> <span class="n">percent.mt</span> <span class="o">&lt;</span> <span class="m">5</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="normalizing-the-data">Normalizing the data</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">normalization.method</span> <span class="o">=</span> <span class="s">&#34;LogNormalize&#34;</span><span class="p">,</span> <span class="n">scale.factor</span> <span class="o">=</span> <span class="m">10000</span><span class="p">)</span>
-<span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">pbmc</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">normalization.method</span> <span class="o">=</span> <span class="s">&#34;LogNormalize&#34;</span><span class="p">,</span> <span class="n">scale.factor</span> <span class="o">=</span> <span class="m">10000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">NormalizeData</span><span class="p">(</span><span class="n">pbmc</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="identification-of-highly-variable-features-feature-selection">Identification of highly variable features (feature selection)</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -693,33 +688,33 @@ if (!doNotTrack) {
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">FindVariableFeatures</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">selection.method</span> <span class="o">=</span> <span class="s">&#34;vst&#34;</span><span class="p">,</span> <span class="n">nfeatures</span> <span class="o">=</span> <span class="m">2000</span><span class="p">)</span>
-
-<span class="c1"># Identify the 10 most highly variable genes</span>
-<span class="n">top10</span> <span class="o">&lt;-</span> <span class="nf">head</span><span class="p">(</span><span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">pbmc</span><span class="p">),</span> <span class="m">10</span><span class="p">)</span>
-
-<span class="c1"># plot variable features with and without labels</span>
-<span class="n">plot1</span> <span class="o">&lt;-</span> <span class="nf">VariableFeaturePlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">)</span>
-<span class="n">plot2</span> <span class="o">&lt;-</span> <span class="nf">LabelPoints</span><span class="p">(</span><span class="n">plot</span> <span class="o">=</span> <span class="n">plot1</span><span class="p">,</span> <span class="n">points</span> <span class="o">=</span> <span class="n">top10</span><span class="p">,</span> <span class="n">repel</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">plot1</span> <span class="o">+</span> <span class="n">plot2</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">FindVariableFeatures</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">selection.method</span> <span class="o">=</span> <span class="s">&#34;vst&#34;</span><span class="p">,</span> <span class="n">nfeatures</span> <span class="o">=</span> <span class="m">2000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Identify the 10 most highly variable genes</span>
+</span></span><span class="line"><span class="cl"><span class="n">top10</span> <span class="o">&lt;-</span> <span class="nf">head</span><span class="p">(</span><span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">pbmc</span><span class="p">),</span> <span class="m">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># plot variable features with and without labels</span>
+</span></span><span class="line"><span class="cl"><span class="n">plot1</span> <span class="o">&lt;-</span> <span class="nf">VariableFeaturePlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plot2</span> <span class="o">&lt;-</span> <span class="nf">LabelPoints</span><span class="p">(</span><span class="n">plot</span> <span class="o">=</span> <span class="n">plot1</span><span class="p">,</span> <span class="n">points</span> <span class="o">=</span> <span class="n">top10</span><span class="p">,</span> <span class="n">repel</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plot1</span> <span class="o">+</span> <span class="n">plot2</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="plot1212.png" alt="plot1212"></p>
 <h3 id="scaling-the-data">Scaling the data</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">all.genes</span> <span class="o">&lt;-</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">pbmc</span><span class="p">)</span>
-<span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">ScaleData</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="n">all.genes</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">all.genes</span> <span class="o">&lt;-</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">pbmc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">ScaleData</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="n">all.genes</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="perform-linear-dimensional-reduction">Perform linear dimensional reduction</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -727,52 +722,52 @@ if (!doNotTrack) {
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">RunPCA</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">object</span> <span class="o">=</span> <span class="n">pbmc</span><span class="p">))</span>
-
-<span class="c1"># Examine and visualize PCA results a few different ways</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">pbmc[[</span><span class="s">&#34;pca&#34;</span><span class="n">]]</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span> <span class="n">nfeatures</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
-<span class="nf">VizDimLoadings</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;pca&#34;</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./dimReduction.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">RunPCA</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">object</span> <span class="o">=</span> <span class="n">pbmc</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Examine and visualize PCA results a few different ways</span>
+</span></span><span class="line"><span class="cl"><span class="nf">print</span><span class="p">(</span><span class="n">pbmc[[</span><span class="s">&#34;pca&#34;</span><span class="n">]]</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span> <span class="n">nfeatures</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">VizDimLoadings</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;pca&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./dimReduction.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="dimReduction.png" alt="dimreduction"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">DimPlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;pca&#34;</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./dimplot.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">DimPlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;pca&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./dimplot.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="dimplot.png" alt="dimplot"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">DimHeatmap</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">cells</span> <span class="o">=</span> <span class="m">500</span><span class="p">,</span> <span class="n">balanced</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./dimheatmap1.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">DimHeatmap</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">cells</span> <span class="o">=</span> <span class="m">500</span><span class="p">,</span> <span class="n">balanced</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./dimheatmap1.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="dimheatmap1.png" alt="dimheatmap1"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">DimHeatmap</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">15</span><span class="p">,</span> <span class="n">cells</span> <span class="o">=</span> <span class="m">500</span><span class="p">,</span> <span class="n">balanced</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./dimheatmap2.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">DimHeatmap</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">15</span><span class="p">,</span> <span class="n">cells</span> <span class="o">=</span> <span class="m">500</span><span class="p">,</span> <span class="n">balanced</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./dimheatmap2.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="dimheatmap2.png" alt="dimheatmap2"></p>
 <h3 id="determine-the-dimensionality-of-the-dataset">Determine the ‘dimensionality’ of the dataset</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -783,53 +778,53 @@ if (!doNotTrack) {
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># NOTE: This process can take a long time for big datasets, comment out for expediency. More</span>
-<span class="c1"># approximate techniques such as those implemented in ElbowPlot() can be used to reduce</span>
-<span class="c1"># computation time</span>
-<span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">JackStraw</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">num.replicate</span> <span class="o">=</span> <span class="m">100</span><span class="p">)</span>
-<span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">ScoreJackStraw</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="p">)</span>
-
-<span class="c1">#Comparing the distribution of p-values for each PC with a uniform distribution. </span>
-<span class="nf">JackStrawPlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">15</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./jackstrawplot.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># NOTE: This process can take a long time for big datasets, comment out for expediency. More</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># approximate techniques such as those implemented in ElbowPlot() can be used to reduce</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># computation time</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">JackStraw</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">num.replicate</span> <span class="o">=</span> <span class="m">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">ScoreJackStraw</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#Comparing the distribution of p-values for each PC with a uniform distribution. </span>
+</span></span><span class="line"><span class="cl"><span class="nf">JackStrawPlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">15</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./jackstrawplot.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="jackstrawplot.png" alt="jackstrawplot"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># An alternative heuristic method generates an ‘Elbow plot’</span>
-<span class="nf">ElbowPlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./elbowplot.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># An alternative heuristic method generates an ‘Elbow plot’</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ElbowPlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./elbowplot.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="elbowplot.png" alt="elbowplot"></p>
 <h3 id="cluster-the-cells">Cluster the cells</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">FindNeighbors</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
-<span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">FindClusters</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">)</span>
-
-<span class="c1"># Look at cluster IDs of the first 5 cells</span>
-<span class="nf">head</span><span class="p">(</span><span class="nf">Idents</span><span class="p">(</span><span class="n">pbmc</span><span class="p">),</span> <span class="m">5</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">FindNeighbors</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">FindClusters</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Look at cluster IDs of the first 5 cells</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="nf">Idents</span><span class="p">(</span><span class="n">pbmc</span><span class="p">),</span> <span class="m">5</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="2.png" alt="2"></p>
 <h3 id="run-non-linear-dimensional-reduction-umaptsne">Run non-linear dimensional reduction (UMAP/tSNE)</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -840,22 +835,22 @@ if (!doNotTrack) {
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># reticulate::py_install(packages =&#39;umap-learn&#39;)</span>
-<span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">RunUMAP</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
-
-<span class="c1"># note that you can set `label = TRUE` or use the LabelClusters function to help label</span>
-<span class="c1"># individual clusters</span>
-<span class="nf">DimPlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;umap&#34;</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./dimplot2.png&#34;</span><span class="p">)</span>
-
-<span class="c1">#saveRDS(pbmc, file = &#34;./output/pbmc_tutorial.rds&#34;)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># reticulate::py_install(packages =&#39;umap-learn&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">RunUMAP</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># note that you can set `label = TRUE` or use the LabelClusters function to help label</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># individual clusters</span>
+</span></span><span class="line"><span class="cl"><span class="nf">DimPlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;umap&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./dimplot2.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#saveRDS(pbmc, file = &#34;./output/pbmc_tutorial.rds&#34;)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="dimplot2.png" alt="dimplot2"></p>
 <h3 id="finding-differentially-expressed-features-cluster-biomarkers">Finding differentially expressed features (cluster biomarkers)</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -873,79 +868,79 @@ if (!doNotTrack) {
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># find all markers of cluster 1</span>
-<span class="n">cluster1.markers</span> <span class="o">&lt;-</span> <span class="nf">FindMarkers</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">ident.1</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">min.pct</span> <span class="o">=</span> <span class="m">0.25</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">cluster1.markers</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
-
-
-<span class="c1"># find all markers distinguishing cluster 5 from clusters 0 and 3</span>
-<span class="n">cluster5.markers</span> <span class="o">&lt;-</span> <span class="nf">FindMarkers</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">ident.1</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">ident.2</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">),</span> <span class="n">min.pct</span> <span class="o">=</span> <span class="m">0.25</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">cluster5.markers</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
-
-
-<span class="c1"># find markers for every cluster compared to all remaining cells, report only the positive ones</span>
-<span class="n">pbmc.markers</span> <span class="o">&lt;-</span> <span class="nf">FindAllMarkers</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">only.pos</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">min.pct</span> <span class="o">=</span> <span class="m">0.25</span><span class="p">,</span> <span class="n">logfc.threshold</span> <span class="o">=</span> <span class="m">0.25</span><span class="p">)</span>
-<span class="n">pbmc.markers</span> <span class="o">%&gt;%</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">top_n</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">wt</span> <span class="o">=</span> <span class="n">avg_log2FC</span><span class="p">)</span>
-
-
-<span class="n">cluster1.markers</span> <span class="o">&lt;-</span> <span class="nf">FindMarkers</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">ident.1</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">logfc.threshold</span> <span class="o">=</span> <span class="m">0.25</span><span class="p">,</span> <span class="n">test.use</span> <span class="o">=</span> <span class="s">&#34;roc&#34;</span><span class="p">,</span> <span class="n">only.pos</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># find all markers of cluster 1</span>
+</span></span><span class="line"><span class="cl"><span class="n">cluster1.markers</span> <span class="o">&lt;-</span> <span class="nf">FindMarkers</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">ident.1</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">min.pct</span> <span class="o">=</span> <span class="m">0.25</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">cluster1.markers</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># find all markers distinguishing cluster 5 from clusters 0 and 3</span>
+</span></span><span class="line"><span class="cl"><span class="n">cluster5.markers</span> <span class="o">&lt;-</span> <span class="nf">FindMarkers</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">ident.1</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">ident.2</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">),</span> <span class="n">min.pct</span> <span class="o">=</span> <span class="m">0.25</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">cluster5.markers</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># find markers for every cluster compared to all remaining cells, report only the positive ones</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc.markers</span> <span class="o">&lt;-</span> <span class="nf">FindAllMarkers</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">only.pos</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">min.pct</span> <span class="o">=</span> <span class="m">0.25</span><span class="p">,</span> <span class="n">logfc.threshold</span> <span class="o">=</span> <span class="m">0.25</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc.markers</span> <span class="o">%&gt;%</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">top_n</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">wt</span> <span class="o">=</span> <span class="n">avg_log2FC</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cluster1.markers</span> <span class="o">&lt;-</span> <span class="nf">FindMarkers</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">ident.1</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">logfc.threshold</span> <span class="o">=</span> <span class="m">0.25</span><span class="p">,</span> <span class="n">test.use</span> <span class="o">=</span> <span class="s">&#34;roc&#34;</span><span class="p">,</span> <span class="n">only.pos</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="3.png" alt="3"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">VlnPlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;MS4A1&#34;</span><span class="p">,</span> <span class="s">&#34;CD79A&#34;</span><span class="p">))</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./vlnplot2.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">VlnPlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;MS4A1&#34;</span><span class="p">,</span> <span class="s">&#34;CD79A&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./vlnplot2.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="vlnplot2.png" alt="vlnplot2"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># you can plot raw counts as well</span>
-<span class="nf">VlnPlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;NKG7&#34;</span><span class="p">,</span> <span class="s">&#34;PF4&#34;</span><span class="p">),</span> <span class="n">slot</span> <span class="o">=</span> <span class="s">&#34;counts&#34;</span><span class="p">,</span> <span class="n">log</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./vlnplot3.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># you can plot raw counts as well</span>
+</span></span><span class="line"><span class="cl"><span class="nf">VlnPlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;NKG7&#34;</span><span class="p">,</span> <span class="s">&#34;PF4&#34;</span><span class="p">),</span> <span class="n">slot</span> <span class="o">=</span> <span class="s">&#34;counts&#34;</span><span class="p">,</span> <span class="n">log</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./vlnplot3.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="vlnplot3.png" alt="vlnplot3"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">FeaturePlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;MS4A1&#34;</span><span class="p">,</span> <span class="s">&#34;GNLY&#34;</span><span class="p">,</span> <span class="s">&#34;CD3E&#34;</span><span class="p">,</span> <span class="s">&#34;CD14&#34;</span><span class="p">,</span> <span class="s">&#34;FCER1A&#34;</span><span class="p">,</span> <span class="s">&#34;FCGR3A&#34;</span><span class="p">,</span> <span class="s">&#34;LYZ&#34;</span><span class="p">,</span> <span class="s">&#34;PPBP&#34;</span><span class="p">,</span> 
-                               <span class="s">&#34;CD8A&#34;</span><span class="p">))</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featureplot.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">FeaturePlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;MS4A1&#34;</span><span class="p">,</span> <span class="s">&#34;GNLY&#34;</span><span class="p">,</span> <span class="s">&#34;CD3E&#34;</span><span class="p">,</span> <span class="s">&#34;CD14&#34;</span><span class="p">,</span> <span class="s">&#34;FCER1A&#34;</span><span class="p">,</span> <span class="s">&#34;FCGR3A&#34;</span><span class="p">,</span> <span class="s">&#34;LYZ&#34;</span><span class="p">,</span> <span class="s">&#34;PPBP&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                               <span class="s">&#34;CD8A&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./featureplot.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="featureplot.png" alt="featureplot"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">top10</span> <span class="o">&lt;-</span> <span class="n">pbmc.markers</span> <span class="o">%&gt;%</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">top_n</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">wt</span> <span class="o">=</span> <span class="n">avg_log2FC</span><span class="p">)</span>
-<span class="nf">DoHeatmap</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="n">top10</span><span class="o">$</span><span class="n">gene</span><span class="p">)</span> <span class="o">+</span> <span class="nf">NoLegend</span><span class="p">()</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./doheatmap.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">top10</span> <span class="o">&lt;-</span> <span class="n">pbmc.markers</span> <span class="o">%&gt;%</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">top_n</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">wt</span> <span class="o">=</span> <span class="n">avg_log2FC</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">DoHeatmap</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="n">top10</span><span class="o">$</span><span class="n">gene</span><span class="p">)</span> <span class="o">+</span> <span class="nf">NoLegend</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./doheatmap.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="doheatmap.png" alt="doheatmap"></p>
 <h3 id="assigning-cell-type-identity-to-clusters">Assigning cell type identity to clusters</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -954,14 +949,14 @@ if (!doNotTrack) {
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">new.cluster.ids</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Naive CD4 T&#34;</span><span class="p">,</span> <span class="s">&#34;CD14+ Mono&#34;</span><span class="p">,</span> <span class="s">&#34;Memory CD4 T&#34;</span><span class="p">,</span> <span class="s">&#34;B&#34;</span><span class="p">,</span> <span class="s">&#34;CD8 T&#34;</span><span class="p">,</span> <span class="s">&#34;FCGR3A+ Mono&#34;</span><span class="p">,</span> 
-                     <span class="s">&#34;NK&#34;</span><span class="p">,</span> <span class="s">&#34;DC&#34;</span><span class="p">,</span> <span class="s">&#34;Platelet&#34;</span><span class="p">)</span>
-<span class="nf">names</span><span class="p">(</span><span class="n">new.cluster.ids</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">levels</span><span class="p">(</span><span class="n">pbmc</span><span class="p">)</span>
-<span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">RenameIdents</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">new.cluster.ids</span><span class="p">)</span>
-<span class="nf">DimPlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;umap&#34;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">pt.size</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="nf">NoLegend</span><span class="p">()</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./dimplot4.png&#34;</span><span class="p">)</span>
-<span class="c1">#saveRDS(pbmc, file = &#34;./output/pbmc3k_final.rds&#34;)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">new.cluster.ids</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Naive CD4 T&#34;</span><span class="p">,</span> <span class="s">&#34;CD14+ Mono&#34;</span><span class="p">,</span> <span class="s">&#34;Memory CD4 T&#34;</span><span class="p">,</span> <span class="s">&#34;B&#34;</span><span class="p">,</span> <span class="s">&#34;CD8 T&#34;</span><span class="p">,</span> <span class="s">&#34;FCGR3A+ Mono&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                     <span class="s">&#34;NK&#34;</span><span class="p">,</span> <span class="s">&#34;DC&#34;</span><span class="p">,</span> <span class="s">&#34;Platelet&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">names</span><span class="p">(</span><span class="n">new.cluster.ids</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">levels</span><span class="p">(</span><span class="n">pbmc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pbmc</span> <span class="o">&lt;-</span> <span class="nf">RenameIdents</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">new.cluster.ids</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">DimPlot</span><span class="p">(</span><span class="n">pbmc</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;umap&#34;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">pt.size</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="nf">NoLegend</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./dimplot4.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#saveRDS(pbmc, file = &#34;./output/pbmc3k_final.rds&#34;)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="dimplot4.png" alt="dimplot4"></p>
     </div>
@@ -1086,7 +1081,7 @@ if (!doNotTrack) {
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1130,7 +1125,7 @@ if (!doNotTrack) {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 

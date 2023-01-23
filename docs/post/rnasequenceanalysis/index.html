@@ -35,7 +35,7 @@ Then, how to perform RNA sequence analysis in Google Colab?
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/rnasequenceanalysis/" />
@@ -56,7 +56,7 @@ Then, how to perform RNA sequence analysis in Google Colab?
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -71,21 +71,16 @@ Then, how to perform RNA sequence analysis in Google Colab?
 RNA sequence is a technique that can examine the quantity and sequences of RNA in a sample using next generation sequencing (NGS). It analyzes the transcriptome of gene expression patterns encoded within the RNA.
 Then, how to perform RNA sequence analysis in Google Colab?" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/rnasequenceanalysis/" />
+<meta property="og:url" content="/post/rnasequenceanalysis/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-02-17T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-02-18T00:00:00+00:00" />
 <meta itemprop="name" content="RNA-seq Bioinformatics - RNA sequence analysis">
 <meta itemprop="description" content="Google Colab is a free service providing interactive computing resources via a user interface, runs on Google Cloud Platform (GCP), and provides free access to GPUs and TPUs.
 RNA sequence is a technique that can examine the quantity and sequences of RNA in a sample using next generation sequencing (NGS). It analyzes the transcriptome of gene expression patterns encoded within the RNA.
-Then, how to perform RNA sequence analysis in Google Colab?">
-<meta itemprop="datePublished" content="2021-02-17T00:00:00+00:00" />
+Then, how to perform RNA sequence analysis in Google Colab?"><meta itemprop="datePublished" content="2021-02-17T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-18T00:00:00+00:00" />
 <meta itemprop="wordCount" content="942">
-
-
-
-<meta itemprop="keywords" content="Python,Bioinformatics,Colab,Linux,RNA Sequence," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Python,Bioinformatics,Colab,Linux,RNA Sequence," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="RNA-seq Bioinformatics - RNA sequence analysis"/>
 <meta name="twitter:description" content="Google Colab is a free service providing interactive computing resources via a user interface, runs on Google Cloud Platform (GCP), and provides free access to GPUs and TPUs.
 RNA sequence is a technique that can examine the quantity and sequences of RNA in a sample using next generation sequencing (NGS). It analyzes the transcriptome of gene expression patterns encoded within the RNA.
@@ -565,17 +560,17 @@ if (!doNotTrack) {
 <p>Continued, setup the channels for conda.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">tuna</span><span class="o">.</span><span class="n">tsinghua</span><span class="o">.</span><span class="n">edu</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">anaconda</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">free</span>
-<span class="err">!</span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">tuna</span><span class="o">.</span><span class="n">tsinghua</span><span class="o">.</span><span class="n">edu</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">anaconda</span><span class="o">/</span><span class="n">cloud</span><span class="o">/</span><span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
-<span class="err">!</span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">tuna</span><span class="o">.</span><span class="n">tsinghua</span><span class="o">.</span><span class="n">edu</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">anaconda</span><span class="o">/</span><span class="n">cloud</span><span class="o">/</span><span class="n">bioconda</span>
-<span class="err">!</span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="nb">set</span> <span class="n">show_channel_urls</span> <span class="n">yes</span> 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">tuna</span><span class="o">.</span><span class="n">tsinghua</span><span class="o">.</span><span class="n">edu</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">anaconda</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">free</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">tuna</span><span class="o">.</span><span class="n">tsinghua</span><span class="o">.</span><span class="n">edu</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">anaconda</span><span class="o">/</span><span class="n">cloud</span><span class="o">/</span><span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">tuna</span><span class="o">.</span><span class="n">tsinghua</span><span class="o">.</span><span class="n">edu</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">anaconda</span><span class="o">/</span><span class="n">cloud</span><span class="o">/</span><span class="n">bioconda</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="nb">set</span> <span class="n">show_channel_urls</span> <span class="n">yes</span> 
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -585,28 +580,28 @@ if (!doNotTrack) {
 <p>Conda install aspera</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="o">-</span><span class="n">c</span> <span class="n">hcc</span> <span class="n">aspera</span><span class="o">-</span><span class="n">cli</span>
-
-<span class="c1">#checkup</span>
-<span class="err">!</span><span class="n">which</span> <span class="n">ascp</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="o">-</span><span class="n">c</span> <span class="n">hcc</span> <span class="n">aspera</span><span class="o">-</span><span class="n">cli</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#checkup</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">which</span> <span class="n">ascp</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Check and cat the path for <code>asperaweb_id.dsa.openssh</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">cat</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">asperaweb_id_dsa</span><span class="o">.</span><span class="n">openssh</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">cat</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">asperaweb_id_dsa</span><span class="o">.</span><span class="n">openssh</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -627,15 +622,15 @@ if (!doNotTrack) {
 <p>Show me the code <i class="far fa-hand-point-down"></i></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="cp">#!/usr/bin/env bash
-</span><span class="cp"></span>curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR898/003/SRR8984523/SRR8984523.fastq.gz -o SRR8984523_GSM3738651_MCF7_palbociclib_resistant_Replicate_1_Homo_sapiens_RNA-Seq.fastq.gz
-curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR898/009/SRR8984529/SRR8984529.fastq.gz -o SRR8984529_GSM3738657_MDAMB231_palbociclib_resistant_Replicate_1_Homo_sapiens_RNA-Seq.fastq.gz
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/usr/bin/env bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR898/003/SRR8984523/SRR8984523.fastq.gz -o SRR8984523_GSM3738651_MCF7_palbociclib_resistant_Replicate_1_Homo_sapiens_RNA-Seq.fastq.gz
+</span></span><span class="line"><span class="cl">curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR898/009/SRR8984529/SRR8984529.fastq.gz -o SRR8984529_GSM3738657_MDAMB231_palbociclib_resistant_Replicate_1_Homo_sapiens_RNA-Seq.fastq.gz
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -645,17 +640,17 @@ curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR898/009/SRR8984529/SRR8984529.fast
 <p><code>chmod a+x</code> and run script to download files from links of <code>dl.sh</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">mkdir</span> <span class="n">rawdata</span><span class="o">/</span>
-<span class="err">!</span><span class="n">cd</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">rawdata</span><span class="o">/</span>
-<span class="err">!</span><span class="n">chmod</span> <span class="n">a</span><span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">rawdata</span><span class="o">/</span><span class="n">dl</span><span class="o">.</span><span class="n">sh</span>
-<span class="err">!</span><span class="n">bash</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">rawdata</span><span class="o">/</span><span class="n">dl</span><span class="o">.</span><span class="n">sh</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">mkdir</span> <span class="n">rawdata</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">cd</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">rawdata</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">chmod</span> <span class="n">a</span><span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">rawdata</span><span class="o">/</span><span class="n">dl</span><span class="o">.</span><span class="n">sh</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">bash</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">rawdata</span><span class="o">/</span><span class="n">dl</span><span class="o">.</span><span class="n">sh</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -673,7 +668,7 @@ curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR898/009/SRR8984529/SRR8984529.fast
 <p>To use, ensure that these two pieces of software are available and copy the trim_galore script to a location available on the PATH.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -692,24 +687,24 @@ curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR898/009/SRR8984529/SRR8984529.fast
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">mkdir</span> <span class="n">clean</span>
-<span class="err">!</span><span class="n">cd</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">clean</span><span class="o">/</span>
-<span class="c1"># Install trim galore(perl)</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">FelixKrueger</span><span class="o">/</span><span class="n">TrimGalore</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">trim_galore</span>
-<span class="err">!</span><span class="n">chmod</span> <span class="n">a</span><span class="o">+</span><span class="n">x</span> <span class="o">./</span><span class="n">trim_galore</span>
-<span class="err">!</span><span class="o">./</span><span class="n">trim_galore</span>
-
-<span class="c1"># Install cutadapt(python)</span>
-<span class="err">!</span><span class="n">pip3</span> <span class="n">install</span> <span class="n">cutadapt</span>
-
-<span class="err">!</span><span class="n">cd</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">clean</span><span class="o">/</span>
-<span class="c1"># write into the config.txt</span>
-<span class="err">!</span><span class="n">ls</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">rawdata</span><span class="o">/*.</span><span class="n">gz</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">clean</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">txt</span>
-<span class="err">!</span><span class="n">cat</span> <span class="n">config</span><span class="o">.</span><span class="n">txt</span>
-
-<span class="c1"># touch cl.sh for single pass</span>
-<span class="err">!</span><span class="n">chmod</span> <span class="n">a</span><span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">clean</span><span class="o">/</span><span class="n">cl</span><span class="o">.</span><span class="n">sh</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">mkdir</span> <span class="n">clean</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">cd</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">clean</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Install trim galore(perl)</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">FelixKrueger</span><span class="o">/</span><span class="n">TrimGalore</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">trim_galore</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">chmod</span> <span class="n">a</span><span class="o">+</span><span class="n">x</span> <span class="o">./</span><span class="n">trim_galore</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="o">./</span><span class="n">trim_galore</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Install cutadapt(python)</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">pip3</span> <span class="n">install</span> <span class="n">cutadapt</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">cd</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">clean</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># write into the config.txt</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">ls</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">rawdata</span><span class="o">/*.</span><span class="n">gz</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">clean</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">txt</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">cat</span> <span class="n">config</span><span class="o">.</span><span class="n">txt</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># touch cl.sh for single pass</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">chmod</span> <span class="n">a</span><span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">clean</span><span class="o">/</span><span class="n">cl</span><span class="o">.</span><span class="n">sh</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -718,7 +713,7 @@ curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR898/009/SRR8984529/SRR8984529.fast
 <p>Show me the code <i class="far fa-hand-point-down"></i></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -729,27 +724,27 @@ curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR898/009/SRR8984529/SRR8984529.fast
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">trim_galore_cmd</span><span class="o">=</span>/content/clean/trim_galore
-<span class="nv">dir</span><span class="o">=</span><span class="s1">&#39;/content/clean&#39;</span>
-<span class="nv">file</span><span class="o">=</span><span class="s2">&#34;config.txt&#34;</span>
-<span class="nb">cd</span> <span class="nv">$dir</span>
-cat <span class="nv">$file</span> <span class="p">|</span><span class="k">while</span> <span class="nb">read</span> idpath
-<span class="k">do</span>
-        <span class="nv">rawdatapath</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$idpath</span><span class="sb">`</span>
-        <span class="nv">$trim_galore_cmd</span> -q <span class="m">25</span> --phred33 --length <span class="m">36</span> --stringency <span class="m">3</span> -o <span class="nv">$dir</span> <span class="nv">$rawdatapath</span>
-<span class="k">done</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">trim_galore_cmd</span><span class="o">=</span>/content/clean/trim_galore
+</span></span><span class="line"><span class="cl"><span class="nv">dir</span><span class="o">=</span><span class="s1">&#39;/content/clean&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">file</span><span class="o">=</span><span class="s2">&#34;config.txt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$dir</span>
+</span></span><span class="line"><span class="cl">cat <span class="nv">$file</span> <span class="p">|</span><span class="k">while</span> <span class="nb">read</span> idpath
+</span></span><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">rawdatapath</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$idpath</span><span class="sb">`</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$trim_galore_cmd</span> -q <span class="m">25</span> --phred33 --length <span class="m">36</span> --stringency <span class="m">3</span> -o <span class="nv">$dir</span> <span class="nv">$rawdatapath</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Do adapter trimming with script <code>cl.sh</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">clean</span><span class="o">/</span><span class="n">cl</span><span class="o">.</span><span class="n">sh</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">clean</span><span class="o">/</span><span class="n">cl</span><span class="o">.</span><span class="n">sh</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -764,7 +759,7 @@ cat <span class="nv">$file</span> <span class="p">|</span><span class="k">while<
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -776,17 +771,17 @@ cat <span class="nv">$file</span> <span class="p">|</span><span class="k">while<
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">cd</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">clean</span><span class="o">/</span>
-
-<span class="c1"># rename to simple</span>
-<span class="err">!</span><span class="n">mv</span> <span class="n">SRR8984523_GSM3738651_MCF7_palbociclib_resistant_Replicate_1_Homo_sapiens_RNA</span><span class="o">-</span><span class="n">Seq_trimmed</span><span class="o">.</span><span class="n">fq</span><span class="o">.</span><span class="n">gz</span> <span class="n">SRR8984523_trimmed</span><span class="o">.</span><span class="n">fq</span><span class="o">.</span><span class="n">gz</span>
-
-<span class="c1"># rename to simple</span>
-<span class="err">!</span><span class="n">mv</span> <span class="n">SRR8984529_GSM3738651_MCF7_palbociclib_resistant_Replicate_1_Homo_sapiens_RNA</span><span class="o">-</span><span class="n">Seq_trimmed</span><span class="o">.</span><span class="n">fq</span><span class="o">.</span><span class="n">gz</span> <span class="n">SRR8984529_trimmed</span><span class="o">.</span><span class="n">fq</span><span class="o">.</span><span class="n">gz</span>
-
-<span class="c1"># make file</span>
-<span class="err">!</span><span class="n">touch</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">align</span><span class="o">/</span><span class="n">SRR_Acc_List</span><span class="o">.</span><span class="n">txt</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">cd</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">clean</span><span class="o">/</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># rename to simple</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">mv</span> <span class="n">SRR8984523_GSM3738651_MCF7_palbociclib_resistant_Replicate_1_Homo_sapiens_RNA</span><span class="o">-</span><span class="n">Seq_trimmed</span><span class="o">.</span><span class="n">fq</span><span class="o">.</span><span class="n">gz</span> <span class="n">SRR8984523_trimmed</span><span class="o">.</span><span class="n">fq</span><span class="o">.</span><span class="n">gz</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># rename to simple</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">mv</span> <span class="n">SRR8984529_GSM3738651_MCF7_palbociclib_resistant_Replicate_1_Homo_sapiens_RNA</span><span class="o">-</span><span class="n">Seq_trimmed</span><span class="o">.</span><span class="n">fq</span><span class="o">.</span><span class="n">gz</span> <span class="n">SRR8984529_trimmed</span><span class="o">.</span><span class="n">fq</span><span class="o">.</span><span class="n">gz</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># make file</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">touch</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">align</span><span class="o">/</span><span class="n">SRR_Acc_List</span><span class="o">.</span><span class="n">txt</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="4.png" alt="4"></p>
 <h3 id="build-indexes">Build Indexes</h3>
@@ -795,37 +790,37 @@ cat <span class="nv">$file</span> <span class="p">|</span><span class="k">while<
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">os</span><span class="o">-</span><span class="n">release</span>
-<span class="err">!</span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">hisat2</span> <span class="n">samtools</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">os</span><span class="o">-</span><span class="n">release</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">hisat2</span> <span class="n">samtools</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Prepare data</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Download reference</span>
-<span class="err">!</span><span class="n">wget</span> <span class="n">ftp</span><span class="p">:</span><span class="o">//</span><span class="n">ftp</span><span class="o">.</span><span class="n">ensembl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">pub</span><span class="o">/</span><span class="n">release</span><span class="o">-</span><span class="mi">84</span><span class="o">/</span><span class="n">fasta</span><span class="o">/</span><span class="n">homo_sapiens</span><span class="o">/</span><span class="n">dna</span><span class="o">/</span><span class="n">Homo_sapiens</span><span class="o">.</span><span class="n">GRCh38</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">primary_assembly</span><span class="o">.</span><span class="n">fa</span><span class="o">.</span><span class="n">gz</span>
-<span class="err">!</span><span class="n">gzip</span> <span class="o">-</span><span class="n">d</span> <span class="n">Homo_sapiens</span><span class="o">.</span><span class="n">GRCh38</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">primary_assembly</span><span class="o">.</span><span class="n">fa</span><span class="o">.</span><span class="n">gz</span>
-<span class="err">!</span><span class="n">mv</span> <span class="n">Homo_sapiens</span><span class="o">.</span><span class="n">GRCh38</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">primary_assembly</span><span class="o">.</span><span class="n">fa</span> <span class="n">genome</span><span class="o">.</span><span class="n">fa</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Download reference</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">wget</span> <span class="n">ftp</span><span class="p">:</span><span class="o">//</span><span class="n">ftp</span><span class="o">.</span><span class="n">ensembl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">pub</span><span class="o">/</span><span class="n">release</span><span class="o">-</span><span class="mi">84</span><span class="o">/</span><span class="n">fasta</span><span class="o">/</span><span class="n">homo_sapiens</span><span class="o">/</span><span class="n">dna</span><span class="o">/</span><span class="n">Homo_sapiens</span><span class="o">.</span><span class="n">GRCh38</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">primary_assembly</span><span class="o">.</span><span class="n">fa</span><span class="o">.</span><span class="n">gz</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">gzip</span> <span class="o">-</span><span class="n">d</span> <span class="n">Homo_sapiens</span><span class="o">.</span><span class="n">GRCh38</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">primary_assembly</span><span class="o">.</span><span class="n">fa</span><span class="o">.</span><span class="n">gz</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">mv</span> <span class="n">Homo_sapiens</span><span class="o">.</span><span class="n">GRCh38</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">primary_assembly</span><span class="o">.</span><span class="n">fa</span> <span class="n">genome</span><span class="o">.</span><span class="n">fa</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Build HFM index</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -835,15 +830,15 @@ cat <span class="nv">$file</span> <span class="p">|</span><span class="k">while<
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Build HFM index</span>
-<span class="c1">#!hisat2-build --help</span>
-<span class="c1">#!cat /proc/cpuinfo</span>
-<span class="c1"># Consider the systerm is limited, -p 16 is change to -p 2;</span>
-<span class="err">!</span><span class="n">hisat2</span><span class="o">-</span><span class="n">build</span> <span class="o">-</span><span class="n">p</span> <span class="mi">2</span> <span class="n">genome</span><span class="o">.</span><span class="n">fa</span> <span class="n">genome</span>
-
-<span class="err">!</span><span class="n">mkdir</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">genome</span>
-<span class="c1"># Move `genome.1.ht2 genome.2.ht2 genome.3.ht2 genome.4.ht2 genome.5.ht2 genome.6.ht2 genome.7.ht2 genome.8.ht2` to /content/genome</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Build HFM index</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#!hisat2-build --help</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#!cat /proc/cpuinfo</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Consider the systerm is limited, -p 16 is change to -p 2;</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">hisat2</span><span class="o">-</span><span class="n">build</span> <span class="o">-</span><span class="n">p</span> <span class="mi">2</span> <span class="n">genome</span><span class="o">.</span><span class="n">fa</span> <span class="n">genome</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">mkdir</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">genome</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Move `genome.1.ht2 genome.2.ht2 genome.3.ht2 genome.4.ht2 genome.5.ht2 genome.6.ht2 genome.7.ht2 genome.8.ht2` to /content/genome</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
@@ -856,7 +851,7 @@ cat <span class="nv">$file</span> <span class="p">|</span><span class="k">while<
 <p>Show me the code <i class="far fa-hand-point-down"></i></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -870,19 +865,19 @@ cat <span class="nv">$file</span> <span class="p">|</span><span class="k">while<
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">hisat2_indexes_dir</span><span class="o">=/</span><span class="n">content</span><span class="o">/</span><span class="n">genome</span>
-<span class="n">index</span><span class="o">=</span><span class="n">genome</span>
-<span class="n">inputdir</span><span class="o">=/</span><span class="n">content</span><span class="o">/</span><span class="n">clean</span>
-<span class="n">outdir</span><span class="o">=/</span><span class="n">content</span><span class="o">/</span><span class="n">align</span>
-<span class="n">echo</span> <span class="s2">&#34;export HISAT2_INDEXES=$hisat2_indexes_dir&#34;</span> <span class="o">&gt;</span> <span class="n">Hisat</span><span class="o">.</span><span class="n">sh</span>
-
-<span class="n">cat</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">align</span><span class="o">/</span><span class="n">SRR_Acc_List</span><span class="o">.</span><span class="n">txt</span><span class="o">|</span><span class="k">while</span> <span class="n">read</span> <span class="nb">id</span>
-<span class="n">do</span>
-<span class="c1"># echo &#34;nohup hisat2 -p 2 -x $index -U $inputdir/${id}_trimmed.fq.gz|samtools sort -@ 5 -o $outdir/${id}_aln.sorted.bam  &amp;&amp; samtools index $outdir/${id}_aln.sorted.bam $outdir/${id}_aln.sorted.bam.bai &amp;&amp; samtools flagstat $outdir/${id}_aln.sorted.bam &gt;$id.txt &amp;&#34;</span>
-<span class="n">echo</span> <span class="s2">&#34;hisat2 -p 2 -x $index -U $inputdir/${id}_trimmed.fq.gz|samtools sort -@ 5 -o $outdir/${id}_aln.sorted.bam  &amp;&amp; samtools index $outdir/${id}_aln.sorted.bam $outdir/${id}_aln.sorted.bam.bai &amp;&amp; samtools flagstat $outdir/${id}_aln.sorted.bam &gt;$id.txt&#34;</span>
-<span class="n">done</span> <span class="o">&gt;&gt;</span><span class="n">Hisat</span><span class="o">.</span><span class="n">sh</span>
-<span class="n">echo</span> <span class="s2">&#34;&#34;</span> <span class="o">&gt;&gt;</span> <span class="n">Hisat</span><span class="o">.</span><span class="n">sh</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">hisat2_indexes_dir</span><span class="o">=/</span><span class="n">content</span><span class="o">/</span><span class="n">genome</span>
+</span></span><span class="line"><span class="cl"><span class="n">index</span><span class="o">=</span><span class="n">genome</span>
+</span></span><span class="line"><span class="cl"><span class="n">inputdir</span><span class="o">=/</span><span class="n">content</span><span class="o">/</span><span class="n">clean</span>
+</span></span><span class="line"><span class="cl"><span class="n">outdir</span><span class="o">=/</span><span class="n">content</span><span class="o">/</span><span class="n">align</span>
+</span></span><span class="line"><span class="cl"><span class="n">echo</span> <span class="s2">&#34;export HISAT2_INDEXES=$hisat2_indexes_dir&#34;</span> <span class="o">&gt;</span> <span class="n">Hisat</span><span class="o">.</span><span class="n">sh</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cat</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">align</span><span class="o">/</span><span class="n">SRR_Acc_List</span><span class="o">.</span><span class="n">txt</span><span class="o">|</span><span class="k">while</span> <span class="n">read</span> <span class="nb">id</span>
+</span></span><span class="line"><span class="cl"><span class="n">do</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># echo &#34;nohup hisat2 -p 2 -x $index -U $inputdir/${id}_trimmed.fq.gz|samtools sort -@ 5 -o $outdir/${id}_aln.sorted.bam  &amp;&amp; samtools index $outdir/${id}_aln.sorted.bam $outdir/${id}_aln.sorted.bam.bai &amp;&amp; samtools flagstat $outdir/${id}_aln.sorted.bam &gt;$id.txt &amp;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">echo</span> <span class="s2">&#34;hisat2 -p 2 -x $index -U $inputdir/$</span><span class="si">{id}</span><span class="s2">_trimmed.fq.gz|samtools sort -@ 5 -o $outdir/$</span><span class="si">{id}</span><span class="s2">_aln.sorted.bam  &amp;&amp; samtools index $outdir/$</span><span class="si">{id}</span><span class="s2">_aln.sorted.bam $outdir/$</span><span class="si">{id}</span><span class="s2">_aln.sorted.bam.bai &amp;&amp; samtools flagstat $outdir/$</span><span class="si">{id}</span><span class="s2">_aln.sorted.bam &gt;$id.txt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">done</span> <span class="o">&gt;&gt;</span><span class="n">Hisat</span><span class="o">.</span><span class="n">sh</span>
+</span></span><span class="line"><span class="cl"><span class="n">echo</span> <span class="s2">&#34;&#34;</span> <span class="o">&gt;&gt;</span> <span class="n">Hisat</span><span class="o">.</span><span class="n">sh</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -891,7 +886,7 @@ cat <span class="nv">$file</span> <span class="p">|</span><span class="k">while<
 <p>Run script</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -902,16 +897,16 @@ cat <span class="nv">$file</span> <span class="p">|</span><span class="k">while<
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">!chmod a+x sn.sh
-!cat /content/align/SRR_Acc_List.txt
-!./sn.sh
-
-!cat Hisat.sh
-!chmod a+x Hisat.sh
-<span class="c1">#!hisat2 --help</span>
-
-!./Hisat.sh
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">!chmod a+x sn.sh
+</span></span><span class="line"><span class="cl">!cat /content/align/SRR_Acc_List.txt
+</span></span><span class="line"><span class="cl">!./sn.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">!cat Hisat.sh
+</span></span><span class="line"><span class="cl">!chmod a+x Hisat.sh
+</span></span><span class="line"><span class="cl"><span class="c1">#!hisat2 --help</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">!./Hisat.sh
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -922,19 +917,19 @@ cat <span class="nv">$file</span> <span class="p">|</span><span class="k">while<
 <p>Check Results</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">cat</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">result</span><span class="o">/</span><span class="n">SRR8984523</span><span class="o">.</span><span class="n">txt</span>
-
-<span class="c1">#%cd /content/align</span>
-<span class="err">!</span><span class="n">chmod</span> <span class="n">a</span><span class="o">+</span><span class="n">x</span> <span class="n">res</span><span class="o">.</span><span class="n">sh</span>
-<span class="err">!</span><span class="o">./</span><span class="n">res</span><span class="o">.</span><span class="n">sh</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">cat</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">result</span><span class="o">/</span><span class="n">SRR8984523</span><span class="o">.</span><span class="n">txt</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#%cd /content/align</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">chmod</span> <span class="n">a</span><span class="o">+</span><span class="n">x</span> <span class="n">res</span><span class="o">.</span><span class="n">sh</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="o">./</span><span class="n">res</span><span class="o">.</span><span class="n">sh</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -945,7 +940,7 @@ cat <span class="nv">$file</span> <span class="p">|</span><span class="k">while<
 <p>Show me the code <i class="far fa-hand-point-down"></i></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -965,25 +960,25 @@ cat <span class="nv">$file</span> <span class="p">|</span><span class="k">while<
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">
-<span class="nv">dir</span><span class="o">=</span><span class="s1">&#39;/content/align&#39;</span>
-<span class="nv">outfile</span><span class="o">=</span><span class="s1">&#39;mapinfo.txt&#39;</span>
-<span class="nb">cd</span> <span class="nv">$dir</span>
-
-<span class="k">if</span>  <span class="o">[</span> -f  <span class="nv">$outfile</span>  <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-rm  -rf  <span class="nv">$outfile</span>
-<span class="k">fi</span>
-
-ls *txt<span class="p">|</span><span class="k">while</span> <span class="nb">read</span> id<span class="p">;</span><span class="k">do</span><span class="o">(</span><span class="nb">echo</span> <span class="nv">$id</span><span class="p">|</span>awk -F <span class="s2">&#34;.&#34;</span> <span class="s1">&#39;{print $1}&#39;</span>&gt;&gt;sample<span class="o">)</span><span class="p">;</span><span class="k">done</span>
-
-ls *txt<span class="p">|</span><span class="k">while</span> <span class="nb">read</span> id<span class="p">;</span><span class="k">do</span><span class="o">(</span>cat <span class="nv">$id</span><span class="p">|</span>cut -d <span class="s2">&#34; &#34;</span> -f 1<span class="p">|</span>sed -n <span class="s2">&#34;1p&#34;</span><span class="p">|</span>awk <span class="s1">&#39;{printf &#34;%18.0f\n&#34;,$0}&#39;</span> &gt;&gt;totalreads<span class="o">)</span><span class="p">;</span><span class="k">done</span>
-ls *txt<span class="p">|</span><span class="k">while</span> <span class="nb">read</span> id<span class="p">;</span><span class="k">do</span><span class="o">(</span>cat <span class="nv">$id</span><span class="p">|</span>cut -d <span class="s2">&#34; &#34;</span> -f 1<span class="p">|</span>sed -n <span class="s2">&#34;2p&#34;</span><span class="p">|</span>awk <span class="s1">&#39;{printf &#34;%18.0f\n&#34;,$0}&#39;</span>&gt;&gt;secondary<span class="o">)</span><span class="p">;</span><span class="k">done</span>
-ls *txt<span class="p">|</span><span class="k">while</span> <span class="nb">read</span> id<span class="p">;</span><span class="k">do</span><span class="o">(</span>cat <span class="nv">$id</span><span class="p">|</span>cut -d <span class="s2">&#34; &#34;</span> -f 4,5<span class="p">|</span>sed -n <span class="s1">&#39;5p&#39;</span><span class="p">|</span>awk -F <span class="s2">&#34;(&#34;</span> <span class="s1">&#39;{print $2}&#39;</span> &gt;&gt;mapratio<span class="o">)</span><span class="p">;</span><span class="k">done</span>
-<span class="nb">echo</span> <span class="s2">&#34;sample    totalreads      secondary       mapratio&#34;</span> &gt;<span class="nv">$outfile</span>
-paste -d <span class="s2">&#34;\t&#34;</span> sample totalreads secondary mapratio &gt;&gt;<span class="nv">$outfile</span>
-
-rm sample totalreads secondary mapratio
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">dir</span><span class="o">=</span><span class="s1">&#39;/content/align&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">outfile</span><span class="o">=</span><span class="s1">&#39;mapinfo.txt&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$dir</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span>  <span class="o">[</span> -f  <span class="nv">$outfile</span>  <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">rm  -rf  <span class="nv">$outfile</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ls *txt<span class="p">|</span><span class="k">while</span> <span class="nb">read</span> id<span class="p">;</span><span class="k">do</span><span class="o">(</span><span class="nb">echo</span> <span class="nv">$id</span><span class="p">|</span>awk -F <span class="s2">&#34;.&#34;</span> <span class="s1">&#39;{print $1}&#39;</span>&gt;&gt;sample<span class="o">)</span><span class="p">;</span><span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ls *txt<span class="p">|</span><span class="k">while</span> <span class="nb">read</span> id<span class="p">;</span><span class="k">do</span><span class="o">(</span>cat <span class="nv">$id</span><span class="p">|</span>cut -d <span class="s2">&#34; &#34;</span> -f 1<span class="p">|</span>sed -n <span class="s2">&#34;1p&#34;</span><span class="p">|</span>awk <span class="s1">&#39;{printf &#34;%18.0f\n&#34;,$0}&#39;</span> &gt;&gt;totalreads<span class="o">)</span><span class="p">;</span><span class="k">done</span>
+</span></span><span class="line"><span class="cl">ls *txt<span class="p">|</span><span class="k">while</span> <span class="nb">read</span> id<span class="p">;</span><span class="k">do</span><span class="o">(</span>cat <span class="nv">$id</span><span class="p">|</span>cut -d <span class="s2">&#34; &#34;</span> -f 1<span class="p">|</span>sed -n <span class="s2">&#34;2p&#34;</span><span class="p">|</span>awk <span class="s1">&#39;{printf &#34;%18.0f\n&#34;,$0}&#39;</span>&gt;&gt;secondary<span class="o">)</span><span class="p">;</span><span class="k">done</span>
+</span></span><span class="line"><span class="cl">ls *txt<span class="p">|</span><span class="k">while</span> <span class="nb">read</span> id<span class="p">;</span><span class="k">do</span><span class="o">(</span>cat <span class="nv">$id</span><span class="p">|</span>cut -d <span class="s2">&#34; &#34;</span> -f 4,5<span class="p">|</span>sed -n <span class="s1">&#39;5p&#39;</span><span class="p">|</span>awk -F <span class="s2">&#34;(&#34;</span> <span class="s1">&#39;{print $2}&#39;</span> &gt;&gt;mapratio<span class="o">)</span><span class="p">;</span><span class="k">done</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;sample    totalreads      secondary       mapratio&#34;</span> &gt;<span class="nv">$outfile</span>
+</span></span><span class="line"><span class="cl">paste -d <span class="s2">&#34;\t&#34;</span> sample totalreads secondary mapratio &gt;&gt;<span class="nv">$outfile</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">rm sample totalreads secondary mapratio
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -997,7 +992,7 @@ rm sample totalreads secondary mapratio
 <p>Install TOOLS</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1006,29 +1001,29 @@ rm sample totalreads secondary mapratio
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python">  <span class="c1"># Install FeatureCounts</span>
-  <span class="err">!</span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">subread</span>
-  <span class="err">!</span><span class="n">featureCounts</span> <span class="o">--</span><span class="n">help</span>
-    
-  <span class="c1">#Install multiqc</span>
-  <span class="err">!</span><span class="n">pip3</span> <span class="n">install</span> <span class="n">multiqc</span>
-  <span class="err">!</span><span class="n">multiqc</span> <span class="o">--</span><span class="n">help</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">  <span class="c1"># Install FeatureCounts</span>
+</span></span><span class="line"><span class="cl">  <span class="err">!</span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">subread</span>
+</span></span><span class="line"><span class="cl">  <span class="err">!</span><span class="n">featureCounts</span> <span class="o">--</span><span class="n">help</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">#Install multiqc</span>
+</span></span><span class="line"><span class="cl">  <span class="err">!</span><span class="n">pip3</span> <span class="n">install</span> <span class="n">multiqc</span>
+</span></span><span class="line"><span class="cl">  <span class="err">!</span><span class="n">multiqc</span> <span class="o">--</span><span class="n">help</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Download annotation</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python">  <span class="c1">#%cd /content/counts/</span>
-  <span class="c1">#!wget ftp://ftp.ensembl.org/pub/release-90/gtf/homo_sapiens/Homo_sapiens.GRCh38.90.gtf.gz</span>
-  <span class="err">!</span><span class="n">wget</span> <span class="n">ftp</span><span class="p">:</span><span class="o">//</span><span class="n">ftp</span><span class="o">.</span><span class="n">ensembl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">pub</span><span class="o">/</span><span class="n">release</span><span class="o">-</span><span class="mi">86</span><span class="o">/</span><span class="n">gtf</span><span class="o">/</span><span class="n">homo_sapiens</span><span class="o">/</span><span class="n">Homo_sapiens</span><span class="o">.</span><span class="n">GRCh38</span><span class="o">.</span><span class="mf">86.</span><span class="n">gtf</span><span class="o">.</span><span class="n">gz</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">  <span class="c1">#%cd /content/counts/</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#!wget ftp://ftp.ensembl.org/pub/release-90/gtf/homo_sapiens/Homo_sapiens.GRCh38.90.gtf.gz</span>
+</span></span><span class="line"><span class="cl">  <span class="err">!</span><span class="n">wget</span> <span class="n">ftp</span><span class="p">:</span><span class="o">//</span><span class="n">ftp</span><span class="o">.</span><span class="n">ensembl</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">pub</span><span class="o">/</span><span class="n">release</span><span class="o">-</span><span class="mi">86</span><span class="o">/</span><span class="n">gtf</span><span class="o">/</span><span class="n">homo_sapiens</span><span class="o">/</span><span class="n">Homo_sapiens</span><span class="o">.</span><span class="n">GRCh38</span><span class="mf">.86</span><span class="o">.</span><span class="n">gtf</span><span class="o">.</span><span class="n">gz</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -1038,7 +1033,7 @@ rm sample totalreads secondary mapratio
 <p>Show me the code <i class="far fa-hand-point-down"></i></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1050,30 +1045,30 @@ rm sample totalreads secondary mapratio
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">    
-  <span class="nv">gtf</span><span class="o">=</span><span class="s2">&#34;/content/counts/Homo_sapiens.GRCh38.86.gtf.gz&#34;</span>
-  <span class="nv">inputdir</span><span class="o">=</span><span class="s2">&#34;/content/align&#34;</span>
-    
-  featureCounts -T <span class="m">10</span> -g gene_id -a <span class="nv">$gtf</span> -o SRR8984523.txt <span class="nv">$inputdir</span>/*.sorted.bam
-
-    
-  multiqc -f SRR8984523.txt.summary
-
-  cat SRR8984523.txt <span class="p">|</span> cut -f1,7- &gt; counts.txt
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nv">gtf</span><span class="o">=</span><span class="s2">&#34;/content/counts/Homo_sapiens.GRCh38.86.gtf.gz&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">inputdir</span><span class="o">=</span><span class="s2">&#34;/content/align&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  featureCounts -T <span class="m">10</span> -g gene_id -a <span class="nv">$gtf</span> -o SRR8984523.txt <span class="nv">$inputdir</span>/*.sorted.bam
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  multiqc -f SRR8984523.txt.summary
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  cat SRR8984523.txt <span class="p">|</span> cut -f1,7- &gt; counts.txt
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Run script</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">chmod</span> <span class="n">a</span><span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">counts</span><span class="o">/</span><span class="n">count</span><span class="o">.</span><span class="n">sh</span>
-<span class="err">!</span><span class="o">./</span><span class="n">count</span><span class="o">.</span><span class="n">sh</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">chmod</span> <span class="n">a</span><span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">counts</span><span class="o">/</span><span class="n">count</span><span class="o">.</span><span class="n">sh</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="o">./</span><span class="n">count</span><span class="o">.</span><span class="n">sh</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -1199,7 +1194,7 @@ rm sample totalreads secondary mapratio
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1243,7 +1238,7 @@ rm sample totalreads secondary mapratio
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 

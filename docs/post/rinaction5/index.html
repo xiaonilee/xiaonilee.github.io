@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/rinaction5/" />
@@ -54,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,19 +67,14 @@
 <meta property="og:title" content="Chapter 5. Advanced data management" />
 <meta property="og:description" content="Notebook of Reading Books: R in Action_Chapter 5." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/rinaction5/" />
+<meta property="og:url" content="/post/rinaction5/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-10-23T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-10-28T00:00:00+00:00" />
 <meta itemprop="name" content="Chapter 5. Advanced data management">
-<meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 5.">
-<meta itemprop="datePublished" content="2020-10-23T00:00:00+00:00" />
+<meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 5."><meta itemprop="datePublished" content="2020-10-23T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-10-28T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1306">
-
-
-
-<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Chapter 5. Advanced data management"/>
 <meta name="twitter:description" content="Notebook of Reading Books: R in Action_Chapter 5."/>
 
@@ -670,7 +665,7 @@ if (!doNotTrack) {
 <p>Show me the code <i class="far fa-hand-pointer"></i></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -956,291 +951,291 @@ if (!doNotTrack) {
 </span><span class="lnt">284
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Remove most objects from the working environment</span>
-<span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
-
-<span class="c1"># 5.1. A data management challenge</span>
-
-<span class="c1"># 5.2. Numerical and character functions</span>
-
-<span class="c1"># 5.2.1. Mathematical functions</span>
-
-<span class="c1"># 5.2.2. Statistical functions</span>
-
-<span class="n">newdata</span> <span class="o">&lt;-</span> <span class="nf">scale</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span><span class="o">*</span><span class="n">SD</span> <span class="o">+</span> <span class="n">M</span>
-
-<span class="n">newdata</span> <span class="o">&lt;-</span> <span class="nf">transform</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span> <span class="n">myvar</span> <span class="o">=</span> <span class="nf">scale</span><span class="p">(</span><span class="n">myvar</span><span class="p">)</span><span class="o">*</span><span class="m">10+50</span><span class="p">)</span>
-
-<span class="c1"># 5.2.3. Probability functions</span>
-
-<span class="c1"># Setting the Seed for Random Number Generation</span>
-<span class="c1"># Listing 5.2. Generating pseudo-random numbers from a uniform distribution</span>
-<span class="nf">runif</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
-<span class="nf">runif</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
-<span class="nf">runif</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
-<span class="nf">runif</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
-
-<span class="c1"># Generating Multivariate Normal Data</span>
-<span class="c1"># code listing 5.3</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">MASS</span><span class="p">)</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">digits</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-<span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
-
-<span class="n">mean</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">230.7</span><span class="p">,</span> <span class="m">146.7</span><span class="p">,</span> <span class="m">3.6</span><span class="p">)</span>
-<span class="n">sigma</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">15360.8</span><span class="p">,</span> <span class="m">6721.2</span><span class="p">,</span> <span class="m">-47.1</span><span class="p">,</span>
-                  <span class="m">6721.2</span><span class="p">,</span> <span class="m">4700.9</span><span class="p">,</span> <span class="m">-16.5</span><span class="p">,</span>
-                  <span class="m">-47.1</span><span class="p">,</span> <span class="m">-16.5</span><span class="p">,</span> <span class="m">0.3</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-<span class="n">sigma</span>
-
-<span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">mvrnorm</span><span class="p">(</span><span class="m">500</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
-<span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
-<span class="nf">names</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;y&#34;</span><span class="p">,</span> <span class="s">&#34;x1&#34;</span><span class="p">,</span> <span class="s">&#34;x2&#34;</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
-<span class="nf">dim</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
-
-<span class="c1"># 5.2.4. Character functions</span>
-<span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;ab&#34;</span><span class="p">,</span> <span class="s">&#34;cde&#34;</span><span class="p">,</span> <span class="s">&#34;fghij&#34;</span><span class="p">)</span>
-<span class="nf">nchar</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="c1"># [1] 2 3 5</span>
-
-<span class="nf">substr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
-<span class="c1"># [1] &#34;b&#34;   &#34;de&#34;  &#34;ghi&#34;</span>
-
-<span class="nf">substr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;2222&#34;</span>
-<span class="c1"># [1] &#34;a2&#34;    &#34;c22&#34;   &#34;f222j&#34;</span>
-
-<span class="nf">grep</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">ignore.case</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">fixed</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-<span class="nf">grep</span><span class="p">(</span><span class="s">&#34;A&#34;</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;b&#34;</span><span class="p">,</span><span class="s">&#34;A&#34;</span><span class="p">,</span><span class="s">&#34;c&#34;</span><span class="p">),</span> <span class="n">fixed</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="c1"># [1] 2</span>
-
-<span class="nf">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">replacement</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">ignore.case</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">fixed</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-<span class="nf">sub</span><span class="p">(</span><span class="s">&#34;\\s&#34;</span><span class="p">,</span><span class="s">&#34;.&#34;</span><span class="p">,</span><span class="s">&#34;Hello There&#34;</span><span class="p">)</span>
-<span class="c1"># [1] &#34;Hello.There&#34;</span>
-
-<span class="nf">strsplit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">split</span><span class="p">,</span> <span class="n">fixed</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">strsplit</span><span class="p">(</span><span class="s">&#34;abc&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
-<span class="n">y</span>
-<span class="c1"># [[1]]</span>
-<span class="c1"># [1] &#34;a&#34; &#34;b&#34; &#34;c&#34;</span>
-
-<span class="nf">paste</span><span class="p">(</span><span class="kc">...</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p">)</span>
-<span class="nf">paste</span><span class="p">(</span><span class="s">&#34;x&#34;</span><span class="p">,</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p">)</span>
-<span class="c1"># c(&#34;xl&#34;, &#34;x2&#34;, &#34;x3&#34;)</span>
-<span class="nf">paste</span><span class="p">(</span><span class="s">&#34;x&#34;</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#34;M&#34;</span><span class="p">)</span>
-<span class="c1"># c(&#34;xMl&#34;,&#34;xM2&#34; &#34;xM3&#34;)</span>
-
-<span class="nf">toupper</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nf">tolower</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="c1"># 5.2.5. Other useful functions</span>
-<span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nf">length</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">9</span><span class="p">))</span>
-
-<span class="nf">seq</span><span class="p">(</span><span class="n">from</span><span class="p">,</span><span class="n">to</span><span class="p">,</span><span class="n">by</span><span class="p">)</span>
-<span class="nf">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
-
-<span class="nf">rep</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
-<span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
-<span class="c1"># [1] 1 2 3 1 2 3</span>
-
-<span class="nf">cut</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
-
-<span class="nf">pretty</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
-
-<span class="nf">cat</span><span class="p">(</span><span class="kc">...</span><span class="p">,</span> <span class="n">file</span> <span class="o">=</span> <span class="s">&#34;myfile&#34;</span><span class="p">,</span> <span class="n">append</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-<span class="n">firstname</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Jane&#34;</span><span class="p">)</span>
-<span class="nf">cat</span><span class="p">(</span><span class="s">&#34;Hello&#34;</span><span class="p">,</span><span class="n">firstname</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">)</span> <span class="c1"># equal cat(&#34;HEllo&#34;, &#34;Jane&#34;, &#34;\n&#34;)</span>
-
-<span class="o">?</span><span class="n">Quotes</span>
-
-<span class="n">name</span> <span class="o">&lt;-</span> <span class="s">&#34;Bob&#34;</span>
-<span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;Hello&#34;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&#34;\b.\n&#34;</span><span class="p">,</span> <span class="s">&#34;Isn\&#39;t R&#34;</span><span class="p">,</span> <span class="s">&#34;\t&#34;</span><span class="p">,</span> <span class="s">&#34;GREAT?\n&#34;</span><span class="p">)</span>
-<span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;Hello&#34;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&#34;.\n&#34;</span><span class="p">,</span> <span class="s">&#34;Isn\&#39;t R&#34;</span><span class="p">,</span> <span class="s">&#34;\t&#34;</span><span class="p">,</span> <span class="s">&#34;GREAT?\n&#34;</span><span class="p">)</span>
-
-<span class="c1"># 5.2.6. Applying functions to matrices and data frames</span>
-
-<span class="nf">apply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">margin</span><span class="p">,</span> <span class="n">FUN</span><span class="p">,</span> <span class="kc">...</span><span class="p">)</span>
-
-<span class="c1"># code listing 5.5</span>
-<span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">30</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">6</span><span class="p">)</span>
-<span class="n">mydata</span>
-
-<span class="nf">apply</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
-<span class="nf">apply</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
-
-<span class="c1"># Calculate trimmer column means</span>
-<span class="nf">apply</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="m">0.2</span><span class="p">)</span> <span class="c1"># trim topmost 20% and lowest20%</span>
-
-
-<span class="c1"># 5.3. A solution for our data management challenge</span>
-<span class="c1"># code listing 5.6</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">digits</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
-<span class="n">Student</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;John Davis&#34;</span><span class="p">,</span> <span class="s">&#34;Angela Williams&#34;</span><span class="p">,</span> <span class="s">&#34;Bullwinkle Moose&#34;</span><span class="p">,</span>
-             <span class="s">&#34;David Jones&#34;</span><span class="p">,</span> <span class="s">&#34;Janice Markhammer&#34;</span><span class="p">,</span> <span class="s">&#34;Cheryl Cushing&#34;</span><span class="p">,</span>
-             <span class="s">&#34;Reuven Ytzrhak&#34;</span><span class="p">,</span> <span class="s">&#34;Greg Knox&#34;</span><span class="p">,</span> <span class="s">&#34;Joel England&#34;</span><span class="p">,</span>
-             <span class="s">&#34;Mary Rayburn&#34;</span><span class="p">)</span>
-<span class="n">Math</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">502</span><span class="p">,</span> <span class="m">600</span><span class="p">,</span> <span class="m">412</span><span class="p">,</span> <span class="m">358</span><span class="p">,</span> <span class="m">495</span><span class="p">,</span> <span class="m">512</span><span class="p">,</span> <span class="m">410</span><span class="p">,</span> <span class="m">625</span><span class="p">,</span> <span class="m">573</span><span class="p">,</span> <span class="m">522</span><span class="p">)</span>
-<span class="n">Science</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">95</span><span class="p">,</span> <span class="m">99</span><span class="p">,</span> <span class="m">80</span><span class="p">,</span> <span class="m">82</span><span class="p">,</span> <span class="m">75</span><span class="p">,</span> <span class="m">85</span><span class="p">,</span> <span class="m">80</span><span class="p">,</span> <span class="m">95</span><span class="p">,</span> <span class="m">89</span><span class="p">,</span> <span class="m">86</span><span class="p">)</span>
-<span class="n">English</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">22</span><span class="p">,</span> <span class="m">18</span><span class="p">,</span> <span class="m">15</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">28</span><span class="p">,</span> <span class="m">15</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">27</span><span class="p">,</span> <span class="m">18</span><span class="p">)</span>
-
-<span class="n">roster</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">Student</span><span class="p">,</span> <span class="n">Math</span><span class="p">,</span> <span class="n">Science</span><span class="p">,</span> <span class="n">English</span><span class="p">,</span>
-                     <span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
-
-<span class="nf">head</span><span class="p">(</span><span class="n">roster</span><span class="p">)</span>
-<span class="c1"># Obtain performance scores</span>
-<span class="n">z</span> <span class="o">&lt;-</span> <span class="nf">scale</span><span class="p">(</span><span class="n">roster[</span><span class="p">,</span><span class="m">2</span><span class="o">:</span><span class="m">4</span><span class="n">]</span><span class="p">)</span>
-<span class="n">z</span>
-<span class="n">score</span> <span class="o">&lt;-</span> <span class="nf">apply</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
-<span class="n">roster</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">roster</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
-
-<span class="c1"># Grade students</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">quantile</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.8</span><span class="p">,</span> <span class="m">0.6</span><span class="p">,</span> <span class="m">0.4</span><span class="p">,</span> <span class="m">0.2</span><span class="p">))</span>
-
-<span class="n">roster</span><span class="o">$</span><span class="n">grade[score</span> <span class="o">&gt;=</span> <span class="n">y[1]]</span> <span class="o">&lt;-</span> <span class="s">&#34;A&#34;</span>
-<span class="n">roster</span><span class="o">$</span><span class="n">grade[score</span> <span class="o">&lt;</span> <span class="n">y[1]</span> <span class="o">&amp;</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="n">y[2]]</span> <span class="o">&lt;-</span> <span class="s">&#34;B&#34;</span>
-<span class="n">roster</span><span class="o">$</span><span class="n">grade[score</span> <span class="o">&lt;</span> <span class="n">y[2]</span> <span class="o">&amp;</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="n">y[3]]</span> <span class="o">&lt;-</span> <span class="s">&#34;C&#34;</span>
-<span class="n">roster</span><span class="o">$</span><span class="n">grade[score</span> <span class="o">&lt;</span> <span class="n">y[3]</span> <span class="o">&amp;</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="n">y[4]]</span> <span class="o">&lt;-</span> <span class="s">&#34;D&#34;</span>
-<span class="n">roster</span><span class="o">$</span><span class="n">grade[score</span> <span class="o">&lt;</span> <span class="n">y[4]]</span> <span class="o">&lt;-</span> <span class="s">&#34;F&#34;</span>
-
-<span class="c1"># Extract last and first names</span>
-<span class="n">name</span> <span class="o">&lt;-</span> <span class="nf">strsplit</span><span class="p">((</span><span class="n">roster</span><span class="o">$</span><span class="n">Student</span><span class="p">),</span> <span class="s">&#34; &#34;</span><span class="p">)</span>
-<span class="n">Lastname</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&#34;[&#34;</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
-<span class="n">Firstname</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&#34;[&#34;</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
-<span class="o">?</span><span class="s">&#34;[&#34;</span> <span class="c1"># Extract or Replace Parts of an Object</span>
-
-
-<span class="n">roster</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">Firstname</span><span class="p">,</span> <span class="n">Lastname</span><span class="p">,</span> <span class="n">roster[</span><span class="p">,</span> <span class="m">-1</span><span class="n">]</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">roster</span><span class="p">)</span>
-
-<span class="c1"># Sort by last and first names</span>
-<span class="n">roster</span> <span class="o">&lt;-</span> <span class="n">roster</span><span class="nf">[order</span><span class="p">(</span><span class="n">Lastname</span><span class="p">,</span><span class="n">Firstname</span><span class="p">),</span><span class="n">]</span>
-<span class="n">roster</span>
-
-<span class="c1"># 5.4. Control flow</span>
-<span class="c1"># 5.4.1. Repetition and looping</span>
-
-<span class="c1"># for (var in seq) statement</span>
-
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span> <span class="nf">print</span><span class="p">(</span><span class="s">&#34;Hello&#34;</span><span class="p">)</span>
-
-<span class="c1"># while (cond) statement</span>
-<span class="n">i</span> <span class="o">&lt;-</span> <span class="m">10</span>
-<span class="nf">while </span><span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;Hello&#34;</span><span class="p">);</span> <span class="n">i</span> <span class="o">&lt;-</span> <span class="n">i</span> <span class="o">-</span> <span class="m">1</span><span class="p">}</span>
-
-<span class="c1"># 5.4.2. Conditional execution</span>
-<span class="c1"># if (cond) statement</span>
-<span class="c1"># if (cond) statement else statement2</span>
-
-<span class="nf">if </span><span class="p">(</span><span class="nf">is.character</span><span class="p">(</span><span class="n">grade</span><span class="p">))</span> <span class="n">grade</span> <span class="o">&lt;-</span> <span class="nf">as.factor</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span>
-<span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">is.character</span><span class="p">(</span><span class="n">grade</span><span class="p">))</span> <span class="n">grade</span> <span class="o">&lt;-</span> <span class="nf">as.factor</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span> <span class="n">else</span> <span class="nf">print</span><span class="p">(</span><span class="s">&#34;Grade already
-</span><span class="s">                                                              is a factor&#34;</span><span class="p">)</span>
-
-<span class="c1"># ifelse(cond, statement1, statement2)</span>
-<span class="nf">ifelse</span><span class="p">(</span><span class="n">score</span> <span class="o">&gt;</span> <span class="m">0.5</span><span class="p">,</span> <span class="nf">print</span><span class="p">(</span><span class="s">&#34;Passed&#34;</span><span class="p">),</span> <span class="nf">print</span><span class="p">(</span><span class="s">&#34;Failed&#34;</span><span class="p">))</span>
-<span class="n">outcome</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">score</span> <span class="o">&gt;</span> <span class="m">0.5</span><span class="p">,</span> <span class="s">&#34;Passed&#34;</span><span class="p">,</span> <span class="s">&#34;Failed&#34;</span><span class="p">)</span>
-
-<span class="c1"># switch(expr, ...)</span>
-<span class="c1"># code listing 5.7</span>
-<span class="n">feelings</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;sad&#34;</span><span class="p">,</span> <span class="s">&#34;afraid&#34;</span><span class="p">)</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="n">feelings</span><span class="p">)</span>
-  <span class="nf">print</span><span class="p">(</span>
-    <span class="nf">switch</span><span class="p">(</span><span class="n">i</span><span class="p">,</span>
-           <span class="n">happy</span>  <span class="o">=</span> <span class="s">&#34;I am glad you are happy&#34;</span><span class="p">,</span>
-           <span class="n">afraid</span> <span class="o">=</span> <span class="s">&#34;There is nothing to fear&#34;</span><span class="p">,</span>
-           <span class="n">sad</span>    <span class="o">=</span> <span class="s">&#34;Cheer up&#34;</span><span class="p">,</span>
-           <span class="n">angry</span>  <span class="o">=</span> <span class="s">&#34;Calm down now&#34;</span>
-    <span class="p">)</span>
-  <span class="p">)</span>
-
-<span class="c1"># 5.5. User-written functions</span>
-
-<span class="c1"># The structure of a function looks like this:</span>
-<span class="n">myfunction</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span><span class="n">arg2</span><span class="p">,</span><span class="kc">...</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">statements</span>
-  <span class="nf">return</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="c1"># code listing 5.8</span>
-<span class="n">mystats</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">parametric</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">print</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="n">parametric</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">center</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="n">spread</span> <span class="o">&lt;-</span> <span class="nf">sd</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-  <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
-    <span class="n">center</span> <span class="o">&lt;-</span> <span class="nf">median</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="n">spread</span> <span class="o">&lt;-</span> <span class="nf">mad</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-  <span class="p">}</span>
-  <span class="nf">if </span><span class="p">(</span><span class="n">print</span> <span class="o">&amp;</span> <span class="n">parametric</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;Mean=&#34;</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">,</span> <span class="s">&#34;SD=&#34;</span><span class="p">,</span> <span class="n">spread</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">)</span>
-  <span class="p">}</span> <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">print</span> <span class="o">&amp;</span> <span class="o">!</span><span class="n">parametric</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;Median=&#34;</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">,</span> <span class="s">&#34;MAD=&#34;</span><span class="p">,</span> <span class="n">spread</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">)</span>
-  <span class="p">}</span>
-  <span class="n">result</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="n">center</span><span class="p">,</span> <span class="n">spread</span><span class="o">=</span><span class="n">spread</span><span class="p">)</span>
-  <span class="nf">return</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="p">}</span>
-
-
-<span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">500</span><span class="p">)</span>
-
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">mystats</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># if (parametric)</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">mystats</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">parametric</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">print</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span> <span class="c1"># else if (print &amp; !parametric)</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">mystats</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">parametric</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">print</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span> <span class="c1"># if (print &amp; parametric)</span>
-
-<span class="c1"># a user-written function that uses the switch construct</span>
-<span class="n">mydate</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">type</span><span class="o">=</span><span class="s">&#34;long&#34;</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">switch</span><span class="p">(</span><span class="n">type</span><span class="p">,</span>
-         <span class="n">long</span> <span class="o">=</span>  <span class="nf">format</span><span class="p">(</span><span class="nf">Sys.time</span><span class="p">(),</span> <span class="s">&#34;%A %B %d %Y&#34;</span><span class="p">),</span>
-         <span class="n">short</span> <span class="o">=</span> <span class="nf">format</span><span class="p">(</span><span class="nf">Sys.time</span><span class="p">(),</span> <span class="s">&#34;%m-%d-%y&#34;</span><span class="p">),</span>
-         <span class="nf">cat</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="s">&#34;is not a recognized type\n&#34;</span><span class="p">)</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-<span class="nf">mydate</span><span class="p">(</span><span class="s">&#34;long&#34;</span><span class="p">)</span>
-<span class="nf">mydate</span><span class="p">(</span><span class="s">&#34;short&#34;</span><span class="p">)</span>
-<span class="nf">mydate</span><span class="p">(</span><span class="s">&#34;middle&#34;</span><span class="p">)</span>
-
-<span class="c1"># 5.6. Aggregation and restructuring</span>
-<span class="c1"># 5.6.1. Transpose</span>
-
-<span class="c1"># code listing 5.9</span>
-<span class="n">cars</span> <span class="o">&lt;-</span> <span class="n">mtcars[1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="n">]</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span>
-<span class="nf">t</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span>
-
-<span class="c1"># 5.6.2. Aggregating data</span>
-<span class="c1"># aggregate(x, by, FUN)</span>
-
-<span class="c1"># code listing 5.10</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
-<span class="nf">attach</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
-<span class="n">aggdata</span> <span class="o">&lt;-</span><span class="nf">aggregate</span><span class="p">(</span><span class="n">mtcars</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">Group.cyl</span><span class="o">=</span><span class="n">cyl</span><span class="p">,</span><span class="n">Group.gear</span><span class="o">=</span><span class="n">gear</span><span class="p">),</span> <span class="n">FUN</span><span class="o">=</span><span class="n">mean</span><span class="p">,</span> <span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">aggdata</span><span class="p">)</span>
-
-<span class="c1"># 5.6.3. The reshape package, versatility/万能特性</span>
-
-<span class="n">ID</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
-<span class="n">Time</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
-<span class="n">X1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
-<span class="n">X2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
-<span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">ID</span><span class="p">,</span> <span class="n">Time</span><span class="p">,</span> <span class="n">X1</span><span class="p">,</span> <span class="n">X2</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
-
-<span class="c1"># Melting</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">reshape2</span><span class="p">)</span>
-<span class="n">md</span> <span class="o">&lt;-</span> <span class="nf">melt</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span> <span class="n">id</span><span class="o">=</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;ID&#34;</span><span class="p">,</span> <span class="s">&#34;Time&#34;</span><span class="p">)))</span>
-<span class="n">md</span>
-
-<span class="c1"># Casting</span>
-<span class="n">newdata</span> <span class="o">&lt;-</span> <span class="nf">cast</span><span class="p">(</span><span class="n">md</span><span class="p">,</span> <span class="n">formula</span><span class="p">,</span> <span class="n">FUN</span><span class="p">)</span>
-
-<span class="nf">dcast</span><span class="p">(</span><span class="n">md</span><span class="p">,</span> <span class="n">ID</span><span class="o">+</span><span class="n">Time</span><span class="o">~</span><span class="n">variable</span><span class="p">)</span>
-<span class="nf">dcast</span><span class="p">(</span><span class="n">md</span><span class="p">,</span> <span class="n">ID</span><span class="o">+</span><span class="n">variable</span><span class="o">~</span><span class="n">Time</span><span class="p">)</span>
-<span class="nf">dcast</span><span class="p">(</span><span class="n">md</span><span class="p">,</span> <span class="n">ID</span><span class="o">~</span><span class="n">variable</span><span class="o">+</span><span class="n">Time</span><span class="p">)</span>
-
-<span class="nf">dcast</span><span class="p">(</span><span class="n">md</span><span class="p">,</span> <span class="n">ID</span><span class="o">~</span><span class="n">variable</span><span class="p">,</span><span class="n">mean</span><span class="p">)</span>
-<span class="nf">dcast</span><span class="p">(</span><span class="n">md</span><span class="p">,</span><span class="n">ID</span><span class="o">~</span><span class="n">Time</span><span class="p">,</span><span class="n">mean</span><span class="p">)</span>
-
-
-<span class="c1"># 5.7 Summary</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Remove most objects from the working environment</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.1. A data management challenge</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.2. Numerical and character functions</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.2.1. Mathematical functions</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.2.2. Statistical functions</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">newdata</span> <span class="o">&lt;-</span> <span class="nf">scale</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span><span class="o">*</span><span class="n">SD</span> <span class="o">+</span> <span class="n">M</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">newdata</span> <span class="o">&lt;-</span> <span class="nf">transform</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span> <span class="n">myvar</span> <span class="o">=</span> <span class="nf">scale</span><span class="p">(</span><span class="n">myvar</span><span class="p">)</span><span class="o">*</span><span class="m">10+50</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.2.3. Probability functions</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Setting the Seed for Random Number Generation</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Listing 5.2. Generating pseudo-random numbers from a uniform distribution</span>
+</span></span><span class="line"><span class="cl"><span class="nf">runif</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">runif</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">runif</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">runif</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Generating Multivariate Normal Data</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 5.3</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">MASS</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">options</span><span class="p">(</span><span class="n">digits</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mean</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">230.7</span><span class="p">,</span> <span class="m">146.7</span><span class="p">,</span> <span class="m">3.6</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">sigma</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">15360.8</span><span class="p">,</span> <span class="m">6721.2</span><span class="p">,</span> <span class="m">-47.1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="m">6721.2</span><span class="p">,</span> <span class="m">4700.9</span><span class="p">,</span> <span class="m">-16.5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="m">-47.1</span><span class="p">,</span> <span class="m">-16.5</span><span class="p">,</span> <span class="m">0.3</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">sigma</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">mvrnorm</span><span class="p">(</span><span class="m">500</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">names</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;y&#34;</span><span class="p">,</span> <span class="s">&#34;x1&#34;</span><span class="p">,</span> <span class="s">&#34;x2&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dim</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.2.4. Character functions</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;ab&#34;</span><span class="p">,</span> <span class="s">&#34;cde&#34;</span><span class="p">,</span> <span class="s">&#34;fghij&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">nchar</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 2 3 5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">substr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;b&#34;   &#34;de&#34;  &#34;ghi&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">substr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;2222&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;a2&#34;    &#34;c22&#34;   &#34;f222j&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">grep</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">ignore.case</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">fixed</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">grep</span><span class="p">(</span><span class="s">&#34;A&#34;</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;b&#34;</span><span class="p">,</span><span class="s">&#34;A&#34;</span><span class="p">,</span><span class="s">&#34;c&#34;</span><span class="p">),</span> <span class="n">fixed</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">replacement</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">ignore.case</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">fixed</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">sub</span><span class="p">(</span><span class="s">&#34;\\s&#34;</span><span class="p">,</span><span class="s">&#34;.&#34;</span><span class="p">,</span><span class="s">&#34;Hello There&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;Hello.There&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">strsplit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">split</span><span class="p">,</span> <span class="n">fixed</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">strsplit</span><span class="p">(</span><span class="s">&#34;abc&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [[1]]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;a&#34; &#34;b&#34; &#34;c&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">paste</span><span class="p">(</span><span class="kc">...</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">paste</span><span class="p">(</span><span class="s">&#34;x&#34;</span><span class="p">,</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># c(&#34;xl&#34;, &#34;x2&#34;, &#34;x3&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">paste</span><span class="p">(</span><span class="s">&#34;x&#34;</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#34;M&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># c(&#34;xMl&#34;,&#34;xM2&#34; &#34;xM3&#34;)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">toupper</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">tolower</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.2.5. Other useful functions</span>
+</span></span><span class="line"><span class="cl"><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">length</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">9</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">seq</span><span class="p">(</span><span class="n">from</span><span class="p">,</span><span class="n">to</span><span class="p">,</span><span class="n">by</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">rep</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 1 2 3 1 2 3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">cut</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">pretty</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">cat</span><span class="p">(</span><span class="kc">...</span><span class="p">,</span> <span class="n">file</span> <span class="o">=</span> <span class="s">&#34;myfile&#34;</span><span class="p">,</span> <span class="n">append</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">firstname</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Jane&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">cat</span><span class="p">(</span><span class="s">&#34;Hello&#34;</span><span class="p">,</span><span class="n">firstname</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">)</span> <span class="c1"># equal cat(&#34;HEllo&#34;, &#34;Jane&#34;, &#34;\n&#34;)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">?</span><span class="n">Quotes</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">name</span> <span class="o">&lt;-</span> <span class="s">&#34;Bob&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;Hello&#34;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&#34;\b.\n&#34;</span><span class="p">,</span> <span class="s">&#34;Isn\&#39;t R&#34;</span><span class="p">,</span> <span class="s">&#34;\t&#34;</span><span class="p">,</span> <span class="s">&#34;GREAT?\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">cat</span><span class="p">(</span> <span class="s">&#34;Hello&#34;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">&#34;.\n&#34;</span><span class="p">,</span> <span class="s">&#34;Isn\&#39;t R&#34;</span><span class="p">,</span> <span class="s">&#34;\t&#34;</span><span class="p">,</span> <span class="s">&#34;GREAT?\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.2.6. Applying functions to matrices and data frames</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">apply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">margin</span><span class="p">,</span> <span class="n">FUN</span><span class="p">,</span> <span class="kc">...</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 5.5</span>
+</span></span><span class="line"><span class="cl"><span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">30</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">6</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mydata</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">apply</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">apply</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Calculate trimmer column means</span>
+</span></span><span class="line"><span class="cl"><span class="nf">apply</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="m">0.2</span><span class="p">)</span> <span class="c1"># trim topmost 20% and lowest20%</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.3. A solution for our data management challenge</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 5.6</span>
+</span></span><span class="line"><span class="cl"><span class="nf">options</span><span class="p">(</span><span class="n">digits</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Student</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;John Davis&#34;</span><span class="p">,</span> <span class="s">&#34;Angela Williams&#34;</span><span class="p">,</span> <span class="s">&#34;Bullwinkle Moose&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="s">&#34;David Jones&#34;</span><span class="p">,</span> <span class="s">&#34;Janice Markhammer&#34;</span><span class="p">,</span> <span class="s">&#34;Cheryl Cushing&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="s">&#34;Reuven Ytzrhak&#34;</span><span class="p">,</span> <span class="s">&#34;Greg Knox&#34;</span><span class="p">,</span> <span class="s">&#34;Joel England&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="s">&#34;Mary Rayburn&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Math</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">502</span><span class="p">,</span> <span class="m">600</span><span class="p">,</span> <span class="m">412</span><span class="p">,</span> <span class="m">358</span><span class="p">,</span> <span class="m">495</span><span class="p">,</span> <span class="m">512</span><span class="p">,</span> <span class="m">410</span><span class="p">,</span> <span class="m">625</span><span class="p">,</span> <span class="m">573</span><span class="p">,</span> <span class="m">522</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Science</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">95</span><span class="p">,</span> <span class="m">99</span><span class="p">,</span> <span class="m">80</span><span class="p">,</span> <span class="m">82</span><span class="p">,</span> <span class="m">75</span><span class="p">,</span> <span class="m">85</span><span class="p">,</span> <span class="m">80</span><span class="p">,</span> <span class="m">95</span><span class="p">,</span> <span class="m">89</span><span class="p">,</span> <span class="m">86</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">English</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">22</span><span class="p">,</span> <span class="m">18</span><span class="p">,</span> <span class="m">15</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">28</span><span class="p">,</span> <span class="m">15</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">27</span><span class="p">,</span> <span class="m">18</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">roster</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">Student</span><span class="p">,</span> <span class="n">Math</span><span class="p">,</span> <span class="n">Science</span><span class="p">,</span> <span class="n">English</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                     <span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">roster</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Obtain performance scores</span>
+</span></span><span class="line"><span class="cl"><span class="n">z</span> <span class="o">&lt;-</span> <span class="nf">scale</span><span class="p">(</span><span class="n">roster[</span><span class="p">,</span><span class="m">2</span><span class="o">:</span><span class="m">4</span><span class="n">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">z</span>
+</span></span><span class="line"><span class="cl"><span class="n">score</span> <span class="o">&lt;-</span> <span class="nf">apply</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">roster</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">roster</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Grade students</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">quantile</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.8</span><span class="p">,</span> <span class="m">0.6</span><span class="p">,</span> <span class="m">0.4</span><span class="p">,</span> <span class="m">0.2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">roster</span><span class="o">$</span><span class="n">grade[score</span> <span class="o">&gt;=</span> <span class="n">y[1]]</span> <span class="o">&lt;-</span> <span class="s">&#34;A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">roster</span><span class="o">$</span><span class="n">grade[score</span> <span class="o">&lt;</span> <span class="n">y[1]</span> <span class="o">&amp;</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="n">y[2]]</span> <span class="o">&lt;-</span> <span class="s">&#34;B&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">roster</span><span class="o">$</span><span class="n">grade[score</span> <span class="o">&lt;</span> <span class="n">y[2]</span> <span class="o">&amp;</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="n">y[3]]</span> <span class="o">&lt;-</span> <span class="s">&#34;C&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">roster</span><span class="o">$</span><span class="n">grade[score</span> <span class="o">&lt;</span> <span class="n">y[3]</span> <span class="o">&amp;</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="n">y[4]]</span> <span class="o">&lt;-</span> <span class="s">&#34;D&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">roster</span><span class="o">$</span><span class="n">grade[score</span> <span class="o">&lt;</span> <span class="n">y[4]]</span> <span class="o">&lt;-</span> <span class="s">&#34;F&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Extract last and first names</span>
+</span></span><span class="line"><span class="cl"><span class="n">name</span> <span class="o">&lt;-</span> <span class="nf">strsplit</span><span class="p">((</span><span class="n">roster</span><span class="o">$</span><span class="n">Student</span><span class="p">),</span> <span class="s">&#34; &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Lastname</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&#34;[&#34;</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Firstname</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&#34;[&#34;</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">?</span><span class="s">&#34;[&#34;</span> <span class="c1"># Extract or Replace Parts of an Object</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">roster</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">Firstname</span><span class="p">,</span> <span class="n">Lastname</span><span class="p">,</span> <span class="n">roster[</span><span class="p">,</span> <span class="m">-1</span><span class="n">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">roster</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Sort by last and first names</span>
+</span></span><span class="line"><span class="cl"><span class="n">roster</span> <span class="o">&lt;-</span> <span class="n">roster</span><span class="nf">[order</span><span class="p">(</span><span class="n">Lastname</span><span class="p">,</span><span class="n">Firstname</span><span class="p">),</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">roster</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.4. Control flow</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.4.1. Repetition and looping</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># for (var in seq) statement</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span> <span class="nf">print</span><span class="p">(</span><span class="s">&#34;Hello&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># while (cond) statement</span>
+</span></span><span class="line"><span class="cl"><span class="n">i</span> <span class="o">&lt;-</span> <span class="m">10</span>
+</span></span><span class="line"><span class="cl"><span class="nf">while </span><span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;Hello&#34;</span><span class="p">);</span> <span class="n">i</span> <span class="o">&lt;-</span> <span class="n">i</span> <span class="o">-</span> <span class="m">1</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.4.2. Conditional execution</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># if (cond) statement</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># if (cond) statement else statement2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">if </span><span class="p">(</span><span class="nf">is.character</span><span class="p">(</span><span class="n">grade</span><span class="p">))</span> <span class="n">grade</span> <span class="o">&lt;-</span> <span class="nf">as.factor</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">is.character</span><span class="p">(</span><span class="n">grade</span><span class="p">))</span> <span class="n">grade</span> <span class="o">&lt;-</span> <span class="nf">as.factor</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span> <span class="n">else</span> <span class="nf">print</span><span class="p">(</span><span class="s">&#34;Grade already
+</span></span></span><span class="line"><span class="cl"><span class="s">                                                              is a factor&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># ifelse(cond, statement1, statement2)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ifelse</span><span class="p">(</span><span class="n">score</span> <span class="o">&gt;</span> <span class="m">0.5</span><span class="p">,</span> <span class="nf">print</span><span class="p">(</span><span class="s">&#34;Passed&#34;</span><span class="p">),</span> <span class="nf">print</span><span class="p">(</span><span class="s">&#34;Failed&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">outcome</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">score</span> <span class="o">&gt;</span> <span class="m">0.5</span><span class="p">,</span> <span class="s">&#34;Passed&#34;</span><span class="p">,</span> <span class="s">&#34;Failed&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># switch(expr, ...)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 5.7</span>
+</span></span><span class="line"><span class="cl"><span class="n">feelings</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;sad&#34;</span><span class="p">,</span> <span class="s">&#34;afraid&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="n">feelings</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">print</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">switch</span><span class="p">(</span><span class="n">i</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="n">happy</span>  <span class="o">=</span> <span class="s">&#34;I am glad you are happy&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="n">afraid</span> <span class="o">=</span> <span class="s">&#34;There is nothing to fear&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="n">sad</span>    <span class="o">=</span> <span class="s">&#34;Cheer up&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="n">angry</span>  <span class="o">=</span> <span class="s">&#34;Calm down now&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.5. User-written functions</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># The structure of a function looks like this:</span>
+</span></span><span class="line"><span class="cl"><span class="n">myfunction</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span><span class="n">arg2</span><span class="p">,</span><span class="kc">...</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">statements</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">return</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 5.8</span>
+</span></span><span class="line"><span class="cl"><span class="n">mystats</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">parametric</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">print</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">if </span><span class="p">(</span><span class="n">parametric</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">center</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="n">spread</span> <span class="o">&lt;-</span> <span class="nf">sd</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">center</span> <span class="o">&lt;-</span> <span class="nf">median</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="n">spread</span> <span class="o">&lt;-</span> <span class="nf">mad</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">if </span><span class="p">(</span><span class="n">print</span> <span class="o">&amp;</span> <span class="n">parametric</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;Mean=&#34;</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">,</span> <span class="s">&#34;SD=&#34;</span><span class="p">,</span> <span class="n">spread</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">print</span> <span class="o">&amp;</span> <span class="o">!</span><span class="n">parametric</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;Median=&#34;</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">,</span> <span class="s">&#34;MAD=&#34;</span><span class="p">,</span> <span class="n">spread</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="n">result</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="n">center</span><span class="p">,</span> <span class="n">spread</span><span class="o">=</span><span class="n">spread</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">return</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">500</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">mystats</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># if (parametric)</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">mystats</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">parametric</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">print</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span> <span class="c1"># else if (print &amp; !parametric)</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">mystats</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">parametric</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">print</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span> <span class="c1"># if (print &amp; parametric)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># a user-written function that uses the switch construct</span>
+</span></span><span class="line"><span class="cl"><span class="n">mydate</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">type</span><span class="o">=</span><span class="s">&#34;long&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">switch</span><span class="p">(</span><span class="n">type</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">         <span class="n">long</span> <span class="o">=</span>  <span class="nf">format</span><span class="p">(</span><span class="nf">Sys.time</span><span class="p">(),</span> <span class="s">&#34;%A %B %d %Y&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">         <span class="n">short</span> <span class="o">=</span> <span class="nf">format</span><span class="p">(</span><span class="nf">Sys.time</span><span class="p">(),</span> <span class="s">&#34;%m-%d-%y&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">         <span class="nf">cat</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="s">&#34;is not a recognized type\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">mydate</span><span class="p">(</span><span class="s">&#34;long&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">mydate</span><span class="p">(</span><span class="s">&#34;short&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">mydate</span><span class="p">(</span><span class="s">&#34;middle&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.6. Aggregation and restructuring</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.6.1. Transpose</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 5.9</span>
+</span></span><span class="line"><span class="cl"><span class="n">cars</span> <span class="o">&lt;-</span> <span class="n">mtcars[1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">t</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.6.2. Aggregating data</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># aggregate(x, by, FUN)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 5.10</span>
+</span></span><span class="line"><span class="cl"><span class="nf">options</span><span class="p">(</span><span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">attach</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">aggdata</span> <span class="o">&lt;-</span><span class="nf">aggregate</span><span class="p">(</span><span class="n">mtcars</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">Group.cyl</span><span class="o">=</span><span class="n">cyl</span><span class="p">,</span><span class="n">Group.gear</span><span class="o">=</span><span class="n">gear</span><span class="p">),</span> <span class="n">FUN</span><span class="o">=</span><span class="n">mean</span><span class="p">,</span> <span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">aggdata</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.6.3. The reshape package, versatility/万能特性</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ID</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Time</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">X1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">X2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mydata</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">ID</span><span class="p">,</span> <span class="n">Time</span><span class="p">,</span> <span class="n">X1</span><span class="p">,</span> <span class="n">X2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Melting</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">reshape2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">md</span> <span class="o">&lt;-</span> <span class="nf">melt</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span> <span class="n">id</span><span class="o">=</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;ID&#34;</span><span class="p">,</span> <span class="s">&#34;Time&#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="n">md</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Casting</span>
+</span></span><span class="line"><span class="cl"><span class="n">newdata</span> <span class="o">&lt;-</span> <span class="nf">cast</span><span class="p">(</span><span class="n">md</span><span class="p">,</span> <span class="n">formula</span><span class="p">,</span> <span class="n">FUN</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">dcast</span><span class="p">(</span><span class="n">md</span><span class="p">,</span> <span class="n">ID</span><span class="o">+</span><span class="n">Time</span><span class="o">~</span><span class="n">variable</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dcast</span><span class="p">(</span><span class="n">md</span><span class="p">,</span> <span class="n">ID</span><span class="o">+</span><span class="n">variable</span><span class="o">~</span><span class="n">Time</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dcast</span><span class="p">(</span><span class="n">md</span><span class="p">,</span> <span class="n">ID</span><span class="o">~</span><span class="n">variable</span><span class="o">+</span><span class="n">Time</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">dcast</span><span class="p">(</span><span class="n">md</span><span class="p">,</span> <span class="n">ID</span><span class="o">~</span><span class="n">variable</span><span class="p">,</span><span class="n">mean</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dcast</span><span class="p">(</span><span class="n">md</span><span class="p">,</span><span class="n">ID</span><span class="o">~</span><span class="n">Time</span><span class="p">,</span><span class="n">mean</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5.7 Summary</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -1364,7 +1359,7 @@ if (!doNotTrack) {
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1408,7 +1403,7 @@ if (!doNotTrack) {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 

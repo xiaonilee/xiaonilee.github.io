@@ -34,7 +34,7 @@ The mission of the GDC is to provide the cancer research community with a unifie
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/gdc/" />
@@ -55,7 +55,7 @@ The mission of the GDC is to provide the cancer research community with a unifie
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -69,20 +69,15 @@ The mission of the GDC is to provide the cancer research community with a unifie
 <meta property="og:description" content="The Genomic Data Commons (GDC), is a research program of the National Cancer Institute (NCI).
 The mission of the GDC is to provide the cancer research community with a unified data repository that enables data sharing across cancer genomic studies in support of precision medicine." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/gdc/" />
+<meta property="og:url" content="/post/gdc/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-09-25T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-09-28T00:00:00+00:00" />
 <meta itemprop="name" content="GDC Notebook">
 <meta itemprop="description" content="The Genomic Data Commons (GDC), is a research program of the National Cancer Institute (NCI).
-The mission of the GDC is to provide the cancer research community with a unified data repository that enables data sharing across cancer genomic studies in support of precision medicine.">
-<meta itemprop="datePublished" content="2020-09-25T00:00:00+00:00" />
+The mission of the GDC is to provide the cancer research community with a unified data repository that enables data sharing across cancer genomic studies in support of precision medicine."><meta itemprop="datePublished" content="2020-09-25T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-09-28T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1037">
-
-
-
-<meta itemprop="keywords" content="TCGA,Bioinformatics,GDC,R," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="TCGA,Bioinformatics,GDC,R," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GDC Notebook"/>
 <meta name="twitter:description" content="The Genomic Data Commons (GDC), is a research program of the National Cancer Institute (NCI).
 The mission of the GDC is to provide the cancer research community with a unified data repository that enables data sharing across cancer genomic studies in support of precision medicine."/>
@@ -586,7 +581,7 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -596,39 +591,39 @@ if (!doNotTrack) {
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-markdown" data-lang="markdown">
-$ wc -l gdc_manifest.2020-09-27-*
-
-Output
-     568 gdc_manifest.2020-09-27-LUNG-miRNA-isoform.txt
-     568 gdc_manifest.2020-09-27-LUNG-miRNA-seq.txt
-     523 gdc_manifest.2020-09-27-clinical.txt
-    1659 total
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ wc -l gdc_manifest.2020-09-27-*
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Output
+</span></span><span class="line"><span class="cl">     568 gdc_manifest.2020-09-27-LUNG-miRNA-isoform.txt
+</span></span><span class="line"><span class="cl">     568 gdc_manifest.2020-09-27-LUNG-miRNA-seq.txt
+</span></span><span class="line"><span class="cl">     523 gdc_manifest.2020-09-27-clinical.txt
+</span></span><span class="line"><span class="cl">    1659 total
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Download the <a href="https://gdc.cancer.gov/files/public/file/gdc-client_v1.6.0_OSX_x64_1.zip">GDC Data Transfer Tool Client</a>.</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-markdown" data-lang="markdown">
-wget https://gdc.cancer.gov/files/public/file/gdc-client_v1.6.0_OSX_x64_1.zip
-
-unzip gdc-client_v1.6.0_OSX_x64_1.zip
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">wget https://gdc.cancer.gov/files/public/file/gdc-client_v1.6.0_OSX_x64_1.zip
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">unzip gdc-client_v1.6.0_OSX_x64_1.zip
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Check the usage of gdc-client.</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -640,24 +635,24 @@ unzip gdc-client_v1.6.0_OSX_x64_1.zip
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-markdown" data-lang="markdown">
-$ ./gdc-client --help
-
-output
-
-commands:
-  {download,upload,settings}
-                        for more information, specify -h after a command
-    download            download data from the GDC
-    upload              upload data to the GDC
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ ./gdc-client --help
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">output
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">commands:
+</span></span><span class="line"><span class="cl">  {download,upload,settings}
+</span></span><span class="line"><span class="cl">                        for more information, specify -h after a command
+</span></span><span class="line"><span class="cl">    download            download data from the GDC
+</span></span><span class="line"><span class="cl">    upload              upload data to the GDC
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Check usage of gdc-client download.</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -712,67 +707,67 @@ commands:
 </span><span class="lnt">53
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-markdown" data-lang="markdown">$ ./gdc-client download --help
-
-output
-usage: gdc-client download [-h] [--debug] [--log-file LOG_FILE] [--color_off]
-                           [-t TOKEN_FILE] [-d DIR] [-s server]
-                           [--no-segment-md5sums] [--no-file-md5sum]
-                           [-n N_PROCESSES]
-                           [--http-chunk-size HTTP_CHUNK_SIZE]
-                           [--save-interval SAVE_INTERVAL] [-k]
-                           [--no-related-files] [--no-annotations]
-                           [--no-auto-retry] [--retry-amount RETRY_AMOUNT]
-                           [--wait-time WAIT_TIME] [--latest] [--config FILE]
-                           [-m MANIFEST]
-                           [file_id [file_id ...]]
-
-positional arguments:
-  file_id               The GDC UUID of the file(s) to download
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --debug               Enable debug logging. If a failure occurs, the program
-                        will stop.
-  --log-file LOG_FILE   Save logs to file. Amount logged affected by --debug
-  --color_off           Disable colored output
-  -t TOKEN_FILE, --token-file TOKEN_FILE
-                        GDC API auth token file
-  -d DIR, --dir DIR     Directory to download files to. Defaults to current
-                        directory
-  -s server, --server server
-                        The TCP server address server[:port]
-  --no-segment-md5sums  Do not calculate inbound segment md5sums and/or do not
-                        verify md5sums on restart
-  --no-file-md5sum      Do not verify file md5sum after download
-  -n N_PROCESSES, --n-processes N_PROCESSES
-                        Number of client connections.
-  --http-chunk-size HTTP_CHUNK_SIZE, -c HTTP_CHUNK_SIZE
-                        Size in bytes of standard HTTP block size.
-  --save-interval SAVE_INTERVAL
-                        The number of chunks after which to flush state file.
-                        A lower save interval will result in more frequent
-                        printout but lower performance.
-  -k, --no-verify       Perform insecure SSL connection and transfer
-  --no-related-files    Do not download related files.
-  --no-annotations      Do not download annotations.
-  --no-auto-retry       Ask before retrying to download a file
-  --retry-amount RETRY_AMOUNT
-                        Number of times to retry a download
-  --wait-time WAIT_TIME
-                        Amount of seconds to wait before retrying
-  --latest              Download latest version of a file if it exists
-  --config FILE         Path to INI-type config file
-  -m MANIFEST, --manifest MANIFEST
-                        GDC download manifest file
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">$ ./gdc-client download --help
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">output
+</span></span><span class="line"><span class="cl">usage: gdc-client download [-h] [--debug] [--log-file LOG_FILE] [--color_off]
+</span></span><span class="line"><span class="cl">                           [-t TOKEN_FILE] [-d DIR] [-s server]
+</span></span><span class="line"><span class="cl">                           [--no-segment-md5sums] [--no-file-md5sum]
+</span></span><span class="line"><span class="cl">                           [-n N_PROCESSES]
+</span></span><span class="line"><span class="cl">                           [--http-chunk-size HTTP_CHUNK_SIZE]
+</span></span><span class="line"><span class="cl">                           [--save-interval SAVE_INTERVAL] [-k]
+</span></span><span class="line"><span class="cl">                           [--no-related-files] [--no-annotations]
+</span></span><span class="line"><span class="cl">                           [--no-auto-retry] [--retry-amount RETRY_AMOUNT]
+</span></span><span class="line"><span class="cl">                           [--wait-time WAIT_TIME] [--latest] [--config FILE]
+</span></span><span class="line"><span class="cl">                           [-m MANIFEST]
+</span></span><span class="line"><span class="cl">                           [file_id [file_id ...]]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">positional arguments:
+</span></span><span class="line"><span class="cl">  file_id               The GDC UUID of the file(s) to download
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">optional arguments:
+</span></span><span class="line"><span class="cl">  -h, --help            show this help message and exit
+</span></span><span class="line"><span class="cl">  --debug               Enable debug logging. If a failure occurs, the program
+</span></span><span class="line"><span class="cl">                        will stop.
+</span></span><span class="line"><span class="cl">  --log-file LOG_FILE   Save logs to file. Amount logged affected by --debug
+</span></span><span class="line"><span class="cl">  --color_off           Disable colored output
+</span></span><span class="line"><span class="cl">  -t TOKEN_FILE, --token-file TOKEN_FILE
+</span></span><span class="line"><span class="cl">                        GDC API auth token file
+</span></span><span class="line"><span class="cl">  -d DIR, --dir DIR     Directory to download files to. Defaults to current
+</span></span><span class="line"><span class="cl">                        directory
+</span></span><span class="line"><span class="cl">  -s server, --server server
+</span></span><span class="line"><span class="cl">                        The TCP server address server[:port]
+</span></span><span class="line"><span class="cl">  --no-segment-md5sums  Do not calculate inbound segment md5sums and/or do not
+</span></span><span class="line"><span class="cl">                        verify md5sums on restart
+</span></span><span class="line"><span class="cl">  --no-file-md5sum      Do not verify file md5sum after download
+</span></span><span class="line"><span class="cl">  -n N_PROCESSES, --n-processes N_PROCESSES
+</span></span><span class="line"><span class="cl">                        Number of client connections.
+</span></span><span class="line"><span class="cl">  --http-chunk-size HTTP_CHUNK_SIZE, -c HTTP_CHUNK_SIZE
+</span></span><span class="line"><span class="cl">                        Size in bytes of standard HTTP block size.
+</span></span><span class="line"><span class="cl">  --save-interval SAVE_INTERVAL
+</span></span><span class="line"><span class="cl">                        The number of chunks after which to flush state file.
+</span></span><span class="line"><span class="cl">                        A lower save interval will result in more frequent
+</span></span><span class="line"><span class="cl">                        printout but lower performance.
+</span></span><span class="line"><span class="cl">  -k, --no-verify       Perform insecure SSL connection and transfer
+</span></span><span class="line"><span class="cl">  --no-related-files    Do not download related files.
+</span></span><span class="line"><span class="cl">  --no-annotations      Do not download annotations.
+</span></span><span class="line"><span class="cl">  --no-auto-retry       Ask before retrying to download a file
+</span></span><span class="line"><span class="cl">  --retry-amount RETRY_AMOUNT
+</span></span><span class="line"><span class="cl">                        Number of times to retry a download
+</span></span><span class="line"><span class="cl">  --wait-time WAIT_TIME
+</span></span><span class="line"><span class="cl">                        Amount of seconds to wait before retrying
+</span></span><span class="line"><span class="cl">  --latest              Download latest version of a file if it exists
+</span></span><span class="line"><span class="cl">  --config FILE         Path to INI-type config file
+</span></span><span class="line"><span class="cl">  -m MANIFEST, --manifest MANIFEST
+</span></span><span class="line"><span class="cl">                        GDC download manifest file
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Download Manifest files.</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -780,20 +775,20 @@ optional arguments:
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-markdown" data-lang="markdown">
-./gdc-client download -m gdc_manifest.2020-09-27-LUNG-miRNA-clinical.txt -d clinical/
-
-./gdc-client download -m gdc_manifest.2020-09-27-LUNG-miRNA-isoform.txt -d isoform/
-
-./gdc-client download -m gdc_manifest.2020-09-27-LUNG-miRNA-seq.txt -d miRNAseq/
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">./gdc-client download -m gdc_manifest.2020-09-27-LUNG-miRNA-clinical.txt -d clinical/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">./gdc-client download -m gdc_manifest.2020-09-27-LUNG-miRNA-isoform.txt -d isoform/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">./gdc-client download -m gdc_manifest.2020-09-27-LUNG-miRNA-seq.txt -d miRNAseq/
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Check the information of files downloaded.</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -829,47 +824,47 @@ optional arguments:
 </span><span class="lnt">34
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-markdown" data-lang="markdown">$ cd clinical
-
-<span class="gh"># count total number of files downloaded
-</span><span class="gh"></span>$ ls|wc
-output
-    522     522   19314
-
-<span class="gh"># count alive number of clinical information
-</span><span class="gh"></span>$ grep -i vital_status */*xml|grep Alive|wc
-output
-    840     840   10920
-
-<span class="gh"># count dead number of clinical information
-</span><span class="gh"></span>$ grep -i vital_status */*xml|grep -v Alive|wc
-output
-     298    3580  104444
-
-<span class="gh"># get sampes name/id:
-</span><span class="gh"></span>$ grep -i vital_status */*xml|grep Alive |cut -d&#34;.&#34; -f 3
-output
-TCGA-J2-8192
-TCGA-J2-8192
-TCGA-91-8499
-TCGA-91-8499
-TCGA-55-6986
-TCGA-55-6986
-TCGA-NJ-A4YG
-TCGA-NJ-A4YG
-......
-
-<span class="gh"># count total number of alive samples
-</span><span class="gh"></span>$ grep -i vital_status */*xml|grep Alive |cut -d&#34;.&#34; -f 3|sort -u|wc
-output
-    395     395    5135
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">$ cd clinical
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh"># count total number of files downloaded
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>$ ls|wc
+</span></span><span class="line"><span class="cl">output
+</span></span><span class="line"><span class="cl">    522     522   19314
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh"># count alive number of clinical information
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>$ grep -i vital_status */*xml|grep Alive|wc
+</span></span><span class="line"><span class="cl">output
+</span></span><span class="line"><span class="cl">    840     840   10920
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh"># count dead number of clinical information
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>$ grep -i vital_status */*xml|grep -v Alive|wc
+</span></span><span class="line"><span class="cl">output
+</span></span><span class="line"><span class="cl">     298    3580  104444
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh"># get sampes name/id:
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>$ grep -i vital_status */*xml|grep Alive |cut -d&#34;.&#34; -f 3
+</span></span><span class="line"><span class="cl">output
+</span></span><span class="line"><span class="cl">TCGA-J2-8192
+</span></span><span class="line"><span class="cl">TCGA-J2-8192
+</span></span><span class="line"><span class="cl">TCGA-91-8499
+</span></span><span class="line"><span class="cl">TCGA-91-8499
+</span></span><span class="line"><span class="cl">TCGA-55-6986
+</span></span><span class="line"><span class="cl">TCGA-55-6986
+</span></span><span class="line"><span class="cl">TCGA-NJ-A4YG
+</span></span><span class="line"><span class="cl">TCGA-NJ-A4YG
+</span></span><span class="line"><span class="cl">......
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh"># count total number of alive samples
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>$ grep -i vital_status */*xml|grep Alive |cut -d&#34;.&#34; -f 3|sort -u|wc
+</span></span><span class="line"><span class="cl">output
+</span></span><span class="line"><span class="cl">    395     395    5135
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="data-wrangling">Data Wrangling</h3>
 <h4 id="data-of-overall-information">Data of overall Information</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -883,19 +878,19 @@ output
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-markdown" data-lang="markdown"><span class="gh"># count files number for clinical, isoform and miRNAseq
-</span><span class="gh"></span>$ ls clinical|wc
-output
-     522     522   19314
-
-$ ls isoform|wc
-output
-     567     567   20979
-
-$ ls miRNAseq|wc
-output
-     567     567   20979
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="gh"># count files number for clinical, isoform and miRNAseq
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>$ ls clinical|wc
+</span></span><span class="line"><span class="cl">output
+</span></span><span class="line"><span class="cl">     522     522   19314
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ ls isoform|wc
+</span></span><span class="line"><span class="cl">output
+</span></span><span class="line"><span class="cl">     567     567   20979
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ ls miRNAseq|wc
+</span></span><span class="line"><span class="cl">output
+</span></span><span class="line"><span class="cl">     567     567   20979
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="r-scripts-for-single-sample">R Scripts For Single Sample</h3>
 <ul>
@@ -903,15 +898,15 @@ output
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-markdown" data-lang="markdown">$ ls clinical/57d733f6-2f8e-4f0c-b391-48d3cf7c1f87
-output
-nationwidechildrens.org_clinical.TCGA-75-7030.xml
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">$ ls clinical/57d733f6-2f8e-4f0c-b391-48d3cf7c1f87
+</span></span><span class="line"><span class="cl">output
+</span></span><span class="line"><span class="cl">nationwidechildrens.org_clinical.TCGA-75-7030.xml
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
@@ -925,7 +920,7 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 <p>Reading XML File.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -938,25 +933,25 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Load the package required to read XML files.</span>
-<span class="nf">library</span><span class="p">(</span><span class="s">&#34;XML&#34;</span><span class="p">)</span>
-
-<span class="c1"># Also load the other required package.</span>
-<span class="nf">library</span><span class="p">(</span><span class="s">&#34;methods&#34;</span><span class="p">)</span>
-
-<span class="c1"># Give the input file name to the function.</span>
-<span class="n">result</span> <span class="o">&lt;-</span> <span class="nf">xmlParse</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#34;nationwidechildrens.org_clinical.TCGA-75-7030.xml&#34;</span><span class="p">)</span>
-
-<span class="c1"># Print the result.</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Load the package required to read XML files.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="s">&#34;XML&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Also load the other required package.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="s">&#34;methods&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Give the input file name to the function.</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">&lt;-</span> <span class="nf">xmlParse</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#34;nationwidechildrens.org_clinical.TCGA-75-7030.xml&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Print the result.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Get Number of Nodes Present in XML File.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -969,25 +964,25 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Exract the root node form the xml file.</span>
-<span class="n">rootnode</span> <span class="o">&lt;-</span> <span class="nf">xmlRoot</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="c1"># Find number of nodes in the root.</span>
-<span class="n">rootsize</span> <span class="o">&lt;-</span> <span class="nf">xmlSize</span><span class="p">(</span><span class="n">rootnode</span><span class="p">)</span>
-
-<span class="c1"># Print the result.</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">rootsize</span><span class="p">)</span>
-
-<span class="n">output</span>
-<span class="n">[1]</span> <span class="m">2</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Exract the root node form the xml file.</span>
+</span></span><span class="line"><span class="cl"><span class="n">rootnode</span> <span class="o">&lt;-</span> <span class="nf">xmlRoot</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Find number of nodes in the root.</span>
+</span></span><span class="line"><span class="cl"><span class="n">rootsize</span> <span class="o">&lt;-</span> <span class="nf">xmlSize</span><span class="p">(</span><span class="n">rootnode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Print the result.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">print</span><span class="p">(</span><span class="n">rootsize</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">output</span>
+</span></span><span class="line"><span class="cl"><span class="n">[1]</span> <span class="m">2</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Details of the First Node and second Node.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -995,32 +990,32 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Exract the root node form the xml file.</span>
-<span class="n">rootnode</span> <span class="o">&lt;-</span> <span class="nf">xmlRoot</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="c1"># Print the result.</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">rootnode[1]</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">rootnode[2]</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Exract the root node form the xml file.</span>
+</span></span><span class="line"><span class="cl"><span class="n">rootnode</span> <span class="o">&lt;-</span> <span class="nf">xmlRoot</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Print the result.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">print</span><span class="p">(</span><span class="n">rootnode[1]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">print</span><span class="p">(</span><span class="n">rootnode[2]</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>XML to Data Frame.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Convert the input xml file to a data frame.</span>
-<span class="n">xmldataframe</span> <span class="o">&lt;-</span> <span class="nf">xmlToDataFrame</span><span class="p">(</span><span class="n">rootnode[2]</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">xmldataframe</span><span class="p">)</span>
-<span class="nf">t</span><span class="p">(</span><span class="n">xmldataframe</span><span class="p">)</span>
-<span class="nf">write.table</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">xmldataframe</span><span class="p">),</span><span class="s">&#39;tmp&#39;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Convert the input xml file to a data frame.</span>
+</span></span><span class="line"><span class="cl"><span class="n">xmldataframe</span> <span class="o">&lt;-</span> <span class="nf">xmlToDataFrame</span><span class="p">(</span><span class="n">rootnode[2]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">print</span><span class="p">(</span><span class="n">xmldataframe</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">t</span><span class="p">(</span><span class="n">xmldataframe</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">write.table</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">xmldataframe</span><span class="p">),</span><span class="s">&#39;tmp&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -1192,7 +1187,7 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1236,7 +1231,7 @@ nationwidechildrens.org_clinical.TCGA-75-7030.xml
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 

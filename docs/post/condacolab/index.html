@@ -35,7 +35,7 @@ Then, how to install Conda when using Google Colab?
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/condacolab/" />
@@ -56,7 +56,7 @@ Then, how to install Conda when using Google Colab?
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -71,21 +71,16 @@ Then, how to install Conda when using Google Colab?
 Conda also dramatically simplifies the process of installing popular deep learning tools like TensorFlow.
 Then, how to install Conda when using Google Colab?" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/condacolab/" />
+<meta property="og:url" content="/post/condacolab/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-02-16T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-02-16T00:00:00+00:00" />
 <meta itemprop="name" content="Installing Conda in Google Colab">
 <meta itemprop="description" content="Conda is the environment and package management solution for a number of popular data science tools including Pandas, Scikit-Learn, PyTorch, NVIDIA Rapids and many others.
 Conda also dramatically simplifies the process of installing popular deep learning tools like TensorFlow.
-Then, how to install Conda when using Google Colab?">
-<meta itemprop="datePublished" content="2021-02-16T00:00:00+00:00" />
+Then, how to install Conda when using Google Colab?"><meta itemprop="datePublished" content="2021-02-16T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-16T00:00:00+00:00" />
-<meta itemprop="wordCount" content="440">
-
-
-
-<meta itemprop="keywords" content="Python,Bioinformatics,Colab,Linux," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="439">
+<meta itemprop="keywords" content="Python,Bioinformatics,Colab,Linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Installing Conda in Google Colab"/>
 <meta name="twitter:description" content="Conda is the environment and package management solution for a number of popular data science tools including Pandas, Scikit-Learn, PyTorch, NVIDIA Rapids and many others.
 Conda also dramatically simplifies the process of installing popular deep learning tools like TensorFlow.
@@ -561,67 +556,67 @@ if (!doNotTrack) {
 <p>To confirm which Python is being used by default in Google Colab</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">which</span> <span class="n">python</span>
-<span class="c1">#Output:</span>
-<span class="c1">#/usr/local/bin/python</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">which</span> <span class="n">python</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Output:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#/usr/local/bin/python</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Check the version number of this default Python.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
-<span class="c1">#Output:</span>
-<span class="c1">#Python 3.6.9</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Output:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Python 3.6.9</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Check to see if the PYTHONPATH variable has been set.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">echo</span> <span class="err">$</span><span class="n">PYTHONPATH</span>
-<span class="c1">#Output:</span>
-<span class="c1">#/env/python</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">echo</span> <span class="err">$</span><span class="n">PYTHONPATH</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Output:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#/env/python</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Unset the PYTHONPATH variable</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">%</span><span class="n">env</span> <span class="n">PYTHONPATH</span><span class="o">=</span>
-<span class="c1">#Output:</span>
-<span class="c1">#env: PYTHONPATH=</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">%</span><span class="n">env</span> <span class="n">PYTHONPATH</span><span class="o">=</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Output:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#env: PYTHONPATH=</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
 <h3 id="installing-miniconda">Installing Miniconda</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -629,47 +624,47 @@ if (!doNotTrack) {
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">%%</span><span class="n">bash</span>
-<span class="n">MINICONDA_INSTALLER_SCRIPT</span><span class="o">=</span><span class="n">Miniconda3</span><span class="o">-</span><span class="mf">4.5</span><span class="o">.</span><span class="mi">4</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
-<span class="n">MINICONDA_PREFIX</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span>
-<span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">continuum</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">miniconda</span><span class="o">/</span><span class="err">$</span><span class="n">MINICONDA_INSTALLER_SCRIPT</span>
-<span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="err">$</span><span class="n">MINICONDA_INSTALLER_SCRIPT</span>
-<span class="o">./</span><span class="err">$</span><span class="n">MINICONDA_INSTALLER_SCRIPT</span> <span class="o">-</span><span class="n">b</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">p</span> <span class="err">$</span><span class="n">MINICONDA_PREFIX</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">%%</span><span class="n">bash</span>
+</span></span><span class="line"><span class="cl"><span class="n">MINICONDA_INSTALLER_SCRIPT</span><span class="o">=</span><span class="n">Miniconda3</span><span class="o">-</span><span class="mf">4.5.4</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
+</span></span><span class="line"><span class="cl"><span class="n">MINICONDA_PREFIX</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span>
+</span></span><span class="line"><span class="cl"><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">continuum</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">miniconda</span><span class="o">/</span><span class="err">$</span><span class="n">MINICONDA_INSTALLER_SCRIPT</span>
+</span></span><span class="line"><span class="cl"><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="err">$</span><span class="n">MINICONDA_INSTALLER_SCRIPT</span>
+</span></span><span class="line"><span class="cl"><span class="o">./</span><span class="err">$</span><span class="n">MINICONDA_INSTALLER_SCRIPT</span> <span class="o">-</span><span class="n">b</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">p</span> <span class="err">$</span><span class="n">MINICONDA_PREFIX</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
 <p>Check Conda install and version</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">which</span> <span class="n">conda</span>
-<span class="err">!</span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
-<span class="c1">#Output:</span>
-<span class="c1">#/usr/local/bin/conda</span>
-<span class="c1">#conda 4.5.4</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">which</span> <span class="n">conda</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Output:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#/usr/local/bin/conda</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#conda 4.5.4</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Miniconda has actually installed a slightly different version of Python.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
-<span class="c1">#Output:</span>
-<span class="c1">#Python 3.6.5 :: Anaconda, Inc.</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Output:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Python 3.6.5 :: Anaconda, Inc.</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -679,45 +674,45 @@ if (!doNotTrack) {
 <p>Update Conda and all its dependencies to their most recent versions without updating Python to 3.7</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">%%</span><span class="n">bash</span>
-<span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">channel</span> <span class="n">defaults</span> <span class="n">conda</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.6</span> <span class="o">--</span><span class="n">yes</span>
-<span class="n">conda</span> <span class="n">update</span> <span class="o">--</span><span class="n">channel</span> <span class="n">defaults</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">yes</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">%%</span><span class="n">bash</span>
+</span></span><span class="line"><span class="cl"><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">channel</span> <span class="n">defaults</span> <span class="n">conda</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.6</span> <span class="o">--</span><span class="n">yes</span>
+</span></span><span class="line"><span class="cl"><span class="n">conda</span> <span class="n">update</span> <span class="o">--</span><span class="n">channel</span> <span class="n">defaults</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">yes</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>New version of conda</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
-<span class="c1">#Output:</span>
-<span class="c1">#conda 4.9.2</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Output:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#conda 4.9.2</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Also, note that the Python version has changed yet again.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
-<span class="c1">#Output:</span>
-<span class="c1">#Python 3.6.12 :: Anaconda, Inc.</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Output:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#Python 3.6.12 :: Anaconda, Inc.</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -727,13 +722,13 @@ if (!doNotTrack) {
 <p>Now that you have installed Miniconda you need to add the directory where Conda will install packages to the list of directories that Python will search when looking for modules to import. You can see the current list of directories that Python will search when looking for modules to import by inspecting the <code>sys.path</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="cl"><span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -743,11 +738,11 @@ if (!doNotTrack) {
 <p>To get an idea of what packages are available by simply listing the contents of this directory with Google Colab are installed</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">ls</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">6</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">ls</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.6</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -757,17 +752,15 @@ if (!doNotTrack) {
 <p>So you will need to add this directory to <code>sys.path</code> in order for these packages to be available for import.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">_</span> <span class="o">=</span> <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span>
-        <span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&#34;/usr/local/lib/python3.6/site-packages&#34;</span><span class="p">))</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="cl"><span class="n">_</span> <span class="o">=</span> <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&#34;/usr/local/lib/python3.6/site-packages&#34;</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -777,11 +770,11 @@ if (!doNotTrack) {
 <p>Include the <code>--yes</code> flag when installing your packages to avoid getting prompted to confirm the package plan.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">channel</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">featuretools</span> <span class="o">--</span><span class="n">yes</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">channel</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">featuretools</span> <span class="o">--</span><span class="n">yes</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -910,7 +903,7 @@ if (!doNotTrack) {
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -954,7 +947,7 @@ if (!doNotTrack) {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 

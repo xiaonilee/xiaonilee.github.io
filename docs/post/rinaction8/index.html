@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/rinaction8/" />
@@ -54,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,19 +67,14 @@
 <meta property="og:title" content="Chapter 8. Regression" />
 <meta property="og:description" content="Notebook of Reading Books: R in Action_Chapter 8." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/rinaction8/" />
+<meta property="og:url" content="/post/rinaction8/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-10-29T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-10-29T00:00:00+00:00" />
 <meta itemprop="name" content="Chapter 8. Regression">
-<meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 8.">
-<meta itemprop="datePublished" content="2020-10-29T00:00:00+00:00" />
+<meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 8."><meta itemprop="datePublished" content="2020-10-29T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-10-29T00:00:00+00:00" />
 <meta itemprop="wordCount" content="3260">
-
-
-
-<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Chapter 8. Regression"/>
 <meta name="twitter:description" content="Notebook of Reading Books: R in Action_Chapter 8."/>
 
@@ -770,7 +765,7 @@ if (!doNotTrack) {
 <p>Show me the code <i class="far fa-hand-pointer"></i></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -1337,572 +1332,572 @@ if (!doNotTrack) {
 </span><span class="lnt">565
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Remove most objects from the working environment</span>
-<span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
-
-
-<span class="c1"># 8.2.1. Fitting regression models with lm()</span>
-<span class="n">myfit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-
-<span class="c1"># 8.2.2. Simple linear regression</span>
-<span class="c1"># code listing Simple linear regression</span>
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">height</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">women</span><span class="p">)</span>
-<span class="nf">colnames</span><span class="p">(</span><span class="n">women</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># Call:</span>
-<span class="c1">#   lm(formula = weight ~ height, data = women)</span>
-<span class="c1"># </span>
-<span class="c1"># Residuals:</span>
-<span class="c1">#   Min      1Q  Median      3Q     Max </span>
-<span class="c1"># -1.7333 -1.1333 -0.3833  0.7417  3.1167 </span>
-<span class="c1"># </span>
-<span class="c1"># Coefficients:</span>
-<span class="c1">#   Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="c1"># (Intercept) -87.51667    5.93694  -14.74 1.71e-09 ***</span>
-<span class="c1">#   height        3.45000    0.09114   37.85 1.09e-14 ***</span>
-<span class="c1">#   ---</span>
-<span class="c1">#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-<span class="c1"># </span>
-<span class="c1"># Residual standard error: 1.525 on 13 degrees of freedom</span>
-<span class="c1"># Multiple R-squared:  0.991, Adjusted R-squared:  0.9903 </span>
-<span class="c1"># F-statistic:  1433 on 1 and 13 DF,  p-value: 1.091e-14</span>
-
-
-<span class="nf">fitted</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="n">women</span><span class="o">$</span><span class="n">weight</span>
-<span class="nf">residuals</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-
-<span class="c1"># Figure 8.1. </span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">women</span><span class="o">$</span><span class="n">height</span><span class="p">,</span> <span class="n">women</span><span class="o">$</span><span class="n">weight</span><span class="p">,</span>
-     <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Height (in inches)&#34;</span><span class="p">,</span>
-     <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Weight (in pounds)&#34;</span><span class="p">)</span>
-<span class="nf">abline</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-
-<span class="c1"># 8.2.3. Polynomial regression</span>
-<span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">height</span> <span class="o">+</span> <span class="nf">I</span><span class="p">(</span><span class="n">height^2</span><span class="p">),</span> <span class="n">data</span><span class="o">=</span><span class="n">women</span><span class="p">)</span>
-
-<span class="c1"># code listing 8.2. Polynomial regression</span>
-<span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">height</span> <span class="o">+</span> <span class="nf">I</span><span class="p">(</span><span class="n">height^2</span><span class="p">),</span> <span class="n">data</span> <span class="o">=</span> <span class="n">women</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit2</span><span class="p">)</span>
-<span class="c1"># Call:</span>
-<span class="c1">#   lm(formula = weight ~ height + I(height^2), data = women)</span>
-<span class="c1"># </span>
-<span class="c1"># Residuals:</span>
-<span class="c1">#   Min       1Q   Median       3Q      Max </span>
-<span class="c1"># -0.50941 -0.29611 -0.00941  0.28615  0.59706 </span>
-<span class="c1"># </span>
-<span class="c1"># Coefficients:</span>
-<span class="c1">#   Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="c1"># (Intercept) 261.87818   25.19677  10.393 2.36e-07 ***</span>
-<span class="c1">#   height       -7.34832    0.77769  -9.449 6.58e-07 ***</span>
-<span class="c1">#   I(height^2)   0.08306    0.00598  13.891 9.32e-09 ***</span>
-<span class="c1">#   ---</span>
-<span class="c1">#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-<span class="c1"># </span>
-<span class="c1"># Residual standard error: 0.3841 on 12 degrees of freedom</span>
-<span class="c1"># Multiple R-squared:  0.9995, Adjusted R-squared:  0.9994 </span>
-<span class="c1"># F-statistic: 1.139e+04 on 2 and 12 DF,  p-value: &lt; 2.2e-16</span>
-
-<span class="c1"># Figure 8.2</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">women</span><span class="o">$</span><span class="n">height</span><span class="p">,</span> <span class="n">women</span><span class="o">$</span><span class="n">weight</span><span class="p">,</span>
-     <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Height (in inches)&#34;</span><span class="p">,</span>
-     <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Weight (in pounds)&#34;</span><span class="p">)</span>
-<span class="nf">lines</span><span class="p">(</span><span class="n">women</span><span class="o">$</span><span class="n">height</span><span class="p">,</span> <span class="n">women</span><span class="o">$</span><span class="n">weight</span><span class="p">)</span>
-
-
-<span class="c1"># with library(car) in the &#34;car&#34; package</span>
-<span class="c1"># Figure 8.3.</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
-<span class="nf">scatterplot</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">height</span><span class="p">,</span>
-            <span class="n">data</span><span class="o">=</span><span class="n">women</span><span class="p">,</span>
-            <span class="n">spread</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">smoother</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">),</span>
-            <span class="n">pch</span><span class="o">=</span><span class="m">19</span><span class="p">,</span>
-            <span class="n">main</span><span class="o">=</span><span class="s">&#34;Women Age 30-39&#34;</span><span class="p">,</span>
-            <span class="n">xlab</span><span class="o">=</span><span class="s">&#34;Height (inches)&#34;</span><span class="p">,</span>
-            <span class="n">ylab</span><span class="o">=</span><span class="s">&#34;Weight (lbs.)&#34;</span><span class="p">)</span>
-
-<span class="c1"># 8.2.4. Multiple linear regression</span>
-
-<span class="c1"># code listing 8.3 Examining bivariate relationships</span>
-<span class="n">states</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="n">state.x77[</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;Murder&#34;</span><span class="p">,</span> <span class="s">&#34;Population&#34;</span><span class="p">,</span>
-                                     <span class="s">&#34;Illiteracy&#34;</span><span class="p">,</span> <span class="s">&#34;Income&#34;</span><span class="p">,</span> <span class="s">&#34;Frost&#34;</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
-
-<span class="nf">cor</span><span class="p">(</span><span class="n">states</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
-<span class="c1"># Figure 8.4.</span>
-<span class="nf">scatterplotMatrix</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">spread</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span> <span class="n">lty.smooth</span><span class="o">=</span><span class="m">2</span><span class="p">,</span>
-                  <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Scatter Plot Matrix&#34;</span><span class="p">)</span>
-
-
-<span class="c1"># code listing 8.4 Multiple linear regression</span>
-<span class="n">states</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="n">state.x77[</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;Murder&#34;</span><span class="p">,</span> <span class="s">&#34;Population&#34;</span><span class="p">,</span>
-                                     <span class="s">&#34;Illiteracy&#34;</span><span class="p">,</span> <span class="s">&#34;Income&#34;</span><span class="p">,</span> <span class="s">&#34;Frost&#34;</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
-
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span>
-          <span class="n">data</span> <span class="o">=</span> <span class="n">states</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># Call:</span>
-<span class="c1">#   lm(formula = Murder ~ Population + Illiteracy + Income + Frost, </span>
-<span class="c1">#      data = states)</span>
-<span class="c1"># </span>
-<span class="c1"># Residuals:</span>
-<span class="c1">#   Min      1Q  Median      3Q     Max </span>
-<span class="c1"># -4.7960 -1.6495 -0.0811  1.4815  7.6210 </span>
-<span class="c1"># </span>
-<span class="c1"># Coefficients:</span>
-<span class="c1">#   Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="c1"># (Intercept) 1.235e+00  3.866e+00   0.319   0.7510    </span>
-<span class="c1"># Population  2.237e-04  9.052e-05   2.471   0.0173 *  </span>
-<span class="c1">#   Illiteracy  4.143e+00  8.744e-01   4.738 2.19e-05 ***</span>
-<span class="c1">#   Income      6.442e-05  6.837e-04   0.094   0.9253    </span>
-<span class="c1"># Frost       5.813e-04  1.005e-02   0.058   0.9541    </span>
-<span class="c1"># ---</span>
-<span class="c1">#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-<span class="c1"># </span>
-<span class="c1"># Residual standard error: 2.535 on 45 degrees of freedom</span>
-<span class="c1"># Multiple R-squared:  0.567, Adjusted R-squared:  0.5285 </span>
-<span class="c1"># F-statistic: 14.73 on 4 and 45 DF,  p-value: 9.133e-08</span>
-
-<span class="c1">#===================================================================</span>
-<span class="c1"># 8.2.5. Multiple linear regression with interactions</span>
-<span class="c1"># code listing 8.5 Multiple linear regression with a significant interaction term</span>
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">mpg</span> <span class="o">~</span> <span class="n">hp</span> <span class="o">+</span> <span class="n">wt</span> <span class="o">+</span> <span class="n">hp</span><span class="o">:</span><span class="n">wt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mtcars</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># Call:</span>
-<span class="c1">#   lm(formula = mpg ~ hp + wt + hp:wt, data = mtcars)</span>
-<span class="c1"># </span>
-<span class="c1"># Residuals:</span>
-<span class="c1">#   Min      1Q  Median      3Q     Max </span>
-<span class="c1"># -3.0632 -1.6491 -0.7362  1.4211  4.5513 </span>
-<span class="c1"># </span>
-<span class="c1"># Coefficients:</span>
-<span class="c1">#   Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="c1"># (Intercept) 49.80842    3.60516  13.816 5.01e-14 ***</span>
-<span class="c1">#   hp          -0.12010    0.02470  -4.863 4.04e-05 ***</span>
-<span class="c1">#   wt          -8.21662    1.26971  -6.471 5.20e-07 ***</span>
-<span class="c1">#   hp:wt        0.02785    0.00742   3.753 0.000811 ***</span>
-<span class="c1">#   ---</span>
-<span class="c1">#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-<span class="c1"># </span>
-<span class="c1"># Residual standard error: 2.153 on 28 degrees of freedom</span>
-<span class="c1"># Multiple R-squared:  0.8848, Adjusted R-squared:  0.8724 </span>
-<span class="c1"># F-statistic: 71.66 on 3 and 28 DF,  p-value: 2.981e-13</span>
-
-<span class="c1">#====================================================================</span>
-
-<span class="c1"># install.packages(&#34;effects&#34;)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">effects</span><span class="p">)</span>
-<span class="c1"># Figure 8.5.</span>
-<span class="nf">plot</span><span class="p">(</span><span class="nf">effect</span><span class="p">(</span><span class="s">&#34;hp:wt&#34;</span><span class="p">,</span> <span class="n">fit</span><span class="p">,</span>
-            <span class="n">vcov.</span> <span class="o">=</span> <span class="n">vcov</span><span class="p">,</span>
-            <span class="nf">list</span><span class="p">(</span><span class="n">wt</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2.2</span><span class="p">,</span><span class="m">3.2</span><span class="p">,</span><span class="m">4.2</span><span class="p">))),</span>
-     <span class="n">multiline</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-
-
-<span class="c1"># 8.3. Regression diagnostics</span>
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
-<span class="nf">confint</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># 2.5 %       97.5 %</span>
-<span class="c1">#   (Intercept) -6.552191e+00 9.0213182149</span>
-<span class="c1"># Population   4.136397e-05 0.0004059867</span>
-<span class="c1"># Illiteracy   2.381799e+00 5.9038743192</span>
-<span class="c1"># Income      -1.312611e-03 0.0014414600</span>
-<span class="c1"># Frost       -1.966781e-02 0.0208304170</span>
-
-
-<span class="c1"># 8.3.1. A typical approach</span>
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">women</span><span class="p">)</span>
-<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
-<span class="c1"># Figure 8.6.</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-
-<span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">height</span> <span class="o">+</span> <span class="nf">I</span><span class="p">(</span><span class="n">height^2</span><span class="p">),</span> <span class="n">data</span><span class="o">=</span><span class="n">women</span><span class="p">)</span>
-<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
-<span class="c1"># Figure 8.7.</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">fit2</span><span class="p">)</span>
-
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
-<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
-<span class="c1"># Figure 8.8.</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-
-<span class="c1"># 8.3.2. An enhanced approach</span>
-
-<span class="c1"># Normality</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
-<span class="c1"># Figure 8.9.</span>
-<span class="nf">qqPlot</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="nf">row.names</span><span class="p">(</span><span class="n">states</span><span class="p">),</span> <span class="n">id.method</span><span class="o">=</span><span class="s">&#34;identify&#34;</span><span class="p">,</span>
-       <span class="n">simulate</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&#34;Q-Q Plot&#34;</span><span class="p">)</span>
-
-<span class="n">states[</span><span class="s">&#34;Nevada&#34;</span><span class="p">,</span><span class="n">]</span>
-<span class="c1">#         Murder Population Illiteracy Income Frost</span>
-<span class="c1"># Nevada   11.5        590        0.5   5149   188</span>
-
-<span class="nf">fitted</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span><span class="n">[</span><span class="s">&#34;Nevada&#34;</span><span class="n">]</span>
-<span class="c1">#   Nevada </span>
-<span class="c1"># 3.878958 </span>
-
-<span class="nf">residuals</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span><span class="n">[</span><span class="s">&#34;Nevada&#34;</span><span class="n">]</span>
-<span class="c1">#   Nevada </span>
-<span class="c1"># 7.621042 </span>
-
-<span class="nf">rstudent</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span><span class="n">[</span><span class="s">&#34;Nevada&#34;</span><span class="n">]</span>
-<span class="c1">#   Nevada </span>
-<span class="c1"># 3.542929 </span>
-
-<span class="c1"># Normality</span>
-<span class="c1"># code listing 8.6. Function for plotting studentized residuals</span>
-<span class="n">residplot</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">nbreaks</span><span class="o">=</span><span class="m">10</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">z</span> <span class="o">&lt;-</span> <span class="nf">rstudent</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-  <span class="nf">hist</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">breaks</span><span class="o">=</span><span class="n">nbreaks</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span>
-       <span class="n">xlab</span><span class="o">=</span><span class="s">&#34;Studentized Residual&#34;</span><span class="p">,</span>
-       <span class="n">main</span><span class="o">=</span><span class="s">&#34;Distribution of Errors&#34;</span><span class="p">)</span>
-  <span class="nf">rug</span><span class="p">(</span><span class="nf">jitter</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;brown&#34;</span><span class="p">)</span>
-  <span class="nf">curve</span><span class="p">(</span><span class="nf">dnorm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">sd</span><span class="o">=</span><span class="nf">sd</span><span class="p">(</span><span class="n">z</span><span class="p">)),</span>
-        <span class="n">add</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;blue&#34;</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
-  <span class="nf">lines</span><span class="p">(</span><span class="nf">density</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">$</span><span class="n">x</span><span class="p">,</span> <span class="nf">density</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">$</span><span class="n">y</span><span class="p">,</span>
-        <span class="n">col</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
-  <span class="nf">legend</span><span class="p">(</span><span class="s">&#34;topright&#34;</span><span class="p">,</span>
-         <span class="n">legend</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span> <span class="s">&#34;Normal Curve&#34;</span><span class="p">,</span> <span class="s">&#34;Kernel Density Curve&#34;</span><span class="p">),</span>
-         <span class="n">lty</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;blue&#34;</span><span class="p">,</span><span class="s">&#34;red&#34;</span><span class="p">),</span> <span class="n">cex</span><span class="o">=</span><span class="m">.7</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="c1"># Figure 8.10.</span>
-<span class="nf">residplot</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-
-<span class="c1"># Independence of Errors</span>
-<span class="nf">durbinWatsonTest</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># lag Autocorrelation D-W Statistic p-value</span>
-<span class="c1"># 1      -0.2006929      2.317691   0.306</span>
-<span class="c1"># Alternative hypothesis: rho != 0</span>
-
-
-<span class="c1"># Linearity</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
-<span class="c1"># Figure 8.11.</span>
-<span class="nf">crPlots</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-
-<span class="c1"># Homoscedasticity</span>
-<span class="c1"># code listing  8.7. Assessing homoscedasticity</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
-<span class="nf">ncvTest</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># Non-constant Variance Score Test </span>
-<span class="c1"># Variance formula: ~ fitted.values </span>
-<span class="c1"># Chisquare = 1.746514, Df = 1, p = 0.18632</span>
-
-<span class="c1"># Figure 8.12.</span>
-<span class="nf">spreadLevelPlot</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-
-<span class="c1"># Suggested power transformation:  1.209626 </span>
-
-
-<span class="c1"># 8.3.3. Global validation of linear model assumption</span>
-<span class="c1"># code listing 8.8. Global test of linear model assumptions</span>
-<span class="c1"># install.packages(gvlma)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">gvlma</span><span class="p">)</span>
-<span class="n">gvmodel</span> <span class="o">&lt;-</span> <span class="nf">gvlma</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">gvmodel</span><span class="p">)</span>
-<span class="c1"># Call:</span>
-<span class="c1">#   lm(formula = Murder ~ Population + Illiteracy + Income + Frost, </span>
-<span class="c1">#      data = states)</span>
-<span class="c1"># </span>
-<span class="c1"># Residuals:</span>
-<span class="c1">#   Min      1Q  Median      3Q     Max </span>
-<span class="c1"># -4.7960 -1.6495 -0.0811  1.4815  7.6210 </span>
-<span class="c1"># </span>
-<span class="c1"># Coefficients:</span>
-<span class="c1">#   Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="c1"># (Intercept) 1.235e+00  3.866e+00   0.319   0.7510    </span>
-<span class="c1"># Population  2.237e-04  9.052e-05   2.471   0.0173 *  </span>
-<span class="c1">#   Illiteracy  4.143e+00  8.744e-01   4.738 2.19e-05 ***</span>
-<span class="c1">#   Income      6.442e-05  6.837e-04   0.094   0.9253    </span>
-<span class="c1"># Frost       5.813e-04  1.005e-02   0.058   0.9541    </span>
-<span class="c1"># ---</span>
-<span class="c1">#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-<span class="c1"># </span>
-<span class="c1"># Residual standard error: 2.535 on 45 degrees of freedom</span>
-<span class="c1"># Multiple R-squared:  0.567, Adjusted R-squared:  0.5285 </span>
-<span class="c1"># F-statistic: 14.73 on 4 and 45 DF,  p-value: 9.133e-08</span>
-<span class="c1"># </span>
-<span class="c1"># </span>
-<span class="c1"># ASSESSMENT OF THE LINEAR MODEL ASSUMPTIONS</span>
-<span class="c1"># USING THE GLOBAL TEST ON 4 DEGREES-OF-FREEDOM:</span>
-<span class="c1">#   Level of Significance =  0.05 </span>
-<span class="c1"># </span>
-<span class="c1"># Call:</span>
-<span class="c1">#   gvlma(x = fit) </span>
-<span class="c1"># </span>
-<span class="c1"># Value p-value                Decision</span>
-<span class="c1"># Global Stat        2.7728  0.5965 Assumptions acceptable.</span>
-<span class="c1"># Skewness           1.5374  0.2150 Assumptions acceptable.</span>
-<span class="c1"># Kurtosis           0.6376  0.4246 Assumptions acceptable.</span>
-<span class="c1"># Link Function      0.1154  0.7341 Assumptions acceptable.</span>
-<span class="c1"># Heteroscedasticity 0.4824  0.4873 Assumptions acceptable.</span>
-
-
-<span class="c1">#============================================================</span>
-
-<span class="c1"># 8.3.4. Multicollinearity</span>
-<span class="c1"># code listing 8.9. Evaluating multicollinearity</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
-<span class="nf">vif</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># Population Illiteracy     Income      Frost </span>
-<span class="c1">#   1.245282   2.165848   1.345822   2.082547 </span>
-
-
-<span class="nf">sqrt</span><span class="p">(</span><span class="nf">vif</span><span class="p">(</span><span class="n">fit</span><span class="p">))</span> <span class="o">&gt;</span> <span class="m">2</span>
-<span class="c1"># Population Illiteracy     Income      Frost </span>
-<span class="c1">#      FALSE      FALSE      FALSE      FALSE </span>
-
-<span class="c1">#============================================================</span>
-
-<span class="c1"># 8.4. Unusual observations</span>
-
-<span class="c1"># 8.4.1. Outliers</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
-<span class="nf">outlierTest</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-
-<span class="c1"># 8.4.2. High leverage points</span>
-
-<span class="c1"># Figure 8.13.</span>
-<span class="n">hat.plot</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="nf">coefficients</span><span class="p">(</span><span class="n">fit</span><span class="p">))</span>
-  <span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="nf">fitted</span><span class="p">(</span><span class="n">fit</span><span class="p">))</span>
-  <span class="nf">plot</span><span class="p">(</span><span class="nf">hatvalues</span><span class="p">(</span><span class="n">fit</span><span class="p">),</span> <span class="n">main</span><span class="o">=</span><span class="s">&#34;Index Plot of Hat Values&#34;</span><span class="p">)</span>
-  <span class="nf">abline</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span><span class="o">*</span><span class="n">p</span><span class="o">/</span><span class="n">n</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
-  <span class="nf">identify</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">,</span> <span class="nf">hatvalues</span><span class="p">(</span><span class="n">fit</span><span class="p">),</span> <span class="nf">names</span><span class="p">(</span><span class="nf">hatvalues</span><span class="p">(</span><span class="n">fit</span><span class="p">)))</span>
-<span class="p">}</span>
-<span class="nf">hat.plot</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-
-<span class="c1"># 8.4.3. Influential observations</span>
-
-<span class="c1"># Figure 8.14.</span>
-<span class="n">cutoff</span> <span class="o">&lt;-</span> <span class="m">4</span><span class="o">/</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">states</span><span class="p">)</span><span class="o">-</span><span class="nf">length</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">coefficients</span><span class="p">)</span><span class="m">-2</span><span class="p">)</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="m">4</span><span class="p">,</span> <span class="n">cook.levels</span><span class="o">=</span><span class="n">cutoff</span><span class="p">)</span>
-<span class="nf">abline</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="n">cutoff</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">)</span>
-
-<span class="c1"># Figure 8.15. </span>
-<span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
-<span class="nf">avPlots</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">ask</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">onepage</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">id.method</span><span class="o">=</span><span class="s">&#34;identify&#34;</span><span class="p">)</span>
-
-<span class="c1"># Figure 8.16. Influence plot.</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
-<span class="nf">influencePlot</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">id.method</span><span class="o">=</span><span class="s">&#34;identify&#34;</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&#34;Influence Plot&#34;</span><span class="p">,</span>
-              <span class="n">sub</span><span class="o">=</span><span class="s">&#34;Circle size is proportional to Cook&#39;s distance&#34;</span><span class="p">)</span>
-
-
-<span class="c1"># 8.5.2. Transforming variables</span>
-<span class="c1"># code listing 8.10. Box–Cox transformation to normality</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="nf">powerTransform</span><span class="p">(</span><span class="n">states</span><span class="o">$</span><span class="n">Murder</span><span class="p">))</span>
-<span class="c1"># bcPower Transformation to Normality </span>
-<span class="c1"># Est Power Rounded Pwr Wald Lwr Bnd Wald Upr Bnd</span>
-<span class="c1"># states$Murder    0.6055           1       0.0884       1.1227</span>
-<span class="c1"># </span>
-<span class="c1"># Likelihood ratio test that transformation parameter is equal to 0</span>
-<span class="c1"># (log transformation)</span>
-<span class="c1"># LRT df     pval</span>
-<span class="c1"># LR test, lambda = (0) 5.665991  1 0.017297</span>
-<span class="c1"># </span>
-<span class="c1"># Likelihood ratio test that no transformation is needed</span>
-<span class="c1"># LRT df    pval</span>
-<span class="c1"># LR test, lambda = (1) 2.122763  1 0.14512</span>
-
-
-<span class="nf">boxTidwell</span><span class="p">(</span><span class="n">Murder</span><span class="o">~</span><span class="n">Population</span><span class="o">+</span><span class="n">Illiteracy</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
-<span class="c1">#             MLE of lambda Score Statistic (z) Pr(&gt;|z|)</span>
-<span class="c1"># Population       0.86939             -0.3228   0.7468</span>
-<span class="c1"># Illiteracy       1.35812              0.6194   0.5357</span>
-<span class="c1"># </span>
-<span class="c1"># iterations =  19 </span>
-
-<span class="c1"># 8.6.1. Comparing models</span>
-<span class="c1"># code listing 8.11. Comparing nested models using the anova() function</span>
-<span class="n">fit1</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span>
-           <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
-<span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
-
-<span class="nf">anova</span><span class="p">(</span><span class="n">fit1</span><span class="p">,</span><span class="n">fit2</span><span class="p">)</span>
-<span class="c1"># Analysis of Variance Table</span>
-<span class="c1"># </span>
-<span class="c1"># Model 1: Murder ~ Population + Illiteracy + Income + Frost</span>
-<span class="c1"># Model 2: Murder ~ Population + Illiteracy</span>
-<span class="c1"># Res.Df    RSS Df Sum of Sq      F Pr(&gt;F)</span>
-<span class="c1"># 1     45 289.17                           </span>
-<span class="c1"># 2     47 289.25 -2 -0.078505 0.0061 0.9939</span>
-
-<span class="c1"># code listing 8.12. Comparing models with the AIC</span>
-<span class="n">fit1</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span>
-           <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
-<span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
-
-<span class="nf">AIC</span><span class="p">(</span><span class="n">fit1</span><span class="p">,</span> <span class="n">fit2</span><span class="p">)</span>
-<span class="c1">#       df      AIC</span>
-<span class="c1"># fit1  6 241.6429</span>
-<span class="c1"># fit2  4 237.6565</span>
-
-
-<span class="c1"># 8.6.2. Variable selection</span>
-<span class="c1"># code listing 8.13. Backward stepwise selection</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">MASS</span><span class="p">)</span>
-<span class="n">fit1</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span>
-           <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
-<span class="nf">stepAIC</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">direction</span> <span class="o">=</span> <span class="s">&#34;backward&#34;</span><span class="p">)</span>
-<span class="c1"># Start:  AIC=97.75</span>
-<span class="c1"># Murder ~ Population + Illiteracy + Income + Frost</span>
-<span class="c1"># </span>
-<span class="c1"># Df Sum of Sq    RSS     AIC</span>
-<span class="c1"># - Frost       1     0.021 289.19  95.753</span>
-<span class="c1"># - Income      1     0.057 289.22  95.759</span>
-<span class="c1"># &lt;none&gt;                    289.17  97.749</span>
-<span class="c1"># - Population  1    39.238 328.41 102.111</span>
-<span class="c1"># - Illiteracy  1   144.264 433.43 115.986</span>
-<span class="c1"># </span>
-<span class="c1"># Step:  AIC=95.75</span>
-<span class="c1"># Murder ~ Population + Illiteracy + Income</span>
-<span class="c1"># </span>
-<span class="c1"># Df Sum of Sq    RSS     AIC</span>
-<span class="c1"># - Income      1     0.057 289.25  93.763</span>
-<span class="c1"># &lt;none&gt;                    289.19  95.753</span>
-<span class="c1"># - Population  1    43.658 332.85 100.783</span>
-<span class="c1"># - Illiteracy  1   236.196 525.38 123.605</span>
-<span class="c1"># </span>
-<span class="c1"># Step:  AIC=93.76</span>
-<span class="c1"># Murder ~ Population + Illiteracy</span>
-<span class="c1"># </span>
-<span class="c1"># Df Sum of Sq    RSS     AIC</span>
-<span class="c1"># &lt;none&gt;                    289.25  93.763</span>
-<span class="c1"># - Population  1    48.517 337.76  99.516</span>
-<span class="c1"># - Illiteracy  1   299.646 588.89 127.311</span>
-<span class="c1"># </span>
-<span class="c1"># Call:</span>
-<span class="c1">#   lm(formula = Murder ~ Population + Illiteracy, data = states)</span>
-<span class="c1"># </span>
-<span class="c1"># Coefficients:</span>
-<span class="c1">#   (Intercept)   Population   Illiteracy  </span>
-<span class="c1"># 1.6515497    0.0002242    4.0807366  </span>
-
-
-<span class="c1"># code listing 8.14. All subsets regression</span>
-<span class="c1"># install.packages(&#34;leaps&#34;)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">leaps</span><span class="p">)</span>
-<span class="n">leaps</span> <span class="o">&lt;-</span><span class="nf">regsubsets</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span>
-                     <span class="n">Frost</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">,</span> <span class="n">nbest</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">leaps</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s">&#34;adjr2&#34;</span><span class="p">)</span> <span class="c1"># Figure 8.17</span>
-
-<span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
-<span class="nf">subsets</span><span class="p">(</span><span class="n">leaps</span><span class="p">,</span> <span class="n">statistic</span><span class="o">=</span><span class="s">&#34;cp&#34;</span><span class="p">,</span>
-        <span class="n">main</span><span class="o">=</span><span class="s">&#34;Cp Plot for All Subsets Regression&#34;</span><span class="p">)</span>
-<span class="nf">abline</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">)</span>
-
-
-<span class="c1"># 8.7.1. Cross-validation</span>
-<span class="c1"># code listing 8.15. Function for k-fold cross-validated R-square</span>
-<span class="n">shrinkage</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="m">10</span><span class="p">){</span>
-  <span class="nf">require</span><span class="p">(</span><span class="n">bootstrap</span><span class="p">)</span>
-  
-  <span class="n">theta.fit</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">){</span><span class="nf">lsfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)}</span>
-  <span class="n">theta.predict</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span><span class="n">x</span><span class="p">){</span><span class="nf">cbind</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">%*%</span><span class="n">fit</span><span class="o">$</span><span class="n">coef</span><span class="p">}</span>
-  
-  <span class="n">x</span> <span class="o">&lt;-</span> <span class="n">fit</span><span class="o">$</span><span class="n">model[</span><span class="p">,</span><span class="m">2</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">model</span><span class="p">)</span><span class="n">]</span>
-  <span class="n">y</span> <span class="o">&lt;-</span> <span class="n">fit</span><span class="o">$</span><span class="n">model[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span>
-  
-  <span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">crossval</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta.fit</span><span class="p">,</span> <span class="n">theta.predict</span><span class="p">,</span> <span class="n">ngroup</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
-  <span class="n">r2</span> <span class="o">&lt;-</span> <span class="nf">cor</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">fit</span><span class="o">$</span><span class="n">fitted.values</span><span class="p">)</span><span class="n">^2</span>
-  <span class="n">r2cv</span> <span class="o">&lt;-</span> <span class="nf">cor</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">results</span><span class="o">$</span><span class="n">cv.fit</span><span class="p">)</span><span class="n">^2</span>
-  <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;Original R-square =&#34;</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">)</span>
-  <span class="nf">cat</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s">&#34;Fold Cross-Validated R-square =&#34;</span><span class="p">,</span> <span class="n">r2cv</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">)</span>
-  <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;Change =&#34;</span><span class="p">,</span> <span class="n">r2</span><span class="o">-</span><span class="n">r2cv</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
-<span class="nf">shrinkage</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># Original R-square = 0.5669502</span>
-<span class="c1"># 10 Fold Cross-Validated R-square = 0.4240783</span>
-<span class="c1"># Change = 0.1428719</span>
-
-
-<span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
-<span class="nf">shrinkage</span><span class="p">(</span><span class="n">fit2</span><span class="p">)</span>
-<span class="c1"># Original R-square = 0.5668327</span>
-<span class="c1"># 10 Fold Cross-Validated R-square = 0.5332059</span>
-<span class="c1"># Change = 0.03362679</span>
-
-
-<span class="c1"># 8.7.2. Relative importance</span>
-<span class="n">zstates</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="nf">scale</span><span class="p">(</span><span class="n">states</span><span class="p">))</span>
-<span class="n">zfit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span><span class="o">~</span><span class="n">Population</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">zstates</span><span class="p">)</span>
-<span class="nf">coef</span><span class="p">(</span><span class="n">zfit</span><span class="p">)</span>
-<span class="c1">#   (Intercept)    Population        Income    Illiteracy         Frost</span>
-<span class="c1"># -2.054026e-16  2.705095e-01  1.072372e-02  6.840496e-01  8.185407e-03</span>
-
-
-<span class="c1"># code listing 8.16. relweights() function </span>
-<span class="c1"># for calculating relative importance of predictors</span>
-<span class="n">relweights</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span><span class="kc">...</span><span class="p">){</span>
-  <span class="n">R</span> <span class="o">&lt;-</span> <span class="nf">cor</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">model</span><span class="p">)</span>
-  <span class="n">nvar</span> <span class="o">&lt;-</span> <span class="nf">ncol</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
-  <span class="n">rxx</span> <span class="o">&lt;-</span> <span class="n">R[2</span><span class="o">:</span><span class="n">nvar</span><span class="p">,</span> <span class="m">2</span><span class="o">:</span><span class="n">nvar]</span>
-  <span class="n">rxy</span> <span class="o">&lt;-</span> <span class="n">R[2</span><span class="o">:</span><span class="n">nvar</span><span class="p">,</span> <span class="m">1</span><span class="n">]</span>
-  <span class="n">svd</span> <span class="o">&lt;-</span> <span class="nf">eigen</span><span class="p">(</span><span class="n">rxx</span><span class="p">)</span>
-  <span class="n">evec</span> <span class="o">&lt;-</span> <span class="n">svd</span><span class="o">$</span><span class="n">vectors</span>
-  <span class="n">ev</span> <span class="o">&lt;-</span> <span class="n">svd</span><span class="o">$</span><span class="n">values</span>
-  <span class="n">delta</span> <span class="o">&lt;-</span> <span class="nf">diag</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">ev</span><span class="p">))</span>
-  <span class="n">lambda</span> <span class="o">&lt;-</span> <span class="n">evec</span> <span class="o">%*%</span> <span class="n">delta</span> <span class="o">%*%</span> <span class="nf">t</span><span class="p">(</span><span class="n">evec</span><span class="p">)</span>
-  <span class="n">lambdasq</span> <span class="o">&lt;-</span> <span class="n">lambda</span> <span class="n">^</span> <span class="m">2</span>
-  <span class="n">beta</span> <span class="o">&lt;-</span> <span class="nf">solve</span><span class="p">(</span><span class="n">lambda</span><span class="p">)</span> <span class="o">%*%</span> <span class="n">rxy</span>
-  <span class="n">rsquare</span> <span class="o">&lt;-</span> <span class="nf">colSums</span><span class="p">(</span><span class="n">beta</span> <span class="n">^</span> <span class="m">2</span><span class="p">)</span>
-  <span class="n">rawwgt</span> <span class="o">&lt;-</span> <span class="n">lambdasq</span> <span class="o">%*%</span> <span class="n">beta</span> <span class="n">^</span> <span class="m">2</span>
-  <span class="n">import</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">rawwgt</span> <span class="o">/</span> <span class="n">rsquare</span><span class="p">)</span> <span class="o">*</span> <span class="m">100</span>
-  <span class="n">lbls</span> <span class="o">&lt;-</span> <span class="nf">names</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">model[2</span><span class="o">:</span><span class="n">nvar]</span><span class="p">)</span>
-  <span class="nf">rownames</span><span class="p">(</span><span class="n">import</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">lbls</span>
-  <span class="nf">colnames</span><span class="p">(</span><span class="n">import</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;Weights&#34;</span>
-  <span class="nf">barplot</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">import</span><span class="p">),</span><span class="n">names.arg</span><span class="o">=</span><span class="n">lbls</span><span class="p">,</span>
-          <span class="n">ylab</span><span class="o">=</span><span class="s">&#34;% of R-Square&#34;</span><span class="p">,</span>
-          <span class="n">xlab</span><span class="o">=</span><span class="s">&#34;Predictor Variables&#34;</span><span class="p">,</span>
-          <span class="n">main</span><span class="o">=</span><span class="s">&#34;Relative Importance of Predictor Variables&#34;</span><span class="p">,</span>
-          <span class="n">sub</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="s">&#34;R-Square=&#34;</span><span class="p">,</span> <span class="nf">round</span><span class="p">(</span><span class="n">rsquare</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">)),</span>
-          <span class="kc">...</span><span class="p">)</span>
-  <span class="nf">return</span><span class="p">(</span><span class="n">import</span><span class="p">)</span>
-<span class="p">}</span>
-
-
-<span class="n">relweights2</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span><span class="kc">...</span><span class="p">){</span>
-  <span class="n">R</span> <span class="o">&lt;-</span> <span class="nf">cor</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">model</span><span class="p">)</span>
-  <span class="n">nvar</span> <span class="o">&lt;-</span> <span class="nf">ncol</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
-  <span class="n">rxx</span> <span class="o">&lt;-</span> <span class="n">R[2</span><span class="o">:</span><span class="n">nvar</span><span class="p">,</span> <span class="m">2</span><span class="o">:</span><span class="n">nvar]</span>
-  <span class="n">rxy</span> <span class="o">&lt;-</span> <span class="n">R[2</span><span class="o">:</span><span class="n">nvar</span><span class="p">,</span> <span class="m">1</span><span class="n">]</span>
-  <span class="n">svd</span> <span class="o">&lt;-</span> <span class="nf">eigen</span><span class="p">(</span><span class="n">rxx</span><span class="p">)</span>
-  <span class="n">evec</span> <span class="o">&lt;-</span> <span class="n">svd</span><span class="o">$</span><span class="n">vectors</span>
-  <span class="n">ev</span> <span class="o">&lt;-</span> <span class="n">svd</span><span class="o">$</span><span class="n">values</span>
-  <span class="n">delta</span> <span class="o">&lt;-</span> <span class="nf">diag</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">ev</span><span class="p">))</span>
-  <span class="n">lambda</span> <span class="o">&lt;-</span> <span class="n">evec</span> <span class="o">%*%</span> <span class="n">delta</span> <span class="o">%*%</span> <span class="nf">t</span><span class="p">(</span><span class="n">evec</span><span class="p">)</span>
-  <span class="n">lambdasq</span> <span class="o">&lt;-</span> <span class="n">lambda</span> <span class="n">^</span> <span class="m">2</span>
-  <span class="n">beta</span> <span class="o">&lt;-</span> <span class="nf">solve</span><span class="p">(</span><span class="n">lambda</span><span class="p">)</span> <span class="o">%*%</span> <span class="n">rxy</span>
-  <span class="n">rsquare</span> <span class="o">&lt;-</span> <span class="nf">colSums</span><span class="p">(</span><span class="n">beta</span> <span class="n">^</span> <span class="m">2</span><span class="p">)</span>
-  <span class="n">rawwgt</span> <span class="o">&lt;-</span> <span class="n">lambdasq</span> <span class="o">%*%</span> <span class="n">beta</span> <span class="n">^</span> <span class="m">2</span>
-  <span class="n">import</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">rawwgt</span> <span class="o">/</span> <span class="n">rsquare</span><span class="p">)</span> <span class="o">*</span> <span class="m">100</span>
-  <span class="n">lbls</span> <span class="o">&lt;-</span> <span class="nf">names</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">model[2</span><span class="o">:</span><span class="n">nvar]</span><span class="p">)</span>
-  <span class="nf">rownames</span><span class="p">(</span><span class="n">import</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">lbls</span>
-  <span class="nf">colnames</span><span class="p">(</span><span class="n">import</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;Weights&#34;</span>
-  <span class="nf">dotplot</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">import</span><span class="p">),</span><span class="n">names.arg</span><span class="o">=</span><span class="n">lbls</span><span class="p">,</span>
-          <span class="n">ylab</span><span class="o">=</span><span class="s">&#34;% of R-Square&#34;</span><span class="p">,</span>
-          <span class="n">xlab</span><span class="o">=</span><span class="s">&#34;Predictor Variables&#34;</span><span class="p">,</span>
-          <span class="n">main</span><span class="o">=</span><span class="s">&#34;Relative Importance of Predictor Variables&#34;</span><span class="p">,</span>
-          <span class="n">sub</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="s">&#34;R-Square=&#34;</span><span class="p">,</span> <span class="nf">round</span><span class="p">(</span><span class="n">rsquare</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">)),</span>
-          <span class="kc">...</span><span class="p">)</span>
-  <span class="nf">return</span><span class="p">(</span><span class="n">import</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="c1"># code listing 8.17. Applying the relweights() function</span>
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
-<span class="nf">relweights</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;lightgrey&#34;</span><span class="p">)</span>
-<span class="c1">#             Weights</span>
-<span class="c1"># Population 14.723401</span>
-<span class="c1"># Illiteracy 59.000195</span>
-<span class="c1"># Income      5.488962</span>
-<span class="c1"># Frost      20.787442</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Remove most objects from the working environment</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.2.1. Fitting regression models with lm()</span>
+</span></span><span class="line"><span class="cl"><span class="n">myfit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.2.2. Simple linear regression</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing Simple linear regression</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">height</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">women</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">colnames</span><span class="p">(</span><span class="n">women</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   lm(formula = weight ~ height, data = women)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Min      1Q  Median      3Q     Max </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -1.7333 -1.1333 -0.3833  0.7417  3.1167 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Coefficients:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Estimate Std. Error t value Pr(&gt;|t|)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Intercept) -87.51667    5.93694  -14.74 1.71e-09 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   height        3.45000    0.09114   37.85 1.09e-14 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residual standard error: 1.525 on 13 degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Multiple R-squared:  0.991, Adjusted R-squared:  0.9903 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># F-statistic:  1433 on 1 and 13 DF,  p-value: 1.091e-14</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">fitted</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">women</span><span class="o">$</span><span class="n">weight</span>
+</span></span><span class="line"><span class="cl"><span class="nf">residuals</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Figure 8.1. </span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">women</span><span class="o">$</span><span class="n">height</span><span class="p">,</span> <span class="n">women</span><span class="o">$</span><span class="n">weight</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">     <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Height (in inches)&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">     <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Weight (in pounds)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">abline</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.2.3. Polynomial regression</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">height</span> <span class="o">+</span> <span class="nf">I</span><span class="p">(</span><span class="n">height^2</span><span class="p">),</span> <span class="n">data</span><span class="o">=</span><span class="n">women</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 8.2. Polynomial regression</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">height</span> <span class="o">+</span> <span class="nf">I</span><span class="p">(</span><span class="n">height^2</span><span class="p">),</span> <span class="n">data</span> <span class="o">=</span> <span class="n">women</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   lm(formula = weight ~ height + I(height^2), data = women)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Min       1Q   Median       3Q      Max </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -0.50941 -0.29611 -0.00941  0.28615  0.59706 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Coefficients:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Estimate Std. Error t value Pr(&gt;|t|)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Intercept) 261.87818   25.19677  10.393 2.36e-07 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   height       -7.34832    0.77769  -9.449 6.58e-07 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   I(height^2)   0.08306    0.00598  13.891 9.32e-09 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residual standard error: 0.3841 on 12 degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Multiple R-squared:  0.9995, Adjusted R-squared:  0.9994 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># F-statistic: 1.139e+04 on 2 and 12 DF,  p-value: &lt; 2.2e-16</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Figure 8.2</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">women</span><span class="o">$</span><span class="n">height</span><span class="p">,</span> <span class="n">women</span><span class="o">$</span><span class="n">weight</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">     <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Height (in inches)&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">     <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Weight (in pounds)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">lines</span><span class="p">(</span><span class="n">women</span><span class="o">$</span><span class="n">height</span><span class="p">,</span> <span class="n">women</span><span class="o">$</span><span class="n">weight</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># with library(car) in the &#34;car&#34; package</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Figure 8.3.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">scatterplot</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">height</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">data</span><span class="o">=</span><span class="n">women</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">spread</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">smoother</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">pch</span><span class="o">=</span><span class="m">19</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">main</span><span class="o">=</span><span class="s">&#34;Women Age 30-39&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">xlab</span><span class="o">=</span><span class="s">&#34;Height (inches)&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ylab</span><span class="o">=</span><span class="s">&#34;Weight (lbs.)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.2.4. Multiple linear regression</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 8.3 Examining bivariate relationships</span>
+</span></span><span class="line"><span class="cl"><span class="n">states</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="n">state.x77[</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;Murder&#34;</span><span class="p">,</span> <span class="s">&#34;Population&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                     <span class="s">&#34;Illiteracy&#34;</span><span class="p">,</span> <span class="s">&#34;Income&#34;</span><span class="p">,</span> <span class="s">&#34;Frost&#34;</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">cor</span><span class="p">(</span><span class="n">states</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Figure 8.4.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">scatterplotMatrix</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">spread</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span> <span class="n">lty.smooth</span><span class="o">=</span><span class="m">2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Scatter Plot Matrix&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 8.4 Multiple linear regression</span>
+</span></span><span class="line"><span class="cl"><span class="n">states</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="n">state.x77[</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;Murder&#34;</span><span class="p">,</span> <span class="s">&#34;Population&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                     <span class="s">&#34;Illiteracy&#34;</span><span class="p">,</span> <span class="s">&#34;Income&#34;</span><span class="p">,</span> <span class="s">&#34;Frost&#34;</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">data</span> <span class="o">=</span> <span class="n">states</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   lm(formula = Murder ~ Population + Illiteracy + Income + Frost, </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#      data = states)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Min      1Q  Median      3Q     Max </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -4.7960 -1.6495 -0.0811  1.4815  7.6210 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Coefficients:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Estimate Std. Error t value Pr(&gt;|t|)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Intercept) 1.235e+00  3.866e+00   0.319   0.7510    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Population  2.237e-04  9.052e-05   2.471   0.0173 *  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Illiteracy  4.143e+00  8.744e-01   4.738 2.19e-05 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Income      6.442e-05  6.837e-04   0.094   0.9253    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Frost       5.813e-04  1.005e-02   0.058   0.9541    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residual standard error: 2.535 on 45 degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Multiple R-squared:  0.567, Adjusted R-squared:  0.5285 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># F-statistic: 14.73 on 4 and 45 DF,  p-value: 9.133e-08</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#===================================================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.2.5. Multiple linear regression with interactions</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 8.5 Multiple linear regression with a significant interaction term</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">mpg</span> <span class="o">~</span> <span class="n">hp</span> <span class="o">+</span> <span class="n">wt</span> <span class="o">+</span> <span class="n">hp</span><span class="o">:</span><span class="n">wt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mtcars</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   lm(formula = mpg ~ hp + wt + hp:wt, data = mtcars)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Min      1Q  Median      3Q     Max </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -3.0632 -1.6491 -0.7362  1.4211  4.5513 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Coefficients:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Estimate Std. Error t value Pr(&gt;|t|)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Intercept) 49.80842    3.60516  13.816 5.01e-14 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   hp          -0.12010    0.02470  -4.863 4.04e-05 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   wt          -8.21662    1.26971  -6.471 5.20e-07 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   hp:wt        0.02785    0.00742   3.753 0.000811 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residual standard error: 2.153 on 28 degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Multiple R-squared:  0.8848, Adjusted R-squared:  0.8724 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># F-statistic: 71.66 on 3 and 28 DF,  p-value: 2.981e-13</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#====================================================================</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># install.packages(&#34;effects&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">effects</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Figure 8.5.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="nf">effect</span><span class="p">(</span><span class="s">&#34;hp:wt&#34;</span><span class="p">,</span> <span class="n">fit</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">vcov.</span> <span class="o">=</span> <span class="n">vcov</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nf">list</span><span class="p">(</span><span class="n">wt</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2.2</span><span class="p">,</span><span class="m">3.2</span><span class="p">,</span><span class="m">4.2</span><span class="p">))),</span>
+</span></span><span class="line"><span class="cl">     <span class="n">multiline</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.3. Regression diagnostics</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">confint</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2.5 %       97.5 %</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   (Intercept) -6.552191e+00 9.0213182149</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Population   4.136397e-05 0.0004059867</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Illiteracy   2.381799e+00 5.9038743192</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Income      -1.312611e-03 0.0014414600</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Frost       -1.966781e-02 0.0208304170</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.3.1. A typical approach</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">women</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Figure 8.6.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">height</span> <span class="o">+</span> <span class="nf">I</span><span class="p">(</span><span class="n">height^2</span><span class="p">),</span> <span class="n">data</span><span class="o">=</span><span class="n">women</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Figure 8.7.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">fit2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Figure 8.8.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.3.2. An enhanced approach</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Normality</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Figure 8.9.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">qqPlot</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="nf">row.names</span><span class="p">(</span><span class="n">states</span><span class="p">),</span> <span class="n">id.method</span><span class="o">=</span><span class="s">&#34;identify&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">       <span class="n">simulate</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&#34;Q-Q Plot&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">states[</span><span class="s">&#34;Nevada&#34;</span><span class="p">,</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         Murder Population Illiteracy Income Frost</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Nevada   11.5        590        0.5   5149   188</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">fitted</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span><span class="n">[</span><span class="s">&#34;Nevada&#34;</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Nevada </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3.878958 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">residuals</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span><span class="n">[</span><span class="s">&#34;Nevada&#34;</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Nevada </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 7.621042 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">rstudent</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span><span class="n">[</span><span class="s">&#34;Nevada&#34;</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Nevada </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3.542929 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Normality</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 8.6. Function for plotting studentized residuals</span>
+</span></span><span class="line"><span class="cl"><span class="n">residplot</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">nbreaks</span><span class="o">=</span><span class="m">10</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">z</span> <span class="o">&lt;-</span> <span class="nf">rstudent</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">hist</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">breaks</span><span class="o">=</span><span class="n">nbreaks</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">       <span class="n">xlab</span><span class="o">=</span><span class="s">&#34;Studentized Residual&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">       <span class="n">main</span><span class="o">=</span><span class="s">&#34;Distribution of Errors&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">rug</span><span class="p">(</span><span class="nf">jitter</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;brown&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">curve</span><span class="p">(</span><span class="nf">dnorm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">sd</span><span class="o">=</span><span class="nf">sd</span><span class="p">(</span><span class="n">z</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">add</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;blue&#34;</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">lines</span><span class="p">(</span><span class="nf">density</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">$</span><span class="n">x</span><span class="p">,</span> <span class="nf">density</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">$</span><span class="n">y</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">col</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">legend</span><span class="p">(</span><span class="s">&#34;topright&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">         <span class="n">legend</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span> <span class="s">&#34;Normal Curve&#34;</span><span class="p">,</span> <span class="s">&#34;Kernel Density Curve&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">         <span class="n">lty</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;blue&#34;</span><span class="p">,</span><span class="s">&#34;red&#34;</span><span class="p">),</span> <span class="n">cex</span><span class="o">=</span><span class="m">.7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Figure 8.10.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">residplot</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Independence of Errors</span>
+</span></span><span class="line"><span class="cl"><span class="nf">durbinWatsonTest</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># lag Autocorrelation D-W Statistic p-value</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1      -0.2006929      2.317691   0.306</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Alternative hypothesis: rho != 0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Linearity</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Figure 8.11.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">crPlots</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Homoscedasticity</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing  8.7. Assessing homoscedasticity</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ncvTest</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Non-constant Variance Score Test </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Variance formula: ~ fitted.values </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Chisquare = 1.746514, Df = 1, p = 0.18632</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Figure 8.12.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">spreadLevelPlot</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Suggested power transformation:  1.209626 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.3.3. Global validation of linear model assumption</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 8.8. Global test of linear model assumptions</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># install.packages(gvlma)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">gvlma</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">gvmodel</span> <span class="o">&lt;-</span> <span class="nf">gvlma</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">gvmodel</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   lm(formula = Murder ~ Population + Illiteracy + Income + Frost, </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#      data = states)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Min      1Q  Median      3Q     Max </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -4.7960 -1.6495 -0.0811  1.4815  7.6210 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Coefficients:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Estimate Std. Error t value Pr(&gt;|t|)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Intercept) 1.235e+00  3.866e+00   0.319   0.7510    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Population  2.237e-04  9.052e-05   2.471   0.0173 *  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Illiteracy  4.143e+00  8.744e-01   4.738 2.19e-05 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Income      6.442e-05  6.837e-04   0.094   0.9253    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Frost       5.813e-04  1.005e-02   0.058   0.9541    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residual standard error: 2.535 on 45 degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Multiple R-squared:  0.567, Adjusted R-squared:  0.5285 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># F-statistic: 14.73 on 4 and 45 DF,  p-value: 9.133e-08</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ASSESSMENT OF THE LINEAR MODEL ASSUMPTIONS</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># USING THE GLOBAL TEST ON 4 DEGREES-OF-FREEDOM:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Level of Significance =  0.05 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   gvlma(x = fit) </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Value p-value                Decision</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Global Stat        2.7728  0.5965 Assumptions acceptable.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Skewness           1.5374  0.2150 Assumptions acceptable.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Kurtosis           0.6376  0.4246 Assumptions acceptable.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Link Function      0.1154  0.7341 Assumptions acceptable.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Heteroscedasticity 0.4824  0.4873 Assumptions acceptable.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#============================================================</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.3.4. Multicollinearity</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 8.9. Evaluating multicollinearity</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">vif</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Population Illiteracy     Income      Frost </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   1.245282   2.165848   1.345822   2.082547 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">sqrt</span><span class="p">(</span><span class="nf">vif</span><span class="p">(</span><span class="n">fit</span><span class="p">))</span> <span class="o">&gt;</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Population Illiteracy     Income      Frost </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#      FALSE      FALSE      FALSE      FALSE </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#============================================================</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.4. Unusual observations</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.4.1. Outliers</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">outlierTest</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.4.2. High leverage points</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Figure 8.13.</span>
+</span></span><span class="line"><span class="cl"><span class="n">hat.plot</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="nf">coefficients</span><span class="p">(</span><span class="n">fit</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="nf">fitted</span><span class="p">(</span><span class="n">fit</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">plot</span><span class="p">(</span><span class="nf">hatvalues</span><span class="p">(</span><span class="n">fit</span><span class="p">),</span> <span class="n">main</span><span class="o">=</span><span class="s">&#34;Index Plot of Hat Values&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">abline</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span><span class="o">*</span><span class="n">p</span><span class="o">/</span><span class="n">n</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">identify</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">,</span> <span class="nf">hatvalues</span><span class="p">(</span><span class="n">fit</span><span class="p">),</span> <span class="nf">names</span><span class="p">(</span><span class="nf">hatvalues</span><span class="p">(</span><span class="n">fit</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">hat.plot</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.4.3. Influential observations</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Figure 8.14.</span>
+</span></span><span class="line"><span class="cl"><span class="n">cutoff</span> <span class="o">&lt;-</span> <span class="m">4</span><span class="o">/</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">states</span><span class="p">)</span><span class="o">-</span><span class="nf">length</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">coefficients</span><span class="p">)</span><span class="m">-2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="m">4</span><span class="p">,</span> <span class="n">cook.levels</span><span class="o">=</span><span class="n">cutoff</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">abline</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="n">cutoff</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Figure 8.15. </span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">avPlots</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">ask</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">onepage</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">id.method</span><span class="o">=</span><span class="s">&#34;identify&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Figure 8.16. Influence plot.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">influencePlot</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">id.method</span><span class="o">=</span><span class="s">&#34;identify&#34;</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&#34;Influence Plot&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="n">sub</span><span class="o">=</span><span class="s">&#34;Circle size is proportional to Cook&#39;s distance&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.5.2. Transforming variables</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 8.10. Box–Cox transformation to normality</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="nf">powerTransform</span><span class="p">(</span><span class="n">states</span><span class="o">$</span><span class="n">Murder</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># bcPower Transformation to Normality </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Est Power Rounded Pwr Wald Lwr Bnd Wald Upr Bnd</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># states$Murder    0.6055           1       0.0884       1.1227</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Likelihood ratio test that transformation parameter is equal to 0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (log transformation)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># LRT df     pval</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># LR test, lambda = (0) 5.665991  1 0.017297</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Likelihood ratio test that no transformation is needed</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># LRT df    pval</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># LR test, lambda = (1) 2.122763  1 0.14512</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">boxTidwell</span><span class="p">(</span><span class="n">Murder</span><span class="o">~</span><span class="n">Population</span><span class="o">+</span><span class="n">Illiteracy</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#             MLE of lambda Score Statistic (z) Pr(&gt;|z|)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Population       0.86939             -0.3228   0.7468</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Illiteracy       1.35812              0.6194   0.5357</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># iterations =  19 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.6.1. Comparing models</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 8.11. Comparing nested models using the anova() function</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit1</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">anova</span><span class="p">(</span><span class="n">fit1</span><span class="p">,</span><span class="n">fit2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Analysis of Variance Table</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Model 1: Murder ~ Population + Illiteracy + Income + Frost</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Model 2: Murder ~ Population + Illiteracy</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Res.Df    RSS Df Sum of Sq      F Pr(&gt;F)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1     45 289.17                           </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2     47 289.25 -2 -0.078505 0.0061 0.9939</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 8.12. Comparing models with the AIC</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit1</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">AIC</span><span class="p">(</span><span class="n">fit1</span><span class="p">,</span> <span class="n">fit2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#       df      AIC</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># fit1  6 241.6429</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># fit2  4 237.6565</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.6.2. Variable selection</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 8.13. Backward stepwise selection</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">MASS</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit1</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">stepAIC</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">direction</span> <span class="o">=</span> <span class="s">&#34;backward&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Start:  AIC=97.75</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Murder ~ Population + Illiteracy + Income + Frost</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Df Sum of Sq    RSS     AIC</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># - Frost       1     0.021 289.19  95.753</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># - Income      1     0.057 289.22  95.759</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># &lt;none&gt;                    289.17  97.749</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># - Population  1    39.238 328.41 102.111</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># - Illiteracy  1   144.264 433.43 115.986</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Step:  AIC=95.75</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Murder ~ Population + Illiteracy + Income</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Df Sum of Sq    RSS     AIC</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># - Income      1     0.057 289.25  93.763</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># &lt;none&gt;                    289.19  95.753</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># - Population  1    43.658 332.85 100.783</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># - Illiteracy  1   236.196 525.38 123.605</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Step:  AIC=93.76</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Murder ~ Population + Illiteracy</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Df Sum of Sq    RSS     AIC</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># &lt;none&gt;                    289.25  93.763</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># - Population  1    48.517 337.76  99.516</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># - Illiteracy  1   299.646 588.89 127.311</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   lm(formula = Murder ~ Population + Illiteracy, data = states)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Coefficients:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   (Intercept)   Population   Illiteracy  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1.6515497    0.0002242    4.0807366  </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 8.14. All subsets regression</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># install.packages(&#34;leaps&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">leaps</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">leaps</span> <span class="o">&lt;-</span><span class="nf">regsubsets</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                     <span class="n">Frost</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">,</span> <span class="n">nbest</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">leaps</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s">&#34;adjr2&#34;</span><span class="p">)</span> <span class="c1"># Figure 8.17</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">subsets</span><span class="p">(</span><span class="n">leaps</span><span class="p">,</span> <span class="n">statistic</span><span class="o">=</span><span class="s">&#34;cp&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">main</span><span class="o">=</span><span class="s">&#34;Cp Plot for All Subsets Regression&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">abline</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.7.1. Cross-validation</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 8.15. Function for k-fold cross-validated R-square</span>
+</span></span><span class="line"><span class="cl"><span class="n">shrinkage</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="m">10</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">require</span><span class="p">(</span><span class="n">bootstrap</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">theta.fit</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">){</span><span class="nf">lsfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)}</span>
+</span></span><span class="line"><span class="cl">  <span class="n">theta.predict</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span><span class="n">x</span><span class="p">){</span><span class="nf">cbind</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">%*%</span><span class="n">fit</span><span class="o">$</span><span class="n">coef</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">&lt;-</span> <span class="n">fit</span><span class="o">$</span><span class="n">model[</span><span class="p">,</span><span class="m">2</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">model</span><span class="p">)</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl">  <span class="n">y</span> <span class="o">&lt;-</span> <span class="n">fit</span><span class="o">$</span><span class="n">model[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">crossval</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta.fit</span><span class="p">,</span> <span class="n">theta.predict</span><span class="p">,</span> <span class="n">ngroup</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">r2</span> <span class="o">&lt;-</span> <span class="nf">cor</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">fit</span><span class="o">$</span><span class="n">fitted.values</span><span class="p">)</span><span class="n">^2</span>
+</span></span><span class="line"><span class="cl">  <span class="n">r2cv</span> <span class="o">&lt;-</span> <span class="nf">cor</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">results</span><span class="o">$</span><span class="n">cv.fit</span><span class="p">)</span><span class="n">^2</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;Original R-square =&#34;</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">cat</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s">&#34;Fold Cross-Validated R-square =&#34;</span><span class="p">,</span> <span class="n">r2cv</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">cat</span><span class="p">(</span><span class="s">&#34;Change =&#34;</span><span class="p">,</span> <span class="n">r2</span><span class="o">-</span><span class="n">r2cv</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">shrinkage</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Original R-square = 0.5669502</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 10 Fold Cross-Validated R-square = 0.4240783</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Change = 0.1428719</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">shrinkage</span><span class="p">(</span><span class="n">fit2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Original R-square = 0.5668327</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 10 Fold Cross-Validated R-square = 0.5332059</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Change = 0.03362679</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8.7.2. Relative importance</span>
+</span></span><span class="line"><span class="cl"><span class="n">zstates</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="nf">scale</span><span class="p">(</span><span class="n">states</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">zfit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span><span class="o">~</span><span class="n">Population</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">zstates</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">coef</span><span class="p">(</span><span class="n">zfit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   (Intercept)    Population        Income    Illiteracy         Frost</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -2.054026e-16  2.705095e-01  1.072372e-02  6.840496e-01  8.185407e-03</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 8.16. relweights() function </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># for calculating relative importance of predictors</span>
+</span></span><span class="line"><span class="cl"><span class="n">relweights</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span><span class="kc">...</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">  <span class="n">R</span> <span class="o">&lt;-</span> <span class="nf">cor</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">model</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">nvar</span> <span class="o">&lt;-</span> <span class="nf">ncol</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">rxx</span> <span class="o">&lt;-</span> <span class="n">R[2</span><span class="o">:</span><span class="n">nvar</span><span class="p">,</span> <span class="m">2</span><span class="o">:</span><span class="n">nvar]</span>
+</span></span><span class="line"><span class="cl">  <span class="n">rxy</span> <span class="o">&lt;-</span> <span class="n">R[2</span><span class="o">:</span><span class="n">nvar</span><span class="p">,</span> <span class="m">1</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl">  <span class="n">svd</span> <span class="o">&lt;-</span> <span class="nf">eigen</span><span class="p">(</span><span class="n">rxx</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">evec</span> <span class="o">&lt;-</span> <span class="n">svd</span><span class="o">$</span><span class="n">vectors</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ev</span> <span class="o">&lt;-</span> <span class="n">svd</span><span class="o">$</span><span class="n">values</span>
+</span></span><span class="line"><span class="cl">  <span class="n">delta</span> <span class="o">&lt;-</span> <span class="nf">diag</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">ev</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="n">lambda</span> <span class="o">&lt;-</span> <span class="n">evec</span> <span class="o">%*%</span> <span class="n">delta</span> <span class="o">%*%</span> <span class="nf">t</span><span class="p">(</span><span class="n">evec</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">lambdasq</span> <span class="o">&lt;-</span> <span class="n">lambda</span> <span class="n">^</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  <span class="n">beta</span> <span class="o">&lt;-</span> <span class="nf">solve</span><span class="p">(</span><span class="n">lambda</span><span class="p">)</span> <span class="o">%*%</span> <span class="n">rxy</span>
+</span></span><span class="line"><span class="cl">  <span class="n">rsquare</span> <span class="o">&lt;-</span> <span class="nf">colSums</span><span class="p">(</span><span class="n">beta</span> <span class="n">^</span> <span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">rawwgt</span> <span class="o">&lt;-</span> <span class="n">lambdasq</span> <span class="o">%*%</span> <span class="n">beta</span> <span class="n">^</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  <span class="n">import</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">rawwgt</span> <span class="o">/</span> <span class="n">rsquare</span><span class="p">)</span> <span class="o">*</span> <span class="m">100</span>
+</span></span><span class="line"><span class="cl">  <span class="n">lbls</span> <span class="o">&lt;-</span> <span class="nf">names</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">model[2</span><span class="o">:</span><span class="n">nvar]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">rownames</span><span class="p">(</span><span class="n">import</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">lbls</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">colnames</span><span class="p">(</span><span class="n">import</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;Weights&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">barplot</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">import</span><span class="p">),</span><span class="n">names.arg</span><span class="o">=</span><span class="n">lbls</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">ylab</span><span class="o">=</span><span class="s">&#34;% of R-Square&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">xlab</span><span class="o">=</span><span class="s">&#34;Predictor Variables&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">main</span><span class="o">=</span><span class="s">&#34;Relative Importance of Predictor Variables&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">sub</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="s">&#34;R-Square=&#34;</span><span class="p">,</span> <span class="nf">round</span><span class="p">(</span><span class="n">rsquare</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">          <span class="kc">...</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">return</span><span class="p">(</span><span class="n">import</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">relweights2</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span><span class="kc">...</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">  <span class="n">R</span> <span class="o">&lt;-</span> <span class="nf">cor</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">model</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">nvar</span> <span class="o">&lt;-</span> <span class="nf">ncol</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">rxx</span> <span class="o">&lt;-</span> <span class="n">R[2</span><span class="o">:</span><span class="n">nvar</span><span class="p">,</span> <span class="m">2</span><span class="o">:</span><span class="n">nvar]</span>
+</span></span><span class="line"><span class="cl">  <span class="n">rxy</span> <span class="o">&lt;-</span> <span class="n">R[2</span><span class="o">:</span><span class="n">nvar</span><span class="p">,</span> <span class="m">1</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl">  <span class="n">svd</span> <span class="o">&lt;-</span> <span class="nf">eigen</span><span class="p">(</span><span class="n">rxx</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">evec</span> <span class="o">&lt;-</span> <span class="n">svd</span><span class="o">$</span><span class="n">vectors</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ev</span> <span class="o">&lt;-</span> <span class="n">svd</span><span class="o">$</span><span class="n">values</span>
+</span></span><span class="line"><span class="cl">  <span class="n">delta</span> <span class="o">&lt;-</span> <span class="nf">diag</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">ev</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="n">lambda</span> <span class="o">&lt;-</span> <span class="n">evec</span> <span class="o">%*%</span> <span class="n">delta</span> <span class="o">%*%</span> <span class="nf">t</span><span class="p">(</span><span class="n">evec</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">lambdasq</span> <span class="o">&lt;-</span> <span class="n">lambda</span> <span class="n">^</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  <span class="n">beta</span> <span class="o">&lt;-</span> <span class="nf">solve</span><span class="p">(</span><span class="n">lambda</span><span class="p">)</span> <span class="o">%*%</span> <span class="n">rxy</span>
+</span></span><span class="line"><span class="cl">  <span class="n">rsquare</span> <span class="o">&lt;-</span> <span class="nf">colSums</span><span class="p">(</span><span class="n">beta</span> <span class="n">^</span> <span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">rawwgt</span> <span class="o">&lt;-</span> <span class="n">lambdasq</span> <span class="o">%*%</span> <span class="n">beta</span> <span class="n">^</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  <span class="n">import</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">rawwgt</span> <span class="o">/</span> <span class="n">rsquare</span><span class="p">)</span> <span class="o">*</span> <span class="m">100</span>
+</span></span><span class="line"><span class="cl">  <span class="n">lbls</span> <span class="o">&lt;-</span> <span class="nf">names</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">model[2</span><span class="o">:</span><span class="n">nvar]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">rownames</span><span class="p">(</span><span class="n">import</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">lbls</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">colnames</span><span class="p">(</span><span class="n">import</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;Weights&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">dotplot</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">import</span><span class="p">),</span><span class="n">names.arg</span><span class="o">=</span><span class="n">lbls</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">ylab</span><span class="o">=</span><span class="s">&#34;% of R-Square&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">xlab</span><span class="o">=</span><span class="s">&#34;Predictor Variables&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">main</span><span class="o">=</span><span class="s">&#34;Relative Importance of Predictor Variables&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">sub</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="s">&#34;R-Square=&#34;</span><span class="p">,</span> <span class="nf">round</span><span class="p">(</span><span class="n">rsquare</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">          <span class="kc">...</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">return</span><span class="p">(</span><span class="n">import</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 8.17. Applying the relweights() function</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">Murder</span> <span class="o">~</span> <span class="n">Population</span> <span class="o">+</span> <span class="n">Illiteracy</span> <span class="o">+</span> <span class="n">Income</span> <span class="o">+</span> <span class="n">Frost</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">states</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">relweights</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&#34;lightgrey&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#             Weights</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Population 14.723401</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Illiteracy 59.000195</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Income      5.488962</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Frost      20.787442</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -2026,7 +2021,7 @@ if (!doNotTrack) {
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -2070,7 +2065,7 @@ if (!doNotTrack) {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 

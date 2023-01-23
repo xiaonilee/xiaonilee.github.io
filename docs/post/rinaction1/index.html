@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/rinaction1/" />
@@ -54,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,19 +67,14 @@
 <meta property="og:title" content="Chapter 1. Introduction To R" />
 <meta property="og:description" content="Notebook of Reading Books: R in Action_Chapter 1." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/rinaction1/" />
+<meta property="og:url" content="/post/rinaction1/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-10-19T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-10-28T00:00:00+00:00" />
 <meta itemprop="name" content="Chapter 1. Introduction To R">
-<meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 1.">
-<meta itemprop="datePublished" content="2020-10-19T00:00:00+00:00" />
+<meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 1."><meta itemprop="datePublished" content="2020-10-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-10-28T00:00:00+00:00" />
 <meta itemprop="wordCount" content="216">
-
-
-
-<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Chapter 1. Introduction To R"/>
 <meta name="twitter:description" content="Notebook of Reading Books: R in Action_Chapter 1."/>
 
@@ -576,7 +571,7 @@ if (!doNotTrack) {
 <p>Show me the code <i class="far fa-hand-pointer"></i></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -612,41 +607,41 @@ if (!doNotTrack) {
 </span><span class="lnt">34
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Remove most objects from the working environment</span>
-<span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
-<span class="c1"># a tremendously versatile and impressive code</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
-
-<span class="c1"># Section 1.3.2 Getting help</span>
-<span class="nf">help.start</span><span class="p">()</span>
-
-<span class="c1">## Section 1.3.3 Functions for managing the R workspace</span>
-<span class="nf">getwd</span><span class="p">()</span>
-<span class="nf">setwd</span><span class="p">(</span><span class="s">&#34;mydirectory&#34;</span><span class="p">)</span>
-<span class="nf">ls</span><span class="p">()</span>            <span class="c1"># List the objects in the current workspace.</span>
-<span class="nf">rm</span><span class="p">(</span><span class="n">objectlist</span><span class="p">)</span>  <span class="c1"># Remove (delete) one or more objects.</span>
-<span class="nf">options</span><span class="p">()</span>       <span class="c1"># View or set current options.</span>
-<span class="nf">history</span><span class="p">()</span>       <span class="c1"># Display your last # commands (default = 25).</span>
-<span class="nf">save</span><span class="p">()</span>
-<span class="nf">load</span><span class="p">()</span>
-<span class="nf">q</span><span class="p">()</span>
-
-<span class="c1">## Section 1.3.4 Input and Output</span>
-
-<span class="c1"># Input</span>
-<span class="nf">source</span><span class="p">(</span><span class="s">&#34;filename&#34;</span><span class="p">)</span>
-
-<span class="nf">source</span><span class="p">(</span><span class="s">&#34;script1.R&#34;</span><span class="p">)</span> <span class="c1"># Working through an example.</span>
-
-<span class="c1"># Output</span>
-<span class="nf">sink</span><span class="p">(</span><span class="s">&#34;myoutput&#34;</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">pdf</span><span class="p">(</span><span class="s">&#34;mygraphs.pdf&#34;</span><span class="p">)</span>
-<span class="nf">source</span><span class="p">(</span><span class="s">&#34;script2.R&#34;</span><span class="p">)</span>
-
-<span class="nf">sink</span><span class="p">()</span>
-<span class="nf">dev.off</span><span class="p">()</span>
-<span class="nf">source</span><span class="p">(</span><span class="s">&#34;script3.R&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Remove most objects from the working environment</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># a tremendously versatile and impressive code</span>
+</span></span><span class="line"><span class="cl"><span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Section 1.3.2 Getting help</span>
+</span></span><span class="line"><span class="cl"><span class="nf">help.start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## Section 1.3.3 Functions for managing the R workspace</span>
+</span></span><span class="line"><span class="cl"><span class="nf">getwd</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="s">&#34;mydirectory&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ls</span><span class="p">()</span>            <span class="c1"># List the objects in the current workspace.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rm</span><span class="p">(</span><span class="n">objectlist</span><span class="p">)</span>  <span class="c1"># Remove (delete) one or more objects.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">options</span><span class="p">()</span>       <span class="c1"># View or set current options.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">history</span><span class="p">()</span>       <span class="c1"># Display your last # commands (default = 25).</span>
+</span></span><span class="line"><span class="cl"><span class="nf">save</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">load</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">q</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## Section 1.3.4 Input and Output</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Input</span>
+</span></span><span class="line"><span class="cl"><span class="nf">source</span><span class="p">(</span><span class="s">&#34;filename&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">source</span><span class="p">(</span><span class="s">&#34;script1.R&#34;</span><span class="p">)</span> <span class="c1"># Working through an example.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Output</span>
+</span></span><span class="line"><span class="cl"><span class="nf">sink</span><span class="p">(</span><span class="s">&#34;myoutput&#34;</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">pdf</span><span class="p">(</span><span class="s">&#34;mygraphs.pdf&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">source</span><span class="p">(</span><span class="s">&#34;script2.R&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">sink</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dev.off</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">source</span><span class="p">(</span><span class="s">&#34;script3.R&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -770,7 +765,7 @@ if (!doNotTrack) {
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -814,7 +809,7 @@ if (!doNotTrack) {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 

@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/tensorflow206/" />
@@ -54,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,19 +67,14 @@
 <meta property="og:title" content="TensorFlow2 class6: 循环神经网络" />
 <meta property="og:description" content="TensorFlow2 notebook: Class6: 循环神经网络,用基础RNN,LSTM,GRU实现股票预测." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/tensorflow206/" />
+<meta property="og:url" content="/post/tensorflow206/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-12-13T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-02-19T00:00:00+00:00" />
 <meta itemprop="name" content="TensorFlow2 class6: 循环神经网络">
-<meta itemprop="description" content="TensorFlow2 notebook: Class6: 循环神经网络,用基础RNN,LSTM,GRU实现股票预测.">
-<meta itemprop="datePublished" content="2020-12-13T00:00:00+00:00" />
+<meta itemprop="description" content="TensorFlow2 notebook: Class6: 循环神经网络,用基础RNN,LSTM,GRU实现股票预测."><meta itemprop="datePublished" content="2020-12-13T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-19T00:00:00+00:00" />
 <meta itemprop="wordCount" content="2844">
-
-
-
-<meta itemprop="keywords" content="TensorFlow2,Machine Learning," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="TensorFlow2,Machine Learning," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="TensorFlow2 class6: 循环神经网络"/>
 <meta name="twitter:description" content="TensorFlow2 notebook: Class6: 循环神经网络,用基础RNN,LSTM,GRU实现股票预测."/>
 
@@ -609,7 +604,7 @@ if (!doNotTrack) {
 <h3 id="64-tf描述循环计算层">6.4 TF描述循环计算层</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -618,14 +613,14 @@ if (!doNotTrack) {
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">SimpleRNN</span><span class="p">(</span><span class="err">记忆体个数，</span><span class="n">activation</span><span class="o">=</span><span class="err">‘激活函数’</span><span class="p">,</span> 
-<span class="n">return_sequences</span><span class="o">=</span><span class="err">是否每个时刻输出</span><span class="n">ht到下一层</span><span class="p">)</span>
-<span class="n">activation</span><span class="o">=</span><span class="err">‘激活函数’</span> <span class="p">(</span><span class="err">不写，默认使用</span><span class="n">tanh</span><span class="p">)</span> 
-<span class="n">return_sequences</span><span class="o">=</span><span class="bp">True</span> <span class="err">循环核各时刻会把</span><span class="n">ht推送到到下一层</span>
-<span class="n">return_sequences</span><span class="o">=</span><span class="bp">False</span> <span class="err">循环核仅在最后一个时刻把</span><span class="n">ht推送到到下一层</span><span class="p">(</span><span class="err">默认</span><span class="p">)</span>
-
-<span class="err">例</span><span class="p">:</span><span class="n">SimpleRNN</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">SimpleRNN</span><span class="p">(</span><span class="n">记忆体个数</span><span class="err">，</span><span class="n">activation</span><span class="o">=</span><span class="err">‘</span><span class="n">激活函数</span><span class="err">’</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl"><span class="n">return_sequences</span><span class="o">=</span><span class="n">是否每个时刻输出ht到下一层</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">activation</span><span class="o">=</span><span class="err">‘</span><span class="n">激活函数</span><span class="err">’</span> <span class="p">(</span><span class="n">不写</span><span class="err">，</span><span class="n">默认使用tanh</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="n">return_sequences</span><span class="o">=</span><span class="kc">True</span> <span class="n">循环核各时刻会把ht推送到到下一层</span>
+</span></span><span class="line"><span class="cl"><span class="n">return_sequences</span><span class="o">=</span><span class="kc">False</span> <span class="n">循环核仅在最后一个时刻把ht推送到到下一层</span><span class="p">(</span><span class="n">默认</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">例</span><span class="p">:</span><span class="n">SimpleRNN</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>送入RNN时， 要求x_train维度是3维:
@@ -673,7 +668,7 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -704,36 +699,36 @@ if (!doNotTrack) {
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># 矩阵计算过程</span>
-<span class="n">xtb</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">byrow</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">xtc</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">byrow</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">xtd</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">byrow</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">xte</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">byrow</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-
-<span class="n">ht1</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">-0.9</span><span class="p">,</span> <span class="m">0.2</span><span class="p">,</span> <span class="m">0.2</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">ht2</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0.8</span><span class="p">,</span> <span class="m">1.0</span><span class="p">,</span> <span class="m">0.8</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">ht3</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0.6</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="m">-1.0</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">ht4</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">-1.0</span><span class="p">,</span> <span class="m">-1.0</span><span class="p">,</span> <span class="m">0.8</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-
-<span class="n">whh</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">-0.9</span><span class="p">,</span><span class="m">-0.9</span><span class="p">,</span><span class="m">-0.9</span><span class="p">,</span><span class="m">0.5</span><span class="p">,</span><span class="m">0.9</span><span class="p">,</span><span class="m">-0.3</span><span class="p">,</span><span class="m">1.0</span><span class="p">,</span><span class="m">0.3</span><span class="p">,</span><span class="m">-1.5</span><span class="p">),</span> 
-              <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-
-<span class="n">wxh</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1.2</span><span class="p">,</span><span class="m">-1.3</span><span class="p">,</span><span class="m">1.1</span><span class="p">,</span><span class="m">-1.5</span><span class="p">,</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.3</span><span class="p">,</span><span class="m">-0.3</span><span class="p">,</span><span class="m">1.7</span><span class="p">,</span><span class="m">0.7</span><span class="p">,</span><span class="m">-0.1</span><span class="p">,</span><span class="m">0.1</span><span class="p">,</span><span class="m">-0.1</span><span class="p">,</span><span class="m">-1.2</span><span class="p">,</span><span class="m">-1.5</span><span class="p">,</span><span class="m">0.3</span><span class="p">),</span> 
-              <span class="n">nrow</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-
-<span class="n">wyt</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">-1.3</span><span class="p">,</span><span class="m">0.5</span><span class="p">,</span><span class="m">-0.7</span><span class="p">,</span><span class="m">-0.2</span><span class="p">,</span><span class="m">0.8</span><span class="p">,</span> <span class="m">-1.4</span><span class="p">,</span><span class="m">-0.8</span><span class="p">,</span><span class="m">-1.2</span><span class="p">,</span><span class="m">0.9</span><span class="p">,</span><span class="m">1.4</span><span class="p">,</span><span class="m">0.7</span><span class="p">,</span><span class="m">1.1</span><span class="p">,</span><span class="m">-1.2</span><span class="p">,</span><span class="m">1.3</span><span class="p">,</span><span class="m">-1.1</span><span class="p">),</span> 
-              <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-
-<span class="n">xtb</span> <span class="o">%*%</span> <span class="n">wxh</span>
-<span class="n">xtc</span> <span class="o">%*%</span> <span class="n">wxh</span>
-<span class="n">xtd</span> <span class="o">%*%</span> <span class="n">wxh</span>
-<span class="n">xte</span> <span class="o">%*%</span> <span class="n">wxh</span>
-
-<span class="nf">round</span><span class="p">(</span><span class="n">ht1</span> <span class="o">%*%</span> <span class="n">whh</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
-<span class="nf">round</span><span class="p">(</span><span class="n">ht2</span> <span class="o">%*%</span> <span class="n">whh</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
-<span class="nf">round</span><span class="p">(</span><span class="n">ht3</span> <span class="o">%*%</span> <span class="n">whh</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
-<span class="nf">round</span><span class="p">(</span><span class="n">ht4</span> <span class="o">%*%</span> <span class="n">wyt</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># 矩阵计算过程</span>
+</span></span><span class="line"><span class="cl"><span class="n">xtb</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">byrow</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">xtc</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">byrow</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">xtd</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">byrow</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">xte</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">byrow</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ht1</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">-0.9</span><span class="p">,</span> <span class="m">0.2</span><span class="p">,</span> <span class="m">0.2</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ht2</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0.8</span><span class="p">,</span> <span class="m">1.0</span><span class="p">,</span> <span class="m">0.8</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ht3</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0.6</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="m">-1.0</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ht4</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">-1.0</span><span class="p">,</span> <span class="m">-1.0</span><span class="p">,</span> <span class="m">0.8</span><span class="p">),</span> <span class="n">nrow</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">whh</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">-0.9</span><span class="p">,</span><span class="m">-0.9</span><span class="p">,</span><span class="m">-0.9</span><span class="p">,</span><span class="m">0.5</span><span class="p">,</span><span class="m">0.9</span><span class="p">,</span><span class="m">-0.3</span><span class="p">,</span><span class="m">1.0</span><span class="p">,</span><span class="m">0.3</span><span class="p">,</span><span class="m">-1.5</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">              <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">wxh</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1.2</span><span class="p">,</span><span class="m">-1.3</span><span class="p">,</span><span class="m">1.1</span><span class="p">,</span><span class="m">-1.5</span><span class="p">,</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.3</span><span class="p">,</span><span class="m">-0.3</span><span class="p">,</span><span class="m">1.7</span><span class="p">,</span><span class="m">0.7</span><span class="p">,</span><span class="m">-0.1</span><span class="p">,</span><span class="m">0.1</span><span class="p">,</span><span class="m">-0.1</span><span class="p">,</span><span class="m">-1.2</span><span class="p">,</span><span class="m">-1.5</span><span class="p">,</span><span class="m">0.3</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">              <span class="n">nrow</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">wyt</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">-1.3</span><span class="p">,</span><span class="m">0.5</span><span class="p">,</span><span class="m">-0.7</span><span class="p">,</span><span class="m">-0.2</span><span class="p">,</span><span class="m">0.8</span><span class="p">,</span> <span class="m">-1.4</span><span class="p">,</span><span class="m">-0.8</span><span class="p">,</span><span class="m">-1.2</span><span class="p">,</span><span class="m">0.9</span><span class="p">,</span><span class="m">1.4</span><span class="p">,</span><span class="m">0.7</span><span class="p">,</span><span class="m">1.1</span><span class="p">,</span><span class="m">-1.2</span><span class="p">,</span><span class="m">1.3</span><span class="p">,</span><span class="m">-1.1</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">              <span class="n">nrow</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">xtb</span> <span class="o">%*%</span> <span class="n">wxh</span>
+</span></span><span class="line"><span class="cl"><span class="n">xtc</span> <span class="o">%*%</span> <span class="n">wxh</span>
+</span></span><span class="line"><span class="cl"><span class="n">xtd</span> <span class="o">%*%</span> <span class="n">wxh</span>
+</span></span><span class="line"><span class="cl"><span class="n">xte</span> <span class="o">%*%</span> <span class="n">wxh</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">round</span><span class="p">(</span><span class="n">ht1</span> <span class="o">%*%</span> <span class="n">whh</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">round</span><span class="p">(</span><span class="n">ht2</span> <span class="o">%*%</span> <span class="n">whh</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">round</span><span class="p">(</span><span class="n">ht3</span> <span class="o">%*%</span> <span class="n">whh</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">round</span><span class="p">(</span><span class="n">ht4</span> <span class="o">%*%</span> <span class="n">wyt</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="68-字母预测onehot_4pre1">6.8 字母预测onehot_4pre1</h3>
 <ul>
@@ -780,22 +775,22 @@ if (!doNotTrack) {
 <p>tf函数表示</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python">  <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="err">词汇表大小，编码维度</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">  <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">词汇表大小</span><span class="err">，</span><span class="n">编码维度</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>x_train 要求维度格式</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="p">[</span><span class="err">送入样本数，</span> <span class="err">循环核时间展开步数</span><span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">[</span><span class="n">送入样本数</span><span class="err">，</span> <span class="n">循环核时间展开步数</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -854,7 +849,7 @@ if (!doNotTrack) {
 <p>数据下载源码p37_tushare.py</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -863,14 +858,14 @@ if (!doNotTrack) {
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">tushare</span> <span class="kn">as</span> <span class="nn">ts</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-
-<span class="n">df1</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">get_k_data</span><span class="p">(</span><span class="s1">&#39;600519&#39;</span><span class="p">,</span> <span class="n">ktype</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2010-04-26&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2020-04-26&#39;</span><span class="p">)</span>
-
-<span class="n">datapath1</span> <span class="o">=</span> <span class="s2">&#34;./SH600519.csv&#34;</span>
-<span class="n">df1</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">datapath1</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">tushare</span> <span class="k">as</span> <span class="nn">ts</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">df1</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">get_k_data</span><span class="p">(</span><span class="s1">&#39;600519&#39;</span><span class="p">,</span> <span class="n">ktype</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2010-04-26&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2020-04-26&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">datapath1</span> <span class="o">=</span> <span class="s2">&#34;./SH600519.csv&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">df1</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">datapath1</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -934,15 +929,15 @@ if (!doNotTrack) {
 <p>TF描述LSTM层</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="err">记忆体个数，</span><span class="n">return_sequences</span><span class="o">=</span><span class="err">是否返回输出</span><span class="p">)</span>
-<span class="n">return_sequences</span><span class="o">=</span><span class="bp">True</span> <span class="err">各时间步输出</span><span class="n">ht</span><span class="p">,</span><span class="err">多用于中间层网络</span>
-<span class="n">return_sequences</span><span class="o">=</span><span class="bp">False</span> <span class="err">仅最后时间步输出</span><span class="n">ht</span><span class="p">(</span><span class="err">默认</span><span class="p">),</span> <span class="err">多用于最后一层网络</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="n">记忆体个数</span><span class="err">，</span><span class="n">return_sequences</span><span class="o">=</span><span class="n">是否返回输出</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">return_sequences</span><span class="o">=</span><span class="kc">True</span> <span class="n">各时间步输出ht</span><span class="p">,</span><span class="n">多用于中间层网络</span>
+</span></span><span class="line"><span class="cl"><span class="n">return_sequences</span><span class="o">=</span><span class="kc">False</span> <span class="n">仅最后时间步输出ht</span><span class="p">(</span><span class="n">默认</span><span class="p">),</span> <span class="n">多用于最后一层网络</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -981,13 +976,13 @@ if (!doNotTrack) {
 <p>TF描述GRU层</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">GRU</span><span class="p">(</span><span class="err">记忆体个数，</span><span class="n">return_sequences</span><span class="o">=</span><span class="err">是否返回输出</span><span class="p">)</span> <span class="n">return_sequences</span><span class="o">=</span><span class="bp">True</span> <span class="err">各时间步输出</span><span class="n">ht</span>
-<span class="n">return_sequences</span><span class="o">=</span><span class="bp">False</span> <span class="err">仅最后时间步输出</span><span class="n">ht</span><span class="p">(</span><span class="err">默认</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">GRU</span><span class="p">(</span><span class="n">记忆体个数</span><span class="err">，</span><span class="n">return_sequences</span><span class="o">=</span><span class="n">是否返回输出</span><span class="p">)</span> <span class="n">return_sequences</span><span class="o">=</span><span class="kc">True</span> <span class="n">各时间步输出ht</span>
+</span></span><span class="line"><span class="cl"><span class="n">return_sequences</span><span class="o">=</span><span class="kc">False</span> <span class="n">仅最后时间步输出ht</span><span class="p">(</span><span class="n">默认</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -1124,7 +1119,7 @@ if (!doNotTrack) {
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1168,7 +1163,7 @@ if (!doNotTrack) {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 

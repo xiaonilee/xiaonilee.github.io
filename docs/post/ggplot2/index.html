@@ -34,7 +34,7 @@ Data from Hadle Wickham &amp;lsquo;ggplot2 Elegant Graphics for Data Analysis&am
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/ggplot2/" />
@@ -55,7 +55,7 @@ Data from Hadle Wickham &amp;lsquo;ggplot2 Elegant Graphics for Data Analysis&am
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -69,20 +69,15 @@ Data from Hadle Wickham &amp;lsquo;ggplot2 Elegant Graphics for Data Analysis&am
 <meta property="og:description" content="R package: ggplot2.
 Data from Hadle Wickham &lsquo;ggplot2 Elegant Graphics for Data Analysis&rsquo;." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/ggplot2/" />
+<meta property="og:url" content="/post/ggplot2/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-09-19T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-02-19T00:00:00+00:00" />
 <meta itemprop="name" content="R Notebook : ggplot2">
 <meta itemprop="description" content="R package: ggplot2.
-Data from Hadle Wickham &lsquo;ggplot2 Elegant Graphics for Data Analysis&rsquo;.">
-<meta itemprop="datePublished" content="2020-09-19T00:00:00+00:00" />
+Data from Hadle Wickham &lsquo;ggplot2 Elegant Graphics for Data Analysis&rsquo;."><meta itemprop="datePublished" content="2020-09-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-19T00:00:00+00:00" />
 <meta itemprop="wordCount" content="554">
-
-
-
-<meta itemprop="keywords" content="R,Bioinformatics,Plots,R Package," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="R,Bioinformatics,Plots,R Package," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="R Notebook : ggplot2"/>
 <meta name="twitter:description" content="R package: ggplot2.
 Data from Hadle Wickham &lsquo;ggplot2 Elegant Graphics for Data Analysis&rsquo;."/>
@@ -553,7 +548,7 @@ if (!doNotTrack) {
 <h3 id="related-concept">Related Concept</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -562,259 +557,259 @@ if (!doNotTrack) {
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">Data</span>
-<span class="n">Aesthetics</span>
-<span class="n">Geometries</span> <span class="c1">#几何对象</span>
-<span class="n">Facets</span>
-<span class="n">Statistics</span>
-<span class="n">Coordinates</span> <span class="c1">#坐标系</span>
-<span class="n">Themes</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">Data</span>
+</span></span><span class="line"><span class="cl"><span class="n">Aesthetics</span>
+</span></span><span class="line"><span class="cl"><span class="n">Geometries</span> <span class="c1">#几何对象</span>
+</span></span><span class="line"><span class="cl"><span class="n">Facets</span>
+</span></span><span class="line"><span class="cl"><span class="n">Statistics</span>
+</span></span><span class="line"><span class="cl"><span class="n">Coordinates</span> <span class="c1">#坐标系</span>
+</span></span><span class="line"><span class="cl"><span class="n">Themes</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="prerequisites">Prerequisites</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#34;ggplot2&#34;</span><span class="p">)</span>
-
-<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#34;ggplot2&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="dataset">Dataset</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">data</span><span class="p">(</span><span class="n">mpg</span><span class="p">)</span>
-<span class="c1"># if data is from outside: data &lt;- read.table(file, header=T, row.names=NULL, sep=&#34;,)</span>
-<span class="nf">data</span><span class="p">(</span><span class="n">economics</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="n">mpg</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># if data is from outside: data &lt;- read.table(file, header=T, row.names=NULL, sep=&#34;,)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="n">economics</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="dataset.png" alt="dataset"></p>
 <h3 id="basic-plot">Basic Plot</h3>
 <h4 id="1-scatter">1. scatter</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggplot </span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes </span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">displ</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">hwy</span><span class="p">))</span> <span class="o">+</span>
-<span class="nf">geom_point</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">ggplot </span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes </span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">displ</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">hwy</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_point</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="scatter.png" alt="scatter"></p>
 <h4 id="2-scatter-add-line">2. scatter add line</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">displ</span><span class="p">,</span> <span class="n">hwy</span><span class="p">))</span> <span class="o">+</span>
-<span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span>
-<span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span> <span class="s">&#34;lm&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">displ</span><span class="p">,</span> <span class="n">hwy</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span> <span class="s">&#34;lm&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="scatter2.png" alt="scatter2"></p>
 <h4 id="3-scatter-add-color">3. scatter add color</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes </span><span class="p">(</span><span class="n">displ</span><span class="p">,</span> <span class="n">hwy</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">class</span><span class="p">))</span> <span class="o">+</span>
-<span class="nf">geom_point</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes </span><span class="p">(</span><span class="n">displ</span><span class="p">,</span> <span class="n">hwy</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="n">class</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_point</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="scatter3.png" alt="scatter3"></p>
 <h4 id="4-scatter-and-wrap">4. scatter and wrap</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">displ</span><span class="p">,</span> <span class="n">hwy</span><span class="p">))</span> <span class="o">+</span>
-<span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span>
-<span class="nf">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">class</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">displ</span><span class="p">,</span> <span class="n">hwy</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">class</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="scatter4.png" alt="scatter4"></p>
 <h4 id="5-boxplot">5. boxplot</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">drv</span><span class="p">,</span> <span class="n">hwy</span><span class="p">))</span> <span class="o">+</span>
-<span class="nf">geom_boxplot</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">drv</span><span class="p">,</span> <span class="n">hwy</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_boxplot</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="boxplot.png" alt="boxplot"></p>
 <h4 id="6-violin-plot">6. violin plot</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">drv</span><span class="p">,</span> <span class="n">hwy</span><span class="p">))</span> <span class="o">+</span>
-<span class="nf">geom_violin</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">drv</span><span class="p">,</span> <span class="n">hwy</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_violin</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="violin.png" alt="violin"></p>
 <h4 id="7-overlap">7. overlap</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">drv</span><span class="p">,</span> <span class="n">hwy</span><span class="p">))</span> <span class="o">+</span>
-<span class="nf">geom_violin</span><span class="p">(</span><span class="n">trim</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s">&#39;orange&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">)</span> <span class="o">+</span>
-<span class="nf">geom_boxplot</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="m">0.1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">theme_minimal</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">drv</span><span class="p">,</span> <span class="n">hwy</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_violin</span><span class="p">(</span><span class="n">trim</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s">&#39;orange&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_boxplot</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="m">0.1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">theme_minimal</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="overlap.png" alt="overlap"></p>
 <h4 id="8-histogram">8. histogram</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">hwy</span><span class="p">))</span> <span class="o">+</span>
-<span class="nf">geom_histogram</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">hwy</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_histogram</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="histogram.png" alt="histogram"></p>
 <h4 id="9-freqpoly">9. freqpoly</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">hwy</span><span class="p">))</span> <span class="o">+</span>
-<span class="nf">geom_freqpoly</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">hwy</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_freqpoly</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="freqpoly.png" alt="freqpoly"></p>
 <h4 id="10-bar">10. bar</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">manufacturer</span><span class="p">))</span> <span class="o">+</span>
-<span class="nf">geom_bar</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">ggplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">manufacturer</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_bar</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="barplot.png" alt="barplot"></p>
 <h4 id="11-timeplot">11. timeplot</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggplot</span><span class="p">(</span><span class="n">economics</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">unemploy</span> <span class="o">/</span> <span class="n">pop</span><span class="p">))</span> <span class="o">+</span>
-<span class="nf">geom_line</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">ggplot</span><span class="p">(</span><span class="n">economics</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">unemploy</span> <span class="o">/</span> <span class="n">pop</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_line</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="timeplot.png" alt="timeplot"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggplot</span><span class="p">(</span><span class="n">economics</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">uempmed</span><span class="p">))</span> <span class="o">+</span>
-<span class="nf">geom_line</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">ggplot</span><span class="p">(</span><span class="n">economics</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">uempmed</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_line</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="timeplot2.png" alt="timeplot2"></p>
 <h4 id="12-path">12. path</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggplot</span><span class="p">(</span><span class="n">economics</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">unemploy</span> <span class="o">/</span> <span class="n">pop</span><span class="p">,</span> <span class="n">uempmed</span><span class="p">))</span> <span class="o">+</span>
-<span class="nf">geom_path</span><span class="p">()</span> <span class="o">+</span>
-<span class="nf">geom_point</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">ggplot</span><span class="p">(</span><span class="n">economics</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">unemploy</span> <span class="o">/</span> <span class="n">pop</span><span class="p">,</span> <span class="n">uempmed</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_path</span><span class="p">()</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_point</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="path.png" alt="path"></p>
 <h4 id="13-contour">13. contour</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggplot</span><span class="p">(</span><span class="n">faithfuld</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">eruptions</span><span class="p">,</span> <span class="n">waiting</span><span class="p">))</span> <span class="o">+</span>
-<span class="nf">geom_contour</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="n">density</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">..level..</span><span class="p">))</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">ggplot</span><span class="p">(</span><span class="n">faithfuld</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">eruptions</span><span class="p">,</span> <span class="n">waiting</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_contour</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="n">density</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">..level..</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="contour.png" alt="contour"></p>
 <h4 id="14-raster">14. raster</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">ggplot</span><span class="p">(</span><span class="n">faithfuld</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">eruptions</span><span class="p">,</span> <span class="n">waiting</span><span class="p">))</span> <span class="o">+</span>
-<span class="nf">geom_raster</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="n">density</span><span class="p">))</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">ggplot</span><span class="p">(</span><span class="n">faithfuld</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">eruptions</span><span class="p">,</span> <span class="n">waiting</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="nf">geom_raster</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="n">density</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="raster.png" alt="raster"></p>
 <h3 id="fix-with-alpha">Fix with alpha</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">norm</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span> <span class="o">+</span> <span class="nf">xlab</span><span class="p">(</span><span class="kc">NULL</span><span class="p">)</span> <span class="o">+</span> <span class="nf">ylab</span><span class="p">(</span><span class="kc">NULL</span><span class="p">)</span>
-<span class="n">norm</span> <span class="o">+</span> <span class="nf">geom_point </span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="m">1</span> <span class="o">/</span> <span class="m">3</span><span class="p">)</span>
-<span class="n">norm</span> <span class="o">+</span> <span class="nf">geom_point </span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="m">1</span> <span class="o">/</span> <span class="m">5</span><span class="p">)</span>
-<span class="n">norm</span> <span class="o">+</span> <span class="nf">geom_point </span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="m">1</span> <span class="o">/</span> <span class="m">10</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">norm</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span> <span class="o">+</span> <span class="nf">xlab</span><span class="p">(</span><span class="kc">NULL</span><span class="p">)</span> <span class="o">+</span> <span class="nf">ylab</span><span class="p">(</span><span class="kc">NULL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">norm</span> <span class="o">+</span> <span class="nf">geom_point </span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="m">1</span> <span class="o">/</span> <span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">norm</span> <span class="o">+</span> <span class="nf">geom_point </span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="m">1</span> <span class="o">/</span> <span class="m">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">norm</span> <span class="o">+</span> <span class="nf">geom_point </span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="m">1</span> <span class="o">/</span> <span class="m">10</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="setting-theme">Setting theme</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">different</span> <span class="n">theme</span>
-<span class="nf">theme_classic</span><span class="p">()</span>
-<span class="nf">theme_minimal</span><span class="p">()</span>
-<span class="nf">theme_economist</span><span class="p">()</span><span class="o">+</span> <span class="nf">scale_colour_economist</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">different</span> <span class="n">theme</span>
+</span></span><span class="line"><span class="cl"><span class="nf">theme_classic</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">theme_minimal</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">theme_economist</span><span class="p">()</span><span class="o">+</span> <span class="nf">scale_colour_economist</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="ggplot2-extensions">ggplot2 extensions</h3>
 <ul>
@@ -969,7 +964,7 @@ if (!doNotTrack) {
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1013,7 +1008,7 @@ if (!doNotTrack) {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 

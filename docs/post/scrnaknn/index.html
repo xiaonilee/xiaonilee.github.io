@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/scrnaknn/" />
@@ -54,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,19 +67,14 @@
 <meta property="og:title" content="scRNA-sequencing analysis - PCA and KNN" />
 <meta property="og:description" content="Recover one figure from public paper." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/scrnaknn/" />
+<meta property="og:url" content="/post/scrnaknn/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-02-23T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-02-25T00:00:00+00:00" />
 <meta itemprop="name" content="scRNA-sequencing analysis - PCA and KNN">
-<meta itemprop="description" content="Recover one figure from public paper.">
-<meta itemprop="datePublished" content="2021-02-23T00:00:00+00:00" />
+<meta itemprop="description" content="Recover one figure from public paper."><meta itemprop="datePublished" content="2021-02-23T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-02-25T00:00:00+00:00" />
 <meta itemprop="wordCount" content="465">
-
-
-
-<meta itemprop="keywords" content="Bioinformatics,R,RNA Sequence,PCA,KNN," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Bioinformatics,R,RNA Sequence,PCA,KNN," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="scRNA-sequencing analysis - PCA and KNN"/>
 <meta name="twitter:description" content="Recover one figure from public paper."/>
 
@@ -569,7 +564,7 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -581,24 +576,24 @@ if (!doNotTrack) {
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">dat</span> <span class="o">&lt;-</span> <span class="nf">read.table</span><span class="p">(</span><span class="s">&#34;GSM3454528_naive_cells.txt.gz&#34;</span><span class="p">,</span>
-                   <span class="n">header</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span><span class="c1">#row.names = 1,</span>
-                   <span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
-
-<span class="n">dat</span> <span class="o">&lt;-</span> <span class="n">dat</span><span class="nf">[order</span><span class="p">(</span><span class="nf">apply</span><span class="p">(</span><span class="n">dat[</span><span class="p">,</span><span class="m">-1</span><span class="n">]</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">sum</span><span class="p">),</span><span class="n">decreasing</span> <span class="o">=</span> <span class="bp">T</span><span class="p">),</span><span class="n">]</span>
-<span class="n">dat</span> <span class="o">&lt;-</span> <span class="n">dat[</span><span class="o">!</span><span class="nf">duplicated</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">genes</span><span class="p">),</span><span class="n">]</span>
-<span class="n">dat</span> <span class="o">&lt;-</span> <span class="n">dat</span><span class="nf">[order</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">genes</span><span class="p">),</span><span class="n">]</span>
-<span class="nf">rownames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">dat[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span>
-<span class="n">dat</span> <span class="o">&lt;-</span> <span class="n">dat[</span><span class="p">,</span><span class="m">-1</span><span class="n">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="n">dat</span> <span class="o">&lt;-</span> <span class="nf">read.table</span><span class="p">(</span><span class="s">&#34;GSM3454528_naive_cells.txt.gz&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                   <span class="n">header</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span><span class="c1">#row.names = 1,</span>
+</span></span><span class="line"><span class="cl">                   <span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dat</span> <span class="o">&lt;-</span> <span class="n">dat</span><span class="nf">[order</span><span class="p">(</span><span class="nf">apply</span><span class="p">(</span><span class="n">dat[</span><span class="p">,</span><span class="m">-1</span><span class="n">]</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">sum</span><span class="p">),</span><span class="n">decreasing</span> <span class="o">=</span> <span class="bp">T</span><span class="p">),</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">dat</span> <span class="o">&lt;-</span> <span class="n">dat[</span><span class="o">!</span><span class="nf">duplicated</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">genes</span><span class="p">),</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">dat</span> <span class="o">&lt;-</span> <span class="n">dat</span><span class="nf">[order</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">genes</span><span class="p">),</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rownames</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">dat[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">dat</span> <span class="o">&lt;-</span> <span class="n">dat[</span><span class="p">,</span><span class="m">-1</span><span class="n">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Normalizing the data</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -607,27 +602,27 @@ if (!doNotTrack) {
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">lib.size</span> <span class="o">&lt;-</span> <span class="nf">colSums</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="o">/</span><span class="nf">median</span><span class="p">(</span><span class="nf">colSums</span><span class="p">(</span><span class="n">dat</span><span class="p">))</span>
-<span class="n">dat.new</span> <span class="o">&lt;-</span> <span class="n">dat</span>
-<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">lib.size</span><span class="p">)){</span>
-  <span class="c1">#print(i)</span>
-  <span class="n">dat.new[</span><span class="p">,</span><span class="n">i]</span><span class="o">=</span><span class="n">dat[</span><span class="p">,</span><span class="n">i]</span><span class="o">/</span><span class="n">lib.size[i]</span>
-<span class="p">}</span>
-<span class="n">dat</span> <span class="o">&lt;-</span> <span class="nf">as.matrix</span><span class="p">(</span><span class="n">dat.new</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="n">lib.size</span> <span class="o">&lt;-</span> <span class="nf">colSums</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="o">/</span><span class="nf">median</span><span class="p">(</span><span class="nf">colSums</span><span class="p">(</span><span class="n">dat</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">dat.new</span> <span class="o">&lt;-</span> <span class="n">dat</span>
+</span></span><span class="line"><span class="cl"><span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">lib.size</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">#print(i)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">dat.new[</span><span class="p">,</span><span class="n">i]</span><span class="o">=</span><span class="n">dat[</span><span class="p">,</span><span class="n">i]</span><span class="o">/</span><span class="n">lib.size[i]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">dat</span> <span class="o">&lt;-</span> <span class="nf">as.matrix</span><span class="p">(</span><span class="n">dat.new</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Transform with log2()</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">dat</span> <span class="o">&lt;-</span> <span class="nf">log2</span><span class="p">(</span><span class="n">dat</span><span class="m">+1</span><span class="p">)</span>
-<span class="nf">dim</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="n">dat</span> <span class="o">&lt;-</span> <span class="nf">log2</span><span class="p">(</span><span class="n">dat</span><span class="m">+1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dim</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig1.png" alt="fig1"></p>
 <h3 id="step-2-identification-of-highly-variable-features-top5000-genes-for-pca-analysis-with-seurat-package">Step 2. Identification of highly variable features (top5000 genes) for PCA analysis with <code>Seurat</code> package</h3>
@@ -642,7 +637,7 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -650,13 +645,13 @@ if (!doNotTrack) {
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="c1">#install.packages(&#34;Seurat&#34;)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">Seurat</span><span class="p">)</span>
-<span class="n">scRNA</span> <span class="o">&lt;-</span> <span class="nf">CreateSeuratObject</span><span class="p">(</span><span class="n">counts</span><span class="o">=</span><span class="n">dat</span><span class="p">)</span>
-<span class="n">scRNA</span> <span class="o">&lt;-</span> <span class="nf">FindVariableFeatures</span><span class="p">(</span><span class="n">scRNA</span><span class="p">,</span> <span class="n">selection.method</span> <span class="o">=</span> <span class="s">&#34;vst&#34;</span><span class="p">,</span> <span class="n">nfeatures</span> <span class="o">=</span> <span class="m">5000</span><span class="p">)</span> 
-<span class="n">hvg.gene</span> <span class="o">&lt;-</span> <span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">scRNA</span><span class="p">)</span>
-<span class="nf">str</span><span class="p">(</span><span class="n">hvg.gene</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="c1">#install.packages(&#34;Seurat&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">Seurat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">scRNA</span> <span class="o">&lt;-</span> <span class="nf">CreateSeuratObject</span><span class="p">(</span><span class="n">counts</span><span class="o">=</span><span class="n">dat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">scRNA</span> <span class="o">&lt;-</span> <span class="nf">FindVariableFeatures</span><span class="p">(</span><span class="n">scRNA</span><span class="p">,</span> <span class="n">selection.method</span> <span class="o">=</span> <span class="s">&#34;vst&#34;</span><span class="p">,</span> <span class="n">nfeatures</span> <span class="o">=</span> <span class="m">5000</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="n">hvg.gene</span> <span class="o">&lt;-</span> <span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">scRNA</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">hvg.gene</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig2.png" alt="fig2"></p>
 <ul>
@@ -664,50 +659,50 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">pca</span> <span class="o">&lt;-</span> <span class="nf">prcomp</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">dat.hvg</span><span class="p">))</span>
-<span class="nf">dim</span><span class="p">(</span><span class="n">pca</span><span class="o">$</span><span class="n">x</span><span class="p">)</span>
-<span class="n">pca</span><span class="o">$</span><span class="n">x[1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="n">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="n">pca</span> <span class="o">&lt;-</span> <span class="nf">prcomp</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">dat.hvg</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dim</span><span class="p">(</span><span class="n">pca</span><span class="o">$</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pca</span><span class="o">$</span><span class="n">x[1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="n">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig3.png" alt="fig3"></p>
 <h3 id="step-3-k-means-cluster">Step 3. k-means cluster</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="c1"># k=10</span>
-<span class="n">clust.kmeans</span> <span class="o">&lt;-</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">pca</span><span class="o">$</span><span class="n">x[</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="n">]</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="m">10</span><span class="p">)</span>
-<span class="nf">table</span><span class="p">(</span><span class="n">clust.kmeans</span><span class="o">$</span><span class="n">cluster</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="c1"># k=10</span>
+</span></span><span class="line"><span class="cl"><span class="n">clust.kmeans</span> <span class="o">&lt;-</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">pca</span><span class="o">$</span><span class="n">x[</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="n">]</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="m">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">table</span><span class="p">(</span><span class="n">clust.kmeans</span><span class="o">$</span><span class="n">cluster</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig4.png" alt="fig4"></p>
 <h3 id="step-4-knn-visualized">Step 4. KNN visualized</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">dist</span> <span class="o">&lt;-</span> <span class="nf">as.matrix</span><span class="p">(</span><span class="nf">dist</span><span class="p">(</span><span class="n">pca</span><span class="o">$</span><span class="n">x[</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="n">]</span><span class="p">))</span>
-<span class="n">dist[1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="n">]</span>
-
-<span class="n">edges</span> <span class="o">&lt;-</span> <span class="nf">mat.or.vec</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="n">dist</span> <span class="o">&lt;-</span> <span class="nf">as.matrix</span><span class="p">(</span><span class="nf">dist</span><span class="p">(</span><span class="n">pca</span><span class="o">$</span><span class="n">x[</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="n">]</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">dist[1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">edges</span> <span class="o">&lt;-</span> <span class="nf">mat.or.vec</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig5.png" alt="fig5"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -718,38 +713,38 @@ if (!doNotTrack) {
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="c1"># iter. for every cell</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">dist</span><span class="p">)){</span>
-  <span class="c1"># find closes neighbours</span>
-  <span class="n">matches</span> <span class="o">&lt;-</span> <span class="nf">setdiff</span><span class="p">(</span><span class="nf">order</span><span class="p">(</span><span class="n">dist[i</span><span class="p">,</span><span class="n">]</span><span class="p">,</span><span class="n">decreasing</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span><span class="n">[1</span><span class="o">:</span><span class="m">21</span><span class="n">]</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> 
-  
-  <span class="c1"># add edges</span>
-  <span class="n">edges</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span><span class="nf">cbind</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">matches</span><span class="p">))</span>  
-<span class="p">}</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="m">50</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="c1"># iter. for every cell</span>
+</span></span><span class="line"><span class="cl"><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">dist</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># find closes neighbours</span>
+</span></span><span class="line"><span class="cl">  <span class="n">matches</span> <span class="o">&lt;-</span> <span class="nf">setdiff</span><span class="p">(</span><span class="nf">order</span><span class="p">(</span><span class="n">dist[i</span><span class="p">,</span><span class="n">]</span><span class="p">,</span><span class="n">decreasing</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span><span class="n">[1</span><span class="o">:</span><span class="m">21</span><span class="n">]</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1"># add edges</span>
+</span></span><span class="line"><span class="cl">  <span class="n">edges</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span><span class="nf">cbind</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">matches</span><span class="p">))</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="m">50</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Create igraph</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">library</span><span class="p">(</span><span class="n">igraph</span><span class="p">)</span>
-<span class="o">?</span><span class="n">igraph</span>
-<span class="n">graph</span> <span class="o">&lt;-</span> <span class="nf">graph_from_edgelist</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span><span class="n">directed</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span>
-<span class="n">graph</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">igraph</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">?</span><span class="n">igraph</span>
+</span></span><span class="line"><span class="cl"><span class="n">graph</span> <span class="o">&lt;-</span> <span class="nf">graph_from_edgelist</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span><span class="n">directed</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">graph</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig6.png" alt="fig6"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -763,19 +758,19 @@ if (!doNotTrack) {
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="c1"># lable colors for cells.</span>
-<span class="n">cols</span> <span class="o">&lt;-</span> <span class="nf">rainbow</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
-<span class="nf">names</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">unique</span><span class="p">(</span><span class="n">clust.kmeans</span><span class="o">$</span><span class="n">cluster</span><span class="p">)</span>
-<span class="n">col.clust</span> <span class="o">&lt;-</span> <span class="n">cols[clust.kmeans</span><span class="o">$</span><span class="n">cluster]</span>
-
-<span class="nf">png</span><span class="p">(</span><span class="s">&#34;test1.png&#34;</span><span class="p">)</span>
-<span class="nf">set.seed</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span><span class="n">vertex.size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">vertex.label</span><span class="o">=</span><span class="kc">NA</span><span class="p">,</span><span class="n">vertex.frame.color</span><span class="o">=</span><span class="kc">NA</span><span class="p">,</span><span class="n">vertex.color</span><span class="o">=</span><span class="n">col.clust</span><span class="p">,</span>
-            <span class="n">edge.width</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span><span class="n">main</span><span class="o">=</span><span class="s">&#34;50PCs; k=20&#34;</span><span class="p">)</span>
-<span class="nf">legend</span><span class="p">(</span><span class="s">&#34;topright&#34;</span><span class="p">,</span><span class="nf">names</span><span class="p">(</span><span class="n">cols</span><span class="p">),</span><span class="n">col</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span>
-       <span class="n">pch</span><span class="o">=</span><span class="m">16</span><span class="p">,</span><span class="n">cex</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span><span class="n">bty</span><span class="o">=</span><span class="s">&#39;n&#39;</span><span class="p">)</span>
-<span class="nf">dev.off</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="c1"># lable colors for cells.</span>
+</span></span><span class="line"><span class="cl"><span class="n">cols</span> <span class="o">&lt;-</span> <span class="nf">rainbow</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">names</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">unique</span><span class="p">(</span><span class="n">clust.kmeans</span><span class="o">$</span><span class="n">cluster</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">col.clust</span> <span class="o">&lt;-</span> <span class="n">cols[clust.kmeans</span><span class="o">$</span><span class="n">cluster]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">png</span><span class="p">(</span><span class="s">&#34;test1.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span><span class="n">vertex.size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">vertex.label</span><span class="o">=</span><span class="kc">NA</span><span class="p">,</span><span class="n">vertex.frame.color</span><span class="o">=</span><span class="kc">NA</span><span class="p">,</span><span class="n">vertex.color</span><span class="o">=</span><span class="n">col.clust</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">edge.width</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span><span class="n">main</span><span class="o">=</span><span class="s">&#34;50PCs; k=20&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">legend</span><span class="p">(</span><span class="s">&#34;topright&#34;</span><span class="p">,</span><span class="nf">names</span><span class="p">(</span><span class="n">cols</span><span class="p">),</span><span class="n">col</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">       <span class="n">pch</span><span class="o">=</span><span class="m">16</span><span class="p">,</span><span class="n">cex</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span><span class="n">bty</span><span class="o">=</span><span class="s">&#39;n&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dev.off</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="test1.png" alt="test1"></p>
 <ul>
@@ -783,7 +778,7 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -806,35 +801,35 @@ if (!doNotTrack) {
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">make.knn.graph</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">D</span><span class="p">,</span><span class="n">k</span><span class="p">){</span>
-  <span class="c1"># calculate euclidean distances between cells</span>
-  <span class="n">dist</span><span class="o">&lt;-</span><span class="nf">as.matrix</span><span class="p">(</span><span class="nf">dist</span><span class="p">(</span><span class="n">D</span><span class="p">))</span>
-  <span class="c1"># make a list of edges to k nearest neighbors for each cell</span>
-  <span class="n">edges</span> <span class="o">&lt;-</span> <span class="nf">mat.or.vec</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
-  <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">dist</span><span class="p">)){</span>
-    <span class="c1"># find closes neighbours</span>
-    <span class="n">matches</span> <span class="o">&lt;-</span> <span class="nf">setdiff</span><span class="p">(</span><span class="nf">order</span><span class="p">(</span><span class="n">dist[i</span><span class="p">,</span><span class="n">]</span><span class="p">,</span><span class="n">decreasing</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span><span class="n">[1</span><span class="o">:</span><span class="p">(</span><span class="n">k</span><span class="m">+1</span><span class="p">)</span><span class="n">]</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
-    <span class="c1"># add edges in both directions</span>
-    <span class="n">edges</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span><span class="nf">cbind</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">),</span><span class="n">matches</span><span class="p">))</span>  
-  <span class="p">}</span>
-  <span class="c1"># create a graph from the edgelist</span>
-  <span class="n">graph</span> <span class="o">&lt;-</span> <span class="nf">graph_from_edgelist</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span><span class="n">directed</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span>
-  <span class="c1"># set frame color to null</span>
-  <span class="nf">V</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span><span class="o">$</span><span class="n">frame.color</span> <span class="o">&lt;-</span> <span class="kc">NA</span>
-  <span class="c1"># make a layout for visualizing in 2D</span>
-  <span class="nf">set.seed</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
-  <span class="c1"># set layout to layout_with_fr</span>
-  <span class="n">g.layout</span><span class="o">&lt;-</span><span class="nf">layout_with_fr</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
-  <span class="nf">return</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">graph</span><span class="o">=</span><span class="n">graph</span><span class="p">,</span><span class="n">layout</span><span class="o">=</span><span class="n">g.layout</span><span class="p">))</span>        
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="n">make.knn.graph</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">D</span><span class="p">,</span><span class="n">k</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># calculate euclidean distances between cells</span>
+</span></span><span class="line"><span class="cl">  <span class="n">dist</span><span class="o">&lt;-</span><span class="nf">as.matrix</span><span class="p">(</span><span class="nf">dist</span><span class="p">(</span><span class="n">D</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># make a list of edges to k nearest neighbors for each cell</span>
+</span></span><span class="line"><span class="cl">  <span class="n">edges</span> <span class="o">&lt;-</span> <span class="nf">mat.or.vec</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">dist</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># find closes neighbours</span>
+</span></span><span class="line"><span class="cl">    <span class="n">matches</span> <span class="o">&lt;-</span> <span class="nf">setdiff</span><span class="p">(</span><span class="nf">order</span><span class="p">(</span><span class="n">dist[i</span><span class="p">,</span><span class="n">]</span><span class="p">,</span><span class="n">decreasing</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span><span class="n">[1</span><span class="o">:</span><span class="p">(</span><span class="n">k</span><span class="m">+1</span><span class="p">)</span><span class="n">]</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># add edges in both directions</span>
+</span></span><span class="line"><span class="cl">    <span class="n">edges</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span><span class="nf">cbind</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">),</span><span class="n">matches</span><span class="p">))</span>  
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># create a graph from the edgelist</span>
+</span></span><span class="line"><span class="cl">  <span class="n">graph</span> <span class="o">&lt;-</span> <span class="nf">graph_from_edgelist</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span><span class="n">directed</span><span class="o">=</span><span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># set frame color to null</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">V</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span><span class="o">$</span><span class="n">frame.color</span> <span class="o">&lt;-</span> <span class="kc">NA</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># make a layout for visualizing in 2D</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">set.seed</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># set layout to layout_with_fr</span>
+</span></span><span class="line"><span class="cl">  <span class="n">g.layout</span><span class="o">&lt;-</span><span class="nf">layout_with_fr</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">return</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">graph</span><span class="o">=</span><span class="n">graph</span><span class="p">,</span><span class="n">layout</span><span class="o">=</span><span class="n">g.layout</span><span class="p">))</span>        
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Plot with different k values</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -848,19 +843,19 @@ if (!doNotTrack) {
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">ks</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">30</span><span class="p">,</span><span class="m">50</span><span class="p">)</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">k</span> <span class="n">in</span> <span class="n">ks</span><span class="p">){</span>
-  <span class="n">g.pca20</span> <span class="o">&lt;-</span> <span class="nf">make.knn.graph</span><span class="p">(</span><span class="n">pca</span><span class="o">$</span><span class="n">x[</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="n">]</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
-  <span class="c1"># plot all 4:</span>
-  <span class="nf">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-  <span class="nf">png</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&#34;k&#34;</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="s">&#34;.png&#34;</span><span class="p">))</span>
-  <span class="nf">plot.igraph</span><span class="p">(</span><span class="n">g.pca20</span><span class="o">$</span><span class="n">graph</span><span class="p">,</span><span class="n">layout</span><span class="o">=</span><span class="n">g.pca20</span><span class="o">$</span><span class="n">layout</span><span class="p">,</span><span class="n">vertex.color</span><span class="o">=</span><span class="n">col.clust</span><span class="p">,</span>
-            <span class="n">vertex.size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">vertex.label</span><span class="o">=</span><span class="kc">NA</span><span class="p">,</span><span class="n">main</span><span class="o">=</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&#34;K&#34;</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="s">&#34;--&#34;</span><span class="p">,</span><span class="s">&#34;50 PCs&#34;</span><span class="p">))</span>
-  <span class="nf">legend</span><span class="p">(</span><span class="s">&#34;topright&#34;</span><span class="p">,</span><span class="nf">names</span><span class="p">(</span><span class="n">cols</span><span class="p">),</span><span class="n">col</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span>
-       <span class="n">pch</span><span class="o">=</span><span class="m">16</span><span class="p">,</span><span class="n">cex</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span><span class="n">bty</span><span class="o">=</span><span class="s">&#39;n&#39;</span><span class="p">)</span>
-  <span class="nf">dev.off</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="n">ks</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">30</span><span class="p">,</span><span class="m">50</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">for </span><span class="p">(</span><span class="n">k</span> <span class="n">in</span> <span class="n">ks</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">  <span class="n">g.pca20</span> <span class="o">&lt;-</span> <span class="nf">make.knn.graph</span><span class="p">(</span><span class="n">pca</span><span class="o">$</span><span class="n">x[</span><span class="p">,</span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="n">]</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># plot all 4:</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">png</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&#34;k&#34;</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="s">&#34;.png&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">plot.igraph</span><span class="p">(</span><span class="n">g.pca20</span><span class="o">$</span><span class="n">graph</span><span class="p">,</span><span class="n">layout</span><span class="o">=</span><span class="n">g.pca20</span><span class="o">$</span><span class="n">layout</span><span class="p">,</span><span class="n">vertex.color</span><span class="o">=</span><span class="n">col.clust</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">vertex.size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">vertex.label</span><span class="o">=</span><span class="kc">NA</span><span class="p">,</span><span class="n">main</span><span class="o">=</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&#34;K&#34;</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="s">&#34;--&#34;</span><span class="p">,</span><span class="s">&#34;50 PCs&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">legend</span><span class="p">(</span><span class="s">&#34;topright&#34;</span><span class="p">,</span><span class="nf">names</span><span class="p">(</span><span class="n">cols</span><span class="p">),</span><span class="n">col</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">       <span class="n">pch</span><span class="o">=</span><span class="m">16</span><span class="p">,</span><span class="n">cex</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span><span class="n">bty</span><span class="o">=</span><span class="s">&#39;n&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">dev.off</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig7.png" alt="fig7"></p>
 <h3 id="in-summary">In summary</h3>
@@ -994,7 +989,7 @@ if (!doNotTrack) {
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1038,7 +1033,7 @@ if (!doNotTrack) {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 

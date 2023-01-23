@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/rinaction13/" />
@@ -54,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,19 +67,14 @@
 <meta property="og:title" content="Chapter 13. Generalized linear models" />
 <meta property="og:description" content="Notebook of Reading Books: R in Action_Chapter 13." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/rinaction13/" />
+<meta property="og:url" content="/post/rinaction13/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-11-09T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-11-09T00:00:00+00:00" />
 <meta itemprop="name" content="Chapter 13. Generalized linear models">
-<meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 13.">
-<meta itemprop="datePublished" content="2020-11-09T00:00:00+00:00" />
+<meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 13."><meta itemprop="datePublished" content="2020-11-09T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-11-09T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1833">
-
-
-
-<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Chapter 13. Generalized linear models"/>
 <meta name="twitter:description" content="Notebook of Reading Books: R in Action_Chapter 13."/>
 
@@ -593,7 +588,7 @@ if (!doNotTrack) {
 <p>Show me the code <i class="far fa-hand-pointer"></i></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -895,307 +890,307 @@ if (!doNotTrack) {
 </span><span class="lnt">300
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Remove most objects from the working environment</span>
-<span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
-
-
-<span class="c1"># 13.2. Logistic regression</span>
-<span class="c1"># install.packages(&#34;AER&#34;)</span>
-<span class="nf">data</span><span class="p">(</span><span class="n">Affairs</span><span class="p">,</span> <span class="n">package</span> <span class="o">=</span> <span class="s">&#34;AER&#34;</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">Affairs</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">Affairs</span><span class="p">)</span>
-<span class="c1">#    affairs          gender         age         yearsmarried    children  religiousness  </span>
-<span class="c1"># Min.   : 0.000   female:315   Min.   :17.50   Min.   : 0.125   no :171   Min.   :1.000  </span>
-<span class="c1"># 1st Qu.: 0.000   male  :286   1st Qu.:27.00   1st Qu.: 4.000   yes:430   1st Qu.:2.000  </span>
-<span class="c1"># Median : 0.000                Median :32.00   Median : 7.000             Median :3.000  </span>
-<span class="c1"># Mean   : 1.456                Mean   :32.49   Mean   : 8.178             Mean   :3.116  </span>
-<span class="c1"># 3rd Qu.: 0.000                3rd Qu.:37.00   3rd Qu.:15.000             3rd Qu.:4.000  </span>
-<span class="c1"># Max.   :12.000                Max.   :57.00   Max.   :15.000             Max.   :5.000  </span>
-<span class="c1">#   education       occupation        rating     </span>
-<span class="c1"># Min.   : 9.00   Min.   :1.000   Min.   :1.000  </span>
-<span class="c1"># 1st Qu.:14.00   1st Qu.:3.000   1st Qu.:3.000  </span>
-<span class="c1"># Median :16.00   Median :5.000   Median :4.000  </span>
-<span class="c1"># Mean   :16.17   Mean   :4.195   Mean   :3.932  </span>
-<span class="c1"># 3rd Qu.:18.00   3rd Qu.:6.000   3rd Qu.:5.000  </span>
-<span class="c1"># Max.   :20.00   Max.   :7.000   Max.   :5.000</span>
-
-<span class="nf">table</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">affairs</span><span class="p">)</span>
-<span class="c1">#   0   1   2   3   7  12 </span>
-<span class="c1"># 451  34  17  19  42  38</span>
-
-<span class="n">Affairs</span><span class="o">$</span><span class="n">ynaffair[Affairs</span><span class="o">$</span><span class="n">affairs</span> <span class="o">&gt;</span> <span class="m">0</span><span class="n">]</span> <span class="o">&lt;-</span> <span class="m">1</span>
-<span class="n">Affairs</span><span class="o">$</span><span class="n">ynaffair[Affairs</span><span class="o">$</span><span class="n">affairs</span> <span class="o">==</span> <span class="m">0</span><span class="n">]</span> <span class="o">&lt;-</span> <span class="m">0</span>
-<span class="n">Affairs</span><span class="o">$</span><span class="n">ynaffair</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">ynaffair</span><span class="p">,</span>
-                           <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span>
-                           <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;No&#34;</span><span class="p">,</span> <span class="s">&#34;Yes&#34;</span><span class="p">))</span>
-<span class="nf">table</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">ynaffair</span><span class="p">)</span>
-<span class="c1">#  No Yes </span>
-<span class="c1"># 451 150 </span>
-
-<span class="nf">colnames</span><span class="p">(</span><span class="n">Affairs</span><span class="p">)</span>
-<span class="c1"># [1] &#34;affairs&#34;       &#34;gender&#34;        &#34;age&#34;           &#34;yearsmarried&#34;  &#34;children&#34;     </span>
-<span class="c1"># [6] &#34;religiousness&#34; &#34;education&#34;     &#34;occupation&#34;    &#34;rating&#34;        &#34;ynaffair&#34;</span>
-
-<span class="n">fit.full</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">ynaffair</span> <span class="o">~</span> <span class="n">gender</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="n">yearsmarried</span> <span class="o">+</span> <span class="n">children</span> <span class="o">+</span>
-                <span class="n">religiousness</span> <span class="o">+</span> <span class="n">education</span> <span class="o">+</span> <span class="n">occupation</span> <span class="o">+</span> <span class="n">rating</span><span class="p">,</span>
-                <span class="n">data</span> <span class="o">=</span> <span class="n">Affairs</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="nf">binomial</span><span class="p">())</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit.full</span><span class="p">)</span>
-
-<span class="c1"># Call:</span>
-<span class="c1"># glm(formula = ynaffair ~ gender + age + yearsmarried + children + </span>
-<span class="c1">#       religiousness + education + occupation + rating, family = binomial(), </span>
-<span class="c1">#       data = Affairs)</span>
-<span class="c1"># </span>
-<span class="c1"># Deviance Residuals: </span>
-<span class="c1">#     Min       1Q   Median       3Q      Max  </span>
-<span class="c1"># -1.5713  -0.7499  -0.5690  -0.2539   2.5191  </span>
-<span class="c1"># </span>
-<span class="c1"># Coefficients:</span>
-<span class="c1">#               Estimate Std. Error z value Pr(&gt;|z|)    </span>
-<span class="c1"># (Intercept)    1.37726    0.88776   1.551 0.120807    </span>
-<span class="c1"># gendermale     0.28029    0.23909   1.172 0.241083    </span>
-<span class="c1"># age           -0.04426    0.01825  -2.425 0.015301 *  </span>
-<span class="c1"># yearsmarried   0.09477    0.03221   2.942 0.003262 ** </span>
-<span class="c1"># childrenyes    0.39767    0.29151   1.364 0.172508    </span>
-<span class="c1"># religiousness -0.32472    0.08975  -3.618 0.000297 ***</span>
-<span class="c1"># education      0.02105    0.05051   0.417 0.676851    </span>
-<span class="c1"># occupation     0.03092    0.07178   0.431 0.666630    </span>
-<span class="c1"># rating        -0.46845    0.09091  -5.153 2.56e-07 ***</span>
-<span class="c1"># ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-<span class="c1"># </span>
-<span class="c1"># (Dispersion parameter for binomial family taken to be 1)</span>
-<span class="c1"># </span>
-<span class="c1">#     Null deviance: 675.38  on 600  degrees of freedom</span>
-<span class="c1"># Residual deviance: 609.51  on 592  degrees of freedom</span>
-<span class="c1"># AIC: 627.51</span>
-<span class="c1"># </span>
-<span class="c1"># Number of Fisher Scoring iterations: 4</span>
-
-
-<span class="n">fit.reduced</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">ynaffair</span> <span class="o">~</span> <span class="n">age</span> <span class="o">+</span> <span class="n">yearsmarried</span> <span class="o">+</span> <span class="n">religiousness</span> <span class="o">+</span>
-                     <span class="n">rating</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Affairs</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="nf">binomial</span><span class="p">())</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">)</span>
-
-<span class="c1"># Call:</span>
-<span class="c1"># glm(formula = ynaffair ~ age + yearsmarried + religiousness + </span>
-<span class="c1">#     rating, family = binomial(), data = Affairs)</span>
-<span class="c1"># </span>
-<span class="c1"># Deviance Residuals: </span>
-<span class="c1">#   Min       1Q   Median       3Q      Max  </span>
-<span class="c1"># -1.6278  -0.7550  -0.5701  -0.2624   2.3998  </span>
-<span class="c1"># </span>
-<span class="c1"># Coefficients:</span>
-<span class="c1">#               Estimate Std. Error z value Pr(&gt;|z|)    </span>
-<span class="c1"># (Intercept)    1.93083    0.61032   3.164 0.001558 ** </span>
-<span class="c1"># age           -0.03527    0.01736  -2.032 0.042127 *  </span>
-<span class="c1"># yearsmarried   0.10062    0.02921   3.445 0.000571 ***</span>
-<span class="c1"># religiousness -0.32902    0.08945  -3.678 0.000235 ***</span>
-<span class="c1"># rating        -0.46136    0.08884  -5.193 2.06e-07 ***</span>
-<span class="c1"># ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-<span class="c1"># </span>
-<span class="c1"># (Dispersion parameter for binomial family taken to be 1)</span>
-<span class="c1"># </span>
-<span class="c1">#     Null deviance: 675.38  on 600  degrees of freedom</span>
-<span class="c1"># Residual deviance: 615.36  on 596  degrees of freedom</span>
-<span class="c1"># AIC: 625.36</span>
-<span class="c1"># </span>
-<span class="c1"># Number of Fisher Scoring iterations: 4</span>
-
-<span class="nf">anova</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">,</span> <span class="n">fit.full</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="s">&#34;Chisq&#34;</span><span class="p">)</span>
-<span class="c1"># Analysis of Deviance Table</span>
-<span class="c1"># </span>
-<span class="c1"># Model 1: ynaffair ~ age + yearsmarried + religiousness + rating</span>
-<span class="c1"># Model 2: ynaffair ~ gender + age + yearsmarried + children + religiousness + </span>
-<span class="c1">#   education + occupation + rating</span>
-<span class="c1">#   Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)</span>
-<span class="c1"># 1       596     615.36                     </span>
-<span class="c1"># 2       592     609.51  4   5.8474   0.2108</span>
-
-<span class="c1">#=============================================================================</span>
-<span class="c1"># 13.2.1. Interpreting the model parameters</span>
-<span class="nf">coef</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">)</span>
-<span class="c1">#  (Intercept)           age  yearsmarried religiousness        rating </span>
-<span class="c1">#   1.93083017   -0.03527112    0.10062274   -0.32902386   -0.46136144</span>
-
-<span class="nf">coef</span><span class="p">(</span><span class="n">fit.full</span><span class="p">)</span>
-<span class="c1"># (Intercept)    gendermale           age  yearsmarried   childrenyes religiousness </span>
-<span class="c1"># 1.37725816    0.28028665   -0.04425502    0.09477302    0.39767213   -0.32472063 </span>
-<span class="c1"># education    occupation        rating </span>
-<span class="c1"># 0.02105086    0.03091971   -0.46845426</span>
-
-<span class="nf">exp</span><span class="p">(</span><span class="nf">coef</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">))</span>
-<span class="c1"># (Intercept)           age  yearsmarried religiousness        rating </span>
-<span class="c1">#   6.8952321     0.9653437     1.1058594     0.7196258     0.6304248</span>
-
-<span class="nf">exp</span><span class="p">(</span><span class="nf">confint</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">))</span>
-
-
-<span class="c1"># 13.2.2. Assessing the impact of predictors on the probability of an outcome</span>
-
-<span class="n">testdata</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">rating</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">),</span> <span class="n">age</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">age</span><span class="p">),</span>
-                       <span class="n">yearsmarried</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">yearsmarried</span><span class="p">),</span>
-                       <span class="n">religiousness</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">religiousness</span><span class="p">))</span>
-<span class="n">testdata</span>
-<span class="c1">#   rating      age yearsmarried religiousness</span>
-<span class="c1"># 1      1 32.48752     8.177696      3.116473</span>
-<span class="c1"># 2      2 32.48752     8.177696      3.116473</span>
-<span class="c1"># 3      3 32.48752     8.177696      3.116473</span>
-<span class="c1"># 4      4 32.48752     8.177696      3.116473</span>
-<span class="c1"># 5      5 32.48752     8.177696      3.116473</span>
-
-<span class="n">testdata</span><span class="o">$</span><span class="n">prob</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">,</span> <span class="n">newdata</span> <span class="o">=</span> <span class="n">testdata</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;response&#34;</span><span class="p">)</span>
-<span class="n">testdata</span>
-
-<span class="c1">#   rating      age yearsmarried religiousness      prob</span>
-<span class="c1"># 1      1 32.48752     8.177696      3.116473 0.5302296</span>
-<span class="c1"># 2      2 32.48752     8.177696      3.116473 0.4157377</span>
-<span class="c1"># 3      3 32.48752     8.177696      3.116473 0.3096712</span>
-<span class="c1"># 4      4 32.48752     8.177696      3.116473 0.2204547</span>
-<span class="c1"># 5      5 32.48752     8.177696      3.116473 0.1513079</span>
-
-
-<span class="n">testdata</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">rating</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">rating</span><span class="p">),</span>
-                       <span class="n">age</span><span class="o">=</span><span class="nf">seq</span><span class="p">(</span><span class="m">17</span><span class="p">,</span> <span class="m">57</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span>
-                       <span class="n">yearsmarried</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">yearsmarried</span><span class="p">),</span>
-                       <span class="n">religiousness</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">religiousness</span><span class="p">))</span>
-<span class="n">testdata</span>
-<span class="c1">#    rating age yearsmarried religiousness</span>
-<span class="c1"># 1 3.93178  17     8.177696      3.116473</span>
-<span class="c1"># 2 3.93178  27     8.177696      3.116473</span>
-<span class="c1"># 3 3.93178  37     8.177696      3.116473</span>
-<span class="c1"># 4 3.93178  47     8.177696      3.116473</span>
-<span class="c1"># 5 3.93178  57     8.177696      3.116473</span>
-
-
-<span class="n">testdata</span><span class="o">$</span><span class="n">prob</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">testdata</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&#34;response&#34;</span><span class="p">)</span>
-<span class="n">testdata</span>
-<span class="c1">#    rating age yearsmarried religiousness      prob</span>
-<span class="c1"># 1 3.93178  17     8.177696      3.116473 0.3350834</span>
-<span class="c1"># 2 3.93178  27     8.177696      3.116473 0.2615373</span>
-<span class="c1"># 3 3.93178  37     8.177696      3.116473 0.1992953</span>
-<span class="c1"># 4 3.93178  47     8.177696      3.116473 0.1488796</span>
-<span class="c1"># 5 3.93178  57     8.177696      3.116473 0.1094738</span>
-
-
-<span class="c1"># 13.2.3. Overdispersion</span>
-
-<span class="nf">deviance</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">)</span><span class="o">/</span><span class="nf">df.residual</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">)</span>
-
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">ynaffair</span> <span class="o">~</span> <span class="n">age</span> <span class="o">+</span> <span class="n">yearsmarried</span> <span class="o">+</span> <span class="n">religiousness</span> <span class="o">+</span>
-             <span class="n">rating</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="nf">binomial</span><span class="p">(),</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Affairs</span><span class="p">)</span>
-<span class="n">fit.od</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">ynaffair</span> <span class="o">~</span> <span class="n">age</span> <span class="o">+</span> <span class="n">yearsmarried</span> <span class="o">+</span> <span class="n">religiousness</span> <span class="o">+</span>
-                <span class="n">rating</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="nf">quasibinomial</span><span class="p">(),</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Affairs</span><span class="p">)</span>
-<span class="nf">pchisq</span><span class="p">(</span><span class="nf">summary</span><span class="p">(</span><span class="n">fit.od</span><span class="p">)</span><span class="o">$</span><span class="n">dispersion</span> <span class="o">*</span> <span class="n">fit</span><span class="o">$</span><span class="n">df.residual</span><span class="p">,</span>
-       <span class="n">fit</span><span class="o">$</span><span class="n">df.residual</span><span class="p">,</span> <span class="n">lower</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
-<span class="c1"># [1] 0.340122</span>
-
-
-<span class="c1"># 13.3. Poisson regression</span>
-<span class="c1"># install.packages(&#34;robust&#34;)</span>
-<span class="nf">data</span><span class="p">(</span><span class="n">breslow.dat</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s">&#34;robust&#34;</span><span class="p">)</span>
-<span class="nf">colnames</span><span class="p">(</span><span class="n">breslow.dat</span><span class="p">)</span>
-<span class="c1"># [1] &#34;ID&#34;    &#34;Y1&#34;    &#34;Y2&#34;    &#34;Y3&#34;    &#34;Y4&#34;    &#34;Base&#34;  &#34;Age&#34;   &#34;Trt&#34;   &#34;Ysum&#34;  &#34;sumY&#34;  &#34;Age10&#34;</span>
-<span class="c1"># [12] &#34;Base4&#34;</span>
-
-<span class="nf">summary</span><span class="p">(</span><span class="n">breslow.dat</span><span class="nf">[c</span><span class="p">(</span><span class="m">6</span><span class="o">:</span><span class="m">10</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
-<span class="c1">#      Base             Age               Trt          Ysum             sumY       </span>
-<span class="c1"># Min.   :  6.00   Min.   :18.00   placebo  :28   Min.   :  0.00   Min.   :  0.00  </span>
-<span class="c1"># 1st Qu.: 12.00   1st Qu.:23.00   progabide:31   1st Qu.: 11.50   1st Qu.: 11.50  </span>
-<span class="c1"># Median : 22.00   Median :28.00                  Median : 16.00   Median : 16.00  </span>
-<span class="c1"># Mean   : 31.22   Mean   :28.34                  Mean   : 33.05   Mean   : 33.05  </span>
-<span class="c1"># 3rd Qu.: 41.00   3rd Qu.:32.00                  3rd Qu.: 36.00   3rd Qu.: 36.00  </span>
-<span class="c1"># Max.   :151.00   Max.   :42.00                  Max.   :302.00   Max.   :302.00 </span>
-
-
-<span class="n">opar</span> <span class="o">&lt;-</span> <span class="nf">par</span><span class="p">(</span><span class="n">no.readonly</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
-<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">))</span>
-<span class="nf">attach</span><span class="p">(</span><span class="n">breslow.dat</span><span class="p">)</span>
-<span class="nf">hist</span><span class="p">(</span><span class="n">sumY</span><span class="p">,</span> <span class="n">breaks</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span>
-     <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Seizure Count&#34;</span><span class="p">,</span>
-     <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Distribution of Seizures&#34;</span><span class="p">)</span>
-<span class="nf">boxplot</span><span class="p">(</span><span class="n">sumY</span> <span class="o">~</span> <span class="n">Trt</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Treatment&#34;</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Group Comparison&#34;</span><span class="p">)</span>
-<span class="nf">par</span><span class="p">(</span><span class="n">opar</span><span class="p">)</span>
-
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">sumY</span> <span class="o">~</span> <span class="n">Base</span> <span class="o">+</span> <span class="n">Age</span> <span class="o">+</span> <span class="n">Trt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">breslow.dat</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">poisson</span><span class="p">())</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># Call:</span>
-<span class="c1"># glm(formula = sumY ~ Base + Age + Trt, family = poisson(), data = breslow.dat)</span>
-<span class="c1"># </span>
-<span class="c1"># Deviance Residuals: </span>
-<span class="c1">#     Min       1Q   Median       3Q      Max  </span>
-<span class="c1"># -6.0569  -2.0433  -0.9397   0.7929  11.0061  </span>
-<span class="c1"># </span>
-<span class="c1"># Coefficients:</span>
-<span class="c1">#                Estimate Std. Error z value Pr(&gt;|z|)    </span>
-<span class="c1"># (Intercept)   1.9488259  0.1356191  14.370  &lt; 2e-16 ***</span>
-<span class="c1"># Base          0.0226517  0.0005093  44.476  &lt; 2e-16 ***</span>
-<span class="c1"># Age           0.0227401  0.0040240   5.651 1.59e-08 ***</span>
-<span class="c1"># Trtprogabide -0.1527009  0.0478051  -3.194   0.0014 ** </span>
-<span class="c1"># ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-<span class="c1"># </span>
-<span class="c1"># (Dispersion parameter for poisson family taken to be 1)</span>
-<span class="c1"># </span>
-<span class="c1">#     Null deviance: 2122.73  on 58  degrees of freedom</span>
-<span class="c1"># Residual deviance:  559.44  on 55  degrees of freedom</span>
-<span class="c1"># AIC: 850.71</span>
-<span class="c1"># </span>
-<span class="c1"># Number of Fisher Scoring iterations: 5</span>
-
-<span class="c1">#=======================================================</span>
-<span class="c1">#13.3.1. Interpreting the model parameters</span>
-<span class="nf">coef</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># (Intercept)         Base          Age Trtprogabide </span>
-<span class="c1">#  1.94882593   0.02265174   0.02274013  -0.15270095 </span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-
-<span class="nf">exp</span><span class="p">(</span><span class="nf">coef</span><span class="p">(</span><span class="n">fit</span><span class="p">))</span>
-<span class="c1"># (Intercept)         Base          Age Trtprogabide </span>
-<span class="c1">#  7.0204403    1.0229102    1.0230007    0.8583864 </span>
-
-<span class="c1">#===================================================</span>
-<span class="c1"># 13.3.2. Overdispersion</span>
-<span class="nf">deviance</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span><span class="o">/</span><span class="nf">df.residual</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># [1] 10.1717</span>
-
-<span class="c1"># install.packages(&#34;qcc&#34;)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">qcc</span><span class="p">)</span>
-<span class="nf">qcc.overdispersion.test</span><span class="p">(</span><span class="n">breslow.dat</span><span class="o">$</span><span class="n">sumY</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;poisson&#34;</span><span class="p">)</span>
-<span class="c1"># Overdispersion test Obs.Var/Theor.Var Statistic p-value</span>
-<span class="c1">#        poisson data          62.87013  3646.468       0</span>
-
-
-<span class="n">fit.od</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">sumY</span> <span class="o">~</span> <span class="n">Base</span> <span class="o">+</span> <span class="n">Age</span> <span class="o">+</span> <span class="n">Trt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">breslow.dat</span><span class="p">,</span>
-              <span class="n">family</span><span class="o">=</span><span class="nf">quasipoisson</span><span class="p">())</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit.od</span><span class="p">)</span>
-<span class="c1"># Call:</span>
-<span class="c1"># glm(formula = sumY ~ Base + Age + Trt, family = quasipoisson(), </span>
-<span class="c1">#     data = breslow.dat)</span>
-<span class="c1"># </span>
-<span class="c1"># Deviance Residuals: </span>
-<span class="c1">#     Min       1Q   Median       3Q      Max  </span>
-<span class="c1"># -6.0569  -2.0433  -0.9397   0.7929  11.0061  </span>
-<span class="c1"># </span>
-<span class="c1"># Coefficients:</span>
-<span class="c1">#               Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="c1"># (Intercept)   1.948826   0.465091   4.190 0.000102 ***</span>
-<span class="c1"># Base          0.022652   0.001747  12.969  &lt; 2e-16 ***</span>
-<span class="c1"># Age           0.022740   0.013800   1.648 0.105085    </span>
-<span class="c1"># Trtprogabide -0.152701   0.163943  -0.931 0.355702    </span>
-<span class="c1"># ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-<span class="c1"># </span>
-<span class="c1"># (Dispersion parameter for quasipoisson family taken to be 11.76075)</span>
-<span class="c1"># </span>
-<span class="c1">#     Null deviance: 2122.73  on 58  degrees of freedom</span>
-<span class="c1"># Residual deviance:  559.44  on 55  degrees of freedom</span>
-<span class="c1"># AIC: NA</span>
-<span class="c1"># </span>
-<span class="c1"># Number of Fisher Scoring iterations: 5</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Remove most objects from the working environment</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 13.2. Logistic regression</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># install.packages(&#34;AER&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="n">Affairs</span><span class="p">,</span> <span class="n">package</span> <span class="o">=</span> <span class="s">&#34;AER&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">Affairs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">Affairs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#    affairs          gender         age         yearsmarried    children  religiousness  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Min.   : 0.000   female:315   Min.   :17.50   Min.   : 0.125   no :171   Min.   :1.000  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1st Qu.: 0.000   male  :286   1st Qu.:27.00   1st Qu.: 4.000   yes:430   1st Qu.:2.000  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Median : 0.000                Median :32.00   Median : 7.000             Median :3.000  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Mean   : 1.456                Mean   :32.49   Mean   : 8.178             Mean   :3.116  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3rd Qu.: 0.000                3rd Qu.:37.00   3rd Qu.:15.000             3rd Qu.:4.000  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Max.   :12.000                Max.   :57.00   Max.   :15.000             Max.   :5.000  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   education       occupation        rating     </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Min.   : 9.00   Min.   :1.000   Min.   :1.000  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1st Qu.:14.00   1st Qu.:3.000   1st Qu.:3.000  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Median :16.00   Median :5.000   Median :4.000  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Mean   :16.17   Mean   :4.195   Mean   :3.932  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3rd Qu.:18.00   3rd Qu.:6.000   3rd Qu.:5.000  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Max.   :20.00   Max.   :7.000   Max.   :5.000</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">table</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">affairs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   0   1   2   3   7  12 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 451  34  17  19  42  38</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Affairs</span><span class="o">$</span><span class="n">ynaffair[Affairs</span><span class="o">$</span><span class="n">affairs</span> <span class="o">&gt;</span> <span class="m">0</span><span class="n">]</span> <span class="o">&lt;-</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Affairs</span><span class="o">$</span><span class="n">ynaffair[Affairs</span><span class="o">$</span><span class="n">affairs</span> <span class="o">==</span> <span class="m">0</span><span class="n">]</span> <span class="o">&lt;-</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">Affairs</span><span class="o">$</span><span class="n">ynaffair</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">ynaffair</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                           <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                           <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;No&#34;</span><span class="p">,</span> <span class="s">&#34;Yes&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">table</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">ynaffair</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  No Yes </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 451 150 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">colnames</span><span class="p">(</span><span class="n">Affairs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;affairs&#34;       &#34;gender&#34;        &#34;age&#34;           &#34;yearsmarried&#34;  &#34;children&#34;     </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [6] &#34;religiousness&#34; &#34;education&#34;     &#34;occupation&#34;    &#34;rating&#34;        &#34;ynaffair&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit.full</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">ynaffair</span> <span class="o">~</span> <span class="n">gender</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="n">yearsmarried</span> <span class="o">+</span> <span class="n">children</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                <span class="n">religiousness</span> <span class="o">+</span> <span class="n">education</span> <span class="o">+</span> <span class="n">occupation</span> <span class="o">+</span> <span class="n">rating</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">data</span> <span class="o">=</span> <span class="n">Affairs</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="nf">binomial</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit.full</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># glm(formula = ynaffair ~ gender + age + yearsmarried + children + </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#       religiousness + education + occupation + rating, family = binomial(), </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#       data = Affairs)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Deviance Residuals: </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     Min       1Q   Median       3Q      Max  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -1.5713  -0.7499  -0.5690  -0.2539   2.5191  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Coefficients:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#               Estimate Std. Error z value Pr(&gt;|z|)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Intercept)    1.37726    0.88776   1.551 0.120807    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># gendermale     0.28029    0.23909   1.172 0.241083    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># age           -0.04426    0.01825  -2.425 0.015301 *  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># yearsmarried   0.09477    0.03221   2.942 0.003262 ** </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># childrenyes    0.39767    0.29151   1.364 0.172508    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># religiousness -0.32472    0.08975  -3.618 0.000297 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># education      0.02105    0.05051   0.417 0.676851    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># occupation     0.03092    0.07178   0.431 0.666630    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># rating        -0.46845    0.09091  -5.153 2.56e-07 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Dispersion parameter for binomial family taken to be 1)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     Null deviance: 675.38  on 600  degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residual deviance: 609.51  on 592  degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># AIC: 627.51</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Number of Fisher Scoring iterations: 4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit.reduced</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">ynaffair</span> <span class="o">~</span> <span class="n">age</span> <span class="o">+</span> <span class="n">yearsmarried</span> <span class="o">+</span> <span class="n">religiousness</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                     <span class="n">rating</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Affairs</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="nf">binomial</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># glm(formula = ynaffair ~ age + yearsmarried + religiousness + </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     rating, family = binomial(), data = Affairs)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Deviance Residuals: </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Min       1Q   Median       3Q      Max  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -1.6278  -0.7550  -0.5701  -0.2624   2.3998  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Coefficients:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#               Estimate Std. Error z value Pr(&gt;|z|)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Intercept)    1.93083    0.61032   3.164 0.001558 ** </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># age           -0.03527    0.01736  -2.032 0.042127 *  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># yearsmarried   0.10062    0.02921   3.445 0.000571 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># religiousness -0.32902    0.08945  -3.678 0.000235 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># rating        -0.46136    0.08884  -5.193 2.06e-07 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Dispersion parameter for binomial family taken to be 1)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     Null deviance: 675.38  on 600  degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residual deviance: 615.36  on 596  degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># AIC: 625.36</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Number of Fisher Scoring iterations: 4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">anova</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">,</span> <span class="n">fit.full</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="s">&#34;Chisq&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Analysis of Deviance Table</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Model 1: ynaffair ~ age + yearsmarried + religiousness + rating</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Model 2: ynaffair ~ gender + age + yearsmarried + children + religiousness + </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   education + occupation + rating</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1       596     615.36                     </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2       592     609.51  4   5.8474   0.2108</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#=============================================================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 13.2.1. Interpreting the model parameters</span>
+</span></span><span class="line"><span class="cl"><span class="nf">coef</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  (Intercept)           age  yearsmarried religiousness        rating </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   1.93083017   -0.03527112    0.10062274   -0.32902386   -0.46136144</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">coef</span><span class="p">(</span><span class="n">fit.full</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Intercept)    gendermale           age  yearsmarried   childrenyes religiousness </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1.37725816    0.28028665   -0.04425502    0.09477302    0.39767213   -0.32472063 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># education    occupation        rating </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 0.02105086    0.03091971   -0.46845426</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">exp</span><span class="p">(</span><span class="nf">coef</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Intercept)           age  yearsmarried religiousness        rating </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   6.8952321     0.9653437     1.1058594     0.7196258     0.6304248</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">exp</span><span class="p">(</span><span class="nf">confint</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 13.2.2. Assessing the impact of predictors on the probability of an outcome</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">testdata</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">rating</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">),</span> <span class="n">age</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">age</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                       <span class="n">yearsmarried</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">yearsmarried</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                       <span class="n">religiousness</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">religiousness</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">testdata</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   rating      age yearsmarried religiousness</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1      1 32.48752     8.177696      3.116473</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2      2 32.48752     8.177696      3.116473</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3      3 32.48752     8.177696      3.116473</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4      4 32.48752     8.177696      3.116473</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 5      5 32.48752     8.177696      3.116473</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">testdata</span><span class="o">$</span><span class="n">prob</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">,</span> <span class="n">newdata</span> <span class="o">=</span> <span class="n">testdata</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;response&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">testdata</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#   rating      age yearsmarried religiousness      prob</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1      1 32.48752     8.177696      3.116473 0.5302296</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2      2 32.48752     8.177696      3.116473 0.4157377</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3      3 32.48752     8.177696      3.116473 0.3096712</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4      4 32.48752     8.177696      3.116473 0.2204547</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 5      5 32.48752     8.177696      3.116473 0.1513079</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">testdata</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">rating</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">rating</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                       <span class="n">age</span><span class="o">=</span><span class="nf">seq</span><span class="p">(</span><span class="m">17</span><span class="p">,</span> <span class="m">57</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                       <span class="n">yearsmarried</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">yearsmarried</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                       <span class="n">religiousness</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">Affairs</span><span class="o">$</span><span class="n">religiousness</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">testdata</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#    rating age yearsmarried religiousness</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1 3.93178  17     8.177696      3.116473</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2 3.93178  27     8.177696      3.116473</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3 3.93178  37     8.177696      3.116473</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4 3.93178  47     8.177696      3.116473</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 5 3.93178  57     8.177696      3.116473</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">testdata</span><span class="o">$</span><span class="n">prob</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">testdata</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&#34;response&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">testdata</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#    rating age yearsmarried religiousness      prob</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1 3.93178  17     8.177696      3.116473 0.3350834</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2 3.93178  27     8.177696      3.116473 0.2615373</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3 3.93178  37     8.177696      3.116473 0.1992953</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4 3.93178  47     8.177696      3.116473 0.1488796</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 5 3.93178  57     8.177696      3.116473 0.1094738</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 13.2.3. Overdispersion</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">deviance</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">)</span><span class="o">/</span><span class="nf">df.residual</span><span class="p">(</span><span class="n">fit.reduced</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">ynaffair</span> <span class="o">~</span> <span class="n">age</span> <span class="o">+</span> <span class="n">yearsmarried</span> <span class="o">+</span> <span class="n">religiousness</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">             <span class="n">rating</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="nf">binomial</span><span class="p">(),</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Affairs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit.od</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">ynaffair</span> <span class="o">~</span> <span class="n">age</span> <span class="o">+</span> <span class="n">yearsmarried</span> <span class="o">+</span> <span class="n">religiousness</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                <span class="n">rating</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="nf">quasibinomial</span><span class="p">(),</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Affairs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">pchisq</span><span class="p">(</span><span class="nf">summary</span><span class="p">(</span><span class="n">fit.od</span><span class="p">)</span><span class="o">$</span><span class="n">dispersion</span> <span class="o">*</span> <span class="n">fit</span><span class="o">$</span><span class="n">df.residual</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">       <span class="n">fit</span><span class="o">$</span><span class="n">df.residual</span><span class="p">,</span> <span class="n">lower</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 0.340122</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 13.3. Poisson regression</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># install.packages(&#34;robust&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="n">breslow.dat</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s">&#34;robust&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">colnames</span><span class="p">(</span><span class="n">breslow.dat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;ID&#34;    &#34;Y1&#34;    &#34;Y2&#34;    &#34;Y3&#34;    &#34;Y4&#34;    &#34;Base&#34;  &#34;Age&#34;   &#34;Trt&#34;   &#34;Ysum&#34;  &#34;sumY&#34;  &#34;Age10&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [12] &#34;Base4&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">breslow.dat</span><span class="nf">[c</span><span class="p">(</span><span class="m">6</span><span class="o">:</span><span class="m">10</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#      Base             Age               Trt          Ysum             sumY       </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Min.   :  6.00   Min.   :18.00   placebo  :28   Min.   :  0.00   Min.   :  0.00  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1st Qu.: 12.00   1st Qu.:23.00   progabide:31   1st Qu.: 11.50   1st Qu.: 11.50  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Median : 22.00   Median :28.00                  Median : 16.00   Median : 16.00  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Mean   : 31.22   Mean   :28.34                  Mean   : 33.05   Mean   : 33.05  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3rd Qu.: 41.00   3rd Qu.:32.00                  3rd Qu.: 36.00   3rd Qu.: 36.00  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Max.   :151.00   Max.   :42.00                  Max.   :302.00   Max.   :302.00 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">opar</span> <span class="o">&lt;-</span> <span class="nf">par</span><span class="p">(</span><span class="n">no.readonly</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">attach</span><span class="p">(</span><span class="n">breslow.dat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">hist</span><span class="p">(</span><span class="n">sumY</span><span class="p">,</span> <span class="n">breaks</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">     <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Seizure Count&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">     <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Distribution of Seizures&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">boxplot</span><span class="p">(</span><span class="n">sumY</span> <span class="o">~</span> <span class="n">Trt</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Treatment&#34;</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Group Comparison&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">par</span><span class="p">(</span><span class="n">opar</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">sumY</span> <span class="o">~</span> <span class="n">Base</span> <span class="o">+</span> <span class="n">Age</span> <span class="o">+</span> <span class="n">Trt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">breslow.dat</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="nf">poisson</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># glm(formula = sumY ~ Base + Age + Trt, family = poisson(), data = breslow.dat)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Deviance Residuals: </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     Min       1Q   Median       3Q      Max  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -6.0569  -2.0433  -0.9397   0.7929  11.0061  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Coefficients:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#                Estimate Std. Error z value Pr(&gt;|z|)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Intercept)   1.9488259  0.1356191  14.370  &lt; 2e-16 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Base          0.0226517  0.0005093  44.476  &lt; 2e-16 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Age           0.0227401  0.0040240   5.651 1.59e-08 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Trtprogabide -0.1527009  0.0478051  -3.194   0.0014 ** </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Dispersion parameter for poisson family taken to be 1)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     Null deviance: 2122.73  on 58  degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residual deviance:  559.44  on 55  degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># AIC: 850.71</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Number of Fisher Scoring iterations: 5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#=======================================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#13.3.1. Interpreting the model parameters</span>
+</span></span><span class="line"><span class="cl"><span class="nf">coef</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Intercept)         Base          Age Trtprogabide </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  1.94882593   0.02265174   0.02274013  -0.15270095 </span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">exp</span><span class="p">(</span><span class="nf">coef</span><span class="p">(</span><span class="n">fit</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Intercept)         Base          Age Trtprogabide </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  7.0204403    1.0229102    1.0230007    0.8583864 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#===================================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 13.3.2. Overdispersion</span>
+</span></span><span class="line"><span class="cl"><span class="nf">deviance</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span><span class="o">/</span><span class="nf">df.residual</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 10.1717</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># install.packages(&#34;qcc&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">qcc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">qcc.overdispersion.test</span><span class="p">(</span><span class="n">breslow.dat</span><span class="o">$</span><span class="n">sumY</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;poisson&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Overdispersion test Obs.Var/Theor.Var Statistic p-value</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#        poisson data          62.87013  3646.468       0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit.od</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">sumY</span> <span class="o">~</span> <span class="n">Base</span> <span class="o">+</span> <span class="n">Age</span> <span class="o">+</span> <span class="n">Trt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">breslow.dat</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="n">family</span><span class="o">=</span><span class="nf">quasipoisson</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit.od</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># glm(formula = sumY ~ Base + Age + Trt, family = quasipoisson(), </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     data = breslow.dat)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Deviance Residuals: </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     Min       1Q   Median       3Q      Max  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -6.0569  -2.0433  -0.9397   0.7929  11.0061  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Coefficients:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#               Estimate Std. Error t value Pr(&gt;|t|)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Intercept)   1.948826   0.465091   4.190 0.000102 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Base          0.022652   0.001747  12.969  &lt; 2e-16 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Age           0.022740   0.013800   1.648 0.105085    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Trtprogabide -0.152701   0.163943  -0.931 0.355702    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Dispersion parameter for quasipoisson family taken to be 11.76075)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     Null deviance: 2122.73  on 58  degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residual deviance:  559.44  on 55  degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># AIC: NA</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Number of Fisher Scoring iterations: 5</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -1319,7 +1314,7 @@ if (!doNotTrack) {
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1363,7 +1358,7 @@ if (!doNotTrack) {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 

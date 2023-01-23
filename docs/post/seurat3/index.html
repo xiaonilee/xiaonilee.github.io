@@ -25,13 +25,13 @@
 <meta name="author" content="Xiaoni" />
   <meta name="description" content="how to use Seurat to analyze spatially-resolved RNA-seq data?
 Herein, the tutorial will cover these tasks:
-  Normalization
-  Dimensional reduction and clustering
-  Detecting spatially-variable features
-  Interactive visualization
-  Integration with single-cell RNA-seq data
-  Working with multiple slices
- " />
+Normalization
+Dimensional reduction and clustering
+Detecting spatially-variable features
+Interactive visualization
+Integration with single-cell RNA-seq data
+Working with multiple slices
+" />
 
   <meta name="keywords" content="xiaonili, xiaonilee, xiaoni" />
 
@@ -40,7 +40,7 @@ Herein, the tutorial will cover these tasks:
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/seurat3/" />
@@ -61,7 +61,7 @@ Herein, the tutorial will cover these tasks:
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -95,7 +95,7 @@ Working with multiple slices
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/seurat3/" />
+<meta property="og:url" content="/post/seurat3/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-02-28T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-03-01T00:00:00+00:00" />
 <meta itemprop="name" content="Analysis, visualization, and integration of spatial datasets with Seurat">
@@ -120,15 +120,10 @@ Integration with single-cell RNA-seq data
 
 Working with multiple slices
 
-">
-<meta itemprop="datePublished" content="2021-02-28T00:00:00+00:00" />
+"><meta itemprop="datePublished" content="2021-02-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-03-01T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1163">
-
-
-
-<meta itemprop="keywords" content="Bioinformatics,R package,RNA Sequence,PCA,KNN," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Bioinformatics,R package,RNA Sequence,PCA,KNN," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Analysis, visualization, and integration of spatial datasets with Seurat"/>
 <meta name="twitter:description" content="how to use Seurat to analyze spatially-resolved RNA-seq data?
 Herein, the tutorial will cover these tasks:
@@ -649,7 +644,7 @@ if (!doNotTrack) {
 <h3 id="load-dataset">Load dataset</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -661,17 +656,17 @@ if (!doNotTrack) {
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">Seurat</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">SeuratData</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-
-<span class="c1">#BiocManager::install(&#34;rhdf5&#34;)</span>
-<span class="c1">#BiocManager::install(&#34;rhdf5r&#34;)</span>
-<span class="nf">InstallData</span><span class="p">(</span><span class="s">&#34;stxBrain&#34;</span><span class="p">)</span>
-<span class="n">brain</span> <span class="o">&lt;-</span> <span class="nf">LoadData</span><span class="p">(</span><span class="s">&#34;stxBrain&#34;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;anterior1&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">Seurat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">SeuratData</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#BiocManager::install(&#34;rhdf5&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#BiocManager::install(&#34;rhdf5r&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">InstallData</span><span class="p">(</span><span class="s">&#34;stxBrain&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">brain</span> <span class="o">&lt;-</span> <span class="nf">LoadData</span><span class="p">(</span><span class="s">&#34;stxBrain&#34;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;anterior1&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="data-preprocessing">Data preprocessing</h3>
 <ul>
@@ -679,17 +674,17 @@ if (!doNotTrack) {
 <p>Raw data performance</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">plot1</span> <span class="o">&lt;-</span> <span class="nf">VlnPlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="s">&#34;nCount_Spatial&#34;</span><span class="p">,</span> <span class="n">pt.size</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">NoLegend</span><span class="p">()</span>
-<span class="n">plot2</span> <span class="o">&lt;-</span> <span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="s">&#34;nCount_Spatial&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span> <span class="o">=</span> <span class="s">&#34;right&#34;</span><span class="p">)</span>
-<span class="nf">wrap_plots</span><span class="p">(</span><span class="n">plot1</span><span class="p">,</span> <span class="n">plot2</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig1.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">plot1</span> <span class="o">&lt;-</span> <span class="nf">VlnPlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="s">&#34;nCount_Spatial&#34;</span><span class="p">,</span> <span class="n">pt.size</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">NoLegend</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">plot2</span> <span class="o">&lt;-</span> <span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="s">&#34;nCount_Spatial&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span> <span class="o">=</span> <span class="s">&#34;right&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">wrap_plots</span><span class="p">(</span><span class="n">plot1</span><span class="p">,</span> <span class="n">plot2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig1.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig1.png" alt="fig1"></p>
 </li>
@@ -700,13 +695,13 @@ if (!doNotTrack) {
 <p>Normalize the data in order to account for variance in sequencing depth across data points</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Normalizes the data, detects high-variance features, and stores the data in the SCT assay.</span>
-<span class="n">brain</span> <span class="o">&lt;-</span> <span class="nf">SCTransform</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;Spatial&#34;</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Normalizes the data, detects high-variance features, and stores the data in the SCT assay.</span>
+</span></span><span class="line"><span class="cl"><span class="n">brain</span> <span class="o">&lt;-</span> <span class="nf">SCTransform</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;Spatial&#34;</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -716,13 +711,13 @@ if (!doNotTrack) {
 <p><code>SpatialFeaturePlot()</code> function can overlay molecular data on top of tissue histology.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Hpca&#34;</span><span class="p">,</span> <span class="s">&#34;Ttr&#34;</span><span class="p">))</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig2.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Hpca&#34;</span><span class="p">,</span> <span class="s">&#34;Ttr&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig2.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig2.png" alt="fig2"></p>
 </li>
@@ -730,7 +725,7 @@ if (!doNotTrack) {
 <p>Adjust the size of the spots (and their transparency) to improve the visualization of the histology image.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -738,13 +733,13 @@ if (!doNotTrack) {
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">p1</span> <span class="o">&lt;-</span> <span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="s">&#34;Ttr&#34;</span><span class="p">,</span> <span class="n">pt.size.factor</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
-
-<span class="c1"># to downweight the transparency of points with lower expression with alpha</span>
-<span class="n">p2</span> <span class="o">&lt;-</span> <span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="s">&#34;Ttr&#34;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
-<span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig3.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">&lt;-</span> <span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="s">&#34;Ttr&#34;</span><span class="p">,</span> <span class="n">pt.size.factor</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># to downweight the transparency of points with lower expression with alpha</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span> <span class="o">&lt;-</span> <span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="s">&#34;Ttr&#34;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig3.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig3.png" alt="fig3"></p>
 </li>
@@ -755,24 +750,24 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">brain</span> <span class="o">&lt;-</span> <span class="nf">RunPCA</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;SCT&#34;</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-<span class="n">brain</span> <span class="o">&lt;-</span> <span class="nf">FindNeighbors</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;pca&#34;</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
-<span class="n">brain</span> <span class="o">&lt;-</span> <span class="nf">FindClusters</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-<span class="n">brain</span> <span class="o">&lt;-</span> <span class="nf">RunUMAP</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;pca&#34;</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">brain</span> <span class="o">&lt;-</span> <span class="nf">RunPCA</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;SCT&#34;</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">brain</span> <span class="o">&lt;-</span> <span class="nf">FindNeighbors</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;pca&#34;</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">brain</span> <span class="o">&lt;-</span> <span class="nf">FindClusters</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">brain</span> <span class="o">&lt;-</span> <span class="nf">RunUMAP</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;pca&#34;</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
 <p>Visualize the results</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -780,13 +775,13 @@ if (!doNotTrack) {
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1">#in UMAP space  with DimPlot()</span>
-<span class="n">p1</span> <span class="o">&lt;-</span> <span class="nf">DimPlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;umap&#34;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-
-<span class="c1">#overlaid on the image with SpatialDimPlot()</span>
-<span class="n">p2</span> <span class="o">&lt;-</span> <span class="nf">SpatialDimPlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">label.size</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-<span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#in UMAP space  with DimPlot()</span>
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">&lt;-</span> <span class="nf">DimPlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;umap&#34;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#overlaid on the image with SpatialDimPlot()</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span> <span class="o">&lt;-</span> <span class="nf">SpatialDimPlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">label.size</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig4.png" alt="fig4"></p>
 </li>
@@ -794,15 +789,15 @@ if (!doNotTrack) {
 <p>Visualize special voxel belongs to which cluster</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">SpatialDimPlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">cells.highlight</span> <span class="o">=</span> <span class="nf">CellsByIdentities</span><span class="p">(</span><span class="n">object</span> <span class="o">=</span> <span class="n">brain</span><span class="p">,</span> <span class="n">idents</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> 
-    <span class="m">5</span><span class="p">,</span> <span class="m">8</span><span class="p">)),</span> <span class="n">facet.highlight</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig5.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">SpatialDimPlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">cells.highlight</span> <span class="o">=</span> <span class="nf">CellsByIdentities</span><span class="p">(</span><span class="n">object</span> <span class="o">=</span> <span class="n">brain</span><span class="p">,</span> <span class="n">idents</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">    <span class="m">5</span><span class="p">,</span> <span class="m">8</span><span class="p">)),</span> <span class="n">facet.highlight</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig5.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig5.png" alt="fig5"></p>
 </li>
@@ -813,7 +808,7 @@ if (!doNotTrack) {
 <p>Both <code>SpatialDimPlot()</code> and <code>SpatialFeaturePlot()</code> now have an interactive parameter, that when set to <code>TRUE</code>, open up the Rstudio viewer pane with an interactive Shiny plot.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -824,16 +819,16 @@ if (!doNotTrack) {
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1">#with SpatialDimPlot()</span>
-<span class="nf">SpatialDimPlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">interactive</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-
-<span class="c1">#with SpatialFeaturePlot()</span>
-<span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="s">&#34;Ttr&#34;</span><span class="p">,</span> <span class="n">interactive</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-
-<span class="c1">#with LinkedDimPlot()</span>
-<span class="nf">LinkedDimPlot</span><span class="p">(</span><span class="n">brain</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig6.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#with SpatialDimPlot()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">SpatialDimPlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">interactive</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#with SpatialFeaturePlot()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="s">&#34;Ttr&#34;</span><span class="p">,</span> <span class="n">interactive</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#with LinkedDimPlot()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">LinkedDimPlot</span><span class="p">(</span><span class="n">brain</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig6.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig6.png" alt="fig6"></p>
 </li>
@@ -847,19 +842,19 @@ if (!doNotTrack) {
 <p>Based on pre-annotated anatomical regions within the tissue, which may be determined either from unsupervised clustering or prior knowledge.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">de_markers</span> <span class="o">&lt;-</span> <span class="nf">FindMarkers</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">ident.1</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">ident.2</span> <span class="o">=</span> <span class="m">6</span><span class="p">)</span>
-<span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">object</span> <span class="o">=</span> <span class="n">brain</span><span class="p">,</span> 
-                <span class="n">features</span> <span class="o">=</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">de_markers</span><span class="p">)</span><span class="n">[1</span><span class="o">:</span><span class="m">3</span><span class="n">]</span><span class="p">,</span> 
-                <span class="n">alpha</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig7.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">de_markers</span> <span class="o">&lt;-</span> <span class="nf">FindMarkers</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">ident.1</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">ident.2</span> <span class="o">=</span> <span class="m">6</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">object</span> <span class="o">=</span> <span class="n">brain</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                <span class="n">features</span> <span class="o">=</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">de_markers</span><span class="p">)</span><span class="n">[1</span><span class="o">:</span><span class="m">3</span><span class="n">]</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                <span class="n">alpha</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig7.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig7.png" alt="fig7"></p>
 </li>
@@ -867,17 +862,17 @@ if (!doNotTrack) {
 <p>An alternative approach, implemented in <code>FindSpatiallyVariables()</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">brain</span> <span class="o">&lt;-</span> <span class="nf">FindSpatiallyVariableFeatures</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;SCT&#34;</span><span class="p">,</span> 
-                                    <span class="n">features</span> <span class="o">=</span> <span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">brain</span><span class="p">)</span><span class="n">[1</span><span class="o">:</span><span class="m">1000</span><span class="n">]</span><span class="p">,</span> 
-                                    <span class="n">selection.method</span> <span class="o">=</span> <span class="s">&#34;markvariogram&#34;</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig8.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">brain</span> <span class="o">&lt;-</span> <span class="nf">FindSpatiallyVariableFeatures</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;SCT&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                    <span class="n">features</span> <span class="o">=</span> <span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">brain</span><span class="p">)</span><span class="n">[1</span><span class="o">:</span><span class="m">1000</span><span class="n">]</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                    <span class="n">selection.method</span> <span class="o">=</span> <span class="s">&#34;markvariogram&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig8.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -886,22 +881,22 @@ if (!doNotTrack) {
 <p>Visualize the expression of the top 6 features identified by this measure.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">top.features</span> <span class="o">&lt;-</span> <span class="nf">head</span><span class="p">(</span><span class="nf">SpatiallyVariableFeatures</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">selection.method</span> <span class="o">=</span> <span class="s">&#34;markvariogram&#34;</span><span class="p">),</span> <span class="m">6</span><span class="p">)</span>
-<span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="n">top.features</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig9.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">top.features</span> <span class="o">&lt;-</span> <span class="nf">head</span><span class="p">(</span><span class="nf">SpatiallyVariableFeatures</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">selection.method</span> <span class="o">=</span> <span class="s">&#34;markvariogram&#34;</span><span class="p">),</span> <span class="m">6</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="n">top.features</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig9.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
 <h3 id="subset-out-anatomical-regions">Subset out anatomical regions</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -915,19 +910,19 @@ if (!doNotTrack) {
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">cortex</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">idents</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">))</span>
-<span class="c1"># now remove additional cells, use SpatialDimPlots to visualize what to remove</span>
-<span class="c1"># SpatialDimPlot(cortex,cells.highlight = WhichCells(cortex, expression = image_imagerow &gt; 400 |</span>
-<span class="c1"># image_imagecol &lt; 150))</span>
-<span class="n">cortex</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> <span class="n">anterior1_imagerow</span> <span class="o">&gt;</span> <span class="m">400</span> <span class="o">|</span> <span class="n">anterior1_imagecol</span> <span class="o">&lt;</span> <span class="m">150</span><span class="p">,</span> <span class="n">invert</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">cortex</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> <span class="n">anterior1_imagerow</span> <span class="o">&gt;</span> <span class="m">275</span> <span class="o">&amp;</span> <span class="n">anterior1_imagecol</span> <span class="o">&gt;</span> <span class="m">370</span><span class="p">,</span> <span class="n">invert</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">cortex</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> <span class="n">anterior1_imagerow</span> <span class="o">&gt;</span> <span class="m">250</span> <span class="o">&amp;</span> <span class="n">anterior1_imagecol</span> <span class="o">&gt;</span> <span class="m">440</span><span class="p">,</span> <span class="n">invert</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-
-<span class="n">p1</span> <span class="o">&lt;-</span> <span class="nf">SpatialDimPlot</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> <span class="n">crop</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">&lt;-</span> <span class="nf">SpatialDimPlot</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> <span class="n">crop</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">pt.size.factor</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">label.size</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-<span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig10.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">cortex</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">idents</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># now remove additional cells, use SpatialDimPlots to visualize what to remove</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># SpatialDimPlot(cortex,cells.highlight = WhichCells(cortex, expression = image_imagerow &gt; 400 |</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># image_imagecol &lt; 150))</span>
+</span></span><span class="line"><span class="cl"><span class="n">cortex</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> <span class="n">anterior1_imagerow</span> <span class="o">&gt;</span> <span class="m">400</span> <span class="o">|</span> <span class="n">anterior1_imagecol</span> <span class="o">&lt;</span> <span class="m">150</span><span class="p">,</span> <span class="n">invert</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cortex</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> <span class="n">anterior1_imagerow</span> <span class="o">&gt;</span> <span class="m">275</span> <span class="o">&amp;</span> <span class="n">anterior1_imagecol</span> <span class="o">&gt;</span> <span class="m">370</span><span class="p">,</span> <span class="n">invert</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cortex</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> <span class="n">anterior1_imagerow</span> <span class="o">&gt;</span> <span class="m">250</span> <span class="o">&amp;</span> <span class="n">anterior1_imagecol</span> <span class="o">&gt;</span> <span class="m">440</span><span class="p">,</span> <span class="n">invert</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">&lt;-</span> <span class="nf">SpatialDimPlot</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> <span class="n">crop</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span> <span class="o">&lt;-</span> <span class="nf">SpatialDimPlot</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> <span class="n">crop</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">pt.size.factor</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">label.size</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig10.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig10.png" alt="fig10"></p>
 <h3 id="integration-with-single-cell-data">Integration with single-cell data</h3>
@@ -936,7 +931,7 @@ if (!doNotTrack) {
 <p>Download <a href="https://www.dropbox.com/s/cuowvm4vrf65pvq/allen_cortex.rds?dl=1">data</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -950,19 +945,19 @@ if (!doNotTrack) {
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">allen_reference</span> <span class="o">&lt;-</span> <span class="nf">readRDS</span><span class="p">(</span><span class="s">&#34;/Users/xiaonili/Downloads/allen_cortex.rds&#34;</span><span class="p">)</span>
-<span class="c1"># note that setting ncells=3000 normalizes the full dataset but learns noise models on 3k cells</span>
-<span class="c1"># this speeds up SCTransform dramatically with no loss in performance</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-<span class="n">allen_reference</span> <span class="o">&lt;-</span> <span class="nf">SCTransform</span><span class="p">(</span><span class="n">allen_reference</span><span class="p">,</span> <span class="n">ncells</span> <span class="o">=</span> <span class="m">3000</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">RunPCA</span><span class="p">(</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">%&gt;%</span> 
-<span class="nf">RunUMAP</span><span class="p">(</span><span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
-
-<span class="c1"># After subsetting, we renormalize cortex</span>
-<span class="n">cortex</span> <span class="o">&lt;-</span> <span class="nf">SCTransform</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;Spatial&#34;</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">RunPCA</span><span class="p">(</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-<span class="c1"># the annotation is stored in the &#39;subclass&#39; column of object metadata</span>
-<span class="nf">DimPlot</span><span class="p">(</span><span class="n">allen_reference</span><span class="p">,</span> <span class="n">group.by</span> <span class="o">=</span> <span class="s">&#34;subclass&#34;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig11.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">allen_reference</span> <span class="o">&lt;-</span> <span class="nf">readRDS</span><span class="p">(</span><span class="s">&#34;/Users/xiaonili/Downloads/allen_cortex.rds&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># note that setting ncells=3000 normalizes the full dataset but learns noise models on 3k cells</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># this speeds up SCTransform dramatically with no loss in performance</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">allen_reference</span> <span class="o">&lt;-</span> <span class="nf">SCTransform</span><span class="p">(</span><span class="n">allen_reference</span><span class="p">,</span> <span class="n">ncells</span> <span class="o">=</span> <span class="m">3000</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">RunPCA</span><span class="p">(</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+</span></span><span class="line"><span class="cl"><span class="nf">RunUMAP</span><span class="p">(</span><span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># After subsetting, we renormalize cortex</span>
+</span></span><span class="line"><span class="cl"><span class="n">cortex</span> <span class="o">&lt;-</span> <span class="nf">SCTransform</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;Spatial&#34;</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">RunPCA</span><span class="p">(</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># the annotation is stored in the &#39;subclass&#39; column of object metadata</span>
+</span></span><span class="line"><span class="cl"><span class="nf">DimPlot</span><span class="p">(</span><span class="n">allen_reference</span><span class="p">,</span> <span class="n">group.by</span> <span class="o">=</span> <span class="s">&#34;subclass&#34;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig11.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig11.png" alt="fig11"></p>
 </li>
@@ -972,17 +967,17 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cortex</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;predictions&#34;</span>
-<span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;L2/3 IT&#34;</span><span class="p">,</span> <span class="s">&#34;L4&#34;</span><span class="p">),</span> 
-                   <span class="n">pt.size.factor</span> <span class="o">=</span> <span class="m">1.6</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">crop</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig12.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">cortex</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;predictions&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;L2/3 IT&#34;</span><span class="p">,</span> <span class="s">&#34;L4&#34;</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">                   <span class="n">pt.size.factor</span> <span class="o">=</span> <span class="m">1.6</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">crop</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig12.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig12.png" alt="fig12"></p>
 <ul>
@@ -990,7 +985,7 @@ if (!doNotTrack) {
 <p>Based on these prediction scores, to predict <code>cell types</code> whose location is spatially restricted.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1000,15 +995,15 @@ if (!doNotTrack) {
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">cortex</span> <span class="o">&lt;-</span> <span class="nf">FindSpatiallyVariableFeatures</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> 
-                                        <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;predictions&#34;</span><span class="p">,</span> 
-                                        <span class="n">selection.method</span> <span class="o">=</span> <span class="s">&#34;markvariogram&#34;</span><span class="p">,</span> 
-                                        <span class="n">features</span> <span class="o">=</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">cortex</span><span class="p">),</span> 
-                                        <span class="n">r.metric</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">slot</span> <span class="o">=</span> <span class="s">&#34;data&#34;</span><span class="p">)</span>
-<span class="n">top.clusters</span> <span class="o">&lt;-</span> <span class="nf">head</span><span class="p">(</span><span class="nf">SpatiallyVariableFeatures</span><span class="p">(</span><span class="n">cortex</span><span class="p">),</span> <span class="m">4</span><span class="p">)</span>
-<span class="nf">SpatialPlot</span><span class="p">(</span><span class="n">object</span> <span class="o">=</span> <span class="n">cortex</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="n">top.clusters</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig13.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">cortex</span> <span class="o">&lt;-</span> <span class="nf">FindSpatiallyVariableFeatures</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                        <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;predictions&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                        <span class="n">selection.method</span> <span class="o">=</span> <span class="s">&#34;markvariogram&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                        <span class="n">features</span> <span class="o">=</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">cortex</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">                                        <span class="n">r.metric</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">slot</span> <span class="o">=</span> <span class="s">&#34;data&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">top.clusters</span> <span class="o">&lt;-</span> <span class="nf">head</span><span class="p">(</span><span class="nf">SpatiallyVariableFeatures</span><span class="p">(</span><span class="n">cortex</span><span class="p">),</span> <span class="m">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">SpatialPlot</span><span class="p">(</span><span class="n">object</span> <span class="o">=</span> <span class="n">cortex</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="n">top.clusters</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig13.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig13.png" alt="fig13"></p>
 </li>
@@ -1016,19 +1011,19 @@ if (!doNotTrack) {
 <p>Finally, we show that our integrative procedure is capable of recovering the known spatial localization patterns of both neuronal and non-neuronal subsets, including laminar excitatory, layer-1 astrocytes, and the cortical grey matter.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> 
-                <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Astro&#34;</span><span class="p">,</span> <span class="s">&#34;L2/3 IT&#34;</span><span class="p">,</span> <span class="s">&#34;L4&#34;</span><span class="p">,</span> <span class="s">&#34;L5 PT&#34;</span><span class="p">,</span> <span class="s">&#34;L5 IT&#34;</span><span class="p">,</span> <span class="s">&#34;L6 CT&#34;</span><span class="p">,</span> <span class="s">&#34;L6 IT&#34;</span><span class="p">,</span> 
-                                        <span class="s">&#34;L6b&#34;</span><span class="p">,</span> <span class="s">&#34;Oligo&#34;</span><span class="p">),</span> 
-                <span class="n">pt.size.factor</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">crop</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig14.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">cortex</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Astro&#34;</span><span class="p">,</span> <span class="s">&#34;L2/3 IT&#34;</span><span class="p">,</span> <span class="s">&#34;L4&#34;</span><span class="p">,</span> <span class="s">&#34;L5 PT&#34;</span><span class="p">,</span> <span class="s">&#34;L5 IT&#34;</span><span class="p">,</span> <span class="s">&#34;L6 CT&#34;</span><span class="p">,</span> <span class="s">&#34;L6 IT&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                        <span class="s">&#34;L6b&#34;</span><span class="p">,</span> <span class="s">&#34;Oligo&#34;</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">                <span class="n">pt.size.factor</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">crop</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig14.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig14.png" alt="fig14"></p>
 </li>
@@ -1039,28 +1034,28 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">brain2</span> <span class="o">&lt;-</span> <span class="nf">LoadData</span><span class="p">(</span><span class="s">&#34;stxBrain&#34;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;posterior1&#34;</span><span class="p">)</span>
-<span class="n">brain2</span> <span class="o">&lt;-</span> <span class="nf">SCTransform</span><span class="p">(</span><span class="n">brain2</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;Spatial&#34;</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">brain2</span> <span class="o">&lt;-</span> <span class="nf">LoadData</span><span class="p">(</span><span class="s">&#34;stxBrain&#34;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;posterior1&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">brain2</span> <span class="o">&lt;-</span> <span class="nf">SCTransform</span><span class="p">(</span><span class="n">brain2</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;Spatial&#34;</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
 <p>Merge and work multiple slices</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">brain.merge</span> <span class="o">&lt;-</span> <span class="nf">merge</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">brain2</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">brain.merge</span> <span class="o">&lt;-</span> <span class="nf">merge</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="n">brain2</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1068,45 +1063,45 @@ if (!doNotTrack) {
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;SCT&#34;</span>
-<span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">brain</span><span class="p">),</span> <span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">brain2</span><span class="p">))</span>
-<span class="n">brain.merge</span> <span class="o">&lt;-</span> <span class="nf">RunPCA</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-<span class="n">brain.merge</span> <span class="o">&lt;-</span> <span class="nf">FindNeighbors</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
-<span class="n">brain.merge</span> <span class="o">&lt;-</span> <span class="nf">FindClusters</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-<span class="n">brain.merge</span> <span class="o">&lt;-</span> <span class="nf">RunUMAP</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">DefaultAssay</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;SCT&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">brain</span><span class="p">),</span> <span class="nf">VariableFeatures</span><span class="p">(</span><span class="n">brain2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">brain.merge</span> <span class="o">&lt;-</span> <span class="nf">RunPCA</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">brain.merge</span> <span class="o">&lt;-</span> <span class="nf">FindNeighbors</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">brain.merge</span> <span class="o">&lt;-</span> <span class="nf">FindClusters</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">brain.merge</span> <span class="o">&lt;-</span> <span class="nf">RunUMAP</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">DimPlot</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;umap&#34;</span><span class="p">,</span> <span class="n">group.by</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;ident&#34;</span><span class="p">,</span> <span class="s">&#34;orig.ident&#34;</span><span class="p">))</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig15.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">DimPlot</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;umap&#34;</span><span class="p">,</span> <span class="n">group.by</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;ident&#34;</span><span class="p">,</span> <span class="s">&#34;orig.ident&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig15.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig15.png" alt="fig15"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">SpatialDimPlot</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig16.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">SpatialDimPlot</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig16.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig16.png" alt="fig16"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Hpca&#34;</span><span class="p">,</span> <span class="s">&#34;Plp1&#34;</span><span class="p">))</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig17.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">brain.merge</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Hpca&#34;</span><span class="p">,</span> <span class="s">&#34;Plp1&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig17.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig17.png" alt="fig17"></p>
 </li>
@@ -1117,32 +1112,32 @@ if (!doNotTrack) {
 <p>Load datasets</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">InstallData</span><span class="p">(</span><span class="s">&#34;ssHippo&#34;</span><span class="p">)</span>
-<span class="n">slide.seq</span> <span class="o">&lt;-</span> <span class="nf">LoadData</span><span class="p">(</span><span class="s">&#34;ssHippo&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">InstallData</span><span class="p">(</span><span class="s">&#34;ssHippo&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">slide.seq</span> <span class="o">&lt;-</span> <span class="nf">LoadData</span><span class="p">(</span><span class="s">&#34;ssHippo&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Data preprocessing</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">plot1</span> <span class="o">&lt;-</span> <span class="nf">VlnPlot</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="s">&#34;nCount_Spatial&#34;</span><span class="p">,</span> <span class="n">pt.size</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">log</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">+</span> <span class="nf">NoLegend</span><span class="p">()</span>
-<span class="n">slide.seq</span><span class="o">$</span><span class="n">log_nCount_Spatial</span> <span class="o">&lt;-</span> <span class="nf">log</span><span class="p">(</span><span class="n">slide.seq</span><span class="o">$</span><span class="n">nCount_Spatial</span><span class="p">)</span>
-<span class="n">plot2</span> <span class="o">&lt;-</span> <span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="s">&#34;log_nCount_Spatial&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span> <span class="o">=</span> <span class="s">&#34;right&#34;</span><span class="p">)</span>
-<span class="nf">wrap_plots</span><span class="p">(</span><span class="n">plot1</span><span class="p">,</span> <span class="n">plot2</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="n">./fig18.png</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">plot1</span> <span class="o">&lt;-</span> <span class="nf">VlnPlot</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="s">&#34;nCount_Spatial&#34;</span><span class="p">,</span> <span class="n">pt.size</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">log</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">+</span> <span class="nf">NoLegend</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">slide.seq</span><span class="o">$</span><span class="n">log_nCount_Spatial</span> <span class="o">&lt;-</span> <span class="nf">log</span><span class="p">(</span><span class="n">slide.seq</span><span class="o">$</span><span class="n">nCount_Spatial</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plot2</span> <span class="o">&lt;-</span> <span class="nf">SpatialFeaturePlot</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="s">&#34;log_nCount_Spatial&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span> <span class="o">=</span> <span class="s">&#34;right&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">wrap_plots</span><span class="p">(</span><span class="n">plot1</span><span class="p">,</span> <span class="n">plot2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="n">./fig18.png</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig18.png" alt="fig18"></p>
 </li>
@@ -1150,55 +1145,55 @@ if (!doNotTrack) {
 <p>Normalize</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">slide.seq</span> <span class="o">&lt;-</span> <span class="nf">SCTransform</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;Spatial&#34;</span><span class="p">,</span> <span class="n">ncells</span> <span class="o">=</span> <span class="m">3000</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-<span class="n">slide.seq</span> <span class="o">&lt;-</span> <span class="nf">RunPCA</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">)</span>
-<span class="n">slide.seq</span> <span class="o">&lt;-</span> <span class="nf">RunUMAP</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
-<span class="n">slide.seq</span> <span class="o">&lt;-</span> <span class="nf">FindNeighbors</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
-<span class="n">slide.seq</span> <span class="o">&lt;-</span> <span class="nf">FindClusters</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="m">0.3</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">slide.seq</span> <span class="o">&lt;-</span> <span class="nf">SCTransform</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> <span class="n">assay</span> <span class="o">=</span> <span class="s">&#34;Spatial&#34;</span><span class="p">,</span> <span class="n">ncells</span> <span class="o">=</span> <span class="m">3000</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">slide.seq</span> <span class="o">&lt;-</span> <span class="nf">RunPCA</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">slide.seq</span> <span class="o">&lt;-</span> <span class="nf">RunUMAP</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">slide.seq</span> <span class="o">&lt;-</span> <span class="nf">FindNeighbors</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">slide.seq</span> <span class="o">&lt;-</span> <span class="nf">FindClusters</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> <span class="n">resolution</span> <span class="o">=</span> <span class="m">0.3</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Visualize</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">plot1</span> <span class="o">&lt;-</span> <span class="nf">DimPlot</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;umap&#34;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">plot2</span> <span class="o">&lt;-</span> <span class="nf">SpatialDimPlot</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> <span class="n">stroke</span> <span class="o">=</span> <span class="m">0</span><span class="p">)</span>
-<span class="n">plot1</span> <span class="o">+</span> <span class="n">plot2</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig19.png&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">plot1</span> <span class="o">&lt;-</span> <span class="nf">DimPlot</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> <span class="n">reduction</span> <span class="o">=</span> <span class="s">&#34;umap&#34;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plot2</span> <span class="o">&lt;-</span> <span class="nf">SpatialDimPlot</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> <span class="n">stroke</span> <span class="o">=</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plot1</span> <span class="o">+</span> <span class="n">plot2</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig19.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Alternately,</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">SpatialDimPlot</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> 
-            <span class="n">cells.highlight</span> <span class="o">=</span> <span class="nf">CellsByIdentities</span><span class="p">(</span><span class="n">object</span> <span class="o">=</span> <span class="n">slide.seq</span><span class="p">,</span> 
-                                                <span class="n">idents</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">13</span><span class="p">)),</span> 
-            <span class="n">facet.highlight</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig20.png&#34;</span><span class="p">)</span>     
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">SpatialDimPlot</span><span class="p">(</span><span class="n">slide.seq</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">cells.highlight</span> <span class="o">=</span> <span class="nf">CellsByIdentities</span><span class="p">(</span><span class="n">object</span> <span class="o">=</span> <span class="n">slide.seq</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                                <span class="n">idents</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">13</span><span class="p">)),</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">facet.highlight</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggsave</span><span class="p">(</span><span class="s">&#34;./fig20.png&#34;</span><span class="p">)</span>     
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -1324,7 +1319,7 @@ if (!doNotTrack) {
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1368,7 +1363,7 @@ if (!doNotTrack) {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 

@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/shiny01/" />
@@ -54,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,19 +67,14 @@
 <meta property="og:title" content="Learn Shiny: Building a Shiny app" />
 <meta property="og:description" content="Building a Shiny app - an interactive tutorial." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/shiny01/" />
+<meta property="og:url" content="/post/shiny01/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-11-27T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-11-27T00:00:00+00:00" />
 <meta itemprop="name" content="Learn Shiny: Building a Shiny app">
-<meta itemprop="description" content="Building a Shiny app - an interactive tutorial.">
-<meta itemprop="datePublished" content="2020-11-27T00:00:00+00:00" />
+<meta itemprop="description" content="Building a Shiny app - an interactive tutorial."><meta itemprop="datePublished" content="2020-11-27T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-11-27T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1572">
-
-
-
-<meta itemprop="keywords" content="R,Bioinformatics,Shiny,R Package," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="R,Bioinformatics,Shiny,R Package," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Learn Shiny: Building a Shiny app"/>
 <meta name="twitter:description" content="Building a Shiny app - an interactive tutorial."/>
 
@@ -561,24 +556,24 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">Install.packages</span><span class="p">(</span><span class="s">&#34;shiny&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">Install.packages</span><span class="p">(</span><span class="s">&#34;shiny&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>To ensure successfully installed Shiny:</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
-<span class="nf">runExample</span><span class="p">(</span><span class="m">01</span><span class="n">_hello</span><span class="s">&#34;</span><span class="err">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">runExample</span><span class="p">(</span><span class="m">01</span><span class="n">_hello</span><span class="s">&#34;</span><span class="err">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="hello.png" alt="hello"></p>
 <h3 id="2-shiny-app-basics">2. Shiny app basics</h3>
@@ -605,17 +600,17 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
-<span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">()</span>
-<span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="p">{}</span>
-<span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="31-alternate-way-to-create-a-shiny-app">3.1 Alternate way to create a Shiny app</h4>
 <ul>
@@ -642,15 +637,15 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">bcl</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#34;bcl-data.csv&#34;</span><span class="p">,</span> <span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="nf">str</span><span class="p">(</span><span class="n">bcl</span><span class="p">))</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">bcl</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#34;bcl-data.csv&#34;</span><span class="p">,</span> <span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">print</span><span class="p">(</span><span class="nf">str</span><span class="p">(</span><span class="n">bcl</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="5-bulid-the-basic-ui">5. Bulid the basic UI</h3>
 <ul>
@@ -662,11 +657,11 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">fluidPage</span><span class="p">(</span><span class="s">&#34;BC Liquor Store&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="err">prices)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">fluidPage</span><span class="p">(</span><span class="s">&#34;BC Liquor Store&#34;</span><span class="p">,</span> <span class="s">&#34;</span><span class="err">prices)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="52-add-formatted-text-and-other-html-elements">5.2 Add formatted text and other HTML elements</h4>
 <ul>
@@ -674,7 +669,7 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -685,16 +680,16 @@ if (!doNotTrack) {
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
-  <span class="nf">h1</span><span class="p">(</span><span class="s">&#34;BC Liquor Store&#34;</span><span class="p">),</span> 
-  <span class="s">&#34;BC&#34;</span><span class="p">,</span>
-  <span class="s">&#34;Liqqq&#34;</span><span class="p">,</span>
-  <span class="nf">br</span><span class="p">(),</span>
-  <span class="s">&#34;ssdse&#34;</span><span class="p">,</span>
-  <span class="nf">strong</span><span class="p">(</span><span class="s">&#34;prices&#34;</span><span class="p">),</span> 
-  <span class="nf">div</span><span class="p">(</span><span class="s">&#34;this is blue&#34;</span><span class="p">,</span> <span class="n">style</span> <span class="o">=</span> <span class="s">&#34;color:blue;&#34;</span><span class="p">),</span>
-  <span class="s">&#34;Why it is boring&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">h1</span><span class="p">(</span><span class="s">&#34;BC Liquor Store&#34;</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;BC&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Liqqq&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">br</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;ssdse&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">strong</span><span class="p">(</span><span class="s">&#34;prices&#34;</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">div</span><span class="p">(</span><span class="s">&#34;this is blue&#34;</span><span class="p">,</span> <span class="n">style</span> <span class="o">=</span> <span class="s">&#34;color:blue;&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Why it is boring&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig1.png" alt="fig"></p>
 <h4 id="53-add-a-title">5.3 Add a title</h4>
@@ -703,15 +698,15 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">fluidPage</span><span class="p">(</span>
-  <span class="nf">titlePanel</span><span class="p">(</span><span class="s">&#34;BC Liquor Store prices&#34;</span><span class="p">)</span>
-<span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">fluidPage</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">titlePanel</span><span class="p">(</span><span class="s">&#34;BC Liquor Store prices&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="54-add-a-layout">5.4 Add a layout</h4>
 <ul>
@@ -730,17 +725,17 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">sidebarLayout</span><span class="p">(</span>
-  <span class="nf">sidebarPanel</span><span class="p">(</span><span class="s">&#34;our inputs will go here&#34;</span><span class="p">),</span>
-  <span class="nf">mainPanel</span><span class="p">(</span><span class="s">&#34;the results will go here&#34;</span><span class="p">)</span>
-<span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">sidebarLayout</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">sidebarPanel</span><span class="p">(</span><span class="s">&#34;our inputs will go here&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">mainPanel</span><span class="p">(</span><span class="s">&#34;the results will go here&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="55-all-ui-functions-are-simply-html-wrappers">5.5 All UI functions are simply HTML wrappers</h4>
 <ul>
@@ -748,7 +743,7 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -761,18 +756,18 @@ if (!doNotTrack) {
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">print</span><span class="p">(</span><span class="n">ui</span><span class="p">)</span>
-<span class="c1"># output</span>
-<span class="c1"># &lt;div class=&#34;container-fluid&#34;&gt;</span>
-<span class="c1">#   &lt;h2&gt;BC Liquor Store prices&lt;/h2&gt;</span>
-<span class="c1">#   &lt;div class=&#34;row&#34;&gt;</span>
-<span class="c1">#     &lt;div class=&#34;col-sm-4&#34;&gt;</span>
-<span class="c1">#       &lt;form class=&#34;well&#34;&gt;our inputs will go here&lt;/form&gt;</span>
-<span class="c1">#     &lt;/div&gt;</span>
-<span class="c1">#     &lt;div class=&#34;col-sm-8&#34;&gt;the results will go here&lt;/div&gt;</span>
-<span class="c1">#   &lt;/div&gt;</span>
-<span class="c1"># &lt;/div&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">print</span><span class="p">(</span><span class="n">ui</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># output</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># &lt;div class=&#34;container-fluid&#34;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   &lt;h2&gt;BC Liquor Store prices&lt;/h2&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   &lt;div class=&#34;row&#34;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     &lt;div class=&#34;col-sm-4&#34;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#       &lt;form class=&#34;well&#34;&gt;our inputs will go here&lt;/form&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     &lt;/div&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     &lt;div class=&#34;col-sm-8&#34;&gt;the results will go here&lt;/div&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   &lt;/div&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># &lt;/div&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="6-add-inputs-to-the-ui">6. Add inputs to the UI</h3>
 <ul>
@@ -792,13 +787,13 @@ if (!doNotTrack) {
 <h4 id="61-input-for-price">6.1 Input for price</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">sliderInput</span><span class="p">(</span><span class="s">&#34;priceInput&#34;</span><span class="p">,</span> <span class="s">&#34;Price&#34;</span><span class="p">,</span> <span class="n">min</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="m">100</span><span class="p">,</span>
-            <span class="n">value</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">40</span><span class="p">),</span> <span class="n">pre</span> <span class="o">=</span> <span class="s">&#34;$&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">sliderInput</span><span class="p">(</span><span class="s">&#34;priceInput&#34;</span><span class="p">,</span> <span class="s">&#34;Price&#34;</span><span class="p">,</span> <span class="n">min</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="m">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">value</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">40</span><span class="p">),</span> <span class="n">pre</span> <span class="o">=</span> <span class="s">&#34;$&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Place the code of <code>sliderInput()</code> inside <code>sidebarPanel()</code>, replace the text wrote earlier with this input(&ldquo;our inputs will go here&rdquo;).</li>
@@ -809,15 +804,15 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">radioButtons</span><span class="p">(</span><span class="s">&#34;typeInput&#34;</span><span class="p">,</span> <span class="s">&#34;Product type&#34;</span><span class="p">,</span>
-            <span class="n">choices</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;BEER&#34;</span><span class="p">,</span> <span class="s">&#34;REFRESHMENT&#34;</span><span class="p">,</span> <span class="s">&#34;SPIRITS&#34;</span><span class="p">,</span> <span class="s">&#34;WINE&#34;</span><span class="p">),</span>
-            <span class="n">selected</span> <span class="o">=</span> <span class="s">&#34;WINE&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">radioButtons</span><span class="p">(</span><span class="s">&#34;typeInput&#34;</span><span class="p">,</span> <span class="s">&#34;Product type&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">choices</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;BEER&#34;</span><span class="p">,</span> <span class="s">&#34;REFRESHMENT&#34;</span><span class="p">,</span> <span class="s">&#34;SPIRITS&#34;</span><span class="p">,</span> <span class="s">&#34;WINE&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">selected</span> <span class="o">=</span> <span class="s">&#34;WINE&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Add this input code inside sidebarPanel(), after the previous input (separate them with a comma).</li>
@@ -828,13 +823,13 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">selectInput</span><span class="p">(</span><span class="s">&#34;countryInput&#34;</span><span class="p">,</span> <span class="s">&#34;Country&#34;</span><span class="p">,</span>
-            <span class="n">choices</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;CANADA&#34;</span><span class="p">,</span> <span class="s">&#34;FRANCE&#34;</span><span class="p">,</span> <span class="s">&#34;ITALY&#34;</span><span class="p">))</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">selectInput</span><span class="p">(</span><span class="s">&#34;countryInput&#34;</span><span class="p">,</span> <span class="s">&#34;Country&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">choices</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;CANADA&#34;</span><span class="p">,</span> <span class="s">&#34;FRANCE&#34;</span><span class="p">,</span> <span class="s">&#34;ITALY&#34;</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Continue to add this input code inside sidebarPanel(), after the previous input (separate them with a comma).</li>
@@ -843,11 +838,11 @@ if (!doNotTrack) {
 <h4 id="71-output-for-a-plot-of-the-results">7.1 Output for a plot of the results</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">plotOutput</span><span class="p">(</span><span class="s">&#34;coolplot&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">plotOutput</span><span class="p">(</span><span class="s">&#34;coolplot&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="72-output-for-a-table-summary-of-the-results">7.2 Output for a table summary of the results</h4>
 <ul>
@@ -855,11 +850,11 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">tableOutput</span><span class="p">(</span><span class="s">&#34;result&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">tableOutput</span><span class="p">(</span><span class="s">&#34;result&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="8-checkpoint-what-our-app-looks-like-after-implementing-the-ui">8. Checkpoint: what our app looks like after implementing the UI</h3>
 <p><img src="fig2.png" alt="fig2"></p>
@@ -899,15 +894,15 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">output</span><span class="o">$</span><span class="n">coolplot</span> <span class="o">&lt;-</span> <span class="nf">renderPlot</span><span class="p">({</span>
-    <span class="nf">plot</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">))</span>
-  <span class="p">})</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">output</span><span class="o">$</span><span class="n">coolplot</span> <span class="o">&lt;-</span> <span class="nf">renderPlot</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">plot</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
@@ -918,15 +913,15 @@ if (!doNotTrack) {
 <h4 id="92-making-an-output-react-to-an-input">9.2 Making an output react to an input</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">output</span><span class="o">$</span><span class="n">coolplot</span> <span class="o">&lt;-</span> <span class="nf">renderPlot</span><span class="p">({</span>
-    <span class="nf">plot</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">priceInput[1]</span><span class="p">))</span>
-  <span class="p">})</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">output</span><span class="o">$</span><span class="n">coolplot</span> <span class="o">&lt;-</span> <span class="nf">renderPlot</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">plot</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">priceInput[1]</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
@@ -958,19 +953,19 @@ if (!doNotTrack) {
 <h3 id="10-reactivity-101">10. Reactivity 101</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">output</span><span class="o">$</span><span class="n">someoutput</span> <span class="o">&lt;-</span> <span class="nf">renderPlot</span><span class="p">({</span>
-  <span class="n">col</span> <span class="o">&lt;-</span> <span class="n">input</span><span class="o">$</span><span class="n">mycolour</span>
-  <span class="n">num</span> <span class="o">&lt;-</span> <span class="n">input</span><span class="o">$</span><span class="n">mynumber</span>
-  <span class="nf">plot</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="n">num</span><span class="p">),</span> <span class="n">col</span> <span class="o">=</span> <span class="n">col</span><span class="p">)</span>
-<span class="p">})</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">output</span><span class="o">$</span><span class="n">someoutput</span> <span class="o">&lt;-</span> <span class="nf">renderPlot</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="n">col</span> <span class="o">&lt;-</span> <span class="n">input</span><span class="o">$</span><span class="n">mycolour</span>
+</span></span><span class="line"><span class="cl">  <span class="n">num</span> <span class="o">&lt;-</span> <span class="n">input</span><span class="o">$</span><span class="n">mynumber</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">plot</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="n">num</span><span class="p">),</span> <span class="n">col</span> <span class="o">=</span> <span class="n">col</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The above render function accesses two different inputs: <code>input$mycolour</code> and <code>input$mynumber</code>. This means that this code block depends on both of these variables, so whenever either one of the two inputs is updated, the code gets re-executed with the new input values and <code>output$someoutput</code> is updated.</p>
 <h4 id="101-creating-and-accessing-reactive-variables">10.1 Creating and accessing reactive variables</h4>
@@ -993,7 +988,7 @@ if (!doNotTrack) {
 <h4 id="111-basic-example-of-uioutput">11.1 Basic example of <code>uiOutput()</code></h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1009,21 +1004,21 @@ if (!doNotTrack) {
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
-<span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
-  <span class="nf">numericInput</span><span class="p">(</span><span class="s">&#34;num&#34;</span><span class="p">,</span> <span class="s">&#34;Maximum slider value&#34;</span><span class="p">,</span> <span class="m">5</span><span class="p">),</span>
-  <span class="nf">uiOutput</span><span class="p">(</span><span class="s">&#34;slider&#34;</span><span class="p">)</span>
-<span class="p">)</span>
-
-<span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">output</span><span class="o">$</span><span class="n">slider</span> <span class="o">&lt;-</span> <span class="nf">renderUI</span><span class="p">({</span>
-    <span class="nf">sliderInput</span><span class="p">(</span><span class="s">&#34;slider&#34;</span><span class="p">,</span> <span class="s">&#34;Slider&#34;</span><span class="p">,</span> <span class="n">min</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span>
-                <span class="n">max</span> <span class="o">=</span> <span class="n">input</span><span class="o">$</span><span class="n">num</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="m">2.5</span><span class="p">)</span>
-  <span class="p">})</span>
-<span class="p">}</span>
-
-<span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">numericInput</span><span class="p">(</span><span class="s">&#34;num&#34;</span><span class="p">,</span> <span class="s">&#34;Maximum slider value&#34;</span><span class="p">,</span> <span class="m">5</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">uiOutput</span><span class="p">(</span><span class="s">&#34;slider&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">output</span><span class="o">$</span><span class="n">slider</span> <span class="o">&lt;-</span> <span class="nf">renderUI</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">sliderInput</span><span class="p">(</span><span class="s">&#34;slider&#34;</span><span class="p">,</span> <span class="s">&#34;Slider&#34;</span><span class="p">,</span> <span class="n">min</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">max</span> <span class="o">=</span> <span class="n">input</span><span class="o">$</span><span class="n">num</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="m">2.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig10.png" alt="fig10"></p>
 <h4 id="112-use-uioutput-to-populate-the-countries">11.2 Use <code>uiOutput()</code> to populate the countries</h4>
@@ -1036,22 +1031,22 @@ if (!doNotTrack) {
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">uiOutput</span><span class="p">(</span><span class="s">&#34;subtypeOutput&#34;</span><span class="p">),</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">uiOutput</span><span class="p">(</span><span class="s">&#34;subtypeOutput&#34;</span><span class="p">),</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>In the server, modify <code>reactive({})</code> by adding code:</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">Subtype</span> <span class="o">==</span> <span class="n">input</span><span class="o">$</span><span class="n">subtypeInput</span><span class="p">,</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">Subtype</span> <span class="o">==</span> <span class="n">input</span><span class="o">$</span><span class="n">subtypeInput</span><span class="p">,</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig12.png" alt="fig12"></p>
 <h3 id="12-final-shiny-app-code">12. Final Shiny app code</h3>
@@ -1076,7 +1071,7 @@ if (!doNotTrack) {
 <h4 id="141-shiny-in-rmarkdown">14.1 Shiny in Rmarkdown</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1090,19 +1085,19 @@ if (!doNotTrack) {
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="o">---</span>
-<span class="n">output</span><span class="o">:</span> <span class="n">html_document</span>
-<span class="n">runtime</span><span class="o">:</span> <span class="n">shiny</span>
-<span class="o">---</span>
-
-<span class="n">```</span><span class="p">{</span><span class="n">r</span> <span class="n">echo</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">}</span>
-<span class="nf">sliderInput</span><span class="p">(</span><span class="s">&#34;num&#34;</span><span class="p">,</span> <span class="s">&#34;Choose a number&#34;</span><span class="p">,</span>
-            <span class="m">0</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">20</span><span class="p">)</span>
-
-<span class="nf">renderPlot</span><span class="p">({</span>
-    <span class="nf">plot</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">num</span><span class="p">))</span>
-<span class="p">})</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="o">---</span>
+</span></span><span class="line"><span class="cl"><span class="n">output</span><span class="o">:</span> <span class="n">html_document</span>
+</span></span><span class="line"><span class="cl"><span class="n">runtime</span><span class="o">:</span> <span class="n">shiny</span>
+</span></span><span class="line"><span class="cl"><span class="o">---</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">```</span><span class="p">{</span><span class="n">r</span> <span class="n">echo</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">sliderInput</span><span class="p">(</span><span class="s">&#34;num&#34;</span><span class="p">,</span> <span class="s">&#34;Choose a number&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="m">0</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">renderPlot</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">plot</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">num</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
@@ -1113,7 +1108,7 @@ if (!doNotTrack) {
 <h4 id="142-use-conditionalpanel-to-conditionally-show-ui-elements">14.2 Use <code>conditionalPanel()</code> to conditionally show UI elements</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1125,23 +1120,23 @@ if (!doNotTrack) {
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
-<span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
-  <span class="nf">numericInput</span><span class="p">(</span><span class="s">&#34;num&#34;</span><span class="p">,</span> <span class="s">&#34;Number&#34;</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span>
-  <span class="nf">conditionalPanel</span><span class="p">(</span>
-    <span class="s">&#34;input.num &gt;=5&#34;</span><span class="p">,</span>
-    <span class="s">&#34;Hello!&#34;</span>
-  <span class="p">)</span>
-<span class="p">)</span>
-<span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="p">{}</span>
-<span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">numericInput</span><span class="p">(</span><span class="s">&#34;num&#34;</span><span class="p">,</span> <span class="s">&#34;Number&#34;</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">conditionalPanel</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;input.num &gt;=5&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;Hello!&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig13.png" alt="fig13"></p>
 <h4 id="143-use-navbarpage-or-tabsetpanel-to-have-multiple-tabs-in-the-ui">14.3 Use <code>navbarPage()</code> or <code>tabsetPanel()</code> to have multiple tabs in the UI</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1152,16 +1147,16 @@ if (!doNotTrack) {
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
-<span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
-  <span class="nf">tabsetPanel</span><span class="p">(</span>
-    <span class="nf">tabPanel</span><span class="p">(</span><span class="s">&#34;Tab 1&#34;</span><span class="p">,</span> <span class="s">&#34;Hello&#34;</span><span class="p">),</span>
-    <span class="nf">tabPanel</span><span class="p">(</span><span class="s">&#34;Tab 2&#34;</span><span class="p">,</span> <span class="s">&#34;there!&#34;</span><span class="p">)</span>
-  <span class="p">)</span>
-<span class="p">)</span>
-<span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="p">{}</span>
-<span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">tabsetPanel</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">tabPanel</span><span class="p">(</span><span class="s">&#34;Tab 1&#34;</span><span class="p">,</span> <span class="s">&#34;Hello&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">tabPanel</span><span class="p">(</span><span class="s">&#34;Tab 2&#34;</span><span class="p">,</span> <span class="s">&#34;there!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig15.png" alt="fig15"></p>
 <h4 id="144-use-dt-for-beautiful-interactive-tables">14.4 Use <code>DT</code> for beautiful, interactive tables</h4>
@@ -1178,7 +1173,7 @@ if (!doNotTrack) {
 <h4 id="146-use-updateinput-functions-to-update-input-values-programmatically">14.6 Use <code>update*Input()</code> functions to update input values programmatically</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1191,18 +1186,18 @@ if (!doNotTrack) {
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
-<span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
-  <span class="nf">sliderInput</span><span class="p">(</span><span class="s">&#34;slider&#34;</span><span class="p">,</span> <span class="s">&#34;Move me&#34;</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span>
-  <span class="nf">numericInput</span><span class="p">(</span><span class="s">&#34;num&#34;</span><span class="p">,</span> <span class="s">&#34;Number&#34;</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
-<span class="p">)</span>
-<span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">session</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">observe</span><span class="p">({</span>
-    <span class="nf">updateNumericInput</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="s">&#34;num&#34;</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="m">5</span><span class="o">*</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">slider</span><span class="p">))</span>
-  <span class="p">})</span>
-<span class="p">}</span>
-<span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">sliderInput</span><span class="p">(</span><span class="s">&#34;slider&#34;</span><span class="p">,</span> <span class="s">&#34;Move me&#34;</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">numericInput</span><span class="p">(</span><span class="s">&#34;num&#34;</span><span class="p">,</span> <span class="s">&#34;Number&#34;</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">session</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">observe</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">updateNumericInput</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="s">&#34;num&#34;</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="m">5</span><span class="o">*</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">slider</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="fig16.png" alt="fig16"></p>
 <h4 id="147-scoping-rules-in-shiny-apps">14.7 Scoping rules in Shiny apps</h4>
@@ -1215,7 +1210,7 @@ if (!doNotTrack) {
 <h4 id="1410-add-javascriptcss">14.10 Add <code>JavaScript</code>/<code>CSS</code></h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1227,17 +1222,17 @@ if (!doNotTrack) {
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
-<span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
-  <span class="n">tags</span><span class="o">$</span><span class="nf">head</span><span class="p">(</span><span class="n">tags</span><span class="o">$</span><span class="nf">script</span><span class="p">(</span><span class="s">&#34;alert(&#39;Hello!&#39;);&#34;</span><span class="p">)),</span>
-  <span class="n">tags</span><span class="o">$</span><span class="nf">head</span><span class="p">(</span><span class="n">tags</span><span class="o">$</span><span class="nf">style</span><span class="p">(</span><span class="s">&#34;body{ color: blue; }&#34;</span><span class="p">)),</span>
-  <span class="s">&#34;Hello&#34;</span>
-<span class="p">)</span>
-<span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="p">{</span>
-  
-<span class="p">}</span>
-<span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="n">tags</span><span class="o">$</span><span class="nf">head</span><span class="p">(</span><span class="n">tags</span><span class="o">$</span><span class="nf">script</span><span class="p">(</span><span class="s">&#34;alert(&#39;Hello!&#39;);&#34;</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">  <span class="n">tags</span><span class="o">$</span><span class="nf">head</span><span class="p">(</span><span class="n">tags</span><span class="o">$</span><span class="nf">style</span><span class="p">(</span><span class="s">&#34;body{ color: blue; }&#34;</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Hello&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="15-awesome-add-on-packages-to-shiny">15. Awesome add-on packages to Shiny</h3>
 <ul>
@@ -1368,7 +1363,7 @@ if (!doNotTrack) {
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1412,7 +1407,7 @@ if (!doNotTrack) {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 

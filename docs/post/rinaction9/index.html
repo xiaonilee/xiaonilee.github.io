@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/rinaction9/" />
@@ -54,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,19 +67,14 @@
 <meta property="og:title" content="Chapter 9. Analysis of variance" />
 <meta property="og:description" content="Notebook of Reading Books: R in Action_Chapter 9." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/rinaction9/" />
+<meta property="og:url" content="/post/rinaction9/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-10-30T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-10-30T00:00:00+00:00" />
 <meta itemprop="name" content="Chapter 9. Analysis of variance">
-<meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 9.">
-<meta itemprop="datePublished" content="2020-10-30T00:00:00+00:00" />
+<meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 9."><meta itemprop="datePublished" content="2020-10-30T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-10-30T00:00:00+00:00" />
 <meta itemprop="wordCount" content="2509">
-
-
-
-<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Chapter 9. Analysis of variance"/>
 <meta name="twitter:description" content="Notebook of Reading Books: R in Action_Chapter 9."/>
 
@@ -675,7 +670,7 @@ if (!doNotTrack) {
 <p>Show me the code <i class="far fa-hand-pointer"></i></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -1100,430 +1095,430 @@ if (!doNotTrack) {
 </span><span class="lnt">423
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Remove most objects from the working environment</span>
-<span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
-
-<span class="c1"># 9.3. One-way ANOVA</span>
-<span class="c1"># code listing 9.1</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">multcomp</span><span class="p">)</span>
-<span class="nf">attach</span><span class="p">(</span><span class="n">cholesterol</span><span class="p">)</span>
-<span class="nf">colnames</span><span class="p">(</span><span class="n">cholesterol</span><span class="p">)</span>
-<span class="nf">table</span><span class="p">(</span><span class="n">trt</span><span class="p">)</span>  <span class="c1"># group sample sizes</span>
-<span class="c1"># trt</span>
-<span class="c1">#  1time 2times 4times  drugD  drugE </span>
-<span class="c1">#     10     10     10     10     10 </span>
-
-<span class="nf">aggregate</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">trt</span><span class="p">),</span> <span class="n">mean</span><span class="p">)</span> <span class="c1"># group means</span>
-<span class="c1">#   Group.1        x</span>
-<span class="c1"># 1   1time  5.78197</span>
-<span class="c1"># 2  2times  9.22497</span>
-<span class="c1"># 3  4times 12.37478</span>
-<span class="c1"># 4   drugD 15.36117</span>
-<span class="c1"># 5   drugE 20.94752</span>
-
-<span class="nf">aggregate</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">trt</span><span class="p">),</span> <span class="n">sd</span><span class="p">)</span> <span class="c1"># group standard deviations</span>
-<span class="c1">#   Group.1        x</span>
-<span class="c1"># 1   1time 2.878113</span>
-<span class="c1"># 2  2times 3.483054</span>
-<span class="c1"># 3  4times 2.923119</span>
-<span class="c1"># 4   drugD 3.454636</span>
-<span class="c1"># 5   drugE 3.345003</span>
-
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">aov</span><span class="p">(</span><span class="n">response</span> <span class="o">~</span> <span class="n">trt</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>  <span class="c1"># Test for group differences(ANOVA)</span>
-
-<span class="c1">#             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span>
-<span class="c1"># trt          4 1351.4   337.8   32.43 9.82e-13 ***</span>
-<span class="c1"># Residuals   45  468.8    10.4                     </span>
-<span class="c1"># ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-
-<span class="nf">library</span><span class="p">(</span><span class="n">gplots</span><span class="p">)</span>
-<span class="nf">plotmeans</span><span class="p">(</span><span class="n">response</span> <span class="o">~</span> <span class="n">trt</span><span class="p">,</span>
-          <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Treatment&#34;</span><span class="p">,</span>
-          <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Response&#34;</span><span class="p">,</span>
-          <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Mean Plot \nwith 95% CI&#34;</span><span class="p">)</span> <span class="c1"># figure 9.1</span>
-<span class="nf">detach</span><span class="p">(</span><span class="n">cholesterol</span><span class="p">)</span>
-
-<span class="c1"># 9.3.1. Multiple comparisons</span>
-<span class="c1"># code listing 9.2. Tukey HSD pairwise group comparisons</span>
-<span class="nf">TukeyHSD</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># Tukey multiple comparisons of means</span>
-<span class="c1">#   95% family-wise confidence level</span>
-<span class="c1"># </span>
-<span class="c1"># Fit: aov(formula = response ~ trt)</span>
-<span class="c1"># </span>
-<span class="c1"># $trt</span>
-<span class="c1">#                   diff        lwr       upr     p adj</span>
-<span class="c1"># 2times-1time   3.44300 -0.6582817  7.544282 0.1380949</span>
-<span class="c1"># 4times-1time   6.59281  2.4915283 10.694092 0.0003542</span>
-<span class="c1"># drugD-1time    9.57920  5.4779183 13.680482 0.0000003</span>
-<span class="c1"># drugE-1time   15.16555 11.0642683 19.266832 0.0000000</span>
-<span class="c1"># 4times-2times  3.14981 -0.9514717  7.251092 0.2050382</span>
-<span class="c1"># drugD-2times   6.13620  2.0349183 10.237482 0.0009611</span>
-<span class="c1"># drugE-2times  11.72255  7.6212683 15.823832 0.0000000</span>
-<span class="c1"># drugD-4times   2.98639 -1.1148917  7.087672 0.2512446</span>
-<span class="c1"># drugE-4times   8.57274  4.4714583 12.674022 0.0000037</span>
-<span class="c1"># drugE-drugD    5.58635  1.4850683  9.687632 0.0030633</span>
-
-
-<span class="nf">par</span><span class="p">(</span><span class="n">las</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
-<span class="nf">par</span><span class="p">(</span><span class="n">mar</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
-<span class="nf">plot</span><span class="p">(</span><span class="nf">TukeyHSD</span><span class="p">(</span><span class="n">fit</span><span class="p">))</span> <span class="c1"># figure 9.2</span>
-
-
-<span class="nf">library</span><span class="p">(</span><span class="n">multcomp</span><span class="p">)</span>
-<span class="nf">par</span><span class="p">(</span><span class="n">mar</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
-<span class="n">tuk</span> <span class="o">&lt;-</span> <span class="nf">glht</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">linfct</span><span class="o">=</span><span class="nf">mcp</span><span class="p">(</span><span class="n">trt</span><span class="o">=</span><span class="s">&#34;Tukey&#34;</span><span class="p">))</span>
-<span class="nf">plot</span><span class="p">(</span><span class="nf">cld</span><span class="p">(</span><span class="n">tuk</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="m">.05</span><span class="p">),</span><span class="n">col</span><span class="o">=</span><span class="s">&#34;lightgrey&#34;</span><span class="p">)</span> <span class="c1"># figure 9.3</span>
-
-
-<span class="c1"># 9.3.2. Assessing test assumptions</span>
-<span class="c1"># figure 9.4</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
-<span class="nf">qqPlot</span><span class="p">(</span><span class="nf">lm</span><span class="p">(</span><span class="n">response</span> <span class="o">~</span> <span class="n">trt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">cholesterol</span><span class="p">),</span>
-         <span class="n">simulate</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&#34;Q-Q Plot&#34;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-
-
-<span class="c1"># code</span>
-<span class="nf">bartlett.test</span><span class="p">(</span><span class="n">response</span> <span class="o">~</span> <span class="n">trt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">cholesterol</span><span class="p">)</span>
-
-<span class="c1">#         Bartlett test of homogeneity of variances</span>
-<span class="c1"># </span>
-<span class="c1"># data:  response by trt</span>
-<span class="c1"># Bartlett&#39;s K-squared = 0.57975, df = 4, p-value = 0.9653</span>
-
-
-<span class="nf">outlierTest</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># No Studentized residuals with Bonferroni p &lt; 0.05</span>
-<span class="c1"># Largest |rstudent|:</span>
-<span class="c1">#   rstudent unadjusted p-value Bonferroni p</span>
-<span class="c1"># 19 2.251149           0.029422           NA</span>
-
-<span class="c1">#=============================================================</span>
-
-<span class="c1"># 9.4. One-way ANCOVA</span>
-<span class="c1"># code listing 9.3. One-way ANCOVA</span>
-<span class="nf">data</span><span class="p">(</span><span class="s">&#34;litter&#34;</span><span class="p">,</span> <span class="n">package</span> <span class="o">=</span> <span class="s">&#34;multcomp&#34;</span><span class="p">)</span>
-<span class="nf">attach</span><span class="p">(</span><span class="n">litter</span><span class="p">)</span>
-<span class="nf">table</span><span class="p">(</span><span class="n">dose</span><span class="p">)</span>
-<span class="c1"># dose</span>
-<span class="c1">#   0   5  50 500 </span>
-<span class="c1">#   20  19  18  17 </span>
-
-<span class="nf">aggregate</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">dose</span><span class="p">),</span> <span class="n">mean</span><span class="p">)</span>
-<span class="c1">#   Group.1        x</span>
-<span class="c1"># 1       0 32.30850</span>
-<span class="c1"># 2       5 29.30842</span>
-<span class="c1"># 3      50 29.86611</span>
-<span class="c1"># 4     500 29.64647</span>
-
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">aov</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">gesttime</span> <span class="o">+</span> <span class="n">dose</span><span class="p">)</span> 
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-
-<span class="c1">#             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span>
-<span class="c1"># trt          4 1351.4   337.8   32.43 9.82e-13 ***</span>
-<span class="c1"># Residuals   45  468.8    10.4                     </span>
-<span class="c1"># ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-
-<span class="nf">library</span><span class="p">(</span><span class="n">effects</span><span class="p">)</span>
-<span class="nf">effect</span><span class="p">(</span><span class="s">&#34;dose&#34;</span><span class="p">,</span> <span class="n">fit</span><span class="p">)</span>
-
-<span class="c1">#  dose effect</span>
-<span class="c1"># dose</span>
-<span class="c1">#        0        5       50      500 </span>
-<span class="c1"># 32.35367 28.87672 30.56614 29.33460 </span>
-
-
-<span class="c1"># code listing 9.4 Multiple comparisons employing user-supplied contrasts</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">multcomp</span><span class="p">)</span>
-<span class="n">contrast</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="s">&#34;no drug vs. drug&#34;</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">-1</span><span class="p">,</span> <span class="m">-1</span><span class="p">,</span> <span class="m">-1</span><span class="p">))</span>
-<span class="nf">summary</span><span class="p">(</span><span class="nf">glht</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">linfct</span><span class="o">=</span><span class="nf">mcp</span><span class="p">(</span><span class="n">dose</span><span class="o">=</span><span class="n">contrast</span><span class="p">)))</span>
-<span class="c1"># Simultaneous Tests for General Linear Hypotheses</span>
-<span class="c1"># </span>
-<span class="c1"># Multiple Comparisons of Means: User-defined Contrasts</span>
-<span class="c1"># </span>
-<span class="c1"># </span>
-<span class="c1"># Fit: aov(formula = weight ~ gesttime + dose)</span>
-<span class="c1"># </span>
-<span class="c1"># Linear Hypotheses:</span>
-<span class="c1">#   Estimate Std. Error t value Pr(&gt;|t|)  </span>
-<span class="c1"># no drug vs. drug == 0    8.284      3.209   2.581    0.012 *</span>
-<span class="c1">#   ---</span>
-<span class="c1">#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-<span class="c1"># (Adjusted p values reported -- single-step method)</span>
-
-<span class="nf">help</span><span class="p">(</span><span class="s">&#34;glht&#34;</span><span class="p">)</span>
-
-<span class="c1"># 9.4.1. Assessing test assumptions</span>
-<span class="c1"># code listing 9.5. Testing for homogeneity of regression slopes</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">multcomp</span><span class="p">)</span>
-<span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">aov</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">gesttime</span><span class="o">*</span><span class="n">dose</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">litter</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit2</span><span class="p">)</span>
-
-<span class="c1">#               Df Sum Sq Mean Sq F value  Pr(&gt;F)   </span>
-<span class="c1"># gesttime       1  134.3  134.30   8.289 0.00537 **</span>
-<span class="c1"># dose           3  137.1   45.71   2.821 0.04556 * </span>
-<span class="c1"># gesttime:dose  3   81.9   27.29   1.684 0.17889   </span>
-<span class="c1"># Residuals     66 1069.4   16.20                   </span>
-<span class="c1"># ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-
-<span class="c1">#==================================================================</span>
-<span class="c1"># 9.4.2. Visualizing the results</span>
-<span class="c1"># install.packages(&#34;HH&#34;)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">HH</span><span class="p">)</span>
-<span class="nf">ancova</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">gesttime</span> <span class="o">+</span> <span class="n">dose</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">litter</span><span class="p">)</span> <span class="c1"># figure 9.5</span>
-
-<span class="c1"># 9.5. Two-way factorial ANOVA</span>
-<span class="c1"># code listing 9.6 Two-way ANOVA</span>
-<span class="nf">attach</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="p">)</span>
-<span class="c1">#    len supp dose</span>
-<span class="c1"># 1  4.2   VC  0.5</span>
-<span class="c1"># 2 11.5   VC  0.5</span>
-<span class="c1"># 3  7.3   VC  0.5</span>
-<span class="c1"># 4  5.8   VC  0.5</span>
-<span class="c1"># 5  6.4   VC  0.5</span>
-<span class="c1"># 6 10.0   VC  0.5</span>
-
-<span class="nf">class</span><span class="p">(</span><span class="n">dose</span><span class="p">)</span>
-<span class="nf">colnames</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="p">)</span>
-<span class="c1"># [1] &#34;len&#34;  &#34;supp&#34; &#34;dose&#34;</span>
-
-<span class="nf">table</span><span class="p">(</span><span class="n">supp</span><span class="p">,</span><span class="n">dose</span><span class="p">)</span>
-<span class="c1">#     dose</span>
-<span class="c1"># supp 0.5  1  2</span>
-<span class="c1"># OJ  10 10 10</span>
-<span class="c1"># VC  10 10 10</span>
-
-<span class="nf">aggregate</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">supp</span><span class="p">,</span> <span class="n">dose</span><span class="p">),</span> <span class="n">mean</span><span class="p">)</span>
-<span class="c1">#   Group.1 Group.2     x</span>
-<span class="c1"># 1      OJ     0.5 13.23</span>
-<span class="c1"># 2      VC     0.5  7.98</span>
-<span class="c1"># 3      OJ     1.0 22.70</span>
-<span class="c1"># 4      VC     1.0 16.77</span>
-<span class="c1"># 5      OJ     2.0 26.06</span>
-<span class="c1"># 6      VC     2.0 26.14</span>
-
-<span class="nf">aggregate</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">supp</span><span class="p">,</span> <span class="n">dose</span><span class="p">),</span> <span class="n">sd</span><span class="p">)</span>
-<span class="c1">#   Group.1 Group.2        x</span>
-<span class="c1"># 1      OJ     0.5 4.459709</span>
-<span class="c1"># 2      VC     0.5 2.746634</span>
-<span class="c1"># 3      OJ     1.0 3.910953</span>
-<span class="c1"># 4      VC     1.0 2.515309</span>
-<span class="c1"># 5      OJ     2.0 2.655058</span>
-<span class="c1"># 6      VC     2.0 4.797731</span>
-
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">aov</span><span class="p">(</span><span class="n">len</span> <span class="o">~</span> <span class="n">supp</span><span class="o">*</span><span class="n">dose</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1">#             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span>
-<span class="c1"># supp         1  205.4   205.4  12.317 0.000894 ***</span>
-<span class="c1"># dose         1 2224.3  2224.3 133.415  &lt; 2e-16 ***</span>
-<span class="c1"># supp:dose    1   88.9    88.9   5.333 0.024631 *  </span>
-<span class="c1"># Residuals   56  933.6    16.7                     </span>
-<span class="c1"># ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-
-<span class="n">dose</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">dose</span><span class="p">)</span>
-<span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">aov</span><span class="p">(</span><span class="n">len</span> <span class="o">~</span> <span class="n">supp</span><span class="o">*</span><span class="n">dose</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit2</span><span class="p">)</span>
-<span class="c1">#             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span>
-<span class="c1"># supp         1  205.4   205.4  15.572 0.000231 ***</span>
-<span class="c1"># dose         2 2426.4  1213.2  92.000  &lt; 2e-16 ***</span>
-<span class="c1"># supp:dose    2  108.3    54.2   4.107 0.021860 *  </span>
-<span class="c1"># Residuals   54  712.1    13.2                     </span>
-<span class="c1"># ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-
-<span class="nf">detach</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="p">)</span>
-
-<span class="c1"># figure 9.6</span>
-<span class="nf">interaction.plot</span><span class="p">(</span><span class="n">dose</span><span class="p">,</span> <span class="n">supp</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&#34;b&#34;</span><span class="p">,</span>
-                 <span class="n">col</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;red&#34;</span><span class="p">,</span><span class="s">&#34;blue&#34;</span><span class="p">),</span> <span class="n">pch</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">16</span><span class="p">,</span> <span class="m">18</span><span class="p">),</span>
-                 <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Interaction between Dose and Supplement Type&#34;</span><span class="p">)</span>
-
-<span class="c1"># figure 9.7</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">gplots</span><span class="p">)</span>
-<span class="nf">plotmeans</span><span class="p">(</span><span class="n">len</span> <span class="o">~</span> <span class="nf">interaction</span><span class="p">(</span><span class="n">supp</span><span class="p">,</span> <span class="n">dose</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#34; &#34;</span><span class="p">),</span>
-          <span class="n">connect</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">5</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">)),</span>
-          <span class="n">col</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;red&#34;</span><span class="p">,</span> <span class="s">&#34;darkgreen&#34;</span><span class="p">),</span>
-          <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Interaction Plot with 95% CIs&#34;</span><span class="p">,</span>
-          <span class="n">xlab</span><span class="o">=</span><span class="s">&#34;Treatment and Dose Combination&#34;</span><span class="p">)</span>
-
-<span class="c1"># figure 9.8</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">HH</span><span class="p">)</span>
-<span class="nf">interaction2wt</span><span class="p">(</span><span class="n">len</span><span class="o">~</span><span class="n">supp</span><span class="o">*</span><span class="n">dose</span><span class="p">)</span>
-
-<span class="c1"># 9.6. Repeated measures ANOVA</span>
-<span class="c1"># code listing 9.7. Repeated measures ANOVA with one between- and within-groups factor</span>
-<span class="n">CO2</span><span class="o">$</span><span class="n">conc</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">CO2</span><span class="o">$</span><span class="n">conc</span><span class="p">)</span>
-<span class="n">w1b1</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">CO2</span><span class="p">,</span> <span class="n">Treatment</span><span class="o">==</span><span class="s">&#39;chilled&#39;</span><span class="p">)</span>
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">aov</span><span class="p">(</span><span class="n">uptake</span> <span class="o">~</span> <span class="n">conc</span><span class="o">*</span><span class="n">Type</span> <span class="o">+</span> <span class="nf">Error</span><span class="p">(</span><span class="n">Plant</span><span class="o">/</span><span class="p">(</span><span class="n">conc</span><span class="p">)),</span> <span class="n">w1b1</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># Error: Plant</span>
-<span class="c1">#           Df Sum Sq Mean Sq F value  Pr(&gt;F)   </span>
-<span class="c1"># Type       1 2667.2  2667.2   60.41 0.00148 **</span>
-<span class="c1"># Residuals  4  176.6    44.1                   </span>
-<span class="c1"># ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-<span class="c1"># </span>
-<span class="c1"># Error: Plant:conc</span>
-<span class="c1">#           Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span>
-<span class="c1"># conc       6 1472.4  245.40   52.52 1.26e-12 ***</span>
-<span class="c1"># conc:Type  6  428.8   71.47   15.30 3.75e-07 ***</span>
-<span class="c1"># Residuals 24  112.1    4.67                     </span>
-<span class="c1"># ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-
-<span class="nf">par</span><span class="p">(</span><span class="n">las</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
-<span class="nf">par</span><span class="p">(</span><span class="n">mar</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">2</span><span class="p">))</span>
-<span class="c1"># figure 9.9</span>
-<span class="nf">with</span><span class="p">(</span><span class="n">w1b1</span><span class="p">,</span> <span class="nf">interaction.plot</span><span class="p">(</span><span class="n">conc</span><span class="p">,</span><span class="n">Type</span><span class="p">,</span><span class="n">uptake</span><span class="p">,</span>
-                            <span class="n">type</span><span class="o">=</span><span class="s">&#34;b&#34;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;red&#34;</span><span class="p">,</span><span class="s">&#34;blue&#34;</span><span class="p">),</span> <span class="n">pch</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">16</span><span class="p">,</span><span class="m">18</span><span class="p">),</span>
-                            <span class="n">main</span><span class="o">=</span><span class="s">&#34;Interaction Plot for Plant Type and Concentration&#34;</span><span class="p">))</span>
-
-<span class="c1"># figure 9.10</span>
-<span class="nf">boxplot</span><span class="p">(</span><span class="n">uptake</span> <span class="o">~</span> <span class="n">Type</span><span class="o">*</span><span class="n">conc</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">w1b1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;gold&#34;</span><span class="p">,</span> <span class="s">&#34;green&#34;</span><span class="p">)),</span>
-        <span class="n">main</span><span class="o">=</span><span class="s">&#34;Chilled Quebec and Mississippi Plants&#34;</span><span class="p">,</span>
-        <span class="n">ylab</span><span class="o">=</span><span class="s">&#34;Carbon dioxide uptake rate (umol/m^2 sec)&#34;</span><span class="p">)</span>
-
-
-<span class="c1"># 9.7. Multivariate analysis of variance (MANOVA)</span>
-<span class="c1"># code listing 9.8. One-way MANOVA</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">MASS</span><span class="p">)</span>
-<span class="nf">attach</span><span class="p">(</span><span class="n">UScereal</span><span class="p">)</span>
-<span class="n">shelf</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">shelf</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">calories</span><span class="p">,</span> <span class="n">fat</span><span class="p">,</span> <span class="n">sugars</span><span class="p">)</span>
-<span class="nf">aggregate</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">shelf</span><span class="p">),</span> <span class="n">mean</span><span class="p">)</span>
-<span class="c1">#   Group.1 calories       fat    sugars</span>
-<span class="c1"># 1       1 119.4774 0.6621338  6.295493</span>
-<span class="c1"># 2       2 129.8162 1.3413488 12.507670</span>
-<span class="c1"># 3       3 180.1466 1.9449071 10.856821</span>
-
-<span class="nf">cov</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="c1">#            calories       fat     sugars</span>
-<span class="c1"># calories 3895.24210 60.674383 180.380317</span>
-<span class="c1"># fat        60.67438  2.713399   3.995474</span>
-<span class="c1"># sugars    180.38032  3.995474  34.050018</span>
-
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">manova</span><span class="p">(</span><span class="n">y</span> <span class="o">~</span> <span class="n">shelf</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>  
-<span class="c1">#           Df Pillai approx F num Df den Df    Pr(&gt;F)    </span>
-<span class="c1"># shelf      2 0.4021   5.1167      6    122 0.0001015 ***</span>
-<span class="c1"># Residuals 62                                            </span>
-<span class="c1"># ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-  
-  
-<span class="nf">summary.aov</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># Response calories :</span>
-<span class="c1">#             Df Sum Sq Mean Sq F value    Pr(&gt;F)    </span>
-<span class="c1"># shelf        2  50435 25217.6  7.8623 0.0009054 ***</span>
-<span class="c1"># Residuals   62 198860  3207.4                      </span>
-<span class="c1"># ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-<span class="c1"># </span>
-<span class="c1"># Response fat :</span>
-<span class="c1">#             Df Sum Sq Mean Sq F value  Pr(&gt;F)  </span>
-<span class="c1"># shelf        2  18.44  9.2199  3.6828 0.03081 *</span>
-<span class="c1"># Residuals   62 155.22  2.5035                  </span>
-<span class="c1"># ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-<span class="c1"># </span>
-<span class="c1"># Response sugars :</span>
-<span class="c1">#             Df  Sum Sq Mean Sq F value   Pr(&gt;F)   </span>
-<span class="c1"># shelf        2  381.33 190.667  6.5752 0.002572 **</span>
-<span class="c1"># Residuals   62 1797.87  28.998                    </span>
-<span class="c1"># ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-
-
-<span class="c1"># 9.7.1. Assessing test assumptions</span>
-<span class="c1"># code listing 9.9. Assessing multivariate normality</span>
-<span class="n">center</span> <span class="o">&lt;-</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">ncol</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="n">cov</span> <span class="o">&lt;-</span> <span class="nf">cov</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="n">d</span> <span class="o">&lt;-</span> <span class="nf">mahalanobis</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">cov</span><span class="p">)</span>
-
-<span class="c1"># figure 9.11</span>
-<span class="n">coord</span> <span class="o">&lt;-</span> <span class="nf">qqplot</span><span class="p">(</span><span class="nf">qchisq</span><span class="p">(</span><span class="nf">ppoints</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">df</span><span class="o">=</span><span class="n">p</span><span class="p">),</span>
-                <span class="n">d</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&#34;Q-Q Plot Assessing Multivariate Normality&#34;</span><span class="p">,</span>
-                <span class="n">ylab</span><span class="o">=</span><span class="s">&#34;Mahalanobis D2&#34;</span><span class="p">)</span>
-<span class="nf">abline</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
-<span class="nf">identify</span><span class="p">(</span><span class="n">coord</span><span class="o">$</span><span class="n">x</span><span class="p">,</span> <span class="n">coord</span><span class="o">$</span><span class="n">y</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="nf">row.names</span><span class="p">(</span><span class="n">UScereal</span><span class="p">))</span>
-
-<span class="c1">#================================================================</span>
-<span class="c1"># install.packages(&#34;mvoutlier&#34;)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">mvoutlier</span><span class="p">)</span>
-<span class="n">outliers</span> <span class="o">&lt;-</span> <span class="nf">aq.plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="n">outliers</span>
-
-<span class="c1"># 9.7.2. Robust MANOVA</span>
-<span class="c1"># code listing 9.10. Robust one-way MANOVA</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">rrcov</span><span class="p">)</span>
-<span class="nf">Wilks.test</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">shelf</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#34;mcd&#34;</span><span class="p">)</span>
-<span class="c1">#         Robust One-way MANOVA (Bartlett Chi2)</span>
-<span class="c1"># </span>
-<span class="c1"># data:  x</span>
-<span class="c1"># Wilks&#39; Lambda = 0.51073, Chi2-Value = 25.3745, DF = 5.1632, p-value = 0.0001377</span>
-<span class="c1"># sample estimates:</span>
-<span class="c1">#   calories       fat    sugars</span>
-<span class="c1"># 1 119.8210 0.7010828  5.663143</span>
-<span class="c1"># 2 128.0407 1.1849576 12.537533</span>
-<span class="c1"># 3 160.8604 1.6524559 10.352646</span>
-
-
-<span class="c1"># 9.8. ANOVA as regression</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">multcomp</span><span class="p">)</span>
-<span class="nf">levels</span><span class="p">(</span><span class="n">cholesterol</span><span class="o">$</span><span class="n">trt</span><span class="p">)</span>
-<span class="c1"># [1] &#34;1time&#34;  &#34;2times&#34; &#34;4times&#34; &#34;drugD&#34;  &#34;drugE&#34;</span>
-
-<span class="n">fit.aov</span> <span class="o">&lt;-</span> <span class="nf">aov</span><span class="p">(</span><span class="n">response</span> <span class="o">~</span> <span class="n">trt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">cholesterol</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit.aov</span><span class="p">)</span>
-<span class="c1">#             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span>
-<span class="c1"># trt          4 1351.4   337.8   32.43 9.82e-13 ***</span>
-<span class="c1"># Residuals   45  468.8    10.4                     </span>
-<span class="c1"># ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-
-
-<span class="c1"># code listing 9.11. A regression approach to the ANOVA problem in section 9.3</span>
-<span class="n">fit.lm</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">response</span> <span class="o">~</span> <span class="n">trt</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">cholesterol</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit.lm</span><span class="p">)</span>
-
-<span class="c1"># Call:</span>
-<span class="c1">#   lm(formula = response ~ trt, data = cholesterol)</span>
-<span class="c1"># </span>
-<span class="c1"># Residuals:</span>
-<span class="c1">#   Min      1Q  Median      3Q     Max </span>
-<span class="c1"># -6.5418 -1.9672 -0.0016  1.8901  6.6008 </span>
-<span class="c1"># </span>
-<span class="c1"># Coefficients:</span>
-<span class="c1">#             Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="c1"># (Intercept)    5.782      1.021   5.665 9.78e-07 ***</span>
-<span class="c1">#   trt2times      3.443      1.443   2.385   0.0213 *  </span>
-<span class="c1">#   trt4times      6.593      1.443   4.568 3.82e-05 ***</span>
-<span class="c1">#   trtdrugD       9.579      1.443   6.637 3.53e-08 ***</span>
-<span class="c1">#   trtdrugE      15.166      1.443  10.507 1.08e-13 ***</span>
-<span class="c1">#   ---</span>
-<span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
-<span class="c1"># </span>
-<span class="c1"># Residual standard error: 3.227 on 45 degrees of freedom</span>
-<span class="c1"># Multiple R-squared:  0.7425, Adjusted R-squared:  0.7196 </span>
-<span class="c1"># F-statistic: 32.43 on 4 and 45 DF,  p-value: 9.819e-13</span>
-
-<span class="nf">contrasts</span><span class="p">(</span><span class="n">cholesterol</span><span class="o">$</span><span class="n">trt</span><span class="p">)</span>
-<span class="c1">#        2times 4times drugD drugE</span>
-<span class="c1"># 1time       0      0     0     0</span>
-<span class="c1"># 2times      1      0     0     0</span>
-<span class="c1"># 4times      0      1     0     0</span>
-<span class="c1"># drugD       0      0     1     0</span>
-<span class="c1"># drugE       0      0     0     1</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Remove most objects from the working environment</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 9.3. One-way ANOVA</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 9.1</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">multcomp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">attach</span><span class="p">(</span><span class="n">cholesterol</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">colnames</span><span class="p">(</span><span class="n">cholesterol</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">table</span><span class="p">(</span><span class="n">trt</span><span class="p">)</span>  <span class="c1"># group sample sizes</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># trt</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  1time 2times 4times  drugD  drugE </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     10     10     10     10     10 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">aggregate</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">trt</span><span class="p">),</span> <span class="n">mean</span><span class="p">)</span> <span class="c1"># group means</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Group.1        x</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1   1time  5.78197</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2  2times  9.22497</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3  4times 12.37478</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4   drugD 15.36117</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 5   drugE 20.94752</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">aggregate</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">trt</span><span class="p">),</span> <span class="n">sd</span><span class="p">)</span> <span class="c1"># group standard deviations</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Group.1        x</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1   1time 2.878113</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2  2times 3.483054</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3  4times 2.923119</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4   drugD 3.454636</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 5   drugE 3.345003</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">aov</span><span class="p">(</span><span class="n">response</span> <span class="o">~</span> <span class="n">trt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>  <span class="c1"># Test for group differences(ANOVA)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># trt          4 1351.4   337.8   32.43 9.82e-13 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals   45  468.8    10.4                     </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">gplots</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plotmeans</span><span class="p">(</span><span class="n">response</span> <span class="o">~</span> <span class="n">trt</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Treatment&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Response&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Mean Plot \nwith 95% CI&#34;</span><span class="p">)</span> <span class="c1"># figure 9.1</span>
+</span></span><span class="line"><span class="cl"><span class="nf">detach</span><span class="p">(</span><span class="n">cholesterol</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 9.3.1. Multiple comparisons</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 9.2. Tukey HSD pairwise group comparisons</span>
+</span></span><span class="line"><span class="cl"><span class="nf">TukeyHSD</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Tukey multiple comparisons of means</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   95% family-wise confidence level</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Fit: aov(formula = response ~ trt)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $trt</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#                   diff        lwr       upr     p adj</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2times-1time   3.44300 -0.6582817  7.544282 0.1380949</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4times-1time   6.59281  2.4915283 10.694092 0.0003542</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># drugD-1time    9.57920  5.4779183 13.680482 0.0000003</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># drugE-1time   15.16555 11.0642683 19.266832 0.0000000</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4times-2times  3.14981 -0.9514717  7.251092 0.2050382</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># drugD-2times   6.13620  2.0349183 10.237482 0.0009611</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># drugE-2times  11.72255  7.6212683 15.823832 0.0000000</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># drugD-4times   2.98639 -1.1148917  7.087672 0.2512446</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># drugE-4times   8.57274  4.4714583 12.674022 0.0000037</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># drugE-drugD    5.58635  1.4850683  9.687632 0.0030633</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">par</span><span class="p">(</span><span class="n">las</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">par</span><span class="p">(</span><span class="n">mar</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="nf">TukeyHSD</span><span class="p">(</span><span class="n">fit</span><span class="p">))</span> <span class="c1"># figure 9.2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">multcomp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">par</span><span class="p">(</span><span class="n">mar</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">tuk</span> <span class="o">&lt;-</span> <span class="nf">glht</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">linfct</span><span class="o">=</span><span class="nf">mcp</span><span class="p">(</span><span class="n">trt</span><span class="o">=</span><span class="s">&#34;Tukey&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="nf">cld</span><span class="p">(</span><span class="n">tuk</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="m">.05</span><span class="p">),</span><span class="n">col</span><span class="o">=</span><span class="s">&#34;lightgrey&#34;</span><span class="p">)</span> <span class="c1"># figure 9.3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 9.3.2. Assessing test assumptions</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># figure 9.4</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">qqPlot</span><span class="p">(</span><span class="nf">lm</span><span class="p">(</span><span class="n">response</span> <span class="o">~</span> <span class="n">trt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">cholesterol</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">         <span class="n">simulate</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&#34;Q-Q Plot&#34;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># code</span>
+</span></span><span class="line"><span class="cl"><span class="nf">bartlett.test</span><span class="p">(</span><span class="n">response</span> <span class="o">~</span> <span class="n">trt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">cholesterol</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#         Bartlett test of homogeneity of variances</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># data:  response by trt</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Bartlett&#39;s K-squared = 0.57975, df = 4, p-value = 0.9653</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">outlierTest</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># No Studentized residuals with Bonferroni p &lt; 0.05</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Largest |rstudent|:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   rstudent unadjusted p-value Bonferroni p</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 19 2.251149           0.029422           NA</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#=============================================================</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 9.4. One-way ANCOVA</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 9.3. One-way ANCOVA</span>
+</span></span><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="s">&#34;litter&#34;</span><span class="p">,</span> <span class="n">package</span> <span class="o">=</span> <span class="s">&#34;multcomp&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">attach</span><span class="p">(</span><span class="n">litter</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">table</span><span class="p">(</span><span class="n">dose</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># dose</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   0   5  50 500 </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   20  19  18  17 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">aggregate</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">dose</span><span class="p">),</span> <span class="n">mean</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Group.1        x</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1       0 32.30850</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2       5 29.30842</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3      50 29.86611</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4     500 29.64647</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">aov</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">gesttime</span> <span class="o">+</span> <span class="n">dose</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># trt          4 1351.4   337.8   32.43 9.82e-13 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals   45  468.8    10.4                     </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">effects</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">effect</span><span class="p">(</span><span class="s">&#34;dose&#34;</span><span class="p">,</span> <span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#  dose effect</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># dose</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#        0        5       50      500 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 32.35367 28.87672 30.56614 29.33460 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 9.4 Multiple comparisons employing user-supplied contrasts</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">multcomp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">contrast</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="s">&#34;no drug vs. drug&#34;</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">-1</span><span class="p">,</span> <span class="m">-1</span><span class="p">,</span> <span class="m">-1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="nf">glht</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">linfct</span><span class="o">=</span><span class="nf">mcp</span><span class="p">(</span><span class="n">dose</span><span class="o">=</span><span class="n">contrast</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Simultaneous Tests for General Linear Hypotheses</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Multiple Comparisons of Means: User-defined Contrasts</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Fit: aov(formula = weight ~ gesttime + dose)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Linear Hypotheses:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Estimate Std. Error t value Pr(&gt;|t|)  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># no drug vs. drug == 0    8.284      3.209   2.581    0.012 *</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Adjusted p values reported -- single-step method)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">help</span><span class="p">(</span><span class="s">&#34;glht&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 9.4.1. Assessing test assumptions</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 9.5. Testing for homogeneity of regression slopes</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">multcomp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">aov</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">gesttime</span><span class="o">*</span><span class="n">dose</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">litter</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#               Df Sum Sq Mean Sq F value  Pr(&gt;F)   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># gesttime       1  134.3  134.30   8.289 0.00537 **</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># dose           3  137.1   45.71   2.821 0.04556 * </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># gesttime:dose  3   81.9   27.29   1.684 0.17889   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals     66 1069.4   16.20                   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#==================================================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 9.4.2. Visualizing the results</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># install.packages(&#34;HH&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">HH</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ancova</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">gesttime</span> <span class="o">+</span> <span class="n">dose</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">litter</span><span class="p">)</span> <span class="c1"># figure 9.5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 9.5. Two-way factorial ANOVA</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 9.6 Two-way ANOVA</span>
+</span></span><span class="line"><span class="cl"><span class="nf">attach</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#    len supp dose</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1  4.2   VC  0.5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2 11.5   VC  0.5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3  7.3   VC  0.5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4  5.8   VC  0.5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 5  6.4   VC  0.5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 6 10.0   VC  0.5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">class</span><span class="p">(</span><span class="n">dose</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">colnames</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;len&#34;  &#34;supp&#34; &#34;dose&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">table</span><span class="p">(</span><span class="n">supp</span><span class="p">,</span><span class="n">dose</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     dose</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># supp 0.5  1  2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># OJ  10 10 10</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># VC  10 10 10</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">aggregate</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">supp</span><span class="p">,</span> <span class="n">dose</span><span class="p">),</span> <span class="n">mean</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Group.1 Group.2     x</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1      OJ     0.5 13.23</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2      VC     0.5  7.98</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3      OJ     1.0 22.70</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4      VC     1.0 16.77</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 5      OJ     2.0 26.06</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 6      VC     2.0 26.14</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">aggregate</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">supp</span><span class="p">,</span> <span class="n">dose</span><span class="p">),</span> <span class="n">sd</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Group.1 Group.2        x</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1      OJ     0.5 4.459709</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2      VC     0.5 2.746634</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3      OJ     1.0 3.910953</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4      VC     1.0 2.515309</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 5      OJ     2.0 2.655058</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 6      VC     2.0 4.797731</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">aov</span><span class="p">(</span><span class="n">len</span> <span class="o">~</span> <span class="n">supp</span><span class="o">*</span><span class="n">dose</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># supp         1  205.4   205.4  12.317 0.000894 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># dose         1 2224.3  2224.3 133.415  &lt; 2e-16 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># supp:dose    1   88.9    88.9   5.333 0.024631 *  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals   56  933.6    16.7                     </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dose</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">dose</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit2</span> <span class="o">&lt;-</span> <span class="nf">aov</span><span class="p">(</span><span class="n">len</span> <span class="o">~</span> <span class="n">supp</span><span class="o">*</span><span class="n">dose</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># supp         1  205.4   205.4  15.572 0.000231 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># dose         2 2426.4  1213.2  92.000  &lt; 2e-16 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># supp:dose    2  108.3    54.2   4.107 0.021860 *  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals   54  712.1    13.2                     </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">detach</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># figure 9.6</span>
+</span></span><span class="line"><span class="cl"><span class="nf">interaction.plot</span><span class="p">(</span><span class="n">dose</span><span class="p">,</span> <span class="n">supp</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&#34;b&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">col</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;red&#34;</span><span class="p">,</span><span class="s">&#34;blue&#34;</span><span class="p">),</span> <span class="n">pch</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">16</span><span class="p">,</span> <span class="m">18</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Interaction between Dose and Supplement Type&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># figure 9.7</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">gplots</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">plotmeans</span><span class="p">(</span><span class="n">len</span> <span class="o">~</span> <span class="nf">interaction</span><span class="p">(</span><span class="n">supp</span><span class="p">,</span> <span class="n">dose</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#34; &#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="n">connect</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">5</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">          <span class="n">col</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;red&#34;</span><span class="p">,</span> <span class="s">&#34;darkgreen&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">          <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Interaction Plot with 95% CIs&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="n">xlab</span><span class="o">=</span><span class="s">&#34;Treatment and Dose Combination&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># figure 9.8</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">HH</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">interaction2wt</span><span class="p">(</span><span class="n">len</span><span class="o">~</span><span class="n">supp</span><span class="o">*</span><span class="n">dose</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 9.6. Repeated measures ANOVA</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 9.7. Repeated measures ANOVA with one between- and within-groups factor</span>
+</span></span><span class="line"><span class="cl"><span class="n">CO2</span><span class="o">$</span><span class="n">conc</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">CO2</span><span class="o">$</span><span class="n">conc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">w1b1</span> <span class="o">&lt;-</span> <span class="nf">subset</span><span class="p">(</span><span class="n">CO2</span><span class="p">,</span> <span class="n">Treatment</span><span class="o">==</span><span class="s">&#39;chilled&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">aov</span><span class="p">(</span><span class="n">uptake</span> <span class="o">~</span> <span class="n">conc</span><span class="o">*</span><span class="n">Type</span> <span class="o">+</span> <span class="nf">Error</span><span class="p">(</span><span class="n">Plant</span><span class="o">/</span><span class="p">(</span><span class="n">conc</span><span class="p">)),</span> <span class="n">w1b1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Error: Plant</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#           Df Sum Sq Mean Sq F value  Pr(&gt;F)   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Type       1 2667.2  2667.2   60.41 0.00148 **</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals  4  176.6    44.1                   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Error: Plant:conc</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#           Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># conc       6 1472.4  245.40   52.52 1.26e-12 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># conc:Type  6  428.8   71.47   15.30 3.75e-07 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals 24  112.1    4.67                     </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">par</span><span class="p">(</span><span class="n">las</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">par</span><span class="p">(</span><span class="n">mar</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># figure 9.9</span>
+</span></span><span class="line"><span class="cl"><span class="nf">with</span><span class="p">(</span><span class="n">w1b1</span><span class="p">,</span> <span class="nf">interaction.plot</span><span class="p">(</span><span class="n">conc</span><span class="p">,</span><span class="n">Type</span><span class="p">,</span><span class="n">uptake</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">type</span><span class="o">=</span><span class="s">&#34;b&#34;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;red&#34;</span><span class="p">,</span><span class="s">&#34;blue&#34;</span><span class="p">),</span> <span class="n">pch</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">16</span><span class="p">,</span><span class="m">18</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">main</span><span class="o">=</span><span class="s">&#34;Interaction Plot for Plant Type and Concentration&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># figure 9.10</span>
+</span></span><span class="line"><span class="cl"><span class="nf">boxplot</span><span class="p">(</span><span class="n">uptake</span> <span class="o">~</span> <span class="n">Type</span><span class="o">*</span><span class="n">conc</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">w1b1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;gold&#34;</span><span class="p">,</span> <span class="s">&#34;green&#34;</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">main</span><span class="o">=</span><span class="s">&#34;Chilled Quebec and Mississippi Plants&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ylab</span><span class="o">=</span><span class="s">&#34;Carbon dioxide uptake rate (umol/m^2 sec)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 9.7. Multivariate analysis of variance (MANOVA)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 9.8. One-way MANOVA</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">MASS</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">attach</span><span class="p">(</span><span class="n">UScereal</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">shelf</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">shelf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">calories</span><span class="p">,</span> <span class="n">fat</span><span class="p">,</span> <span class="n">sugars</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">aggregate</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">shelf</span><span class="p">),</span> <span class="n">mean</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Group.1 calories       fat    sugars</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1       1 119.4774 0.6621338  6.295493</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2       2 129.8162 1.3413488 12.507670</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3       3 180.1466 1.9449071 10.856821</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">cov</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#            calories       fat     sugars</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># calories 3895.24210 60.674383 180.380317</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># fat        60.67438  2.713399   3.995474</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># sugars    180.38032  3.995474  34.050018</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">manova</span><span class="p">(</span><span class="n">y</span> <span class="o">~</span> <span class="n">shelf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"><span class="c1">#           Df Pillai approx F num Df den Df    Pr(&gt;F)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># shelf      2 0.4021   5.1167      6    122 0.0001015 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals 62                                            </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="nf">summary.aov</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Response calories :</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#             Df Sum Sq Mean Sq F value    Pr(&gt;F)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># shelf        2  50435 25217.6  7.8623 0.0009054 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals   62 198860  3207.4                      </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Response fat :</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#             Df Sum Sq Mean Sq F value  Pr(&gt;F)  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># shelf        2  18.44  9.2199  3.6828 0.03081 *</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals   62 155.22  2.5035                  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Response sugars :</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#             Df  Sum Sq Mean Sq F value   Pr(&gt;F)   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># shelf        2  381.33 190.667  6.5752 0.002572 **</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals   62 1797.87  28.998                    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 9.7.1. Assessing test assumptions</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 9.9. Assessing multivariate normality</span>
+</span></span><span class="line"><span class="cl"><span class="n">center</span> <span class="o">&lt;-</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">ncol</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cov</span> <span class="o">&lt;-</span> <span class="nf">cov</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span> <span class="o">&lt;-</span> <span class="nf">mahalanobis</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">cov</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># figure 9.11</span>
+</span></span><span class="line"><span class="cl"><span class="n">coord</span> <span class="o">&lt;-</span> <span class="nf">qqplot</span><span class="p">(</span><span class="nf">qchisq</span><span class="p">(</span><span class="nf">ppoints</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">df</span><span class="o">=</span><span class="n">p</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                <span class="n">d</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&#34;Q-Q Plot Assessing Multivariate Normality&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ylab</span><span class="o">=</span><span class="s">&#34;Mahalanobis D2&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">abline</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">identify</span><span class="p">(</span><span class="n">coord</span><span class="o">$</span><span class="n">x</span><span class="p">,</span> <span class="n">coord</span><span class="o">$</span><span class="n">y</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="nf">row.names</span><span class="p">(</span><span class="n">UScereal</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#================================================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># install.packages(&#34;mvoutlier&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">mvoutlier</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">outliers</span> <span class="o">&lt;-</span> <span class="nf">aq.plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">outliers</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 9.7.2. Robust MANOVA</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 9.10. Robust one-way MANOVA</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">rrcov</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">Wilks.test</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">shelf</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#34;mcd&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         Robust One-way MANOVA (Bartlett Chi2)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># data:  x</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Wilks&#39; Lambda = 0.51073, Chi2-Value = 25.3745, DF = 5.1632, p-value = 0.0001377</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># sample estimates:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   calories       fat    sugars</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1 119.8210 0.7010828  5.663143</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2 128.0407 1.1849576 12.537533</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3 160.8604 1.6524559 10.352646</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 9.8. ANOVA as regression</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">multcomp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">levels</span><span class="p">(</span><span class="n">cholesterol</span><span class="o">$</span><span class="n">trt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;1time&#34;  &#34;2times&#34; &#34;4times&#34; &#34;drugD&#34;  &#34;drugE&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit.aov</span> <span class="o">&lt;-</span> <span class="nf">aov</span><span class="p">(</span><span class="n">response</span> <span class="o">~</span> <span class="n">trt</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">cholesterol</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit.aov</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#             Df Sum Sq Mean Sq F value   Pr(&gt;F)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># trt          4 1351.4   337.8   32.43 9.82e-13 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals   45  468.8    10.4                     </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 9.11. A regression approach to the ANOVA problem in section 9.3</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit.lm</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">response</span> <span class="o">~</span> <span class="n">trt</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">cholesterol</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit.lm</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Call:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   lm(formula = response ~ trt, data = cholesterol)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residuals:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Min      1Q  Median      3Q     Max </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -6.5418 -1.9672 -0.0016  1.8901  6.6008 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Coefficients:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#             Estimate Std. Error t value Pr(&gt;|t|)    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (Intercept)    5.782      1.021   5.665 9.78e-07 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   trt2times      3.443      1.443   2.385   0.0213 *  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   trt4times      6.593      1.443   4.568 3.82e-05 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   trtdrugD       9.579      1.443   6.637 3.53e-08 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   trtdrugE      15.166      1.443  10.507 1.08e-13 ***</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   ---</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Residual standard error: 3.227 on 45 degrees of freedom</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Multiple R-squared:  0.7425, Adjusted R-squared:  0.7196 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># F-statistic: 32.43 on 4 and 45 DF,  p-value: 9.819e-13</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">contrasts</span><span class="p">(</span><span class="n">cholesterol</span><span class="o">$</span><span class="n">trt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#        2times 4times drugD drugE</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1time       0      0     0     0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2times      1      0     0     0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4times      0      1     0     0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># drugD       0      0     1     0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># drugE       0      0     0     1</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -1647,7 +1642,7 @@ if (!doNotTrack) {
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1691,7 +1686,7 @@ if (!doNotTrack) {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 

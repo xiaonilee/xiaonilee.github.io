@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.110.0" />
 
 
 <link rel="canonical" href="/post/rinaction20/" />
@@ -54,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,19 +67,14 @@
 <meta property="og:title" content="Chapter 20. Advanced programming" />
 <meta property="og:description" content="Notebook of Reading Books: R in Action_Chapter 20." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/rinaction20/" />
+<meta property="og:url" content="/post/rinaction20/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-11-19T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-11-19T00:00:00+00:00" />
 <meta itemprop="name" content="Chapter 20. Advanced programming">
-<meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 20.">
-<meta itemprop="datePublished" content="2020-11-19T00:00:00+00:00" />
+<meta itemprop="description" content="Notebook of Reading Books: R in Action_Chapter 20."><meta itemprop="datePublished" content="2020-11-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2020-11-19T00:00:00+00:00" />
 <meta itemprop="wordCount" content="3128">
-
-
-
-<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="R,R in Action,Bioinformatics,Book," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Chapter 20. Advanced programming"/>
 <meta name="twitter:description" content="Notebook of Reading Books: R in Action_Chapter 20."/>
 
@@ -632,7 +627,7 @@ if (!doNotTrack) {
 <p>Show me the code <i class="far fa-hand-pointer"></i></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -1323,696 +1318,696 @@ if (!doNotTrack) {
 </span><span class="lnt">689
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Remove most objects from the working environment</span>
-<span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
-
-<span class="c1"># 20.1. A review of the language</span>
-
-<span class="c1"># 20.1.1. Data types</span>
-
-<span class="c1">## Atomic Vectors</span>
-<span class="n">passed</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">passed</span>
-<span class="c1"># [1]  TRUE  TRUE FALSE  TRUE</span>
-
-<span class="n">ages</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">15</span><span class="p">,</span> <span class="m">18</span><span class="p">,</span> <span class="m">25</span><span class="p">,</span> <span class="m">14</span><span class="p">,</span> <span class="m">19</span><span class="p">)</span>
-<span class="n">ages</span>
-<span class="c1"># [1] 15 18 25 14 19</span>
-
-<span class="n">cmplxNums</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1+2i</span><span class="p">,</span> <span class="m">0+1i</span><span class="p">,</span> <span class="m">39+3i</span><span class="p">,</span> <span class="m">12+2i</span><span class="p">)</span>
-<span class="n">cmplxNums</span>
-<span class="c1"># [1]  1+2i  0+1i 39+3i 12+2i</span>
-
-<span class="n">names</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Bob&#34;</span><span class="p">,</span> <span class="s">&#34;Ted&#34;</span><span class="p">,</span> <span class="s">&#34;Carol&#34;</span><span class="p">,</span> <span class="s">&#34;Alice&#34;</span><span class="p">)</span>
-<span class="n">names</span>
-<span class="c1"># [1] &#34;Bob&#34;   &#34;Ted&#34;   &#34;Carol&#34; &#34;Alice&#34;</span>
-
-<span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">)</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="c1"># [1] &#34;numeric&#34;</span>
-
-<span class="n">x</span>
-<span class="c1"># [1] 1 2 3 4 5 6 7 8</span>
-
-<span class="nf">attr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s">&#34;dim&#34;</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
-<span class="n">x</span>
-<span class="c1">#      [,1] [,2] [,3] [,4]</span>
-<span class="c1"># [1,]    1    3    5    7</span>
-<span class="c1"># [2,]    2    4    6    8</span>
-
-<span class="nf">class</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="c1"># [1] &#34;matrix&#34; &#34;array&#34; </span>
-
-<span class="nf">attributes</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="c1"># $dim</span>
-<span class="c1"># [1] 2 4</span>
-
-<span class="nf">attr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s">&#34;dimnames&#34;</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;A1&#34;</span><span class="p">,</span> <span class="s">&#34;A2&#34;</span><span class="p">),</span>
-                            <span class="nf">c</span><span class="p">(</span><span class="s">&#34;B1&#34;</span><span class="p">,</span> <span class="s">&#34;B2&#34;</span><span class="p">,</span> <span class="s">&#34;B3&#34;</span><span class="p">,</span> <span class="s">&#34;B4&#34;</span><span class="p">))</span>
-<span class="n">x</span>
-<span class="c1">#    B1 B2 B3 B4</span>
-<span class="c1"># A1  1  3  5  7</span>
-<span class="c1"># A2  2  4  6  8</span>
-
-<span class="nf">attr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s">&#34;dim&#34;</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="c1"># [1] &#34;numeric&#34;</span>
-
-<span class="n">x</span>
-<span class="c1"># [1] 1 2 3 4 5 6 7 8</span>
-
-<span class="c1">## Generic Vectors or Lists</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
-<span class="c1">#   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span>
-<span class="c1"># 1          5.1         3.5          1.4         0.2  setosa</span>
-<span class="c1"># 2          4.9         3.0          1.4         0.2  setosa</span>
-<span class="c1"># 3          4.7         3.2          1.3         0.2  setosa</span>
-<span class="c1"># 4          4.6         3.1          1.5         0.2  setosa</span>
-<span class="c1"># 5          5.0         3.6          1.4         0.2  setosa</span>
-<span class="c1"># 6          5.4         3.9          1.7         0.4  setosa</span>
-
-<span class="nf">unclass</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
-<span class="nf">attributes</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
-<span class="nf">str</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
-
-<span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">iris[1</span><span class="o">:</span><span class="m">4</span><span class="n">]</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
-<span class="nf">names</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># [1] &#34;cluster&#34;      &#34;centers&#34;      &#34;totss&#34;        &#34;withinss&#34;     &#34;tot.withinss&#34;</span>
-<span class="c1"># [6] &#34;betweenss&#34;    &#34;size&#34;         &#34;iter&#34;         &#34;ifault&#34;</span>
-
-
-<span class="nf">unclass</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># $cluster</span>
-<span class="c1"># [1] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</span>
-<span class="c1"># [44] 1 1 1 1 1 1 1 2 2 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 2 2 2 2 2 2 2 2</span>
-<span class="c1"># [87] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 2 3 3 3 3 2 3 3 3 3 3 3 2 2 3 3 3 3 2 3 2 3 2 3 3 2 2 3</span>
-<span class="c1"># [130] 3 3 3 3 2 3 3 3 3 2 3 3 3 2 3 3 3 2 3 3 2</span>
-<span class="c1"># </span>
-<span class="c1"># $centers</span>
-<span class="c1"># Sepal.Length Sepal.Width Petal.Length Petal.Width</span>
-<span class="c1"># 1     5.006000    3.428000     1.462000    0.246000</span>
-<span class="c1"># 2     5.901613    2.748387     4.393548    1.433871</span>
-<span class="c1"># 3     6.850000    3.073684     5.742105    2.071053</span>
-<span class="c1"># </span>
-<span class="c1"># $totss</span>
-<span class="c1"># [1] 681.3706</span>
-<span class="c1"># </span>
-<span class="c1"># $withinss</span>
-<span class="c1"># [1] 15.15100 39.82097 23.87947</span>
-<span class="c1"># </span>
-<span class="c1"># $tot.withinss</span>
-<span class="c1"># [1] 78.85144</span>
-<span class="c1"># </span>
-<span class="c1"># $betweenss</span>
-<span class="c1"># [1] 602.5192</span>
-<span class="c1"># </span>
-<span class="c1"># $size</span>
-<span class="c1"># [1] 50 62 38</span>
-<span class="c1"># </span>
-<span class="c1"># $iter</span>
-<span class="c1"># [1] 2</span>
-<span class="c1"># </span>
-<span class="c1"># $ifault</span>
-<span class="c1"># [1] 0</span>
-
-<span class="nf">sapply</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">class</span><span class="p">)</span>
-<span class="c1"># $cluster</span>
-<span class="c1"># [1] &#34;integer&#34;</span>
-<span class="c1"># </span>
-<span class="c1"># $centers</span>
-<span class="c1"># [1] &#34;matrix&#34; &#34;array&#34; </span>
-<span class="c1"># </span>
-<span class="c1"># $totss</span>
-<span class="c1"># [1] &#34;numeric&#34;</span>
-<span class="c1"># </span>
-<span class="c1"># $withinss</span>
-<span class="c1"># [1] &#34;numeric&#34;</span>
-<span class="c1"># </span>
-<span class="c1"># $tot.withinss</span>
-<span class="c1"># [1] &#34;numeric&#34;</span>
-<span class="c1"># </span>
-<span class="c1"># $betweenss</span>
-<span class="c1"># [1] &#34;numeric&#34;</span>
-<span class="c1"># </span>
-<span class="c1"># $size</span>
-<span class="c1"># [1] &#34;integer&#34;</span>
-<span class="c1"># </span>
-<span class="c1"># $iter</span>
-<span class="c1"># [1] &#34;integer&#34;</span>
-<span class="c1"># </span>
-<span class="c1"># $ifault</span>
-<span class="c1"># [1] &#34;integer&#34;</span>
-
-
-<span class="c1">#===========================================</span>
-<span class="c1">## indexing</span>
-<span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">40</span><span class="p">)</span>
-<span class="n">x[3]</span>
-<span class="c1"># [1] 40</span>
-
-<span class="n">x</span><span class="nf">[c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span><span class="n">]</span>
-<span class="c1"># [1] 30 40</span>
-
-<span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">A</span><span class="o">=</span><span class="m">20</span><span class="p">,</span> <span class="n">B</span><span class="o">=</span><span class="m">30</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="m">40</span><span class="p">)</span>
-<span class="n">x</span>
-<span class="c1">#  A  B  C </span>
-<span class="c1"># 20 30 40</span>
-
-<span class="n">x</span><span class="nf">[c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span><span class="n">]</span>
-<span class="c1">#  B  C </span>
-<span class="c1"># 30 40 </span>
-
-<span class="n">x</span><span class="nf">[c</span><span class="p">(</span><span class="s">&#34;B&#34;</span><span class="p">,</span> <span class="s">&#34;C&#34;</span><span class="p">)</span><span class="n">]</span>
-<span class="c1">#  B  C </span>
-<span class="c1"># 30 40 </span>
-
-<span class="nf">str</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># List of 9</span>
-<span class="c1"># $ cluster     : int [1:150] 1 1 1 1 1 1 1 1 1 1 ...</span>
-<span class="c1"># $ centers     : num [1:3, 1:4] 5.01 5.9 6.85 3.43 2.75 ...</span>
-<span class="c1"># ..- attr(*, &#34;dimnames&#34;)=List of 2</span>
-<span class="c1"># .. ..$ : chr [1:3] &#34;1&#34; &#34;2&#34; &#34;3&#34;</span>
-<span class="c1"># .. ..$ : chr [1:4] &#34;Sepal.Length&#34; &#34;Sepal.Width&#34; &#34;Petal.Length&#34; &#34;Petal.Width&#34;</span>
-<span class="c1"># $ totss       : num 681</span>
-<span class="c1"># $ withinss    : num [1:3] 15.2 39.8 23.9</span>
-<span class="c1"># $ tot.withinss: num 78.9</span>
-<span class="c1"># $ betweenss   : num 603</span>
-<span class="c1"># $ size        : int [1:3] 50 62 38</span>
-<span class="c1"># $ iter        : int 2</span>
-<span class="c1"># $ ifault      : int 0</span>
-<span class="c1"># - attr(*, &#34;class&#34;)= chr &#34;kmeans&#34;</span>
-
-<span class="n">fit[7]</span>
-<span class="c1"># $size</span>
-<span class="c1"># [1] 50 62 38</span>
-
-
-<span class="n">fit</span><span class="nf">[c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">7</span><span class="p">)</span><span class="n">]</span>
-<span class="c1"># $centers</span>
-<span class="c1">#   Sepal.Length Sepal.Width Petal.Length Petal.Width</span>
-<span class="c1"># 1     5.006000    3.428000     1.462000    0.246000</span>
-<span class="c1"># 2     5.901613    2.748387     4.393548    1.433871</span>
-<span class="c1"># 3     6.850000    3.073684     5.742105    2.071053</span>
-<span class="c1"># </span>
-<span class="c1"># $size</span>
-<span class="c1"># [1] 50 62 38</span>
-
-
-<span class="n">fit[2]</span>
-<span class="c1"># $centers</span>
-<span class="c1">#   Sepal.Length Sepal.Width Petal.Length Petal.Width</span>
-<span class="c1"># 1     5.006000    3.428000     1.462000    0.246000</span>
-<span class="c1"># 2     5.901613    2.748387     4.393548    1.433871</span>
-<span class="c1"># 3     6.850000    3.073684     5.742105    2.071053</span>
-
-<span class="n">fit[[2]]</span>
-<span class="c1">#   Sepal.Length Sepal.Width Petal.Length Petal.Width</span>
-<span class="c1"># 1     5.006000    3.428000     1.462000    0.246000</span>
-<span class="c1"># 2     5.901613    2.748387     4.393548    1.433871</span>
-<span class="c1"># 3     6.850000    3.073684     5.742105    2.071053</span>
-
-<span class="n">fit[[2]][1]</span>
-<span class="c1"># [1] 5.006</span>
-
-<span class="n">fit[[2]][1</span><span class="p">,</span><span class="n">]</span>
-<span class="c1"># Sepal.Length  Sepal.Width Petal.Length  Petal.Width </span>
-<span class="c1">#        5.006        3.428        1.462        0.246</span>
-
-<span class="n">fit</span><span class="o">$</span><span class="n">centers</span>
-<span class="c1">#   Sepal.Length Sepal.Width Petal.Length Petal.Width</span>
-<span class="c1"># 1     5.006000    3.428000     1.462000    0.246000</span>
-<span class="c1"># 2     5.901613    2.748387     4.393548    1.433871</span>
-<span class="c1"># 3     6.850000    3.073684     5.742105    2.071053</span>
-
-<span class="c1"># code listing 20.1. Plotting the centroids from a k-means cluster analysis</span>
-<span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">iris[1</span><span class="o">:</span><span class="m">4</span><span class="n">]</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
-<span class="n">means</span> <span class="o">&lt;-</span> <span class="n">fit</span><span class="o">$</span><span class="n">centers</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">reshape2</span><span class="p">)</span>
-<span class="n">dfm</span> <span class="o">&lt;-</span> <span class="nf">melt</span><span class="p">(</span><span class="n">means</span><span class="p">)</span>
-<span class="nf">names</span><span class="p">(</span><span class="n">dfm</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Cluster&#34;</span><span class="p">,</span> <span class="s">&#34;Measurement&#34;</span><span class="p">,</span> <span class="s">&#34;Centimeters&#34;</span><span class="p">)</span>
-<span class="n">dfm</span><span class="o">$</span><span class="n">Cluster</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">dfm</span><span class="o">$</span><span class="n">Cluster</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">dfm</span><span class="p">)</span>
-<span class="c1">#   Cluster  Measurement Centimeters</span>
-<span class="c1"># 1       1 Sepal.Length    5.006000</span>
-<span class="c1"># 2       2 Sepal.Length    5.901613</span>
-<span class="c1"># 3       3 Sepal.Length    6.850000</span>
-<span class="c1"># 4       1  Sepal.Width    3.428000</span>
-<span class="c1"># 5       2  Sepal.Width    2.748387</span>
-<span class="c1"># 6       3  Sepal.Width    3.073684</span>
-
-<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
-<span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">dfm</span><span class="p">,</span>
-       <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Measurement</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Centimeters</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">Cluster</span><span class="p">))</span> <span class="o">+</span>
-  <span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">Cluster</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">Cluster</span><span class="p">))</span> <span class="o">+</span>
-  <span class="nf">geom_line</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">Cluster</span><span class="p">))</span> <span class="o">+</span>
-  <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&#34;Profiles for Iris Clusters&#34;</span><span class="p">)</span>
-
-
-<span class="c1"># 20.1.2. Control structures</span>
-
-<span class="c1">## for()</span>
-
-<span class="m">1</span><span class="o">:</span><span class="m">5</span>
-<span class="c1"># [1] 1 2 3 4 5</span>
-
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span> <span class="nf">print</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">i</span><span class="p">)</span>
-<span class="c1"># [1] 1</span>
-<span class="c1"># [1] 1 2</span>
-<span class="c1"># [1] 1 2 3</span>
-<span class="c1"># [1] 1 2 3 4</span>
-<span class="c1"># [1] 1 2 3 4 5</span>
-
-<span class="m">5</span><span class="o">:</span><span class="m">1</span>
-<span class="c1"># [1] 5 4 3 2 1</span>
-
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">5</span><span class="o">:</span><span class="m">1</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">print</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">i</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="c1"># [1] 1 2 3 4 5</span>
-<span class="c1"># [1] 1 2 3 4</span>
-<span class="c1"># [1] 1 2 3</span>
-<span class="c1"># [1] 1 2</span>
-<span class="c1"># [1] 1</span>
-
-
-<span class="c1">## if() and else</span>
-
-<span class="c1">## ifelse()</span>
-<span class="n">pvalues</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">.0867</span><span class="p">,</span> <span class="m">.0018</span><span class="p">,</span> <span class="m">.0054</span><span class="p">,</span> <span class="m">.1572</span><span class="p">,</span> <span class="m">.0183</span><span class="p">,</span> <span class="m">.5386</span><span class="p">)</span>
-<span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">pvalues</span> <span class="o">&lt;</span> <span class="m">0.05</span><span class="p">,</span> <span class="s">&#34;Significant&#34;</span><span class="p">,</span> <span class="s">&#34;Not Significant&#34;</span><span class="p">)</span>
-<span class="n">results</span>
-<span class="c1"># [1] &#34;Not Significant&#34; &#34;Significant&#34;     &#34;Significant&#34;     &#34;Not Significant&#34;</span>
-<span class="c1"># [5] &#34;Significant&#34;     &#34;Not Significant&#34;</span>
-
-
-<span class="c1"># The same result can be accomplished with explicit loops using</span>
-<span class="n">pvalues</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">.0867</span><span class="p">,</span> <span class="m">.0018</span><span class="p">,</span> <span class="m">.0054</span><span class="p">,</span> <span class="m">.1572</span><span class="p">,</span> <span class="m">.0183</span><span class="p">,</span> <span class="m">.5386</span><span class="p">)</span>
-<span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">(</span><span class="n">mode</span> <span class="o">=</span> <span class="s">&#34;character&#34;</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">pvalues</span><span class="p">))</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">pvalues</span><span class="p">))</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="n">pvalues[i]</span> <span class="o">&lt;</span> <span class="m">0.05</span><span class="p">)</span> <span class="n">results[i]</span> <span class="o">&lt;-</span> <span class="s">&#34;Significant&#34;</span>
-  <span class="n">else</span> <span class="n">results[i]</span> <span class="o">&lt;-</span> <span class="s">&#34;Not Significant&#34;</span>
-<span class="p">}</span>
-
-<span class="n">results</span>
-<span class="c1"># [1] &#34;Not Significant&#34; &#34;Significant&#34;     &#34;Significant&#34;     &#34;Not Significant&#34;</span>
-<span class="c1"># [5] &#34;Significant&#34;     &#34;Not Significant&#34;</span>
-
-<span class="n">results[2]</span>
-<span class="c1"># [1] &#34;Significant&#34;</span>
-
-<span class="c1"># 20.1.3. Creating functions</span>
-
-<span class="c1">## Function syntax</span>
-
-<span class="n">f</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span> <span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="m">1</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">result</span> <span class="o">&lt;-</span> <span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="m">2</span><span class="o">*</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="m">3</span><span class="o">*</span><span class="n">z</span><span class="p">)</span>
-  <span class="nf">return</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="nf">f</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
-<span class="c1"># [1] 20</span>
-
-<span class="nf">f</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>  <span class="c1"># equal f(2, 3, 1)</span>
-<span class="c1"># [1] 11</span>
-
-<span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="m">3</span><span class="p">)</span> <span class="c1"># equal f(x=2, y=3, z=1)</span>
-<span class="c1"># [1] 11</span>
-
-<span class="nf">f</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="m">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>  <span class="c1"># equal f(x=3, y=2, z=4)</span>
-<span class="c1"># [1] 19</span>
-<span class="nf">f</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="m">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
-
-<span class="nf">args</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="c1"># function (x, y, z = 1) </span>
-<span class="c1"># NULL</span>
-
-
-<span class="c1">## Object scope</span>
-
-<span class="n">x</span> <span class="o">&lt;-</span> <span class="m">2</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">3</span>
-<span class="n">z</span> <span class="o">&lt;-</span> <span class="m">4</span>
-<span class="n">f</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">z</span> <span class="o">&lt;-</span> <span class="m">2</span>
-  <span class="n">x</span> <span class="o">&lt;-</span> <span class="n">w</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">z</span>
-  <span class="nf">return</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="c1"># [1] 12</span>
-
-<span class="n">x</span>
-<span class="c1"># [1] 2</span>
-
-<span class="n">y</span>
-<span class="c1"># [1] 3</span>
-
-<span class="n">z</span>
-<span class="c1"># [1] 4</span>
-
-
-<span class="c1">#============================================</span>
-<span class="c1"># 20.2. Working with environments</span>
-
-<span class="c1"># Remove most objects from the working environment</span>
-<span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
-
-<span class="n">x</span> <span class="o">&lt;-</span> <span class="m">5</span>
-<span class="n">myenv</span> <span class="o">&lt;-</span> <span class="nf">new.env</span><span class="p">()</span>
-<span class="nf">assign</span><span class="p">(</span><span class="s">&#34;x&#34;</span><span class="p">,</span> <span class="s">&#34;Homer&#34;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">myenv</span><span class="p">)</span>
-<span class="nf">ls</span><span class="p">()</span>
-<span class="c1"># [1] &#34;myenv&#34; &#34;x&#34;</span>
-<span class="nf">ls</span><span class="p">(</span><span class="n">myenv</span><span class="p">)</span>
-<span class="c1"># [1] &#34;x&#34;</span>
-<span class="n">x</span>
-<span class="c1"># [1] 5</span>
-<span class="nf">get</span><span class="p">(</span><span class="s">&#34;x&#34;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">myenv</span><span class="p">)</span>
-<span class="c1"># [1] &#34;Homer&#34;</span>
-
-<span class="n">myenv</span><span class="o">$</span><span class="n">x</span>
-<span class="c1"># [1] &#34;Homer&#34;</span>
-
-<span class="nf">parent.env</span><span class="p">(</span><span class="n">myenv</span><span class="p">)</span>
-<span class="c1"># &lt;environment: R_GlobalEnv&gt;</span>
-<span class="nf">help</span><span class="p">(</span><span class="s">&#34;environment&#34;</span><span class="p">)</span>
-
-<span class="n">trim</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">p</span><span class="p">){</span>
-  <span class="n">trimit</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
-    <span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">lo</span> <span class="o">&lt;-</span> <span class="nf">floor</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="o">+</span> <span class="m">1</span>
-    <span class="n">hi</span> <span class="o">&lt;-</span> <span class="n">n</span> <span class="o">+</span> <span class="m">1</span> <span class="o">-</span> <span class="n">lo</span>
-    <span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">sort.int</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">partial</span> <span class="o">=</span> <span class="nf">unique</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)))</span><span class="n">[lo</span><span class="o">:</span><span class="n">hi]</span>
-  <span class="p">}</span>
-  <span class="n">trimit</span>
-<span class="p">}</span>
-
-<span class="n">x</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span>
-<span class="n">x</span>
-<span class="c1"># [1]  1  2  3  4  5  6  7  8  9 10</span>
-
-<span class="n">trim10pct</span> <span class="o">&lt;-</span> <span class="nf">trim</span><span class="p">(</span><span class="m">.1</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">trim10pct</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">y</span>
-<span class="c1"># [1] 2 3 4 5 6 7 8 9</span>
-
-<span class="n">trim20pct</span> <span class="o">&lt;-</span> <span class="nf">trim</span><span class="p">(</span><span class="m">.2</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">trim20pct</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">y</span>
-<span class="c1"># [1] 3 4 5 6 7 8</span>
-
-<span class="nf">ls</span><span class="p">(</span><span class="nf">environment</span><span class="p">(</span><span class="n">trim10pct</span><span class="p">))</span>
-<span class="c1"># [1] &#34;p&#34;      &#34;trimit&#34;</span>
-
-<span class="nf">get</span><span class="p">(</span><span class="s">&#34;p&#34;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="nf">environment</span><span class="p">(</span><span class="n">trim10pct</span><span class="p">))</span>
-<span class="c1"># [1] 0.1</span>
-
-<span class="nf">get</span><span class="p">(</span><span class="s">&#34;p&#34;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="nf">environment</span><span class="p">(</span><span class="n">trim20pct</span><span class="p">))</span>
-<span class="c1"># [1] 0.2</span>
-
-
-<span class="n">makeFunction</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">f</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="n">g</span> <span class="o">&lt;-</span> <span class="nf">makeFunction</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
-<span class="nf">g</span><span class="p">(</span><span class="m">4</span><span class="p">)</span>
-<span class="c1"># [1] 14</span>
-
-<span class="n">k</span> <span class="o">&lt;-</span> <span class="m">2</span>
-<span class="nf">g</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
-<span class="c1"># [1] 15</span>
-
-<span class="nf">ls</span><span class="p">(</span><span class="nf">environment</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
-<span class="c1"># [1] &#34;f&#34; &#34;k&#34;</span>
-
-<span class="nf">environment</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="o">$</span><span class="n">k</span>
-<span class="c1"># [1] 10</span>
-
-
-<span class="c1"># 20.3.1 Generic functions</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">women</span><span class="p">)</span>
-<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">height</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">women</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-
-<span class="nf">class</span><span class="p">(</span><span class="n">women</span><span class="p">)</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
-<span class="c1"># [1] &#34;lm&#34;</span>
-
-<span class="nf">methods</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
-<span class="c1"># get code</span>
-<span class="n">summary.data.frame</span>
-
-<span class="c1"># get code labeled with &#39;*&#39;</span>
-<span class="nf">getAnywhere</span><span class="p">(</span><span class="n">summary.ggplot</span><span class="p">)</span>
-
-<span class="c1"># code lisitng 20.2. An example of an arbitrary generic function</span>
-<span class="n">mymethod</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kc">...</span><span class="p">)</span> <span class="nf">UseMethod</span><span class="p">(</span><span class="s">&#34;mymethod&#34;</span><span class="p">)</span>
-<span class="n">mymethod.a</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">print</span><span class="p">(</span><span class="s">&#34;Using A&#34;</span><span class="p">)</span>
-<span class="n">mymethod.b</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">print</span><span class="p">(</span><span class="s">&#34;Using B&#34;</span><span class="p">)</span>
-<span class="n">mymethod.default</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">print</span><span class="p">(</span><span class="s">&#34;Using Default&#34;</span><span class="p">)</span>
-
-<span class="n">x</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">6</span><span class="o">:</span><span class="m">10</span>
-<span class="n">z</span> <span class="o">&lt;-</span> <span class="m">10</span><span class="o">:</span><span class="m">15</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;a&#34;</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;b&#34;</span>
-
-<span class="nf">mymethod</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="c1"># [1] &#34;Using A&#34;</span>
-
-<span class="nf">mymethod</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="c1"># &#34;Using B&#34;</span>
-
-<span class="nf">mymethod</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-<span class="c1"># &#34;Using Default&#34;</span>
-
-<span class="nf">class</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;a&#34;</span><span class="p">,</span> <span class="s">&#34;b&#34;</span><span class="p">)</span>
-<span class="nf">mymethod</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-<span class="c1"># [1] &#34;Using A&#34;</span>
-
-<span class="nf">class</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;c&#34;</span><span class="p">,</span> <span class="s">&#34;a&#34;</span><span class="p">,</span> <span class="s">&#34;b&#34;</span><span class="p">)</span>
-<span class="nf">mymethod</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-<span class="c1"># [1] &#34;Using A&#34;</span>
-
-<span class="c1">#=======================================</span>
-<span class="c1"># 20.3.2. Limitations of the S3 model</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">women</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;lm&#34;</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">women</span><span class="p">)</span>
-<span class="c1"># Error in if (p == 0) { : argument is of length zero</span>
-
-<span class="c1"># 20.4. Writing efficient code</span>
-
-<span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
-<span class="n">mymatrix</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">10000000</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
-
-<span class="n">accum</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">sums</span> <span class="o">&lt;-</span> <span class="nf">numeric</span><span class="p">(</span><span class="nf">ncol</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-  <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nf">for </span><span class="p">(</span><span class="n">j</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="p">{</span>
-      <span class="n">sums[i]</span> <span class="o">&lt;-</span> <span class="n">sums[i]</span> <span class="o">+</span> <span class="n">x[j</span><span class="p">,</span><span class="n">i]</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nf">system.time</span><span class="p">(</span><span class="nf">accum</span><span class="p">(</span><span class="n">mymatrix</span><span class="p">))</span>
-<span class="c1">#  user  system elapsed </span>
-<span class="c1"># 0.732   0.002   0.736 </span>
-
-<span class="nf">system.time</span><span class="p">(</span><span class="nf">colSums</span><span class="p">(</span><span class="n">mymatrix</span><span class="p">))</span>
-<span class="c1">#  user  system elapsed </span>
-<span class="c1"># 0.011   0.000   0.011</span>
-
-
-<span class="m">0.736</span><span class="o">/</span><span class="m">0.011</span>
-
-<span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
-<span class="n">k</span> <span class="o">&lt;-</span> <span class="m">100000</span>
-<span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">0</span>
-<span class="nf">system.time</span><span class="p">(</span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="n">y[i]</span> <span class="o">&lt;-</span> <span class="n">x[i]^2</span><span class="p">)</span>
-<span class="c1">#  user  system elapsed </span>
-<span class="c1"># 0.027   0.004   0.031 </span>
-
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">numeric</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
-<span class="nf">system.time</span><span class="p">(</span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">k</span><span class="p">)</span> <span class="n">y[i]</span> <span class="o">&lt;-</span> <span class="n">x[i]^2</span><span class="p">)</span>
-<span class="c1">#  user  system elapsed </span>
-<span class="c1"># 0.008   0.001   0.008 </span>
-
-
-<span class="c1">## Parallelization</span>
-<span class="c1"># code listing 20.3. Parallelization with foreach and doParallel</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">foreach</span><span class="p">)</span>
-<span class="c1"># install.packages(&#34;doParallel&#34;)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">doParallel</span><span class="p">)</span>
-<span class="nf">registerDoParallel</span><span class="p">(</span><span class="n">cores</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="c1"># Total Number of Cores: 2 from about this mac</span>
-
-<span class="n">eig</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">){</span>
-  <span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100000</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">100</span><span class="p">)</span>
-  <span class="n">r</span> <span class="o">&lt;-</span> <span class="nf">cor</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-  <span class="nf">eigen</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">$</span><span class="n">values</span>
-<span class="p">}</span>
-<span class="n">n</span> <span class="o">&lt;-</span> <span class="m">1000000</span>
-<span class="n">p</span> <span class="o">&lt;-</span> <span class="m">100</span>
-<span class="n">k</span> <span class="o">&lt;-</span> <span class="m">500</span>
-
-<span class="nf">system.time</span><span class="p">(</span>
-  <span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">foreach</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="n">k</span><span class="p">,</span> <span class="n">.combine</span><span class="o">=</span><span class="n">rbind</span><span class="p">)</span> <span class="o">%do%</span> <span class="nf">eig</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
-<span class="p">)</span>
-<span class="c1">#  user  system elapsed </span>
-<span class="c1"># 7.612   0.416   8.064</span>
-
-<span class="nf">system.time</span><span class="p">(</span>
-  <span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">foreach</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="n">k</span><span class="p">,</span> <span class="n">.combine</span> <span class="o">=</span> <span class="n">rbind</span><span class="p">)</span> <span class="o">%dopar%</span> <span class="nf">eig</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
-<span class="p">)</span>
-<span class="c1">#  user  system elapsed </span>
-<span class="c1"># 7.867   0.559   4.260 </span>
-
-
-<span class="c1">#======================================================</span>
-<span class="c1"># 20.5. Debugging</span>
-<span class="c1"># 20.5.1. Common sources of errors</span>
-<span class="n">mtcars</span><span class="o">$</span><span class="n">Transmission</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">a</span><span class="p">,</span>
-                              <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span>
-                              <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Automatic&#34;</span><span class="p">,</span> <span class="s">&#34;Manual&#34;</span><span class="p">))</span>
-<span class="nf">aov</span><span class="p">(</span><span class="n">mpg</span> <span class="o">~</span> <span class="n">Transmission</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mtcars</span><span class="p">)</span>
-<span class="c1"># Error in `contrasts&lt;-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]) : </span>
-<span class="c1">#   contrasts can be applied only to factors with 2 or more levels</span>
-
-<span class="nf">head</span><span class="p">(</span><span class="n">mtcars</span><span class="nf">[c</span><span class="p">(</span><span class="s">&#34;mpg&#34;</span><span class="p">,</span> <span class="s">&#34;Transmission&#34;</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
-<span class="c1">#                    mpg Transmission</span>
-<span class="c1"># Mazda RX4         21.0    Automatic</span>
-<span class="c1"># Mazda RX4 Wag     21.0    Automatic</span>
-<span class="c1"># Datsun 710        22.8    Automatic</span>
-<span class="c1"># Hornet 4 Drive    21.4         &lt;NA&gt;</span>
-<span class="c1"># Hornet Sportabout 18.7         &lt;NA&gt;</span>
-<span class="c1"># Valiant           18.1         &lt;NA&gt;</span>
-
-<span class="nf">table</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">Transmission</span><span class="p">)</span>
-<span class="c1"># Automatic    Manual </span>
-<span class="c1">#        13         0 </span>
-
-<span class="c1"># 20.5.2. Debugging tools</span>
-<span class="c1"># code listing 20.4. A sample debugging session</span>
-<span class="nf">args</span><span class="p">(</span><span class="n">mad</span><span class="p">)</span>
-<span class="c1"># function (x, center = median(x), constant = 1.4826, na.rm = FALSE, </span>
-<span class="c1">#     low = FALSE, high = FALSE) </span>
-<span class="c1"># NULL</span>
-
-<span class="nf">debug</span><span class="p">(</span><span class="n">mad</span><span class="p">)</span>
-<span class="nf">mad</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
-
-
-<span class="c1"># 20.5.3. Session options that support debugging</span>
-<span class="c1"># code listing 20.5. Sample debugging session with recover()</span>
-
-<span class="n">f</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">z</span> <span class="o">&lt;-</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-  <span class="nf">g</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="n">g</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">z</span> <span class="o">&lt;-</span> <span class="nf">round</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-  <span class="nf">h</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="n">h</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
-  <span class="n">z</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-  <span class="nf">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="nf">options</span><span class="p">(</span><span class="n">error</span><span class="o">=</span><span class="n">recover</span><span class="p">)</span>
-<span class="nf">f</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
-<span class="c1"># [1] -1.2070657  0.2774292  1.0844412 -2.3456977  0.4291247</span>
-
-<span class="nf">f</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">-3</span><span class="p">)</span>
-<span class="c1"># Error in rnorm(x) : invalid arguments</span>
-<span class="c1"># </span>
-<span class="c1"># Enter a frame number, or 0 to exit   </span>
-<span class="c1"># </span>
-<span class="c1"># 1: f(2, -3)</span>
-<span class="c1"># 2: #3: g(z)</span>
-<span class="c1"># 3: #3: h(z)</span>
-<span class="c1"># 4: #3: rnorm(x)</span>
-
-<span class="c1"># Selection: 4</span>
-<span class="c1"># Called from: rnorm(x)</span>
-<span class="c1"># Browse[1]&gt; ls()</span>
-<span class="c1"># [1] &#34;mean&#34; &#34;n&#34;    &#34;sd&#34;  </span>
-<span class="c1"># Browse[1]&gt; mean</span>
-<span class="c1"># [1] 0</span>
-<span class="c1"># Browse[1]&gt; print(n)</span>
-<span class="c1"># [1] -1</span>
-<span class="c1"># Browse[1]&gt; c</span>
-<span class="c1"># Enter a frame number, or 0 to exit   </span>
-<span class="c1"># </span>
-<span class="c1"># 1: f(2, -3)</span>
-<span class="c1"># 2: #3: g(z)</span>
-<span class="c1"># 3: #3: h(z)</span>
-<span class="c1"># 4: #3: rnorm(x)</span>
-<span class="c1">#   </span>
-<span class="c1"># Selection: 3</span>
-<span class="c1"># Called from: h(z)</span>
-<span class="c1"># Browse[1]&gt; ls()</span>
-<span class="c1"># [1] &#34;x&#34;</span>
-<span class="c1"># Browse[1]&gt; x</span>
-<span class="c1"># [1] -1</span>
-<span class="c1"># Browse[1]&gt; c</span>
-<span class="c1"># </span>
-<span class="c1"># Enter a frame number, or 0 to exit   </span>
-<span class="c1"># </span>
-<span class="c1"># 1: f(2, -3)</span>
-<span class="c1"># 2: #3: g(z)</span>
-<span class="c1"># 3: #3: h(z)</span>
-<span class="c1"># 4: #3: rnorm(x)</span>
-<span class="c1">#   </span>
-<span class="c1"># Selection: 2</span>
-<span class="c1"># Called from: g(z)</span>
-<span class="c1"># Browse[1]&gt; ls()</span>
-<span class="c1"># [1] &#34;x&#34; &#34;z&#34;</span>
-<span class="c1"># Browse[1]&gt; x</span>
-<span class="c1"># [1] -1</span>
-<span class="c1"># Browse[1]&gt; z</span>
-<span class="c1"># [1] -1</span>
-<span class="c1"># Browse[1]&gt; c</span>
-<span class="c1"># </span>
-<span class="c1"># Enter a frame number, or 0 to exit   </span>
-<span class="c1"># </span>
-<span class="c1"># 1: f(2, -3)</span>
-<span class="c1"># 2: #3: g(z)</span>
-<span class="c1"># 3: #3: h(z)</span>
-<span class="c1"># 4: #3: rnorm(x)</span>
-<span class="c1">#   </span>
-<span class="c1"># Selection: 1</span>
-<span class="c1"># Called from: f(2, -3)</span>
-<span class="c1"># Browse[1]&gt; ls()</span>
-<span class="c1"># [1] &#34;x&#34; &#34;y&#34; &#34;z&#34;</span>
-<span class="c1"># Browse[1]&gt; x</span>
-<span class="c1"># [1] 2</span>
-<span class="c1"># Browse[1]&gt; y</span>
-<span class="c1"># [1] -3</span>
-<span class="c1"># Browse[1]&gt; z</span>
-<span class="c1"># [1] -1</span>
-<span class="c1"># Browse[1]&gt; c</span>
-<span class="c1"># </span>
-<span class="c1"># Enter a frame number, or 0 to exit   </span>
-<span class="c1"># </span>
-<span class="c1"># 1: f(2, -3)</span>
-<span class="c1"># 2: #3: g(z)</span>
-<span class="c1"># 3: #3: h(z)</span>
-<span class="c1"># 4: #3: rnorm(x)</span>
-<span class="c1">#   </span>
-<span class="c1"># Selection: 0</span>
-
-
-<span class="nf">options</span><span class="p">(</span><span class="n">error</span><span class="o">=</span><span class="kc">NULL</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Remove most objects from the working environment</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 20.1. A review of the language</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 20.1.1. Data types</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## Atomic Vectors</span>
+</span></span><span class="line"><span class="cl"><span class="n">passed</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">passed</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1]  TRUE  TRUE FALSE  TRUE</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ages</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">15</span><span class="p">,</span> <span class="m">18</span><span class="p">,</span> <span class="m">25</span><span class="p">,</span> <span class="m">14</span><span class="p">,</span> <span class="m">19</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ages</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 15 18 25 14 19</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cmplxNums</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1+2i</span><span class="p">,</span> <span class="m">0+1i</span><span class="p">,</span> <span class="m">39+3i</span><span class="p">,</span> <span class="m">12+2i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cmplxNums</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1]  1+2i  0+1i 39+3i 12+2i</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">names</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Bob&#34;</span><span class="p">,</span> <span class="s">&#34;Ted&#34;</span><span class="p">,</span> <span class="s">&#34;Carol&#34;</span><span class="p">,</span> <span class="s">&#34;Alice&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">names</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;Bob&#34;   &#34;Ted&#34;   &#34;Carol&#34; &#34;Alice&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">class</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;numeric&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 1 2 3 4 5 6 7 8</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">attr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s">&#34;dim&#34;</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#      [,1] [,2] [,3] [,4]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1,]    1    3    5    7</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [2,]    2    4    6    8</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">class</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;matrix&#34; &#34;array&#34; </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">attributes</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $dim</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 2 4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">attr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s">&#34;dimnames&#34;</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;A1&#34;</span><span class="p">,</span> <span class="s">&#34;A2&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                            <span class="nf">c</span><span class="p">(</span><span class="s">&#34;B1&#34;</span><span class="p">,</span> <span class="s">&#34;B2&#34;</span><span class="p">,</span> <span class="s">&#34;B3&#34;</span><span class="p">,</span> <span class="s">&#34;B4&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#    B1 B2 B3 B4</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># A1  1  3  5  7</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># A2  2  4  6  8</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">attr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s">&#34;dim&#34;</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
+</span></span><span class="line"><span class="cl"><span class="nf">class</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;numeric&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 1 2 3 4 5 6 7 8</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## Generic Vectors or Lists</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1          5.1         3.5          1.4         0.2  setosa</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2          4.9         3.0          1.4         0.2  setosa</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3          4.7         3.2          1.3         0.2  setosa</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4          4.6         3.1          1.5         0.2  setosa</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 5          5.0         3.6          1.4         0.2  setosa</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 6          5.4         3.9          1.7         0.4  setosa</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">unclass</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">attributes</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">iris[1</span><span class="o">:</span><span class="m">4</span><span class="n">]</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">names</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;cluster&#34;      &#34;centers&#34;      &#34;totss&#34;        &#34;withinss&#34;     &#34;tot.withinss&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [6] &#34;betweenss&#34;    &#34;size&#34;         &#34;iter&#34;         &#34;ifault&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">unclass</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $cluster</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [44] 1 1 1 1 1 1 1 2 2 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 2 2 2 2 2 2 2 2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [87] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 2 3 3 3 3 2 3 3 3 3 3 3 2 2 3 3 3 3 2 3 2 3 2 3 3 2 2 3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [130] 3 3 3 3 2 3 3 3 3 2 3 3 3 2 3 3 3 2 3 3 2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $centers</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Sepal.Length Sepal.Width Petal.Length Petal.Width</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1     5.006000    3.428000     1.462000    0.246000</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2     5.901613    2.748387     4.393548    1.433871</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3     6.850000    3.073684     5.742105    2.071053</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $totss</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 681.3706</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $withinss</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 15.15100 39.82097 23.87947</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $tot.withinss</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 78.85144</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $betweenss</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 602.5192</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $size</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 50 62 38</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $iter</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $ifault</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">sapply</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">class</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $cluster</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;integer&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $centers</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;matrix&#34; &#34;array&#34; </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $totss</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;numeric&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $withinss</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;numeric&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $tot.withinss</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;numeric&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $betweenss</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;numeric&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $size</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;integer&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $iter</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;integer&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $ifault</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;integer&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#===========================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## indexing</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">20</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">40</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">x[3]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 40</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span><span class="nf">[c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 30 40</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">A</span><span class="o">=</span><span class="m">20</span><span class="p">,</span> <span class="n">B</span><span class="o">=</span><span class="m">30</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="m">40</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  A  B  C </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 20 30 40</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span><span class="nf">[c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  B  C </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 30 40 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span><span class="nf">[c</span><span class="p">(</span><span class="s">&#34;B&#34;</span><span class="p">,</span> <span class="s">&#34;C&#34;</span><span class="p">)</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  B  C </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 30 40 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># List of 9</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $ cluster     : int [1:150] 1 1 1 1 1 1 1 1 1 1 ...</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $ centers     : num [1:3, 1:4] 5.01 5.9 6.85 3.43 2.75 ...</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ..- attr(*, &#34;dimnames&#34;)=List of 2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># .. ..$ : chr [1:3] &#34;1&#34; &#34;2&#34; &#34;3&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># .. ..$ : chr [1:4] &#34;Sepal.Length&#34; &#34;Sepal.Width&#34; &#34;Petal.Length&#34; &#34;Petal.Width&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $ totss       : num 681</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $ withinss    : num [1:3] 15.2 39.8 23.9</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $ tot.withinss: num 78.9</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $ betweenss   : num 603</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $ size        : int [1:3] 50 62 38</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $ iter        : int 2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $ ifault      : int 0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># - attr(*, &#34;class&#34;)= chr &#34;kmeans&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit[7]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $size</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 50 62 38</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit</span><span class="nf">[c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">7</span><span class="p">)</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $centers</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Sepal.Length Sepal.Width Petal.Length Petal.Width</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1     5.006000    3.428000     1.462000    0.246000</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2     5.901613    2.748387     4.393548    1.433871</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3     6.850000    3.073684     5.742105    2.071053</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $size</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 50 62 38</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit[2]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># $centers</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Sepal.Length Sepal.Width Petal.Length Petal.Width</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1     5.006000    3.428000     1.462000    0.246000</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2     5.901613    2.748387     4.393548    1.433871</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3     6.850000    3.073684     5.742105    2.071053</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit[[2]]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Sepal.Length Sepal.Width Petal.Length Petal.Width</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1     5.006000    3.428000     1.462000    0.246000</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2     5.901613    2.748387     4.393548    1.433871</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3     6.850000    3.073684     5.742105    2.071053</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit[[2]][1]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 5.006</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit[[2]][1</span><span class="p">,</span><span class="n">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Sepal.Length  Sepal.Width Petal.Length  Petal.Width </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#        5.006        3.428        1.462        0.246</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fit</span><span class="o">$</span><span class="n">centers</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Sepal.Length Sepal.Width Petal.Length Petal.Width</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1     5.006000    3.428000     1.462000    0.246000</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2     5.901613    2.748387     4.393548    1.433871</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3     6.850000    3.073684     5.742105    2.071053</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 20.1. Plotting the centroids from a k-means cluster analysis</span>
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">iris[1</span><span class="o">:</span><span class="m">4</span><span class="n">]</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">means</span> <span class="o">&lt;-</span> <span class="n">fit</span><span class="o">$</span><span class="n">centers</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">reshape2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">dfm</span> <span class="o">&lt;-</span> <span class="nf">melt</span><span class="p">(</span><span class="n">means</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">names</span><span class="p">(</span><span class="n">dfm</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Cluster&#34;</span><span class="p">,</span> <span class="s">&#34;Measurement&#34;</span><span class="p">,</span> <span class="s">&#34;Centimeters&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">dfm</span><span class="o">$</span><span class="n">Cluster</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">dfm</span><span class="o">$</span><span class="n">Cluster</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">dfm</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   Cluster  Measurement Centimeters</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1       1 Sepal.Length    5.006000</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2       2 Sepal.Length    5.901613</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3       3 Sepal.Length    6.850000</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4       1  Sepal.Width    3.428000</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 5       2  Sepal.Width    2.748387</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 6       3  Sepal.Width    3.073684</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">dfm</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">       <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Measurement</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Centimeters</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">Cluster</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">Cluster</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">Cluster</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_line</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">Cluster</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&#34;Profiles for Iris Clusters&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 20.1.2. Control structures</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## for()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">1</span><span class="o">:</span><span class="m">5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 1 2 3 4 5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span> <span class="nf">print</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 1 2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 1 2 3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 1 2 3 4</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 1 2 3 4 5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">5</span><span class="o">:</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 5 4 3 2 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">5</span><span class="o">:</span><span class="m">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">print</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 1 2 3 4 5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 1 2 3 4</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 1 2 3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 1 2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## if() and else</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## ifelse()</span>
+</span></span><span class="line"><span class="cl"><span class="n">pvalues</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">.0867</span><span class="p">,</span> <span class="m">.0018</span><span class="p">,</span> <span class="m">.0054</span><span class="p">,</span> <span class="m">.1572</span><span class="p">,</span> <span class="m">.0183</span><span class="p">,</span> <span class="m">.5386</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">pvalues</span> <span class="o">&lt;</span> <span class="m">0.05</span><span class="p">,</span> <span class="s">&#34;Significant&#34;</span><span class="p">,</span> <span class="s">&#34;Not Significant&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">results</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;Not Significant&#34; &#34;Significant&#34;     &#34;Significant&#34;     &#34;Not Significant&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [5] &#34;Significant&#34;     &#34;Not Significant&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># The same result can be accomplished with explicit loops using</span>
+</span></span><span class="line"><span class="cl"><span class="n">pvalues</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">.0867</span><span class="p">,</span> <span class="m">.0018</span><span class="p">,</span> <span class="m">.0054</span><span class="p">,</span> <span class="m">.1572</span><span class="p">,</span> <span class="m">.0183</span><span class="p">,</span> <span class="m">.5386</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">(</span><span class="n">mode</span> <span class="o">=</span> <span class="s">&#34;character&#34;</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="nf">length</span><span class="p">(</span><span class="n">pvalues</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">pvalues</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">if </span><span class="p">(</span><span class="n">pvalues[i]</span> <span class="o">&lt;</span> <span class="m">0.05</span><span class="p">)</span> <span class="n">results[i]</span> <span class="o">&lt;-</span> <span class="s">&#34;Significant&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">else</span> <span class="n">results[i]</span> <span class="o">&lt;-</span> <span class="s">&#34;Not Significant&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">results</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;Not Significant&#34; &#34;Significant&#34;     &#34;Significant&#34;     &#34;Not Significant&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [5] &#34;Significant&#34;     &#34;Not Significant&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">results[2]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;Significant&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 20.1.3. Creating functions</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## Function syntax</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">f</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span> <span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="m">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">result</span> <span class="o">&lt;-</span> <span class="n">x</span> <span class="o">+</span> <span class="p">(</span><span class="m">2</span><span class="o">*</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="m">3</span><span class="o">*</span><span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">return</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">f</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 20</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">f</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>  <span class="c1"># equal f(2, 3, 1)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 11</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="m">3</span><span class="p">)</span> <span class="c1"># equal f(x=2, y=3, z=1)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 11</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">f</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="m">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>  <span class="c1"># equal f(x=3, y=2, z=4)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 19</span>
+</span></span><span class="line"><span class="cl"><span class="nf">f</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="m">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">args</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># function (x, y, z = 1) </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># NULL</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## Object scope</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">&lt;-</span> <span class="m">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">z</span> <span class="o">&lt;-</span> <span class="m">4</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">z</span> <span class="o">&lt;-</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">&lt;-</span> <span class="n">w</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">z</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">return</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 12</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">y</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">z</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#============================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 20.2. Working with environments</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Remove most objects from the working environment</span>
+</span></span><span class="line"><span class="cl"><span class="nf">rm</span><span class="p">(</span><span class="n">list</span> <span class="o">=</span> <span class="nf">ls</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nf">options</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">5</span>
+</span></span><span class="line"><span class="cl"><span class="n">myenv</span> <span class="o">&lt;-</span> <span class="nf">new.env</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">assign</span><span class="p">(</span><span class="s">&#34;x&#34;</span><span class="p">,</span> <span class="s">&#34;Homer&#34;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">myenv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ls</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;myenv&#34; &#34;x&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ls</span><span class="p">(</span><span class="n">myenv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;x&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 5</span>
+</span></span><span class="line"><span class="cl"><span class="nf">get</span><span class="p">(</span><span class="s">&#34;x&#34;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">myenv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;Homer&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">myenv</span><span class="o">$</span><span class="n">x</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;Homer&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">parent.env</span><span class="p">(</span><span class="n">myenv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># &lt;environment: R_GlobalEnv&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">help</span><span class="p">(</span><span class="s">&#34;environment&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">trim</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">p</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">  <span class="n">trimit</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">lo</span> <span class="o">&lt;-</span> <span class="nf">floor</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="o">+</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hi</span> <span class="o">&lt;-</span> <span class="n">n</span> <span class="o">+</span> <span class="m">1</span> <span class="o">-</span> <span class="n">lo</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">sort.int</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">partial</span> <span class="o">=</span> <span class="nf">unique</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)))</span><span class="n">[lo</span><span class="o">:</span><span class="n">hi]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="n">trimit</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1]  1  2  3  4  5  6  7  8  9 10</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">trim10pct</span> <span class="o">&lt;-</span> <span class="nf">trim</span><span class="p">(</span><span class="m">.1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">trim10pct</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 2 3 4 5 6 7 8 9</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">trim20pct</span> <span class="o">&lt;-</span> <span class="nf">trim</span><span class="p">(</span><span class="m">.2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">trim20pct</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 3 4 5 6 7 8</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">ls</span><span class="p">(</span><span class="nf">environment</span><span class="p">(</span><span class="n">trim10pct</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;p&#34;      &#34;trimit&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">get</span><span class="p">(</span><span class="s">&#34;p&#34;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="nf">environment</span><span class="p">(</span><span class="n">trim10pct</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 0.1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">get</span><span class="p">(</span><span class="s">&#34;p&#34;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="nf">environment</span><span class="p">(</span><span class="n">trim20pct</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 0.2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">makeFunction</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">f</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">g</span> <span class="o">&lt;-</span> <span class="nf">makeFunction</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">g</span><span class="p">(</span><span class="m">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 14</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">k</span> <span class="o">&lt;-</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl"><span class="nf">g</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 15</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">ls</span><span class="p">(</span><span class="nf">environment</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;f&#34; &#34;k&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">environment</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="o">$</span><span class="n">k</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 10</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 20.3.1 Generic functions</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">women</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">weight</span> <span class="o">~</span> <span class="n">height</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">women</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">class</span><span class="p">(</span><span class="n">women</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">class</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;lm&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">methods</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># get code</span>
+</span></span><span class="line"><span class="cl"><span class="n">summary.data.frame</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># get code labeled with &#39;*&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">getAnywhere</span><span class="p">(</span><span class="n">summary.ggplot</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># code lisitng 20.2. An example of an arbitrary generic function</span>
+</span></span><span class="line"><span class="cl"><span class="n">mymethod</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kc">...</span><span class="p">)</span> <span class="nf">UseMethod</span><span class="p">(</span><span class="s">&#34;mymethod&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mymethod.a</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">print</span><span class="p">(</span><span class="s">&#34;Using A&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mymethod.b</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">print</span><span class="p">(</span><span class="s">&#34;Using B&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mymethod.default</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">print</span><span class="p">(</span><span class="s">&#34;Using Default&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">&lt;-</span> <span class="m">6</span><span class="o">:</span><span class="m">10</span>
+</span></span><span class="line"><span class="cl"><span class="n">z</span> <span class="o">&lt;-</span> <span class="m">10</span><span class="o">:</span><span class="m">15</span>
+</span></span><span class="line"><span class="cl"><span class="nf">class</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;a&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">class</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;b&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">mymethod</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;Using A&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">mymethod</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># &#34;Using B&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">mymethod</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># &#34;Using Default&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">class</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;a&#34;</span><span class="p">,</span> <span class="s">&#34;b&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">mymethod</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;Using A&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">class</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;c&#34;</span><span class="p">,</span> <span class="s">&#34;a&#34;</span><span class="p">,</span> <span class="s">&#34;b&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">mymethod</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;Using A&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#=======================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 20.3.2. Limitations of the S3 model</span>
+</span></span><span class="line"><span class="cl"><span class="nf">class</span><span class="p">(</span><span class="n">women</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&#34;lm&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">summary</span><span class="p">(</span><span class="n">women</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Error in if (p == 0) { : argument is of length zero</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 20.4. Writing efficient code</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mymatrix</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">10000000</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">accum</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">sums</span> <span class="o">&lt;-</span> <span class="nf">numeric</span><span class="p">(</span><span class="nf">ncol</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">for </span><span class="p">(</span><span class="n">j</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">sums[i]</span> <span class="o">&lt;-</span> <span class="n">sums[i]</span> <span class="o">+</span> <span class="n">x[j</span><span class="p">,</span><span class="n">i]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">system.time</span><span class="p">(</span><span class="nf">accum</span><span class="p">(</span><span class="n">mymatrix</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  user  system elapsed </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 0.732   0.002   0.736 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">system.time</span><span class="p">(</span><span class="nf">colSums</span><span class="p">(</span><span class="n">mymatrix</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  user  system elapsed </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 0.011   0.000   0.011</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">0.736</span><span class="o">/</span><span class="m">0.011</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">k</span> <span class="o">&lt;-</span> <span class="m">100000</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">&lt;-</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="nf">system.time</span><span class="p">(</span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="n">y[i]</span> <span class="o">&lt;-</span> <span class="n">x[i]^2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  user  system elapsed </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 0.027   0.004   0.031 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">numeric</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">system.time</span><span class="p">(</span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">k</span><span class="p">)</span> <span class="n">y[i]</span> <span class="o">&lt;-</span> <span class="n">x[i]^2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  user  system elapsed </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 0.008   0.001   0.008 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## Parallelization</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 20.3. Parallelization with foreach and doParallel</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">foreach</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># install.packages(&#34;doParallel&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">doParallel</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">registerDoParallel</span><span class="p">(</span><span class="n">cores</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="c1"># Total Number of Cores: 2 from about this mac</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">eig</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100000</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">r</span> <span class="o">&lt;-</span> <span class="nf">cor</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">eigen</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">$</span><span class="n">values</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">&lt;-</span> <span class="m">1000000</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span> <span class="o">&lt;-</span> <span class="m">100</span>
+</span></span><span class="line"><span class="cl"><span class="n">k</span> <span class="o">&lt;-</span> <span class="m">500</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">system.time</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">foreach</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="n">k</span><span class="p">,</span> <span class="n">.combine</span><span class="o">=</span><span class="n">rbind</span><span class="p">)</span> <span class="o">%do%</span> <span class="nf">eig</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  user  system elapsed </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 7.612   0.416   8.064</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">system.time</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">foreach</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="n">k</span><span class="p">,</span> <span class="n">.combine</span> <span class="o">=</span> <span class="n">rbind</span><span class="p">)</span> <span class="o">%dopar%</span> <span class="nf">eig</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  user  system elapsed </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 7.867   0.559   4.260 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#======================================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 20.5. Debugging</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 20.5.1. Common sources of errors</span>
+</span></span><span class="line"><span class="cl"><span class="n">mtcars</span><span class="o">$</span><span class="n">Transmission</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">a</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                              <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                              <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Automatic&#34;</span><span class="p">,</span> <span class="s">&#34;Manual&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">aov</span><span class="p">(</span><span class="n">mpg</span> <span class="o">~</span> <span class="n">Transmission</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mtcars</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Error in `contrasts&lt;-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]) : </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   contrasts can be applied only to factors with 2 or more levels</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">mtcars</span><span class="nf">[c</span><span class="p">(</span><span class="s">&#34;mpg&#34;</span><span class="p">,</span> <span class="s">&#34;Transmission&#34;</span><span class="p">)</span><span class="n">]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#                    mpg Transmission</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Mazda RX4         21.0    Automatic</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Mazda RX4 Wag     21.0    Automatic</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Datsun 710        22.8    Automatic</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Hornet 4 Drive    21.4         &lt;NA&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Hornet Sportabout 18.7         &lt;NA&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Valiant           18.1         &lt;NA&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">table</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">Transmission</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Automatic    Manual </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#        13         0 </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 20.5.2. Debugging tools</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 20.4. A sample debugging session</span>
+</span></span><span class="line"><span class="cl"><span class="nf">args</span><span class="p">(</span><span class="n">mad</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># function (x, center = median(x), constant = 1.4826, na.rm = FALSE, </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     low = FALSE, high = FALSE) </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># NULL</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">debug</span><span class="p">(</span><span class="n">mad</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">mad</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 20.5.3. Session options that support debugging</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># code listing 20.5. Sample debugging session with recover()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">f</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">z</span> <span class="o">&lt;-</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">g</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">g</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">z</span> <span class="o">&lt;-</span> <span class="nf">round</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">h</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">h</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">z</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">options</span><span class="p">(</span><span class="n">error</span><span class="o">=</span><span class="n">recover</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">f</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] -1.2070657  0.2774292  1.0844412 -2.3456977  0.4291247</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">f</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">-3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Error in rnorm(x) : invalid arguments</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Enter a frame number, or 0 to exit   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1: f(2, -3)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2: #3: g(z)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3: #3: h(z)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4: #3: rnorm(x)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Selection: 4</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Called from: rnorm(x)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Browse[1]&gt; ls()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;mean&#34; &#34;n&#34;    &#34;sd&#34;  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Browse[1]&gt; mean</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Browse[1]&gt; print(n)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] -1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Browse[1]&gt; c</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Enter a frame number, or 0 to exit   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1: f(2, -3)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2: #3: g(z)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3: #3: h(z)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4: #3: rnorm(x)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Selection: 3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Called from: h(z)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Browse[1]&gt; ls()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;x&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Browse[1]&gt; x</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] -1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Browse[1]&gt; c</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Enter a frame number, or 0 to exit   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1: f(2, -3)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2: #3: g(z)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3: #3: h(z)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4: #3: rnorm(x)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Selection: 2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Called from: g(z)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Browse[1]&gt; ls()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;x&#34; &#34;z&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Browse[1]&gt; x</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] -1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Browse[1]&gt; z</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] -1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Browse[1]&gt; c</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Enter a frame number, or 0 to exit   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1: f(2, -3)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2: #3: g(z)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3: #3: h(z)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4: #3: rnorm(x)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Selection: 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Called from: f(2, -3)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Browse[1]&gt; ls()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] &#34;x&#34; &#34;y&#34; &#34;z&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Browse[1]&gt; x</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] 2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Browse[1]&gt; y</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] -3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Browse[1]&gt; z</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] -1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Browse[1]&gt; c</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Enter a frame number, or 0 to exit   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1: f(2, -3)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2: #3: g(z)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3: #3: h(z)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4: #3: rnorm(x)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Selection: 0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">options</span><span class="p">(</span><span class="n">error</span><span class="o">=</span><span class="kc">NULL</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -2136,7 +2131,7 @@ if (!doNotTrack) {
     &copy;
     
       2020 -
-    2022
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -2180,7 +2175,7 @@ if (!doNotTrack) {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 
