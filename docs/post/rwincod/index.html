@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>xiaoni&#39;s blog</title>
+  <title>win10系统下Rstudio中的乱码问题 - xiaoni&#39;s blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -22,8 +22,11 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="xiaonilee" />
-  <meta name="description" content="xiaoni&#39;s blog" />
+<meta name="author" content="Xiaoni" />
+  <meta name="description" content="既往使用mac系统，未曾见过乱码现象。然而，目前工作主要使用win10系统。
+因此，在此记录解决办法，再也不见同类问题。
+" />
+
   <meta name="keywords" content="xiaonili, xiaonilee, xiaoni" />
 
 
@@ -34,8 +37,8 @@
 <meta name="generator" content="Hugo 0.110.0" />
 
 
-<link rel="canonical" href="/" />
-<link href="/index.xml" rel="alternate" type="application/rss+xml" title="xiaoni&#39;s blog" />
+<link rel="canonical" href="/post/rwincod/" />
+
 
 
 
@@ -62,14 +65,22 @@
 
 
 
-<meta property="og:title" content="xiaoni&#39;s blog" />
-<meta property="og:description" content="xiaoni&#39;s blog" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/" />
-<meta itemprop="name" content="xiaoni&#39;s blog">
-<meta itemprop="description" content="xiaoni&#39;s blog"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="xiaoni&#39;s blog"/>
-<meta name="twitter:description" content="xiaoni&#39;s blog"/>
+<meta property="og:title" content="win10系统下Rstudio中的乱码问题" />
+<meta property="og:description" content="既往使用mac系统，未曾见过乱码现象。然而，目前工作主要使用win10系统。
+因此，在此记录解决办法，再也不见同类问题。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/rwincod/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-01-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-01-25T00:00:00+00:00" />
+<meta itemprop="name" content="win10系统下Rstudio中的乱码问题">
+<meta itemprop="description" content="既往使用mac系统，未曾见过乱码现象。然而，目前工作主要使用win10系统。
+因此，在此记录解决办法，再也不见同类问题。"><meta itemprop="datePublished" content="2023-01-25T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-01-25T00:00:00+00:00" />
+<meta itemprop="wordCount" content="157">
+<meta itemprop="keywords" content="program,R,win10," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="win10系统下Rstudio中的乱码问题"/>
+<meta name="twitter:description" content="既往使用mac系统，未曾见过乱码现象。然而，目前工作主要使用win10系统。
+因此，在此记录解决办法，再也不见同类问题。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -482,537 +493,130 @@ if (!doNotTrack) {
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-<section id="posts" class="posts">
-  
-  
+          <article class="post bg-white">
     
-  
-  
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
+    <header class="post-header">
+      <h1 class="post-title">win10系统下Rstudio中的乱码问题</h1>
       
-        <span class="post-pinned">
-          <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
-  width="32" height="32">
-  <path d="M682.666667 512V170.666667h42.666666V85.333333H298.666667v85.333334h42.666666v341.333333l-85.333333 85.333333v85.333334h221.866667v256h68.266666v-256H768v-85.333334l-85.333333-85.333333z"></path>
-</svg>
+      <div class="post-meta">
+        <time datetime="2023-01-25" class="post-time">
+          2023-01-25
+        </time>
+        <div class="post-category">
+            <a href="/categories/program/"> program </a>
+            <a href="/categories/win10/"> win10 </a>
+            
+          </div>
+        
 
-        </span>
-      
-      <a class="post-link" href="/post/seurat2/">Using Seurat with multimodal data</a>
-    </h1>
+        
+        
+
+        
+        
+      </div>
+    </header>
+
     
-    <div class="post-meta">
-      <time datetime="2021-02-26" class="post-time">
-        2021-02-26
-      </time>
-      <div class="post-category">
-          <a href="/categories/bioinformatics/"> Bioinformatics </a>
-          <a href="/categories/r-package/"> R package </a>
-          <a href="/categories/rna-sequence/"> RNA Sequence </a>
-          <a href="/categories/pca/"> PCA </a>
-          <a href="/categories/knn/"> KNN </a>
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#问题">问题</a></li>
+        <li><a href="#解决办法">解决办法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>既往使用mac系统，未曾见过乱码现象。然而，目前工作主要使用win10系统。</p>
+<p>因此，在此记录解决办法，再也不见同类问题。</p>
+<h3 id="问题">问题</h3>
+<ul>
+<li>如图1:
+<ul>
+<li><img src="code1.png" alt="code1"></li>
+</ul>
+</li>
+</ul>
+<h3 id="解决办法">解决办法</h3>
+<ul>
+<li>在开头运行Sys.setlocale(&lsquo;LC_CTYPE&rsquo;, &lsquo;Chinese&rsquo; )。</li>
+<li>重启 R。</li>
+<li>加入代码：encoding = &lsquo;UTF-8&rsquo;。</li>
+<li>如图2：
+<ul>
+<li><img src="code2.png" alt="code2"></li>
+</ul>
+</li>
+<li>Done.</li>
+</ul>
+    </div>
+
+    
+    
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/program/">program</a>
+          <a href="/tags/r/">R</a>
+          <a href="/tags/win10/">win10</a>
           
         </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>The ability to make simultaneous measurements of multiple data types from the same cell, known as multimodal analysis, represents a new and exciting frontier for <em><strong>single-cell genomics</strong></em>.  <code>Seurat4</code> to enable for the seamless storage, analysis, and exploration of diverse multimodal single-cell datasets.</p>
-<p>Herein, I will follow the official Tutorial to analyze multimodal using Seurat data step by step.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/seurat2/" class="read-more-link">Read more</a>
-    </div>
-    
-  </div>
-</article>
 
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
       
-        <span class="post-pinned">
-          <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
-  width="32" height="32">
-  <path d="M682.666667 512V170.666667h42.666666V85.333333H298.666667v85.333334h42.666666v341.333333l-85.333333 85.333333v85.333334h221.866667v256h68.266666v-256H768v-85.333334l-85.333333-85.333333z"></path>
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/hugocmd/">
+            <span class="next-text nav-default">hugo cmd note</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
 </svg>
 
-        </span>
-      
-      <a class="post-link" href="/post/seurat/">Seurat - Guided Clustering Tutorial</a>
-    </h1>
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
     
-    <div class="post-meta">
-      <time datetime="2021-02-25" class="post-time">
-        2021-02-25
-      </time>
-      <div class="post-category">
-          <a href="/categories/bioinformatics/"> Bioinformatics </a>
-          <a href="/categories/r/"> R </a>
-          <a href="/categories/rna-sequence/"> RNA Sequence </a>
-          <a href="/categories/pca/"> PCA </a>
-          <a href="/categories/knn/"> KNN </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>In this article, I will follow the official Tutorial to do <code>clustering</code> using Seurat step by step.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/seurat/" class="read-more-link">Read more</a>
-    </div>
-    
-  </div>
-</article>
 
   
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-        <span class="post-pinned">
-          <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
-  width="32" height="32">
-  <path d="M682.666667 512V170.666667h42.666666V85.333333H298.666667v85.333334h42.666666v341.333333l-85.333333 85.333333v85.333334h221.866667v256h68.266666v-256H768v-85.333334l-85.333333-85.333333z"></path>
-</svg>
-
-        </span>
-      
-      <a class="post-link" href="/post/scrnaknn/">scRNA-sequencing analysis - PCA and KNN</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2021-02-23" class="post-time">
-        2021-02-23
-      </time>
-      <div class="post-category">
-          <a href="/categories/bioinformatics/"> Bioinformatics </a>
-          <a href="/categories/r/"> R </a>
-          <a href="/categories/rna-sequence/"> RNA Sequence </a>
-          <a href="/categories/pca/"> PCA </a>
-          <a href="/categories/knn/"> KNN </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>Recover one figure from public paper.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/scrnaknn/" class="read-more-link">Read more</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-        <span class="post-pinned">
-          <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
-  width="32" height="32">
-  <path d="M682.666667 512V170.666667h42.666666V85.333333H298.666667v85.333334h42.666666v341.333333l-85.333333 85.333333v85.333334h221.866667v256h68.266666v-256H768v-85.333334l-85.333333-85.333333z"></path>
-</svg>
-
-        </span>
-      
-      <a class="post-link" href="/post/ucscmap/">UCSC Topics</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2021-02-19" class="post-time">
-        2021-02-19
-      </time>
-      <div class="post-category">
-          <a href="/categories/r/"> R </a>
-          <a href="/categories/bioinformatics/"> Bioinformatics </a>
-          <a href="/categories/ucsc/"> UCSC </a>
-          <a href="/categories/r-package/"> R Package </a>
-          <a href="/categories/cancer-research/"> Cancer Research </a>
-          <a href="/categories/database/"> Database </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>Roadmap for the <code>UCSC topics</code>.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/ucscmap/" class="read-more-link">Read more</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-        <span class="post-pinned">
-          <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
-  width="32" height="32">
-  <path d="M682.666667 512V170.666667h42.666666V85.333333H298.666667v85.333334h42.666666v341.333333l-85.333333 85.333333v85.333334h221.866667v256h68.266666v-256H768v-85.333334l-85.333333-85.333333z"></path>
-</svg>
-
-        </span>
-      
-      <a class="post-link" href="/post/rnasequenceanalysis/">RNA-seq Bioinformatics - RNA sequence analysis</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2021-02-17" class="post-time">
-        2021-02-17
-      </time>
-      <div class="post-category">
-          <a href="/categories/python/"> Python </a>
-          <a href="/categories/bioinformatics/"> Bioinformatics </a>
-          <a href="/categories/colab/"> Colab </a>
-          <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/rna-sequence/"> RNA Sequence </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p><strong>Google Colab</strong> is a <em><strong>free</strong></em> service providing interactive computing resources via a user interface, runs on Google Cloud Platform (GCP), and provides free access to GPUs and TPUs.</p>
-<p><strong>RNA sequence</strong> is a technique that can examine the quantity and sequences of RNA in a sample using next generation sequencing (NGS). It analyzes the <em><strong>transcriptome</strong></em> of gene expression patterns encoded within the RNA.</p>
-<p>Then, how to perform <em><strong>RNA sequence analysis</strong></em> in Google Colab?</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/rnasequenceanalysis/" class="read-more-link">Read more</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-        <span class="post-pinned">
-          <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
-  width="32" height="32">
-  <path d="M682.666667 512V170.666667h42.666666V85.333333H298.666667v85.333334h42.666666v341.333333l-85.333333 85.333333v85.333334h221.866667v256h68.266666v-256H768v-85.333334l-85.333333-85.333333z"></path>
-</svg>
-
-        </span>
-      
-      <a class="post-link" href="/post/condacolab/">Installing Conda in Google Colab</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2021-02-16" class="post-time">
-        2021-02-16
-      </time>
-      <div class="post-category">
-          <a href="/categories/python/"> Python </a>
-          <a href="/categories/bioinformatics/"> Bioinformatics </a>
-          <a href="/categories/colab/"> Colab </a>
-          <a href="/categories/linux/"> Linux </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p><strong>Conda</strong> is the environment and package management solution for a number of popular data science tools including <strong>Pandas</strong>, <strong>Scikit-Learn</strong>, <strong>PyTorch</strong>, <strong>NVIDIA Rapids</strong> and many others.</p>
-<p><strong>Conda</strong> also dramatically simplifies the process of installing popular deep learning tools like <strong>TensorFlow</strong>.</p>
-<p>Then, how to install Conda when using Google Colab?</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/condacolab/" class="read-more-link">Read more</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-        <span class="post-pinned">
-          <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
-  width="32" height="32">
-  <path d="M682.666667 512V170.666667h42.666666V85.333333H298.666667v85.333334h42.666666v341.333333l-85.333333 85.333333v85.333334h221.866667v256h68.266666v-256H768v-85.333334l-85.333333-85.333333z"></path>
-</svg>
-
-        </span>
-      
-      <a class="post-link" href="/post/rincolab/">The way to use R in Google Colab</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2021-02-16" class="post-time">
-        2021-02-16
-      </time>
-      <div class="post-category">
-          <a href="/categories/r-package/"> R package </a>
-          <a href="/categories/bioinformatics/"> Bioinformatics </a>
-          <a href="/categories/colab/"> Colab </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p><strong>Colab</strong> is an interactive notebook provided by Google (primarily) for writing and running <code>Python</code> through a <em>browser</em>.</p>
-<p>Then, how to use R in Google Colab?</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/rincolab/" class="read-more-link">Read more</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-        <span class="post-pinned">
-          <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
-  width="32" height="32">
-  <path d="M682.666667 512V170.666667h42.666666V85.333333H298.666667v85.333334h42.666666v341.333333l-85.333333 85.333333v85.333334h221.866667v256h68.266666v-256H768v-85.333334l-85.333333-85.333333z"></path>
-</svg>
-
-        </span>
-      
-      <a class="post-link" href="/post/survival/">Survival Analysis with data from GSE database</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2021-02-15" class="post-time">
-        2021-02-15
-      </time>
-      <div class="post-category">
-          <a href="/categories/r/"> R </a>
-          <a href="/categories/bioinformatics/"> Bioinformatics </a>
-          <a href="/categories/gse/"> GSE </a>
-          <a href="/categories/survival-analysis/"> Survival analysis </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>Class topics - Survival Analysis with R code.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/survival/" class="read-more-link">Read more</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-        <span class="post-pinned">
-          <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
-  width="32" height="32">
-  <path d="M682.666667 512V170.666667h42.666666V85.333333H298.666667v85.333334h42.666666v341.333333l-85.333333 85.333333v85.333334h221.866667v256h68.266666v-256H768v-85.333334l-85.333333-85.333333z"></path>
-</svg>
-
-        </span>
-      
-      <a class="post-link" href="/post/ucscgenebrowser2/">UCSC gene browser with R package Gviz - part 2</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2021-02-14" class="post-time">
-        2021-02-14
-      </time>
-      <div class="post-category">
-          <a href="/categories/r/"> R </a>
-          <a href="/categories/bioinformatics/"> Bioinformatics </a>
-          <a href="/categories/ucsc/"> UCSC </a>
-          <a href="/categories/r-package/"> R Package </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>Continued, in this present, to draw the customized UCSC gene Track With Gviz package.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/ucscgenebrowser2/" class="read-more-link">Read more</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-        <span class="post-pinned">
-          <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
-  width="32" height="32">
-  <path d="M682.666667 512V170.666667h42.666666V85.333333H298.666667v85.333334h42.666666v341.333333l-85.333333 85.333333v85.333334h221.866667v256h68.266666v-256H768v-85.333334l-85.333333-85.333333z"></path>
-</svg>
-
-        </span>
-      
-      <a class="post-link" href="/post/ucscgenebrowser/">UCSC gene browser with R package Gviz - part 1</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2021-02-13" class="post-time">
-        2021-02-13
-      </time>
-      <div class="post-category">
-          <a href="/categories/r/"> R </a>
-          <a href="/categories/bioinformatics/"> Bioinformatics </a>
-          <a href="/categories/ucsc/"> UCSC </a>
-          <a href="/categories/r-package/"> R Package </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      <p>Gviz, Visualize genomic data. Let&rsquo;s dive into it to explore useful functions.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/ucscgenebrowser/" class="read-more-link">Read more</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-</section>
-
-
-
-
-
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  <nav class="pagination">
-    <ul>
-      
-      <li >
-        <a href="/">1</a>
-      </li>
-      
-      <li  class="active" >
-        <a href="/page/2/">2</a>
-      </li>
-      
-      <li >
-        <a href="/page/3/">3</a>
-      </li>
-      
-      <li >
-        <a href="/page/4/">4</a>
-      </li>
-      
-      <li >
-        <a href="/page/5/">5</a>
-      </li>
-      
-      <li >
-        <a href="/page/6/">6</a>
-      </li>
-      
-      <li >
-        <a href="/page/7/">7</a>
-      </li>
-      
-    </ul>
-  </nav>
-
-  
-  
-
-
-
-
 
         </div>
       </div>
@@ -1110,6 +714,13 @@ if (!doNotTrack) {
 
 
 
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 

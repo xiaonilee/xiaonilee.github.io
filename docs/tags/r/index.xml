@@ -6,7 +6,17 @@
     <description>Recent content in R on xiaoni&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>win10系统下Rstudio中的乱码问题</title>
+      <link>/post/rwincod/</link>
+      <pubDate>Wed, 25 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/rwincod/</guid>
+      <description>&lt;p&gt;既往使用mac系统，未曾见过乱码现象。然而，目前工作主要使用win10系统。&lt;/p&gt;
+&lt;p&gt;因此，在此记录解决办法，再也不见同类问题。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Review raw data with ggpairs</title>
       <link>/post/ggpairs/</link>
@@ -179,15 +189,6 @@
       
       <guid>/post/rinaction18/</guid>
       <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 18.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Chapter 17. Classification</title>
-      <link>/post/rinaction17/</link>
-      <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/rinaction17/</guid>
-      <description>&lt;p&gt;Notebook of Reading Books: R in Action_Chapter 17.&lt;/p&gt;</description>
     </item>
     
   </channel>
