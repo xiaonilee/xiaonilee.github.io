@@ -14,7 +14,8 @@
       
       <guid>/post/rwincod/</guid>
       <description>&lt;p&gt;既往使用mac系统，未曾见过乱码现象。然而，目前工作（同事）主要使用win10系统。&lt;/p&gt;
-&lt;p&gt;因此，在此记录解决办法，再也不见同类问题。&lt;/p&gt;</description>
+&lt;p&gt;对于来自不同同事的R脚本，会出现各种的乱码。期间尝试过解决办法，但没有从根本上解决。&lt;/p&gt;
+&lt;p&gt;在此记录这个好的解决办法，再也不见同类问题。&lt;/p&gt;</description>
     </item>
     
     <item>
