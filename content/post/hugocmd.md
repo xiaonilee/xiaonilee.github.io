@@ -24,7 +24,7 @@ Note about **hugo for windows**.
 
 ## Step1. Download and install the `hugo`.
 - It is available in two editions: `standard` and `extended`. 
-- Here, download the **Hugo windows-extended**.
+- Here, download the `Hugo windows-extended`.
 
 ## Step2. Build website.
 - run `hugo server`.
